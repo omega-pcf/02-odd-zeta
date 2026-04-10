@@ -14,7 +14,7 @@ from typing import Optional
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent))
 
-from generators.registry import (
+from generators import (
     generate,
     generate_all,
     list_figures,

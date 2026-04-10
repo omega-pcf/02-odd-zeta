@@ -41,7 +41,6 @@ $|e^{ix}|=1$ for $x\in\mathbb{R}$.
 $H(1/2) = \log 2$ (binary entropy maximum).
 
 (iii) $G_N = \mu_3 = 1/2$ gives $1/(4G_N) = 1/2 = \mu_3$.
-\qed
 \end{proof}
 
 \begin{remark}[Bekenstein--Hawking identification]\label{rmk:BH-identification}
@@ -86,7 +85,6 @@ giving $Z_{\mathrm{PCF}}(i) = e^{-3\pi/2}/|\eta(i)|^6$.
 The quantum Fisher information $F_\Omega = 4|\hat\Omega|^2 =
 4\cdot(1/2)^2 = 1$~bit follows from $|\hat\Omega| = \mu_3 = 1/2$;
 three eigenvalue directions give $3F_\Omega = 3 = c$.
-\qed
 \end{proof}
 
 % ------------------------------------------------------------------
@@ -126,7 +124,7 @@ Chaining:
   S_{\mathrm{BH}}
   = k_B\,\ln 2
   = k_B\,\lambda_{\log}\,\log\golden
-  = k_B\,\lambda_{\log}\,\frac{\sqrt{5}}{2}\,L(1,\chi_5).\qquad\square
+  = k_B\,\lambda_{\log}\,\frac{\sqrt{5}}{2}\,L(1,\chi_5).
 \]
 \end{proof}
 
@@ -180,7 +178,6 @@ All three are exact; the errors are identically zero at 50-digit precision.
 \eqref{eq:R-Lvalue}: \cref{thm:L1}: $L(1,\chi_5)=2\log\golden/\sqrt{5}=2R/\sqrt{5}$.
 \eqref{eq:R-SBH}: $S_{\mathrm{BH}}/k_B = \ln 2 = \lambda_{\log}\log\golden = \lambda_{\log}R$
 by \cref{prop:worldline-entropy} and \cref{thm:mersenne}.
-\qed
 \end{proof}
 
 \begin{remark}[Two readings of the same torus]\label{rmk:two-readings}
@@ -220,7 +217,6 @@ Mersenne bridge $\golden^{\lambda_{\log}}=2$.
 $S_{\mathrm{BH}}/k_B = \ln 2$ (\cref{prop:worldline-entropy}).
 $\ln 2 = \lambda_{\log}\cdot\log\golden = \lambda_{\log}\cdot R$
 by \cref{def:Rpcf} and \cref{thm:mersenne}.
-\qed
 \end{proof}
 
 % ------------------------------------------------------------------
@@ -279,7 +275,6 @@ $\log\golden$ (the regulator of $\mathbb{Q}(\sqrt{5})$).  These are
 algebraically independent transcendental numbers.  Their common origin
 is $\tau_{\mathrm{PCF}}=i$, the single geometric datum from which both
 sides of $T^2_{\mathrm{PCF}}$~-- modular and arithmetic~-- are derived.
-\qed
 \end{proof}
 
 % ------------------------------------------------------------------
@@ -357,7 +352,6 @@ is the Artin character of $\mathbb{Q}(\sqrt{d})$, and the
 four characters $\{1,\chi_4,\chi_5,\chi_4\chi_5\}$
 correspond to the four fields in the table.
 Verified for all primes $3\le p\le 31$ in \cref{tab:fib-split}.
-\qed
 \end{proof}
 
 \begin{corollary}[Self-duality unifies this paper and the Primitive Structure]%
@@ -503,7 +497,6 @@ determined by $\golden^2 = \golden + 1$;
 \cref{sec:categorical-framework}: the functoriality of $\Psi$
 is~(1), the colimit is~(7), the natural isomorphism is
 (7)$+$(4), and the span is their conjunction.
-\qed
 \end{proof}
 
 \begin{lemma}[AdS radius from S-duality]\label{lem:ads-radius}
@@ -530,7 +523,6 @@ $\ell > 0$, we get $\ell = 1$.
 The Galois conjugation $\golden\leftrightarrow\bar\golden = -1/\golden$
 is the arithmetic source: $N(\golden) = \golden\bar\golden = -1$
 is the norm that generates the S-duality at the level of~$\Rpcf$.
-\qed
 \end{proof}
 
 \begin{corollary}[$S_3$, $E^3$, and $c = 3$ from the Euler product]%
@@ -618,7 +610,6 @@ the spectral parameter derived from $S_3$ symmetry, giving
 $G_N = \mu_3 = 1/2$.
 Then $c = 3\ell/(2G_N) = 3\cdot 1/(2\cdot 1/2) = 3$
 (Brown--Henneaux with $\ell = 1$ (\cref{lem:ads-radius})).
-\qed
 \end{proof}
 
 \begin{lemma}[Spectral real parts]\label{lem:spectral-re}
@@ -641,7 +632,6 @@ Only $k = 0$ gives $\mathrm{Re} > 0$, and
 $\mathrm{Re}(\omega^0/2) = 1/2 = \mu_3$
 (\cref{prop:worldline-entropy}).
 Verified in Lean~$4$: \texttt{eigenvalue\_half} ($0$~\texttt{sorry}).
-\qed
 \end{proof}
 
 \begin{proposition}[Spectral structure of the Euler product]%
@@ -687,7 +677,6 @@ Step (4) is the identity theorem for Dirichlet series
 (\cref{rmk:euler-determines}).
 Step (5) is \cref{cor:S3-from-euler} and
 \cref{lem:spectral-re}.
-\qed
 \end{proof}
 
 \begin{remark}[Discharge of the bridge axiom]\label{rmk:bridge-resolution}
