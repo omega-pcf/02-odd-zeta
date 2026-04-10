@@ -1,0 +1,13 @@
+[project]
+name = "figures"
+version = "0.1.0"
+description = "Figure generation scripts"
+requires-python = ">=3.12"
+dependencies = [
+    "matplotlib>=3.8.0",
+    "numpy>=1.26.0",
+    "scipy>=1.11.0",
+]
+
+[project.scripts]
+generate-figures = "figures.main:main"

@@ -1,0 +1,135 @@
+\pdfoutput=1
+\RequirePackage{ifpdf}
+\ifpdf % We are running pdfTeX in pdf mode
+\documentclass[pdftex]{sigma}
+\else
+\documentclass{sigma}
+\fi
+
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{tikz-cd}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage[capitalize,nameinlink]{cleveref}
+\crefname{section}{\S}{\S\S}
+\Crefname{section}{\S}{\S\S}
+\crefname{subsection}{\S}{\S\S}
+\Crefname{subsection}{\S}{\S\S}
+\usepackage{setspace}
+\usepackage{lineno}
+\usepackage{colortbl}
+
+\setstretch{1.0}
+\linenumbers
+
+\numberwithin{equation}{section}
+
+\newtheorem{Theorem}{Theorem}[section]
+\newtheorem*{Theorem*}{Theorem}
+\newtheorem{Corollary}[Theorem]{Corollary}
+\newtheorem{Lemma}[Theorem]{Lemma}
+\newtheorem{Proposition}[Theorem]{Proposition}
+\newtheorem{Conjecture}[Theorem]{Conjecture}
+\newtheorem{Observation}[Theorem]{Observation}
+
+\theoremstyle{definition}
+\newtheorem{Definition}[Theorem]{Definition}
+\newtheorem{Note}[Theorem]{Note}
+\newtheorem{Example}[Theorem]{Example}
+\newtheorem{Remark}[Theorem]{Remark}
+% Missing environments from the monolithic source
+\newtheorem{openproblem}[Theorem]{Open Problem}
+
+%%% ====================================================================
+%%% CUSTOM COMMANDS FROM V11
+%%% ====================================================================
+\newcommand{\cat}[1]{\mathcal{#1}}
+\newcommand{\Set}{\mathbf{Set}}
+\newcommand{\Hilb}{\mathbf{Hilb}}
+\newcommand{\Met}{\mathbf{Met}}
+\newcommand{\ob}[1]{\mathrm{ob}(#1)}
+\newcommand{\norm}[1]{\|#1\|}
+\newcommand{\abs}[1]{|#1|}
+\newcommand{\Zmod}[1]{\mathbb{Z}/{#1}\mathbb{Z}}
+\newcommand{\Ztwenty}{(\mathbb{Z}/20\mathbb{Z})^\times}
+\newcommand{\Rpcf}{R_{\mathrm{PCF}}}
+\newcommand{\Ecube}{E^3}
+\newcommand{\golden}{\varphi}
+\newcommand{\OmH}{\widehat{\Omega}}
+\newcommand{\ZKsqrt}{\zeta_{\mathbb{Q}(\sqrt{5})}}
+\newcommand{\Lchi}{L(s,\chi_5)}
+\newcommand{\lean}[1]{\nolinkurl{#1}}
+\newcommand{\pcfrepo}{https://github.com/omega-pcf/02-odd-zeta}
+
+
+%%% ====================================================================
+%%% PREPRINT CUSTOMIZATION (SIGMA targeting)
+%%% ====================================================================
+\makeatletter
+% Custom FirstPageHeading to include PREPRINT VERSION
+\renewcommand{\FirstPageHeading}{%
+  \thispagestyle{empty}%
+  \noindent\raisebox{35pt}[0pt][0pt]{\makebox[\textwidth]{\protect\footnotesize \sf
+      Symmetry, Integrability and Geometry: Methods and Applications
+      \hfill  SIGMA \Volume \ (\PublicationYear), \PaperNumber,
+      \pageref*{\ArticleLabel-lp} pages}}\par
+  \noindent\raisebox{20pt}[0pt][0pt]{\makebox[\textwidth]{\protect\footnotesize \sf
+      \hfill \textbf{PREPRINT VERSION} \hfill}}\par
+  \vspace{-15pt}
+}
+
+% Adding PREPRINT legend to all footers
+\renewcommand{\@evenfoot}{\footnotesize \sf PREPRINT VERSION \hfil}
+\renewcommand{\@oddfoot}{\hfil \footnotesize \sf PREPRINT VERSION}
+
+% Redefining ArticleDates to include Zenodo DOI and remove empty SIGMA DOI
+\renewcommand{\ArticleDates}[1]{%
+  \vspace{2mm}\par\noindent {\small {\rm #1} \par
+  \noindent {\rm Zenodo All Versions DOI: \href{https://doi.org/10.5281/zenodo.17619486}{10.5281/zenodo.17619486}} \par
+  } \par
+}
+\makeatother
+
+\begin{document}
+
+\renewcommand{\PaperNumber}{***}
+
+\FirstPageHeading
+
+\ShortArticleName{Odd Zeta Values from the PCF Torus}
+\ArticleName{Odd Zeta Values from the PCF Torus: $\varphi$ and $\pi$ as Arithmetic-Geometric Sources}
+
+\Author{Jorge Armando GONZÁLEZ GARCÍA~$^{\rm a}$, Víctor Manuel GONZÁLEZ GARCÍA~$^{\rm a}$, Itzel Marion DRESSLER PÉREZ~$^{\rm b}$, Luz María GARCÍA ORDÓÑEZ~$^{\rm a}$ and M.~MORENO~$^{\rm b}$}
+
+\AuthorNameForHeading{Gonz\'alez Garc\'ia et al.}
+
+\Address{$^{\rm a)}$~TTAMAYO PUNTO COM, S.A.P.I. de C.V., Mexico}
+\EmailD{\mail{jorge@ttamayo.com}, \mail{victor@ttamayo.com}}
+
+\Address{$^{\rm b)}$~Independent Researcher}
+
+\ArticleDates{Received April 9, 2026; Preprint hosted at Zenodo}
+
+\input{src/chapters/abstract}
+
+\tableofcontents
+
+\input{src/chapters/01-introduction}
+\input{src/chapters/02-foundations}
+\input{src/chapters/03-mechanisms}
+\input{src/chapters/04-bridges}
+\input{src/chapters/05-categorical}
+\input{src/chapters/06-discussion}
+
+\pdfbookmark[1]{References}{ref}
+\bibliographystyle{sigma}
+\bibliography{src/bibliography}
+
+\LastPageEnding
+
+\end{document}

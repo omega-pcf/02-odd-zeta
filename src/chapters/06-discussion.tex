@@ -1,0 +1,571 @@
+\section{Discussion}\label{sec:elvang}
+%%% ====================================================================
+
+Elvang et al.~\cite{Elvang2026} show that in the $\mathcal{N}=4$ SYM EFT:
+the Wilson coefficients $a_{2k,q}$ are fixed by SUSY and factorisation,
+but $a_{2k-1,0} = \alpha^{\prime\,2k+1}\zeta(2k+1)$ remain free---they
+correspond to odd Riemann zeta values which, from the EFT alone, are
+external data.  The unique UV completion is the Veneziano amplitude.
+
+The polylogarithmic circuit of~\S\ref{ssec:polylog-circuit} identifies
+the source of this apparent freedom: the EFT operates in the
+\emph{additive} world of perturbative series ($\sum n^{-s}$), where the
+$\zeta(2k+1)$ appear as irreducible constants.  The PCF arithmetic
+operates in the \emph{multiplicative} fragment
+($\mathbb{F}_1$-descent, Euler product $\prod f_p$), where the
+same values are structurally determined by
+$\golden = 2\cos(\pi/5)$.  The EFT has no access to this
+multiplicative classification: it sees the values but not the
+pentagonal mechanism that produces them.
+
+Concretely:
+\begin{itemize}
+\item $\zeta(2k) = \pi^{2k}\cdot\mathbb{Q}$ (Euler formula): fixed by $\pi$
+  alone, visible in the EFT via $a_{0,0}=\zeta(2)=\pi^2/6$.
+\item $\zeta(2k+1) = \ZKsqrt(2k+1)/L(2k+1,\chi_5)$: both factors are
+  $\chi_5(a)$-projections of Hurwitz at $\{a/5\}$; the weights
+  $\chi_5(a)=\log|2\cos(a\pi/5)|/\log\golden$ are read from the pentagon.
+  These are not free---they are observations of the torus.
+\item The Veneziano amplitude is the unique UV completion of the EFT,
+  \emph{and} its odd-zeta coefficients are determined by the pentagon
+  through the Frobenius structure $\psi_p(\golden)=\golden^p$.
+  Elvang's EFT and PCF are complementary: the EFT identifies the
+  \emph{which} (Veneziano), PCF explains the \emph{why} (pentagonal arithmetic).
+\end{itemize}
+
+The Euler product is the common object linking the three readings
+of $T^2_{\mathrm{PCF}}$: physically, its period $T = 2\pi R$
+governs the worldsheet partition function; arithmetically,
+its factors are organised by the Frobenius structure
+$\psi_p(\golden) = \golden^p$; categorically, they enter $\Ztwenty$
+and determine the spectral structure through the Primitive Structure~\cite{V11}.
+The pentagon generates all three.
+The complementarity between EFT and PCF extends beyond the numerical values
+of $\zeta(2k+1)$: the \emph{structures} that produce them---the Regge tower
+on the string side, the Euler product on the arithmetic side---are the same
+object viewed from two angles.
+
+\smallskip\noindent\textbf{The Regge tower is the Euler product.}
+The Veneziano amplitude~\cite{Veneziano}
+\[
+  A_4 = \frac{\Gamma(-\alpha' s)\,\Gamma(-\alpha' u)}
+             {\Gamma(1-\alpha'(s+u))}
+\]
+has poles at $\alpha' s = n$ ($n = 0,1,2,\ldots$), forming the Regge tower
+of string states at mass level~$n$.  Expanding in $\alpha'$, the residues
+assemble the Dirichlet series $\sum_{n=1}^{\infty} n^{-s} = \zeta(s)$.
+The fundamental theorem of arithmetic factorises each level
+$n = p_1^{a_1}\cdots p_r^{a_r}$, reorganising the sum into the Euler
+product $\prod_p(1-p^{-s})^{-1}$.
+
+This reorganisation has a physical interpretation: the Euler product is the
+\emph{second quantisation} of the prime spectrum.  Each prime $p$ is a
+single-particle state $|p\rangle$; each mass level $n$ is the multi-particle
+state $|p_1^{a_1},\ldots,p_r^{a_r}\rangle$; and the partition function of
+this gas of primes is
+\[
+  Z(s) = \prod_{p}(1-p^{-s})^{-1} = \zeta(s).
+\]
+
+\smallskip\noindent\textbf{The $\chi_5$ grading classifies the string modes.}
+PCF adds the structure that the EFT cannot see.  The character $\chi_5$
+classifies each prime state:
+\begin{itemize}
+\item \textbf{Split} ($\chi_5(p)=+1$): two single-particle modes,
+  contributing $f_p(s) = (1-p^{-s})^{-2}$.
+  The prime $p$ sees both ideals above it in
+  $\mathbb{Z}[\golden]$: $(p)=\mathfrak{P}\bar{\mathfrak{P}}$.
+\item \textbf{Inert} ($\chi_5(p)=-1$): one single-particle mode at doubled
+  energy, contributing $f_p(s) = (1-p^{-2s})^{-1}$.
+  The prime $p$ sees one fused ideal of norm~$p^2$.
+\end{itemize}
+By the Chebotarev density theorem, the proportion of split primes
+converges to $1/2$---the
+same value $\mu_3 = 1/2$ that the Primitive Structure~\cite{V11}
+identifies as the norm of the spectral operator.
+The ideal-counting function $d_K(n) = \sum_{d\mid n}\chi_5(d)$
+determines the Dirichlet coefficients of $\zeta_K(s)$: each mass
+level~$n$ inherits its $\chi_5$-type from the factorisation of~$n$
+into classified primes.
+
+\smallskip\noindent\textbf{The polylogarithm is the Fourier analysis
+of the Regge tower.}
+The polylogarithm at a fifth root of unity,
+\[
+  \mathrm{Li}_s(\omega^a)
+  = \sum_{n=1}^{\infty}\frac{e^{2\pi i n a/5}}{n^s},
+\]
+is the discrete Fourier transform of the Regge tower $\{1/n^s\}$ over
+$\mathbb{Z}/5\mathbb{Z}$.
+The $\chi_5$-projection extracts
+$L(s,\chi_5) = (1/\sqrt{5})\sum_{a=1}^{4}\chi_5(a)\,
+\mathrm{Li}_s(\omega^a)$
+(\S\ref{ssec:polylog-circuit}).
+Levels with $\chi_5(n)=+1$ contribute constructively;
+levels with $\chi_5(n)=-1$ contribute destructively.
+The result measures the asymmetry between split and inert sectors of the
+Regge tower.
+
+\smallskip\noindent\textbf{The complete circuit.}
+The full determination of the odd zeta values forms a closed circuit
+originating from $\golden^2 = \golden + 1$:
+\[
+\begin{tikzcd}[column sep=1.4em, row sep=2.2em]
+  & \psi_p \ar[r] & \chi_5 \ar[r] \ar[d]
+    & {\textstyle\prod f_p} \ar[r]
+    & \zeta_K(s) \ar[r]
+    & \zeta(2k{+}1) \ar[d] \\
+  \golden^2{=}\golden{+}1 \ar[ur] \ar[dr]
+    & & \mathrm{Li}_s(\omega^a) \ar[d]
+    & & & a_{2k-1,0} \ar[d] \\
+  & \omega{+}\omega^4{=}\golden^{-1} \ar[r]
+    & L(s,\chi_5) \ar[uur, crossing over]
+    & & & A_{\mathrm{Ven}} \ar[d] \\
+  & & \text{Baker}(s{=}1) \ar[u, "\text{proved}"']
+    & & & \mathcal{N}{=}4\ \text{SUSY}
+\end{tikzcd}
+\]
+The upper branch (Frobenius $\to$ Euler product $\to$ Dedekind
+factorisation) and the lower branch (Galois traces $\to$
+polylogarithm $\to$ Baker) converge at the Veneziano amplitude.
+The chain is unconditional through the structural determination
+$\zeta(2k+1) = \ZKsqrt(2k+1)/L(2k+1,\chi_5)$; the remaining
+open questions---the algebraic independence of
+$\pi$ and $\log\golden$
+and the transcendence of $L(2k+1,\chi_5)$ for $k\geq 1$---are
+identified in Open Problems~\ref{op:polylog-baker}
+and~\ref{op:periods}.
+No cancellation mechanism internal to the
+$\overline{\mathbb{Q}}$-linear form~\eqref{eq:polylog-rep}
+distinguishes $s=1$ from $s\geq 3$.
+
+The EFT of Elvang et al.\ operates in the additive world of
+the Dirichlet series $\sum n^{-s}$: it sees the Regge tower as
+an unstructured sum of states, with no access to the fundamental
+theorem of arithmetic that converts the sum into a product and
+reveals the $\chi_5$-grading.
+The PCF arithmetic operates in the multiplicative fragment
+(\S\ref{ssec:polylog-circuit}), where the
+same values are structurally determined.
+The Veneziano amplitude, singularised by $\mathcal{N}=4$ SUSY as
+the unique UV completion, carries odd-zeta coefficients that are
+fixed by the pentagonal arithmetic of $\mathbb{Q}(\sqrt{5})$:
+SUSY selects the \emph{form} (Veneziano), the pentagon selects
+the \emph{values} ($\zeta(2k+1)$), and no free parameter remains.
+
+The isomorphism between $\golden$, one-dimensional real
+arithmetic, and $\mathbb{R}$ (Remark~\ref{rmk:standard-id})
+reveals a concrete relationship between the primes, the Euler
+product, and $\zeta(s)$ on the one hand, and string theory on
+the other.
+A one-dimensional vector rotating inside a torus---a vibrating
+string, a rotating vector in the
+PCF framework---compactifies by accumulating winding numbers
+(one per prime, via $\psi_p(\golden) = \golden^p$) and emerges
+into two dimensions as it closes on the torus
+$T^2_{\mathrm{PCF}}$.  In the PCF construction, it extends
+further to three dimensions through $\golden$, which permits an
+invariant relationship between 1D, 2D, and 3D: the golden coupling
+$z = \golden y$ (Proposition~\ref{prop:dim-chain}) extends
+$\mathbb{C}$ to $E^3$, and the $S_3$ symmetry at modulus
+$\mu_3 = 1/2$ (Corollary~\ref{cor:S3-from-euler}) couples the
+three eigenvalue directions to the complex plane, producing
+invariants---$\ell = 1$, $G_N = 1/2$, $c = 3$---demonstrated
+isomorphic to those of AdS/CFT~\cite{Maldacena,BrownHenneaux}
+(Lemma~\ref{lem:ads-radius}).
+The algebraic content is concentrated in three properties of
+$\golden^2 = \golden + 1$: the norm $N(\golden) = \golden\bar\golden = -1$
+generates the S-duality that forces $\ell = 1$; the trace
+$\operatorname{Tr}(\golden) = 1$ produces the self-duality of $\chi_5$
+that closes the functional equation; and
+$|\ker G| = 2$ contracts $\mu_2 = 1$ to $\mu_3 = 1/2$,
+coupling the three eigenvalue directions via $S_3$.
+A single algebraic relation manifests at every dimensional level.
+
+These invariants, viewed from the perspective of Borger's~\cite{Borger}
+Frobenius lifts ($\Lambda$-ring structure on $\Rpcf$), Manin's~\cite{Manin}
+quantum tori programme, Lorscheid's~\cite{Lorscheid} torified varieties, and other
+proposals for $\mathbb{F}_1$-geometry~\cite{ConnesDouglasSchwarz}---all descended from Weil's~\cite{Weil}
+proof of the Riemann hypothesis for function fields over finite
+fields, from which the programme to approach RH via absolute
+geometry derives---are the foundations on which the Primitive
+Structure~\cite{V11} builds its categorical framework.
+
+What the present paper shows is how the Euler product, which
+emerges from carrying the one-dimensional generator $\golden^\sigma$
+to the sum over all primes, is isomorphic to the second dimension
+expressed in $S_3$ symmetry, and how that dimension maintains an
+invariant relationship with $E^3$.
+The Euler product does not merely compute $\zeta(s)$: it
+simultaneously assembles the second dimension
+(convergence on~$\mathbb{C}$, upper branch of the diagram in
+Section~\ref{sec:objective}) and determines the spectral structure
+that $S_3$ symmetry imposes on the third (lower branch).
+The $S_3$ coupling between the eigenvalue directions $P$, $C$, $F$
+at modulus $\mu_3 = 1/2$
+(equation~\eqref{eq:tripartite-norm})
+produces the same invariants from the arithmetic of $\golden$ alone.
+
+The invariant relationship between dimensions is one of the reasons
+the golden ratio has been essential in the art of diverse cultures
+and epochs: the self-similarity $\golden^2 = \golden + 1$---a
+rectangle subdividing into a square and a similar rectangle---is the
+visual manifestation of the same dimensional invariance that,
+iterated over the primes, produces the odd zeta values.
+This ancient measurement principle allows the preservation of
+structure across scales; what the Euler product computes is the
+preservation of structure across primes.
+Both are $\golden^2 = \golden + 1$.
+
+This is why $\golden$ is the key to $\mathbb{F}_1$-descent without
+breaking symmetry with the integers.  Descent to $\mathbb{F}_1$
+strips addition; what survives is the multiplicative skeleton---powers,
+norms, magnitudes.  Most generators would lose contact with the primes
+at this stage: without addition, the Dirichlet series $\sum n^{-s}$
+disappears, and with it the connection between the analytic world and
+the arithmetic one.  But $\golden$ preserves the connection, because
+the Frobenius lifts $\golden^p = F_p\golden + F_{p-1}$ encode the
+splitting type of every prime $p$ through a \emph{purely
+multiplicative} operation---the $p$-th power---whose residue modulo $p$
+is $\chi_5(p)$ (Proposition~\ref{prop:fib-split}).
+The integers, and therefore the primes, remain visible at $\mathbb{F}_1$
+because $\golden^\sigma\colon\mathbb{R}\xrightarrow{\sim}\mathbb{R}_{>0}$
+is an isomorphism (Remark~\ref{rmk:standard-id}): the one-dimensional
+vector $\golden$ \emph{is} $\mathbb{R}$ as a geometric object.
+No other quadratic generator has this property
+(Proposition~\ref{prop:phi-unique}).
+
+The critical step is the moment $\golden$ meets the circle---what
+the Primitive Structure~\cite{V11} calls the \emph{Vitruvian modulus}.
+The pentagon identity $\golden = 2\cos(\pi/5)$
+(Proposition~\ref{prop:pentagon}) embeds the self-similar generator
+into the unit circle, and the torus $T^2_{\mathrm{PCF}}$ with
+$\tau = i$ and period $T = 2\pi\log\golden$ completes the embedding.
+The complex plane inherits from a dual genealogy---geometric
+(Vitruvius~\cite{Vitruvius}, Brunelleschi, Farish) and algebraic
+(Cardano, Gauss, Argand~\cite{Argand})---the triple
+$\{\text{origin, modulus, angle}\}$
+that organises every complex number as $z = |z|\,e^{i\theta}$
+(cf.\ the Primitive Structure~\cite{V11}, \S2).
+In PCF, $\golden$ generates the origin through $\golden^2 = \golden + 1$,
+$|\Omega| = 1/2$ is the modulus (radial magnitude),
+and the $S_3$ eigenvalues $\omega^k/2$ provide the angular
+directions at $120^\circ$ separation.
+The one-dimensional relations that $\golden$ carries with respect to
+itself---self-similarity, norm $-1$, trace $1$---are transported into
+this two-dimensional structure without distortion: a
+one-dimensional vector \emph{is} a two-dimensional circular manifold
+($\mathbb{R} \xrightarrow{e^{i\theta}} S^1$), and the symmetries
+it carries---periodicity, winding,
+self-similarity---are preserved in higher dimensions, as
+demonstrated in the Primitive Structure~\cite{V11} by the chain of
+forgetful functors
+$C^*$-$\mathbf{Alg}\to\mathbf{Hilb}\to\mathbf{Met}\to\mathbf{Set}$.
+This is the geometric content of the Vitruvian principle: what
+Brunelleschi formalised for perspective projection---encoding
+three-dimensional structure in two dimensions while preserving the
+ratios that define the object---$\golden$ accomplishes for the
+descent from $\mathbb{C}$ to $\mathbb{F}_1$.
+The multiplicative relations survive the loss of addition because
+$\golden^2 = \golden + 1$ is its own projection formula.
+The topological equivalence $\mathbb{R} \cong S^1$, equipped with
+$\golden$ as the generator and iterated over the primes through
+the Frobenius lifts, is the mechanism behind the odd zeta values.
+The organising principle behind $\zeta(3)$, $\zeta(5)$, $\zeta(7)$,
+\ldots\ is the dimensional invariance of $\golden^2 = \golden + 1$,
+which allows for self-consistent dimensional emergence generating
+the relationships between the PCF
+framework and several string theory frameworks demonstrated in this
+paper---through the Euler product.
+
+Elvang et al.~\cite{Elvang2026} observe that the odd zeta
+values appear to have no algebraic relationships with the even ones.
+This is a consequence of the limitation identified above:
+the EFT operates in the additive fragment, where the
+Dedekind factorisation that connects even and odd values through
+$\chi_5$ is invisible.
+The relationship is architectural:
+the compactification of the open string on a torus and the
+compactification of $\golden^\sigma$ over the primes through
+the Euler product are the same compactification.
+The string vibrates over the primes through the Frobenius
+lifts $\psi_p(\golden) = \golden^p = F_p\golden + F_{p-1}$;
+each winding number $\golden^p$ is a return to the torus
+weighted by Fibonacci.
+The $\zeta(2k+1)$ that the Veneziano amplitude carries as
+coefficients are the ratios
+$\ZKsqrt(2k+1)/L(2k+1,\chi_5)$ that this mechanism produces.
+
+\begin{remark}[The diagonal obstruction and the free-parameter illusion]%
+\label{rmk:lawvere-diagonal}
+The apparent freedom of $\zeta(2k+1)$ in the EFT admits a precise
+logical diagnosis.
+Lawvere~\cite{Lawvere} proved that in any cartesian closed category
+admitting a point-surjective morphism $f\colon A\times A\to Y$, every
+endomorphism of~$Y$ has a fixed point; Yanofsky~\cite{Yanofsky} generalised this to
+show that the paradoxes of Liar, Russell, G\"odel, and Turing are
+instances of this single diagonal construction
+$g(s) = \alpha(f(s,s))$.
+The EFT possesses both additive and multiplicative structure
+($\sum a_n\alpha^{\prime n}$ and the operator product): it lives in
+a category with the diagonal morphism $f\colon A\times A\to Y$
+required by Lawvere's theorem.  In such a setting, the values
+$\zeta(2k+1)$ are analogous to G\"odel sentences: true (the
+Veneziano amplitude uses them) but not derivable from within the
+system.
+
+The PCF construction escapes this obstruction by descending to the
+multiplicative fragment $\Ztwenty$, where addition is destroyed
+(Proposition~2 of~\cite{V11}, verified in Lean).  Without addition,
+the diagonal $f(s,s)$ cannot be formed: the No-Diagonal theorem
+(Theorem~3 of~\cite{V11}, verified in Lean) establishes
+$\norm{\Omega} = 1/2 < 1$, blocking the point-surjectivity that
+Lawvere's theorem requires.
+This fragment is decidable in the sense of Tarski~(\cite{V11},
+\S2.4): a purely multiplicative domain admits elimination of
+quantifiers and is therefore complete.
+Within this decidable fragment, $\zeta(2k+1)$ is determined
+(Theorem~\ref{thm:pentagon-odd}): the Frobenius lifts
+$\psi_p(\golden) = \golden^p$, operating without addition,
+classify every prime and assemble the Euler product that produces
+$\zeta(2k+1) = \ZKsqrt(2k+1)/L(2k+1,\chi_5)$.
+
+The free parameter of the EFT is not a property of $\zeta(2k+1)$
+but of the system from which it is observed: a system with the
+diagonal structure sees indeterminacy; a system without it sees
+determination.
+\end{remark}
+
+%%% ====================================================================
+\section{Verification}\label{sec:verification}
+%%% ====================================================================
+
+All identities in this paper have been verified at 50-digit precision
+using \texttt{mpmath} and \texttt{sympy} in the accompanying script
+\texttt{verify\_odd\_zeta\_pcf\_unified.py}.  The 207 checks cover:
+Frobenius lifts (Section~\ref{sec:background}),
+prime decomposition (Section~\ref{sec:primes}),
+Euler product convergence (Section~\ref{sec:primes}),
+factorisation (Section~\ref{sec:factorisation}),
+the fundamental formula (Section~\ref{sec:fundamental}),
+the even Bernoulli formula (Section~\ref{sec:even}),
+odd-value determination (Section~\ref{sec:pentagon}),
+and the categorical framework (Section~\ref{sec:categorical-framework}):
+Frobenius functoriality $\Psi(mn) = \Psi(m)\circ\Psi(n)$,
+the four Dedekind factorisations of $\mathbf{QuadExt}_{20}$
+(Theorem~\ref{thm:dedekind-natural}),
+partial Euler product convergence to the colimit
+(Proposition~\ref{prop:euler-colimit}), and
+co-determination by~$G$ (Theorem~\ref{thm:co-determination}),
+terminality of $\mathrm{Spec}(\OmH)$
+(Definition~\ref{def:SpecOmega}),
+the $\Lambda$-ring congruence $F_p\equiv\chi_5(p)\pmod{p}$
+(Remark~\ref{rmk:lambda-ring}),
+closure of $\{1,\chi_4,\chi_5,\chi_4\chi_5\}$ under multiplication
+(Theorem~\ref{thm:dedekind-natural}),
+and monoidal multiplicativity of partial Euler products
+(Remark~\ref{rmk:monoidal}).
+The classical bridge (Remark~\ref{rmk:classical-bridge}) is verified
+through $G$-fiber consistency (same fiber implies same factor type),
+the four Gelfand $L$-functions, and the spectral mapping theorem
+applied to $\OmH^2$ and $\OmH^3$.
+The Weil analogy (\S\ref{ssec:weil-analogy}) is verified through
+the $G$-homomorphism (all $64$ pairs), surjectivity ($4$ fibers),
+the upper bound (all $\mathrm{Re}(\mathrm{spec}(\OmH))\le\mu_3$),
+the lower bound prerequisite (exponent~$2$), and the eigenvalue
+moduli $|\omega^k/2|=1/2$.
+The polylogarithmic circuit (\S\ref{ssec:polylog-circuit}) is
+verified through the Galois traces $\omega+\omega^4 = 1/\golden$,
+the Gauss sum $\tau(\chi_5) = \sqrt{5}$, the polylog representation
+$L(s,\chi_5) = (1/\sqrt{5})\sum\chi_5(a)\mathrm{Li}_s(\omega^a)$
+for $s = 3,5,7,9,11$, Baker's reduction at $s=1$
+($|1-\omega^2|^2/|1-\omega|^2 = \golden^2$), the additive
+destruction of $\Ztwenty$, and the Fourier projection
+$\cos(2\pi n/5)-\cos(4\pi n/5) = (\sqrt{5}/2)\chi_5(n)$.
+All checks pass with zero errors, including the Fibonacci splitting criterion
+$\chi_5(p)\equiv F_p\pmod{p}$ (Section~\ref{sec:frobenius-split}),
+the Mersenne bridge $\golden^{\lambda_{\log}}=2$
+(Section~\ref{sec:rpcf-role}), the pentagonal formulas
+(Section~\ref{sec:pentagon}),
+and the spectral structure: $\mu_3 = 1/2$, eigenvalues
+$\omega^k/2$, $\ell = 1$ from S-duality, Brown--Henneaux
+$c = 3$, and the diagonal obstruction
+(Section~\ref{ssec:unifying}, Lemma~\ref{lem:ads-radius}).
+
+The algebraic and spectral results of Sections~\ref{sec:bridges}
+and~\ref{ssec:unifying} have been verified in Lean~$4$ with
+$0$~\texttt{sorry}: eigenvalue real parts
+(\texttt{eigenvalue\_half}), spectral uniqueness
+(\texttt{spectral\_uniqueness}), the Galois functor
+(\texttt{galois\_functor\_complete},~\cite{V11}), and the
+pentagonal identity $\golden = 2\cos(\pi/5)$
+(\texttt{cos\_pi\_five}).
+
+The categorical structures of Section~\ref{sec:categorical-framework}---the
+Frobenius functor (functoriality verified via
+$\psi_p\circ\psi_q=\psi_{pq}$), the co-determination theorem
+(reducing to \texttt{G\_homomorphism}, \texttt{G\_surjective},
+\texttt{G\_kernel} in Lean), and the spectral uniqueness
+(reducing to \texttt{spectral\_uniqueness} in Lean)---are
+verified through the Lean~$4$ formalisation of the Primitive
+Structure~\cite{V11} with $0$~\texttt{sorry}.
+
+%%% ====================================================================
+\section{Open Problems}\label{sec:open}
+%%% ====================================================================
+
+\begin{openproblem}\label{op:closed-form}
+Does the pentagonal Hurwitz structure give a closed-form expression for
+$L(2k+1,\chi_5)$ in terms of $\log\golden$ and $\pi$ for $k\geq 1$?
+The case $k=0$ gives $L(1,\chi_5) = T/(\pi\sqrt{5})$.
+If such a formula exists, Theorem~\ref{thm:pentagon-odd} would yield
+an explicit formula $\zeta(2k+1) = f_k(\golden,\pi)$.
+\end{openproblem}
+
+\begin{openproblem}
+Does the period $T = 2\pi\log\golden$ appear explicitly in the special
+values $\ZKsqrt(2k+1)$ via the Kronecker limit formula or Siegel units?
+\end{openproblem}
+
+\begin{openproblem}\label{op:lean-dirichlet}
+The accompanying Lean~$4$ file \texttt{odd\_zeta\_pcf\_v1.lean}
+formalises the algebraic chain (Fibonacci splitting criterion,
+$G$, eigenvalues, pentagon identity) with $0$~\texttt{sorry}.
+The Euler product colimit (Proposition~\ref{prop:euler-colimit}),
+the Dedekind natural isomorphism
+(Theorem~\ref{thm:dedekind-natural}), and the class-number formula
+are not currently formalisable: Mathlib lacks Dirichlet series,
+the spectral mapping theorem for Banach algebras, and the
+identity theorem for analytic continuation.
+When these become available, can the full span
+(Definition~\ref{def:pcf-span}) be formalised, thereby
+converting the \texttt{bridge\_axiom} of the Primitive
+Structure~\cite{V11} from an axiom to a theorem?
+\end{openproblem}
+
+\begin{openproblem}[Polylogarithmic Baker conjecture]\label{op:polylog-baker}
+Baker's theorem establishes that a non-vanishing
+$\overline{\mathbb{Q}}$-linear combination of logarithms of
+algebraic numbers is transcendental.  At $s=1$, this proves
+$L(1,\chi_5)\notin\overline{\mathbb{Q}}$
+(\S\ref{ssec:polylog-circuit}).
+The polylogarithmic representation~\eqref{eq:polylog-rep} has
+\emph{identical} $\overline{\mathbb{Q}}$-linear structure for
+all $s\ge 1$: same points $\omega^a$, same weights
+$\chi_5(a)/\sqrt{5}$, only the kernel $\mathrm{Li}_s$ changes.
+Does the transcendence persist?
+Specifically: is
+$\sum_{a=1}^{4}\chi_5(a)\,\mathrm{Li}_s(\omega^a)\ne 0$
+transcendental for all integers $s\ge 1$?
+The case $s=1$ is Baker's theorem (proved); the cases $s\ge 2$
+are open.  A positive answer would establish the transcendence
+of $L(2k+1,\chi_5)$ for all $k\ge 0$
+(Proposition~\ref{prop:three-reps}).
+\end{openproblem}
+
+\begin{openproblem}[Connection with Grothendieck's period conjecture]%
+\label{op:periods}
+For positive integers $s$, the value $L(s,\chi_5)$ is a
+\emph{period} in the sense of Kontsevich--Zagier: it is the
+integral of an algebraic differential form over an algebraically
+defined domain.  Grothendieck's period conjecture predicts that
+all algebraic relations between periods arise from the geometry
+of the underlying motive.  The motive associated to $L(s,\chi_5)$
+is non-trivial for all $s\ge 1$; the period conjecture would
+therefore imply that $L(s,\chi_5)\notin\overline{\mathbb{Q}}$
+for all $s\ge 1$---subsuming Open Problem~\ref{op:polylog-baker}
+as a special case.
+Does the pentagonal structure of $\chi_5$---the fact that the
+motive is controlled by $\golden = 2\cos(\pi/5)$---provide
+additional geometric constraints that could be exploited toward
+the period conjecture in this case?
+\end{openproblem}
+
+\begin{openproblem}[String theory connections from the categorical framework]%
+\label{op:string-categorical}
+The connections developed in \S\ref{sec:elvang}---between the Euler
+product, the worldsheet partition function, AdS/CFT invariants, and
+the $S_3$ spectral structure---arise from the terminal object
+$\mathrm{Spec}(\OmH)$ (Definition~\ref{def:SpecOmega}) and the
+arithmetic--spectral span (Definition~\ref{def:pcf-span}).
+Can these connections be developed systematically from this
+categorical starting point into a unified framework relating
+$\mathbb{F}_1$-geometry, string compactification, and the
+Virasoro algebra?
+\end{openproblem}
+
+%%% ====================================================================
+\section{Conclusion}\label{sec:conclusion}
+%%% ====================================================================
+
+The chain from the pentagon to the odd zeta values
+(Proposition~\ref{prop:pentagon-dictates}, Remark~\ref{rmk:pentagonal-dictate}):
+\[
+\begin{split}
+  &\golden=2\cos\tfrac{\pi}{5}
+  \;\to\;
+  \chi_5(a)=\tfrac{\log|2\cos(a\pi/5)|}{\log\golden}\\[3pt]
+  &\quad\to\;
+  L(s,\chi_5)=\tfrac{\textstyle\sum_a\chi_5(a)\,\zeta(s,a/5)}{5^s}
+  \;\to\;
+  \zeta(2k+1)=\tfrac{\ZKsqrt(2k+1)}{L(2k+1,\chi_5)},
+\end{split}
+\]
+shows that the odd zeta values $\zeta(2k+1)$ are structurally
+determined by $\golden$ and $\pi$ via the pentagonal arithmetic
+of $\mathbb{Q}(\sqrt{5})$.  Every step in this chain derives from
+the single relation $\golden^2 = \golden + 1$
+(Theorem~\ref{thm:unifying}).
+
+The one-dimensional generator $\golden^\sigma$ reaches the
+two-dimensional torus $T^2_{\mathrm{PCF}}$ by two routes:
+geometrically, the tower closes with period $T = 2\pi R$
+($R = \log\golden$); arithmetically, the Frobenius lifts
+$\golden^p = F_p\golden + F_{p-1}$, iterated over all primes,
+assemble the Euler product $\ZKsqrt(s)$ on~$\mathbb{C}$.
+The dimensional structure emerges deterministically
+(Corollary~\ref{cor:S3-from-euler}):
+\[
+  \underbrace{\golden^2 = \golden+1}_{\textup{1D generator}}
+  \;\to\;
+  \underbrace{\prod_p f_p(s)}_{\textup{Euler product on }\mathbb{C}}
+  \;\to\;
+  \underbrace{|\ker G|=2}_{\textup{contraction}}
+  \;\to\;
+  \underbrace{\mu_3 = \tfrac{1}{2}}_{\textup{norm}}
+  \;\to\;
+  \underbrace{S_3}_{\textup{symmetry}}
+  \;\to\;
+  \underbrace{E^3,\; c=3.}_{\textup{geometry}}
+\]
+No dimension is postulated; each is derived from $\golden^2 = \golden + 1$.
+
+The regulator $R = \log\golden$ is the common invariant:
+\begin{itemize}
+\item the \textbf{arithmetic size} of the field: $L(1,\chi_5)=2R/\sqrt{5}$;
+\item the \textbf{worldsheet period}: $T_{\mathrm{PCF}}=2\pi R$ (Def.~\ref{def:torus});
+\item the \textbf{entropy anchor}: $S_{\mathrm{BH}}/k_B=\lambda_{\log}\cdot R$ (Prop.~\ref{prop:worldline-entropy}).
+\end{itemize}
+The categorical framework of Section~\ref{sec:categorical-framework}
+makes the structure of this determination precise: the Frobenius
+system is a functor from the multiplicative monoid of integers to
+the endomorphisms of $\Rpcf$; the Euler product is the colimit of
+the partial products determined by $G$; the Dedekind factorisation
+is a natural isomorphism across the four quadratic extensions
+classified by $G$; and the two branches---arithmetic (values of
+$\zeta$) and spectral (eigenvalues of $\OmH$)---form a span with
+common source $G$.  This span provides the mathematical content of
+the \texttt{bridge\_axiom} formalised in the Primitive
+Structure~\cite{V11}: the single map $G$ that produces the odd zeta
+values also produces the spectral constraint $\mu_3=1/2$.
+
+The present paper provides both the arithmetic reading of
+$T^2_{\mathrm{PCF}}$ (class-number formula, Euler product,
+Frobenius structure) and its physical connections
+(partition function, Bekenstein--Hawking entropy,
+Brown--Henneaux central charge $c = 3$).
+The values $\zeta(2k+1)$ that appear free in the $\mathcal{N}=4$
+EFT of Elvang et al.~\cite{Elvang2026} are dictated by the pentagon:
+the EFT identifies the unique UV completion (Veneziano); PCF identifies
+why its odd-zeta parameters take the values they do.
+

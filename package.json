@@ -1,0 +1,41 @@
+{
+  "name": "@omega-pcf/02-odd-zeta",
+  "version": "1.0.0",
+  "description": "Odd Zeta Values from the PCF Torus: φ and π as Arithmetic-Geometric Sources",
+  "type": "module",
+  "scripts": {
+    "type-check": "tsc --noEmit",
+    "generate:figures": "cd scripts/figures && uv run python main.py",
+    "generate:figures:list": "cd scripts/figures && uv run python main.py --list",
+    "generate:zenodo": "pnpm exec tsx scripts/generate-zenodo.ts",
+    "build": "pnpm exec tsx scripts/build.ts",
+    "build:full": "pnpm run generate:figures && pnpm run build",
+    "release": "dotenv -e .env -- release-it",
+    "release:dry-run": "pnpm run build:full && dotenv -e .env -- release-it --dry-run --no-git.requireCleanWorkingDir"
+  },
+  "packageManager": "pnpm@9.0.0",
+  "private": true,
+  "devDependencies": {
+    "@iarna/toml": "^2.2.5",
+    "@release-it/bumper": "^7.0.0",
+    "@release-it/conventional-changelog": "^10.0.6",
+    "@types/node": "^20.0.0",
+    "conventional-changelog-conventionalcommits": "^9.3.1",
+    "conventional-commits-parser": "^6.4.0",
+    "dotenv-cli": "^11.0.0",
+    "release-it": "^19.2.4",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0",
+    "yaml": "^2.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/omega-pcf/02-odd-zeta.git"
+  },
+  "author": "",
+  "license": "CC-BY-4.0",
+  "bugs": {
+    "url": "https://github.com/omega-pcf/02-odd-zeta/issues"
+  },
+  "homepage": "https://github.com/omega-pcf/02-odd-zeta#readme"
+}

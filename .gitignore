@@ -1,0 +1,51 @@
+.env
+.DS_Store
+/*.code-workspace
+
+/tmp
+
+# LaTeX auxiliary files (but keep PDF for Zenodo)
+build/*.aux
+build/*.bbl
+build/*.bcf
+build/*.blg
+build/*.fdb_latexmk
+build/*.fls
+build/*.log
+build/*.out
+build/*.toc
+build/*.run.xml
+build/*.suppinfo
+build/*.synctex*
+!build/*.pdf
+
+# Node
+node_modules/
+package-lock.json
+pnpm-lock.yaml
+
+# TypeScript
+dist/
+*.tsbuildinfo
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.venv/
+venv/
+ENV/
+env/
+.pytest_cache/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Python virtual environments (uv)
+.venv/
+venv/
+ENV/
+env/

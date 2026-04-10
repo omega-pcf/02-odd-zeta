@@ -1,0 +1,1 @@
+34ed19db2193e0aa9e3aab7f25a75d2a9b4a6077898e1380882d0e13beaa4f7d  build/document-v1.0.0.pdf
