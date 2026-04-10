@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.1.1](https://github.com/omega-pcf/02-odd-zeta/compare/v1.1.0...v1.1.1) (2026-04-10)
+
+### Documentation
+
+* integrate Zenodo DOI in manuscript and update README metadata ([d233fc7](https://github.com/omega-pcf/02-odd-zeta/commit/d233fc797216761f7d9268962255b1295f6ed79a))
+
 ## 1.1.0 (2026-04-10)
 
 ### Features
