@@ -1,0 +1,33 @@
+# Odd Zeta Values from the PCF Torus: φ and π as Arithmetic-Geometric Sources
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19492791.svg)](https://doi.org/10.5281/zenodo.19492791)
+
+## Abstract
+
+We demonstrate that the odd values ζ(2k+1) of the Riemann zeta function are structurally determined by φ=(1+√5)/2 and π. The Euler product of ζ is built from local factors f_p(s), one for each prime. We prove that the Frobenius lift φ^p = F_p φ + F_{p-1}—where F_n is the n-th Fibonacci number—determines the splitting type of every prime p in Z[φ], and hence every f_p(s). Through the Dedekind factorisation ζ(s) = ζ_K(s)/L(s,χ_5), this determines ζ(s) completely: the isomorphism between the Frobenius structure and the Euler product is demonstrated at every level (primes, splitting types, local factors, L-function), anchored by the base case L(1,χ_5) = 2log(φ)/√5, which expresses the L-function value entirely in terms of φ.
+
+## Citation
+
+```bibtex
+@article{Gonzalez2026OddZeta,
+  author  = {González García, J. A. and others},
+  title   = {Odd Zeta Values from the PCF Torus: φ and π as Arithmetic-Geometric Sources},
+  journal = {Zenodo},
+  year    = {2026},
+  doi     = {10.5281/zenodo.19492791},
+  url     = {https://doi.org/10.5281/zenodo.19492791}
+}
+```
+
+## Structure
+
+- `/src`: LaTeX manuscript sources.
+- `/lean`: Formal verification of the arithmetic structures.
+- `/scripts`: Verification and figure generation tools.
+
+## Verification
+
+To verify the formal results:
+```bash
+pnpm run verify
+```
