@@ -8,7 +8,7 @@ is determined by the Legendre/Kronecker symbol $\chi_5(p) = (5/p)$:
 \begin{proposition}[Local factors]\label{prop:local-factors}
 The Dedekind zeta function of $\mathbb{Q}(\sqrt{5})$ has the Euler product
 \begin{equation}\label{eq:euler-Qsqrt5}
-  \ZKsqrt(s)
+  \zeta_{\mathbb{Q}(\sqrt{5})}(s)
   = \prod_{p\text{ prime}} f_p(s),
 \end{equation}
 where
@@ -30,7 +30,7 @@ $\psi_p(\golden) = \golden^p$.
 Standard theory of Dedekind zeta functions for quadratic fields; see
 e.g.~\cite{Neukirch}.  The claim that $f_p$ is determined by $\psi_p$ follows
 from the fact that $\chi_5(p) \equiv F_p \pmod{p}$
-(Proposition~\ref{prop:fib-split}): whether $\golden^p$ is
+(\cref{prop:fib-split}): whether $\golden^p$ is
 congruent to $\golden$ or $\bar\golden$ modulo $p$ determines the splitting.
 \qed
 \end{proof}
@@ -41,7 +41,7 @@ congruent to $\golden$ or $\bar\golden$ modulo $p$ determines the splitting.
 
 \begin{theorem}[Factorisation]\label{thm:factorisation}
 \begin{equation}\label{eq:factorisation}
-  \zeta(s) = \frac{\ZKsqrt(s)}{L(s,\chi_5)},
+  \zeta(s) = \frac{\zeta_{\mathbb{Q}(\sqrt{5})}(s)}{L(s,\chi_5)},
 \end{equation}
 where $L(s,\chi_5) = \prod_p(1-\chi_5(p)p^{-s})^{-1}$ is the Dirichlet
 $L$-function of the symbol $\chi_5 = (5/\cdot)$.
@@ -60,7 +60,7 @@ See~\cite{Neukirch}, Ch.~VII.
 The identity $\prod_p(1-p^{-s})^{-1} = \sum_{n=1}^{\infty}n^{-s}$
 for $\mathrm{Re}(s)>1$ (Euler~\cite{Euler}) follows from unique
 factorisation of $\mathbb{N}$
-(Remark~\ref{rmk:standard-id}).  The Dirichlet coefficients
+(\cref{rmk:standard-id}).  The Dirichlet coefficients
 $a_n = 1$ determine $\zeta(s)$ on all of $\mathbb{C}$ by analytic
 continuation (identity theorem for Dirichlet series; Riemann~\cite{Riemann}).
 Therefore the Euler product---and hence $G$---determines $\zeta(s)$
@@ -69,11 +69,11 @@ its zeros.
 \end{remark}
 
 \begin{remark}[Naturality of the factorisation]\label{rmk:natural-factorisation}
-The factorisation $\zeta(s) = \ZKsqrt(s)/L(s,\chi_5)$ is not specific
+The factorisation $\zeta(s) = \zeta_{\mathbb{Q}(\sqrt{5})}(s)/L(s,\chi_5)$ is not specific
 to $\mathbb{Q}(\sqrt{5})$: it is the $K=\mathbb{Q}(\sqrt{5})$
 component of a natural isomorphism $\eta$ across all quadratic
 extensions classified by $G$
-(Theorem~\ref{thm:dedekind-natural}).
+(\cref{thm:dedekind-natural}).
 The four components of $\eta$ correspond to the four fibers of the
 Galois functor.
 \end{remark}
@@ -107,7 +107,7 @@ $T=2\pi\log\golden$.
 \end{proof}
 
 \begin{remark}\label{rmk:pi-origin}
-The formula~\eqref{eq:L1} exposes the role of the circle.
+The \cref{eq:L1} exposes the role of the circle.
 Writing $L(1,\chi_5) = T/(\pi\sqrt{5})$, we see that $\pi$ from the torus
 period $T=2\pi\log\golden$ cancels against $\pi$ in the denominator,
 leaving $2\log\golden/\sqrt{5}$.  The $\pi$---and hence the circle of
@@ -188,13 +188,13 @@ $\sin(2\pi/5)\sin(3\pi/5)=\sin^2(2\pi/5)$.
 The result follows from the product formula
 $\prod_{a=1}^{4}\sin(\pi a/5) = \sqrt{5}/4$ and
 $2\sin(\pi/5)\cdot 2\sin(2\pi/5) = \sqrt{5}$,
-combined with Proposition~\ref{prop:pentagon}.
+combined with \cref{prop:pentagon}.
 Verified at 50 digits: error $< 10^{-51}$.
 \end{proof}
 
 \begin{corollary}[Derivation of $L(1,\chi_5)$ from pentagon]\label{cor:L1}
-The class-number formula (Theorem~\ref{thm:L1}) follows from
-Proposition~\ref{prop:gauss-log} via the Gauss--Lerch formula for
+The class-number formula (\cref{thm:L1}) follows from
+\cref{prop:gauss-log} via the Gauss--Lerch formula for
 primitive even characters with conductor $f$ and Gauss sum
 $\tau(\chi_5)=\sqrt{5}$:
 \begin{equation}\label{eq:gauss-lerch}
@@ -205,7 +205,7 @@ $\tau(\chi_5)=\sqrt{5}$:
   = \frac{2\log\golden}{\sqrt{5}}
   = \frac{T}{\pi\sqrt{5}}.
 \end{equation}
-The pentagon generates $\golden$ (Proposition~\ref{prop:pentagon}),
+The pentagon generates $\golden$ (\cref{prop:pentagon}),
 which enters $L(1,\chi_5)$ through the Gauss sum over
 $\sin(\pi a/5)$.
 \end{corollary}
@@ -226,7 +226,7 @@ $\psi(a/5) = -\gamma - \log(5) - \frac{\pi}{2}\cot(\pi a/5)
 + 2\sum_{k=1}^{2}\cos(2\pi ka/5)\log\sin(\pi k/5)$
 (Gauss's digamma theorem).  The $\chi_5$-weighted sum eliminates
 $\gamma$ and $\log(5)$ (since $\sum\chi_5(a)=0$) and reduces to the
-logarithmic formula of Proposition~\ref{prop:gauss-log}.
+logarithmic formula of \cref{prop:gauss-log}.
 Verified at 50 digits: error $< 10^{-50}$.
 \end{proof}
 
@@ -251,7 +251,7 @@ evaluated at the residues $\{1,2,3,4\}\subset\mathbb{Z}/5\mathbb{Z}$.
 \end{proposition}
 
 \begin{proof}
-By Proposition~\ref{prop:pentagon}:
+\Cref{prop:pentagon} gives:
 $2\cos(\pi/5)=\golden$ and $2\cos(2\pi/5)=\golden^{-1}$.
 By symmetry of cosine: $2\cos(3\pi/5)=-\golden^{-1}$ and $2\cos(4\pi/5)=-\golden$.
 Hence $|2\cos(a\pi/5)|\in\{\golden,\golden^{-1}\}$ for all $a\in\{1,2,3,4\}$.
@@ -267,17 +267,17 @@ Verified at 50 digits: error $<10^{-44}$ for all four values.
 \end{proof}
 
 \begin{remark}[Connection to the Galois functor]\label{rmk:pentagon-G}
-The pentagonal cosines of Proposition~\ref{prop:pentagon-dictates}
+The pentagonal cosines of \cref{prop:pentagon-dictates}
 reappear as the $(0,1)$-component of the Galois functor
 $G\colon\Ztwenty\to\mathbb{Z}_2\times\mathbb{Z}_2$
-(Theorem~\ref{thm:bridge3} below): $\chi_5(a)$ is simultaneously
+(\cref{thm:bridge3} below): $\chi_5(a)$ is simultaneously
 the pentagonal fingerprint~\eqref{eq:chi5-from-pentagon} and the
 second coordinate of $G(a\bmod 20)$.
 \end{remark}
 
 \begin{remark}[The pentagonal dictate]
   \label{rmk:pentagonal-dictate}
-Proposition~\ref{prop:pentagon-dictates} makes explicit what
+\Cref{prop:pentagon-dictates} makes explicit what
 ``$\golden$ dictates $\chi_5$'' means concretely.
 The chain is:
 \[
@@ -288,7 +288,7 @@ The chain is:
   &\quad\Rightarrow\;
   L(s,\chi_5) = \tfrac{1}{5^s}\textstyle\sum_a \chi_5(a)\,\zeta(s,\tfrac{a}{5})
   \;\Rightarrow\;
-  \zeta(2k+1) = \tfrac{\ZKsqrt(2k+1)}{L(2k+1,\chi_5)}.
+  \zeta(2k+1) = \tfrac{\zeta_{\mathbb{Q}(\sqrt{5})}(2k+1)}{L(2k+1,\chi_5)}.
 \end{split}\]
 The values $\zeta(2k+1)$ that appear as free parameters in the EFT of
 Elvang et al.\ are not free: they are Hurwitz projections at the
@@ -326,20 +326,19 @@ The three kernels at special values:
 In all three cases the organising structure is identical: the same
 $\chi_5(a)$-weights over the same pentagonal points $\{a/5\}$.
 \end{theorem}
-
 \begin{proof}
-Equation~\eqref{eq:hurwitz-rep} is standard (Apostol, Thm.~12.6).
+\Cref{eq:hurwitz-rep} is standard (Apostol, Thm.~12.6).
 The kernel at $s=1$ follows from $\zeta(s,x) = 1/(s-1) + \psi(x)+O(s-1)$
 combined with $\sum\chi_5(a)=0$ (so the $1/(s-1)$ pole and $\log 5$
-cancel), giving Proposition~\ref{prop:digamma} and hence
-Corollary~\ref{cor:L1}.  The kernel at even $s$ gives
-Theorem~\ref{thm:even}.  The odd kernel~\eqref{eq:kernel-odd} is the
+cancel), giving \cref{prop:digamma} and hence
+\cref{cor:L1}.  The kernel at even $s$ gives
+\cref{thm:even}.  The odd kernel~\cref{eq:kernel-odd} is the
 direct Hurwitz series, convergent for $s>1$.
 \end{proof}
 
 \begin{theorem}[Pentagonal determination of odd zeta values]%
   \label{thm:pentagon-odd}
-For $k\geq 0$, the factorisation $\zeta(2k+1) = \ZKsqrt(2k+1)/L(2k+1,\chi_5)$
+For $k\geq 0$, the factorisation $\zeta(2k+1) = \zeta_{\mathbb{Q}(\sqrt{5})}(2k+1)/L(2k+1,\chi_5)$
 expresses $\zeta(2k+1)$ as the ratio of two $\chi_5$-projections of
 Hurwitz zeta at pentagonal points.  All data are generated by:
 \begin{enumerate}
@@ -352,29 +351,27 @@ Hurwitz zeta at pentagonal points.  All data are generated by:
 The case $k=0$ yields the exact closed form
 $L(1,\chi_5) = T/(\pi\sqrt{5})$.
 For $k\geq 1$, the determination is structural: $L(2k+1,\chi_5)$ and
-$\ZKsqrt(2k+1)$ are both projections of the same pentagonal Hurwitz
+$\zeta_{\mathbb{Q}(\sqrt{5})}(2k+1)$ are both projections of the same pentagonal Hurwitz
 structure, organised by $\chi_5 = $ Artin character of
 $\mathbb{Q}(\sqrt{5})/\mathbb{Q}$.  No additional parameter beyond
 $\golden$, $\pi$, and the pentagonal arithmetic of $\mathbb{Q}(\sqrt{5})$
 is required.
 \end{theorem}
-
 \begin{proof}
-Items (1)--(3) are Propositions~\ref{prop:pentagon},
-\ref{prop:gauss-log}, and Theorem~\ref{thm:bridge3} respectively.
-The factorisation is Theorem~\ref{thm:factorisation}.
-The Hurwitz representation is Theorem~\ref{thm:hurwitz}.
-The $k=0$ closed form is Corollary~\ref{cor:L1}.
-For $k\geq 1$: both $\ZKsqrt(2k+1) = \zeta(2k+1)\cdot L(2k+1,\chi_5)$
+Items (1)--(3) are \cref{prop:pentagon,prop:gauss-log} and \cref{thm:bridge3} respectively.
+The factorisation is \cref{thm:factorisation}.
+The Hurwitz representation is \cref{thm:hurwitz}.
+The $k=0$ closed form is \cref{cor:L1}.
+For $k\geq 1$: both $\zeta_{\mathbb{Q}(\sqrt{5})}(2k+1) = \zeta(2k+1)\cdot L(2k+1,\chi_5)$
 and $L(2k+1,\chi_5) = 5^{-(2k+1)}\sum\chi_5(a)\zeta(2k+1,a/5)$
 are determined by the Hurwitz series at pentagonal points weighted
 by $\chi_5$.  Neither factor has a simpler closed form (Open
-Problem~\ref{op:closed-form}), but their ratio $\zeta(2k+1)$ is
+Problem~\cref{op:closed-form}), but their ratio $\zeta(2k+1)$ is
 fixed by the arithmetic of $\Rpcf$ without any free parameter.
 \end{proof}
 
 \begin{remark}[Structural vs.\ closed-form determination]\label{rmk:structural}
-Theorem~\ref{thm:pentagon-odd} establishes \emph{structural} determination: the
+\Cref{thm:pentagon-odd} establishes \emph{structural} determination: the
 pentagonal lattice $\{a/5\}$, the Artin character $\chi_5$, and the
 Hurwitz kernel $\zeta(2k+1,\cdot)$ are all fixed by $\golden$ and $\pi$
 without additional parameters.  A closed-form expression
@@ -411,23 +408,23 @@ Explicitly:
 \]
 
 \textbf{Step~3: Euler product $\to$ $\zeta(3)$.}
-$\ZKsqrt(3) = \prod_p f_p(3)$ and
+$\zeta_{\mathbb{Q}(\sqrt{5})}(3) = \prod_p f_p(3)$ and
 $L(3,\chi_5) = \prod_p(1-\chi_5(p)p^{-3})^{-1}$.
 Their ratio gives
 \[
-  \zeta(3) = \frac{\ZKsqrt(3)}{L(3,\chi_5)} = 1.2020569\ldots
+  \zeta(3) = \frac{\zeta_{\mathbb{Q}(\sqrt{5})}(3)}{L(3,\chi_5)} = 1.2020569\ldots
 \]
 Every factor in both products is determined by $\chi_5(p)$,
 which is determined by $F_p\bmod p$
-(Proposition~\ref{prop:fib-split}), which is determined
+(\cref{prop:fib-split}), which is determined
 by $\golden^p = F_p\golden + F_{p-1}$
-(Definition~\ref{def:frobenius}).
+(\cref{def:frobenius}).
 No parameter is chosen; the pentagon dictates the value.
 Verified at 50-digit precision
 (\texttt{verify\_odd\_zeta\_pcf\_unified.py}).
 
-The mechanism extends to all odd values.  Table~\ref{tab:zeta-values}
-displays the decomposition $\zeta(2k+1) = \ZKsqrt(2k+1)/L(2k+1,\chi_5)$
+The mechanism extends to all odd values.  \Cref{tab:zeta-values}
+displays the decomposition $\zeta(2k+1) = \zeta_{\mathbb{Q}(\sqrt{5})}(2k+1)/L(2k+1,\chi_5)$
 alongside the even values $\zeta(2k) = r_k\pi^{2k}$, illustrating the
 two regimes: even values governed by $\pi$ alone, odd values by both
 $\golden$ and $\pi$.
@@ -436,13 +433,13 @@ $\golden$ and $\pi$.
 \centering
 \caption{Zeta values from $s = 2$ to $s = 13$.  Even values (shaded)
 are rational multiples of $\pi^{2k}$; odd values are ratios
-$\ZKsqrt(s)/L(s,\chi_5)$, both factors determined by
+$\zeta_{\mathbb{Q}(\sqrt{5})}(s)/L(s,\chi_5)$, both factors determined by
 $\chi_5$ and hence by $\golden$.  All entries verified at
 50-digit precision.}
 \label{tab:zeta-values}
 \begin{tabular}{rcccc}
 \toprule
-$s$ & $\ZKsqrt(s)$ & $L(s,\chi_5)$ & $\zeta(s)$ & Source \\
+$s$ & $\zeta_{\mathbb{Q}(\sqrt{5})}(s)$ & $L(s,\chi_5)$ & $\zeta(s)$ & Source \\
 \midrule
 \rowcolor[gray]{0.93}
  2 & --- & --- & $\pi^2/6 \approx 1.6449$ & $\pi$ \\
@@ -484,10 +481,10 @@ Additive/circular (torus) & $T = 2\pi\log\golden$ & $L(1,\chi_5) = T/(\pi\sqrt{5
 \end{tabular}
 \end{center}
 
-The formula $L(1,\chi_5) = T/(\pi\sqrt{5})$ is the bridge: $\pi$ (circle)
+The \cref{eq:L1} is the bridge: $\pi$ (circle)
 and $\log\golden$ (Frobenius regulator) combine in $T$, then $\pi$ cancels
 to leave $2\log\golden/\sqrt{5}$.  At $s=2k$ the $\pi$ reappears
-explicitly via~\eqref{eq:Lchi-even}.  At $s=2k+1$ for $k\geq 1$ the
+explicitly via~\cref{eq:Lchi-even}.  At $s=2k+1$ for $k\geq 1$ the
 same two structures produce $\zeta(2k+1)$ through their ratio.
 
 The table displays two faces of $T^2_{\mathrm{PCF}}$: multiplicative
@@ -524,7 +521,7 @@ is the golden extension of\/ $\mathbb{C}$.  Explicitly:
   = \mathrm{span}_{\mathbb{R}}\{e_1,\; e_2+\golden\,e_3\}$.
   The third ambient dimension is present but coupled;
   the irrationality of $\golden$
-  (Proposition~\ref{prop:phi-unique}) ensures the coupling
+  (\cref{prop:phi-unique}) ensures the coupling
   is non-degenerate.
 \item[\textup{(iii)}] \textbf{Self-measurement:}
   Setting $z = \golden y$, the relation $\golden^2 = \golden+1$ gives
@@ -580,7 +577,7 @@ Each prime $p$ performs the same operation as the dimensional
 extension---it raises $\golden$ to a higher power and the result
 folds back onto the basis $\{\golden, 1\}$.  The splitting
 character $\chi_5(p) \equiv F_p\pmod{p}$
-(Proposition~\ref{prop:fib-split}) records the outcome:
+(\cref{prop:fib-split}) records the outcome:
 \begin{itemize}
 \item $\chi_5(p) = +1$ (split): $\golden^p\equiv\golden\pmod{p}$.
   The prime sees $\golden$ as itself---the measurement is
@@ -589,22 +586,22 @@ character $\chi_5(p) \equiv F_p\pmod{p}$
   The prime sees $\golden$ as its conjugate---the measurement
   detects the second dimension.
 \end{itemize}
-The Euler product $\ZKsqrt(s) = \prod_p f_p(s)$
-(Proposition~\ref{prop:local-factors}) is the collective
+The Euler product $\zeta_{\mathbb{Q}(\sqrt{5})}(s) = \prod_p f_p(s)$
+(\cref{prop:local-factors}) is the collective
 measurement of all primes, converging to the Dedekind zeta
 of $\mathbb{Q}(\sqrt{5})$---an inherently two-dimensional object.
 \end{remark}
 
 \begin{remark}[Dedekind factorisation as dimensional projection]%
   \label{rmk:dimensional-projection}
-Under the identification of Proposition~\ref{prop:dim-chain} and
-Remark~\ref{rmk:frobenius-selfmeas}, the factorisation
+Under the identification of \cref{prop:dim-chain} and
+\cref{rmk:frobenius-selfmeas}, the factorisation
 \[
-  \zeta(s) = \frac{\ZKsqrt(s)}{L(s,\chi_5)}
+  \zeta(s) = \frac{\zeta_{\mathbb{Q}(\sqrt{5})}(s)}{L(s,\chi_5)}
 \]
-(Theorem~\ref{thm:factorisation}) admits a reading as dimensional
+(\cref{thm:factorisation}) admits a reading as dimensional
 projection: the one-dimensional $\zeta(s)$ (primes over
-$\mathbb{Q}$) is the quotient of the two-dimensional $\ZKsqrt(s)$
+$\mathbb{Q}$) is the quotient of the two-dimensional $\zeta_{\mathbb{Q}(\sqrt{5})}(s)$
 (primes over $\mathbb{Q}(\sqrt{5})$) by the character $L(s,\chi_5)$
 that encodes how the second dimension projects onto the first.
 
@@ -612,7 +609,7 @@ In this reading, the even values
 $\zeta(2k) = \pi^{2k}\cdot\mathbb{Q}$ (Euler) are pure
 circle geometry---the second dimension already closed.
 The odd values $\zeta(2k+1)$
-(Theorem~\ref{thm:pentagon-odd}) are the mixed terms where the
+(\cref{thm:pentagon-odd}) are the mixed terms where the
 1D generator ($\golden$ via $\chi_5$) and the 2D geometry
 ($\pi$ via the pentagonal points $a/5$) couple.
 They appear free in the EFT of
@@ -623,7 +620,7 @@ them because it is a worldsheet object---inherently
 two-dimensional.
 
 The regulator $R = \log\golden$
-(Proposition~\ref{prop:regulator-unifier}) measures the
+(\cref{prop:regulator-unifier}) measures the
 informational cost of this emergence: the period $T = 2\pi R$
 is the circumference of the new dimension, the $L$-value
 $L(1,\chi_5) = 2R/\sqrt{5}$ is the arithmetic size of the

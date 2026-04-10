@@ -2,16 +2,16 @@
 %%% ====================================================================
 
 The preceding sections established that $G\colon\Ztwenty\to\mathbb{Z}_2\times\mathbb{Z}_2$
-determines both the Euler product of $\ZKsqrt(s)$ (upper branch of the
-diagram in~\S\ref{sec:objective}) and the spectral structure
+determines both the Euler product of $\zeta_{\mathbb{Q}(\sqrt{5})}(s)$ (upper branch of the
+diagram in \cref{sec:objective}) and the spectral structure
 $\mu_3=1/2$, $S_3$, $\omega^k/2$ (lower branch).
 We now make the categorical content of this determination explicit:
-the Frobenius system is a functor~(\S\ref{ssec:frobenius-functor}),
-the Euler product is a colimit~(\S\ref{ssec:euler-colimit}),
+the Frobenius system is a functor (\cref{ssec:frobenius-functor}),
+the Euler product is a colimit (\cref{ssec:euler-colimit}),
 the Dedekind factorisation is a natural
-isomorphism~(\S\ref{ssec:dedekind-natural}),
+isomorphism (\cref{ssec:dedekind-natural}),
 and the two branches form a span with common
-source~(\S\ref{ssec:span}).
+source (\cref{ssec:span}).
 Throughout, we indicate what is invocable from the Primitive
 Structure~\cite{V11} and what is developed here.
 
@@ -34,13 +34,13 @@ which add factors without altering existing coefficients.
 $\mathrm{Spec}(\OmH)$ is the category whose objects are spectral
 triples $(\sigma,\mu,\{\lambda_k\})$ satisfying $\sigma+\mu=2$,
 $\sigma\mu=3/4$, $\lambda_k = (\mu/1)\omega^k$.
-By spectral uniqueness (Corollary~\ref{cor:S3-from-euler}), the only
+By spectral uniqueness (\cref{cor:S3-from-euler}), the only
 solution with $\mu<1$ is $(\sigma,\mu)=(3/2,1/2)$; hence
 $\mathrm{Spec}(\OmH)$ is the terminal category (one object, one
 morphism): the condition $\mu<1$ that excludes the degenerate solution
 $(\sigma,\mu)=(1,1)$ is the No-Diagonal theorem
 (Theorem~3 of~\cite{V11}), which establishes
-$\norm{\Omega}=1/2<1$ (Proposition~\ref{prop:worldline-entropy}).
+$\|\Omega\|=1/2<1$ (\cref{prop:worldline-entropy}).
 The functor $F_{\mathrm{spec}}\colon
 \mathbf{B}\Ztwenty\to\mathrm{Spec}(\OmH)$ collapses all eight
 morphisms of $\mathbf{B}\Ztwenty$ to this unique spectral point.
@@ -85,12 +85,12 @@ $\golden^2=\golden+1 \to \psi_p \to \chi_5 \to G \to \prod f_p$.
 \end{remark}
 
 \begin{lemma}[From Frobenius to Euler factors]\label{lem:psi-to-euler}
-The partial Euler functor $E$ (Definition~\ref{def:partial-euler})
+The partial Euler functor $E$ (\cref{def:partial-euler})
 is determined by $\Psi$ through the composition
 $\Psi(p)(\golden) = \golden^p \to F_p\bmod p \to \chi_5(p) \to f_p(s)$:
 concretely, $\chi_5(p)\equiv F_p\pmod{p}$
-(Proposition~\ref{prop:fib-split}) and $f_p$ is determined by
-$\chi_5(p)$ (Proposition~\ref{prop:local-factors}).
+(\cref{prop:fib-split}) and $f_p$ is determined by
+$\chi_5(p)$ (\cref{prop:local-factors}).
 \end{lemma}
 
 % ------------------------------------------------------------------
@@ -108,16 +108,16 @@ The \emph{partial Euler functor} is
   E(S)(s) = \prod_{p\in S} f_p(s),
 \end{equation}
 where $f_p(s)$ is the local factor determined by $\chi_5(p)$
-(Proposition~\ref{prop:local-factors}).
+(\cref{prop:local-factors}).
 Each $f_p$ depends only on $\chi_5(p) = \pi_2(G(p\bmod 20))$
-(Theorem~\ref{thm:bridge3}).
+(\cref{thm:bridge3}).
 \end{definition}
 
 \begin{proposition}[Euler product as colimit]\label{prop:euler-colimit}
 For $\mathrm{Re}(s)>1$, the Dedekind zeta function is the colimit
 of the partial Euler functor:
 \begin{equation}\label{eq:euler-colimit}
-  \ZKsqrt(s) = \varinjlim_{S\in\mathcal{P}} E(S)(s).
+  \zeta_{\mathbb{Q}(\sqrt{5})}(s) = \varinjlim_{S\in\mathcal{P}} E(S)(s).
 \end{equation}
 The colimit exists and is unique in $\mathbf{DirSer}$: each
 coefficient $a_n$ depends only on the primes dividing $n$ and
@@ -146,10 +146,10 @@ multiplicativity that the Dirichlet product uses in the coefficients.
 \end{remark}
 
 \begin{remark}[Two colimits of the same diagram]\label{rmk:two-colimits}
-The colimit $\ZKsqrt(s) = \varinjlim E(S)$ in $\mathbf{DirSer}$
-parallels the tower limit $\norm{\Omega}_k \to 0$ in the spectral
+The colimit $\zeta_{\mathbb{Q}(\sqrt{5})}(s) = \varinjlim E(S)$ in $\mathbf{DirSer}$
+parallels the tower limit $\|\Omega\|_k \to 0$ in the spectral
 category of the Primitive Structure~\cite{V11}
-(\texttt{categorical\_limit\_theorem}).
+(Theorem~2 of~\cite{V11}).
 Both are limits of diagrams determined by~$G$:
 the partial Euler products are assembled from $\chi_5(p)$;
 the tower norms are iterated from $\mu_3 = 1/2$.
@@ -189,7 +189,7 @@ $\mathbb{Q}$ & $1$ &
 $\mathbb{Q}(\sqrt{-1})$ & $\chi_4$ &
   $\zeta_{\mathbb{Q}(i)} = \zeta\cdot L(s,\chi_4)$ \\
 $\mathbb{Q}(\sqrt{5})$ & $\chi_5$ &
-  $\ZKsqrt = \zeta\cdot L(s,\chi_5)$ (\textbf{this paper}) \\
+  $\zeta_{\mathbb{Q}(\sqrt{5})} = \zeta\cdot L(s,\chi_5)$ (\textbf{this paper}) \\
 $\mathbb{Q}(\sqrt{-5})$ & $\chi_4\chi_5$ &
   $\zeta_{\mathbb{Q}(\sqrt{-5})} = \zeta\cdot L(s,\chi_4\chi_5)$ \\
 \bottomrule
@@ -197,7 +197,7 @@ $\mathbb{Q}(\sqrt{-5})$ & $\chi_4\chi_5$ &
 \end{center}
 The four characters $\{1,\chi_4,\chi_5,\chi_4\chi_5\}$ are exactly
 the four characters of $\mathbb{Z}_2\times\mathbb{Z}_2$
-(Theorem~\ref{thm:bridge3}), one for each fiber of~$G$.
+(\cref{thm:bridge3}), one for each fiber of~$G$.
 \end{theorem}
 
 \begin{proof}
@@ -208,8 +208,8 @@ to $\eta_K$; the square commutes because $\chi_\mathbb{Q}$ is trivial.
 \end{proof}
 
 \begin{corollary}[The factorisation is universal]\label{cor:factorisation-universal}
-The identity $\zeta(s) = \ZKsqrt(s)/L(s,\chi_5)$
-(Theorem~\ref{thm:factorisation}) is the
+The identity $\zeta(s) = \zeta_{\mathbb{Q}(\sqrt{5})}(s)/L(s,\chi_5)$
+(\cref{thm:factorisation}) is the
 $K = \mathbb{Q}(\sqrt{5})$ component of a natural isomorphism~$\eta$
 defined on all of $\mathbf{QuadExt}_{20}$.
 The four components correspond to the four fibers of~$G$.
@@ -234,7 +234,7 @@ $8$ morphisms, and:
 \item[\textup{(i)}] $F_{\mathrm{arith}}$:
   $\mathbf{B}\Ztwenty \xrightarrow{G}
   \mathbf{B}(\mathbb{Z}_2{\times}\mathbb{Z}_2) \xrightarrow{\chi_5}
-  \{f_p\} \xrightarrow{\varinjlim} \ZKsqrt(s)
+  \{f_p\} \xrightarrow{\varinjlim} \zeta_{\mathbb{Q}(\sqrt{5})}(s)
   \xrightarrow{\eta^{-1}} \zeta(s)$.
 \item[\textup{(ii)}] $F_{\mathrm{spec}}$:
   $\mathbf{B}\Ztwenty \xrightarrow{G}
@@ -247,18 +247,16 @@ Both factor through $G$: they share the initial functor.
 (The step $\eta^{-1}$ in branch~(i) is the pointwise inversion
 of the natural isomorphism at the component
 $K = \mathbb{Q}(\sqrt{5})$: concretely,
-$\zeta(s) = \ZKsqrt(s)/L(s,\chi_5)$.)
+$\zeta(s) = \zeta_{\mathbb{Q}(\sqrt{5})}(s)/L(s,\chi_5)$.)
 \end{definition}
 
 \begin{theorem}[Co-determination by $G$]\label{thm:co-determination}
 The two branches are co-determined by $G$:
 \begin{enumerate}
 \item[\textup{(a)}] $F_{\mathrm{arith}}$ depends on $\chi_5=\pi_2\circ G$
-  (Theorem~\ref{thm:bridge3}, Propositions~\ref{prop:local-factors}
-  and~\ref{prop:euler-colimit}).
+  (\cref{thm:bridge3,prop:local-factors,prop:euler-colimit}).
 \item[\textup{(b)}] $F_{\mathrm{spec}}$ depends on
-  $|\ker G|=2$ (Corollary~\ref{cor:S3-from-euler},
-  Lemma~\ref{lem:spectral-re}).
+  $|\ker G|=2$ (\cref{cor:S3-from-euler,lem:spectral-re}).
 \item[\textup{(c)}] Both reduce to properties of $G$
   (Definition~5 of~\cite{V11}) verified
   in Lean~$4$ with $0$~\texttt{sorry}:
@@ -268,10 +266,10 @@ The two branches are co-determined by $G$:
 \end{theorem}
 
 \begin{proof}
-(a) Theorem~\ref{thm:bridge3} $\to$
-Proposition~\ref{prop:fib-split} $\to$
-Proposition~\ref{prop:local-factors} $\to$
-Proposition~\ref{prop:euler-colimit}.
+(a) \Cref{thm:bridge3} $\to$
+\cref{prop:fib-split} $\to$
+\cref{prop:local-factors} $\to$
+\cref{prop:euler-colimit}.
 (b) $|\ker G|=2$ $\to$ $\mu_3=1/2$ $\to$ arity uniqueness $\to$
 $S_3$ $\to$ $\omega^k/2$.
 (c) Lean identifiers from
@@ -312,8 +310,8 @@ in Lean (Mathlib lacks Dirichlet series).
 Together, the two papers cover both branches of the span.
 Concretely: the structure field
 \texttt{bounded\_by\_mu :\ $\rho_{\mathrm{re}}\le\mu_3$} of
-Definition~7 of~\cite{V11} (\texttt{TernaryLZero}) is established
-by the co-determination theorem (Theorem~\ref{thm:co-determination}):
+Definition~7 of~\cite{V11} is established
+by the co-determination theorem (\cref{thm:co-determination}):
 the same $G$ that produces $\mu_3 = 1/2$ also produces $\zeta(s)$
 via the Euler product, so $\rho_{\mathrm{re}}$ inherits the spectral
 bound.  The \texttt{bridge\_axiom} thereby becomes a theorem.
@@ -329,10 +327,10 @@ The categorical framework developed in this paper identifies the
 \emph{Euler~(1737).}
 The identity $\prod_p(1-p^{-s})^{-1} = \sum n^{-s}$ is an abstract
 theorem until the local factors $f_p$ are specified.
-Proposition~\ref{prop:euler-colimit} exhibits the Euler product as a
+\Cref{prop:euler-colimit} exhibits the Euler product as a
 colimit of a diagram whose source is~$G$: each $f_p$ is determined by
 $\chi_5(p) = \pi_2(G(p\bmod 20))$
-(Proposition~\ref{prop:local-factors}), and primes in the same
+(\cref{prop:local-factors}), and primes in the same
 $G$-fiber have the same factor type.
 Euler's identity thus acts not on an arbitrary Dirichlet series but on
 the specific colimit assembled by~$G$.
@@ -343,7 +341,7 @@ series consists of multiplicative evaluations at primes.
 Restricted to $\Ztwenty$, these evaluations are classified by~$G$
 into exactly four characters $\{1,\chi_4,\chi_5,\chi_4\chi_5\}$---the
 dual group of $\mathbb{Z}_2\times\mathbb{Z}_2$
-(Theorem~\ref{thm:dedekind-natural}).
+(\cref{thm:dedekind-natural}).
 Each character determines an $L$-function; the four $L$-functions
 produce the four Dedekind factorisations of
 $\mathbf{QuadExt}_{20}$.
@@ -358,9 +356,9 @@ $\mathrm{spec}(\OmH) = \tfrac{1}{2}\{1,\omega,\omega^2\}$
 and real parts $\{1/2,\,-1/4\}$, both ${\le}\,\mu_3$.
 The present paper shows \emph{why}~$\zeta$ factorises through this
 operator: the Euler product is a colimit of factors determined
-by~$G$ (Proposition~\ref{prop:euler-colimit}), and the \emph{same}~$G$
+by~$G$ (\cref{prop:euler-colimit}), and the \emph{same}~$G$
 produces~$\OmH$ via $|\ker G|=2\to\mu_3=1/2\to S_3\to\omega^k/2$
-(Corollary~\ref{cor:S3-from-euler}).
+(\cref{cor:S3-from-euler}).
 Dunford--Schwartz operates on~$\OmH$ because~$G$ puts~$\zeta$ and
 $\OmH$ in the same span.
 
@@ -409,7 +407,7 @@ The two branches meet only at their common source~$G$.
 % ------------------------------------------------------------------
 
 The arithmetic--spectral span
-(Definition~\ref{def:pcf-span}) plays the structural role of
+(\cref{def:pcf-span}) plays the structural role of
 Weil's arithmetic surface $C\times C$ in the proof of the
 Riemann Hypothesis for curves over~$\mathbb{F}_q$
 (cf.~\S2.6 of~\cite{V11}; \cite{Weil}).
@@ -430,35 +428,35 @@ The PCF span provides the analogues over~$\mathbb{Z}$:
   \mathbf{B}\Ztwenty
   \xrightarrow{F_{\mathrm{spec}}}
   \mathrm{Spec}(\OmH)$
-  (Definition~\ref{def:pcf-span}),
+  (\cref{def:pcf-span}),
   with the arithmetic branch as horizontal copy, the spectral
   branch as vertical copy, and $G$ as the common source
   replacing the diagonal.
   Demonstrated: $G$ is a surjective homomorphism with
-  $|\ker G|=2$ (Theorem~\ref{thm:bridge3}), verified
+  $|\ker G|=2$ (\cref{thm:bridge3}), verified
   for all $64$ pairs in $\Ztwenty$
-  (\S\ref{sec:verification}).
+  (\cref{sec:verification}).
 \item[\textup{(ii$'$)}] The upper bound
   $\mathrm{Re}(\rho)\le\mu_3 = 1/2$, discharged by the
   co-determination theorem
-  (Theorem~\ref{thm:co-determination}): because $G$ produces
+  (\cref{thm:co-determination}): because $G$ produces
   both $\zeta(s)$ (via the Euler product colimit,
-  Proposition~\ref{prop:euler-colimit}) and
+  \cref{prop:euler-colimit}) and
   $\mathrm{spec}(\OmH) = \tfrac{1}{2}\{1,\omega,\omega^2\}$
-  (via $|\ker G|=2$, Corollary~\ref{cor:S3-from-euler}),
+  (via $|\ker G|=2$, \cref{cor:S3-from-euler}),
   the spectral constraint transfers to the analytic side.
   This is the analogue of Weil's intersection positivity:
   the mechanism by which a geometric bound on one side of a
   bifurcated structure constrains the other.
   Demonstrated: all $\mathrm{Re}(\mathrm{spec}(\OmH))\le\mu_3$
-  (Lemma~\ref{lem:spectral-re}); the three classical
+  (\cref{lem:spectral-re}); the three classical
   theorems---Euler, Gelfand, Dunford--Schwartz---operate on
-  this concrete structure (\S\ref{ssec:cat-discussion},
-  Remark~\ref{rmk:classical-bridge}).
+  this concrete structure (\cref{ssec:cat-discussion},
+  \cref{rmk:classical-bridge}).
 \item[\textup{(iii$'$)}] The lower bound
   $1-\mathrm{Re}(\rho)\le\mu_3$, from the exponent-$2$ property
   of $\mathbb{Z}_2\times\mathbb{Z}_2$
-  (Corollary~\ref{cor:same-Z2}): all characters are self-dual,
+  (\cref{cor:same-Z2}): all characters are self-dual,
   so Hecke's~\cite{Hecke} $1920$ theorem (unconditional) gives
   $L(\rho,\chi)=0 \Rightarrow L(1-\rho,\chi)=0$, and the
   spectral embedding applied to $1-\rho$ yields the companion
@@ -468,45 +466,44 @@ The PCF span provides the analogues over~$\mathbb{Z}$:
   complementary bound.
   Demonstrated: exponent~$2$ verified for all elements of
   $\mathbb{Z}_2\times\mathbb{Z}_2$
-  (Proposition~3 of~\cite{V11}; \S\ref{sec:verification}).
+  (\cite{V11}; \cref{sec:verification}).
 \end{enumerate}
 
 The conjunction of (ii$'$) and (iii$'$) forces
 $\mathrm{Re}(\rho)=1/2$ (Theorem~10 of~\cite{V11}),
 mirroring Weil's squeeze $|{\alpha_i}| = q^{1/2}$.
 The eigenvalues $\omega^k/2$ of~$\OmH$, all of modulus
-$\mu_3 = 1/2$ (Lemma~\ref{lem:spectral-re}), are the
+$\mu_3 = 1/2$ (\cref{lem:spectral-re}), are the
 analogue of the Frobenius eigenvalues~$\alpha_i$ with
 $|{\alpha_i}|=q^{1/2}$.
 The full correspondence is:
-
 \begin{center}
 \begin{tabular}{ll}
 \toprule
 Weil over $\mathbb{F}_q$ & PCF over $\mathbb{Z}$ \\
 \midrule
 $C\times C$ (arithmetic surface)
-  & Span with common source $G$ (Def.~\ref{def:pcf-span}) \\
+  & Span with common source $G$ (Definition~11 of~\cite{V11}) \\
 Horizontal $C\times\{P\}$
   & $F_{\mathrm{arith}}\to\mathbf{DirSer}$
-    (Prop.~\ref{prop:euler-colimit}) \\
+    (\cref{prop:euler-colimit}) \\
 Vertical $\{P\}\times C$
   & $F_{\mathrm{spec}}\to\mathrm{Spec}(\OmH)$
-    (Cor.~\ref{cor:S3-from-euler}) \\
+    (\cref{cor:S3-from-euler}) \\
 Diagonal $\Delta$
-  & Common source $G$ (Thm.~\ref{thm:bridge3}) \\
+  & Common source $G$ (\cref{thm:bridge3}) \\
 $\mathrm{Fr}\colon x\mapsto x^q$
   & $G\colon\Ztwenty\to\mathbb{Z}_2{\times}\mathbb{Z}_2$
-    (Def.~5 of~\cite{V11}) \\
+    (Definition~5 of~\cite{V11}) \\
 $|{\alpha_i}|\le q^{1/2}$ (intersection)
-  & $\mathrm{Re}(\rho)\le\mu_3$ (Thm.~\ref{thm:co-determination}) \\
-Functional eq.\ $\to |{\alpha_i}|\ge q^{1/2}$
-  & Hecke $\to 1{-}\mathrm{Re}(\rho)\le\mu_3$
-    (Cor.~\ref{cor:same-Z2}) \\
+  & $\mathrm{Re}(\rho)\le\mu_3$ (\cref{thm:co-determination}) \\
+Functional eq.\ $\rightarrow |{\alpha_i}|\ge q^{1/2}$
+  & Hecke $\rightarrow 1{-}\mathrm{Re}(\rho)\le\mu_3$
+    (\cref{cor:same-Z2}) \\
 $|{\alpha_i}|=q^{1/2}$
-  & $\mathrm{Re}(\rho)=1/2$ (Thm.~10 of~\cite{V11}) \\
-Eigenvalues on $H^1_{\text{\'et}}$
-  & Eigenvalues of $\OmH$ (Lem.~\ref{lem:spectral-re}) \\
+  & $\mathrm{Re}(\rho)=1/2$ (Theorem~10 of~\cite{V11}) \\
+Eigenvalues on $H^1_{\textup{\'et}}$
+  & Eigenvalues of $\OmH$ (\cref{lem:spectral-re}) \\
 All $|{\alpha_i}|$ equal
   & All $|\omega^k/2|=1/2=\mu_3$ \\
 \bottomrule
@@ -521,7 +518,7 @@ side of a bifurcated structure transfers to the other because both
 originate from a common source.
 The programme of Manin~\cite{Manin} seeks to transport Weil's
 proof from~$\mathbb{F}_q$ to~$\mathbb{Z}$ via absolute
-geometry; the span of Definition~\ref{def:pcf-span} provides a
+geometry; the span of \cref{def:pcf-span} provides a
 concrete realisation of the required bifurcated structure, with
 $G$ as the common source replacing
 $\mathrm{Spec}(\mathbb{Z})\times_{\mathbb{F}_1}
@@ -536,17 +533,17 @@ Descent to $\mathbb{F}_1$ strips arithmetic to pure geometry:
 addition is lost, but magnitudes---powers, scales, norms---survive.
 The Frobenius lifts $\psi_p(\golden) = \golden^p$ are purely
 multiplicative: they compose as $\psi_p\circ\psi_q = \psi_{pq}$
-(Proposition~\ref{prop:Psi-functorial}),
+(\cref{prop:Psi-functorial}),
 require no addition, and constitute $\mathbb{F}_1$-descent data
 in the sense of Borger~\cite{Borger}.
 The generator $\golden$ is isomorphic to $\mathbb{R}$ as a
 geometric object ($\golden^\sigma\colon\mathbb{R}
 \xrightarrow{\sim}\mathbb{R}_{>0}$,
-Remark~\ref{rmk:standard-id}): a one-dimensional vector whose
+\cref{rmk:standard-id}): a one-dimensional vector whose
 self-similarity $\golden^2 = \golden + 1$ permits reconstruction
 of the entire prime spectrum through the Fibonacci criterion
 $\chi_5(p)\equiv F_p\pmod{p}$
-(Proposition~\ref{prop:fib-split}).
+(\cref{prop:fib-split}).
 
 This purely multiplicative character is not incidental---it is
 what makes the chain acyclic.
@@ -660,7 +657,7 @@ For $s\ge 2$, the following are equivalent:
 (A)$\Leftrightarrow$(B) by the polylog
 representation~\eqref{eq:polylog-rep}: $L = (\text{polylog sum})/\sqrt{5}$.
 (A)$\Leftrightarrow$(C) by the Hurwitz representation
-(Theorem~\ref{thm:hurwitz}): $L = (\text{Hurwitz sum})/5^s$.
+(\cref{thm:hurwitz}): $L = (\text{Hurwitz sum})/5^s$.
 Both $\sqrt{5}$ and $5^s$ are algebraic and nonzero.
 \qed
 \end{proof}
@@ -678,12 +675,12 @@ no cancellation principle exists that would restore algebraicity
 at $s=3$.
 
 The consequence for $\zeta(2k+1)$ is immediate.
-Since $\ZKsqrt(s) = \zeta(s)\cdot L(s,\chi_5)$
-(Theorem~\ref{thm:factorisation}), the transcendence of
+Since $\zeta_{\mathbb{Q}(\sqrt{5})}(s) = \zeta(s)\cdot L(s,\chi_5)$
+(\cref{thm:factorisation}), the transcendence of
 $L(2k+1,\chi_5)$ (proved at $s=1$; structurally persistent for
-$s\ge 3$) implies that $\zeta(2k+1)$ and $\ZKsqrt(2k+1)$
+$s\ge 3$) implies that $\zeta(2k+1)$ and $\zeta_{\mathbb{Q}(\sqrt{5})}(2k+1)$
 cannot both be algebraic.  The structural determination
-$\zeta(2k+1) = \ZKsqrt(2k+1)/L(2k+1,\chi_5)$ is not a
+$\zeta(2k+1) = \zeta_{\mathbb{Q}(\sqrt{5})}(2k+1)/L(2k+1,\chi_5)$ is not a
 closed form in the classical sense; it is the statement that
 the odd zeta values are \emph{ratios of transcendental quantities
 produced by the same pentagonal arithmetic}, with no free parameter.
