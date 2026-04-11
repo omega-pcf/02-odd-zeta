@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.2.0](https://github.com/omega-pcf/02-odd-zeta/compare/v1.1.3...v1.2.0) (2026-04-11)
+
+### Features
+
+* **citation:** synchronize metadata pipeline and harmonize dependencies ([8a31581](https://github.com/omega-pcf/02-odd-zeta/commit/8a31581dc3b010c740d16a09794f2b195cbfa888))
+* **metadata:** professionalize citation synchronization pipeline ([8bfb7f6](https://github.com/omega-pcf/02-odd-zeta/commit/8bfb7f64c9afefc8231f491df9522b1f41fdbda8))
+
+### Bug Fixes
+
+* **metadata:** standardize Hilbert-Pólya hyphenation in CITATION.cff ([8f18e70](https://github.com/omega-pcf/02-odd-zeta/commit/8f18e70ca9e06e3fda04ff092a6f7169a85420b6))
+
+### Refinements
+
+* professionalize manuscript tone and synchronize facts with Hilbert-Polya ([8692551](https://github.com/omega-pcf/02-odd-zeta/commit/8692551c3ffa6ffec1b1262c17200ed3d17ed900))
+
+### Chores
+
+* **build:** stabilize typescript configuration and fix type errors ([a9b4bae](https://github.com/omega-pcf/02-odd-zeta/commit/a9b4bae21626f72bef693e2ad6f8b07361120ceb))
+* **metadata:** stabilize bibliography pipeline and documentation parity ([b2c97d2](https://github.com/omega-pcf/02-odd-zeta/commit/b2c97d2ef01f81386bd64e8c53e433d0981a128a))
+
 ## [1.1.3](https://github.com/omega-pcf/02-odd-zeta/compare/v1.1.2...v1.1.3) (2026-04-10)
 
 ### Styles
