@@ -401,7 +401,7 @@ pentagonal identity $\golden = 2\cos(\pi/5)$
 
 Table~\ref{tab:lean-audit} lists the correspondence between
 the paper's results and the Lean identifiers in
-\texttt{odd\_zeta\_pcf\_v1.lean}.
+\lean{odd_zeta_pcf_v1.lean}.
 
 \begin{table}[ht]
 \centering
@@ -443,7 +443,7 @@ The categorical structures of \cref{sec:categorical-framework}---the
 Frobenius functor (functoriality verified via
 $\psi_p\circ\psi_q=\psi_{pq}$), the co-determination theorem
 (reducing to \texttt{G\_hom}, \texttt{G\_surj},
-\texttt{G\_kernel} in \texttt{odd\_zeta\_pcf\_v1.lean};
+\texttt{G\_kernel} in \lean{odd_zeta_pcf_v1.lean};
 equivalently \texttt{G\_homomorphism}, \texttt{G\_surjective},
 \texttt{G\_kernel} in~\cite{V11}), and the spectral uniqueness
 (\texttt{spectral\_uniqueness})---are
@@ -468,7 +468,7 @@ values $\zeta_{\mathbb{Q}(\sqrt{5})}(2k+1)$ via the Kronecker limit formula or S
 \end{openproblem}
 
 \begin{openproblem}\label{op:lean-dirichlet}
-The accompanying Lean~$4$ file \texttt{odd\_zeta\_pcf\_v1.lean}
+The accompanying Lean~$4$ file \lean{odd_zeta_pcf_v1.lean}
 formalises the algebraic chain (pentagon identity, Fibonacci splitting
 criterion, $G$, eigenvalues, additive destruction, diagonal obstruction)
 with $0$~\texttt{sorry} and one axiom ($\golden^2=\golden+1$);
