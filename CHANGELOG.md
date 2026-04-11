@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.3.1](https://github.com/omega-pcf/02-odd-zeta/compare/v1.3.0...v1.3.1) (2026-04-11)
+
+### Documentation
+
+* standardize PDF bookmarks and refine open problem wording ([f7f66e9](https://github.com/omega-pcf/02-odd-zeta/commit/f7f66e9b073ad014a14e9a0018ea265cf7cdc74d))
+
 ## [1.3.0](https://github.com/omega-pcf/02-odd-zeta/compare/v1.2.2...v1.3.0) (2026-04-11)
 
 ### Features
