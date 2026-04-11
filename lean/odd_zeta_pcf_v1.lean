@@ -133,15 +133,15 @@ theorem pentagon_identity : 2 * Real.cos (π / 5) = φ := by linarith [cos_pi_di
 
 -- §1.2 The classification group Z₂₀*
 
-def Z20star : Finset (ZMod 20) := {1, 3, 7, 9, 11, 13, 17, 19}
+def ZtwentyStar : Finset (ZMod 20) := {1, 3, 7, 9, 11, 13, 17, 19}
 
-theorem Z20star_card : Z20star.card = 8 := by decide
+theorem ZtwentyStar_card : ZtwentyStar.card = 8 := by decide
 
-theorem mul_closed (a b : ZMod 20) (ha : a ∈ Z20star) (hb : b ∈ Z20star) :
-    a * b ∈ Z20star := by revert hb ha b a; decide
+theorem mul_closed (a b : ZMod 20) (ha : a ∈ ZtwentyStar) (hb : b ∈ ZtwentyStar) :
+    a * b ∈ ZtwentyStar := by revert hb ha b a; decide
 
 theorem add_destroyed :
-    ∀ a ∈ Z20star, ∀ b ∈ Z20star, (a + b) ∉ Z20star := by
+    ∀ a ∈ ZtwentyStar, ∀ b ∈ ZtwentyStar, (a + b) ∉ ZtwentyStar := by
   intro a ha b hb; revert hb ha b a; decide
 
 
@@ -154,11 +154,11 @@ def G : ZMod 20 → ZMod 2 × ZMod 2 := fun a =>
   else if a = 3 ∨ a = 7 then (1, 1)
   else (0, 0)
 
-theorem G_hom (a b : ZMod 20) (ha : a ∈ Z20star) (hb : b ∈ Z20star) :
+theorem G_homomorphism (a b : ZMod 20) (ha : a ∈ ZtwentyStar) (hb : b ∈ ZtwentyStar) :
     G (a * b) = G a + G b := by revert hb ha b a; decide
 
-theorem G_surj : ∀ g : ZMod 2 × ZMod 2,
-    ∃ a : ZMod 20, a ∈ Z20star ∧ G a = g := by
+theorem G_surjective : ∀ g : ZMod 2 × ZMod 2,
+    ∃ a : ZMod 20, a ∈ ZtwentyStar ∧ G a = g := by
   intro ⟨x, y⟩; fin_cases x <;> fin_cases y
   · exact ⟨1, by decide, by decide⟩
   · exact ⟨13, by decide, by decide⟩
@@ -168,7 +168,7 @@ theorem G_surj : ∀ g : ZMod 2 × ZMod 2,
 
 -- §1.4 |ker G| = 2
 
-theorem G_kernel (a : ZMod 20) (ha : a ∈ Z20star) (hG : G a = (0, 0)) :
+theorem G_kernel (a : ZMod 20) (ha : a ∈ ZtwentyStar) (hG : G a = (0, 0)) :
     a = 1 ∨ a = 9 := by revert hG ha a; decide
 
 theorem exponent_two : ∀ g : ZMod 2 × ZMod 2, g + g = 0 := by
@@ -177,10 +177,10 @@ theorem exponent_two : ∀ g : ZMod 2 × ZMod 2, g + g = 0 := by
 
 -- §1.5 μ₃ = 1/2
 
-def mu3 : ℝ := 1 / 2
+def mu_3 : ℝ := 1 / 2
 
-theorem contraction_is_kernel : (1 : ℝ) / mu3 = 2 := by
-  unfold mu3; norm_num
+theorem contraction_is_kernel : (1 : ℝ) / mu_3 = 2 := by
+  unfold mu_3; norm_num
 
 
 -- §1.6 Spectral uniqueness
@@ -200,9 +200,9 @@ theorem spectral_uniqueness (σ μ_val : ℝ)
 
 -- §1.7 Diagonal blocked
 
-theorem diagonal_blocked (t : ℝ) (ht_pos : 0 < t) (ht_le : t ≤ mu3) :
+theorem diagonal_blocked (t : ℝ) (ht_pos : 0 < t) (ht_le : t ≤ mu_3) :
     ¬(t ≤ t ^ 2) := by
-  unfold mu3 at ht_le; intro h
+  unfold mu_3 at ht_le; intro h
   have h1 : 1 ≤ t := by nlinarith [sq_nonneg (1 - t)]
   linarith
 
@@ -279,10 +279,10 @@ theorem positive_spectral_half (k : Fin 3) (h : 0 < PCF_spectral k) :
 
 theorem part1_isomorphism_chain :
     2 * Real.cos (π / 5) = φ ∧
-    (∀ a ∈ Z20star, G a = (0, 0) → (a = 1 ∨ a = 9)) ∧
+    (∀ a ∈ ZtwentyStar, G a = (0, 0) → (a = 1 ∨ a = 9)) ∧
     (∀ g : ZMod 2 × ZMod 2, g + g = 0) ∧
-    mu3 = 1 / 2 ∧
-    (1 : ℝ) / mu3 = 2 ∧
+    mu_3 = 1 / 2 ∧
+    (1 : ℝ) / mu_3 = 2 ∧
     (∀ k : Fin 3, 0 < PCF_spectral k → PCF_spectral k = 1/2) :=
   ⟨pentagon_identity, G_kernel, exponent_two, rfl,
    contraction_is_kernel, positive_spectral_half⟩
@@ -294,8 +294,8 @@ theorem part1_isomorphism_chain :
 
 -- §2.1 Every prime enters the classification
 
-theorem primes_land_in_Z20star (p : ℕ) (hp : p.Prime) (hp5 : 5 < p) :
-    (p : ZMod 20) ∈ Z20star := by
+theorem primes_land_in_ZtwentyStar (p : ℕ) (hp : p.Prime) (hp5 : 5 < p) :
+    (p : ZMod 20) ∈ ZtwentyStar := by
   have h2 : ¬ 2 ∣ p := fun h => absurd (hp.eq_one_or_self_of_dvd 2 h) (by omega)
   have h5 : ¬ 5 ∣ p := fun h => absurd (hp.eq_one_or_self_of_dvd 5 h) (by omega)
   have h2m : p % 2 ≠ 0 := fun h => h2 (Nat.dvd_of_mod_eq_zero h)
@@ -319,7 +319,7 @@ theorem primes_land_in_Z20star (p : ℕ) (hp : p.Prime) (hp5 : 5 < p) :
 
 def chi5 (a : ZMod 20) : ZMod 2 := (G a).2
 
-theorem chi5_from_G : ∀ a ∈ Z20star, chi5 a = (G a).2 := by intro a _; rfl
+theorem chi5_from_G : ∀ a ∈ ZtwentyStar, chi5 a = (G a).2 := by intro a _; rfl
 
 theorem chi5_values : chi5 1 = 0 ∧ chi5 9 = 0 ∧ chi5 11 = 0 ∧ chi5 19 = 0 ∧
                       chi5 3 = 1 ∧ chi5 7 = 1 ∧ chi5 13 = 1 ∧ chi5 17 = 1 := by
@@ -353,7 +353,7 @@ def euler_factor_type (a : ZMod 20) : EulerFactorType :=
   if chi5 a = 0 then EulerFactorType.split
   else EulerFactorType.inert
 
-theorem euler_type_from_G (a : ZMod 20) (_ha : a ∈ Z20star) :
+theorem euler_type_from_G (a : ZMod 20) (_ha : a ∈ ZtwentyStar) :
     euler_factor_type a =
     if (G a).2 = 0 then EulerFactorType.split
     else EulerFactorType.inert := by
@@ -373,13 +373,13 @@ theorem iso_transport {α : Type*} {A B : α} (P : α → Prop)
 -- §2.6 Collecting Part 2
 
 theorem part2_G_determines_zeta :
-    (∀ p : ℕ, p.Prime → 5 < p → (p : ZMod 20) ∈ Z20star) ∧
-    (∀ a b : ZMod 20, a ∈ Z20star → b ∈ Z20star → G (a * b) = G a + G b) ∧
-    (∀ g : ZMod 2 × ZMod 2, ∃ a ∈ Z20star, G a = g) ∧
-    (∀ a : ZMod 20, a ∈ Z20star →
+    (∀ p : ℕ, p.Prime → 5 < p → (p : ZMod 20) ∈ ZtwentyStar) ∧
+    (∀ a b : ZMod 20, a ∈ ZtwentyStar → b ∈ ZtwentyStar → G (a * b) = G a + G b) ∧
+    (∀ g : ZMod 2 × ZMod 2, ∃ a ∈ ZtwentyStar, G a = g) ∧
+    (∀ a : ZMod 20, a ∈ ZtwentyStar →
       euler_factor_type a = if (G a).2 = 0 then EulerFactorType.split
                             else EulerFactorType.inert) :=
-  ⟨primes_land_in_Z20star, G_hom, fun g => G_surj g, euler_type_from_G⟩
+  ⟨primes_land_in_ZtwentyStar, G_homomorphism, fun g => G_surjective g, euler_type_from_G⟩
 
 
 -- ╔════════════════════════════════════════════════════════════════════╗
@@ -400,18 +400,18 @@ theorem zeta_positive_spectral_half :
     (fun f => ∀ k : Fin 3, 0 < f k → f k = 1/2)
     positive_spectral_half
 
-theorem zeta_mu3_spectral :
-    mu3 = zeta_spectral ⟨0, by norm_num⟩ := by
-  unfold zeta_spectral PCF_spectral Ω_hat mu3; norm_num
+theorem zeta_mu_3_spectral :
+    mu_3 = zeta_spectral ⟨0, by norm_num⟩ := by
+  unfold zeta_spectral PCF_spectral Ω_hat mu_3; norm_num
 
 theorem values_determined :
     (∀ k : Fin 3, 0 < PCF_spectral k → PCF_spectral k = 1/2) ∧
-    (∀ p : ℕ, p.Prime → 5 < p → (p : ZMod 20) ∈ Z20star) ∧
-    (∀ a b : ZMod 20, a ∈ Z20star → b ∈ Z20star → G (a * b) = G a + G b) ∧
+    (∀ p : ℕ, p.Prime → 5 < p → (p : ZMod 20) ∈ ZtwentyStar) ∧
+    (∀ a b : ZMod 20, a ∈ ZtwentyStar → b ∈ ZtwentyStar → G (a * b) = G a + G b) ∧
     zeta_spectral = PCF_spectral ∧
     (∀ k : Fin 3, 0 < zeta_spectral k → zeta_spectral k = 1/2) :=
   ⟨positive_spectral_half,
-   primes_land_in_Z20star, G_hom,
+   primes_land_in_ZtwentyStar, G_homomorphism,
    spectral_identification, zeta_positive_spectral_half⟩
 
 
