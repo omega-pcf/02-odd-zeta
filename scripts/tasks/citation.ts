@@ -36,22 +36,33 @@ class RobustSanitizer {
   public sanitize(text: string): string {
     if (!text) return text;
     
-    // 1. Strip HTML tags (e.g., <i>, <b>)
+    // 1. Strip HTML tags
     let result = striptags(text);
     
-    // 2. Escape reserved LaTeX characters (e.g., &, %, $)
+    // 2. Protect valid LaTeX macros (e.g., \mathbb, \mathcal) before escaping
+    // We replace them with a unique placeholder that escape-latex won't touch
+    const macros: string[] = [];
+    result = result.replace(/\\(mathbb|mathcal|mathfrak|mathbf|mathit|mathsf|mathtt|text)([A-Za-z0-9])/g, (match) => {
+      const id = `__LATEX_MACRO_${macros.length}__`;
+      macros.push(match);
+      return id;
+    });
+
+    // 3. Escape reserved LaTeX characters (e.g., &, %, $)
     result = escapeLatex(result);
     
-    // 3. Convert Unicode to LaTeX commands (authoritative mapping)
-    result = this.transformer.tolatex(result);
+    // 4. Restore and refine LaTeX macros
+    macros.forEach((macro, i) => {
+      const id = `__LATEX_MACRO_${i}__`;
+      // Convert \mathbbF to \mathbb{F} and handle basic subscripts like F1 -> F_1
+      const refined = macro.replace(/\\(mathbb|mathcal|mathfrak|mathbf|mathit|mathsf|mathtt|text)([A-Za-z])([0-9])?/g, (_, m, c, d) => {
+        return `\\${m}{${c}}${d ? `_{${d}}` : ''}`;
+      });
+      result = result.replace(id, refined);
+    });
 
-    // 4. Generic LaTeX Syntax Refiner
-    // Automatically enforces standard bracing for common font macros (e.g., \mathbbR -> \mathbb{R}).
-    // This avoids maintaining a manual list of hardcoded replacements.
-    result = result.replace(
-      /\\(mathbb|mathcal|mathfrak|mathbf|mathit|mathsf|mathtt|text)([A-Za-z])/g, 
-      '\\$1{$2}'
-    );
+    // 5. Convert remaining Unicode to LaTeX
+    result = this.transformer.tolatex(result);
 
     return result;
   }

@@ -1,3 +1,4 @@
+#!/usr/bin/env tsx
 import { syncCitationMetadata } from './tasks/citation.js';
 import { cleanupOldVersions } from './tasks/cleanup.js';
 import { compilePDF } from './tasks/compile.js';

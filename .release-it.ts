@@ -25,8 +25,6 @@ export default {
   },
   hooks: {
     'after:bump': [
-      'pnpm run generate:figures',
-      'pnpm run generate:zenodo',
       'pnpm exec tsx scripts/build.ts ${version}',
     ],
     // Generate figures first, then generate .zenodo.json from CITATION.cff,

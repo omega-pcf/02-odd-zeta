@@ -22,6 +22,7 @@
   "private": true,
   "devDependencies": {
     "@citestyle/bibtex": "^1.0.0",
+    "@citestyle/core": "^1.0.0",
     "@citestyle/types": "^1.0.0",
     "@iarna/toml": "^2.2.5",
     "@release-it/bumper": "^7.0.0",
@@ -29,7 +30,6 @@
     "@types/node": "^20.0.0",
     "ajv": "^8.18.0",
     "ajv-formats": "^3.0.1",
-    "citation-js": "^0.7.22",
     "conventional-changelog-conventionalcommits": "^9.3.1",
     "conventional-commits-parser": "^6.4.0",
     "dotenv-cli": "^11.0.0",
@@ -39,7 +39,7 @@
     "tsx": "^4.0.0",
     "typescript": "^5.0.0",
     "unicode2latex": "^7.0.30",
-    "yaml": "^2.0.0"
+    "yaml": "^2.4.5"
   },
   "repository": {
     "type": "git",
