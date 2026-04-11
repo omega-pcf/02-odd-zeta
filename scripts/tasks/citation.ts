@@ -105,10 +105,7 @@ export class MetadataPipeline {
 
   private syncBibtex(items: CslItem[]): void {
     const data = new Cite(items);
-    const bib = data.format('bibtex', {
-      template: 'apa',
-      lang: 'en-US'
-    });
+    const bib = data.format('bibtex');
     writeFileSync(PATHS.BIB, bib);
     console.log(`  ✓ ${PATHS.BIB} generated.`);
   }
