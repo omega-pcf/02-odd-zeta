@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.2](https://github.com/omega-pcf/02-odd-zeta/compare/v1.2.1...v1.2.2) (2026-04-11)
+
+### Bug Fixes
+
+* **authorship:** ensure metadata consistency for cross-references ([4db5ca9](https://github.com/omega-pcf/02-odd-zeta/commit/4db5ca9b32c568c8b37fb508b758315264e2cf91))
+* **citation:** resolve 'others' parsing for main paper reference ([5e55cdc](https://github.com/omega-pcf/02-odd-zeta/commit/5e55cdcc18f7e4c448eafedf30287a470f653f14))
+
 ## [1.2.1](https://github.com/omega-pcf/02-odd-zeta/compare/v1.2.0...v1.2.1) (2026-04-11)
 
 ### Bug Fixes

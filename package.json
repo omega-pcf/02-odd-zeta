@@ -1,6 +1,6 @@
 {
   "name": "@omega-pcf/02-odd-zeta",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Odd Zeta Values from the PCF Torus: φ and π as Arithmetic-Geometric Sources",
   "type": "module",
   "scripts": {
