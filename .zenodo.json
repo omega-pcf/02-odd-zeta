@@ -34,5 +34,40 @@
   "upload_type": "publication",
   "publication_type": "preprint",
   "access_right": "open",
-  "license": "cc-by-4.0"
+  "license": "CC-BY-4.0",
+  "language": "eng",
+  "references": [
+    "Elvang, H., Herderschee, A., Morales, R. (2026). String Theory from Maximal Supersymmetry. Preprint arXiv:2601.11705 [hep-th].",
+    "González García, J. A., others (2026). The Hilbert-Pólya Operator and the Primitive Structure of the Complex Plane: Between 𝔽₁, String Theory, and Ancient Geometry. Preprint. DOI: 10.5281/zenodo.17619486.",
+    "Neukirch, J. (1999). Algebraic Number Theory.",
+    "Washington, L. C. (1997). Introduction to Cyclotomic Fields.",
+    "Apéry, R. (1979). Irrationalité de ζ(2) et ζ(3). Astérisque, 61, 11-13.",
+    "Ball, K., Rivoal, T. (2001). Irrationalité d'une infinité de valeurs de la fonction zêta aux entiers impairs. Invent. Math., 146, 193-207.",
+    "Brown, J. D., Henneaux, M. (1986). Central charges in the canonical realization of asymptotic symmetries: an example from three-dimensional gravity. Comm. Math. Phys., 104, 207-226.",
+    "Hecke, Erich (1920). Eine neue Art von Zetafunktionen und ihre Beziehungen zur Verteilung der Primzahlen. Math. Z., 6, 11-51. DOI: 10.1007/BF01612081.",
+    "Riemann, B. (1859). Üeber die Anzahl der Primzahlen unter einer gegebenen Grösse. Monatsberichte der Berliner Akademie, 671-680.",
+    "Euler, L. (1737). Variae observationes circa series infinitas. Commentarii academiae scientiarum Petropolitanae, 9, 160-188.",
+    "Veneziano, G. (1968). Construction of a crossing-symmetric, Regge-behaved amplitude for linearly rising trajectories. Nuovo Cimento A, 57, 190-197.",
+    "Borger, J. (2010). Λ-rings and the Field with One Element. Selecta Mathematica, 16, 603-666.",
+    "Manin, Yuri I. (2013). Numbers as functions. P-Adic Numbers, Ultrametric Analysis and Applications, 5, 319-339. DOI: 10.1134/S2070046613040055.",
+    "López Peña, J., Lorscheid, O. (2009). Torified varieties and the geometry over 𝔽₁. arXiv:0901.4677.",
+    "Weil, A. (1940). Une lettre et un extrait de lettre à Simone Weil. Collected Papers, I, 244-255.",
+    "Grisales Herrera, J. (2025). Golden Prime Symmetry. University of Tolima, preprint.",
+    "Maldacena, Juan M. (1998). The large N limit of superconformal field theories and supergravity. Advances in Theoretical and Mathematical Physics, 2, 231-252. DOI: 10.1023/A:1026654312961.",
+    "Lawvere, F. William (1969). Diagonal arguments and cartesian closed categories. Category Theory, Homology Theory and their Applications II, 92, 134-145.",
+    "Yanofsky, Noson S. (2003). A universal approach to self-referential paradoxes, incompleteness and fixed points. Bull. Symb. Log., 9, 362-386. DOI: 10.2178/bsl/1058448677.",
+    "Vitruvius (1960). The Ten Books on Architecture.",
+    "Argand, Jean Robert (1806). Essai sur une manière de représenter les quantités imaginaires dans les constructions géométriques.",
+    "Connes, Alain, Douglas, Michael R., Schwarz, Albert (1998). Noncommutative geometry and matrix theory: Compactification on tori. Journal of High Energy Physics, 1998(02), 003-. DOI: 10.1088/1126-6708/1998/02/003.",
+    "Dunford, N., Schwartz, J. T. (1958). Linear Operators: General Theory.",
+    "Gelfand, I. M. (1941). Normierte Ringe. Matematicheskii Sbornik, 9(51), 3-24.",
+    "Baker, A. (1966). Linear forms in the logarithms of algebraic numbers. Mathematika, 13, 204-216."
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/omega-pcf/02-odd-zeta",
+      "relation": "isSupplementTo",
+      "resource_type": "software"
+    }
+  ]
 }

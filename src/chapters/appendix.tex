@@ -1,0 +1,24 @@
+
+%%% ====================================================================
+%%% ====================================================================
+%%%
+%%%  APPENDIX: COMPILATION AND VERIFICATION
+%%%
+%%% ====================================================================
+%%% ====================================================================
+\appendix
+
+\section{Compilation and Verification}\label{app:compilation}
+
+The project requires Lean~4 with Mathlib. To verify the formal proofs:
+\begin{enumerate}
+  \item Navigate to the \texttt{lean/} directory and run \texttt{lake build}.
+  \item Alternatively, from the root folder, run \texttt{pnpm run verify} to execute the dual verification suite (Lean and Python).
+\end{enumerate}
+
+All \texttt{decide} and \texttt{fin\_cases} tactics terminate in
+${}<30$~seconds on standard hardware. 
+Source files and numerical verification suite are available at:
+\begin{center}
+  \url{\pcfrepo}
+\end{center}

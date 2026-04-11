@@ -55,7 +55,7 @@ references:
     year: 2026
   - type: article
     title: "The Hilbert-Pólya Operator and the Primitive Structure of the Complex
-      Plane: Between \\mathbbF₁, String Theory, and Ancient Geometry"
+      Plane: Between 𝔽₁, String Theory, and Ancient Geometry"
     authors:
       - family-names: González García
         given-names: J. A.
@@ -176,7 +176,7 @@ references:
     loc-end: "339"
     year: 2013
   - type: article
-    title: Torified varieties and the geometry over \mathbbF₁
+    title: Torified varieties and the geometry over 𝔽₁
     authors:
       - family-names: López Peña
         given-names: J.

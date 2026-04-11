@@ -27,42 +27,25 @@ const PATHS = {
 };
 
 /**
- * Professional LaTeX Sanitization and Syntax Refinement.
- * Uses authoritative libraries to avoid heuristic guesswork.
+ * Professional BibTeX Character Encoding.
+ * Transforms Unicode metadata into LaTeX-compatible strings.
  */
-class RobustSanitizer {
+class BibtexEncoder {
   private transformer = new Transform('bibtex');
 
-  public sanitize(text: string): string {
+  public encode(text: string): string {
     if (!text) return text;
     
-    // 1. Strip HTML tags
+    // 1. Strip HTML tags (e.g., <i>, <sub>) FIRST
+    // This prevents the LaTeX transformer from mangling tags into math mode.
     let result = striptags(text);
-    
-    // 2. Protect valid LaTeX macros (e.g., \mathbb, \mathcal) before escaping
-    // We replace them with a unique placeholder that escape-latex won't touch
-    const macros: string[] = [];
-    result = result.replace(/\\(mathbb|mathcal|mathfrak|mathbf|mathit|mathsf|mathtt|text)([A-Za-z0-9])/g, (match) => {
-      const id = `__LATEX_MACRO_${macros.length}__`;
-      macros.push(match);
-      return id;
-    });
 
-    // 3. Escape reserved LaTeX characters (e.g., &, %, $)
-    result = escapeLatex(result);
-    
-    // 4. Restore and refine LaTeX macros
-    macros.forEach((macro, i) => {
-      const id = `__LATEX_MACRO_${i}__`;
-      // Convert \mathbbF to \mathbb{F} and handle basic subscripts like F1 -> F_1
-      const refined = macro.replace(/\\(mathbb|mathcal|mathfrak|mathbf|mathit|mathsf|mathtt|text)([A-Za-z])([0-9])?/g, (_, m, c, d) => {
-        return `\\${m}{${c}}${d ? `_{${d}}` : ''}`;
-      });
-      result = result.replace(id, refined);
-    });
-
-    // 5. Convert remaining Unicode to LaTeX
+    // 2. Unicode to LaTeX Transformation
+    // unicode2latex handles 𝔽₁, &, %, $, etc.
     result = this.transformer.tolatex(result);
+
+    // 3. Post-processing: Remove any accidental double-escapes (\textbackslash)
+    result = result.replace(/\\textbackslash\{\}/g, '\\');
 
     return result;
   }
@@ -169,8 +152,24 @@ class CitationMapper {
     return ref;
   }
 
+  private static formatCffReference(ref: Reference): string {
+    const authors = (ref.authors || [])
+      .map(a => `${a['family-names']}, ${a['given-names'] || ''}`.trim().replace(/,$/, ''))
+      .join(', ');
+    const year = ref.year ? `(${ref.year}). ` : '';
+    const journal = ref.journal ? `. ${ref.journal}` : '';
+    const vol = ref.volume ? `, ${ref.volume}` : '';
+    const issue = ref.issue ? `(${ref.issue})` : '';
+    const pages = (ref['loc-start'] || ref['loc-end']) 
+      ? `, ${ref['loc-start'] || ''}-${ref['loc-end'] || ''}` 
+      : '';
+    const identifier = ref.doi ? `. DOI: ${ref.doi}` : (ref.url ? `. URL: ${ref.url}` : '');
+
+    return `${authors} ${year}${ref.title}${journal}${vol}${issue}${pages}${identifier}.`.replace(/\.\./g, '.');
+  }
+
   public static cffToZenodo(cff: CitationFileFormat, version: string, existing?: any): any {
-    return {
+    const zenodo: any = {
       ...existing,
       title: cff.title,
       description: cff.abstract || cff.title,
@@ -185,8 +184,23 @@ class CitationMapper {
       upload_type: existing?.upload_type || 'publication',
       publication_type: existing?.publication_type || 'preprint',
       access_right: existing?.access_right || 'open',
-      license: existing?.license || 'cc-by-4.0'
+      license: cff.license || existing?.license || 'cc-by-4.0',
+      language: (cff as any).language || 'eng',
+      references: (cff.references || []).map(ref => this.formatCffReference(ref))
     };
+
+    if (cff['repository-code']) {
+      zenodo.related_identifiers = [
+        ...(existing?.related_identifiers || []),
+        {
+          identifier: cff['repository-code'],
+          relation: 'isSupplementTo',
+          resource_type: 'software'
+        }
+      ];
+    }
+
+    return zenodo;
   }
 }
 
@@ -195,7 +209,7 @@ class CitationMapper {
  */
 export class MetadataPipeline {
   private validator = new ValidationEngine();
-  private sanitizer = new RobustSanitizer();
+  private encoder = new BibtexEncoder();
 
   public sync(version: string): void {
     this.cleanup();
@@ -203,7 +217,7 @@ export class MetadataPipeline {
 
     const cslData = this.loadCsl();
     
-    // 1. Bibliography (Sanitized for LaTeX build)
+    // 1. Bibliography (Encoded for LaTeX build)
     this.syncBibtex(cslData);
 
     // 2. Project Identity (CFF root remains Source of Truth)
@@ -233,19 +247,19 @@ export class MetadataPipeline {
   }
 
   private syncBibtex(items: CslItem[]): void {
-    // Sanitize every bibliographic field for LaTeX compatibility
-    const sanitizedItems = items.map(item => ({
+    // Encode every bibliographic field for LaTeX compatibility
+    const encodedItems = items.map(item => ({
       ...item,
-      title: this.sanitizer.sanitize(item.title),
-      'container-title': item['container-title'] ? this.sanitizer.sanitize(item['container-title']) : undefined,
-      publisher: item.publisher ? this.sanitizer.sanitize(item.publisher) : undefined,
-      note: item.note ? this.sanitizer.sanitize(item.note) : undefined,
-      abstract: item.abstract ? this.sanitizer.sanitize(item.abstract) : undefined
+      title: this.encoder.encode(item.title),
+      'container-title': item['container-title'] ? this.encoder.encode(item['container-title']) : undefined,
+      publisher: item.publisher ? this.encoder.encode(item.publisher) : undefined,
+      note: item.note ? this.encoder.encode(item.note) : undefined,
+      abstract: item.abstract ? this.encoder.encode(item.abstract) : undefined
     }));
 
-    const bib = exportBibtex(sanitizedItems);
+    const bib = exportBibtex(encodedItems);
     writeFileSync(PATHS.BIB, bib);
-    console.log(`  ✓ ${PATHS.BIB} generated with robust sanitization.`);
+    console.log(`  ✓ ${PATHS.BIB} generated with character encoding.`);
   }
 
   private syncCff(items: CslItem[], version: string): CitationFileFormat {
