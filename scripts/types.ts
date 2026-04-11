@@ -4483,3 +4483,13 @@ export interface CitationMetadataState {
   version: string;
   csl: CslItem[];
 }
+/**
+ * Configuration for the release build.
+ */
+export interface ReleaseConfig {
+  version: string;
+  buildDir: string;
+  sourceTex: string;
+  outputPdf: string;
+  checksumsFile: string;
+}
