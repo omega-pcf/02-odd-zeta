@@ -30,11 +30,24 @@
     {
         "author": [
             {
-                "family": "González García",
-                "given": "J. A."
+                "given": "Jorge Armando",
+                "family": "González García"
             },
             {
-                "family": "others"
+                "given": "Víctor Manuel",
+                "family": "González García"
+            },
+            {
+                "given": "Itzel Marion",
+                "family": "Dressler Pérez"
+            },
+            {
+                "given": "Luz María",
+                "family": "García Ordóñez"
+            },
+            {
+                "given": "M.",
+                "family": "Moreno"
             }
         ],
         "citation-key": "V11",

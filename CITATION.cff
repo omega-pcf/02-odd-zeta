@@ -44,8 +44,15 @@ abstract: "We demonstrate that the odd values ζ(2k+1) of the Riemann zeta
 references:
   - authors:
       - family-names: González García
-        given-names: J. A.
-      - family-names: others
+        given-names: Jorge Armando
+      - family-names: González García
+        given-names: Víctor Manuel
+      - family-names: Dressler Pérez
+        given-names: Itzel Marion
+      - family-names: García Ordóñez
+        given-names: Luz María
+      - family-names: Moreno
+        given-names: M.
     doi: 10.5281/zenodo.17619486
     identifiers:
       - type: doi
