@@ -1,5 +1,30 @@
 # Changelog
 
+## [1.2.1](https://github.com/omega-pcf/02-odd-zeta/compare/v1.2.0...v1.2.1) (2026-04-11)
+
+### Bug Fixes
+
+* **docs:** replace rigid texttt with semantic lean macro for filenames ([c7b013f](https://github.com/omega-pcf/02-odd-zeta/commit/c7b013f7a6b8eee37f1188f1e7a9878300671c76))
+
+### Styles
+
+* refine academic tone by removing redundant '0 sorry' tags ([5b0c0ff](https://github.com/omega-pcf/02-odd-zeta/commit/5b0c0ffab4f7081c00d49c4fb7a76960594a0bb3))
+
+### Refinements
+
+* **citation:** harmonize metadata pipeline and resolve strict type violations ([552e56e](https://github.com/omega-pcf/02-odd-zeta/commit/552e56edb318bd442da24d7d424ced205da3e193))
+* **docs:** standardize section titles to match main manuscript tone ([7d8d89e](https://github.com/omega-pcf/02-odd-zeta/commit/7d8d89e328026bb8806f8b74e98a4913b57ac363))
+* **mechanisms:** enhance academic phrasing for numerical verification ([80cfa18](https://github.com/omega-pcf/02-odd-zeta/commit/80cfa182c72100956913e73ee7e89ca0f59521e2))
+* **structure:** establish logical chapter-level section hierarchy ([9afb448](https://github.com/omega-pcf/02-odd-zeta/commit/9afb448ae0ff9b6b66f5238ad9773c8fdf521721))
+
+### Chores
+
+* **scripts:** remove legacy and orphaned development scripts ([8383a80](https://github.com/omega-pcf/02-odd-zeta/commit/8383a807a53faac7e1520f89ed7442f5db8e164b))
+
+### Build System
+
+* synchronize dependencies and update release artifacts ([0a6f956](https://github.com/omega-pcf/02-odd-zeta/commit/0a6f9563965901b53cfe12109bee628385e5de25))
+
 ## [1.2.0](https://github.com/omega-pcf/02-odd-zeta/compare/v1.1.3...v1.2.0) (2026-04-11)
 
 ### Features
