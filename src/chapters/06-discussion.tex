@@ -417,12 +417,12 @@ $\cos(\pi/5)>1/2$ & \texttt{cos\_pi\_five\_gt\_half} & monotonicity \\
 $4\cos^2(\pi/5)-2\cos(\pi/5)-1=0$ & \texttt{cos\_pi\_five\_quadratic} & degree-$4$ poly \\
 $\golden = 2\cos(\pi/5)$ & \texttt{pentagon\_identity} & unique root \\
 $|\Ztwenty|=8$ & \texttt{ZtwentyStar\_card} & \texttt{decide} \\
-Mult.\ closed & \texttt{mul\_closed} & \texttt{decide} \\
+Mult.\ closed & \texttt{mul\_preserved\_Z20} & \texttt{decide} \\
 Add.\ destroyed (Prop~2 of~\cite{V11}) & \texttt{add\_destroyed} & \texttt{decide} \\
 $G$ homomorphism & \texttt{G\_hom} & \texttt{decide} \\
 $G$ surjective & \texttt{G\_surj} & \texttt{decide} \\
 $|\ker G|=2$ & \texttt{G\_kernel} & \texttt{decide} \\
-Exponent~$2$ & \texttt{exponent\_two} & \texttt{decide} \\
+Exponent~$2$ & \texttt{golden\_group\_exponent\_two} & \texttt{decide} \\
 $(\sigma,\mu)=(3/2,1/2)$ unique & \texttt{spectral\_uniqueness} & \texttt{nlinarith} \\
 Diagonal blocked (No-Diag.) & \texttt{diagonal\_blocked} & \texttt{nlinarith} \\
 $\mathrm{Re}(\omega_{\mathrm{pcf}})=-1/2$ & \texttt{$\omega$\_re} & \texttt{exp\_mul\_I} \\
@@ -442,7 +442,7 @@ Frobenius functor (functoriality verified via
 $\psi_p\circ\psi_q=\psi_{pq}$), the co-determination theorem
 (reducing to \texttt{G\_hom}, \texttt{G\_surj},
 \texttt{G\_kernel} in \lean{odd_zeta_pcf_v1.lean};
-equivalently \texttt{G\_homomorphism}, \texttt{G\_surjective},
+equivalently \texttt{G\_hom}, \texttt{G\_surj},
 \texttt{G\_kernel} in~\cite{V11}), and the spectral uniqueness
 (\texttt{spectral\_uniqueness})---are
 verified through the Lean~$4$ formalisation of the Primitive

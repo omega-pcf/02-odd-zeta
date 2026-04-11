@@ -137,7 +137,7 @@ def ZtwentyStar : Finset (ZMod 20) := {1, 3, 7, 9, 11, 13, 17, 19}
 
 theorem ZtwentyStar_card : ZtwentyStar.card = 8 := by decide
 
-theorem mul_closed (a b : ZMod 20) (ha : a ∈ ZtwentyStar) (hb : b ∈ ZtwentyStar) :
+theorem mul_preserved_Z20 (a b : ZMod 20) (ha : a ∈ ZtwentyStar) (hb : b ∈ ZtwentyStar) :
     a * b ∈ ZtwentyStar := by revert hb ha b a; decide
 
 theorem add_destroyed :
@@ -154,10 +154,10 @@ def G : ZMod 20 → ZMod 2 × ZMod 2 := fun a =>
   else if a = 3 ∨ a = 7 then (1, 1)
   else (0, 0)
 
-theorem G_homomorphism (a b : ZMod 20) (ha : a ∈ ZtwentyStar) (hb : b ∈ ZtwentyStar) :
+theorem G_hom (a b : ZMod 20) (ha : a ∈ ZtwentyStar) (hb : b ∈ ZtwentyStar) :
     G (a * b) = G a + G b := by revert hb ha b a; decide
 
-theorem G_surjective : ∀ g : ZMod 2 × ZMod 2,
+theorem G_surj : ∀ g : ZMod 2 × ZMod 2,
     ∃ a : ZMod 20, a ∈ ZtwentyStar ∧ G a = g := by
   intro ⟨x, y⟩; fin_cases x <;> fin_cases y
   · exact ⟨1, by decide, by decide⟩
@@ -171,7 +171,7 @@ theorem G_surjective : ∀ g : ZMod 2 × ZMod 2,
 theorem G_kernel (a : ZMod 20) (ha : a ∈ ZtwentyStar) (hG : G a = (0, 0)) :
     a = 1 ∨ a = 9 := by revert hG ha a; decide
 
-theorem exponent_two : ∀ g : ZMod 2 × ZMod 2, g + g = 0 := by
+theorem golden_group_exponent_two : ∀ g : ZMod 2 × ZMod 2, g + g = 0 := by
   intro ⟨x, y⟩; fin_cases x <;> fin_cases y <;> decide
 
 
@@ -284,7 +284,7 @@ theorem part1_isomorphism_chain :
     mu_3 = 1 / 2 ∧
     (1 : ℝ) / mu_3 = 2 ∧
     (∀ k : Fin 3, 0 < PCF_spectral k → PCF_spectral k = 1/2) :=
-  ⟨pentagon_identity, G_kernel, exponent_two, rfl,
+  ⟨pentagon_identity, G_kernel, golden_group_exponent_two, rfl,
    contraction_is_kernel, positive_spectral_half⟩
 
 
@@ -379,7 +379,7 @@ theorem part2_G_determines_zeta :
     (∀ a : ZMod 20, a ∈ ZtwentyStar →
       euler_factor_type a = if (G a).2 = 0 then EulerFactorType.split
                             else EulerFactorType.inert) :=
-  ⟨primes_land_in_ZtwentyStar, G_homomorphism, fun g => G_surjective g, euler_type_from_G⟩
+  ⟨primes_land_in_ZtwentyStar, G_hom, fun g => G_surj g, euler_type_from_G⟩
 
 
 -- ╔════════════════════════════════════════════════════════════════════╗
@@ -411,7 +411,7 @@ theorem values_determined :
     zeta_spectral = PCF_spectral ∧
     (∀ k : Fin 3, 0 < zeta_spectral k → zeta_spectral k = 1/2) :=
   ⟨positive_spectral_half,
-   primes_land_in_ZtwentyStar, G_homomorphism,
+   primes_land_in_ZtwentyStar, G_hom,
    spectral_identification, zeta_positive_spectral_half⟩
 
 
