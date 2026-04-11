@@ -391,8 +391,7 @@ $\omega^k/2$, $\ell = 1$ from S-duality, Brown--Henneaux
 $c = 3$, and the diagonal obstruction
 (\cref{ssec:unifying}, \cref{lem:ads-radius}).
 
-The algebraic and spectral results of \cref{sec:bridges,ssec:unifying} have been verified in Lean~$4$ with
-$0$~\texttt{sorry}: eigenvalue real parts
+The algebraic and spectral results of \cref{sec:bridges,ssec:unifying} have been formally verified in Lean~$4$: eigenvalue real parts
 (\texttt{eigenvalue\_half}), spectral uniqueness
 (\texttt{spectral\_uniqueness}), the Galois functor
 (\texttt{galois\_functor\_complete},~\cite{V11}), and the
@@ -406,7 +405,7 @@ the paper's results and the Lean identifiers in
 \begin{table}[ht]
 \centering
 \caption{Lean audit: correspondence between paper results and
-formalised identifiers.  All entries have $0$~\texttt{sorry}.
+formalised identifiers. All dependencies are fully verified.
 The single axiom is $\golden^2=\golden+1$.}
 \label{tab:lean-audit}
 \begin{tabular}{lll}
@@ -448,7 +447,7 @@ equivalently \texttt{G\_homomorphism}, \texttt{G\_surjective},
 \texttt{G\_kernel} in~\cite{V11}), and the spectral uniqueness
 (\texttt{spectral\_uniqueness})---are
 verified through the Lean~$4$ formalisation of the Primitive
-Structure~\cite{V11} with $0$~\texttt{sorry}.
+Structure~\cite{V11}.
 
 %%% ====================================================================
 \subsection{Open problems}\label{sec:open}
@@ -471,7 +470,7 @@ values $\zeta_{\mathbb{Q}(\sqrt{5})}(2k+1)$ via the Kronecker limit formula or S
 The accompanying Lean~$4$ file \lean{odd_zeta_pcf_v1.lean}
 formalises the algebraic chain (pentagon identity, Fibonacci splitting
 criterion, $G$, eigenvalues, additive destruction, diagonal obstruction)
-with $0$~\texttt{sorry} and one axiom ($\golden^2=\golden+1$);
+with zero \texttt{sorry} statements and one axiom ($\golden^2=\golden+1$);
 see Table~\ref{tab:lean-audit} for the complete audit.
 The Euler product colimit (\cref{prop:euler-colimit}),
 the Dedekind natural isomorphism

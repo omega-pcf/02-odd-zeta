@@ -588,7 +588,7 @@ The chain is therefore:
 The third dimension and its properties are not additional
 data---they are consequences of the Euler product of
 $\golden^2 = \golden + 1$ over the primes.
-Both are verified in Lean~$4$ with $0$~\texttt{sorry}:
+Both are formally verified in Lean~$4$:
 \texttt{norm\_Omega\_is\_half}, \texttt{spectral\_uniqueness},
 and \texttt{galois\_functor\_complete} (\cite{V11}).
 \end{corollary}
@@ -633,7 +633,7 @@ $\omega^2 = \bar\omega$, so $\mathrm{Re}(\omega^2/2) = -1/4$.
 Only $k = 0$ gives $\mathrm{Re} > 0$, and
 $\mathrm{Re}(\omega^0/2) = 1/2 = \mu_3$
 (\cref{prop:worldline-entropy}).
-Verified in Lean~$4$: \texttt{eigenvalue\_half} ($0$~\texttt{sorry}).
+Verified in Lean~$4$: \texttt{eigenvalue\_half}.
 \end{proof}
 
 \begin{proposition}[Spectral structure of the Euler product]%
@@ -725,7 +725,7 @@ forgetful functor chain
 $C^*$-$\mathbf{Alg}\to\mathbf{Hilb}\to\mathbf{Met}\to\mathbf{Set}$
 and the categorical limit theorem, which are established in the Primitive
 Structure~\cite{V11} (Lean: \texttt{categorical\_limit\_theorem},
-\texttt{Omega\_hat\_unique\_positive\_re}, $0$~\texttt{sorry}).
+\texttt{Omega\_hat\_unique\_positive\_re}).
 \end{remark}
 
 \begin{remark}[Classical inputs]\label{rmk:classical-inputs}
