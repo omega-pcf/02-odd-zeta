@@ -194,12 +194,13 @@ references:
     loc-start: "244"
     loc-end: "255"
     year: 1940
-  - type: article
-    title: Golden Prime Symmetry
+  - type: generic
+    title: Golden Prime Symmetry Theory
     authors:
       - family-names: Grisales Herrera
-        given-names: J.
-    journal: University of Tolima, preprint
+        given-names: Javier
+    doi: 10.5281/zenodo.17100303
+    url: https://doi.org/10.5281/zenodo.17100303
     year: 2025
   - type: article
     title: The large N limit of superconformal field theories and supergravity

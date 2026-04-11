@@ -1,1 +1,587 @@
-[{"container-title":"Preprint arXiv:2601.11705 [hep-th]","author":[{"given":"H.","family":"Elvang"},{"given":"A.","family":"Herderschee"},{"given":"R.","family":"Morales"}],"type":"article-journal","id":"Elvang2026","citation-key":"Elvang2026","issued":{"date-parts":[[2026]]},"title":"String Theory from Maximal Supersymmetry"},{"container-title":"Preprint","author":[{"given":"J. A.","family":"González García"},{"family":"others"}],"DOI":"10.5281/zenodo.17619486","type":"article-journal","id":"V11","citation-key":"V11","issued":{"date-parts":[[2026]]},"title":"The Hilbert-Pólya Operator and the Primitive Structure of the Complex Plane: Between 𝔽₁, String Theory, and Ancient Geometry","URL":"https://doi.org/10.5281/zenodo.17619486"},{"author":[{"given":"J.","family":"Neukirch"}],"type":"book","id":"Neukirch","citation-key":"Neukirch","issued":{"date-parts":[[1999]]},"publisher":"Springer","title":"Algebraic Number Theory"},{"author":[{"given":"L. C.","family":"Washington"}],"type":"book","id":"Washington","citation-key":"Washington","issued":{"date-parts":[[1997]]},"publisher":"Springer","title":"Introduction to Cyclotomic Fields"},{"container-title":"Astérisque","author":[{"given":"R.","family":"Apéry"}],"type":"article-journal","id":"Apery","citation-key":"Apery","issued":{"date-parts":[[1979]]},"page":"11-13","title":"Irrationalité de ζ(2) et ζ(3)","volume":"61"},{"container-title":"Invent. Math.","author":[{"given":"K.","family":"Ball"},{"given":"T.","family":"Rivoal"}],"type":"article-journal","id":"BallRivoal","citation-key":"BallRivoal","issued":{"date-parts":[[2001]]},"page":"193-207","title":"Irrationalité d'une infinité de valeurs de la fonction zêta aux entiers impairs","volume":"146"},{"container-title":"Comm. Math. Phys.","author":[{"given":"J. D.","family":"Brown"},{"given":"M.","family":"Henneaux"}],"type":"article-journal","id":"BrownHenneaux","citation-key":"BrownHenneaux","issued":{"date-parts":[[1986]]},"page":"207-226","title":"Central charges in the canonical realization of asymptotic symmetries: an example from three-dimensional gravity","volume":"104"},{"container-title":"Math. Z.","author":[{"given":"Erich","family":"Hecke"}],"DOI":"10.1007/BF01612081","type":"article-journal","id":"Hecke","citation-key":"Hecke","issued":{"date-parts":[[1920]]},"page":"11-51","publisher":"Springer","title":"Eine neue Art von Zetafunktionen und ihre Beziehungen zur Verteilung der Primzahlen","volume":"6"},{"container-title":"Monatsberichte der Berliner Akademie","author":[{"given":"B.","family":"Riemann"}],"type":"article-journal","id":"Riemann","citation-key":"Riemann","issued":{"date-parts":[[1859]]},"page":"671-680","title":"Üeber die Anzahl der Primzahlen unter einer gegebenen Grösse"},{"container-title":"Commentarii academiae scientiarum Petropolitanae","author":[{"given":"L.","family":"Euler"}],"type":"article-journal","id":"Euler","citation-key":"Euler","issued":{"date-parts":[[1737]]},"page":"160-188","title":"Variae observationes circa series infinitas","volume":"9"},{"container-title":"Nuovo Cimento A","author":[{"given":"G.","family":"Veneziano"}],"type":"article-journal","id":"Veneziano","citation-key":"Veneziano","issued":{"date-parts":[[1968]]},"page":"190-197","title":"Construction of a crossing-symmetric, Regge-behaved amplitude for linearly rising trajectories","volume":"57"},{"container-title":"Selecta Mathematica","author":[{"given":"J.","family":"Borger"}],"type":"article-journal","id":"Borger","citation-key":"Borger","issued":{"date-parts":[[2010]]},"page":"603-666","title":"Λ-rings and the Field with One Element","volume":"16"},{"container-title":"P-Adic Numbers, Ultrametric Analysis and Applications","author":[{"given":"Yuri I.","family":"Manin"}],"DOI":"10.1134/S2070046613040055","type":"article-journal","id":"Manin","citation-key":"Manin","issued":{"date-parts":[[2013]]},"page":"319-339","title":"Numbers as functions","volume":"5"},{"container-title":"arXiv:0901.4677","author":[{"given":"J.","family":"López Peña"},{"given":"O.","family":"Lorscheid"}],"type":"article-journal","id":"Lorscheid","citation-key":"Lorscheid","issued":{"date-parts":[[2009]]},"title":"Torified varieties and the geometry over 𝔽₁"},{"author":[{"given":"A.","family":"Weil"}],"container-title":"Collected Papers","type":"chapter","id":"Weil","citation-key":"Weil","issued":{"date-parts":[[1940]]},"page":"244-255","title":"Une lettre et un extrait de lettre à Simone Weil","volume":"I"},{"container-title":"University of Tolima, preprint","author":[{"given":"J.","family":"Grisales Herrera"}],"type":"article-journal","id":"GrisalesHerrera","citation-key":"GrisalesHerrera","issued":{"date-parts":[[2025]]},"title":"Golden Prime Symmetry"},{"container-title":"Advances in Theoretical and Mathematical Physics","author":[{"given":"Juan M.","family":"Maldacena"}],"DOI":"10.1023/A:1026654312961","type":"article-journal","id":"Maldacena","citation-key":"Maldacena","issued":{"date-parts":[[1998]]},"page":"231-252","title":"The large N limit of superconformal field theories and supergravity","URL":"https://doi.org/10.1023/A:1026654312961","volume":"2"},{"publisher-place":"Berlin, Heidelberg","author":[{"given":"F. William","family":"Lawvere"}],"container-title":"Category Theory, Homology Theory and their Applications II","collection-title":"Lecture Notes in Mathematics","type":"chapter","id":"Lawvere","citation-key":"Lawvere","ISBN":"978-3-540-36101-5","issued":{"date-parts":[[1969]]},"page":"134-145","publisher":"Springer Berlin Heidelberg","title":"Diagonal arguments and cartesian closed categories","volume":"92"},{"container-title":"Bull. Symb. Log.","author":[{"given":"Noson S.","family":"Yanofsky"}],"DOI":"10.2178/bsl/1058448677","type":"article-journal","id":"Yanofsky","citation-key":"Yanofsky","issued":{"date-parts":[[2003]]},"page":"362-386","title":"A universal approach to self-referential paradoxes, incompleteness and fixed points","volume":"9"},{"author":[{"family":"Vitruvius"}],"type":"book","id":"Vitruvius","citation-key":"Vitruvius","issued":{"date-parts":[[1960]]},"note":"First published c. 30–15 BC","publisher":"Dover Publications","title":"The Ten Books on Architecture"},{"author":[{"given":"Jean Robert","family":"Argand"}],"type":"book","id":"Argand","citation-key":"Argand","issued":{"date-parts":[[1806]]},"publisher":"Gauthier-Villars","title":"Essai sur une manière de représenter les quantités imaginaires dans les constructions géométriques"},{"container-title":"Journal of High Energy Physics","author":[{"given":"Alain","family":"Connes"},{"given":"Michael R.","family":"Douglas"},{"given":"Albert","family":"Schwarz"}],"DOI":"10.1088/1126-6708/1998/02/003","type":"article-journal","id":"ConnesDouglasSchwarz","citation-key":"ConnesDouglasSchwarz","issue":"02","issued":{"date-parts":[[1998]]},"page":"003","title":"Noncommutative geometry and matrix theory: Compactification on tori","URL":"https://doi.org/10.1088/1126-6708/1998/02/003","volume":"1998"},{"author":[{"given":"N.","family":"Dunford"},{"given":"J. T.","family":"Schwartz"}],"type":"book","id":"DunfordSchwartz","citation-key":"DunfordSchwartz","issued":{"date-parts":[[1958]]},"publisher":"Interscience Publishers","title":"Linear Operators: General Theory"},{"container-title":"Matematicheskii Sbornik","author":[{"given":"I. M.","family":"Gelfand"}],"type":"article-journal","id":"Gelfand","citation-key":"Gelfand","issue":"51","issued":{"date-parts":[[1941]]},"page":"3-24","title":"Normierte Ringe","volume":"9"},{"container-title":"Mathematika","author":[{"given":"A.","family":"Baker"}],"type":"article-journal","id":"Baker","citation-key":"Baker","issued":{"date-parts":[[1966]]},"page":"204-216","title":"Linear forms in the logarithms of algebraic numbers","volume":"13"}]
+[
+    {
+        "author": [
+            {
+                "family": "Elvang",
+                "given": "H."
+            },
+            {
+                "family": "Herderschee",
+                "given": "A."
+            },
+            {
+                "family": "Morales",
+                "given": "R."
+            }
+        ],
+        "citation-key": "Elvang2026",
+        "container-title": "Preprint arXiv:2601.11705 [hep-th]",
+        "id": "Elvang2026",
+        "issued": {
+            "date-parts": [
+                [
+                    2026
+                ]
+            ]
+        },
+        "title": "String Theory from Maximal Supersymmetry",
+        "type": "article-journal"
+    },
+    {
+        "author": [
+            {
+                "family": "González García",
+                "given": "J. A."
+            },
+            {
+                "family": "others"
+            }
+        ],
+        "citation-key": "V11",
+        "container-title": "Preprint",
+        "DOI": "10.5281/zenodo.17619486",
+        "id": "V11",
+        "issued": {
+            "date-parts": [
+                [
+                    2026
+                ]
+            ]
+        },
+        "title": "The Hilbert-Pólya Operator and the Primitive Structure of the Complex Plane: Between 𝔽₁, String Theory, and Ancient Geometry",
+        "type": "article-journal",
+        "URL": "https://doi.org/10.5281/zenodo.17619486"
+    },
+    {
+        "author": [
+            {
+                "family": "Neukirch",
+                "given": "J."
+            }
+        ],
+        "citation-key": "Neukirch",
+        "id": "Neukirch",
+        "issued": {
+            "date-parts": [
+                [
+                    1999
+                ]
+            ]
+        },
+        "publisher": "Springer",
+        "title": "Algebraic Number Theory",
+        "type": "book"
+    },
+    {
+        "author": [
+            {
+                "family": "Washington",
+                "given": "L. C."
+            }
+        ],
+        "citation-key": "Washington",
+        "id": "Washington",
+        "issued": {
+            "date-parts": [
+                [
+                    1997
+                ]
+            ]
+        },
+        "publisher": "Springer",
+        "title": "Introduction to Cyclotomic Fields",
+        "type": "book"
+    },
+    {
+        "author": [
+            {
+                "family": "Apéry",
+                "given": "R."
+            }
+        ],
+        "citation-key": "Apery",
+        "container-title": "Astérisque",
+        "id": "Apery",
+        "issued": {
+            "date-parts": [
+                [
+                    1979
+                ]
+            ]
+        },
+        "page": "11-13",
+        "title": "Irrationalité de ζ(2) et ζ(3)",
+        "type": "article-journal",
+        "volume": "61"
+    },
+    {
+        "author": [
+            {
+                "family": "Ball",
+                "given": "K."
+            },
+            {
+                "family": "Rivoal",
+                "given": "T."
+            }
+        ],
+        "citation-key": "BallRivoal",
+        "container-title": "Invent. Math.",
+        "id": "BallRivoal",
+        "issued": {
+            "date-parts": [
+                [
+                    2001
+                ]
+            ]
+        },
+        "page": "193-207",
+        "title": "Irrationalité d'une infinité de valeurs de la fonction zêta aux entiers impairs",
+        "type": "article-journal",
+        "volume": "146"
+    },
+    {
+        "author": [
+            {
+                "family": "Brown",
+                "given": "J. D."
+            },
+            {
+                "family": "Henneaux",
+                "given": "M."
+            }
+        ],
+        "citation-key": "BrownHenneaux",
+        "container-title": "Comm. Math. Phys.",
+        "id": "BrownHenneaux",
+        "issued": {
+            "date-parts": [
+                [
+                    1986
+                ]
+            ]
+        },
+        "page": "207-226",
+        "title": "Central charges in the canonical realization of asymptotic symmetries: an example from three-dimensional gravity",
+        "type": "article-journal",
+        "volume": "104"
+    },
+    {
+        "author": [
+            {
+                "family": "Hecke",
+                "given": "Erich"
+            }
+        ],
+        "citation-key": "Hecke",
+        "container-title": "Math. Z.",
+        "DOI": "10.1007/BF01612081",
+        "id": "Hecke",
+        "issued": {
+            "date-parts": [
+                [
+                    1920
+                ]
+            ]
+        },
+        "page": "11-51",
+        "publisher": "Springer",
+        "title": "Eine neue Art von Zetafunktionen und ihre Beziehungen zur Verteilung der Primzahlen",
+        "type": "article-journal",
+        "volume": "6"
+    },
+    {
+        "author": [
+            {
+                "family": "Riemann",
+                "given": "B."
+            }
+        ],
+        "citation-key": "Riemann",
+        "container-title": "Monatsberichte der Berliner Akademie",
+        "id": "Riemann",
+        "issued": {
+            "date-parts": [
+                [
+                    1859
+                ]
+            ]
+        },
+        "page": "671-680",
+        "title": "Üeber die Anzahl der Primzahlen unter einer gegebenen Grösse",
+        "type": "article-journal"
+    },
+    {
+        "author": [
+            {
+                "family": "Euler",
+                "given": "L."
+            }
+        ],
+        "citation-key": "Euler",
+        "container-title": "Commentarii academiae scientiarum Petropolitanae",
+        "id": "Euler",
+        "issued": {
+            "date-parts": [
+                [
+                    1737
+                ]
+            ]
+        },
+        "page": "160-188",
+        "title": "Variae observationes circa series infinitas",
+        "type": "article-journal",
+        "volume": "9"
+    },
+    {
+        "author": [
+            {
+                "family": "Veneziano",
+                "given": "G."
+            }
+        ],
+        "citation-key": "Veneziano",
+        "container-title": "Nuovo Cimento A",
+        "id": "Veneziano",
+        "issued": {
+            "date-parts": [
+                [
+                    1968
+                ]
+            ]
+        },
+        "page": "190-197",
+        "title": "Construction of a crossing-symmetric, Regge-behaved amplitude for linearly rising trajectories",
+        "type": "article-journal",
+        "volume": "57"
+    },
+    {
+        "author": [
+            {
+                "family": "Borger",
+                "given": "J."
+            }
+        ],
+        "citation-key": "Borger",
+        "container-title": "Selecta Mathematica",
+        "id": "Borger",
+        "issued": {
+            "date-parts": [
+                [
+                    2010
+                ]
+            ]
+        },
+        "page": "603-666",
+        "title": "Λ-rings and the Field with One Element",
+        "type": "article-journal",
+        "volume": "16"
+    },
+    {
+        "author": [
+            {
+                "family": "Manin",
+                "given": "Yuri I."
+            }
+        ],
+        "citation-key": "Manin",
+        "container-title": "P-Adic Numbers, Ultrametric Analysis and Applications",
+        "DOI": "10.1134/S2070046613040055",
+        "id": "Manin",
+        "issued": {
+            "date-parts": [
+                [
+                    2013
+                ]
+            ]
+        },
+        "page": "319-339",
+        "title": "Numbers as functions",
+        "type": "article-journal",
+        "volume": "5"
+    },
+    {
+        "author": [
+            {
+                "family": "López Peña",
+                "given": "J."
+            },
+            {
+                "family": "Lorscheid",
+                "given": "O."
+            }
+        ],
+        "citation-key": "Lorscheid",
+        "container-title": "arXiv:0901.4677",
+        "id": "Lorscheid",
+        "issued": {
+            "date-parts": [
+                [
+                    2009
+                ]
+            ]
+        },
+        "title": "Torified varieties and the geometry over 𝔽₁",
+        "type": "article-journal"
+    },
+    {
+        "author": [
+            {
+                "family": "Weil",
+                "given": "A."
+            }
+        ],
+        "citation-key": "Weil",
+        "container-title": "Collected Papers",
+        "id": "Weil",
+        "issued": {
+            "date-parts": [
+                [
+                    1940
+                ]
+            ]
+        },
+        "page": "244-255",
+        "title": "Une lettre et un extrait de lettre à Simone Weil",
+        "type": "chapter",
+        "volume": "I"
+    },
+    {
+        "author": [
+        {
+            "given": "Javier",
+            "family": "Grisales Herrera"
+        }
+        ],
+        "DOI": "10.5281/zenodo.17100303",
+        "citation-key": "GrisalesHerrera",
+        "id": "GrisalesHerrera",
+        "issued": {
+        "date-parts": [
+            [
+            2025,
+            9
+            ]
+        ]
+        },
+        "publisher": "Zenodo",
+        "title": "Golden Prime Symmetry Theory",
+        "URL": "https://doi.org/10.5281/zenodo.17100303",
+        "type": "document"
+    },
+    {
+        "author": [
+            {
+                "family": "Maldacena",
+                "given": "Juan M."
+            }
+        ],
+        "citation-key": "Maldacena",
+        "container-title": "Advances in Theoretical and Mathematical Physics",
+        "DOI": "10.1023/A:1026654312961",
+        "id": "Maldacena",
+        "issued": {
+            "date-parts": [
+                [
+                    1998
+                ]
+            ]
+        },
+        "page": "231-252",
+        "title": "The large N limit of superconformal field theories and supergravity",
+        "type": "article-journal",
+        "URL": "https://doi.org/10.1023/A:1026654312961",
+        "volume": "2"
+    },
+    {
+        "author": [
+            {
+                "family": "Lawvere",
+                "given": "F. William"
+            }
+        ],
+        "citation-key": "Lawvere",
+        "collection-title": "Lecture Notes in Mathematics",
+        "container-title": "Category Theory, Homology Theory and their Applications II",
+        "id": "Lawvere",
+        "ISBN": "978-3-540-36101-5",
+        "issued": {
+            "date-parts": [
+                [
+                    1969
+                ]
+            ]
+        },
+        "page": "134-145",
+        "publisher": "Springer Berlin Heidelberg",
+        "publisher-place": "Berlin, Heidelberg",
+        "title": "Diagonal arguments and cartesian closed categories",
+        "type": "chapter",
+        "volume": "92"
+    },
+    {
+        "author": [
+            {
+                "family": "Yanofsky",
+                "given": "Noson S."
+            }
+        ],
+        "citation-key": "Yanofsky",
+        "container-title": "Bull. Symb. Log.",
+        "DOI": "10.2178/bsl/1058448677",
+        "id": "Yanofsky",
+        "issued": {
+            "date-parts": [
+                [
+                    2003
+                ]
+            ]
+        },
+        "page": "362-386",
+        "title": "A universal approach to self-referential paradoxes, incompleteness and fixed points",
+        "type": "article-journal",
+        "volume": "9"
+    },
+    {
+        "author": [
+            {
+                "family": "Vitruvius"
+            }
+        ],
+        "citation-key": "Vitruvius",
+        "id": "Vitruvius",
+        "issued": {
+            "date-parts": [
+                [
+                    1960
+                ]
+            ]
+        },
+        "note": "First published c. 30–15 BC",
+        "publisher": "Dover Publications",
+        "title": "The Ten Books on Architecture",
+        "type": "book"
+    },
+    {
+        "author": [
+            {
+                "family": "Argand",
+                "given": "Jean Robert"
+            }
+        ],
+        "citation-key": "Argand",
+        "id": "Argand",
+        "issued": {
+            "date-parts": [
+                [
+                    1806
+                ]
+            ]
+        },
+        "publisher": "Gauthier-Villars",
+        "title": "Essai sur une manière de représenter les quantités imaginaires dans les constructions géométriques",
+        "type": "book"
+    },
+    {
+        "author": [
+            {
+                "family": "Connes",
+                "given": "Alain"
+            },
+            {
+                "family": "Douglas",
+                "given": "Michael R."
+            },
+            {
+                "family": "Schwarz",
+                "given": "Albert"
+            }
+        ],
+        "citation-key": "ConnesDouglasSchwarz",
+        "container-title": "Journal of High Energy Physics",
+        "DOI": "10.1088/1126-6708/1998/02/003",
+        "id": "ConnesDouglasSchwarz",
+        "issue": "02",
+        "issued": {
+            "date-parts": [
+                [
+                    1998
+                ]
+            ]
+        },
+        "page": "003",
+        "title": "Noncommutative geometry and matrix theory: Compactification on tori",
+        "type": "article-journal",
+        "URL": "https://doi.org/10.1088/1126-6708/1998/02/003",
+        "volume": "1998"
+    },
+    {
+        "author": [
+            {
+                "family": "Dunford",
+                "given": "N."
+            },
+            {
+                "family": "Schwartz",
+                "given": "J. T."
+            }
+        ],
+        "citation-key": "DunfordSchwartz",
+        "id": "DunfordSchwartz",
+        "issued": {
+            "date-parts": [
+                [
+                    1958
+                ]
+            ]
+        },
+        "publisher": "Interscience Publishers",
+        "title": "Linear Operators: General Theory",
+        "type": "book"
+    },
+    {
+        "author": [
+            {
+                "family": "Gelfand",
+                "given": "I. M."
+            }
+        ],
+        "citation-key": "Gelfand",
+        "container-title": "Matematicheskii Sbornik",
+        "id": "Gelfand",
+        "issue": "51",
+        "issued": {
+            "date-parts": [
+                [
+                    1941
+                ]
+            ]
+        },
+        "page": "3-24",
+        "title": "Normierte Ringe",
+        "type": "article-journal",
+        "volume": "9"
+    },
+    {
+        "author": [
+            {
+                "family": "Baker",
+                "given": "A."
+            }
+        ],
+        "citation-key": "Baker",
+        "container-title": "Mathematika",
+        "id": "Baker",
+        "issued": {
+            "date-parts": [
+                [
+                    1966
+                ]
+            ]
+        },
+        "page": "204-216",
+        "title": "Linear forms in the logarithms of algebraic numbers",
+        "type": "article-journal",
+        "volume": "13"
+    }
+]
