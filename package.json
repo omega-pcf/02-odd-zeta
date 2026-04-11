@@ -8,7 +8,7 @@
     "generate:figures": "uv run python scripts/figures/main.py",
     "generate:figures:list": "uv run python scripts/figures/main.py --list",
     "generate:types": "pnpm exec tsx scripts/generate_types.ts",
-    "sync-citation": "pnpm exec tsx scripts/test_citation_sync.ts",
+
     "verify:py": "uv run python tests/verify_odd_zeta_pcf_unified.py",
     "verify:lean": "cd lean && lake build",
     "verify": "pnpm run verify:py && pnpm run verify:lean",
