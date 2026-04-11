@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.3.0](https://github.com/omega-pcf/02-odd-zeta/compare/v1.2.2...v1.3.0) (2026-04-11)
+
+### Features
+
+* add financial/AI disclosure and synchronize identifiers with V11 ([2f71994](https://github.com/omega-pcf/02-odd-zeta/commit/2f71994b187d2fdf95d8ed988a2defba33ae4a44))
+
 ## [1.2.2](https://github.com/omega-pcf/02-odd-zeta/compare/v1.2.1...v1.2.2) (2026-04-11)
 
 ### Bug Fixes
