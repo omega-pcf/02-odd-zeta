@@ -33,6 +33,7 @@
     "@types/escape-latex": "^0.1.36",
     "@types/node": "^20.0.0",
     "ajv": "^8.18.0",
+    "ajv-draft-04": "^1.0.0",
     "ajv-formats": "^3.0.1",
     "conventional-changelog-conventionalcommits": "^9.3.1",
     "conventional-commits-parser": "^6.4.0",
