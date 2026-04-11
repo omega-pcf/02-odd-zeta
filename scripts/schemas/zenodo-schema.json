@@ -1,0 +1,127 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Zenodo Deposition Metadata",
+  "description": "Metadata for Zenodo depositions as defined in the official API documentation.",
+  "type": "object",
+  "properties": {
+    "upload_type": {
+      "enum": ["publication", "poster", "presentation", "dataset", "image", "video", "software", "lesson", "physicalobject", "other"],
+      "description": "The type of the upload."
+    },
+    "publication_type": {
+      "type": "string",
+      "description": "Mandatory if upload_type is 'publication'.",
+      "enum": [
+        "annotationcollection", "book", "section", "conferencepaper", "datamanagementplan", "article", 
+        "patent", "preprint", "deliverable", "milestone", "proposal", "report", 
+        "softwaredocumentation", "taxonomictreatment", "technicalnote", "thesis", "workingpaper", "other"
+      ]
+    },
+    "image_type": {
+      "enum": ["figure", "plot", "drawing", "diagram", "photo", "other"],
+      "description": "Mandatory if upload_type is 'image'."
+    },
+    "publication_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of publication in ISO8601 format (YYYY-MM-DD)."
+    },
+    "title": { "type": "string", "description": "Title of deposition." },
+    "creators": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string", "description": "Family name, Given names" },
+          "affiliation": { "type": "string" },
+          "orcid": { "type": "string" },
+          "gnd": { "type": "string" }
+        },
+        "required": ["name"]
+      }
+    },
+    "description": { "type": "string", "description": "Abstract or description (allows limited HTML tags)." },
+    "access_right": {
+      "enum": ["open", "embargoed", "restricted", "closed"],
+      "default": "open"
+    },
+    "license": { "type": "string", "description": "License identifier (e.g., cc-by-4.0)." },
+    "embargo_date": { "type": "string", "format": "date" },
+    "access_conditions": { "type": "string" },
+    "doi": { "type": "string" },
+    "prereserve_doi": { "type": "boolean" },
+    "keywords": { "type": "array", "items": { "type": "string" } },
+    "notes": { "type": "string" },
+    "related_identifiers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "identifier": { "type": "string" },
+          "relation": { 
+            "enum": [
+              "isCitedBy", "cites", "isSupplementTo", "isSupplementedBy", "isContinuedBy", "continues", 
+              "isDescribedBy", "describes", "hasMetadata", "isMetadataFor", "isNewVersionOf", 
+              "isPreviousVersionOf", "isPartOf", "hasPart", "isReferencedBy", "references", 
+              "isDocumentedBy", "documents", "isCompiledBy", "compiles", "isVariantFormOf", 
+              "isOriginalFormof", "isIdenticalTo", "isAlternateIdentifier", "isReviewedBy", 
+              "reviews", "isDerivedFrom", "isSourceOf", "requires", "isRequiredBy", "isObsoletedBy", "obsoletes"
+            ]
+          },
+          "resource_type": { "type": "string" }
+        },
+        "required": ["identifier", "relation"]
+      }
+    },
+    "contributors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "type": { 
+            "enum": [
+              "ContactPerson", "DataCollector", "DataCurator", "DataManager", "Distributor", "Editor", 
+              "HostingInstitution", "Producer", "ProjectLeader", "ProjectManager", "ProjectMember", 
+              "RegistrationAgency", "RegistrationAuthority", "RelatedPerson", "Researcher", 
+              "ResearchGroup", "RightsHolder", "Supervisor", "Sponsor", "WorkPackageLeader", "Other"
+            ]
+          },
+          "affiliation": { "type": "string" },
+          "orcid": { "type": "string" }
+        },
+        "required": ["name", "type"]
+      }
+    },
+    "references": { "type": "array", "items": { "type": "string" } },
+    "communities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": { "identifier": { "type": "string" } },
+        "required": ["identifier"]
+      }
+    },
+    "grants": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": { "id": { "type": "string" } },
+        "required": ["id"]
+      }
+    },
+    "journal_title": { "type": "string" },
+    "journal_volume": { "type": "string" },
+    "journal_issue": { "type": "string" },
+    "journal_pages": { "type": "string" },
+    "conference_title": { "type": "string" },
+    "conference_acronym": { "type": "string" },
+    "conference_dates": { "type": "string" },
+    "conference_place": { "type": "string" },
+    "conference_url": { "type": "string" },
+    "version": { "type": "string" },
+    "language": { "type": "string", "description": "ISO 639-2 or 639-3 code" },
+    "method": { "type": "string" }
+  },
+  "required": ["title", "creators", "upload_type", "description"]
+}

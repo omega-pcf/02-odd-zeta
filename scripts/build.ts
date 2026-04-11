@@ -1,5 +1,4 @@
-#!/usr/bin/env tsx
-import { updateCitationDate, generateZenodoJson } from './tasks/citation.js';
+import { syncCitationMetadata } from './tasks/citation.js';
 import { cleanupOldVersions } from './tasks/cleanup.js';
 import { compilePDF } from './tasks/compile.js';
 import { generateChecksums } from './tasks/checksums.js';
@@ -36,8 +35,7 @@ async function main(): Promise<void> {
     console.log(`\n🔨 Building release artifacts for v${version}...\n`);
 
     cleanupOldVersions(config.buildDir);
-    updateCitationDate(config.version);
-    generateZenodoJson();
+    syncCitationMetadata(config.version);
     compilePDF(config);
     generateChecksums(config);
 

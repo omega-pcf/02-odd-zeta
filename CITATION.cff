@@ -1,11 +1,9 @@
 cff-version: 1.2.0
 message: If you use this software, please cite it using these metadata.
 title: "Odd Zeta Values from the PCF Torus: φ and π as Arithmetic-Geometric Sources"
-type: article
+type: software
 version: 1.1.3
-date-released: 2026-04-10
-languages:
-  - eng
+date-released: 2026-04-11
 authors:
   - family-names: González García
     given-names: Jorge Armando
@@ -43,3 +41,254 @@ abstract: "We demonstrate that the odd values ζ(2k+1) of the Riemann zeta
   apparent freedom of ζ(2k+1) noted in the N=4 SYM S-matrix bootstrap: those
   values are free only relative to the EFT; the pentagonal arithmetic fixes
   them."
+references:
+  - type: article
+    title: String Theory from Maximal Supersymmetry
+    authors:
+      - family-names: Elvang
+        given-names: H.
+      - family-names: Herderschee
+        given-names: A.
+      - family-names: Morales
+        given-names: R.
+    journal: Preprint arXiv:2601.11705 [hep-th]
+    year: 2026
+  - type: article
+    title: "The Hilbert Pólya Operator and the Primitive Structure of the Complex
+      Plane: Between \\mathbbF₁, String Theory, and Ancient Geometry"
+    authors:
+      - family-names: González García
+        given-names: J. A.
+      - family-names: others
+    doi: 10.5281/zenodo.17619486
+    url: https://doi.org/10.5281/zenodo.17619486
+    journal: Preprint
+    year: 2026
+  - type: generic
+    title: Algebraic Number Theory
+    authors:
+      - family-names: Neukirch
+        given-names: J.
+    year: 1999
+  - type: generic
+    title: Introduction to Cyclotomic Fields
+    authors:
+      - family-names: Washington
+        given-names: L. C.
+    year: 1997
+  - type: article
+    title: Irrationalité de ζ(2) et ζ(3)
+    authors:
+      - family-names: Apéry
+        given-names: R.
+    volume: "61"
+    journal: Astérisque
+    loc-start: "11"
+    loc-end: "13"
+    year: 1979
+  - type: article
+    title: Irrationalité d'une infinité de valeurs de la fonction zêta aux entiers
+      impairs
+    authors:
+      - family-names: Ball
+        given-names: K.
+      - family-names: Rivoal
+        given-names: T.
+    volume: "146"
+    journal: Invent. Math.
+    loc-start: "193"
+    loc-end: "207"
+    year: 2001
+  - type: article
+    title: "Central charges in the canonical realization of asymptotic symmetries:
+      an example from three-dimensional gravity"
+    authors:
+      - family-names: Brown
+        given-names: J. D.
+      - family-names: Henneaux
+        given-names: M.
+    volume: "104"
+    journal: Comm. Math. Phys.
+    loc-start: "207"
+    loc-end: "226"
+    year: 1986
+  - type: article
+    title: Eine neue Art von Zetafunktionen und ihre Beziehungen zur Verteilung der
+      Primzahlen
+    authors:
+      - family-names: Hecke
+        given-names: Erich
+    doi: 10.1007/BF01612081
+    volume: "6"
+    journal: Math. Z.
+    loc-start: "11"
+    loc-end: "51"
+    year: 1920
+  - type: article
+    title: Üeber die Anzahl der Primzahlen unter einer gegebenen Grösse
+    authors:
+      - family-names: Riemann
+        given-names: B.
+    journal: Monatsberichte der Berliner Akademie
+    loc-start: "671"
+    loc-end: "680"
+    year: 1859
+  - type: article
+    title: Variae observationes circa series infinitas
+    authors:
+      - family-names: Euler
+        given-names: L.
+    volume: "9"
+    journal: Commentarii academiae scientiarum Petropolitanae
+    loc-start: "160"
+    loc-end: "188"
+    year: 1737
+  - type: article
+    title: Construction of a crossing-symmetric, Regge-behaved amplitude for
+      linearly rising trajectories
+    authors:
+      - family-names: Veneziano
+        given-names: G.
+    volume: "57"
+    journal: Nuovo Cimento A
+    loc-start: "190"
+    loc-end: "197"
+    year: 1968
+  - type: article
+    title: Λ-rings and the Field with One Element
+    authors:
+      - family-names: Borger
+        given-names: J.
+    volume: "16"
+    journal: Selecta Mathematica
+    loc-start: "603"
+    loc-end: "666"
+    year: 2010
+  - type: article
+    title: Numbers as functions
+    authors:
+      - family-names: Manin
+        given-names: Yuri I.
+    doi: 10.1134/S2070046613040055
+    volume: "5"
+    journal: P-Adic Numbers, Ultrametric Analysis and Applications
+    loc-start: "319"
+    loc-end: "339"
+    year: 2013
+  - type: article
+    title: Torified varieties and the geometry over \mathbbF₁
+    authors:
+      - family-names: López Peña
+        given-names: J.
+      - family-names: Lorscheid
+        given-names: O.
+    journal: arXiv:0901.4677
+    year: 2009
+  - type: generic
+    title: Une lettre et un extrait de lettre à Simone Weil
+    authors:
+      - family-names: Weil
+        given-names: A.
+    volume: I
+    journal: Collected Papers
+    loc-start: "244"
+    loc-end: "255"
+    year: 1940
+  - type: article
+    title: Golden Prime Symmetry
+    authors:
+      - family-names: Grisales Herrera
+        given-names: J.
+    journal: University of Tolima, preprint
+    year: 2025
+  - type: article
+    title: The large N limit of superconformal field theories and supergravity
+    authors:
+      - family-names: Maldacena
+        given-names: Juan M.
+    doi: 10.1023/A:1026654312961
+    url: https://doi.org/10.1023/A:1026654312961
+    volume: "2"
+    journal: Advances in Theoretical and Mathematical Physics
+    loc-start: "231"
+    loc-end: "252"
+    year: 1998
+  - type: generic
+    title: Diagonal arguments and cartesian closed categories
+    authors:
+      - family-names: Lawvere
+        given-names: F. William
+    volume: "92"
+    journal: Category Theory, Homology Theory and their Applications II
+    loc-start: "134"
+    loc-end: "145"
+    year: 1969
+  - type: article
+    title: A universal approach to self-referential paradoxes, incompleteness and
+      fixed points
+    authors:
+      - family-names: Yanofsky
+        given-names: Noson S.
+    doi: 10.2178/bsl/1058448677
+    volume: "9"
+    journal: Bull. Symb. Log.
+    loc-start: "362"
+    loc-end: "386"
+    year: 2003
+  - type: generic
+    title: The Ten Books on Architecture
+    authors:
+      - family-names: Vitruvius
+    year: 1960
+  - type: generic
+    title: Essai sur une manière de représenter les quantités imaginaires dans les
+      constructions géométriques
+    authors:
+      - family-names: Argand
+        given-names: Jean Robert
+    year: 1806
+  - type: article
+    title: "Noncommutative geometry and matrix theory: Compactification on tori"
+    authors:
+      - family-names: Connes
+        given-names: Alain
+      - family-names: Douglas
+        given-names: Michael R.
+      - family-names: Schwarz
+        given-names: Albert
+    doi: 10.1088/1126-6708/1998/02/003
+    url: https://doi.org/10.1088/1126-6708/1998/02/003
+    volume: "1998"
+    issue: "02"
+    journal: Journal of High Energy Physics
+    loc-start: "003"
+    year: 1998
+  - type: generic
+    title: "Linear Operators: General Theory"
+    authors:
+      - family-names: Dunford
+        given-names: N.
+      - family-names: Schwartz
+        given-names: J. T.
+    year: 1958
+  - type: article
+    title: Normierte Ringe
+    authors:
+      - family-names: Gelfand
+        given-names: I. M.
+    volume: "9"
+    issue: "51"
+    journal: Matematicheskii Sbornik
+    loc-start: "3"
+    loc-end: "24"
+    year: 1941
+  - type: article
+    title: Linear forms in the logarithms of algebraic numbers
+    authors:
+      - family-names: Baker
+        given-names: A.
+    volume: "13"
+    journal: Mathematika
+    loc-start: "204"
+    loc-end: "216"
+    year: 1966
