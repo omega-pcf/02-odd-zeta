@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.3.7](https://github.com/omega-pcf/02-odd-zeta/compare/v1.3.6...v1.3.7) (2026-04-12)
+
+### Documentation
+
+* balanced bibliometric optimization of manuscript metadata ([c78a5e9](https://github.com/omega-pcf/02-odd-zeta/commit/c78a5e965c29b8b4c32bda4f8c4a174b690b05e9))
+* optimize keyword metadata and clarify deterministic nature of PCF ([b54b3ee](https://github.com/omega-pcf/02-odd-zeta/commit/b54b3eee2e066f7fd224e17e2b9fdab4ab7b5ce2))
+* provide both text and bibtex citation formats in README ([e8b28a1](https://github.com/omega-pcf/02-odd-zeta/commit/e8b28a18363da71caf86b871f05db5b6cd1048a2))
+* update suggested citation in README to SIGMA preprint legend ([6392a8a](https://github.com/omega-pcf/02-odd-zeta/commit/6392a8a2042ae9cfea8c3834b0892d625a90821d))
+
+### Chores
+
+* stylistic polish of chapter 4, bibliometric hook adjustment, and metadata sync ([f1d4b6e](https://github.com/omega-pcf/02-odd-zeta/commit/f1d4b6ed656cfc1ba84cccfc3bd75dfa6242f699))
+
+### Build System
+
+* synchronize release artifacts after rebase and style polish ([5062588](https://github.com/omega-pcf/02-odd-zeta/commit/5062588a26e87d9428b9b0e76a488ccada509343))
+
 ## [1.3.6](https://github.com/omega-pcf/02-odd-zeta/compare/v1.3.5...v1.3.6) (2026-04-12)
 
 ### Bug Fixes
