@@ -1,5 +1,7 @@
 # Changelog
 
+## [1.3.9](https://github.com/omega-pcf/02-odd-zeta/compare/v1.3.8...v1.3.9) (2026-04-12)
+
 ## [1.3.8](https://github.com/omega-pcf/02-odd-zeta/compare/v1.3.7...v1.3.8) (2026-04-12)
 
 ### Bug Fixes
