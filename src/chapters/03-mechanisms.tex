@@ -166,11 +166,10 @@ These primary values extend symmetrically to the full set of four coordinates:
 
 \begin{proof}
 The regular pentagon inscribed in the unit circle has diagonal-to-side
-ratio $\golden$ (Euclid, Prop.~XIII.8).  The half-angle of the central
+ratio $\golden$ (Euclid, \cite[Prop.~XIII.8]{heath1956thirteen}).  The half-angle of the central
 subtended by one side is $\pi/5$, giving $2\cos(\pi/5)=\golden$.
 The second identity follows from $\golden^{-1}=\golden-1$ and the
-double-angle formula. Verified numerically to machine precision (see \cref{sec:verification}):
-yielding a zero residual.
+double-angle formula. Verified numerically to machine precision (see \cref{sec:verification}), yielding a zero residual.
 \end{proof}
 
 \begin{proposition}[Gauss logarithmic formula]\label{prop:gauss-log}
@@ -326,7 +325,7 @@ In all three cases the organising structure is identical: the same
 $\chi_5(a)$-weights over the same pentagonal points $\{a/5\}$.
 \end{theorem}
 \begin{proof}
-\Cref{eq:hurwitz-rep} is well-established (Apostol, Thm.~12.6).
+\Cref{eq:hurwitz-rep} is well-established (\cite[Thm.~12.6]{apostol2013introduction}).
 The kernel at $s=1$ follows from $\zeta(s,x) = 1/(s-1) + \psi(x)+O(s-1)$
 combined with $\sum\chi_5(a)=0$ (so the $1/(s-1)$ pole and $\log 5$
 cancel), giving \cref{prop:digamma} and hence

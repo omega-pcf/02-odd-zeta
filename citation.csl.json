@@ -596,5 +596,139 @@
         "title": "Linear forms in the logarithms of algebraic numbers",
         "type": "article-journal",
         "volume": "13"
+    },
+    {
+        "author": [
+            {
+                "family": "Apostol",
+                "given": "Tom M."
+            }
+        ],
+        "citation-key": "apostol2013introduction",
+        "id": "apostol2013introduction",
+        "issued": {
+            "date-parts": [
+                [
+                    2013
+                ]
+            ]
+        },
+        "publisher": "Springer Science & Business Media",
+        "title": "Introduction to analytic number theory",
+        "type": "book"
+    },
+    {
+        "author": [
+            {
+                "family": "Heath",
+                "given": "Thomas Little"
+            }
+        ],
+        "citation-key": "heath1956thirteen",
+        "id": "heath1956thirteen",
+        "issued": {
+            "date-parts": [
+                [
+                    1956
+                ]
+            ]
+        },
+        "publisher": "Courier Corporation",
+        "title": "The thirteen books of Euclid's Elements",
+        "type": "book"
+    },
+    {
+        "author": [
+            {
+                "family": "Tarski",
+                "given": "Alfred"
+            }
+        ],
+        "citation-key": "tarski1951decision",
+        "id": "tarski1951decision",
+        "issued": {
+            "date-parts": [
+                [
+                    1951
+                ]
+            ]
+        },
+        "publisher": "University of California Press",
+        "publisher-place": "Berkeley and Los Angeles",
+        "title": "A Decision Method for Elementary Algebra and Geometry",
+        "type": "book",
+        "edition": "2nd ed., rev."
+    },
+    {
+        "author": [
+            {
+                "family": "Kontsevich",
+                "given": "Maxim"
+            },
+            {
+                "family": "Zagier",
+                "given": "Don"
+            }
+        ],
+        "citation-key": "kontsevich2001periods",
+        "id": "kontsevich2001periods",
+        "container-title": "Mathematics Unlimited — 2001 and Beyond",
+        "DOI": "10.1007/978-3-642-56478-9_39",
+        "issued": {
+            "date-parts": [
+                [
+                    2001
+                ]
+            ]
+        },
+        "page": "771-808",
+        "publisher": "Springer",
+        "title": "Periods",
+        "type": "chapter"
+    },
+    {
+        "author": [
+            {
+                "family": "Grothendieck",
+                "given": "Alexandre"
+            }
+        ],
+        "citation-key": "grothendieck1966derham",
+        "id": "grothendieck1966derham",
+        "container-title": "Publ. Math. Inst. Hautes Études Sci.",
+        "issued": {
+            "date-parts": [
+                [
+                    1966
+                ]
+            ]
+        },
+        "page": "95-103",
+        "title": "On the de Rham cohomology of algebraic varieties",
+        "type": "article-journal",
+        "issue": "29"
+    },
+    {
+        "author": [
+            {
+                "family": "Lindemann",
+                "given": "Ferdinand"
+            }
+        ],
+        "citation-key": "lindemann1882zahl",
+        "id": "lindemann1882zahl",
+        "container-title": "Math. Ann.",
+        "DOI": "10.1007/BF01446522",
+        "issued": {
+            "date-parts": [
+                [
+                    1882
+                ]
+            ]
+        },
+        "page": "213-225",
+        "title": "Über die Zahl π",
+        "type": "article-journal",
+        "volume": "20"
     }
 ]
