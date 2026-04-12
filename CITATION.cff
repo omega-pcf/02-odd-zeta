@@ -136,7 +136,7 @@ references:
       - type: doi
         value: 10.1007/BF01612081
     title: Eine neue Art von Zetafunktionen und ihre Beziehungen zur Verteilung der
-      Primzahlen
+      Primzahlen (Zweite Mitteilung)
     date-published: 1920-01-01
     year: 1920
     journal: Math. Z.
@@ -213,16 +213,19 @@ references:
       - family-names: Lorscheid
         given-names: O.
     title: Torified varieties and the geometry over 𝔽₁
-    date-published: 2009-01-01
-    year: 2009
-    journal: arXiv:0901.4677
+    date-published: 2011-01-01
+    year: 2011
+    journal: Math. Z.
+    start: "667"
+    end: "704"
     type: article
+    volume: "267"
   - authors:
       - family-names: Weil
         given-names: André
     title: Une lettre et un extrait de lettre à Simone Weil
-    date-published: 1979-01-01
-    year: 1979
+    date-published: 1940-01-01
+    year: 1940
     journal: "André Weil: Oeuvres Scientifiques / Collected Papers"
     notes: Original letter written in 1940
     publisher:
@@ -247,22 +250,22 @@ references:
     date-published: 2025-09-01
     year: 2025
     publisher:
-      name: Zenodo
-    type: generic
+      name: University of Tolima, Colombia
+    type: report
   - authors:
       - family-names: Maldacena
         given-names: Juan M.
-    doi: 10.1023/A:1026654312961
+    doi: 10.4310/atmp.1998.v2.n2.a1
     identifiers:
       - type: doi
-        value: 10.1023/A:1026654312961
+        value: 10.4310/atmp.1998.v2.n2.a1
       - type: url
-        value: https://doi.org/10.1023/A:1026654312961
-    title: The large N limit of superconformal field theories and supergravity
-    url: https://doi.org/10.1023/A:1026654312961
+        value: https://doi.org/10.4310/atmp.1998.v2.n2.a1
+    title: The Large N Limit of Superconformal Field Theories and Supergravity
+    url: https://doi.org/10.4310/atmp.1998.v2.n2.a1
     date-published: 1998-01-01
     year: 1998
-    journal: Advances in Theoretical and Mathematical Physics
+    journal: Adv. Theor. Math. Phys.
     start: "231"
     end: "252"
     type: article
@@ -270,25 +273,18 @@ references:
   - authors:
       - family-names: Lawvere
         given-names: F. William
-    doi: 10.1007/BFb0080769
+    doi: 10.1073/pnas.63.1.134
     identifiers:
       - type: doi
-        value: 10.1007/BFb0080769
-      - type: other
-        value: urn:isbn:978-3-540-36101-5
-    title: Diagonal arguments and cartesian closed categories
-    collection-title: Lecture Notes in Mathematics
+        value: 10.1073/pnas.63.1.134
+    title: Diagonal arguments and Cartesian closed categories
     date-published: 1969-01-01
     year: 1969
-    isbn: 978-3-540-36101-5
-    journal: Category Theory, Homology Theory and their Applications II
-    publisher:
-      name: Springer Berlin Heidelberg
-      city: Berlin
+    journal: Proc. Nat. Acad. Sci. U.S.A.
     start: "134"
     end: "145"
-    type: generic
-    volume: "92"
+    type: article
+    volume: "63"
   - authors:
       - family-names: Yanofsky
         given-names: Noson S.
@@ -306,18 +302,9 @@ references:
     type: article
     volume: "9"
   - authors:
-      - family-names: Vitruvius
-    title: The Ten Books on Architecture
-    date-published: 1960-01-01
-    year: 1960
-    notes: First published c. 30–15 BC
-    publisher:
-      name: Dover Publications
-    type: book
-  - authors:
       - family-names: Argand
         given-names: Jean-Robert
-    title: Essai sur una manière de représenter les quantités imaginaires dans les
+    title: Essai sur une manière de représenter les quantités imaginaires dans les
       constructions géométriques
     date-published: 1806-01-01
     year: 1806

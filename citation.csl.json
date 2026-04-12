@@ -201,7 +201,7 @@
         },
         "page": "11-51",
         "publisher": "Springer",
-        "title": "Eine neue Art von Zetafunktionen und ihre Beziehungen zur Verteilung der Primzahlen",
+        "title": "Eine neue Art von Zetafunktionen und ihre Beziehungen zur Verteilung der Primzahlen (Zweite Mitteilung)",
         "type": "article-journal",
         "volume": "6"
     },
@@ -328,17 +328,19 @@
             }
         ],
         "citation-key": "Lorscheid",
-        "container-title": "arXiv:0901.4677",
+        "container-title": "Math. Z.",
         "id": "Lorscheid",
         "issued": {
             "date-parts": [
                 [
-                    2009
+                    2011
                 ]
             ]
         },
+        "page": "667-704",
         "title": "Torified varieties and the geometry over 𝔽₁",
-        "type": "article-journal"
+        "type": "article-journal",
+        "volume": "267"
     },
     {
         "author": [
@@ -353,7 +355,7 @@
         "issued": {
             "date-parts": [
                 [
-                    1979
+                    1940
                 ]
             ]
         },
@@ -367,26 +369,26 @@
     },
     {
         "author": [
-        {
-            "given": "Javier",
-            "family": "Grisales Herrera"
-        }
+            {
+                "given": "Javier",
+                "family": "Grisales Herrera"
+            }
         ],
         "DOI": "10.5281/zenodo.17100303",
         "citation-key": "GrisalesHerrera",
         "id": "GrisalesHerrera",
         "issued": {
-        "date-parts": [
-            [
-            2025,
-            9
+            "date-parts": [
+                [
+                    2025,
+                    9
+                ]
             ]
-        ]
         },
-        "publisher": "Zenodo",
+        "publisher": "University of Tolima, Colombia",
         "title": "Golden Prime Symmetry Theory",
         "URL": "https://doi.org/10.5281/zenodo.17100303",
-        "type": "document"
+        "type": "report"
     },
     {
         "author": [
@@ -396,8 +398,8 @@
             }
         ],
         "citation-key": "Maldacena",
-        "container-title": "Advances in Theoretical and Mathematical Physics",
-        "DOI": "10.1023/A:1026654312961",
+        "container-title": "Adv. Theor. Math. Phys.",
+        "DOI": "10.4310/atmp.1998.v2.n2.a1",
         "id": "Maldacena",
         "issued": {
             "date-parts": [
@@ -407,9 +409,9 @@
             ]
         },
         "page": "231-252",
-        "title": "The large N limit of superconformal field theories and supergravity",
+        "title": "The Large N Limit of Superconformal Field Theories and Supergravity",
         "type": "article-journal",
-        "URL": "https://doi.org/10.1023/A:1026654312961",
+        "URL": "https://doi.org/10.4310/atmp.1998.v2.n2.a1",
         "volume": "2"
     },
     {
@@ -420,10 +422,8 @@
             }
         ],
         "citation-key": "Lawvere",
-        "collection-title": "Lecture Notes in Mathematics",
-        "container-title": "Category Theory, Homology Theory and their Applications II",
+        "container-title": "Proc. Nat. Acad. Sci. U.S.A.",
         "id": "Lawvere",
-        "ISBN": "978-3-540-36101-5",
         "issued": {
             "date-parts": [
                 [
@@ -432,12 +432,10 @@
             ]
         },
         "page": "134-145",
-        "publisher": "Springer Berlin Heidelberg",
-        "publisher-place": "Berlin, Heidelberg",
-        "title": "Diagonal arguments and cartesian closed categories",
-        "type": "chapter",
-        "volume": "92",
-        "DOI": "10.1007/BFb0080769"
+        "title": "Diagonal arguments and Cartesian closed categories",
+        "type": "article-journal",
+        "volume": "63",
+        "DOI": "10.1073/pnas.63.1.134"
     },
     {
         "author": [
@@ -465,26 +463,6 @@
     {
         "author": [
             {
-                "family": "Vitruvius"
-            }
-        ],
-        "citation-key": "Vitruvius",
-        "id": "Vitruvius",
-        "issued": {
-            "date-parts": [
-                [
-                    1960
-                ]
-            ]
-        },
-        "note": "First published c. 30–15 BC",
-        "publisher": "Dover Publications",
-        "title": "The Ten Books on Architecture",
-        "type": "book"
-    },
-    {
-        "author": [
-            {
                 "family": "Argand",
                 "given": "Jean-Robert"
             }
@@ -501,7 +479,7 @@
         "note": "Published anonymously; reissued by Gauthier-Villars in 1874",
         "publisher": "Madame Veuve Dumesnil",
         "publisher-place": "Paris",
-        "title": "Essai sur una manière de représenter les quantités imaginaires dans les constructions géométriques",
+        "title": "Essai sur une manière de représenter les quantités imaginaires dans les constructions géométriques",
         "type": "book"
     },
     {
