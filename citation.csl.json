@@ -3,19 +3,19 @@
         "author": [
             {
                 "family": "Elvang",
-                "given": "H."
+                "given": "Henriette"
             },
             {
                 "family": "Herderschee",
-                "given": "A."
+                "given": "Aidan"
             },
             {
                 "family": "Morales",
-                "given": "R."
+                "given": "Roger"
             }
         ],
         "citation-key": "Elvang2026",
-        "container-title": "Preprint arXiv:2601.11705 [hep-th]",
+        "container-title": "arXiv preprint arXiv:2601.11705 [hep-th]",
         "id": "Elvang2026",
         "issued": {
             "date-parts": [
@@ -25,7 +25,8 @@
             ]
         },
         "title": "String Theory from Maximal Supersymmetry",
-        "type": "article-journal"
+        "type": "article-journal",
+        "URL": "https://arxiv.org/abs/2601.11705"
     },
     {
         "author": [

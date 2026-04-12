@@ -323,7 +323,7 @@ $\{1,3,7,9,11,13,17,19\}$.
 Define $\chi_4(a) = (-4/a)$ and $\chi_5(a) = (5/a)$ as
 Kronecker symbols.  Since both are quadratic characters
 (i.e.\ take values in $\{+1,-1\}$), the map
-$G(a) = (\chi_4(a),\chi_5(a))$ lands in
+$G(a) = (\chi_4(a),\chi_5(a))$ maps into
 $\mathbb{Z}_2\times\mathbb{Z}_2$.
 
 The homomorphism property follows from the multiplicativity
@@ -398,12 +398,12 @@ bound.
 \item \textbf{Intrinsic correspondence:}
   $S_{\mathrm{BH}} = k_B\lambda_{\log}\tfrac{\sqrt{5}}{2}L(1,\chi_5)$.
   Derived from $|\Omega|=1/2$ (\cref{prop:worldline-entropy})
-  and the Mersenne bridge; error $= 0$ (see \cref{sec:verification}).
+  and the Mersenne bridge; with vanishing error (see \cref{sec:verification}).
 \item \textbf{Geometric unity:}
   $Z_{\mathrm{PCF}}(i)$ and $L(1,\chi_5)$ both arise from $\tau_{\mathrm{PCF}}=i$,
   through modular and arithmetic aspects of $T^2_{\mathrm{PCF}}$ respectively.
 \item \textbf{Algebraic symmetry via $\mathbb{Z}_2\times\mathbb{Z}_2$:}
-  $\chi_5$ is the $(0,1)$-component of $G\colon\Ztwenty\to\mathbb{Z}_2\times\mathbb{Z}_2$
+  $\chi_5$ is the binary component of $G\colon\Ztwenty\to\mathbb{Z}_2\times\mathbb{Z}_2$
   (\cref{thm:bridge3});
   exponent~$2$ makes $\chi_5$ self-dual here and produces the spectral
   constraint of the Primitive Structure~\cite{V11}.
@@ -418,7 +418,7 @@ $S_{\mathrm{BH}}/k_B = \lambda_{\log}(\sqrt5/2)L(1,\chi_5)$
 $S_3$ symmetry of $T^2_{\mathrm{PCF}}$ that fixes $\tau_{\mathrm{PCF}}=i$
 and hence both $Z_{\mathrm{PCF}}(i)$ and $L(1,\chi_5)$ (Geometric unity);
 and the $\chi_5$-character organising odd zeta values is the
-$(0,1)$-component of the Galois functor whose exponent-$2$ property
+binary component of the Galois functor whose exponent-$2$ property
 discharges the \texttt{bridge\_axiom} of the Primitive Structure~\cite{V11} and
 produces the self-duality of $L(1,\chi_5)$ (Algebraic symmetry).
 
@@ -433,11 +433,11 @@ generates every structure in the current study
 1D through 2D to 3D follows as a consequence of the Euler product
 over the primes (\cref{cor:S3-from-euler}).
 
-\begin{theorem}[$\golden^2 = \golden+1$ generates the complete structure]%
+\begin{theorem}[$\golden^2 = \golden+1$ as generative source]%
   \label{thm:unifying}
-The single relation $\golden^2 = \golden + 1$ generates the complete
-arithmetic-geometric structure of $T^2_{\mathrm{PCF}}$ and determines
-every object in the present work:
+The fundamental relation $\golden^2 = \golden + 1$ uniquely prescribes the
+complete arithmetic-geometric structure of $T^2_{\mathrm{PCF}}$ and
+governs every object in this study:
 \begin{enumerate}
 \item[\textup{(1)}] \textbf{Frobenius:} $\golden^p = F_p\golden + F_{p-1}$
   for every prime $p$, with splitting type
@@ -464,7 +464,7 @@ every object in the present work:
   $\zeta(s) = \zeta_{\mathbb{Q}(\sqrt{5})}(s)/L(s,\chi_5)$
   (\cref{thm:factorisation});
 \item[\textup{(8)}] \textbf{Odd zeta values:} $\zeta(2k+1)$
-  structurally determined
+  are identically governed by the pentagonal structure
   (\cref{thm:pentagon-odd});
 \item[\textup{(9)}] \textbf{Categorical framework:} the Frobenius
   functor $\Psi$, the Euler product colimit, the Dedekind natural

@@ -34,10 +34,10 @@ identifiers:
     value: "MSC2020: 11M06 (Primary), 11J72 (Secondary), 81T13 (Tertiary)"
     description: Mathematical Subject Classification
 abstract: "We demonstrate that the odd values ζ(2k+1) of the Riemann zeta
-  function are structurally determined by φ=(1+√5)/2 and π, providing a
-  structural basis for the Irrationality and Transcendence of Apéry's constant
-  and higher zeta values. The Euler product of ζ is built from local factors
-  f_p(s), one for each prime. We prove that the Frobenius lift φ^p = F_p φ +
+  function are structurally determined by φ=(1+√5)/2 and π, establishing a
+  foundation for the Irrationality and Transcendence of Apéry's constant and
+  higher zeta values. The Euler product of ζ is built from local factors f_p(s),
+  one for each prime. We prove that the Frobenius lift φ^p = F_p φ +
   F_{p-1}—where F_n is the n-th Fibonacci number—determines the splitting type
   of every prime p in Z[φ], and hence every f_p(s). Through the Dedekind
   factorisation ζ(s) = ζ_K(s)/L(s,χ_5), this determines ζ(s) completely: the
