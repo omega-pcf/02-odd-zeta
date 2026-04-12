@@ -112,9 +112,9 @@
                 "given": "Roger"
             }
         ],
-        "citation-key": "apery1979irrationalite",
+        "citation-key": "Apery",
         "container-title": "Astérisque",
-        "id": "apery1979irrationalite",
+        "id": "Apery",
         "issued": {
             "date-parts": [
                 [
@@ -138,9 +138,9 @@
                 "given": "Tanguy"
             }
         ],
-        "citation-key": "ball2001irrationalite",
+        "citation-key": "BallRivoal",
         "container-title": "Invent. Math.",
-        "id": "ball2001irrationalite",
+        "id": "BallRivoal",
         "issued": {
             "date-parts": [
                 [
@@ -164,9 +164,9 @@
                 "given": "Marc"
             }
         ],
-        "citation-key": "brown1986central",
+        "citation-key": "BrownHenneaux",
         "container-title": "Comm. Math. Phys.",
-        "id": "brown1986central",
+        "id": "BrownHenneaux",
         "issued": {
             "date-parts": [
                 [
@@ -212,9 +212,9 @@
                 "given": "Bernhard"
             }
         ],
-        "citation-key": "riemann1859ueber",
+        "citation-key": "Riemann",
         "container-title": "Monatsberichte der Königlichen Preußischen Akademie der Wissenschaften zu Berlin",
-        "id": "riemann1859ueber",
+        "id": "Riemann",
         "issued": {
             "date-parts": [
                 [
@@ -233,9 +233,9 @@
                 "given": "Leonhard"
             }
         ],
-        "citation-key": "euler1744variae",
+        "citation-key": "Euler",
         "container-title": "Commentarii academiae scientiarum Petropolitanae",
-        "id": "euler1744variae",
+        "id": "Euler",
         "issued": {
             "date-parts": [
                 [
@@ -347,9 +347,9 @@
                 "given": "André"
             }
         ],
-        "citation-key": "weil1979lettre",
+        "citation-key": "Weil",
         "container-title": "André Weil: Oeuvres Scientifiques / Collected Papers",
-        "id": "weil1979lettre",
+        "id": "Weil",
         "issued": {
             "date-parts": [
                 [
@@ -419,10 +419,10 @@
                 "given": "F. William"
             }
         ],
-        "citation-key": "lawvere1969diagonal",
+        "citation-key": "Lawvere",
         "collection-title": "Lecture Notes in Mathematics",
         "container-title": "Category Theory, Homology Theory and their Applications II",
-        "id": "lawvere1969diagonal",
+        "id": "Lawvere",
         "ISBN": "978-3-540-36101-5",
         "issued": {
             "date-parts": [
@@ -489,8 +489,8 @@
                 "given": "Jean-Robert"
             }
         ],
-        "citation-key": "argand1806essai",
-        "id": "argand1806essai",
+        "citation-key": "Argand",
+        "id": "Argand",
         "issued": {
             "date-parts": [
                 [
@@ -568,9 +568,9 @@
                 "given": "Israel M."
             }
         ],
-        "citation-key": "gelfand1941normierte",
+        "citation-key": "Gelfand",
         "container-title": "Matematicheskii Sbornik",
-        "id": "gelfand1941normierte",
+        "id": "Gelfand",
         "issue": "1",
         "issued": {
             "date-parts": [
