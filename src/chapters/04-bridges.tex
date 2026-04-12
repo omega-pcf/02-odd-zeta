@@ -104,9 +104,9 @@ the $L$-function of $\mathbb{Q}(\sqrt{5})$, scaled by the Mersenne
 bridge.  Verified numerically (see \cref{sec:verification}).
 \end{theorem}
 \begin{proof}
-Three steps, combining \cref{prop:worldline-entropy}
+{\sloppy Three steps, combining \cref{prop:worldline-entropy}
 with the holographic identification $S_{\mathrm{BH}} = k_B H(|\Omega|)$
-(\cref{rmk:BH-identification}):
+(\cref{rmk:BH-identification}):\par}
 
 \textit{Step 1.}  \Cref{prop:worldline-entropy} gives
 $H(|\Omega|) = \log 2$, so $S_{\mathrm{BH}} = k_B\log 2$
@@ -288,7 +288,7 @@ sides of $T^2_{\mathrm{PCF}}$~-- modular and arithmetic~-- are derived.
   \label{thm:bridge3}
 The character $\chi_5 = (5/\cdot)$ organising every local factor
 $f_p(s)$ of $\zeta_{\mathbb{Q}(\sqrt{5})}(s)$
-(\cref{prop:local-factors}) is the component $(0,1)$ of
+(\cref{prop:local-factors}) is the binary $(0,1)$-component of
 the surjective group homomorphism
 \begin{equation}\label{eq:galois-functor}
   G\colon\Ztwenty\longrightarrow\mathbb{Z}_2\times\mathbb{Z}_2,
@@ -466,11 +466,11 @@ governs every object in this study:
 \item[\textup{(8)}] \textbf{Odd zeta values:} $\zeta(2k+1)$
   are identically governed by the pentagonal structure
   (\cref{thm:pentagon-odd});
-\item[\textup{(9)}] \textbf{Categorical framework:} the Frobenius
+{\sloppy \item[\textup{(9)}] \textbf{Categorical framework:} the Frobenius
   functor $\Psi$, the Euler product colimit, the Dedekind natural
   isomorphism, and the arithmetic--spectral span are all generated
   by $\golden^2=\golden+1$ through the constructions of
-  \cref{sec:categorical-framework}.
+  \cref{sec:categorical-framework}.\par}
 \end{enumerate}
 The only inputs beyond $\golden^2 = \golden + 1$ are classical
 number theory (\cite{Neukirch}, \cite{Washington}) and the
@@ -585,12 +585,12 @@ The chain is therefore:
   \;\to\;
   \underbrace{E^3,\; c=3.}_{\textup{geometry}}
 \]
-The third dimension and its properties are not additional
+{\sloppy The third dimension and its properties are not additional
 data---they are consequences of the Euler product of
 $\golden^2 = \golden + 1$ over the primes.
 Both are formally verified in Lean~$4$:
 \texttt{norm\_Omega\_is\_half}, \texttt{spectral\_uniqueness},
-and \texttt{galois\_functor\_complete} (\cite{V11}).
+and \texttt{galois\_functor\_complete} (\cite{V11}).\par}
 \end{corollary}
 
 \begin{proof}
@@ -718,14 +718,14 @@ of the Euler product (\cref{prop:spectral-id}), thereby
 discharging the \texttt{bridge\_axiom}
 (\cref{rmk:bridge-resolution}).
 
-What is \emph{not} addressed here is the \emph{functorial transport}
+{\sloppy What is \emph{not} addressed here is the \emph{functorial transport}
 of the eigenvalue constraint $\mathrm{Re}>0\Rightarrow\mathrm{Re}=1/2$
 from $\OmH$ to~$\zeta$ across the full critical strip---this requires the
 forgetful functor chain
 $C^*$-$\mathbf{Alg}\to\mathbf{Hilb}\to\mathbf{Met}\to\mathbf{Set}$
 and the categorical limit theorem, which are established in the Primitive
 Structure~\cite{V11} (Lean: \texttt{categorical\_limit\_theorem},
-\texttt{Omega\_hat\_unique\_positive\_re}).
+\texttt{Omega\_hat\_unique\_positive\_re}).\par}
 \end{remark}
 
 \begin{remark}[Classical inputs]\label{rmk:classical-inputs}
