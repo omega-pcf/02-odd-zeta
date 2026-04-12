@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.3.6](https://github.com/omega-pcf/02-odd-zeta/compare/v1.3.5...v1.3.6) (2026-04-12)
+
+### Bug Fixes
+
+* **docs:** resolve overfull hboxes by using \lean macro for identifiers ([bcedbe7](https://github.com/omega-pcf/02-odd-zeta/commit/bcedbe7bc010dc7897afec14c529098a0fd785c0))
+
 ## [1.3.5](https://github.com/omega-pcf/02-odd-zeta/compare/v1.3.4...v1.3.5) (2026-04-12)
 
 ### Styles
