@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.3](https://github.com/omega-pcf/02-odd-zeta/compare/v1.3.2...v1.3.3) (2026-04-12)
+
+### Documentation
+
+* audit and update classical references with verified metadata ([243bef2](https://github.com/omega-pcf/02-odd-zeta/commit/243bef2c972aef514ba1166d5a7d24f1915fcef9))
+* formalize classical bibliographic citations and polish text ([e8424f9](https://github.com/omega-pcf/02-odd-zeta/commit/e8424f9d80bc810ec68eae14815094a700fde818))
+* restore original short citation IDs in CSL and LaTeX ([deea205](https://github.com/omega-pcf/02-odd-zeta/commit/deea205d8251684b0b60b6ff3946c5a00173f742))
+
 ## [1.3.2](https://github.com/omega-pcf/02-odd-zeta/compare/v1.3.1...v1.3.2) (2026-04-12)
 
 ### Refinements

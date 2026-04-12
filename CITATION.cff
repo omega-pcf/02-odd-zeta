@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: If you use this software, please cite it using these metadata.
 title: "Odd Zeta Values from the PCF Torus: φ and π as Arithmetic-Geometric Sources"
 type: software
-version: 1.3.2
+version: 1.3.3
 date-released: 2026-04-12
 authors:
   - family-names: González García
@@ -86,7 +86,7 @@ references:
     type: book
   - authors:
       - family-names: Apéry
-        given-names: R.
+        given-names: Roger
     title: Irrationalité de ζ(2) et ζ(3)
     date-published: 1979-01-01
     year: 1979
@@ -97,9 +97,9 @@ references:
     volume: "61"
   - authors:
       - family-names: Ball
-        given-names: K.
+        given-names: Keith
       - family-names: Rivoal
-        given-names: T.
+        given-names: Tanguy
     title: Irrationalité d'une infinité de valeurs de la fonction zêta aux entiers
       impairs
     date-published: 2001-01-01
@@ -111,13 +111,18 @@ references:
     volume: "146"
   - authors:
       - family-names: Brown
-        given-names: J. D.
+        given-names: J. David
       - family-names: Henneaux
-        given-names: M.
+        given-names: Marc
+    identifiers:
+      - type: url
+        value: https://projecteuclid.org
     title: "Central charges in the canonical realization of asymptotic symmetries:
       an example from three-dimensional gravity"
+    url: https://projecteuclid.org
     date-published: 1986-01-01
     year: 1986
+    issue: "2"
     journal: Comm. Math. Phys.
     start: "207"
     end: "226"
@@ -143,21 +148,23 @@ references:
     volume: "6"
   - authors:
       - family-names: Riemann
-        given-names: B.
-    title: Üeber die Anzahl der Primzahlen unter einer gegebenen Grösse
+        given-names: Bernhard
+    title: Ueber die Anzahl der Primzahlen unter einer gegebenen Grösse
     date-published: 1859-01-01
     year: 1859
-    journal: Monatsberichte der Berliner Akademie
+    journal: Monatsberichte der Königlichen Preußischen Akademie der Wissenschaften
+      zu Berlin
     start: "671"
     end: "680"
     type: article
   - authors:
       - family-names: Euler
-        given-names: L.
+        given-names: Leonhard
     title: Variae observationes circa series infinitas
-    date-published: 1737-01-01
-    year: 1737
+    date-published: 1744-01-01
+    year: 1744
     journal: Commentarii academiae scientiarum Petropolitanae
+    notes: Presented in 1737; Eneström index E72
     start: "160"
     end: "188"
     type: article
@@ -212,11 +219,16 @@ references:
     type: article
   - authors:
       - family-names: Weil
-        given-names: A.
+        given-names: André
     title: Une lettre et un extrait de lettre à Simone Weil
-    date-published: 1940-01-01
-    year: 1940
-    journal: Collected Papers
+    date-published: 1979-01-01
+    year: 1979
+    journal: "André Weil: Oeuvres Scientifiques / Collected Papers"
+    notes: Original letter written in 1940
+    publisher:
+      name: Springer-Verlag
+      region: Heidelberg
+      city: New York
     start: "244"
     end: "255"
     type: generic
@@ -258,7 +270,10 @@ references:
   - authors:
       - family-names: Lawvere
         given-names: F. William
+    doi: 10.1007/BFb0080769
     identifiers:
+      - type: doi
+        value: 10.1007/BFb0080769
       - type: other
         value: urn:isbn:978-3-540-36101-5
     title: Diagonal arguments and cartesian closed categories
@@ -301,13 +316,14 @@ references:
     type: book
   - authors:
       - family-names: Argand
-        given-names: Jean Robert
-    title: Essai sur une manière de représenter les quantités imaginaires dans les
+        given-names: Jean-Robert
+    title: Essai sur una manière de représenter les quantités imaginaires dans les
       constructions géométriques
     date-published: 1806-01-01
     year: 1806
+    notes: Published anonymously; reissued by Gauthier-Villars in 1874
     publisher:
-      name: Gauthier-Villars
+      name: Madame Veuve Dumesnil
     type: book
   - authors:
       - family-names: Connes
@@ -344,16 +360,16 @@ references:
     type: book
   - authors:
       - family-names: Gelfand
-        given-names: I. M.
+        given-names: Israel M.
     title: Normierte Ringe
     date-published: 1941-01-01
     year: 1941
-    issue: "51"
+    issue: "1"
     journal: Matematicheskii Sbornik
     start: "3"
     end: "24"
     type: article
-    volume: "9"
+    volume: 9(51)
   - authors:
       - family-names: Baker
         given-names: A.
@@ -365,3 +381,75 @@ references:
     end: "216"
     type: article
     volume: "13"
+  - authors:
+      - family-names: Apostol
+        given-names: Tom M.
+    title: Introduction to analytic number theory
+    date-published: 2013-01-01
+    year: 2013
+    publisher:
+      name: Springer Science & Business Media
+    type: book
+  - authors:
+      - family-names: Heath
+        given-names: Thomas Little
+    title: The thirteen books of Euclid's Elements
+    date-published: 1956-01-01
+    year: 1956
+    publisher:
+      name: Courier Corporation
+    type: book
+  - authors:
+      - family-names: Tarski
+        given-names: Alfred
+    title: A Decision Method for Elementary Algebra and Geometry
+    date-published: 1951-01-01
+    year: 1951
+    edition: 2nd ed., rev.
+    publisher:
+      name: University of California Press
+    type: book
+  - authors:
+      - family-names: Kontsevich
+        given-names: Maxim
+      - family-names: Zagier
+        given-names: Don
+    doi: 10.1007/978-3-642-56478-9_39
+    identifiers:
+      - type: doi
+        value: 10.1007/978-3-642-56478-9_39
+    title: Periods
+    date-published: 2001-01-01
+    year: 2001
+    journal: Mathematics Unlimited — 2001 and Beyond
+    publisher:
+      name: Springer
+    start: "771"
+    end: "808"
+    type: generic
+  - authors:
+      - family-names: Grothendieck
+        given-names: Alexandre
+    title: On the de Rham cohomology of algebraic varieties
+    date-published: 1966-01-01
+    year: 1966
+    issue: "29"
+    journal: Publ. Math. Inst. Hautes Études Sci.
+    start: "95"
+    end: "103"
+    type: article
+  - authors:
+      - family-names: Lindemann
+        given-names: Ferdinand
+    doi: 10.1007/BF01446522
+    identifiers:
+      - type: doi
+        value: 10.1007/BF01446522
+    title: Über die Zahl π
+    date-published: 1882-01-01
+    year: 1882
+    journal: Math. Ann.
+    start: "213"
+    end: "225"
+    type: article
+    volume: "20"
