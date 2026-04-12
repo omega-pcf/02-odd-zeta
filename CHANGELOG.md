@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.3.4](https://github.com/omega-pcf/02-odd-zeta/compare/v1.3.3...v1.3.4) (2026-04-12)
+
+### Refinements
+
+* **bib:** finalize bibliographic integrity audit and metadata synchronization ([55c52f8](https://github.com/omega-pcf/02-odd-zeta/commit/55c52f828eb8aee1d4e773345aca900d0f8ef414))
+* **bib:** harmonize bibliographic metadata with 01-hilbert-polya standards ([feac4a9](https://github.com/omega-pcf/02-odd-zeta/commit/feac4a9522b723e57930be047ef1ac7ba48ceab5))
+
+### Chores
+
+* **bib:** harmonize project dates and update Apostol citations ([286a8da](https://github.com/omega-pcf/02-odd-zeta/commit/286a8daf10c32325c1aa94ef0733552486494a79))
+
 ## [1.3.3](https://github.com/omega-pcf/02-odd-zeta/compare/v1.3.2...v1.3.3) (2026-04-12)
 
 ### Documentation

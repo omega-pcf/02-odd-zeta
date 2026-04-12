@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: If you use this software, please cite it using these metadata.
 title: "Odd Zeta Values from the PCF Torus: φ and π as Arithmetic-Geometric Sources"
 type: software
-version: 1.3.3
+version: 1.3.4
 date-released: 2026-04-12
 authors:
   - family-names: González García
@@ -51,6 +51,8 @@ references:
         given-names: Itzel Marion
       - family-names: García Ordóñez
         given-names: Luz María
+      - family-names: Moreno
+        given-names: M.
     doi: 10.5281/zenodo.17619486
     identifiers:
       - type: doi
