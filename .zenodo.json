@@ -25,11 +25,18 @@
   "keywords": [
     "Riemann zeta function",
     "Odd zeta values",
-    "Golden ratio",
-    "Fibonacci sequence",
-    "L-functions",
+    "Apéry constants",
     "Pentagonal arithmetic",
-    "PCF Torus"
+    "PCF Torus",
+    "Arithmetic-spectral span",
+    "L-functions",
+    "N=4 SYM",
+    "S-matrix bootstrap",
+    "Modular bootstrap",
+    "Irrationality and Transcendence",
+    "Lean 4 formalization",
+    "MSC 11M06",
+    "MSC 11J72"
   ],
   "upload_type": "publication",
   "publication_type": "preprint",

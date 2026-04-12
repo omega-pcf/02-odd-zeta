@@ -23,11 +23,18 @@ license: CC-BY-4.0
 keywords:
   - Riemann zeta function
   - Odd zeta values
-  - Golden ratio
-  - Fibonacci sequence
-  - L-functions
+  - Apéry constants
   - Pentagonal arithmetic
   - PCF Torus
+  - Arithmetic-spectral span
+  - L-functions
+  - N=4 SYM
+  - S-matrix bootstrap
+  - Modular bootstrap
+  - Irrationality and Transcendence
+  - Lean 4 formalization
+  - MSC 11M06
+  - MSC 11J72
 abstract: "We demonstrate that the odd values ζ(2k+1) of the Riemann zeta
   function are structurally determined by φ=(1+√5)/2 and π. The Euler product of
   ζ is built from local factors f_p(s), one for each prime. We prove that the
