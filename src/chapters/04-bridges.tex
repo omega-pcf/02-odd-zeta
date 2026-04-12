@@ -165,7 +165,7 @@ Let $R = \log\golden$ be the regulator of $\mathbb{Q}(\sqrt{5})$.  Then:
     \qquad\text{\emph{(worldsheet period, \cref{def:torus})}},
     \label{eq:R-torus}\\
   L(1,\chi_5) &= \frac{2R}{\sqrt{5}}
-    \qquad\text{\emph{(class-number residue, this paper)}},
+    \qquad\text{\emph{(class-number residue, \cref{thm:L1})}},
     \label{eq:R-Lvalue}\\
   \frac{S_{\mathrm{BH}}}{k_B} &= \lambda_{\log}\cdot R
     \qquad\text{\emph{(BH entropy, \cref{prop:worldline-entropy})}}.
@@ -188,7 +188,7 @@ The torus $T^2_{\mathrm{PCF}}$ admits two complementary readings:
   Virasoro spectrum.  The partition function $Z_{\mathrm{PCF}}(i)=e^{-3\pi/2}/|\eta(i)|^6$
   gives $c=3$, $G_N=1/2$, and the nome $q=e^{-2\pi}$ governs the tower.
   The period appears as $T=2\pi R$.
-\item \textbf{Arithmetic reading} (this paper): the same $\tau_{\mathrm{PCF}}=i$
+\item \textbf{Arithmetic reading} (present work): the same $\tau_{\mathrm{PCF}}=i$
   fixes the class-number residue $L(1,\chi_5)=2R/\sqrt{5}$, and the
   Frobenius lifts $\psi_p(\golden)=\golden^p$ organise the Euler product
   of $\zeta_{\mathbb{Q}(\sqrt{5})}(s)$.  The period appears as $R = T/(2\pi)$.
@@ -355,7 +355,7 @@ correspond to the four fields in the table.
 The correspondence for $3 \le p \le 31$ is shown in \cref{tab:fib-split}.
 \end{proof}
 
-\begin{corollary}[Self-duality unifies this paper and the Primitive Structure]%
+\begin{corollary}[Self-duality unifies the current study and the Primitive Structure]%
   \label{cor:same-Z2}
 The self-duality of $\chi_5$ (which guarantees that $L(1,\chi_5)>0$
 and that $\chi_5$ appears in the factorisation $\zeta = \zeta_K/L$)
@@ -375,7 +375,7 @@ In other words: the \emph{same algebraic fact}---exponent~$2$ of
 $\mathbb{Z}_2\times\mathbb{Z}_2$---simultaneously produces
 the spectral constraint of the Primitive Structure~\cite{V11} and makes $\chi_5$ real and self-dual
 so that $L(1,\chi_5) = 2\log\golden/\sqrt{5} > 0$ is the class-number
-residue (this paper).
+residue (\cref{thm:L1}).
 \end{corollary}
 
 The categorical reading of this bridge is the span of
@@ -428,7 +428,7 @@ produces the self-duality of $L(1,\chi_5)$ (Algebraic symmetry).
 
 We collect the results of \cref{sec:background,ssec:bridge-Z2}
 into a single statement.  The relation $\golden^2 = \golden + 1$
-generates every structure in this paper
+generates every structure in the current study
 (\cref{thm:unifying} below), and the dimensional chain from
 1D through 2D to 3D follows as a consequence of the Euler product
 over the primes (\cref{cor:S3-from-euler}).
@@ -437,7 +437,7 @@ over the primes (\cref{cor:S3-from-euler}).
   \label{thm:unifying}
 The single relation $\golden^2 = \golden + 1$ generates the complete
 arithmetic-geometric structure of $T^2_{\mathrm{PCF}}$ and determines
-every object in this paper:
+every object in the present work:
 \begin{enumerate}
 \item[\textup{(1)}] \textbf{Frobenius:} $\golden^p = F_p\golden + F_{p-1}$
   for every prime $p$, with splitting type
@@ -479,7 +479,7 @@ complexification $e^{ix}$ (canonical analysis).
 
 \begin{proof}
 Every item derives from $\golden^2 = \golden + 1$ by an explicit
-chain already established in this paper:
+chain already established in the current study:
 (1)~follows by induction: $\golden^{n+2} = \golden^{n+1}+\golden^n$
 reproduces the Fibonacci recurrence in the coefficients;
 (2)~follows from $e^{(\log 2/\log\golden)\log\golden} = e^{\log 2} = 2$;
@@ -712,7 +712,7 @@ constraint ($\mu_3=1/2$, via the kernel).
 \end{remark}
 
 \begin{remark}[Scope]\label{rmk:scope}
-This paper establishes the isomorphism between
+The present work establishes the isomorphism between
 $\golden^2=\golden+1$ and the components of~$\zeta(s)$ at every level
 of the Euler product (\cref{prop:spectral-id}), thereby
 discharging the \texttt{bridge\_axiom}
@@ -730,7 +730,7 @@ Structure~\cite{V11} (Lean: \texttt{categorical\_limit\_theorem},
 
 \begin{remark}[Classical inputs]\label{rmk:classical-inputs}
 The chain of \cref{prop:spectral-id} uses,
-beyond the results established in this paper, three classical theorems:
+beyond the results established in the current study, three classical theorems:
 \begin{enumerate}
 \item \textbf{Euler product identity} (Euler~\cite{Euler}):
   $\prod_p(1-p^{-s})^{-1} = \sum_{n=1}^{\infty}n^{-s}$ for
