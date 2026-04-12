@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.3.5](https://github.com/omega-pcf/02-odd-zeta/compare/v1.3.4...v1.3.5) (2026-04-12)
+
+### Styles
+
+* **refs:** standardize manuscript nomenclature to 'current study' and 'present work' ([afbdda9](https://github.com/omega-pcf/02-odd-zeta/commit/afbdda932ee2a5dab3e15637135d0b40a5cbaeb9))
+
 ## [1.3.4](https://github.com/omega-pcf/02-odd-zeta/compare/v1.3.3...v1.3.4) (2026-04-12)
 
 ### Refinements
