@@ -12,10 +12,11 @@ We demonstrate that the odd values ζ(2k+1) of the Riemann zeta function are str
 @article{Gonzalez2026OddZeta,
   author  = {González García, J. A. and others},
   title   = {Odd Zeta Values from the PCF Torus: φ and π as Arithmetic-Geometric Sources},
-  journal = {Zenodo},
+  journal = {Preprint},
   year    = {2026},
   doi     = {10.5281/zenodo.19492791},
-  url     = {https://doi.org/10.5281/zenodo.19492791}
+  url     = {https://doi.org/10.5281/zenodo.19492791},
+  note    = {Preprint prepared for SIGMA (Symmetry, Integrability and Geometry: Methods and Applications)}
 }
 ```
 
