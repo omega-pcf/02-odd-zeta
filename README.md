@@ -8,6 +8,8 @@ We demonstrate that the odd values ζ(2k+1) of the Riemann zeta function are str
 
 ## Citation
 
+González García, J. A., González García, V. M., Dressler Pérez, I. M., & García Ordóñez, L. M. (2026). *Odd Zeta Values from the PCF Torus: φ and π as Arithmetic-Geometric Sources*. Preprint prepared for SIGMA (Symmetry, Integrability and Geometry: Methods and Applications). DOI: [10.5281/zenodo.19492791](https://doi.org/10.5281/zenodo.19492791).
+
 ```bibtex
 @article{Gonzalez2026OddZeta,
   author  = {González García, J. A. and others},
