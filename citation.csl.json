@@ -109,12 +109,12 @@
         "author": [
             {
                 "family": "Apéry",
-                "given": "R."
+                "given": "Roger"
             }
         ],
-        "citation-key": "Apery",
+        "citation-key": "apery1979irrationalite",
         "container-title": "Astérisque",
-        "id": "Apery",
+        "id": "apery1979irrationalite",
         "issued": {
             "date-parts": [
                 [
@@ -131,16 +131,16 @@
         "author": [
             {
                 "family": "Ball",
-                "given": "K."
+                "given": "Keith"
             },
             {
                 "family": "Rivoal",
-                "given": "T."
+                "given": "Tanguy"
             }
         ],
-        "citation-key": "BallRivoal",
+        "citation-key": "ball2001irrationalite",
         "container-title": "Invent. Math.",
-        "id": "BallRivoal",
+        "id": "ball2001irrationalite",
         "issued": {
             "date-parts": [
                 [
@@ -157,16 +157,16 @@
         "author": [
             {
                 "family": "Brown",
-                "given": "J. D."
+                "given": "J. David"
             },
             {
                 "family": "Henneaux",
-                "given": "M."
+                "given": "Marc"
             }
         ],
-        "citation-key": "BrownHenneaux",
+        "citation-key": "brown1986central",
         "container-title": "Comm. Math. Phys.",
-        "id": "BrownHenneaux",
+        "id": "brown1986central",
         "issued": {
             "date-parts": [
                 [
@@ -174,9 +174,11 @@
                 ]
             ]
         },
+        "issue": "2",
         "page": "207-226",
         "title": "Central charges in the canonical realization of asymptotic symmetries: an example from three-dimensional gravity",
         "type": "article-journal",
+        "URL": "https://projecteuclid.org",
         "volume": "104"
     },
     {
@@ -207,12 +209,12 @@
         "author": [
             {
                 "family": "Riemann",
-                "given": "B."
+                "given": "Bernhard"
             }
         ],
-        "citation-key": "Riemann",
-        "container-title": "Monatsberichte der Berliner Akademie",
-        "id": "Riemann",
+        "citation-key": "riemann1859ueber",
+        "container-title": "Monatsberichte der Königlichen Preußischen Akademie der Wissenschaften zu Berlin",
+        "id": "riemann1859ueber",
         "issued": {
             "date-parts": [
                 [
@@ -221,26 +223,27 @@
             ]
         },
         "page": "671-680",
-        "title": "Üeber die Anzahl der Primzahlen unter einer gegebenen Grösse",
+        "title": "Ueber die Anzahl der Primzahlen unter einer gegebenen Grösse",
         "type": "article-journal"
     },
     {
         "author": [
             {
                 "family": "Euler",
-                "given": "L."
+                "given": "Leonhard"
             }
         ],
-        "citation-key": "Euler",
+        "citation-key": "euler1744variae",
         "container-title": "Commentarii academiae scientiarum Petropolitanae",
-        "id": "Euler",
+        "id": "euler1744variae",
         "issued": {
             "date-parts": [
                 [
-                    1737
+                    1744
                 ]
             ]
         },
+        "note": "Presented in 1737; Eneström index E72",
         "page": "160-188",
         "title": "Variae observationes circa series infinitas",
         "type": "article-journal",
@@ -341,20 +344,23 @@
         "author": [
             {
                 "family": "Weil",
-                "given": "A."
+                "given": "André"
             }
         ],
-        "citation-key": "Weil",
-        "container-title": "Collected Papers",
-        "id": "Weil",
+        "citation-key": "weil1979lettre",
+        "container-title": "André Weil: Oeuvres Scientifiques / Collected Papers",
+        "id": "weil1979lettre",
         "issued": {
             "date-parts": [
                 [
-                    1940
+                    1979
                 ]
             ]
         },
+        "note": "Original letter written in 1940",
         "page": "244-255",
+        "publisher": "Springer-Verlag",
+        "publisher-place": "New York, Heidelberg, Berlin",
         "title": "Une lettre et un extrait de lettre à Simone Weil",
         "type": "chapter",
         "volume": "I"
@@ -413,10 +419,10 @@
                 "given": "F. William"
             }
         ],
-        "citation-key": "Lawvere",
+        "citation-key": "lawvere1969diagonal",
         "collection-title": "Lecture Notes in Mathematics",
         "container-title": "Category Theory, Homology Theory and their Applications II",
-        "id": "Lawvere",
+        "id": "lawvere1969diagonal",
         "ISBN": "978-3-540-36101-5",
         "issued": {
             "date-parts": [
@@ -430,7 +436,8 @@
         "publisher-place": "Berlin, Heidelberg",
         "title": "Diagonal arguments and cartesian closed categories",
         "type": "chapter",
-        "volume": "92"
+        "volume": "92",
+        "DOI": "10.1007/BFb0080769"
     },
     {
         "author": [
@@ -479,11 +486,11 @@
         "author": [
             {
                 "family": "Argand",
-                "given": "Jean Robert"
+                "given": "Jean-Robert"
             }
         ],
-        "citation-key": "Argand",
-        "id": "Argand",
+        "citation-key": "argand1806essai",
+        "id": "argand1806essai",
         "issued": {
             "date-parts": [
                 [
@@ -491,8 +498,10 @@
                 ]
             ]
         },
-        "publisher": "Gauthier-Villars",
-        "title": "Essai sur une manière de représenter les quantités imaginaires dans les constructions géométriques",
+        "note": "Published anonymously; reissued by Gauthier-Villars in 1874",
+        "publisher": "Madame Veuve Dumesnil",
+        "publisher-place": "Paris",
+        "title": "Essai sur una manière de représenter les quantités imaginaires dans les constructions géométriques",
         "type": "book"
     },
     {
@@ -556,13 +565,13 @@
         "author": [
             {
                 "family": "Gelfand",
-                "given": "I. M."
+                "given": "Israel M."
             }
         ],
-        "citation-key": "Gelfand",
+        "citation-key": "gelfand1941normierte",
         "container-title": "Matematicheskii Sbornik",
-        "id": "Gelfand",
-        "issue": "51",
+        "id": "gelfand1941normierte",
+        "issue": "1",
         "issued": {
             "date-parts": [
                 [
@@ -573,7 +582,7 @@
         "page": "3-24",
         "title": "Normierte Ringe",
         "type": "article-journal",
-        "volume": "9"
+        "volume": "9(51)"
     },
     {
         "author": [
