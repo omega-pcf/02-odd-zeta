@@ -62,8 +62,8 @@ references:
     title: "The Hilbert-Pólya Operator and the Primitive Structure of the Complex
       Plane: Between 𝔽₁, String Theory, and Ancient Geometry"
     url: https://doi.org/10.5281/zenodo.17619486
-    date-published: 2026-01-01
-    year: 2026
+    date-published: 2025-01-01
+    year: 2025
     journal: Preprint
     type: article
   - authors:
@@ -209,15 +209,20 @@ references:
     volume: "5"
   - authors:
       - family-names: López Peña
-        given-names: J.
+        given-names: Javier
       - family-names: Lorscheid
-        given-names: O.
+        given-names: Oliver
+    doi: 10.1007/s00209-009-0638-0
+    identifiers:
+      - type: doi
+        value: 10.1007/s00209-009-0638-0
     title: Torified varieties and the geometry over 𝔽₁
     date-published: 2011-01-01
     year: 2011
-    journal: Math. Z.
-    start: "667"
-    end: "704"
+    issue: "3"
+    journal: Mathematische Zeitschrift
+    start: "605"
+    end: "643"
     type: article
     volume: "267"
   - authors:
@@ -273,18 +278,25 @@ references:
   - authors:
       - family-names: Lawvere
         given-names: F. William
-    doi: 10.1073/pnas.63.1.134
+    doi: 10.1007/BFb0080769
     identifiers:
       - type: doi
-        value: 10.1073/pnas.63.1.134
+        value: 10.1007/BFb0080769
+      - type: other
+        value: urn:isbn:978-3-540-36101-5
     title: Diagonal arguments and Cartesian closed categories
+    collection-title: Lecture Notes in Mathematics
     date-published: 1969-01-01
     year: 1969
-    journal: Proc. Nat. Acad. Sci. U.S.A.
+    isbn: 978-3-540-36101-5
+    journal: Category Theory, Homology Theory and their Applications II
+    publisher:
+      name: Springer Berlin Heidelberg
+      city: Berlin
     start: "134"
     end: "145"
-    type: article
-    volume: "63"
+    type: generic
+    volume: "92"
   - authors:
       - family-names: Yanofsky
         given-names: Noson S.
@@ -371,11 +383,16 @@ references:
   - authors:
       - family-names: Apostol
         given-names: Tom M.
-    title: Introduction to analytic number theory
-    date-published: 2013-01-01
-    year: 2013
+    identifiers:
+      - type: other
+        value: urn:isbn:0-387-90163-9
+    title: Introduction to Analytic Number Theory
+    date-published: 1976-01-01
+    year: 1976
+    isbn: 0-387-90163-9
     publisher:
-      name: Springer Science & Business Media
+      name: Springer-Verlag
+    start: "340"
     type: book
   - authors:
       - family-names: Heath

@@ -57,7 +57,7 @@
         "issued": {
             "date-parts": [
                 [
-                    2026
+                    2025
                 ]
             ]
         },
@@ -320,15 +320,16 @@
         "author": [
             {
                 "family": "López Peña",
-                "given": "J."
+                "given": "Javier"
             },
             {
                 "family": "Lorscheid",
-                "given": "O."
+                "given": "Oliver"
             }
         ],
         "citation-key": "Lorscheid",
-        "container-title": "Math. Z.",
+        "container-title": "Mathematische Zeitschrift",
+        "DOI": "10.1007/s00209-009-0638-0",
         "id": "Lorscheid",
         "issued": {
             "date-parts": [
@@ -337,7 +338,8 @@
                 ]
             ]
         },
-        "page": "667-704",
+        "issue": "3",
+        "page": "605-643",
         "title": "Torified varieties and the geometry over 𝔽₁",
         "type": "article-journal",
         "volume": "267"
@@ -422,8 +424,10 @@
             }
         ],
         "citation-key": "Lawvere",
-        "container-title": "Proc. Nat. Acad. Sci. U.S.A.",
+        "collection-title": "Lecture Notes in Mathematics",
+        "container-title": "Category Theory, Homology Theory and their Applications II",
         "id": "Lawvere",
+        "ISBN": "978-3-540-36101-5",
         "issued": {
             "date-parts": [
                 [
@@ -432,10 +436,12 @@
             ]
         },
         "page": "134-145",
+        "publisher": "Springer Berlin Heidelberg",
+        "publisher-place": "Berlin, Heidelberg",
         "title": "Diagonal arguments and Cartesian closed categories",
-        "type": "article-journal",
-        "volume": "63",
-        "DOI": "10.1073/pnas.63.1.134"
+        "type": "chapter",
+        "volume": "92",
+        "DOI": "10.1007/BFb0080769"
     },
     {
         "author": [
@@ -591,18 +597,20 @@
                 "given": "Tom M."
             }
         ],
-        "citation-key": "apostol2013introduction",
+        "citation-key": "apostol1976introduction",
         "id": "apostol2013introduction",
         "issued": {
             "date-parts": [
                 [
-                    2013
+                    1976
                 ]
             ]
         },
-        "publisher": "Springer Science & Business Media",
-        "title": "Introduction to analytic number theory",
-        "type": "book"
+        "publisher": "Springer-Verlag",
+        "title": "Introduction to Analytic Number Theory",
+        "type": "book",
+        "ISBN": "0-387-90163-9",
+        "page": "340"
     },
     {
         "author": [
