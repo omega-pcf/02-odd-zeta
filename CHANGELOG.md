@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.3.8](https://github.com/omega-pcf/02-odd-zeta/compare/v1.3.7...v1.3.8) (2026-04-12)
+
+### Bug Fixes
+
+* remove redundant Eq. prefix from cref in discussion chapter ([6d6c0cc](https://github.com/omega-pcf/02-odd-zeta/commit/6d6c0ccdf7534116dd35c23f239463c8bbb8ea3e))
+* resolve broken references, standardize nomenclature and fix overfull hboxes in bridges and discussion chapters ([e109ef6](https://github.com/omega-pcf/02-odd-zeta/commit/e109ef61c29bd519e1b0849f53801cb2846edde4))
+
+### Refinements
+
+* clarify binary (0,1)-component in algebraic symmetry section ([ac70dc9](https://github.com/omega-pcf/02-odd-zeta/commit/ac70dc95b9599e2b81713d3c16003960daf4c320))
+
+### Build System
+
+* update document-v1.3.7.pdf and checksums after nomenclature cleanup ([1f8eba2](https://github.com/omega-pcf/02-odd-zeta/commit/1f8eba2c302da7021e68bda773bdaed315cfdae5))
+
 ## [1.3.7](https://github.com/omega-pcf/02-odd-zeta/compare/v1.3.6...v1.3.7) (2026-04-12)
 
 ### Documentation
