@@ -30,8 +30,6 @@ keywords:
   - S-matrix bootstrap
   - Modular bootstrap
   - AdS/CFT correspondence
-  - N=4 supersymmetric Yang-Mills
-  - Lean 4
 identifiers:
   - type: other
     value: "MSC2020: 11M06 (Primary), 11J72 (Secondary), 81T13 (Tertiary)"
