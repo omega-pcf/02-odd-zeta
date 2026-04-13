@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.4.0](https://github.com/omega-pcf/02-odd-zeta/compare/v1.3.12...v1.4.0) (2026-04-13)
+
+### Features
+
+* **scripts:** restore and modernize manuscript audit tool ([c524908](https://github.com/omega-pcf/02-odd-zeta/commit/c52490826c71088e49f35f4bc74a9ca7f1b61185))
+
 ## [1.3.12](https://github.com/omega-pcf/02-odd-zeta/compare/v1.3.11...v1.3.12) (2026-04-13)
 
 ### Documentation
