@@ -24,7 +24,7 @@ González García, J. A., González García, V. M., Dressler Pérez, I. M., & Ga
 
 ```bibtex
 @article{Gonzalez2026OddZeta,
-  author  = {González García, J. A. and others},
+  author  = {González García, J. A. and González García, V. M. and Dressler Pérez, I. M. and García Ordóñez, L. M},
   title   = {Odd Zeta Values from the PCF Torus: φ and π as Arithmetic-Geometric Sources},
   journal = {Preprint},
   year    = {2026},
@@ -39,6 +39,8 @@ González García, J. A., González García, V. M., Dressler Pérez, I. M., & Ga
 - `/src`: LaTeX manuscript sources.
 - `/lean`: Formal verification of the arithmetic structures.
 - `/scripts`: Verification and figure generation tools.
+- `/tests`: Numerical analysis and spectral validation (Python).
+- `/docs`: Detailed environment setup and requirement guides.
 
 ## Verification
 
