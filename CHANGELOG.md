@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.4.1](https://github.com/omega-pcf/02-odd-zeta/compare/v1.4.0...v1.4.1) (2026-04-13)
+
+### Bug Fixes
+
+* revert math style to mathbb as in manuscript source ([ce29e4a](https://github.com/omega-pcf/02-odd-zeta/commit/ce29e4af97b1f0f0cd9ebeeb7cdf33870c4ae8a5))
+* use mathbf for Q in README to ensure GitHub rendering reliability ([d84d62b](https://github.com/omega-pcf/02-odd-zeta/commit/d84d62b010ac08fc4208d17fdf1afb2fca3e9b73))
+
+### Documentation
+
+* add research division website to author affiliations ([4d84a86](https://github.com/omega-pcf/02-odd-zeta/commit/4d84a86a966fffd00dc90d953518aeeb51947d30))
+* complete repository structure in 02 README (tests and docs) ([ecf8b74](https://github.com/omega-pcf/02-odd-zeta/commit/ecf8b747a295e3e398437bbaec6cfb59a6643485))
+* document release workflow in README ([c83aecc](https://github.com/omega-pcf/02-odd-zeta/commit/c83aeccf49c2f51d7a1e2e14c3cb55dd24c18ce8))
+* emphasize Zenodo and auditability in release workflow; standardize build command ([3f8d92a](https://github.com/omega-pcf/02-odd-zeta/commit/3f8d92a8636cf2be887f288063b4a1385703a2a5))
+* synchronize and polish README abstract and keywords with LaTeX source ([97e2291](https://github.com/omega-pcf/02-odd-zeta/commit/97e2291bbd643ef58e0b98648f2fa95cccc1bc11))
+
 ## [1.4.0](https://github.com/omega-pcf/02-odd-zeta/compare/v1.3.12...v1.4.0) (2026-04-13)
 
 ### Features
