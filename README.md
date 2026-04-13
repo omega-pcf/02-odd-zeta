@@ -56,7 +56,7 @@ pnpm run validate
 The project uses a Docker-based LaTeX environment (`kjarosh/latex:2024.4-full`) to ensure consistent results across different systems. The pipeline orchestrates metadata synchronization from `citation.csl.json` and `CITATION.cff`, generates all figures and assets, and runs LaTeX passes to produce the production-ready manuscript.
 
 ```bash
-pnpm run build
+pnpm build
 ```
 
 > [!IMPORTANT]
@@ -66,13 +66,13 @@ pnpm run build
 
 ## Release
 
-To automate a new versioned release (updates Changelog, Tags, and GitHub Release):
+To automate a new versioned release (updates Zenodo deposition, Changelog, Tags, and GitHub Release):
 
 ```bash
 pnpm run release
 ```
 
-This triggers a full build, asset regeneration, and metadata synchronization before publishing.
+This triggers a full build, asset regeneration, and metadata synchronization before publishing, ensuring a deterministic and fully auditable release state.
 
 For comprehensive environment setup instructions—including Node.js/pnpm, Python/uv, Lean 4, and the Dockerized LaTeX compilation suite—please refer to the **[Installation & Requirements Guide](docs/installation.md)**.
 
