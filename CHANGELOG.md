@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.3.10](https://github.com/omega-pcf/02-odd-zeta/compare/v1.3.9...v1.3.10) (2026-04-13)
+
+### Build System
+
+* standardizing bibliographic metadata and manuscript formatting ([ca88e88](https://github.com/omega-pcf/02-odd-zeta/commit/ca88e883ff998e49ea8e5f8e697dad01fc3e0a2a))
+
 ## [1.3.9](https://github.com/omega-pcf/02-odd-zeta/compare/v1.3.8...v1.3.9) (2026-04-12)
 
 ## [1.3.8](https://github.com/omega-pcf/02-odd-zeta/compare/v1.3.7...v1.3.8) (2026-04-12)

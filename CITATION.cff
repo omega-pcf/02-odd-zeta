@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: If you use this software, please cite it using these metadata.
 title: "Odd Zeta Values from the PCF Torus: φ and π as Arithmetic-Geometric Sources"
 type: software
-version: 1.3.9
+version: 1.3.10
 date-released: 2026-04-13
 authors:
   - family-names: González García
@@ -145,8 +145,11 @@ references:
     identifiers:
       - type: doi
         value: 10.1007/BF01612081
+      - type: url
+        value: https://doi.org/10.1007/BF01612081
     title: Eine neue Art von Zetafunktionen und ihre Beziehungen zur Verteilung der
       Primzahlen (Zweite Mitteilung)
+    url: https://doi.org/10.1007/BF01612081
     date-published: 1920-01-01
     year: 1920
     journal: Math. Z.
@@ -193,31 +196,57 @@ references:
     volume: "57"
   - authors:
       - family-names: Borger
-        given-names: J.
-    title: Λ-rings and the Field with One Element
-    date-published: 2010-01-01
-    year: 2010
-    journal: Selecta Mathematica
-    start: "603"
-    end: "666"
+        given-names: James
+    identifiers:
+      - type: url
+        value: https://arxiv.org/abs/0906.3146
+    title: Λ-rings and the field with one element
+    url: https://arxiv.org/abs/0906.3146
+    date-published: 2009-01-01
+    year: 2009
+    journal: arXiv preprint arXiv:0906.3146 [math.NT]
     type: article
-    volume: "16"
-  - authors:
+  - abstract: In this survey I discuss A. Buium’s theory of “differential equations
+      in the p-adic direction” ([8]) and its interrelations with “geometry over
+      the field 𝔽₁”, on the background of various approaches to p-adic models
+      in theoretical physics (cf. [1, 30]).
+    authors:
       - family-names: Manin
         given-names: Yuri I.
     doi: 10.1134/S2070046613040055
     identifiers:
       - type: doi
         value: 10.1134/S2070046613040055
+      - type: url
+        value: https://doi.org/10.1134/S2070046613040055
+      - type: other
+        value: urn:issn:2070-0474
     title: Numbers as functions
+    url: https://doi.org/10.1134/S2070046613040055
     date-published: 2013-01-01
     year: 2013
-    journal: P-Adic Numbers, Ultrametric Analysis and Applications
-    start: "319"
-    end: "339"
+    issn: 2070-0474
+    issue: "4"
+    journal: P-Adic Numbers, Ultrametric Analysis, and Applications
+    start: "313"
+    end: "325"
     type: article
     volume: "5"
-  - authors:
+  - abstract: "This paper invents the notion of torified varieties: A torification
+      of a scheme is a decomposition of the scheme into split tori. A torified
+      variety is a reduced scheme of finite type over ℤ that admits a
+      torification. Toric varieties, split Chevalley schemes and flag varieties
+      are examples of this type of scheme. Given a torified variety whose
+      torification is compatible with an affine open covering, we construct a
+      gadget in the sense of Connes–Consani and an object in the sense of Soulé
+      and show that both are varieties over 𝔽₁ in the corresponding notion.
+      Since toric varieties and split Chevalley schemes satisfy the
+      compatibility condition, we shed new light on all examples of varieties
+      over 𝔽₁ in the literature so far. Furthermore, we compare
+      Connes–Consani’s geometry, Soulé’s geometry and Deitmar’s geometry, and we
+      discuss to what extent Chevalley groups can be realized as group objects
+      over 𝔽₁ in the given categories."
+    authors:
       - family-names: López Peña
         given-names: Javier
       - family-names: Lorscheid
@@ -226,9 +255,15 @@ references:
     identifiers:
       - type: doi
         value: 10.1007/s00209-009-0638-0
-    title: Torified varieties and the geometry over 𝔽₁
-    date-published: 2011-01-01
+      - type: url
+        value: https://doi.org/10.1007/s00209-009-0638-0
+      - type: other
+        value: urn:issn:1432-1823
+    title: Torified varieties and their geometries over 𝔽₁
+    url: https://doi.org/10.1007/s00209-009-0638-0
+    date-published: 2011-04-01
     year: 2011
+    issn: 1432-1823
     issue: "3"
     journal: Mathematische Zeitschrift
     start: "605"
@@ -267,24 +302,43 @@ references:
     publisher:
       name: University of Tolima, Colombia
     type: report
-  - authors:
+  - abstract: "We show that the large-ℕ limits of certain conformal field theories
+      in various dimensions include in their Hilbert space a sector describing
+      supergravity on the product of anti-de Sitter spacetimes, spheres, and
+      other compact manifolds. This is shown by taking some branes in the full
+      M/string theory and then taking a low-energy limit where the field theory
+      on the brane decouples from the bulk. We observe that, in this limit, we
+      can still trust the near-horizon geometry for large ℕ. The enhanced
+      supersymmetries of the near-horizon geometry correspond to the extra
+      supersymmetry generators present in the superconformal group (as opposed
+      to just the super-Poincare group). The 't Hooft limit of 3 + 1 ℕ = 4
+      super-Yang–Mills at the conformal point is shown to contain strings: they
+      are IIB strings. We conjecture that compactifications of M/string theory
+      on various anti-de Sitter spacetimes is dual to various conformal field
+      theories. This leads to a new proposal for a definition of M-theory which
+      could be extended to include five noncompact dimensions."
+    authors:
       - family-names: Maldacena
         given-names: Juan M.
-    doi: 10.4310/atmp.1998.v2.n2.a1
+    doi: 10.1023/A:1026654312961
     identifiers:
       - type: doi
-        value: 10.4310/atmp.1998.v2.n2.a1
+        value: 10.1023/A:1026654312961
       - type: url
-        value: https://doi.org/10.4310/atmp.1998.v2.n2.a1
-    title: The Large N Limit of Superconformal Field Theories and Supergravity
-    url: https://doi.org/10.4310/atmp.1998.v2.n2.a1
-    date-published: 1998-01-01
-    year: 1998
-    journal: Adv. Theor. Math. Phys.
-    start: "231"
-    end: "252"
+        value: https://doi.org/10.1023/A:1026654312961
+      - type: other
+        value: urn:issn:1572-9575
+    title: The Large-ℕ Limit of Superconformal Field Theories and Supergravity
+    url: https://doi.org/10.1023/A:1026654312961
+    date-published: 1999-04-01
+    year: 1999
+    issn: 1572-9575
+    issue: "4"
+    journal: International Journal of Theoretical Physics
+    start: "1113"
+    end: "1133"
     type: article
-    volume: "2"
+    volume: "38"
   - authors:
       - family-names: Lawvere
         given-names: F. William
@@ -292,10 +346,12 @@ references:
     identifiers:
       - type: doi
         value: 10.1007/BFb0080769
+      - type: url
+        value: https://doi.org/10.1007/BFb0080769
       - type: other
         value: urn:isbn:978-3-540-36101-5
-    title: Diagonal arguments and Cartesian closed categories
-    collection-title: Lecture Notes in Mathematics
+    title: Diagonal arguments and cartesian closed categories
+    url: https://doi.org/10.1007/BFb0080769
     date-published: 1969-01-01
     year: 1969
     isbn: 978-3-540-36101-5
@@ -305,8 +361,7 @@ references:
       city: Berlin
     start: "134"
     end: "145"
-    type: generic
-    volume: "92"
+    type: conference-paper
   - authors:
       - family-names: Yanofsky
         given-names: Noson S.
@@ -314,8 +369,11 @@ references:
     identifiers:
       - type: doi
         value: 10.2178/bsl/1058448677
+      - type: url
+        value: https://doi.org/10.2178/bsl/1058448677
     title: A universal approach to self-referential paradoxes, incompleteness and
       fixed points
+    url: https://doi.org/10.2178/bsl/1058448677
     date-published: 2003-01-01
     year: 2003
     journal: Bull. Symb. Log.
@@ -334,7 +392,14 @@ references:
     publisher:
       name: Madame Veuve Dumesnil
     type: book
-  - authors:
+  - abstract: We study toroidal compactification of Matrix theory, using ideas and
+      results of non-commutative geometry. We generalize this to
+      compactification on the noncommutative torus, explain the classification
+      of these backgrounds, and argue that they correspond in supergravity to
+      tori with constant background three-form tensor field. The paper includes
+      an introduction for mathematicians to the IKKT formulation of Matrix
+      theory and its relation to the BFSS Matrix theory.
+    authors:
       - family-names: Connes
         given-names: Alain
       - family-names: Douglas
@@ -347,9 +412,9 @@ references:
         value: 10.1088/1126-6708/1998/02/003
       - type: url
         value: https://doi.org/10.1088/1126-6708/1998/02/003
-    title: "Noncommutative geometry and matrix theory: Compactification on tori"
+    title: Noncommutative geometry and Matrix theory
     url: https://doi.org/10.1088/1126-6708/1998/02/003
-    date-published: 1998-01-01
+    date-published: 1998-02-01
     year: 1998
     issue: "02"
     journal: Journal of High Energy Physics
@@ -432,7 +497,10 @@ references:
     identifiers:
       - type: doi
         value: 10.1007/978-3-642-56478-9_39
+      - type: url
+        value: https://doi.org/10.1007/978-3-642-56478-9_39
     title: Periods
+    url: https://doi.org/10.1007/978-3-642-56478-9_39
     date-published: 2001-01-01
     year: 2001
     journal: Mathematics Unlimited — 2001 and Beyond
@@ -444,14 +512,25 @@ references:
   - authors:
       - family-names: Grothendieck
         given-names: Alexandre
+    doi: 10.1007/BF02684807
+    identifiers:
+      - type: doi
+        value: 10.1007/BF02684807
+      - type: url
+        value: https://doi.org/10.1007/BF02684807
+      - type: other
+        value: urn:issn:1618-1913
     title: On the de Rham cohomology of algebraic varieties
+    url: https://doi.org/10.1007/BF02684807
     date-published: 1966-01-01
     year: 1966
-    issue: "29"
-    journal: Publ. Math. Inst. Hautes Études Sci.
+    issn: 1618-1913
+    issue: "1"
+    journal: Publications Mathématiques de l'Institut des Hautes Études Scientifiques
     start: "95"
     end: "103"
     type: article
+    volume: "29"
   - authors:
       - family-names: Lindemann
         given-names: Ferdinand
@@ -459,10 +538,13 @@ references:
     identifiers:
       - type: doi
         value: 10.1007/BF01446522
+      - type: url
+        value: https://doi.org/10.1007/BF01446522
     title: Über die Zahl π
+    url: https://doi.org/10.1007/BF01446522
     date-published: 1882-01-01
     year: 1882
-    journal: Math. Ann.
+    journal: Mathematische Annalen.
     start: "213"
     end: "225"
     type: article
