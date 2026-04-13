@@ -1,6 +1,7 @@
 # Odd Zeta Values from the PCF Torus: φ and π as Arithmetic-Geometric Sources
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19492791.svg)](https://doi.org/10.5281/zenodo.19492791)
+[![Project Page](https://img.shields.io/badge/Project%20Page-omega--pcf.com-blue)](https://omega-pcf.com/02-odd-zeta)
 
 ## Authors
 
