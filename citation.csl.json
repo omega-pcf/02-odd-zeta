@@ -204,7 +204,8 @@
         "publisher": "Springer",
         "title": "Eine neue Art von Zetafunktionen und ihre Beziehungen zur Verteilung der Primzahlen (Zweite Mitteilung)",
         "type": "article-journal",
-        "volume": "6"
+        "volume": "6",
+        "URL": "https://doi.org/10.1007/BF01612081"
     },
     {
         "author": [
@@ -276,23 +277,22 @@
         "author": [
             {
                 "family": "Borger",
-                "given": "J."
+                "given": "James"
             }
         ],
         "citation-key": "Borger",
-        "container-title": "Selecta Mathematica",
+        "container-title": "arXiv preprint arXiv:0906.3146 [math.NT]",
         "id": "Borger",
         "issued": {
             "date-parts": [
                 [
-                    2010
+                    2009
                 ]
             ]
         },
-        "page": "603-666",
-        "title": "Λ-rings and the Field with One Element",
+        "title": "Λ-rings and the field with one element",
         "type": "article-journal",
-        "volume": "16"
+        "URL": "https://arxiv.org/abs/0906.3146"
     },
     {
         "author": [
@@ -302,7 +302,7 @@
             }
         ],
         "citation-key": "Manin",
-        "container-title": "P-Adic Numbers, Ultrametric Analysis and Applications",
+        "container-title": "P-Adic Numbers, Ultrametric Analysis, and Applications",
         "DOI": "10.1134/S2070046613040055",
         "id": "Manin",
         "issued": {
@@ -312,10 +312,14 @@
                 ]
             ]
         },
-        "page": "319-339",
+        "page": "313-325",
         "title": "Numbers as functions",
         "type": "article-journal",
-        "volume": "5"
+        "volume": "5",
+        "issue": "4",
+        "ISSN": "2070-0474",
+        "URL": "https://doi.org/10.1134/S2070046613040055",
+        "abstract": "In this survey I discuss A. Buium’s theory of “differential equations in the p-adic direction” ([8]) and its interrelations with “geometry over the field 𝔽₁”, on the background of various approaches to p-adic models in theoretical physics (cf. [1, 30])."
     },
     {
         "author": [
@@ -332,18 +336,22 @@
         "container-title": "Mathematische Zeitschrift",
         "DOI": "10.1007/s00209-009-0638-0",
         "id": "Lorscheid",
+        "issue": "3",
         "issued": {
             "date-parts": [
                 [
-                    2011
+                    2011,
+                    4
                 ]
             ]
         },
-        "issue": "3",
         "page": "605-643",
-        "title": "Torified varieties and the geometry over 𝔽₁",
+        "title": "Torified varieties and their geometries over 𝔽₁",
         "type": "article-journal",
-        "volume": "267"
+        "volume": "267",
+        "ISSN": "1432-1823",
+        "URL": "https://doi.org/10.1007/s00209-009-0638-0",
+        "abstract": "This paper invents the notion of torified varieties: A torification of a scheme is a decomposition of the scheme into split tori. A torified variety is a reduced scheme of finite type over ℤ that admits a torification. Toric varieties, split Chevalley schemes and flag varieties are examples of this type of scheme. Given a torified variety whose torification is compatible with an affine open covering, we construct a gadget in the sense of Connes–Consani and an object in the sense of Soulé and show that both are varieties over 𝔽₁ in the corresponding notion. Since toric varieties and split Chevalley schemes satisfy the compatibility condition, we shed new light on all examples of varieties over 𝔽₁ in the literature so far. Furthermore, we compare Connes–Consani’s geometry, Soulé’s geometry and Deitmar’s geometry, and we discuss to what extent Chevalley groups can be realized as group objects over 𝔽₁ in the given categories."
     },
     {
         "author": [
@@ -401,21 +409,25 @@
             }
         ],
         "citation-key": "Maldacena",
-        "container-title": "Adv. Theor. Math. Phys.",
-        "DOI": "10.4310/atmp.1998.v2.n2.a1",
+        "container-title": "International Journal of Theoretical Physics",
+        "DOI": "10.1023/A:1026654312961",
         "id": "Maldacena",
+        "issue": "4",
         "issued": {
             "date-parts": [
                 [
-                    1998
+                    1999,
+                    4
                 ]
             ]
         },
-        "page": "231-252",
-        "title": "The Large N Limit of Superconformal Field Theories and Supergravity",
+        "page": "1113-1133",
+        "title": "The Large-ℕ Limit of Superconformal Field Theories and Supergravity",
         "type": "article-journal",
-        "URL": "https://doi.org/10.4310/atmp.1998.v2.n2.a1",
-        "volume": "2"
+        "volume": "38",
+        "ISSN": "1572-9575",
+        "URL": "https://doi.org/10.1023/A:1026654312961",
+        "abstract": "We show that the large-ℕ limits of certain conformal field theories in various dimensions include in their Hilbert space a sector describing supergravity on the product of anti-de Sitter spacetimes, spheres, and other compact manifolds. This is shown by taking some branes in the full M/string theory and then taking a low-energy limit where the field theory on the brane decouples from the bulk. We observe that, in this limit, we can still trust the near-horizon geometry for large ℕ. The enhanced supersymmetries of the near-horizon geometry correspond to the extra supersymmetry generators present in the superconformal group (as opposed to just the super-Poincare group). The 't Hooft limit of 3 + 1 ℕ = 4 super-Yang–Mills at the conformal point is shown to contain strings: they are IIB strings. We conjecture that compactifications of M/string theory on various anti-de Sitter spacetimes is dual to various conformal field theories. This leads to a new proposal for a definition of M-theory which could be extended to include five noncompact dimensions."
     },
     {
         "author": [
@@ -425,7 +437,6 @@
             }
         ],
         "citation-key": "Lawvere",
-        "collection-title": "Lecture Notes in Mathematics",
         "container-title": "Category Theory, Homology Theory and their Applications II",
         "id": "Lawvere",
         "ISBN": "978-3-540-36101-5",
@@ -439,10 +450,10 @@
         "page": "134-145",
         "publisher": "Springer Berlin Heidelberg",
         "publisher-place": "Berlin, Heidelberg",
-        "title": "Diagonal arguments and Cartesian closed categories",
-        "type": "chapter",
-        "volume": "92",
-        "DOI": "10.1007/BFb0080769"
+        "title": "Diagonal arguments and cartesian closed categories",
+        "type": "paper-conference",
+        "DOI": "10.1007/BFb0080769",
+        "URL": "https://doi.org/10.1007/BFb0080769"
     },
     {
         "author": [
@@ -465,7 +476,8 @@
         "page": "362-386",
         "title": "A universal approach to self-referential paradoxes, incompleteness and fixed points",
         "type": "article-journal",
-        "volume": "9"
+        "volume": "9",
+        "URL": "https://doi.org/10.2178/bsl/1058448677"
     },
     {
         "author": [
@@ -512,15 +524,17 @@
         "issued": {
             "date-parts": [
                 [
-                    1998
+                    1998,
+                    2
                 ]
             ]
         },
         "page": "003",
-        "title": "Noncommutative geometry and matrix theory: Compactification on tori",
+        "title": "Noncommutative geometry and Matrix theory",
         "type": "article-journal",
         "URL": "https://doi.org/10.1088/1126-6708/1998/02/003",
-        "volume": "1998"
+        "volume": "1998",
+        "abstract": "We study toroidal compactification of Matrix theory, using ideas and results of non-commutative geometry. We generalize this to compactification on the noncommutative torus, explain the classification of these backgrounds, and argue that they correspond in supergravity to tori with constant background three-form tensor field. The paper includes an introduction for mathematicians to the IKKT formulation of Matrix theory and its relation to the BFSS Matrix theory."
     },
     {
         "author": [
@@ -680,7 +694,8 @@
         "page": "771-808",
         "publisher": "Springer",
         "title": "Periods",
-        "type": "chapter"
+        "type": "chapter",
+        "URL": "https://doi.org/10.1007/978-3-642-56478-9_39"
     },
     {
         "author": [
@@ -691,7 +706,7 @@
         ],
         "citation-key": "grothendieck1966derham",
         "id": "grothendieck1966derham",
-        "container-title": "Publ. Math. Inst. Hautes Études Sci.",
+        "container-title": "Publications Mathématiques de l'Institut des Hautes Études Scientifiques",
         "issued": {
             "date-parts": [
                 [
@@ -702,7 +717,11 @@
         "page": "95-103",
         "title": "On the de Rham cohomology of algebraic varieties",
         "type": "article-journal",
-        "issue": "29"
+        "volume": "29",
+        "issue": "1",
+        "DOI": "10.1007/BF02684807",
+        "ISSN": "1618-1913",
+        "URL": "https://doi.org/10.1007/BF02684807"
     },
     {
         "author": [
@@ -713,8 +732,9 @@
         ],
         "citation-key": "lindemann1882zahl",
         "id": "lindemann1882zahl",
-        "container-title": "Math. Ann.",
+        "container-title": "Mathematische Annalen.",
         "DOI": "10.1007/BF01446522",
+        "URL": "https://doi.org/10.1007/BF01446522",
         "issued": {
             "date-parts": [
                 [
