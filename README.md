@@ -42,7 +42,27 @@ González García, J. A., González García, V. M., Dressler Pérez, I. M., & Ga
 
 ## Verification
 
-To verify the formal results:
+This project uses a rigorous dual-verification approach (formal proofs in Lean 4 and numerical analysis in Python). To run the complete suite:
+
 ```bash
-pnpm run verify
+pnpm run validate
 ```
+
+> [!NOTE]
+> `pnpm run verify` is also available as an alias for the validation suite.
+
+## Build and Compilation
+
+The project uses a Docker-based LaTeX environment (`kjarosh/latex:2024.4-full`) to ensure consistent results across different systems. The pipeline orchestrates metadata synchronization from `citation.csl.json` and `CITATION.cff`, generates all figures and assets, and runs LaTeX passes to produce the production-ready manuscript.
+
+```bash
+pnpm run build
+```
+
+> [!IMPORTANT]
+> - **Metadata Flow**: `citation.csl.json` provides the source references, which are synchronized into `src/bibliography.bib`, `CITATION.cff`, and `.zenodo.json` during the build.
+> - **Figures**: Assets are generated automatically; manual execution of `pnpm run generate:figures` is only required for auditing.
+> - **Verification**: While `build` produces the documentation artifacts, formal proof verification must be executed via `pnpm run validate`.
+
+For comprehensive environment setup instructions—including Node.js/pnpm, Python/uv, Lean 4, and the Dockerized LaTeX compilation suite—please refer to the **[Installation & Requirements Guide](docs/installation.md)**.
+
