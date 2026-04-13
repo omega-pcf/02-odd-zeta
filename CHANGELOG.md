@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.3.12](https://github.com/omega-pcf/02-odd-zeta/compare/v1.3.11...v1.3.12) (2026-04-13)
+
+### Documentation
+
+* reduce keywords to top 6 identifiers in 02-odd-zeta ([708cfbf](https://github.com/omega-pcf/02-odd-zeta/commit/708cfbfc7a697bcec3297c2dfef80482a88ef5a5))
+
 ## [1.3.11](https://github.com/omega-pcf/02-odd-zeta/compare/v1.3.10...v1.3.11) (2026-04-13)
 
 ### Documentation
