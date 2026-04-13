@@ -7,7 +7,8 @@
 
 **Jorge Armando González García**¹, **Víctor Manuel González García**¹, **Itzel Marion Dressler Pérez**², **Luz María García Ordóñez**¹
 
-¹ *TTAMAYO PUNTO COM, S.A.P.I. de C.V., Research & Development Division, Mexico*
+¹ *TTAMAYO PUNTO COM, S.A.P.I. de C.V., Research & Development Division, Mexico*  
+  [research.ttamayo.com](https://research.ttamayo.com)
 ² *Independent Researcher*
 
 ---
