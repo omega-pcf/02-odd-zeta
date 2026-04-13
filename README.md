@@ -64,5 +64,15 @@ pnpm run build
 > - **Figures**: Assets are generated automatically; manual execution of `pnpm run generate:figures` is only required for auditing.
 > - **Verification**: While `build` produces the documentation artifacts, formal proof verification must be executed via `pnpm run validate`.
 
+## Release
+
+To automate a new versioned release (updates Changelog, Tags, and GitHub Release):
+
+```bash
+pnpm run release
+```
+
+This triggers a full build, asset regeneration, and metadata synchronization before publishing.
+
 For comprehensive environment setup instructions—including Node.js/pnpm, Python/uv, Lean 4, and the Dockerized LaTeX compilation suite—please refer to the **[Installation & Requirements Guide](docs/installation.md)**.
 
