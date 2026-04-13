@@ -14,7 +14,13 @@
 
 ## Abstract
 
-We demonstrate that the odd values ζ(2k+1) of the Riemann zeta function are structurally determined by φ=(1+√5)/2 and π. The Euler product of ζ is built from local factors f_p(s), one for each prime. We prove that the Frobenius lift φ^p = F_p φ + F_{p-1}—where F_n is the n-th Fibonacci number—determines the splitting type of every prime p in Z[φ], and hence every f_p(s). Through the Dedekind factorisation ζ(s) = ζ_K(s)/L(s,χ_5), this determines ζ(s) completely: the isomorphism between the Frobenius structure and the Euler product is demonstrated at every level (primes, splitting types, local factors, L-function), anchored by the base case L(1,χ_5) = 2log(φ)/√5, which expresses the L-function value entirely in terms of φ.
+We demonstrate that the odd values $\zeta(2k+1)$ of the *Riemann zeta function* are structurally determined by $\varphi=(1+\sqrt{5})/2$ and $\pi$, establishing a foundation for the *Irrationality and Transcendence* of *Apéry's constant* and higher zeta values.
+
+The Euler product of $\zeta$ is built from local factors $f_p(s)$, one for each prime. We prove that the Frobenius lift $\varphi^p = F_p\varphi + F_{p-1}$—where $F_n$ is the $n$-th Fibonacci number—determines the splitting type of every prime $p$ in $\mathbb{Z}[\varphi]$, and hence every $f_p(s)$. Through the Dedekind factorisation $\zeta(s) = \zeta_{\mathbb{Q}(\sqrt{5})}(s)/L(s,\chi_5)$, this determines $\zeta(s)$ completely: the isomorphism between the Frobenius structure and the Euler product is demonstrated at every level (primes, splitting types, local factors, $L$-function), anchored by the base case $L(1,\chi_5) = 2\log\varphi/\sqrt{5}$ (the class-number formula for $\mathbb{Q}(\sqrt{5})$), which expresses the $L$-function value entirely in terms of $\varphi$.
+
+This resolves the apparent freedom of $\zeta(2k+1)$ noted by Elvang, Herderschee and Morales in the $\mathcal{N}=4$ SYM *S-matrix bootstrap* and the *AdS/CFT correspondence*: those values are fixed by the pentagonal arithmetic.
+
+**Keywords:** Riemann zeta function, Odd zeta values, Apéry's constant, S-matrix bootstrap, Modular bootstrap, AdS/CFT correspondence, N=4 supersymmetric Yang-Mills, Lean 4.
 
 ## Citation
 
