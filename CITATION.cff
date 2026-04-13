@@ -7,20 +7,17 @@ date-released: 2026-04-12
 authors:
   - family-names: González García
     given-names: Jorge Armando
-    affiliation: TTAMAYO PUNTO COM, S.A.P.I. de C.V., Naucalpan de Juárez, State of
-      Mexico, Mexico
+    affiliation: "TTAMAYO PUNTO COM, S.A.P.I. de C.V., Research & Development Division, Naucalpan de Juárez, State of Mexico, Mexico"
   - family-names: González García
     given-names: Víctor Manuel
     orcid: https://orcid.org/0009-0009-0935-2954
-    affiliation: TTAMAYO PUNTO COM, S.A.P.I. de C.V., Naucalpan de Juárez, State of
-      Mexico, Mexico
+    affiliation: "TTAMAYO PUNTO COM, S.A.P.I. de C.V., Research & Development Division, Naucalpan de Juárez, State of Mexico, Mexico"
   - family-names: Dressler Pérez
     given-names: Itzel Marion
     affiliation: Independent Researcher
   - family-names: García Ordóñez
     given-names: Luz María
-    affiliation: TTAMAYO PUNTO COM, S.A.P.I. de C.V., Naucalpan de Juárez, State of
-      Mexico, Mexico
+    affiliation: "TTAMAYO PUNTO COM, S.A.P.I. de C.V., Research & Development Division, Naucalpan de Juárez, State of Mexico, Mexico"
 repository-code: https://github.com/omega-pcf/02-odd-zeta
 license: CC-BY-4.0
 keywords:
