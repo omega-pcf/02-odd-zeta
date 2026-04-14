@@ -114,8 +114,10 @@ export class MetadataPipeline {
     if (!existsSync(PATHS.CFF)) throw new Error(`Missing identity root: ${PATHS.CFF}`);
     const cff = parseYaml(readFileSync(PATHS.CFF, 'utf8')) as CitationFileFormat;
 
+    const pkg = JSON.parse(readFileSync('package.json', 'utf8'));
     cff.version = version;
     cff['date-released'] = new Date().toISOString().split('T')[0];
+    cff.abstract = pkg.metadata?.abstract || cff.abstract;
     
     // Map CSL items to CFF references using citation-js
     const data = new Cite(items);
@@ -187,6 +189,7 @@ export class MetadataPipeline {
     return cff;
   }
 
+
   private syncZenodo(cff: CitationFileFormat, version: string): void {
     const references = (cff.references || [])
       .map((ref: any) => {
@@ -232,9 +235,10 @@ export class MetadataPipeline {
       })
       .sort((a, b) => a.localeCompare(b));
 
+    const pkg = JSON.parse(readFileSync('package.json', 'utf8'));
     const zenodo: ZenodoDepositionMetadata = {
       title: cff.title,
-      description: cff.abstract || cff.title,
+      description: pkg.metadata?.zenodo_description || cff.abstract || cff.title,
       version: version,
       publication_date: cff['date-released'] || new Date().toISOString().split('T')[0],
       creators: (cff.authors || []).map((a: any) => ({
