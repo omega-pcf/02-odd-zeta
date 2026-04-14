@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.4.3](https://github.com/omega-pcf/02-odd-zeta/compare/v1.4.2...v1.4.3) (2026-04-14)
+
+### Styles
+
+* improve Zenodo reference string generation (alphabetical sorting, robust DOI/URL handling, more complete bibliographic data) ([442654e](https://github.com/omega-pcf/02-odd-zeta/commit/442654ee7a3de1040fde0b5e33c154abc178f4eb))
+
+### Chores
+
+* update .zenodo.json with improved reference formatting ([1e15322](https://github.com/omega-pcf/02-odd-zeta/commit/1e15322c3cbeaddd31972af1e9202fb0e797a3d6))
+
 ## [1.4.2](https://github.com/omega-pcf/02-odd-zeta/compare/v1.4.1...v1.4.2) (2026-04-14)
 
 ### Styles
