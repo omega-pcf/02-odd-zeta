@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.4.4](https://github.com/omega-pcf/02-odd-zeta/compare/v1.4.3...v1.4.4) (2026-04-14)
+
+### Refinements
+
+* **metadata:** centralized abstracts in package.json and removed script-based sanitization ([f8be73c](https://github.com/omega-pcf/02-odd-zeta/commit/f8be73cbbea4d057c7bd231f22217bad0d3c0dca))
+
 ## [1.4.3](https://github.com/omega-pcf/02-odd-zeta/compare/v1.4.2...v1.4.3) (2026-04-14)
 
 ### Styles
