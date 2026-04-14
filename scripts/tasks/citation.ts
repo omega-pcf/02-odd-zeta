@@ -188,13 +188,49 @@ export class MetadataPipeline {
   }
 
   private syncZenodo(cff: CitationFileFormat, version: string): void {
-    const references = (cff.references || []).map((ref: any) => {
-      const authors = (ref.authors || [])
-        .map((a: any) => `${a['family-names'] || a.name}${a['given-names'] ? ', ' + a['given-names'] : ''}`)
-        .join('; ');
-      const year = ref.year || ref['date-published']?.split('-')[0] || '';
-      return `${authors} (${year}). ${ref.title}.${ref.journal ? ' ' + ref.journal + '.' : ''}${ref.doi ? ' doi:' + ref.doi : ''}`;
-    });
+    const references = (cff.references || [])
+      .map((ref: any) => {
+        const authors = (ref.authors || [])
+          .map((a: any) => `${a['family-names'] || a.name}${a['given-names'] ? ', ' + a['given-names'] : ''}`)
+          .join('; ');
+        
+        const year = ref.year || ref['date-published']?.split('-')[0] || '';
+        let refStr = `${authors} (${year}). ${ref.title}.`;
+        
+        // Add container info (journal, volume, issue, pages)
+        let container = '';
+        if (ref.journal) container += ` ${ref.journal}.`;
+        else if (ref['conference-name']) container += ` ${ref['conference-name']}.`;
+        else if (ref.publisher?.name) container += ` ${ref.publisher.name}.`;
+        
+        if (ref.volume) container += ` ${ref.volume}`;
+        if (ref.issue) container += `(${ref.issue})`;
+        
+        const pages = ref.pages || (ref.start && ref.end ? `${ref.start}–${ref.end}` : ref.start || '');
+        if (pages) container += `, ${pages}.`; else if (ref.volume || ref.issue) container += '.';
+
+        refStr += container;
+
+        // Add DOI (primary link)
+        if (ref.doi) {
+          const doiUrl = `https://doi.org/${ref.doi.replace(/^doi:/, '')}`;
+          refStr += ` ${doiUrl}`;
+        }
+
+        // Add URL (only if not a duplicate of the DOI link)
+        if (ref.url) {
+          const cleanUrl = ref.url.replace(/^doi:/, '');
+          const isDoiLink = cleanUrl.includes('doi.org/');
+          if (!isDoiLink || !ref.doi) {
+            if (!refStr.includes(cleanUrl)) {
+              refStr += ` ${cleanUrl}`;
+            }
+          }
+        }
+
+        return refStr.replace(/\.\./g, '.').trim();
+      })
+      .sort((a, b) => a.localeCompare(b));
 
     const zenodo: ZenodoDepositionMetadata = {
       title: cff.title,
