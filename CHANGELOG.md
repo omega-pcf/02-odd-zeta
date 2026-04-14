@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.4.2](https://github.com/omega-pcf/02-odd-zeta/compare/v1.4.1...v1.4.2) (2026-04-14)
+
+### Styles
+
+* standardize first-page institution address to match 01-hilbert-polya standards ([40f6056](https://github.com/omega-pcf/02-odd-zeta/commit/40f6056c38165a2cca62d103d45436604fb2d7b4))
+
 ## [1.4.1](https://github.com/omega-pcf/02-odd-zeta/compare/v1.4.0...v1.4.1) (2026-04-13)
 
 ### Bug Fixes
