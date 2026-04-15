@@ -158,7 +158,7 @@
         "author": [
             {
                 "family": "Brown",
-                "given": "J. David"
+                "given": "J. D."
             },
             {
                 "family": "Henneaux",
@@ -166,7 +166,8 @@
             }
         ],
         "citation-key": "BrownHenneaux",
-        "container-title": "Comm. Math. Phys.",
+        "container-title": "Communications in Mathematical Physics",
+        "DOI": "10.1007/BF01211590",
         "id": "BrownHenneaux",
         "issued": {
             "date-parts": [
@@ -177,10 +178,12 @@
         },
         "issue": "2",
         "page": "207-226",
-        "title": "Central charges in the canonical realization of asymptotic symmetries: an example from three-dimensional gravity",
+        "title": "Central charges in the canonical realization of asymptotic symmetries: An example from three dimensional gravity",
         "type": "article-journal",
-        "URL": "https://projecteuclid.org",
-        "volume": "104"
+        "URL": "https://doi.org/10.1007/BF01211590",
+        "volume": "104",
+        "ISSN": "1432-0916",
+        "abstract": "It is shown that the global charges of a gauge theory may yield a nontrivial central extension of the asymptotic symmetry algebra already at the classical level. This is done by studying three dimensional gravity with a negative cosmological constant. The asymptotic symmetry group in that case is eitherR×SO(2) or the pseudo-conformal group in two dimensions, depending on the boundary conditions adopted at spatial infinity. In the latter situation, a nontrivial central charge appears in the algebra of the canonical generators, which turns out to be just the Virasoro central charge."
     },
     {
         "author": [
@@ -592,7 +595,9 @@
         ],
         "citation-key": "Baker",
         "container-title": "Mathematika",
+        "DOI": "10.1112/S0025579300003971",
         "id": "Baker",
+        "issue": "2",
         "issued": {
             "date-parts": [
                 [
@@ -603,6 +608,7 @@
         "page": "204-216",
         "title": "Linear forms in the logarithms of algebraic numbers",
         "type": "article-journal",
+        "URL": "https://doi.org/10.1112/S0025579300003971",
         "volume": "13"
     },
     {

@@ -68,8 +68,8 @@ references:
     title: "The Hilbert-Pólya Operator and the Primitive Structure of the Complex
       Plane: Between 𝔽₁, String Theory, and Ancient Geometry"
     url: https://doi.org/10.5281/zenodo.17619486
-    date-published: 2025-01-01
-    year: 2025
+    date-published: 2026-01-01
+    year: 2026
     journal: Preprint
     type: article
   - authors:
@@ -115,21 +115,36 @@ references:
     end: "207"
     type: article
     volume: "146"
-  - authors:
+  - abstract: It is shown that the global charges of a gauge theory may yield a
+      nontrivial central extension of the asymptotic symmetry algebra already at
+      the classical level. This is done by studying three dimensional gravity
+      with a negative cosmological constant. The asymptotic symmetry group in
+      that case is eitherR×SO(2) or the pseudo-conformal group in two
+      dimensions, depending on the boundary conditions adopted at spatial
+      infinity. In the latter situation, a nontrivial central charge appears in
+      the algebra of the canonical generators, which turns out to be just the
+      Virasoro central charge.
+    authors:
       - family-names: Brown
-        given-names: J. David
+        given-names: J. D.
       - family-names: Henneaux
         given-names: Marc
+    doi: 10.1007/BF01211590
     identifiers:
+      - type: doi
+        value: 10.1007/BF01211590
       - type: url
-        value: https://projecteuclid.org
+        value: https://doi.org/10.1007/BF01211590
+      - type: other
+        value: urn:issn:1432-0916
     title: "Central charges in the canonical realization of asymptotic symmetries:
-      an example from three-dimensional gravity"
-    url: https://projecteuclid.org
+      An example from three dimensional gravity"
+    url: https://doi.org/10.1007/BF01211590
     date-published: 1986-01-01
     year: 1986
+    issn: 1432-0916
     issue: "2"
-    journal: Comm. Math. Phys.
+    journal: Communications in Mathematical Physics
     start: "207"
     end: "226"
     type: article
@@ -443,9 +458,17 @@ references:
   - authors:
       - family-names: Baker
         given-names: A.
+    doi: 10.1112/S0025579300003971
+    identifiers:
+      - type: doi
+        value: 10.1112/S0025579300003971
+      - type: url
+        value: https://doi.org/10.1112/S0025579300003971
     title: Linear forms in the logarithms of algebraic numbers
+    url: https://doi.org/10.1112/S0025579300003971
     date-published: 1966-01-01
     year: 1966
+    issue: "2"
     journal: Mathematika
     start: "204"
     end: "216"
