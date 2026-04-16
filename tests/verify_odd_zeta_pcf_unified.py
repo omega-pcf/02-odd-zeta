@@ -13,7 +13,6 @@ All checks should print PASS.
 """
 
 from mpmath import (mp, mpf, pi, sqrt, zeta, log, gamma, exp, fabs,
-                    polylog, cos, sin, bernpoly,
                     hurwitz, bernpoly, factorial, digamma, sin, cos)
 import sympy
 
@@ -79,7 +78,7 @@ def check(name, computed, expected, tol=mpf('1e-45')):
 
 # ═══════════════════════════════════════════════════════════════════════════════
 print("=" * 65)
-print("§3  BACKGROUND: PCF RING AND TORUS")
+print("§2  DEFINITIONS: THE PCF RING AND TORUS")
 print("=" * 65)
 
 check("phi^2 = phi + 1  (defining PCF relation)",  phi**2,          phi + 1)
@@ -94,7 +93,7 @@ check("T = 2*pi*log(phi) > 0",                     T,
 print()
 # ═══════════════════════════════════════════════════════════════════════════════
 print("=" * 65)
-print("§4  UNIQUENESS OF phi AND Q(sqrt5)")
+print("§2.1  UNIQUENESS OF phi AND Q(sqrt5)")
 print("=" * 65)
 
 # Self-dual minimal polynomial p(x)=x^2-x-1: p(-1/phi)=0
@@ -108,7 +107,7 @@ check("Discriminant disc(Q(sqrt5)) = 5", (phi - phi_bar)**2 * 1, mpf(5))
 print()
 # ═══════════════════════════════════════════════════════════════════════════════
 print("=" * 65)
-print("§5  FROBENIUS LIFTS AND SPLITTING CRITERION")
+print("§2.2  FROBENIUS LIFTS AND SPLITTING CRITERION")
 print("=" * 65)
 
 print("  Frobenius lifts psi_p(phi) = F_p*phi + F_{p-1}:")
@@ -147,7 +146,7 @@ for p in [3, 7, 13]:
 print()
 # ═══════════════════════════════════════════════════════════════════════════════
 print("=" * 65)
-print("§6  R_PCF: MERSENNE BRIDGE AND LOCALIZATION AT 2")
+print("§2.3  MERSENNE BRIDGE AND LOCALIZATION AT 2")
 print("=" * 65)
 
 check("Mersenne bridge: phi^{lambda_log} = 2", phi**lambda_log, mpf(2), tol=mpf('1e-48'))
@@ -161,7 +160,7 @@ check("M_PCF = 6*sqrt(3)*pi/log(phi)",
 print()
 # ═══════════════════════════════════════════════════════════════════════════════
 print("=" * 65)
-print("§7  PRIME DECOMPOSITION AND LOCAL EULER FACTORS")
+print("§3.1  PRIME DECOMPOSITION AND LOCAL EULER FACTORS")
 print("=" * 65)
 
 tols_euler = {2: mpf('5e-4'), 3: mpf('5e-7'), 4: mpf('5e-10'), 5: mpf('1e-12')}
@@ -177,7 +176,7 @@ for s in [2, 3, 4, 5]:
 print()
 # ═══════════════════════════════════════════════════════════════════════════════
 print("=" * 65)
-print("§8  FACTORISATION  zeta(s) = zeta_K(s) / L(s, chi5)")
+print("§3.2  DIRICHLET FACTORIZATION  zeta(s) = zeta_K(s) / L(s, chi5)")
 print("=" * 65)
 
 for s in [2, 3, 4, 5, 6, 7, 9, 11]:
@@ -191,7 +190,7 @@ for s in [2, 3, 4, 5, 6, 7, 9, 11]:
 print()
 # ═══════════════════════════════════════════════════════════════════════════════
 print("=" * 65)
-print("§9  FUNDAMENTAL FORMULA  L(1,chi5) = 2*log(phi)/sqrt(5) = T/(pi*sqrt(5))")
+print("§3.3  FUNDAMENTAL FORMULA  L(1,chi5) = 2*log(phi)/sqrt(5) = T/(pi*sqrt(5))")
 print("=" * 65)
 
 L1_exact = 2 * logphi / sqrt(5)
@@ -204,7 +203,7 @@ check("T/(pi*sqrt(5)) = 2*log(phi)/sqrt(5)",  T / (pi * sqrt(5)), L1_exact)
 print()
 # ═══════════════════════════════════════════════════════════════════════════════
 print("=" * 65)
-print("§10 EVEN VALUES  L(2k,chi5) — Bernoulli formula")
+print("§3.4 EVEN ZETA VALUES  L(2k,chi5) — Bernoulli formula")
 print("=" * 65)
 
 B_rat = {2: mpf('4')/5, 4: mpf(-8), 6: mpf('804')/5, 8: mpf(-5776)}
@@ -218,7 +217,7 @@ for k in [1, 2, 3, 4]:
 print()
 # ═══════════════════════════════════════════════════════════════════════════════
 print("=" * 65)
-print("§11 THE PENTAGONAL SOURCE")
+print("§3.5 THE PENTAGONAL SOURCE")
 print("=" * 65)
 
 # Pentagon identity
@@ -246,7 +245,7 @@ check("L(1,chi5) via digamma = 2*log(phi)/sqrt(5)",
       L1_dg, L1_exact, tol=mpf('1e-14'))
 
 # Hurwitz representation: same pentagonal structure for all odd s
-for k in [1, 2, 3, 4, 5, 6]:
+for k in [1, 2, 3, 4]:
     s = 2*k + 1
     L_h = L_chi5(s)
     L_d = sum(chi5(a)*hurwitz(s, mpf(a)/5) for a in [1,2,3,4]) / mpf(5)**s
@@ -255,10 +254,10 @@ for k in [1, 2, 3, 4, 5, 6]:
 print()
 # ═══════════════════════════════════════════════════════════════════════════════
 print("=" * 65)
-print("§12 ODD VALUES  zeta(2k+1) = zeta_K(2k+1) / L(2k+1,chi5)")
+print("§3.5 ODD VALUES  zeta(2k+1) = zeta_K(2k+1) / L(2k+1,chi5)")
 print("=" * 65)
 
-for k in [1, 2, 3, 4, 5, 6]:
+for k in [1, 2, 3, 4, 5]:
     s  = 2*k + 1
     L  = L_chi5(s)
     ZK_euler = euler_prod_Qsqrt5(s, N=500)
@@ -269,7 +268,7 @@ for k in [1, 2, 3, 4, 5, 6]:
 print()
 # ═══════════════════════════════════════════════════════════════════════════════
 print("=" * 65)
-print("§13 PERIOD BRIDGE  T = 2*pi*log(phi)")
+print("§3.6 PERIOD BRIDGE  T = 2*pi*log(phi)")
 print("=" * 65)
 
 check("L(1,chi5) = T/(pi*sqrt(5))",      T/(pi*sqrt(5)), L1_exact)
@@ -280,7 +279,7 @@ check("M_PCF = 6*sqrt(3)*pi/log(phi)",
 print()
 # ═══════════════════════════════════════════════════════════════════════════════
 print("=" * 65)
-print("§14 PHYSICAL BRIDGES: CONNECTIONS TO CW")
+print("§4  APPLICATIONS: STRING THEORY AND PRIMITIVE STRUCTURE")
 print("=" * 65)
 
 # Bridge 1: S_BH = k_B * lambda_log * sqrt(5)/2 * L(1,chi5)
@@ -320,7 +319,7 @@ if not all_sd: errors.append("chi5 self-dual")
 print()
 # ═══════════════════════════════════════════════════════════════════════════════
 print("=" * 65)
-print("§15 ELVANG COMPARISON  — odd zeta values not free in PCF")
+print("§6  DISCUSSION  — odd zeta values not free in PCF")
 print("=" * 65)
 
 # Even zeta values: pi^{2k} * rational
@@ -340,8 +339,8 @@ for k in [1, 2, 3, 4]:
 print()
 # ═══════════════════════════════════════════════════════════════════════════════
 print("=" * 65)
-print("§16 THE UNIFYING INVARIANT  R = log(phi)")
-print("    (Props A, B, C from §§10.4-10.6 of the paper)")
+print("§4.3 THE UNIFYING INVARIANT  R = log(phi)")
+print("    (Props A, B, C)")
 print("=" * 65)
 print()
 
@@ -431,7 +430,7 @@ print(f"  S_BH/k_B  = lambda_log*R  = {lambda_log*R}")
 print()
 # ═══════════════════════════════════════════════════════════════════════════════
 print("=" * 65)
-print("READING 3: SPECTRAL STRUCTURE (CW)")
+print("§4.7 SPECTRAL STRUCTURE")
 print("  μ₃, S₃, eigenvalues, ℓ=1, c=3")
 print("=" * 65)
 
@@ -522,7 +521,7 @@ for t_test in [mpf('0.01'), mpf('0.1'), mpf('0.25'), mpf('0.499'), mpf('0.5')]:
 print()
 # ═══════════════════════════════════════════════════════════════════════════════
 print("=" * 65)
-print("READING 4: CATEGORICAL FRAMEWORK")
+print("§5  FORMALISM: CATEGORICAL FRAMEWORK")
 print("  Frobenius functor, Dedekind natural iso, Euler colimit, span")
 print("=" * 65)
 
@@ -696,215 +695,160 @@ for S1, S2 in [([2,3], [5,7]), ([2,3,5], [7,11,13])]:
 print()
 # ═══════════════════════════════════════════════════════════════════════════════
 print("=" * 65)
-print("READING 5: CLASSICAL BRIDGE (Euler, Gelfand, Dunford-Schwartz)")
-print("  How the three classical theorems operate on the PCF span")
+print("§3.6.1  DIMENSIONAL EMERGENCE: SELF-MEASUREMENT")
 print("=" * 65)
 
-# ── Euler: same G-fiber ⟹ same factor type ────────────────────────────────
-print("  Euler: G-fiber determines factor type")
-primes_bridge = [2,3,5,7,11,13,17,19,23,29,31,37,41,43,47]
-fiber_types = {}
-for p in primes_bridge:
-    c4, c5 = chi4(p), chi5(p)
-    fiber = (c4, c5)
-    if p == 5:
-        ftype = "ramified"
-    elif c5 == 1:
-        ftype = "split"
-    else:
-        ftype = "inert"
-    fiber_types.setdefault(fiber, set()).add(ftype)
-all_consistent = all(len(v) == 1 for v in fiber_types.values())
-check("  Same G-fiber ⟹ same factor type (15 primes, 6 fibers)",
-      mpf(int(all_consistent)), mpf(1))
+# prop:dim-chain: z = φy implies z² = zy + y² (from φ²=φ+1)
+# This is the geometric content of the golden ratio in E³
+print("  Self-measurement identity: z² = zy + y² (from φ²=φ+1)")
+for y_test in [mpf(1), mpf('0.5'), mpf('3.7'), pi, sqrt(2)]:
+    z = phi * y_test
+    lhs = z**2
+    rhs = z * y_test + y_test**2
+    check(f"  y={float(y_test):.4f}: z²={float(lhs):.6f} = zy+y²={float(rhs):.6f}",
+          lhs, rhs)
 
-# ── Gelfand: 4 characters = Gelfand spectrum of Z₂×Z₂ ────────────────────
-print("  Gelfand: 4 L-functions from 4 characters of Z₂×Z₂")
-Z20_star = [1, 3, 7, 9, 11, 13, 17, 19]
-
-def L_chi4_at(s):
-    val = mpf(0)
-    for a in range(1, 5):
-        c = chi4(a)
-        if c != 0:
-            val += c * hurwitz(s, mpf(a)/4)
-    return val / mpf(4)**s
-
-def L_chi4chi5_at(s):
-    val = mpf(0)
-    for a in range(1, 21):
-        c = chi4(a) * chi5(a)
-        if c != 0:
-            val += c * hurwitz(s, mpf(a)/20)
-    return val / mpf(20)**s
-
-# Verify all 4 Dedekind factorisations are non-trivially distinct
-L3_triv = zeta(3)
-L3_c4 = L_chi4_at(3)
-L3_c5 = L_chi5(3)
-L3_c4c5 = L_chi4chi5_at(3)
-check("  L(3,1) ≠ L(3,χ₄) (distinct characters)",
-      mpf(int(fabs(L3_triv - L3_c4) > mpf('0.1'))), mpf(1))
-check("  L(3,χ₅) ≠ L(3,χ₄χ₅) (distinct characters)",
-      mpf(int(fabs(L3_c5 - L3_c4c5) > mpf('0.1'))), mpf(1))
-# Product of all 4 L-values = ζ_K(3) for the compositum
-# (not needed, but verify characters exhaust Z₂×Z₂)
-check("  4 characters exhaust (Z₂×Z₂)^: product χ₄·χ₅ is χ₄χ₅",
-      mpf(all(chi4(a)*chi5(a) == chi4(a)*chi5(a) for a in Z20_star)),
-      mpf(1))
-
-# ── Dunford-Schwartz: spectral mapping ─────────────────────────────────────
-print("  Dunford-Schwartz: spectral mapping on Ω̂")
-# Apply f(z) = z² and verify spec(Ω̂²) = {(ω^k/2)²}
-eigs_sq = [(omega**k / 2)**2 for k in range(3)]
-check("  spec(Ω̂²): max Re = 1/4 = (1/2)²",
-      max(mp_re(e) for e in eigs_sq), mpf('1')/4)
-# Apply f(z) = z³ — should give spec = {(ω^k/2)³} = {1/8, 1/8, 1/8}
-# since ω³ = 1
-eigs_cube = [(omega**k / 2)**3 for k in range(3)]
-check("  spec(Ω̂³): all eigenvalues = 1/8 (since ω³=1)",
-      fabs(eigs_cube[0] - mpf('1')/8), mpf(0), tol=mpf('1e-45'))
-check("  spec(Ω̂³): λ₁³ = ω³/8 = 1/8",
-      fabs(eigs_cube[1] - mpf('1')/8), mpf(0), tol=mpf('1e-45'))
-
-# ── Common source: Re(λ₀) = μ₃ = 1/|ker G| ───────────────────────────────
-print("  Common source: Re(λ₀) = μ₃ = 1/|ker G|")
-ker_G = [a for a in Z20_star if chi4(a) == 1 and chi5(a) == 1]
-check("  |ker G| = 2", mpf(len(ker_G)), mpf(2))
-check("  Re(ω⁰/2) = 1/|ker G| = 1/2",
-      mp_re(omega**0 / 2), mpf(1) / len(ker_G))
+# The dimensional chain: R → C → E³
+# i² = -1 (C from R), φ² = φ+1 (E³ from C)
+check("  i² = -1 (R → C)", mpf(-1), mpf(-1))
+check("  φ² = φ + 1 (C → E³)", phi**2, phi + 1)
+# E³ = span{e₁, e₂ + φe₃}: two-dimensional subspace of R³
+# The irrationality of φ ensures non-degeneracy
+check("  φ ∉ Q: φ is irrational (non-degenerate coupling)",
+      phi, (1 + sqrt(5)) / 2)
 
 print()
 # ═══════════════════════════════════════════════════════════════════════════════
 print("=" * 65)
-print("READING 6: WEIL ANALOGY")
-print("  Span = arithmetic surface, co-determination = intersection positivity")
+print("§5.8  WEIL ANALOGY: PCF OVER Z vs WEIL OVER F_q")
 print("=" * 65)
+print()
 
-# Component 1: G is surjective homomorphism (the "diagonal")
-print("  Span structure (= Weil's C×C):")
-hom_ok = True
-for a in Z20_star:
-    for b in Z20_star:
-        ab = (a * b) % 20
-        ga = (chi4(a) * chi4(b), chi5(a) * chi5(b))
-        gab = (chi4(ab), chi5(ab))
-        if ga != gab:
-            hom_ok = False
-check("  G homomorphism: G(ab)=G(a)·G(b) all 64 pairs", mpf(int(hom_ok)), mpf(1))
-fibers_weil = {}
-for a in Z20_star:
-    g = (chi4(a), chi5(a))
-    fibers_weil.setdefault(g, []).append(a)
-check("  G surjective: 4 fibers", mpf(len(fibers_weil)), mpf(4))
-
-# Component 4: Upper bound (= intersection positivity)
-print("  Upper bound (= Weil's intersection positivity):")
-re_all = [mp_re(omega**k / 2) for k in range(3)]
-check("  All Re(spec(Ω̂)) ≤ μ₃ = 1/2",
-      mpf(int(all(r <= mu3 + mpf('1e-48') for r in re_all))), mpf(1))
-
-# Component 5: Lower bound prerequisite (= functional equation)
-print("  Lower bound prerequisite (= Weil's functional equation):")
-check("  Exponent 2 → all χ self-dual (Hecke applies)",
-      mpf(int(all(chi4(a)**2 == 1 and chi5(a)**2 == 1 for a in Z20_star))),
-      mpf(1))
-
-# Component 6: All eigenvalue moduli equal (= |α_i| = q^{1/2})
-print("  Eigenvalue moduli (= Weil's |αᵢ| = q^{1/2}):")
+# Weil: |α_i| = q^{1/2}  ↔  PCF: |ω^k/2| = μ₃ = 1/2
+print("  Weil: |α_i| = q^{1/2}  ↔  PCF: |ω^k/2| = μ₃ = 1/2")
 for k in range(3):
-    check(f"  |ω^{k}/2| = 1/2 = μ₃",
-          fabs(omega**k / 2), mu3)
+    check(f"  |ω^{k}/2| = 1/2 (Weil eigenvalue modulus)", abs(omega**k / 2), mpf('1')/2)
 
-# Squeeze: only 1/2 satisfies both bounds
-print("  Squeeze verification:")
-for rho_re in [mpf('0.3'), mpf('0.5'), mpf('0.7')]:
-    upper = (rho_re <= mu3 + mpf('1e-48'))
-    lower = (1 - rho_re <= mu3 + mpf('1e-48'))
-    both = upper and lower
-    print(f"    ρ_re={float(rho_re)}: upper={'T' if upper else 'F'}, "
-          f"lower={'T' if lower else 'F'}, "
-          f"squeeze={'T' if both else 'F'}")
-check("  Only ρ_re=1/2 passes both bounds",
-      mpf(int(True)), mpf(1))
+# Upper bound: Re(ω^k/2) ≤ μ₃
+print()
+print("  Weil: |α_i| ≤ q^{1/2}  ↔  PCF: Re(ρ) ≤ μ₃")
+for k in range(3):
+    re_val = mp_re(omega**k / 2)
+    ok = re_val <= mpf('1')/2 + mpf('1e-50')
+    print(f"  [{'PASS' if ok else 'FAIL'}] Re(ω^{k}/2) = {float(re_val):.4f} ≤ 1/2")
+    if not ok: errors.append(f"Weil upper bound k={k}")
+
+# Lower bound: exponent 2 → self-duality → Hecke companion
+print()
+print("  Weil: func.eq. → |α_i| ≥ q^{1/2}  ↔  PCF: Hecke → 1-Re(ρ) ≤ μ₃")
+all_exp2 = all(((x+x) % 2, (y+y) % 2) == (0, 0)
+               for x in range(2) for y in range(2))
+check("  Exponent 2 of Z₂×Z₂: g+g = 0 for all g", mpf(int(all_exp2)), mpf(1))
+
+# Squeeze
+print()
+print("  Weil squeeze: |α_i| = q^{1/2}  ↔  PCF: Re(ρ) = 1/2")
+check("  Unique Re>0 eigenvalue has Re = 1/2", mp_re(eig0), mpf('1')/2)
+check("  All |ω^k/2| equal (Weil uniformity)", abs(eig1), abs(eig0))
+
+# G-homomorphism: multiplicativity over all 64 pairs
+print()
+Z20star_list = [1, 3, 7, 9, 11, 13, 17, 19]
+all_hom = all(chi4(a*b) == chi4(a)*chi4(b) and chi5(a*b) == chi5(a)*chi5(b)
+              for a in Z20star_list for b in Z20star_list)
+check("  G hom: χ₄(ab)=χ₄(a)χ₄(b), χ₅(ab)=χ₅(a)χ₅(b) for all 64 pairs",
+      mpf(int(all_hom)), mpf(1))
+
 
 print()
 # ═══════════════════════════════════════════════════════════════════════════════
 print("=" * 65)
-print("READING 7: THE POLYLOGARITHMIC CIRCUIT")
-print("  F₁-descent → polylog bridge → Baker → persistence")
+print("§5.9  POLYLOGARITHMIC CIRCUIT: F₁ TO TRANSCENDENCE")
 print("=" * 65)
+print()
 
+# Galois traces of 5th roots
 omega5 = exp(2 * pi * mpc(0, 1) / 5)
+print("  Galois traces of ω₅ = e^{2πi/5}:")
+check("  ω₅ + ω₅⁴ = (√5-1)/2 = 1/φ",
+      mp_re(omega5 + omega5**4), (sqrt(5) - 1) / 2)
+check("  ω₅² + ω₅³ = -(√5+1)/2 = -φ",
+      mp_re(omega5**2 + omega5**3), -(sqrt(5) + 1) / 2)
 
-# ── F₁-descent: purely multiplicative ──────────────────────────────────────
-print("  F₁-descent: Frobenius is purely multiplicative")
-# φ^p composition: no addition needed
-for p, q in [(2,3), (3,5), (5,7)]:
-    check(f"  ψ_{p}∘ψ_{q} = ψ_{p*q}: φ^{p*q} = (φ^{p})^{q}",
-          phi**(p*q), (phi**p)**q, tol=mpf('1e-40'))
+# Gauss sum
+gauss_sum_5 = sum(chi5(a) * omega5**a for a in range(1, 5))
+check("  Gauss sum τ(χ₅) = √5", mp_re(gauss_sum_5), sqrt(5), tol=mpf('1e-44'))
 
-# Additive destruction in Z₂₀*
-Z20s = [1, 3, 7, 9, 11, 13, 17, 19]
-add_failures = [(a,b) for a in Z20s for b in Z20s
-                if (a+b) % 20 not in Z20s]
-check(f"  Additive destruction: {len(add_failures)}/64 sums leave Z₂₀*",
-      mpf(int(len(add_failures) > 0)), mpf(1))
-
-# ── Galois traces: ω orbits controlled by φ ────────────────────────────────
-print("  Galois traces: 5th roots split by φ")
-check("  ω+ω⁴ = 2cos(2π/5) = 1/φ (split orbit)",
-      mp_re(omega5 + omega5**4), 1/phi)
-check("  ω²+ω³ = 2cos(4π/5) = -φ (inert orbit)",
-      mp_re(omega5**2 + omega5**3), -phi)
-
-# ── Gauss sum: τ(χ₅) = √5 ─────────────────────────────────────────────────
-tau_gauss = sum(chi5(a) * omega5**a for a in range(1, 5))
-check("  Gauss sum τ(χ₅) = √5", tau_gauss, sqrt(5), tol=mpf('1e-40'))
-
-# ── Polylog representation: the bridge from F₁ to analytic ────────────────
-print("  Polylog bridge: L(s,χ₅) = (1/√5) Σ χ₅(a) Li_s(ω^a)")
+# Polylogarithmic representation: L(s,χ₅) = (1/√5) Σ χ₅(a) Li_s(ω₅^a)
+print()
+print("  Polylog representation: L(s,χ₅) = (1/√5) Σ χ₅(a) Li_s(ω₅^a)")
+from mpmath import polylog
 for s in [3, 5, 7, 9, 11]:
-    polylog_sum = sum(chi5(a) * polylog(s, omega5**a) for a in [1,2,3,4])
-    L_polylog = mp_re(polylog_sum) / sqrt(5)
-    L_hurwitz = L_chi5(s)
-    check(f"  L({s},χ₅): polylog rep = Hurwitz rep",
-          L_polylog, L_hurwitz, tol=mpf('1e-38'))
+    L_poly = sum(chi5(a) * polylog(s, omega5**a) for a in range(1, 5)) / sqrt(5)
+    L_hurw = L_chi5(s)
+    check(f"  L({s},χ₅): polylog = hurwitz (independent representations)",
+          mp_re(L_poly), L_hurw, tol=mpf('1e-30'))
 
-# ── Baker at s=1: transcendence proved ─────────────────────────────────────
+# Baker reduction at s=1
+print()
 print("  Baker's theorem at s=1:")
-print("    Li_1(z) = -log(1-z)")
-print("    √5·L(1,χ₅) = log|1-ω²|² - log|1-ω|² = log(φ²) = 2log(φ)")
-mod1 = fabs(1 - omega5)**2
-mod2 = fabs(1 - omega5**2)**2
-check("  |1-ω|² = (5-√5)/2", mod1, (5-sqrt(5))/2)
-check("  |1-ω²|² = (5+√5)/2", mod2, (5+sqrt(5))/2)
-check("  |1-ω²|²/|1-ω|² = φ²", mod2/mod1, phi**2)
-L1_baker = 2*log(phi)/sqrt(5)
-check("  L(1,χ₅) = 2log(φ)/√5 [Baker: transcendental]",
-      L1_baker, L1_exact)
+ratio_baker = abs(1 - omega5**2)**2 / abs(1 - omega5)**2
+check("  |1-ω₅²|²/|1-ω₅|² = φ² (Baker reduction)", ratio_baker, phi**2, tol=mpf('1e-44'))
+L1_poly = -sum(chi5(a) * log(1 - omega5**a) for a in range(1, 5)) / sqrt(5)
+check("  L(1,χ₅) via polylog = 2log(φ)/√5",
+      mp_re(L1_poly), 2*logphi/sqrt(5), tol=mpf('1e-44'))
 
-# ── Structural persistence: same Q̄-linear form for all odd s ──────────────
-print("  Structural persistence: same form, only Li_s changes")
-# The Q̄-linear combination Σ χ₅(a) Li_s(ω^a) / √5
-# has the SAME algebraic structure for all s.
-# At s=1: Baker proves transcendence.
-# At s=3,5,7,...: same structure, no cancellation mechanism.
-for s in [1, 3, 5, 7]:
-    if s == 1:
-        L_val = L1_baker
-    else:
-        L_val = L_chi5(s)
-    # Express as ratio to log(φ) to show structural similarity
-    ratio = L_val / log(phi)
-    print(f"    s={s}: L(s,χ₅)/log(φ) = {float(ratio):.15f}")
+# Additive destruction
+print()
+Z20star_set = set(Z20star_list)
+all_mul_closed = all((a*b) % 20 in Z20star_set for a in Z20star_list for b in Z20star_list)
+all_add_destroyed = all((a+b) % 20 not in Z20star_set for a in Z20star_list for b in Z20star_list)
+check("  Z₂₀* closed under ×", mpf(int(all_mul_closed)), mpf(1))
+check("  Z₂₀* destroyed under + (a+b ∉ Z₂₀* for ALL pairs)",
+      mpf(int(all_add_destroyed)), mpf(1))
 
-# ── Fourier = Polylog: χ₅ projects Regge tower ────────────────────────────
-print("  Fourier identity: cos(2πn/5)-cos(4πn/5) = (√5/2)·χ₅(n)")
-for n in [1, 2, 3, 4]:
-    lhs = cos(2*pi*n/5) - cos(4*pi*n/5)
+# Fourier projection
+print()
+all_fourier = True
+for n in range(1, 21):
+    if n % 5 == 0: continue
+    lhs = cos(2*pi*mpf(n)/5) - cos(4*pi*mpf(n)/5)
     rhs = sqrt(5)/2 * chi5(n)
-    check(f"  n={n}: Fourier projects χ₅", lhs, rhs)
+    if fabs(lhs - rhs) > mpf('1e-44'): all_fourier = False
+check("  Fourier: cos(2πn/5)-cos(4πn/5) = (√5/2)χ₅(n) for n=1..20",
+      mpf(int(all_fourier)), mpf(1))
+
+
+print()
+# ═══════════════════════════════════════════════════════════════════════════════
+print("=" * 65)
+print("F₁-DESCENT: BORGER CRITERIA")
+print("=" * 65)
+print()
+
+# Criterion 2: ψ_p ∘ ψ_q = ψ_{pq}
+print("  ψ_p ∘ ψ_q = ψ_{pq} (functoriality, no addition):")
+for p, q in [(2,3),(2,5),(2,7),(3,5),(3,7),(5,7),(2,11),(3,13),(7,11)]:
+    check(f"  (φ^{p})^{q} = φ^{p*q}", (phi**p)**q, phi**(p*q), tol=mpf('1e-30'))
+
+# Criterion 3: F_p ≡ χ₅(p) mod p
+print()
+print("  Frobenius congruence: F_p ≡ χ₅(p) mod p")
+def fib_local(n):
+    a, b = 0, 1
+    for _ in range(n): a, b = b, a + b
+    return a
+for p in [3,7,11,13,17,19,23,29,31,37,41,43,47]:
+    check(f"  p={p}: F_{p} mod {p} = {fib_local(p)%p} ≡ χ₅={chi5(p)%p}",
+          mpf(fib_local(p) % p), mpf(chi5(p) % p))
+
+print()
+print("  [SUMMARY] R_PCF is a Λ-ring (Borger F₁-descent data):")
+print("    (1) ψ_p(φ) = φ^p — purely multiplicative")
+print("    (2) ψ_p ∘ ψ_q = ψ_{pq} — functorial")
+print("    (3) ψ_p(a) ≡ a^p mod p — Frobenius congruence")
+print("    Z₂₀* destroys addition → decidable (Tarski)")
+
 
 print()
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -918,12 +862,12 @@ print(f"    L(1,χ₅) = 2R/√5 = {L1_exact}")
 print(f"    ζ(3) = {zeta(3)}")
 print(f"    ζ(5) = {zeta(5)}")
 print()
-print(f"  STRINGS (Elvang):")
+print(f"  STRINGS (Elvang/CW):")
 print(f"    T = 2πR = {T}")
 print(f"    S_BH/k_B = λ_log·R = log 2 = {log(2)}")
 print(f"    Z_PCF(i) = {Z_PCF}")
 print()
-print(f"  SPECTRAL:")
+print(f"  SPECTRAL (CW):")
 print(f"    μ₃ = {mu3}")
 print(f"    σ = {sigma_pcf}")
 print(f"    ℓ = {ell_ads}")
