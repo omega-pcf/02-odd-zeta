@@ -35,17 +35,29 @@ in the $\mathcal{N}{=}4$ SYM EFT are fixed by this arithmetic.
 
 The objective is summarized in the following diagram:
 \begin{equation}\label{eq:objective}
-  \begin{tikzcd}[column sep=4em, row sep=3.5em]
-    & \zeta_{\mathbb{Q}(\sqrt{5})}(2k{+}1) \ar[r, "\text{colimit}", "(\text{\cref{prop:euler-colimit}})"']
-    & \zeta_{\mathbb{Q}(\sqrt{5})}(s) \ar[dr, "\text{factorisation}", "(\text{\cref{thm:factorisation}})"'] \\
-    \golden^2{=}\golden{+}1 \ar[ur, "\text{splitting}", "(\text{\cref{prop:fib-split}})"'] \ar[dr, "\text{contraction}", "(|\ker G|=2)"']
-    & & & \zeta(2k{+}1) \\
-    & \mu_3 = 1/2 \ar[r, "\text{uniqueness}", "(\text{\cref{cor:S3-from-euler}})"']
-    & S_3 \ar[ur, "\text{eigenvalues}", "(\text{\cref{lem:spectral-re}})"']
-  \end{tikzcd}
+  \begin{tikzcd}[column sep=1.4em, row sep=2.5em]
+  & & & {\textstyle\prod f_p}
+    \ar[r, "{\text{\tiny colimit}}"', "{\text{\tiny\cref{prop:euler-colimit}}}"]
+    & \zeta_{\mathbb{Q}(\sqrt{5})}
+    \ar[r, "{\text{\tiny factorise}}"', "{\text{\tiny\cref{thm:factorisation}}}"]
+    & \zeta(2k{+}1) \\
+  \golden^2{=}\golden{+}1
+    \ar[r, "{\text{\tiny Frob.}}"', "{\text{\tiny\cref{def:frobenius}}}"]
+    & \psi_p
+    \ar[r, "{\text{\tiny split}}"', "{\text{\tiny\cref{prop:fib-split}}}"]
+    & \chi_5
+    \ar[r, "{\text{\tiny class}}"', "{\text{\tiny\cref{thm:bridge3}}}"]
+    & G \ar[u] \ar[d] & & \\
+  & & & \mu_3{=}\tfrac{1}{2}
+    \ar[r, "{\text{\tiny unique}}"', "{\text{\tiny\cref{cor:S3-from-euler}}}"]
+    & S_3
+    \ar[r, "{\text{\tiny eig.}}"', "{\text{\tiny\cref{lem:spectral-re}}}"]
+    & \omega^k/2
+\end{tikzcd}
 \end{equation}
-The upper branch (arithmetic) and lower branch (spectral) are
-co-determined by the single map $G\colon\Ztwenty\to\mathbb{Z}_2\times\mathbb{Z}_2$ (\cref{thm:co-determination}).
+Both branches originate from the same Galois functor
+$G\colon\Ztwenty\to\mathbb{Z}_2\times\mathbb{Z}_2$
+(\cref{thm:co-determination}).
 The upper branch produces the odd zeta values: $G$ classifies
 primes, determining every $f_p$, assembling the Euler product,
 and delivering $\zeta(2k+1) = \zeta_{\mathbb{Q}(\sqrt{5})}(2k+1)/L(2k+1,\chi_5)$.
@@ -167,12 +179,15 @@ are determined---not through new closed forms, but through the structural
 identity~\eqref{eq:main-factorization} together with the class-number formula
 for $\mathbb{Q}(\sqrt{5})$.
 
-In \cref{sec:background}, we review the Frobenius structure of the PCF.
-In \cref{sec:primes}, we classify the rational primes into split and inert types.
-In \cref{sec:factorisation}, we establish the Dedekind factorisation $\zeta = \zeta_{\mathbb{Q}(\sqrt{5})}/L(s,\chi_5)$.
-In \cref{sec:fundamental}, we deduce the fundamental formula.
-In \cref{sec:even}, we verify consistency with the even values.
-In \cref{sec:pentagon}, we identify the pentagonal source of the determination.
-In \cref{sec:categorical-framework}, we present the arithmetic--spectral span.
-In \cref{sec:elvang}, we discuss the string theory implications.
-We conclude in \cref{sec:open,sec:conclusion} with open problems and the final summary.
+In \cref{sec:background}, we define the PCF ring and torus.
+In \cref{sec:mechanisms}, we establish the arithmetic formulation:
+the Dedekind factorisation $\zeta = \zeta_{\mathbb{Q}(\sqrt{5})}/L(s,\chi_5)$,
+the fundamental formula, the even-value consistency, and the
+pentagonal source of the determination.
+In \cref{sec:bridges}, we derive the physical invariants (Bekenstein--Hawking
+entropy, central charge $c=3$, AdS radius $\ell=1$) and discharge
+the \texttt{bridge\_axiom} of the Primitive Structure~\cite{V11}.
+In \cref{sec:categorical-framework}, we formalise the arithmetic--spectral span
+and the Weil analogy.
+We conclude in \cref{sec:elvang} with the discussion, open problems,
+and summary.

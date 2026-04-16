@@ -1,4 +1,4 @@
-\section{Categorical framework}\label{sec:categorical-framework}
+\section{Formalism: the categorical framework}\label{sec:categorical-framework}
 %%% ====================================================================
 
 The preceding sections established that $G\colon\Ztwenty\to\mathbb{Z}_2\times\mathbb{Z}_2$
@@ -77,10 +77,14 @@ the endomorphism is determined by its action on $\golden$.
 \begin{remark}[$\Lambda$-ring structure]\label{rmk:lambda-ring}
 In the language of Borger~\cite{Borger}, $\Psi$ restricted
 to primes equips $\Rpcf$ with a $\Lambda$-ring structure:
-$\psi_p(a)\equiv a^p\pmod{p}$ and $\psi_p\circ\psi_q = \psi_{pq}$,
+(1) $\psi_p(\golden) = \golden^p$ (purely multiplicative),
+(2) $\psi_p\circ\psi_q = \psi_{pq}$ (functorial), and
+(3) $\psi_p(a)\equiv a^p\pmod{p}$ (Frobenius congruence),
 constituting $\mathbb{F}_1$-descent data.
-The functor $\Psi$ is the algebraic backbone of the chain
-$\golden^2=\golden+1 \to \psi_p \to \chi_5 \to G \to \prod f_p$.
+The decidability of this descent is ensured by the
+\emph{additive destruction} of $\Ztwenty$ (\cref{prop:Z20-arithmetic}),
+which isolates the multiplicative fragment
+(Lean: \lean{F1_descent_data}).
 \end{remark}
 
 \begin{lemma}[From Frobenius to Euler factors]\label{lem:psi-to-euler}
