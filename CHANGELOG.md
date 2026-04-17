@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.4.10](https://github.com/omega-pcf/02-odd-zeta/compare/v1.4.9...v1.4.10) (2026-04-17)
+
+### Bug Fixes
+
+* redefine \lean macro to support automatic line breaking ([dbfb213](https://github.com/omega-pcf/02-odd-zeta/commit/dbfb213364e871f2f5f423e6d4b2f08cfd97c9ad))
+
 ## [1.4.9](https://github.com/omega-pcf/02-odd-zeta/compare/v1.4.8...v1.4.9) (2026-04-17)
 
 ### Chores
