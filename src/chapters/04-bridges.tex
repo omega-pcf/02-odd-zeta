@@ -45,7 +45,7 @@ $H(1/2) = \log 2$ (binary entropy maximum).
 \end{proof}
 
 \begin{remark}[Bekenstein--Hawking identification]\label{rmk:BH-identification}
-The identification $S_{\mathrm{BH}} = k_B\,H(|\Omega|) = k_B\ln 2$
+The identification $S_{\mathrm{BH}} = k_{\mathrm{B}}\,H(|\Omega|) = k_{\mathrm{B}}\ln 2$
 follows from \cref{prop:worldline-entropy}: the binary
 Shannon entropy at $|\Omega| = 1/2$ gives exactly $1$~bit, which is
 the holographic bound per Planck area.
@@ -104,7 +104,7 @@ holographic anchor.
 \begin{theorem}[BH entropy as $L$-value]\label{thm:bridge1}
 \begin{equation}\label{eq:bridge1}
   S_{\mathrm{BH}}
-  = k_B\,\lambda_{\log}\,\frac{\sqrt{5}}{2}\,L(1,\chi_5),
+  = k_{\mathrm{B}}\,\lambda_{\log}\,\frac{\sqrt{5}}{2}\,L(1,\chi_5),
   \qquad \lambda_{\log} = \frac{\log 2}{\log\golden} \approx 1.4404.
 \end{equation}
 The Bekenstein--Hawking entropy is proportional to the first value of
@@ -113,11 +113,11 @@ bridge.  Verified numerically (see \cref{sec:verification}).
 \end{theorem}
 \begin{proof}
 {\sloppy Three steps, combining \cref{prop:worldline-entropy}
-with the holographic identification $S_{\mathrm{BH}} = k_B H(|\Omega|)$
+with the holographic identification $S_{\mathrm{BH}} = k_{\mathrm{B}} H(|\Omega|)$
 (\cref{rmk:BH-identification}):\par}
 
 \textit{Step 1.}  \Cref{prop:worldline-entropy} gives
-$H(|\Omega|) = \log 2$, so $S_{\mathrm{BH}} = k_B\log 2$
+$H(|\Omega|) = \log 2$, so $S_{\mathrm{BH}} = k_{\mathrm{B}}\log 2$
 (\cref{rmk:BH-identification}).
 
 \textit{Step 2.}  The Mersenne bridge (\cref{thm:mersenne}) gives
@@ -131,9 +131,9 @@ $\log\golden = (\sqrt{5}/2)\cdot L(1,\chi_5)$.
 Chaining:
 \[
   S_{\mathrm{BH}}
-  = k_B\,\ln 2
-  = k_B\,\lambda_{\log}\,\log\golden
-  = k_B\,\lambda_{\log}\,\frac{\sqrt{5}}{2}\,L(1,\chi_5).
+  = k_{\mathrm{B}}\,\ln 2
+  = k_{\mathrm{B}}\,\lambda_{\log}\,\log\golden
+  = k_{\mathrm{B}}\,\lambda_{\log}\,\frac{\sqrt{5}}{2}\,L(1,\chi_5).
 \]
 \end{proof}
 
@@ -150,7 +150,7 @@ where $\golden^{-\lambda_{\log}} = 2^{-1}$ (Mersenne bridge).  The
 value $G_N = 1/2$ in PCF units is the same $\golden^{-\lambda_{\log}}$
 that connects the golden tower to the binary world.  Through
 \cref{thm:bridge1}, it is further expressed as
-$\frac{\sqrt{5}}{2}\,\lambda_{\log}\,L(1,\chi_5)^{-1}\cdot S_{\mathrm{BH}}/k_B$,
+$\frac{\sqrt{5}}{2}\,\lambda_{\log}\,L(1,\chi_5)^{-1}\cdot S_{\mathrm{BH}}/k_{\mathrm{B}}$,
 making the BH entropy a function of the arithmetic of $\mathbb{Q}(\sqrt{5})$.
 \end{corollary}
 
@@ -175,7 +175,7 @@ Let $R = \log\golden$ be the regulator of $\mathbb{Q}(\sqrt{5})$.  Then:
   L(1,\chi_5) &= \frac{2R}{\sqrt{5}}
     \qquad\text{\emph{(class-number residue, \cref{thm:L1})}},
     \label{eq:R-Lvalue}\\
-  \frac{S_{\mathrm{BH}}}{k\_B} &= \lambda_{\log}\cdot R
+  \frac{S_{\mathrm{BH}}}{k_{\mathrm{B}}} &= \lambda_{\log}\cdot R
     \qquad\text{\emph{(BH entropy, \cref{prop:worldline-entropy})}}.
     \label{eq:R-SBH}
 \end{align}
@@ -185,7 +185,7 @@ All three are exact; numerical verification is provided in \cref{sec:verificatio
 \begin{proof}
 \eqref{eq:R-torus}: \cref{def:torus}: $T_{\mathrm{PCF}}=2\pi\log\golden=2\pi R$.
 \eqref{eq:R-Lvalue}: \cref{thm:L1}: $L(1,\chi_5)=2\log\golden/\sqrt{5}=2R/\sqrt{5}$.
-\eqref{eq:R-SBH}: $S_{\mathrm{BH}}/k_B = \ln 2 = \lambda_{\log}\log\golden = \lambda_{\log}R$
+\eqref{eq:R-SBH}: $S_{\mathrm{BH}}/k_{\mathrm{B}} = \ln 2 = \lambda_{\log}\log\golden = \lambda_{\log}R$
 by \cref{prop:worldline-entropy} and \cref{thm:mersenne}.
 \end{proof}
 
@@ -212,7 +212,7 @@ Together they determine $T^2_{\mathrm{PCF}}$ completely.
 The Bekenstein--Hawking entropy of the PCF torus measures the
 \emph{arithmetic size} of $\mathbb{Q}(\sqrt{5})$ via its regulator:
 \begin{equation}\label{eq:SBH-regulator}
-  \frac{S_{\mathrm{BH}}}{k\_B} = \lambda_{\log}\cdot R,
+  \frac{S_{\mathrm{BH}}}{k_{\mathrm{B}}} = \lambda_{\log}\cdot R,
   \qquad R = \log\golden = \mathrm{Reg}(\mathbb{Q}(\sqrt{5})).
 \end{equation}
 Here $\lambda_{\log} = \log 2/\log\golden$ counts how many regulators
@@ -223,7 +223,7 @@ Mersenne bridge $\golden^{\lambda_{\log}}=2$.
 \end{proposition}
 
 \begin{proof}
-$S_{\mathrm{BH}}/k_B = \ln 2$ (\cref{prop:worldline-entropy}).
+$S_{\mathrm{BH}}/k_{\mathrm{B}} = \ln 2$ (\cref{prop:worldline-entropy}).
 $\ln 2 = \lambda_{\log}\cdot\log\golden = \lambda_{\log}\cdot R$
 by \cref{def:Rpcf} and \cref{thm:mersenne}.
 \end{proof}
@@ -404,7 +404,7 @@ bound.
 
 \begin{enumerate}
 \item \textbf{Intrinsic correspondence:}
-  $S_{\mathrm{BH}} = k_B\lambda_{\log}\tfrac{\sqrt{5}}{2}L(1,\chi_5)$.
+  $S_{\mathrm{BH}} = k_{\mathrm{B}}\lambda_{\log}\tfrac{\sqrt{5}}{2}L(1,\chi_5)$.
   Derived from $|\Omega|=1/2$ (\cref{prop:worldline-entropy})
   and the Mersenne bridge; with vanishing error (see \cref{sec:verification}).
 \item \textbf{Geometric unity:}
@@ -421,7 +421,7 @@ Together, these physical results discharge the \lean{bridge_axiom} and resolve t
 Physical Formalization (Open Problem~3) of the Primitive Structure~\cite{V11}:
 the structural content of $\mu_3^2=1/4$ (equivalently $1/(4G_N)=\mu_3=1/2$) is the class-number
 formula $L(1,\chi_5)=2\log\golden/\sqrt{5}$ expressed as
-$S_{\mathrm{BH}}/k_B = \lambda_{\log}(\sqrt5/2)L(1,\chi_5)$
+$S_{\mathrm{BH}}/k_{\mathrm{B}} = \lambda_{\log}(\sqrt5/2)L(1,\chi_5)$
 (Intrinsic correspondence); the Virasoro central charge $c=3$ arises from the same
 $S_3$ symmetry of $T^2_{\mathrm{PCF}}$ that fixes $\tau_{\mathrm{PCF}}=i$
 and hence both $Z_{\mathrm{PCF}}(i)$ and $L(1,\chi_5)$ (Geometric unity);
