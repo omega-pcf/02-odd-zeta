@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: If you use this software, please cite it using these metadata.
 title: "Odd Zeta Values from the PCF Torus: φ and π as Arithmetic-Geometric Sources"
 type: software
-version: 1.4.11
+version: 1.4.12
 date-released: 2026-04-17
 authors:
   - family-names: González García
@@ -47,13 +47,12 @@ abstract: "We demonstrate that the odd values ζ(2k+1) of the Riemann zeta
   local factor f_p(s). These lifts constitute F₁-descent data in the sense of
   Borger. Through the Dedekind factorisation ζ(s) = ζ_ℚ(√5)(s)/L(s,χ_5), this
   determines ζ(s) completely: the isomorphism between the Frobenius structure
-  and the Euler product is demonstrated at every level (primes, splitting
-  types, local factors, L-function), anchored by the base case L(1,χ_5) =
-  2logφ/√5 (the class-number formula for ℚ(√5)), which expresses the L-function
-  value entirely in terms of φ. This resolves the apparent freedom of ζ(2k+1)
-  noted by Elvang, Herderschee and Morales in the N=4 SYM S-matrix bootstrap:
-  those values are free only relative to the EFT; the pentagonal arithmetic
-  fixes them."
+  and the Euler product is demonstrated at every level (primes, splitting types,
+  local factors, L-function), anchored by the base case L(1,χ_5) = 2logφ/√5 (the
+  class-number formula for ℚ(√5)), which expresses the L-function value entirely
+  in terms of φ. This resolves the apparent freedom of ζ(2k+1) noted by Elvang,
+  Herderschee and Morales in the N=4 SYM S-matrix bootstrap: those values are
+  free only relative to the EFT; the pentagonal arithmetic fixes them."
 references:
   - authors:
       - family-names: González García

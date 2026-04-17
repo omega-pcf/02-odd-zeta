@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.4.12](https://github.com/omega-pcf/02-odd-zeta/compare/v1.4.11...v1.4.12) (2026-04-17)
+
+### Bug Fixes
+
+* resolve ambiguous antecedent in §1 and restore openproblem names ([51bc8f8](https://github.com/omega-pcf/02-odd-zeta/commit/51bc8f8ebf97ca7ae8ef905294461faee932f2bb))
+
 ## [1.4.11](https://github.com/omega-pcf/02-odd-zeta/compare/v1.4.10...v1.4.11) (2026-04-17)
 
 ## [1.4.10](https://github.com/omega-pcf/02-odd-zeta/compare/v1.4.9...v1.4.10) (2026-04-17)
