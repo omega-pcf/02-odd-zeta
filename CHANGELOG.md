@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.4.7](https://github.com/omega-pcf/02-odd-zeta/compare/v1.4.6...v1.4.7) (2026-04-17)
+
+### Bug Fixes
+
+* resolve broken cross-references ([16959e2](https://github.com/omega-pcf/02-odd-zeta/commit/16959e2f1f74a10ca5a3960ff02d9aae60ff22b5))
+* resolve escaped underscore artifacts and address syntax errors ([8fb2a6c](https://github.com/omega-pcf/02-odd-zeta/commit/8fb2a6cf58e6d380d13702e71cb5b0e8a9113068))
+
+### Styles
+
+* simplify alpha_i notation in categorical framework ([92f6b31](https://github.com/omega-pcf/02-odd-zeta/commit/92f6b315501b736e0af8f95b485ef6cf557ca186))
+* standardize Boltzmann constant to k_{\mathrm{B}} ([58ea10d](https://github.com/omega-pcf/02-odd-zeta/commit/58ea10d583bdbd7df6637abc393a058e59a3efad))
+
+### Documentation
+
+* update affiliation in README.md ([fb05d2d](https://github.com/omega-pcf/02-odd-zeta/commit/fb05d2db1536439c22bf1660ebf83ec19100da4f))
+
 ## [1.4.6](https://github.com/omega-pcf/02-odd-zeta/compare/v1.4.5...v1.4.6) (2026-04-17)
 
 ### Documentation
