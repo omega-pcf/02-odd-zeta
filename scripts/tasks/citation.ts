@@ -118,6 +118,7 @@ export class MetadataPipeline {
     cff.version = version;
     cff['date-released'] = new Date().toISOString().split('T')[0];
     cff.abstract = pkg.metadata?.abstract || cff.abstract;
+    cff.keywords = pkg.keywords || cff.keywords;
     
     // Map CSL items to CFF references using citation-js
     const data = new Cite(items);

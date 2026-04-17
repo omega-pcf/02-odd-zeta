@@ -74,17 +74,33 @@ Since $\golden$ generates $\Rpcf$ over $\mathbb{Z}[\tfrac{1}{2}]$,
 the endomorphism is determined by its action on $\golden$.
 \end{proof}
 
-\begin{remark}[$\Lambda$-ring structure]\label{rmk:lambda-ring}
-In the language of Borger~\cite{Borger}, $\Psi$ restricted
-to primes equips $\Rpcf$ with a $\Lambda$-ring structure:
-(1) $\psi_p(\golden) = \golden^p$ (purely multiplicative),
-(2) $\psi_p\circ\psi_q = \psi_{pq}$ (functorial), and
-(3) $\psi_p(a)\equiv a^p\pmod{p}$ (Frobenius congruence),
-constituting $\mathbb{F}_1$-descent data.
-The decidability of this descent is ensured by the
-\emph{additive destruction} of $\Ztwenty$ (\cref{prop:Z20-arithmetic}),
-which isolates the multiplicative fragment
-(Lean: \lean{F1_descent_data}).
+\begin{remark}[$\mathbb{F}_1$-descent data: Borger's criteria]\label{rmk:lambda-ring}
+In the language of Borger~\cite{Borger}, $\Psi$ restricted to primes
+equips $\Rpcf$ with a $\Lambda$-ring structure constituting
+$\mathbb{F}_1$-descent data. The three defining criteria are
+satisfied by the pentagonal arithmetic of $\golden$:
+\begin{enumerate}
+\item[\textup{(1)}] \emph{Purely multiplicative} (no addition):
+  $\psi_p(\golden) = \golden^p$ is a power map.
+  The fragment $\Ztwenty$ is closed under multiplication but
+  destroyed under addition
+  (\cref{prop:Z20-arithmetic};
+  Lean: \lean{add_destroyed}, verified by \lean{decide}
+  over all $64$ pairs).
+\item[\textup{(2)}] \emph{Functoriality}: $\psi_p\circ\psi_q = \psi_{pq}$
+  (\cref{prop:Psi-functorial};
+  Lean: \lean{frobenius_composition}, \lean{pow_mul}).
+\item[\textup{(3)}] \emph{Frobenius congruence}:
+  $\psi_p(a)\equiv a^p\pmod{p}$, concretely
+  $\chi_5(p)\equiv F_p\pmod{p}$
+  (\cref{prop:fib-split};
+  Lean: \lean{fib_split_criterion}, \lean{native_decide}).
+\end{enumerate}
+The collected statement is \lean{F1_descent_data} in
+\lean{odd_zeta_pcf_v1.lean}: each criterion is discharged
+by a verified Lean theorem.
+The functor $\Psi$ is the algebraic backbone of the chain
+$\golden^2=\golden+1 \to \psi_p \to \chi_5 \to G \to \prod f_p$.
 \end{remark}
 
 \begin{lemma}[From Frobenius to Euler factors]\label{lem:psi-to-euler}
