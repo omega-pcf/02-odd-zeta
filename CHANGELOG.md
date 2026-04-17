@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.4.5](https://github.com/omega-pcf/02-odd-zeta/compare/v1.4.4...v1.4.5) (2026-04-17)
+
+### Bug Fixes
+
+* **manuscript:** remove duplicate Lean audit table from discussion ([885c3c3](https://github.com/omega-pcf/02-odd-zeta/commit/885c3c3c4bb4e169811c67d1f5f7e56dbb4cf43c))
+
+### Chores
+
+* **citation:** synchronize Zenodo metadata and bibliography ([6d96660](https://github.com/omega-pcf/02-odd-zeta/commit/6d96660e37daf26db856cc2cfe635207bf4124f0))
+* **citation:** update publication year to 2026 in CSL data ([85f22fc](https://github.com/omega-pcf/02-odd-zeta/commit/85f22fc07b966e3530d8762d666d6d3efa267b8a))
+* **manuscript:** fix math mode subscripts and unescape Lean identifiers ([a4c0c92](https://github.com/omega-pcf/02-odd-zeta/commit/a4c0c922f5dfc174da711061be634ef1c0e2841b))
+* **manuscript:** stabilize LaTeX build and Lean audit tables ([8bc9693](https://github.com/omega-pcf/02-odd-zeta/commit/8bc96939e0b7668c255f1ec2766ab584c6e4414d))
+
 ## [1.4.4](https://github.com/omega-pcf/02-odd-zeta/compare/v1.4.3...v1.4.4) (2026-04-14)
 
 ### Refinements
