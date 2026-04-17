@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.4.6](https://github.com/omega-pcf/02-odd-zeta/compare/v1.4.5...v1.4.6) (2026-04-17)
+
+### Documentation
+
+* finalize Nature dedication, Borger remark, and metadata sync script ([e3045ad](https://github.com/omega-pcf/02-odd-zeta/commit/e3045adf29b74e7ec12c4a022b4463da348fac57))
+
 ## [1.4.5](https://github.com/omega-pcf/02-odd-zeta/compare/v1.4.4...v1.4.5) (2026-04-17)
 
 ### Bug Fixes
