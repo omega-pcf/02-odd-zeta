@@ -168,7 +168,7 @@ $z = \golden y$ (\cref{prop:dim-chain}) extends
 $\mathbb{C}$ to $E^3$, and the $S_3$ symmetry at modulus
 $\mu_3 = 1/2$ (\cref{cor:S3-from-euler}) couples the
 three eigenvalue directions to the complex plane, producing
-invariants---$\ell = 1$, $G_N = 1/2$, $c = 3$---demonstrated
+invariants---$\ell = 1$, $G_{\mathrm{N}} = 1/2$, $c = 3$---demonstrated
 isomorphic to those of AdS/CFT~\cite{Maldacena,BrownHenneaux}
 (\cref{lem:ads-radius}).
 The algebraic content is concentrated in three properties of
@@ -602,6 +602,19 @@ The regulator $R = \log\golden$ is the common invariant:
 \item the \textbf{worldsheet period}: $T_{\mathrm{PCF}}=2\pi R$ (\cref{def:torus});
 \item the \textbf{entropy anchor}: $S_{\mathrm{BH}}/k_{\mathrm{B}}=\lambda_{\log}\cdot R$ (\cref{prop:worldline-entropy}).
 \end{itemize}
+
+The Frobenius lifts $\psi_p(\golden) = \golden^p$ constitute
+$\mathbb{F}_1$-descent data in the sense of Borger~\cite{Borger}.
+Weil's proof of RH for function fields over $\mathbb{F}_q$~\cite{Weil}
+requires such a descent to transport its arithmetic surface
+$C\times C$ from~$\mathbb{F}_q$ to~$\mathbb{Z}$---a programme pursued
+by Manin~\cite{Manin}, Connes~\cite{ConnesDouglasSchwarz}, and others
+without explicit construction.  The pentagonal arithmetic of $\golden$
+realises the descent: $\psi_p$ is purely multiplicative, functorial
+($\psi_p\circ\psi_q=\psi_{pq}$), and satisfies the Frobenius congruence
+$\psi_p(a)\equiv a^p\pmod{p}$~(\cref{rmk:lambda-ring}).
+The chain $\golden^2=\golden+1 \to \psi_p \to \chi_5 \to G \to \prod f_p \to \zeta(s)$
+operates entirely within this $\mathbb{F}_1$-descended structure.
 The categorical framework of \cref{sec:categorical-framework}
 makes the structure of this determination precise: the Frobenius
 system is a functor from the multiplicative monoid of integers to

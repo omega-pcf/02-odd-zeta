@@ -27,9 +27,9 @@ The worldline $\Omega(\tau) = \tfrac{1}{2}\,e^{i\tau\log\golden}$
   \end{equation}
 \item[\textup{(iii)}] Setting $\mu_3 := |\Omega| = 1/2$, the
   holographic area factor $\mu_3^2 = 1/4$ and Newton's constant
-  $G_N := \mu_3 = 1/2$ satisfy
+  $G_{\mathrm{N}} := \mu_3 = 1/2$ satisfy
   \begin{equation}\label{eq:SBH}
-    \frac{1}{4G_N} = \frac{1}{2} = \mu_3 = |\Omega|.
+    \frac{1}{4G_{\mathrm{N}}} = \frac{1}{2} = \mu_3 = |\Omega|.
   \end{equation}
 \end{enumerate}
 \end{proposition}
@@ -41,7 +41,7 @@ $|e^{ix}|=1$ for $x\in\mathbb{R}$.
 (ii) $H(p) = -p\log p - (1-p)\log(1-p)$ evaluated at $p=1/2$ gives
 $H(1/2) = \log 2$ (binary entropy maximum).
 
-(iii) $G_N = \mu_3 = 1/2$ gives $1/(4G_N) = 1/2 = \mu_3$.
+(iii) $G_{\mathrm{N}} = \mu_3 = 1/2$ gives $1/(4G_{\mathrm{N}}) = 1/2 = \mu_3$.
 \end{proof}
 
 \begin{remark}[Bekenstein--Hawking identification]\label{rmk:BH-identification}
@@ -49,10 +49,10 @@ The identification $S_{\mathrm{BH}} = k_{\mathrm{B}}\,H(|\Omega|) = k_{\mathrm{B
 follows from \cref{prop:worldline-entropy}: the binary
 Shannon entropy at $|\Omega| = 1/2$ gives exactly $1$~bit, which is
 the holographic bound per Planck area.
-The identification $G_N = \mu_3 = 1/2$ (via Brown--Henneaux with
+The identification $G_{\mathrm{N}} = \mu_3 = 1/2$ (via Brown--Henneaux with
 central charge $c=3$, \cref{lem:ads-radius}) and the
 $S_3$ arity transition complete the holographic picture:
-$S = A/(4G_N)$ with $\mu_3^2 = 1/4$ reproduces the
+$S = A/(4G_{\mathrm{N}})$ with $\mu_3^2 = 1/4$ reproduces the
 Bekenstein--Hawking area factor.
 \end{remark}
 
@@ -141,13 +141,13 @@ Chaining:
   \label{cor:BH-not-free}
 The holographic area factor $\mu_3^2 = 1/4$ in the Bekenstein--Hawking
 formula is not an independent constant.  Via \cref{eq:bridge1}
-and $G_N = 1/2$:
+and $G_{\mathrm{N}} = 1/2$:
 \[
-  \frac{1}{4G_N} = \frac{1}{4\cdot\tfrac{1}{2}} = \frac{1}{2}
+  \frac{1}{4G_{\mathrm{N}}} = \frac{1}{4\cdot\tfrac{1}{2}} = \frac{1}{2}
   = |\Omega| = \golden^{-\lambda_{\log}},
 \]
 where $\golden^{-\lambda_{\log}} = 2^{-1}$ (Mersenne bridge).  The
-value $G_N = 1/2$ in PCF units is the same $\golden^{-\lambda_{\log}}$
+value $G_{\mathrm{N}} = 1/2$ in PCF units is the same $\golden^{-\lambda_{\log}}$
 that connects the golden tower to the binary world.  Through
 \cref{thm:bridge1}, it is further expressed as
 $\frac{\sqrt{5}}{2}\,\lambda_{\log}\,L(1,\chi_5)^{-1}\cdot S_{\mathrm{BH}}/k_{\mathrm{B}}$,
@@ -194,7 +194,7 @@ The torus $T^2_{\mathrm{PCF}}$ admits two complementary readings:
 \begin{enumerate}
 \item \textbf{Modular reading} (\cref{ssec:worldline-entropy}): $\tau_{\mathrm{PCF}}=i$ fixes the
   Virasoro spectrum.  The partition function $Z_{\mathrm{PCF}}(i)=e^{-3\pi/2}/|\eta(i)|^6$
-  gives $c=3$, $G_N=1/2$, and the nome $q=e^{-2\pi}$ governs the tower.
+  gives $c=3$, $G_{\mathrm{N}}=1/2$, and the nome $q=e^{-2\pi}$ governs the tower.
   The period appears as $T=2\pi R$.
 \item \textbf{Arithmetic reading} (present work): the same $\tau_{\mathrm{PCF}}=i$
   fixes the class-number residue $L(1,\chi_5)=2R/\sqrt{5}$, and the
@@ -419,7 +419,7 @@ bound.
 
 Together, these physical results discharge the \lean{bridge_axiom} and resolve the
 Physical Formalization (Open Problem~3) of the Primitive Structure~\cite{V11}:
-the structural content of $\mu_3^2=1/4$ (equivalently $1/(4G_N)=\mu_3=1/2$) is the class-number
+the structural content of $\mu_3^2=1/4$ (equivalently $1/(4G_{\mathrm{N}})=\mu_3=1/2$) is the class-number
 formula $L(1,\chi_5)=2\log\golden/\sqrt{5}$ expressed as
 $S_{\mathrm{BH}}/k_{\mathrm{B}} = \lambda_{\log}(\sqrt5/2)L(1,\chi_5)$
 (Intrinsic correspondence); the Virasoro central charge $c=3$ arises from the same
@@ -576,7 +576,7 @@ by the symmetric group $S_3$.  This $S_3$ determines:
 the golden coupling $z = \golden y$
 (\cref{prop:dim-chain}),
 the space $E^3 = \{(x,y,\golden y)\}$, and the central charge
-$c = 3\ell/(2G_N)|_{\ell=1,\,G_N=1/2} = 3$
+$c = 3\ell/(2G_{\mathrm{N}})|_{\ell=1,\,G_{\mathrm{N}}=1/2} = 3$
 (\cref{lem:ads-radius}).
 
 The chain is therefore:
@@ -613,12 +613,12 @@ Tripartite norm: $(1/\sqrt{3})\cdot 1\cdot(\sqrt{3}/2) = 1/2$.
 $S_3$ symmetry: $\omega = e^{2\pi i/3}$ satisfies $\omega^3 = 1$;
 the three eigenvalues $\{\omega^0/2,\,\omega^1/2,\,\omega^2/2\}$
 are permuted by the symmetric group on three elements.
-Central charge: The holographic identification $G_N = \mu_3$
-follows from $S = A/(4G_N)$ with $\mu_3^2 = 1/4$: the Planck
+Central charge: The holographic identification $G_{\mathrm{N}} = \mu_3$
+follows from $S = A/(4G_{\mathrm{N}})$ with $\mu_3^2 = 1/4$: the Planck
 area factor $1/4$ is the square of
 the spectral parameter derived from $S_3$ symmetry, giving
-$G_N = \mu_3 = 1/2$.
-Then $c = 3\ell/(2G_N) = 3\cdot 1/(2\cdot 1/2) = 3$
+$G_{\mathrm{N}} = \mu_3 = 1/2$.
+Then $c = 3\ell/(2G_{\mathrm{N}}) = 3\cdot 1/(2\cdot 1/2) = 3$
 (Brown--Henneaux with $\ell = 1$ (\cref{lem:ads-radius})).
 \end{proof}
 

@@ -102,8 +102,8 @@ $\mathbb{F}_1$-descent data & \lean{F1_descent_data} & conjunction \\
 Weil analogy & \lean{weil_analogy} & conjunction \\
 $\mu_3^2 = 1/4$ & \lean{mu3_squared} & \lean{norm_num} \\
 $1-\mu_3^2 = 3/4$ & \lean{holographic_ratio} & \lean{norm_num} \\
-$c = 3\ell/(2G_N) = 3$ & \lean{brown_henneaux_c} & \lean{norm_num} \\
-$1/(4G_N) = \mu_3$ & \lean{BH_factor} & \lean{norm_num} \\
+$c = 3\ell/(2G_{\mathrm{N}}) = 3$ & \lean{brown_henneaux_c} & \lean{norm_num} \\
+$1/(4G_{\mathrm{N}}) = \mu_3$ & \lean{BH_factor} & \lean{norm_num} \\
 $-1/i = i$ (S-duality) & \lean{S_duality_fixed} & \lean{Complex.I_mul_I} \\
 $\ell=1/\ell \implies \ell=1$ & \lean{ads_radius_one} & \texttt{nlinarith} \\
 $\bar\golden = 1-\golden$ & \lean{phi_bar_eq} & \lean{field_simp} \\
@@ -186,9 +186,9 @@ in the indicated section and verified in \cref{sec:verification}.
 
 \subsection*{Physical invariants from \texorpdfstring{$\mu_3=1/2$}{mu_3=1/2}}
 \begin{align}
-  G_N &= \mu_3 = 1/2 \label{eq:ax-GN} \\
+  G_{\mathrm{N}} &= \mu_3 = 1/2 \label{eq:ax-GN} \\
   \ell &= 1 \quad\text{(AdS radius from S-duality)} \label{eq:ax-ell} \\
-  c &= 3\ell/(2G_N) = 3 \quad\text{(Brown--Henneaux)} \label{eq:ax-c} \\
+  c &= 3\ell/(2G_{\mathrm{N}}) = 3 \quad\text{(Brown--Henneaux)} \label{eq:ax-c} \\
   R &= \log\golden \quad\text{(regulator)} \label{eq:ax-R} \\
   S_{\mathrm{BH}}/k_{\mathrm{B}} &= \lambda_{\log}\cdot R = \log 2 \label{eq:ax-SBH}
 \end{align}

@@ -25,6 +25,7 @@ where the Artin character $\chi_5$ is dictated by the pentagon:
 This character classifies every prime $p$ as split or inert in
 $\mathbb{Z}[\golden]$, determining the local Euler factor $f_p(s)$
 and hence the entire product $\zeta_{\mathbb{Q}(\sqrt{5})}(s) = \prod_p f_p(s)$.
+These lifts constitute $\mathbb{F}_1$-descent data in the sense of Borger~\cite{Borger}.
 The base case $L(1,\chi_5) = 2\log\golden/\sqrt{5} = T/(\pi\sqrt{5})$
 ($T = 2\pi\log\golden$) shows that $\pi$---the circumference of the
 circle in $T^2_{\mathrm{PCF}}$---is present from the outset.
@@ -65,7 +66,7 @@ The lower branch produces the spectral structure: $|\ker G| = 2$
 forces $\mu_3 = 1/2$, which determines $S_3$ symmetry, eigenvalues
 $\omega^k/2$, the AdS radius $\ell = 1$ (from S-duality at
 $\tau_{\mathrm{PCF}} = i$), and the Brown--Henneaux~\cite{BrownHenneaux}
-central charge $c = 3\ell/(2G_N) = 3$
+central charge $c = 3\ell/(2G_{\mathrm{N}}) = 3$
 (\cref{ssec:unifying}, \cref{lem:spectral-re}
 and \cref{lem:ads-radius}).
 The regulator $R = \log\golden$ links both branches: it is the
@@ -88,7 +89,9 @@ $\mu_3 = 1/2$ (via $\vert\ker G\vert = 2$), the same map that
 determines~$\zeta(s)$ everywhere also constrains
 $\mathrm{Re}(\rho)$.
 The Primitive Structure establishes the functorial transport of the
-spectral result across the entire complex plane.
+eigenvalue constraint $\mathrm{Re}>0 \Rightarrow \mathrm{Re}=1/2$
+from $\OmH$ to~$\zeta$ across the full critical strip; the present
+paper provides the \emph{mechanism} underlying that transport.
 The spectral identification (verified through the $G$-homomorphism
 \lean{G_hom}, $G$-surjectivity \lean{G_surj}, and parity $|\ker G|=2$
 in \lean{odd_zeta_pcf_v1.lean}) forces $\mu_3 = 1/2$, delivering

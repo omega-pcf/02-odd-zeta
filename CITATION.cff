@@ -24,14 +24,16 @@ authors:
 repository-code: https://github.com/omega-pcf/02-odd-zeta
 license: CC-BY-4.0
 keywords:
-  - Riemann zeta function
+  - Riemann Hypothesis
   - Odd zeta values
-  - F1-descent data
-  - Apéry's constant
-  - golden ratio
+  - 𝔽₁ (field with one element)
+  - Elliptic curves
   - Lambda-rings
-  - spectral identification
-  - formal verification
+  - String theory
+  - Category theory
+  - Golden ratio
+  - Mersenne primes
+  - Formal verification
 identifiers:
   - type: other
     value: "MSC2020: 11M06 (Primary), 11R42, 11G05, 11J72, 81T30, 14G99, 68V20

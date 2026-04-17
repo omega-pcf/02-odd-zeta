@@ -15,7 +15,7 @@ UNIFIED_TEX = TMP_DIR / "manuscript_unified.tex"
 BIB_FILE = SRC_DIR / "bibliography.bib"
 
 # Audit target (original author draft)
-ORIGINAL_MANUSCRIPT = TMP_DIR / "odd_zeta_pcf_v1.tex"
+ORIGINAL_MANUSCRIPT = Path("/home/aficio/Downloads/odd_zeta_manuscript_final.tex")
 DIFF_HTML = TMP_DIR / "manuscript_diff.html"
 DIFF_TXT = TMP_DIR / "manuscript_diff.txt"
 

@@ -57,14 +57,16 @@
     "url": "https://github.com/omega-pcf/02-odd-zeta.git"
   },
   "keywords": [
-    "Riemann zeta function",
+    "Riemann Hypothesis",
     "Odd zeta values",
-    "F1-descent data",
-    "Apéry's constant",
-    "golden ratio",
+    "𝔽₁ (field with one element)",
+    "Elliptic curves",
     "Lambda-rings",
-    "spectral identification",
-    "formal verification"
+    "String theory",
+    "Category theory",
+    "Golden ratio",
+    "Mersenne primes",
+    "Formal verification"
   ],
   "author": "",
   "license": "CC-BY-4.0",
