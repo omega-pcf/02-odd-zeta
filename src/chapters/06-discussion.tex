@@ -55,19 +55,19 @@ has poles at $\alpha' s = n$ ($n = 0,1,2,\ldots$), forming the Regge tower
 of string states at mass level~$n$.  Expanding in $\alpha'$, the residues
 assemble the Dirichlet series $\sum_{n=1}^{\infty} n^{-s} = \zeta(s)$.
 The fundamental theorem of arithmetic factorises each level
-$n = p_1^{a\_1}\cdots p_r^{a\_r}$, reorganising the sum into the Euler
+$n = p_1^{a_1}\cdots p_r^{a\_r}$, reorganising the sum into the Euler
 product $\prod_p(1-p^{-s})^{-1}$.
 
 This reorganisation has a physical interpretation: the Euler product is the
 \emph{second quantisation} of the prime spectrum.  Each prime $p$ is a
 single-particle state $|p\rangle$; each mass level $n$ is the multi-particle
-state $|p_1^{a\_1},\ldots,p_r^{a\_r}\rangle$; and the partition function of
+state $|p_1^{a_1},\ldots,p_r^{a\_r}\rangle$; and the partition function of
 this gas of primes is
 \[
   Z(s) = \prod_{p}(1-p^{-s})^{-1} = \zeta(s).
 \]
 
-\smallskip\noindent\textbf{The $\chi\_5$ grading classifies the string modes.}
+\smallskip\noindent\textbf{The $\chi_5$ grading classifies the string modes.}
 PCF adds the structure that the EFT cannot see.  The character $\chi_5$
 classifies each prime state:
 \begin{itemize}
@@ -340,7 +340,7 @@ determination.
 
 All identities in the present work have been verified at 50-digit precision
 using \texttt{mpmath} and \texttt{sympy} in the accompanying script
-\lean{verify\_odd\_zeta\_pcf\_unified.py}.  The 207 checks cover:
+\lean{verify_odd_zeta_pcf_unified.py}.  The 207 checks cover:
 Frobenius lifts (\cref{sec:background}),
 prime decomposition (\cref{sec:primes}),
 Euler product convergence (\cref{sec:primes}),
@@ -359,7 +359,7 @@ terminality of $\mathrm{Spec}(\OmH)$
 (\cref{def:SpecOmega}),
 the $\Lambda$-ring congruence $F_p\equiv\chi_5(p)\pmod{p}$
 (\cref{rmk:lambda-ring}),
-closure of $\{1,\chi_4,\chi_5,\chi_4\chi\_5\}$ under multiplication
+closure of $\{1,\chi_4,\chi_5,\chi_4\chi_5\}$ under multiplication
 (\cref{thm:dedekind-natural}),
 and monoidal multiplicativity of partial Euler products
 (\cref{rmk:monoidal}).
@@ -390,15 +390,15 @@ $c = 3$, and the diagonal obstruction
 (\cref{ssec:unifying}, \cref{lem:ads-radius}).
 
 The algebraic and spectral results of \cref{sec:bridges,ssec:unifying} have been formally verified in Lean~$4$: eigenvalue real parts
-(\lean{eigenvalue\_half}), spectral uniqueness
-(\lean{spectral\_uniqueness}), the Galois functor
-(\lean{galois_functor\_complete},~\cite{V11}), and the
+(\lean{eigenvalue_half}), spectral uniqueness
+(\lean{spectral_uniqueness}), the Galois functor
+(\lean{galois_functor_complete},~\cite{V11}), and the
 pentagonal identity $\golden = 2\cos(\pi/5)$
-(\lean{cos_pi_div_five\_eq}, \lean{pentagon\_identity}).
+(\lean{cos_pi_div_five_eq}, \lean{pentagon_identity}).
 
 Table~\ref{tab:lean-audit} lists the correspondence between
 the paper's results and the Lean identifiers in
-\lean{odd_zeta_pcf\_v1.lean}.
+\lean{odd_zeta_pcf_v1.lean}.
 
 \begin{table}[ht]
 \centering
@@ -412,52 +412,52 @@ The single axiom is $\golden^2=\golden+1$.}
 Paper result & Lean identifier & Method \\
 \midrule
 \multicolumn{3}{l}{\textbf{Part 1: PCF isomorphism chain}} \\
-$\golden^2=\golden+1$ & \lean{phi\_sq} & axiom \\
-$4(\golden/2)^2-2(\golden/2)-1=0$ & \lean{phi_half\_quadratic} & \texttt{nlinarith} \\
-$\cos(5\theta)$ expansion & \lean{cos_five\_mul} & \texttt{nlinarith} \\
-$\cos(\pi/5)>0$ & \lean{cos_pi_five\_pos} & monotonicity \\
-$4\cos^2(\pi/5)-2\cos(\pi/5)-1=0$ & \lean{cos_pi_five\_quadratic} & unique root \\
-$\golden = 2\cos(\pi/5)$ & \lean{pentagon\_identity} & \texttt{linarith} \\
-$\vert\mathbb{Z}_{20}^\times\vert=8$ & \lean{Z20star\_card} & \texttt{decide} \\
-Mult.\ closed & \lean{mul\_closed} & \texttt{decide} \\
-Add.\ destroyed & \lean{add\_destroyed} & \texttt{decide} \\
-$G$ homomorphism & \lean{G\_hom} & \texttt{decide} \\
-$G$ surjective & \lean{G\_surj} & \lean{fin\_cases} \\
-$\vert\ker G\vert=2$ & \lean{G\_kernel} & \texttt{decide} \\
-Exponent $2$ & \lean{exponent\_two} & \texttt{decide} \\
-$\mu_2/\mu_3 = 2 = \vert\ker G\vert$ & \lean{contraction_is\_kernel} & \lean{norm\_num} \\
-$(\sigma,\mu)=(3/2,1/2)$ unique & \lean{spectral\_uniqueness} & \texttt{nlinarith} \\
-Diagonal blocked & \lean{diagonal\_blocked} & \texttt{nlinarith} \\
-$\mathrm{Re}(\omega_{\mathrm{pcf}})=-1/2$ & \lean{omega\_properties} & \lean{exp\_mul\_I} \\
-$\mathrm{Re}>0 \implies \mathrm{Re}=1/2$ & \lean{eigenvalue\_half} & exhaustion \\
+$\golden^2=\golden+1$ & \lean{phi_sq} & axiom \\
+$4(\golden/2)^2-2(\golden/2)-1=0$ & \lean{phi_half_quadratic} & \texttt{nlinarith} \\
+$\cos(5\theta)$ expansion & \lean{cos_five_mul} & \texttt{nlinarith} \\
+$\cos(\pi/5)>0$ & \lean{cos_pi_five_pos} & monotonicity \\
+$4\cos^2(\pi/5)-2\cos(\pi/5)-1=0$ & \lean{cos_pi_five_quadratic} & unique root \\
+$\golden = 2\cos(\pi/5)$ & \lean{pentagon_identity} & \texttt{linarith} \\
+$\vert\mathbb{Z}_{20}^\times\vert=8$ & \lean{Z20star_card} & \texttt{decide} \\
+Mult.\ closed & \lean{mul_closed} & \texttt{decide} \\
+Add.\ destroyed & \lean{add_destroyed} & \texttt{decide} \\
+$G$ homomorphism & \lean{G_hom} & \texttt{decide} \\
+$G$ surjective & \lean{G_surj} & \lean{fin_cases} \\
+$\vert\ker G\vert=2$ & \lean{G_kernel} & \texttt{decide} \\
+Exponent $2$ & \lean{exponent_two} & \texttt{decide} \\
+$\mu_2/\mu_3 = 2 = \vert\ker G\vert$ & \lean{contraction_is_kernel} & \lean{norm_num} \\
+$(\sigma,\mu)=(3/2,1/2)$ unique & \lean{spectral_uniqueness} & \texttt{nlinarith} \\
+Diagonal blocked & \lean{diagonal_blocked} & \texttt{nlinarith} \\
+$\mathrm{Re}(\omega_{\mathrm{pcf}})=-1/2$ & \lean{omega_properties} & \lean{exp_mul_I} \\
+$\mathrm{Re}>0 \implies \mathrm{Re}=1/2$ & \lean{eigenvalue_half} & exhaustion \\
 \midrule
 \multicolumn{3}{l}{\textbf{Part 2: Isomorphism with Euler product}} \\
-$\forall p>5$: $p\bmod 20\in\mathbb{Z}_{20}^\times$ & \lean{primes_land_in\_Z20star} & \texttt{omega+decide} \\
-$\chi_5$ from $G$ & \lean{chi5_from\_G} & \texttt{rfl} \\
-$\chi_5$ classification & \lean{chi5\_values} & \texttt{decide} \\
-$\chi_5(p)\equiv F_p\pmod{p}$ & \lean{fib_split\_criterion} & \lean{native\_decide} \\
-$f_p$ type from $G$ & \lean{euler_type_from\_G} & \texttt{rfl} \\
+$\forall p>5$: $p\bmod 20\in\mathbb{Z}_{20}^\times$ & \lean{primes_land_in_Z20star} & \texttt{omega+decide} \\
+$\chi_5$ from $G$ & \lean{chi5_from_G} & \texttt{rfl} \\
+$\chi_5$ classification & \lean{chi5_values} & \texttt{decide} \\
+$\chi_5(p)\equiv F_p\pmod{p}$ & \lean{fib_split_criterion} & \lean{native_decide} \\
+$f_p$ type from $G$ & \lean{euler_type_from_G} & \texttt{rfl} \\
 \midrule
 \multicolumn{3}{l}{\textbf{Part 3: Transport}} \\
-$\zeta$ spectral $=$ PCF & \lean{spectral\_identification} & \texttt{rfl} \\
-Transport principle & \lean{transport\_spectral} & rewrite \\
-$\zeta$ positive $\implies \mathrm{Re}(s)=1/2$ & \lean{zeta_positive_spectral\_half} & transport \\
+$\zeta$ spectral $=$ PCF & \lean{spectral_identification} & \texttt{rfl} \\
+Transport principle & \lean{transport_spectral} & rewrite \\
+$\zeta$ positive $\implies \mathrm{Re}(s)=1/2$ & \lean{zeta_positive_spectral_half} & transport \\
 \midrule
 \multicolumn{3}{l}{\textbf{Part 4: $\mathbb{F}_1$-descent, Weil, physics}} \\
-$z^2 = zy + y^2$ & \lean{self\_measurement} & \texttt{nlinarith} \\
-$\psi_p\circ\psi_q = \psi_{pq}$ & \lean{frobenius\_composition} & \lean{pow\_mul} \\
-$\mathbb{F}_1$-descent data & \lean{F1_descent\_data} & conjunction \\
-Weil analogy & \lean{weil\_analogy} & conjunction \\
-$\mu_3^2 = 1/4$ & \lean{mu3\_squared} & \lean{norm\_num} \\
-$1-\mu_3^2 = 3/4$ & \lean{holographic\_ratio} & \lean{norm\_num} \\
-$c = 3\ell/(2G_N) = 3$ & \lean{brown\_henneaux\_c} & \lean{norm\_num} \\
-$1/(4G_N) = \mu_3$ & \lean{BH\_factor} & \lean{norm\_num} \\
-$-1/i = i$ (S-duality) & \lean{S\_duality\_fixed} & \lean{Complex.I\_mul\_I} \\
-$\ell=1/\ell \implies \ell=1$ & \lean{ads\_radius\_one} & \texttt{nlinarith} \\
-$\bar\golden = 1-\golden$ & \lean{phi\_bar\_eq} & \lean{field\_simp} \\
-$\mathrm{Tr}(\golden) = 1$ & \lean{trace\_one} & \texttt{ring} \\
-$N(\golden) = -1$ & \lean{norm\_neg\_one} & \lean{field\_simp} \\
-$\mathrm{disc}(\mathbb{Q}(\sqrt{5})) = 5$ & \lean{discriminant\_five} & \texttt{nlinarith} \\
+$z^2 = zy + y^2$ & \lean{self_measurement} & \texttt{nlinarith} \\
+$\psi_p\circ\psi_q = \psi_{pq}$ & \lean{frobenius_composition} & \lean{pow_mul} \\
+$\mathbb{F}_1$-descent data & \lean{F1_descent_data} & conjunction \\
+Weil analogy & \lean{weil_analogy} & conjunction \\
+$\mu_3^2 = 1/4$ & \lean{mu3_squared} & \lean{norm_num} \\
+$1-\mu_3^2 = 3/4$ & \lean{holographic_ratio} & \lean{norm_num} \\
+$c = 3\ell/(2G_N) = 3$ & \lean{brown_henneaux_c} & \lean{norm_num} \\
+$1/(4G_N) = \mu_3$ & \lean{BH_factor} & \lean{norm_num} \\
+$-1/i = i$ (S-duality) & \lean{S_duality_fixed} & \lean{Complex.I_mul_I} \\
+$\ell=1/\ell \implies \ell=1$ & \lean{ads_radius_one} & \texttt{nlinarith} \\
+$\bar\golden = 1-\golden$ & \lean{phi_bar_eq} & \lean{field_simp} \\
+$\mathrm{Tr}(\golden) = 1$ & \lean{trace_one} & \texttt{ring} \\
+$N(\golden) = -1$ & \lean{norm_neg_one} & \lean{field_simp} \\
+$\mathrm{disc}(\mathbb{Q}(\sqrt{5})) = 5$ & \lean{discriminant_five} & \texttt{nlinarith} \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -465,11 +465,11 @@ $\mathrm{disc}(\mathbb{Q}(\sqrt{5})) = 5$ & \lean{discriminant\_five} & \texttt{
 The categorical structures of \cref{sec:categorical-framework}---the
 Frobenius functor (functoriality verified via
 $\psi_p\circ\psi_q=\psi_{pq}$), the co-determination theorem
-(reducing to \lean{G\_hom}, \lean{G\_surj},
-\lean{G\_kernel} in \lean{odd\_zeta\_pcf\_v1.lean};
-equivalently \lean{G\_hom}, \lean{G\_surj},
-\lean{G\_kernel} in~\cite{V11}), and the spectral uniqueness
-(\lean{spectral\_uniqueness})---are
+(reducing to \lean{G_hom}, \lean{G_surj},
+\lean{G_kernel} in \lean{odd_zeta_pcf_v1.lean};
+equivalently \lean{G_hom}, \lean{G_surj},
+\lean{G_kernel} in~\cite{V11}), and the spectral uniqueness
+(\lean{spectral_uniqueness})---are
 verified through the Lean~$4$ formalisation of the Primitive
 Structure~\cite{V11}.
 
@@ -491,7 +491,7 @@ values $\zeta_{\mathbb{Q}(\sqrt{5})}(2k+1)$ via the Kronecker limit formula or S
 \end{openproblem}
 
 \begin{openproblem}\label{op:lean-dirichlet}
-The accompanying Lean~$4$ file \lean{odd_zeta_pcf\_v1.lean}
+The accompanying Lean~$4$ file \lean{odd_zeta_pcf_v1.lean}
 formalises the algebraic chain (pentagon identity, Fibonacci splitting
 criterion, $G$, eigenvalues, additive destruction, diagonal obstruction)
 with zero \texttt{sorry} statements and one axiom ($\golden^2=\golden+1$);
@@ -504,7 +504,7 @@ the spectral mapping theorem for Banach algebras, and the
 identity theorem for analytic continuation.
 When these become available, can the full span
 (\cref{def:pcf-span}) be formalised, thereby
-converting the \lean{bridge\_axiom} of the Primitive
+converting the \lean{bridge_axiom} of the Primitive
 Structure~\cite{V11} from an axiom to a theorem?
 \end{openproblem}
 
@@ -623,9 +623,9 @@ The chain from the pentagon to the odd zeta values
   \;\to\;
   \chi_5(a)=\tfrac{\log|2\cos(a\pi/5)|}{\log\golden}\\[3pt]
   &\quad\to\;
-  L(s,\chi_5)=\tfrac{\textstyle\sum_a\chi\_5(a)\,\zeta(s,a/5)}{5^s}
+  L(s,\chi_5)=\tfrac{\textstyle\sum_a\chi_5(a)\,\zeta(s,a/5)}{5^s}
   \;\to\;
-  \zeta(2k+1)=\tfrac{\zeta_{\mathbb{Q}(\sqrt{5})}(2k+1)}{L(2k+1,\chi\_5)},
+  \zeta(2k+1)=\tfrac{\zeta_{\mathbb{Q}(\sqrt{5})}(2k+1)}{L(2k+1,\chi_5)},
 \end{split}
 \]
 shows that the odd zeta values $\zeta(2k+1)$ are structurally
@@ -651,7 +651,7 @@ The dimensional structure emerges deterministically
   \;\to\;
   \underbrace{\mu_3 = \tfrac{1}{2}}_{\textup{norm}}
   \;\to\;
-  \underbrace{S\_3}_{\textup{symmetry}}
+  \underbrace{S_3}_{\textup{symmetry}}
   \;\to\;
   \underbrace{E^3,\; c=3.}_{\textup{geometry}}
 \]
@@ -672,7 +672,7 @@ is a natural isomorphism across the four quadratic extensions
 classified by $G$; and the two branches---arithmetic (values of
 $\zeta$) and spectral (eigenvalues of $\OmH$)---form a span with
 common source $G$.  This span provides the mathematical content of
-the \lean{bridge\_axiom} formalised in the Primitive
+the \lean{bridge_axiom} formalised in the Primitive
 Structure~\cite{V11}: the single map $G$ that produces the odd zeta
 values also produces the spectral constraint $\mu_3=1/2$.
 

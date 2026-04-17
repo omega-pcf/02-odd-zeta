@@ -16,7 +16,7 @@ $\log\golden$ being transcendental (Lindemann--Weierstrass~\cite{lindemann1882za
 
 The key identity is the Dedekind factorisation
 \begin{equation}\label{eq:main-factorization}
-  \zeta(s) = \frac{\zeta_{\mathbb{Q}(\sqrt{5})}(s)}{L(s,\chi\_5)},
+  \zeta(s) = \frac{\zeta_{\mathbb{Q}(\sqrt{5})}(s)}{L(s,\chi_5)},
 \end{equation}
 where the Artin character $\chi_5$ is dictated by the pentagon:
 \begin{equation}\label{eq:chi5-pentagon}
@@ -115,13 +115,13 @@ at~$1/2$. The squeeze itself is formally verified in Lean~4.
 However, the step connecting the categorical
 machinery to the zeros of~$\zeta$---the identification of
 $\mathrm{Re}(\rho)$ with an eigenvalue of~$\OmH$---is left as an
-axiom (\lean{bridge\_axiom}, equivalently the structure field
+axiom (\lean{bridge_axiom}, equivalently the structure field
 \texttt{bounded\_by\_mu :\ $\rho_{\mathrm{re}}\le\mu_3$} of
 \texttt{TernaryLZero}, Definition~7 of~\cite{V11}).
 
 The axiom states $\rho_{\mathrm{re}}\le\mu_3=1/2$: it is
 Premise~A of the squeeze (Proposition~3 of~\cite{V11}).
-Once provided, \lean{hecke\_1920}
+Once provided, \lean{hecke_1920}
 derives the companion bound $1-\rho_{\mathrm{re}}\le\mu_3$
 (Premise~B in Theorem~10 of~\cite{V11}), and the two together force
 $\rho_{\mathrm{re}}=1/2$ by \texttt{linarith}.  The mathematical
@@ -193,7 +193,7 @@ the fundamental formula, the even-value consistency, and the
 pentagonal source of the determination.
 In \cref{sec:bridges}, we derive the physical invariants (Bekenstein--Hawking
 entropy, central charge $c=3$, AdS radius $\ell=1$) and discharge
-the \lean{bridge\_axiom} of the Primitive Structure~\cite{V11}.
+the \lean{bridge_axiom} of the Primitive Structure~\cite{V11}.
 In \cref{sec:categorical-framework}, we formalise the arithmetic--spectral span
 and the Weil analogy.
 We conclude in \cref{sec:elvang} with the discussion, open problems,

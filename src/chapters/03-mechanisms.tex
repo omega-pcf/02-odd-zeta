@@ -43,7 +43,7 @@ congruent to $\golden$ or $\bar\golden$ modulo $p$ determines the splitting.
 
 \begin{theorem}[Factorisation]\label{thm:factorisation}
 \begin{equation}\label{eq:factorisation}
-  \zeta(s) = \frac{\zeta_{\mathbb{Q}(\sqrt{5})}(s)}{L(s,\chi\_5)},
+  \zeta(s) = \frac{\zeta_{\mathbb{Q}(\sqrt{5})}(s)}{L(s,\chi_5)},
 \end{equation}
 where $L(s,\chi_5) = \prod_p(1-\chi_5(p)p^{-s})^{-1}$ is the Dirichlet
 $L$-function of the symbol $\chi_5 = (5/\cdot)$.
@@ -96,7 +96,7 @@ With class number $h_{\mathbb{Q}(\sqrt{5})} = 1$, regulator $R_{\mathbb{Q}(\sqrt
 $w=2$, and discriminant $\Delta=5$:
 \[
   \lim_{s\to 1}(s-1)\,\zeta_{\mathbb{Q}(\sqrt{5})}(s)
-  = \frac{2^{r\_1}(2\pi)^{r\_2}hR}{w\sqrt{\Delta}}
+  = \frac{2^{r_1}(2\pi)^{r_2}hR}{w\sqrt{\Delta}}
   = \frac{4\cdot 1\cdot 1\cdot\log\golden}{2\sqrt{5}}
   = \frac{2\log\golden}{\sqrt{5}}.
 \]
@@ -122,15 +122,15 @@ $T^2_{\mathrm{PCF}}$---is present from the outset.
 For $k \geq 1$:
 \begin{equation}\label{eq:Lchi-even}
   L(2k,\chi_5)
-  = \frac{(-1)^{k+1}\sqrt{5}\,(2\pi)^{2k}\,B_{2k,\chi\_5}}
+  = \frac{(-1)^{k+1}\sqrt{5}\,(2\pi)^{2k}\,B_{2k,\chi_5}}
          {2\,(2k)!\,5^{2k}},
 \end{equation}
-where $B_{2k,\chi\_5} \in \mathbb{Q}$ are the generalised Bernoulli numbers:
+where $B_{2k,\chi_5} \in \mathbb{Q}$ are the generalised Bernoulli numbers:
 \[
-  B_{n,\chi\_5} = 5^{n-1}\sum_{a=1}^{5}\chi_5(a)\,B_n\!\left(\tfrac{a}{5}\right).
+  B_{n,\chi_5} = 5^{n-1}\sum_{a=1}^{5}\chi_5(a)\,B_n\!\left(\tfrac{a}{5}\right).
 \]
-Computed values: $B_{2,\chi\_5}=\tfrac{4}{5}$,
-$B_{4,\chi\_5}=-8$, $B_{6,\chi\_5}=\tfrac{804}{5}$, $B_{8,\chi\_5}=-5776$.
+Computed values: $B_{2,\chi_5}=\tfrac{4}{5}$,
+$B_{4,\chi_5}=-8$, $B_{6,\chi_5}=\tfrac{804}{5}$, $B_{8,\chi_5}=-5776$.
 \end{theorem}
 
 \begin{proof}
@@ -198,7 +198,7 @@ primitive even characters with conductor $f$ and Gauss sum
 $\tau(\chi_5)=\sqrt{5}$:
 \begin{equation}\label{eq:gauss-lerch}
   L(1,\chi_5)
-  = -\frac{\tau(\chi\_5)}{f}\sum_{a=1}^{f-1}\chi_5(a)
+  = -\frac{\tau(\chi_5)}{f}\sum_{a=1}^{f-1}\chi_5(a)
       \log\!\Bigl(2\sin\tfrac{\pi a}{f}\Bigr)
   = -\frac{\sqrt{5}}{5}\cdot(-2\log\golden)
   = \frac{2\log\golden}{\sqrt{5}}
@@ -241,7 +241,7 @@ completely determined by the pentagon through:
 \end{equation}
 Equivalently:
 \begin{equation}\label{eq:norm-cosine-phi}
-  |2\cos(\pi a/5)| = \golden^{\chi\_5(a)}.
+  |2\cos(\pi a/5)| = \golden^{\chi_5(a)}.
 \end{equation}
 The four pentagonal cosines $2\cos(\pi a/5)\in\{\pm\golden,\pm\golden^{-1}\}$
 are the four images of the Galois functor
@@ -286,7 +286,7 @@ The chain is:
   &\quad\Rightarrow\;
   L(s,\chi_5) = \tfrac{1}{5^s}\textstyle\sum_a \chi_5(a)\,\zeta(s,\tfrac{a}{5})
   \;\Rightarrow\;
-  \zeta(2k+1) = \tfrac{\zeta_{\mathbb{Q}(\sqrt{5})}(2k+1)}{L(2k+1,\chi\_5)}.
+  \zeta(2k+1) = \tfrac{\zeta_{\mathbb{Q}(\sqrt{5})}(2k+1)}{L(2k+1,\chi_5)}.
 \end{split}\]
 The values $\zeta(2k+1)$ that appear as free parameters in the EFT of
 Elvang et al.\ are not free: they are Hurwitz projections at the
@@ -412,7 +412,7 @@ $\zeta_{\mathbb{Q}(\sqrt{5})}(3) = \prod_p f_p(3)$ and
 $L(3,\chi_5) = \prod_p(1-\chi_5(p)p^{-3})^{-1}$.
 Their ratio gives
 \[
-  \zeta(3) = \frac{\zeta_{\mathbb{Q}(\sqrt{5})}(3)}{L(3,\chi\_5)} = 1.2020569\ldots
+  \zeta(3) = \frac{\zeta_{\mathbb{Q}(\sqrt{5})}(3)}{L(3,\chi_5)} = 1.2020569\ldots
 \]
 Every factor in both products is determined by $\chi_5(p)$,
 which is determined by $F_p\bmod p$
@@ -522,7 +522,7 @@ a 1D generator produces a result outside\/ $\mathbb{R}$; the discrepancy
 constitutes the imaginary axis.
 
 (ii) \textbf{$\mathbb{C}\to E^3$:} The ambient space $\mathbb{R}^3$ has canonical basis
-$\{e_1,e_2,e\_3\}$. The coupling $z = \golden y$ identifies the
+$\{e_1,e_2,e_3\}$. The coupling $z = \golden y$ identifies the
 third coordinate with the second scaled by~$\golden$, giving
 $E^3 = \{x\,e_1 + y(e_2 + \golden\,e_3) : x,y\in\mathbb{R}\}$.
 This is a two-dimensional subspace of~$\mathbb{R}^3$: the third
@@ -579,7 +579,7 @@ of $\mathbb{Q}(\sqrt{5})$---an inherently two-dimensional object.
 Under the identification of \cref{prop:dim-chain} and
 \cref{rmk:frobenius-selfmeas}, the factorisation
 \[
-  \zeta(s) = \frac{\zeta_{\mathbb{Q}(\sqrt{5})}(s)}{L(s,\chi\_5)}
+  \zeta(s) = \frac{\zeta_{\mathbb{Q}(\sqrt{5})}(s)}{L(s,\chi_5)}
 \]
 (\cref{thm:factorisation}) admits a reading as dimensional
 projection: the one-dimensional $\zeta(s)$ (primes over

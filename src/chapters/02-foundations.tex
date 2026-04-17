@@ -232,7 +232,7 @@ the localization at~$2$ connects to the binary structure.
       \;\to\;
       \underbrace{\chi_5(p) = F\_p\bmod p}_{\text{Artin char.}}
       \;\to\;
-      \underbrace{G(p\bmod 20)=(\chi_4(p),\chi\_5(p))}_{\text{class functor}} \\[6pt]
+      \underbrace{G(p\bmod 20)=(\chi_4(p),\chi_5(p))}_{\text{class functor}} \\[6pt]
        & \qquad\qquad\qquad\qquad\qquad\;\to\;
       \underbrace{\zeta_{\mathbb{Q}(\sqrt{5})}(s)=\textstyle\prod_p f_p(s)}_{\text{Euler product}}
       \;\to\;
@@ -276,8 +276,8 @@ of this group has two key properties:
 
 \begin{proof}
 Both statements are decidable by exhaustive check over the
-$64 = 8 \times 8$ pairs (Lean: \lean{mul\_closed} and
-\lean{add\_destroyed}, both verified by \texttt{decide};
+$64 = 8 \times 8$ pairs (Lean: \lean{mul_closed} and
+\lean{add_destroyed}, both verified by \texttt{decide};
 cf.~Proposition~2 of~\cite{V11}).
 Intuition for (ii): every element of $\Ztwenty$ is odd, so every
 sum $a + b$ is even, hence not coprime to $20$, hence not in

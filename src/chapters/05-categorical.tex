@@ -64,7 +64,7 @@ The \emph{Frobenius functor} of $\Rpcf$ is the monoid homomorphism
 $\Psi$ preserves composition and identity:
 $\Psi(mn) = \Psi(m)\circ\Psi(n)$ and $\Psi(1)=\mathrm{id}_{\Rpcf}$.
 The restriction to primes generates $\Psi$ through
-$\Psi(p_1^{a\_1}\cdots p_k^{a\_k}) = \psi_{p\_1}^{a\_1}\circ\cdots\circ\psi_{p\_k}^{a\_k}$.
+$\Psi(p_1^{a_1}\cdots p_k^{a\_k}) = \psi_{p_1}^{a_1}\circ\cdots\circ\psi_{p\_k}^{a\_k}$.
 \end{proposition}
 
 \begin{proof}
@@ -84,7 +84,7 @@ constituting $\mathbb{F}_1$-descent data.
 The decidability of this descent is ensured by the
 \emph{additive destruction} of $\Ztwenty$ (\cref{prop:Z20-arithmetic}),
 which isolates the multiplicative fragment
-(Lean: \lean{F1_descent\_data}).
+(Lean: \lean{F1_descent_data}).
 \end{remark}
 
 \begin{lemma}[From Frobenius to Euler factors]\label{lem:psi-to-euler}
@@ -197,7 +197,7 @@ $\mathbb{Q}(\sqrt{-5})$ & $\chi_4\chi_5$ &
 \bottomrule
 \end{tabular}
 \end{center}
-The four characters $\{1,\chi_4,\chi_5,\chi_4\chi\_5\}$ are exactly
+The four characters $\{1,\chi_4,\chi_5,\chi_4\chi_5\}$ are exactly
 the four characters of $\mathbb{Z}_2\times\mathbb{Z}_2$
 (\cref{thm:bridge3}), one for each fiber of~$G$.
 \end{theorem}
@@ -234,7 +234,7 @@ $8$ morphisms, and:
 \begin{enumerate}
 \item[\textup{(i)}] $F_{\mathrm{arith}}$:
   $\mathbf{B}\Ztwenty \xrightarrow{G}
-  \mathbf{B}(\mathbb{Z}_2{\times}\mathbb{Z}_2) \xrightarrow{\chi\_5}
+  \mathbf{B}(\mathbb{Z}_2{\times}\mathbb{Z}_2) \xrightarrow{\chi_5}
   \{f\_p\} \xrightarrow{\varinjlim} \zeta_{\mathbb{Q}(\sqrt{5})}(s)
   \xrightarrow{\eta^{-1}} \zeta(s)$.
 \item[\textup{(ii)}] $F_{\mathrm{spec}}$:
@@ -261,8 +261,8 @@ The two branches are co-determined by $G$:
 \item[\textup{(c)}] Both reduce to properties of $G$
   (Definition~5 of~\cite{V11}) verified
   in Lean~$4$:
-  \lean{G\_hom}, \lean{G\_surj},
-  \lean{G\_kernel} (\cite{V11}).
+  \lean{G_hom}, \lean{G_surj},
+  \lean{G_kernel} (\cite{V11}).
 \end{enumerate}
 \end{theorem}
 
@@ -274,7 +274,7 @@ The two branches are co-determined by $G$:
 (b) $|\ker G|=2$ $\to$ $\mu_3=1/2$ $\to$ arity uniqueness $\to$
 $S_3$ $\to$ $\omega^k/2$.
 (c) Lean identifiers from
-\lean{PCF_Complete_v11\_Unified.lean}~(\cite{V11}).
+\lean{PCF_Complete_v11_Unified.lean}~(\cite{V11}).
 \end{proof}
 
 \begin{corollary}[Diagram coherence]\label{cor:diagram-coherence}
@@ -289,8 +289,8 @@ $\zeta(s)$ also produces $\mathrm{spec}(\OmH)$.
 % ------------------------------------------------------------------
 
 The arithmetic--spectral span discharges the
-\lean{bridge\_axiom} of the Primitive Structure~\cite{V11}:
-the hypothesis \lean{bounded\_by\_mu} ($\rho_{\mathrm{re}}\le\mu_3$)
+\lean{bridge_axiom} of the Primitive Structure~\cite{V11}:
+the hypothesis \lean{bounded_by_mu} ($\rho_{\mathrm{re}}\le\mu_3$)
 is not an independent assumption but the conjunction of
 (a)~the Euler product colimit (present work),
 (b)~analytic continuation (Riemann~\cite{Riemann}),
@@ -314,12 +314,12 @@ Definition~7 of~\cite{V11} is established
 by the co-determination theorem (\cref{thm:co-determination}):
 the same $G$ that produces $\mu_3 = 1/2$ also produces $\zeta(s)$
 via the Euler product, so $\rho_{\mathrm{re}}$ inherits the spectral
-bound.  The \lean{bridge\_axiom} thereby becomes a theorem.
+bound.  The \lean{bridge_axiom} thereby becomes a theorem.
 
 \begin{remark}[How the classical theorems operate on the span]%
 \label{rmk:classical-bridge}
 The Primitive Structure~\cite{V11} cites three classical results as
-justification for \lean{bridge\_axiom}: Euler~\cite{Euler},
+justification for \lean{bridge_axiom}: Euler~\cite{Euler},
 Gelfand~\cite{Gelfand}, and Dunford--Schwartz~\cite{DunfordSchwartz}.
 The categorical framework developed in the current study identifies the
 \emph{concrete object} on which each operates.
@@ -339,7 +339,7 @@ the specific colimit assembled by~$G$.
 The Gelfand spectrum of a commutative Banach algebra of Dirichlet
 series consists of multiplicative evaluations at primes.
 Restricted to $\Ztwenty$, these evaluations are classified by~$G$
-into exactly four characters $\{1,\chi_4,\chi_5,\chi_4\chi\_5\}$---the
+into exactly four characters $\{1,\chi_4,\chi_5,\chi_4\chi_5\}$---the
 dual group of $\mathbb{Z}_2\times\mathbb{Z}_2$
 (\cref{thm:dedekind-natural}).
 Each character determines an $L$-function; the four $L$-functions
