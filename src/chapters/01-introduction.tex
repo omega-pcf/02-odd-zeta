@@ -66,13 +66,13 @@ The lower branch produces the spectral structure: $|\ker G| = 2$
 forces $\mu_3 = 1/2$, which determines $S_3$ symmetry, eigenvalues
 $\omega^k/2$, the AdS radius $\ell = 1$ (from S-duality at
 $\tau_{\mathrm{PCF}} = i$), and the Brown--Henneaux~\cite{BrownHenneaux}
-central charge $c = 3\ell/(2G_{\mathrm{N}}) = 3$
+central charge $c = 3\ell/(2G_N) = 3$
 (\cref{ssec:unifying}, \cref{lem:spectral-re}
 and \cref{lem:ads-radius}).
 The regulator $R = \log\golden$ links both branches: it is the
 arithmetic size of the field ($L(1,\chi_5) = 2R/\sqrt{5}$), the
 worldsheet period ($T = 2\pi R$), and the entropy anchor
-($S_{\mathrm{BH}}/k_{\mathrm{B}} = \lambda_{\log}\cdot R$).
+($S_{\mathrm{BH}}/k_B = \lambda_{\log}\cdot R$).
 \Cref{sec:categorical-framework} makes the categorical content
 explicit: $\{\psi_p\}$ is a functor, the Euler product is a colimit,
 the Dedekind factorisation is a natural isomorphism across the four
@@ -92,17 +92,6 @@ The Primitive Structure establishes the functorial transport of the
 eigenvalue constraint $\mathrm{Re}>0 \Rightarrow \mathrm{Re}=1/2$
 from $\OmH$ to~$\zeta$ across the full critical strip; the present
 paper provides the \emph{mechanism} underlying that transport.
-The spectral identification (verified through the $G$-homomorphism
-\lean{G_hom}, $G$-surjectivity \lean{G_surj}, and parity $|\ker G|=2$
-in \lean{odd_zeta_pcf_v1.lean}) forces $\mu_3 = 1/2$, delivering
-$S_3$ symmetry and fixing the lower bound on the eigenvalue.
-The odd values $\zeta(2k+1)$ then arise as the remaining
-non-vanishing components of the PCF partition function after the
-even values have been factored out by the pentagon.
-The full determination of the odd values represents the complete
-discharging of the \lean{bridge_axiom}, equivalently the structure field
-\lean{bounded_by_mu} (satisfying $\mathrm{Re}(\rho)\le\mu_3$) of
-the PCF torus, derived from $\golden^2 = \golden + 1$.
 
 %%% ====================================================================
 \subsection{Context}\label{sec:context}
@@ -199,5 +188,5 @@ entropy, central charge $c=3$, AdS radius $\ell=1$) and discharge
 the \lean{bridge_axiom} of the Primitive Structure~\cite{V11}.
 In \cref{sec:categorical-framework}, we formalise the arithmetic--spectral span
 and the Weil analogy.
-We conclude in \cref{sec:discussion} with the discussion, open problems,
-and summary.
+We conclude in \cref{sec:discussion} with a summary of the results,
+verification metrics, and open problems.

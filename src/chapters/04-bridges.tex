@@ -2,13 +2,20 @@
 %%% ====================================================================
 
 The preceding sections established $\zeta(2k+1)$ as determined by the
-arithmetic-geometric structure of $T^2_{\mathrm{PCF}}$.  We now derive
-three results connecting the PCF torus to string theory and holography,
-discharging the \lean{bridge_axiom} and resolving the Physical Formalization
-(Open Problem~3) of the Primitive Structure~\cite{V11}: making rigorous the
-structural content of $\mu_3^2 = 1/4$ in the
-Bekenstein--Hawking formula and the relationship between the PCF tower
-and the Virasoro algebra.
+arithmetic-geometric structure of $T^2_{\mathrm{PCF}}$.  The spectral
+parameter $\mu_3 = 1/2$ that governs this determination has two faces:
+it is the Bekenstein--Hawking area factor ($\mu_3^2 = 1/4$, the structural
+content of $1/(4G_{\mathrm{N}})$) and the spectral bound
+($\rho_{\mathrm{re}} \leq \mu_3$, the hypothesis formalised as
+\texttt{bridge\_axiom} in the Primitive Structure~\cite{V11}).
+This section derives both from the PCF torus:
+\cref{ssec:worldline-entropy,ssec:bridge-BH,sec:regulator,ssec:bridge-partition}
+establish the physical invariants, resolving the Physical Formalization
+(Open Problem~3) of~\cite{V11};
+\cref{ssec:bridge-Z2,ssec:unifying} discharge the \texttt{bridge\_axiom}
+through the co-determination by~$G$.
+\Cref{ssec:unifying} develops the unification of the generator
+$\golden^2 = \golden + 1$ across both readings.
 
 % ------------------------------------------------------------------
 \subsection{The worldline entropy ($\mathbb{F}_1$-descent)}\label{ssec:worldline-entropy}
@@ -97,7 +104,7 @@ holographic anchor.
 \end{remark}
 
 % ------------------------------------------------------------------
-\subsection{Bekenstein--Hawking entropy and \texorpdfstring{$L$}{L}-values}%
+\subsection{Bekenstein--Hawking entropy as \texorpdfstring{$L$}{L}-value}%
 \label{ssec:bridge-BH}
 % ------------------------------------------------------------------
 
@@ -229,7 +236,7 @@ by \cref{def:Rpcf} and \cref{thm:mersenne}.
 \end{proof}
 
 % ------------------------------------------------------------------
-\subsection{Geometric unity at \texorpdfstring{$\tau_{\mathrm{PCF}}=i$}{tau\_PCF = i}}%
+\subsection{Common origin at \texorpdfstring{$\tau_{\mathrm{PCF}}=i$}{tau\_PCF = i}}%
 \label{ssec:bridge-partition}
 % ------------------------------------------------------------------
 
@@ -287,7 +294,7 @@ sides of $T^2_{\mathrm{PCF}}$~-- modular and arithmetic~-- are derived.
 \end{proof}
 
 % ------------------------------------------------------------------
-\subsection{Algebraic symmetry via \texorpdfstring{$\mathbb{Z}_2\times\mathbb{Z}_2$}{Z2 x Z2}}%
+\subsection{Co-determination by \texorpdfstring{$G$}{G}}%
 \label{ssec:bridge-Z2}
 % ------------------------------------------------------------------
 
@@ -403,35 +410,36 @@ bound.
 % ------------------------------------------------------------------
 
 \begin{enumerate}
-\item \textbf{Intrinsic correspondence:}
-  $S_{\mathrm{BH}} = k_{\mathrm{B}}\lambda_{\log}\tfrac{\sqrt{5}}{2}L(1,\chi_5)$.
-  Derived from $|\Omega|=1/2$ (\cref{prop:worldline-entropy})
-  and the Mersenne bridge; with vanishing error (see \cref{sec:verification}).
-\item \textbf{Geometric unity:}
-  $Z_{\mathrm{PCF}}(i)$ and $L(1,\chi_5)$ both arise from $\tau_{\mathrm{PCF}}=i$,
-  through modular and arithmetic aspects of $T^2_{\mathrm{PCF}}$ respectively.
-\item \textbf{Algebraic symmetry via $\mathbb{Z}_2\times\mathbb{Z}_2$:}
-  $\chi_5$ is the binary $(0,1)$-component of $G\colon\Ztwenty\to\mathbb{Z}_2\times\mathbb{Z}_2$
-  (\cref{thm:bridge3});
-  exponent~$2$ makes $\chi_5$ self-dual here and produces the spectral
-  constraint of the Primitive Structure~\cite{V11}.
+\item \textbf{BH entropy as $L$-value} (\cref{ssec:bridge-BH}):
+  $S_{\mathrm{BH}} = k_B\lambda_{\log}\tfrac{\sqrt{5}}{2}L(1,\chi_5)$.
+  Physical content of $\mu_3$: the area factor $1/4 = \mu_3^2$ is not
+  a free parameter.
+\item \textbf{Common origin at $\tau_{\mathrm{PCF}}=i$} (\cref{ssec:bridge-partition}):
+  $Z_{\mathrm{PCF}}(i)$ and $L(1,\chi_5)$ arise from the same modular
+  parameter. Geometric content of the torus.
+\item \textbf{Co-determination by $G$} (\cref{ssec:bridge-Z2}):
+  $\chi_5$ is the $(0,1)$-component of
+  $G\colon\Ztwenty\to\mathbb{Z}_2\times\mathbb{Z}_2$;
+  exponent~$2$ makes all characters self-dual, producing the spectral
+  constraint of the Primitive Structure~\cite{V11} and enabling
+  Hecke's companion bound. This provides the algebraic ingredient
+  enabling the bridge discharge of \cref{ssec:unifying}.
 \end{enumerate}
 
-Together, these physical results discharge the \lean{bridge_axiom} and resolve the
-Physical Formalization (Open Problem~3) of the Primitive Structure~\cite{V11}:
-the structural content of $\mu_3^2=1/4$ (equivalently $1/(4G_{\mathrm{N}})=\mu_3=1/2$) is the class-number
-formula $L(1,\chi_5)=2\log\golden/\sqrt{5}$ expressed as
-$S_{\mathrm{BH}}/k_{\mathrm{B}} = \lambda_{\log}(\sqrt5/2)L(1,\chi_5)$
-(Intrinsic correspondence); the Virasoro central charge $c=3$ arises from the same
-$S_3$ symmetry of $T^2_{\mathrm{PCF}}$ that fixes $\tau_{\mathrm{PCF}}=i$
-and hence both $Z_{\mathrm{PCF}}(i)$ and $L(1,\chi_5)$ (Geometric unity);
-and the $\chi_5$-character organising odd zeta values is the
-binary $(0,1)$-component of the Galois functor whose exponent-$2$ property
-discharges the \lean{bridge_axiom} of the Primitive Structure~\cite{V11} and
-produces the self-duality of $L(1,\chi_5)$ (Algebraic symmetry).
+Results 1--2 resolve the Physical Formalization (Open Problem~3)
+of the Primitive Structure~\cite{V11}: the structural content of
+$\mu_3^2=1/4$ is the class-number formula
+$L(1,\chi_5)=2\log\golden/\sqrt{5}$, and the Virasoro central
+charge $c=3$ arises from the same $S_3$ symmetry that fixes
+$\tau_{\mathrm{PCF}}=i$.
+
+Result 3 provides the algebraic ingredient for the bridge discharge:
+self-duality of all characters via exponent~$2$.
+The next subsection completes the discharge by establishing the
+spectral identification and the squeeze.
 
 % ------------------------------------------------------------------
-\subsection{The unifying generator}\label{ssec:unifying}
+\subsection{The unifying generator and the axiom discharge}\label{ssec:unifying}
 % ------------------------------------------------------------------
 
 We collect the results of \cref{sec:background,ssec:bridge-Z2}
@@ -688,6 +696,33 @@ Step (4) is the identity theorem for Dirichlet series
 Step (5) is \cref{cor:S3-from-euler} and
 \cref{lem:spectral-re}.
 \end{proof}
+
+\begin{remark}[The squeeze mechanism]\label{rmk:squeeze-mechanism}
+The Primitive Structure~\cite{V11} derives $\mathrm{Re}(\rho) = 1/2$
+from two independent bounds produced by the same map~$G$:
+\begin{enumerate}
+\item[\textup{(A)}] \textbf{Upper bound} ($\mathrm{Re}(\rho) \leq 1/2$):
+  Steps (1)--(5) of \cref{prop:spectral-id} show that $G$ determines
+  $\mathrm{spec}(\OmH) = \tfrac{1}{2}\{1,\omega,\omega^2\}$
+  with $\mathrm{Re}(\omega^k/2) \in \{1/2, -1/4\}$
+  (\cref{lem:spectral-re}). Since $G$ also produces $\zeta(s)$
+  via the Euler product, zeros of~$\zeta$ inherit the spectral
+  constraint: $\mathrm{Re}(\rho) \leq \mu_3 = 1/2$.
+\item[\textup{(B)}] \textbf{Companion bound} ($1 - \mathrm{Re}(\rho) \leq 1/2$):
+  The exponent-$2$ property of $\mathbb{Z}_2 \times \mathbb{Z}_2$
+  (\cref{cor:same-Z2}) makes all characters self-dual.
+  Hecke's 1920 theorem~\cite{Hecke} then gives:
+  $L(\rho,\chi) = 0 \Rightarrow L(1{-}\rho,\chi) = 0$.
+  Applying the same bound~(A) to $1{-}\rho$ yields
+  $1 - \mathrm{Re}(\rho) \leq 1/2$.
+\end{enumerate}
+Together: $\mathrm{Re}(\rho) \leq 1/2$ and
+$\mathrm{Re}(\rho) \geq 1/2$, forcing
+$\mathrm{Re}(\rho) = 1/2$.
+Neither bound alone suffices---a zero at $\mathrm{Re}(\rho) = 1/3$
+satisfies~(A) but violates~(B), while $\mathrm{Re}(\rho) = 2/3$
+satisfies~(B) but violates~(A) (Proposition~3 of~\cite{V11}).
+\end{remark}
 
 \begin{remark}[Discharge of the bridge axiom]\label{rmk:bridge-resolution}
 \Cref{prop:spectral-id} makes explicit the mechanism that

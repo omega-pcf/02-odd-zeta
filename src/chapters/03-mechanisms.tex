@@ -8,8 +8,8 @@ Since $\Delta = 5$ is the only prime dividing the discriminant of
 $\mathbb{Q}(\sqrt{5})$, the decomposition of primes in $\mathbb{Z}[\golden]$
 is determined by the Legendre/Kronecker symbol $\chi_5(p) = (5/p)$:
 
-\begin{proposition}[Local Euler factors]\label{prop:local-factors}
-The $\zeta_{\mathbb{Q}(\sqrt{5})}(s)$ has the Euler product
+\begin{proposition}[Local factors]\label{prop:local-factors}
+The Dedekind zeta function of $\mathbb{Q}(\sqrt{5})$ has the Euler product
 \begin{equation}\label{eq:euler-Qsqrt5}
   \zeta_{\mathbb{Q}(\sqrt{5})}(s)
   = \prod_{p\text{ prime}} f_p(s),
@@ -33,7 +33,7 @@ $\psi_p(\golden) = \golden^p$.
 The classical theory of $\zeta_{\mathbb{Q}(\sqrt{5})}(s)$ for quadratic fields; see
 e.g.~\cite{Neukirch}.  The claim that $f_p$ is determined by $\psi_p$ follows
 from the fact that $\chi_5(p) \equiv F_p \pmod{p}$
-(\cref{def:frobenius}): whether $\golden^p$ is
+(\cref{prop:fib-split}): whether $\golden^p$ is
 congruent to $\golden$ or $\bar\golden$ modulo $p$ determines the splitting.
 \end{proof}
 
@@ -72,7 +72,7 @@ its zeros.
 \begin{remark}[Naturality of the factorisation]\label{rmk:natural-factorisation}
 The factorisation $\zeta(s) = \zeta_{\mathbb{Q}(\sqrt{5})}(s)/L(s,\chi_5)$ is not specific
 to $\mathbb{Q}(\sqrt{5})$: it is the $K=\mathbb{Q}(\sqrt{5})$
-component of a natural isomorphism $\eta_{\mathbb{F}_1}$ across all quadratic
+component of a natural isomorphism $\eta$ across all quadratic
 extensions classified by $G$
 (\cref{thm:dedekind-natural}).
 The four components of $\eta$ correspond to the four fibers of the
@@ -92,7 +92,7 @@ where $T = 2\pi\log\golden$ is the period of $T^2_{\mathrm{PCF}}$.
 
 \begin{proof}
 This is the Dirichlet class-number formula for $\mathbb{Q}(\sqrt{5})$.
-With class number $h_{\mathbb{Q}(\sqrt{5})} = 1$, regulator $R_{\mathbb{Q}(\sqrt{5})} = \log\golden$, number of roots of unity
+With class number $h_{\mathbb{Q}(\sqrt{5})}=1$, regulator $R_{\mathbb{Q}(\sqrt{5})}=\log\golden$, number of roots of unity
 $w=2$, and discriminant $\Delta=5$:
 \[
   \lim_{s\to 1}(s-1)\,\zeta_{\mathbb{Q}(\sqrt{5})}(s)
