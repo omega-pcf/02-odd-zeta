@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.4.9](https://github.com/omega-pcf/02-odd-zeta/compare/v1.4.8...v1.4.9) (2026-04-17)
+
+### Chores
+
+* standardize F1 keyword and synchronize metadata v1.4.8 ([a2f6ea2](https://github.com/omega-pcf/02-odd-zeta/commit/a2f6ea2ed6bc8fff83ebe547b1a363ce12a05b1e))
+
 ## [1.4.8](https://github.com/omega-pcf/02-odd-zeta/compare/v1.4.7...v1.4.8) (2026-04-17)
 
 ### Documentation
