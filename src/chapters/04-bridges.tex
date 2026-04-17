@@ -7,12 +7,12 @@ parameter $\mu_3 = 1/2$ that governs this determination has two faces:
 it is the Bekenstein--Hawking area factor ($\mu_3^2 = 1/4$, the structural
 content of $1/(4G_{\mathrm{N}})$) and the spectral bound
 ($\rho_{\mathrm{re}} \leq \mu_3$, the hypothesis formalised as
-\texttt{bridge\_axiom} in the Primitive Structure~\cite{V11}).
+\lean{bridge_axiom} in the Primitive Structure~\cite{V11}).
 This section derives both from the PCF torus:
 \cref{ssec:worldline-entropy,ssec:bridge-BH,sec:regulator,ssec:bridge-partition}
 establish the physical invariants, resolving the Physical Formalization
 (Open Problem~3) of~\cite{V11};
-\cref{ssec:bridge-Z2,ssec:unifying} discharge the \texttt{bridge\_axiom}
+\cref{ssec:bridge-Z2,ssec:unifying} discharge the \lean{bridge_axiom}
 through the co-determination by~$G$.
 \Cref{ssec:unifying} develops the unification of the generator
 $\golden^2 = \golden + 1$ across both readings.
@@ -397,7 +397,7 @@ The categorical reading of this bridge is the span of
 \cref{def:pcf-span}: $G$ is the common source of
 both the arithmetic branch (which produces $\zeta(2k+1)$ via
 the Euler product colimit) and the spectral branch (which
-produces $\mu_3=1/2$ via $|\ker G|=2$).
+produces $\mu_3=1/2$ via $\vert\ker G\vert=2$).
 The exponent-$2$ property operates in both branches
 simultaneously: in the arithmetic branch it makes $\chi_5$
 self-dual, ensuring $L(1,\chi_5)>0$; in the spectral branch
@@ -411,7 +411,7 @@ bound.
 
 \begin{enumerate}
 \item \textbf{BH entropy as $L$-value} (\cref{ssec:bridge-BH}):
-  $S_{\mathrm{BH}} = k_B\lambda_{\log}\tfrac{\sqrt{5}}{2}L(1,\chi_5)$.
+  $S_{\mathrm{BH}} = k_{\mathrm{B}}\lambda_{\log}\tfrac{\sqrt{5}}{2}L(1,\chi_5)$.
   Physical content of $\mu_3$: the area factor $1/4 = \mu_3^2$ is not
   a free parameter.
 \item \textbf{Common origin at $\tau_{\mathrm{PCF}}=i$} (\cref{ssec:bridge-partition}):
@@ -467,7 +467,7 @@ governs every object in this study:
   (\cref{prop:pentagon});
 \item[\textup{(4)}] \textbf{Galois functor:}
   $G\colon\Ztwenty\to\mathbb{Z}_2\times\mathbb{Z}_2$ with
-  exponent~$2$, $|\ker G| = 2$, and four self-dual characters
+  exponent~$2$, $\vert\ker G\vert = 2$, and four self-dual characters
   (\cref{thm:bridge3});
 \item[\textup{(5)}] \textbf{Torus:}
   $\Omega(\tau) = \tfrac{1}{2}e^{i\tau\log\golden}$ closes
@@ -550,7 +550,7 @@ iteration of the Frobenius self-measurement
 $\golden^p = F_p\golden+F_{p-1}$ over all primes, converging
 on~$\mathbb{C}$.  The Galois functor
 $G\colon\Ztwenty\to\mathbb{Z}_2\times\mathbb{Z}_2$
-(\cref{thm:bridge3}) has $|\ker G| = 2$, producing a
+(\cref{thm:bridge3}) has $\vert\ker G\vert = 2$, producing a
 contraction factor $\mu_2/\mu_3 = 2$ from the binary level
 ($\mu_2 = 1$) to the ternary level ($\mu_3 = 1/2 = |\Omega|$).
 
@@ -593,7 +593,7 @@ The chain is therefore:
   \;\to\;
   \underbrace{\prod_p f_p(s)}_{\textup{Euler product on }\mathbb{C}}
   \;\to\;
-  \underbrace{|\ker G|=2}_{\textup{contraction}}
+  \underbrace{\vert\ker G\vert=2}_{\textup{contraction}}
   \;\to\;
   \underbrace{\mu_3 = \tfrac{1}{2}}_{\textup{norm}}
   \;\to\;
@@ -610,9 +610,9 @@ and \lean{galois_functor_complete} (\cite{V11}).\par}
 \end{corollary}
 
 \begin{proof}
-$|\ker G| = 2$: \cref{thm:bridge3} gives
+$\vert\ker G\vert = 2$: \cref{thm:bridge3} gives
 $G^{-1}(0,0) = \{1,9\}$.
-Contraction: $\mu_2/\mu_3 = 1/(1/2) = 2 = |\ker G|$.
+Contraction: $\mu_2/\mu_3 = 1/(1/2) = 2 = \vert\ker G\vert$.
 Spectral uniqueness: substituting $\mu = 2-\sigma$ into
 $\sigma\mu = 3/4$ gives $\sigma^2 - 2\sigma + 3/4 = 0$;
 roots $\sigma = (2\pm 1)/2 \in \{3/2,\,1/2\}$.
@@ -675,7 +675,7 @@ the eigenvalue structure of $\OmH$:
   (identity theorem for Dirichlet series; Riemann~\cite{Riemann};
   \cref{rmk:euler-determines}).
 \item[\textup{(5)}] The same $G$ determines
-  $|\ker G|=2\to\mu_3=1/2\to S_3\to$
+  $\vert\ker G\vert=2\to\mu_3=1/2\to S_3\to$
   eigenvalues $\omega^k/2$
   (\cref{cor:S3-from-euler}); the unique
   eigenvalue with $\mathrm{Re}>0$ has $\mathrm{Re}=1/2$
@@ -743,7 +743,7 @@ The present paper provides the mathematical justification:
 \item The Euler product $\prod_p f_p(s)$ determines $\zeta(s)$ on
   $\mathrm{Re}(s)>1$ (Euler~\cite{Euler}), and hence on all
   of~$\mathbb{C}$ by analytic continuation (Riemann~\cite{Riemann}).
-\item The \emph{same} $G$ determines $|\ker G|=2\to\mu_3=1/2\to S_3\to$
+\item The \emph{same} $G$ determines $\vert\ker G\vert=2\to\mu_3=1/2\to S_3\to$
   eigenvalues $\omega^k/2$ (\cref{cor:S3-from-euler}).
 \end{enumerate}
 The bridge is therefore not an additional hypothesis: it is the conjunction
@@ -788,7 +788,7 @@ beyond the results established in the current study, three classical theorems:
   The identification runs through five levels
   (\cref{prop:spectral-id}): primes, splitting types,
   Euler factors, $\zeta$, and simultaneously
-  $|\ker G|\to\mu_3\to S_3\to$ eigenvalues.
+  $\vert\ker G\vert\to\mu_3\to S_3\to$ eigenvalues.
 \end{enumerate}
 All three are established results with known proofs; none is specific
 to the PCF framework.  Their conjunction is what the Primitive

@@ -273,7 +273,7 @@ The two branches are co-determined by $G$:
 \item[\textup{(a)}] $F_{\mathrm{arith}}$ depends on $\chi_5=\pi_2\circ G$
   (\cref{thm:bridge3,prop:local-factors,prop:euler-colimit}).
 \item[\textup{(b)}] $F_{\mathrm{spec}}$ depends on
-  $|\ker G|=2$ (\cref{cor:S3-from-euler,lem:spectral-re}).
+  $\vert\ker G\vert=2$ (\cref{cor:S3-from-euler,lem:spectral-re}).
 \item[\textup{(c)}] Both reduce to properties of $G$
   (Definition~5 of~\cite{V11}) verified
   in Lean~$4$:
@@ -287,7 +287,7 @@ The two branches are co-determined by $G$:
 \cref{prop:fib-split} $\to$
 \cref{prop:local-factors} $\to$
 \cref{prop:euler-colimit}.
-(b) $|\ker G|=2$ $\to$ $\mu_3=1/2$ $\to$ arity uniqueness $\to$
+(b) $\vert\ker G\vert=2$ $\to$ $\mu_3=1/2$ $\to$ arity uniqueness $\to$
 $S_3$ $\to$ $\omega^k/2$.
 (c) Lean identifiers from
 \lean{PCF_Complete_v11_Unified.lean}~(\cite{V11}).
@@ -373,7 +373,7 @@ and real parts $\{1/2,\,-1/4\}$, both ${\le}\,\mu_3$.
 The present paper shows \emph{why}~$\zeta$ factorises through this
 operator: the Euler product is a colimit of factors determined
 by~$G$ (\cref{prop:euler-colimit}), and the \emph{same}~$G$
-produces~$\OmH$ via $|\ker G|=2\to\mu_3=1/2\to S_3\to\omega^k/2$
+produces~$\OmH$ via $\vert\ker G\vert=2\to\mu_3=1/2\to S_3\to\omega^k/2$
 (\cref{cor:S3-from-euler}).
 Dunford--Schwartz operates on~$\OmH$ because~$G$ puts~$\zeta$ and
 $\OmH$ in the same span.
@@ -411,7 +411,7 @@ Structure~\cite{V11}:
 \end{tikzcd}
 \]
 The norm contraction $\mu_2 = 1 \to \mu_3 = 1/2$ is the image of
-$|\ker G|=2$ under $U_2\colon\mathbf{Hilb}\to\mathbf{Met}$.
+$\vert\ker G\vert=2$ under $U_2\colon\mathbf{Hilb}\to\mathbf{Met}$.
 The arithmetic branch does \emph{not} pass through the forgetful
 chain---it goes directly from $G$ to $\mathbf{DirSer}$.
 The two branches meet only at their common source~$G$.
@@ -449,7 +449,7 @@ The PCF span provides the analogues over~$\mathbb{Z}$:
   branch as vertical copy, and $G$ as the common source
   replacing the diagonal.
   Demonstrated: $G$ is a surjective homomorphism with
-  $|\ker G|=2$ (\cref{thm:bridge3}), verified
+  $\vert\ker G\vert=2$ (\cref{thm:bridge3}), verified
   for all $64$ pairs in $\Ztwenty$
   (\cref{sec:verification}).
 \item[\textup{(ii$'$)}] The upper bound
@@ -459,7 +459,7 @@ The PCF span provides the analogues over~$\mathbb{Z}$:
   both $\zeta(s)$ (via the Euler product colimit,
   \cref{prop:euler-colimit}) and
   $\mathrm{spec}(\OmH) = \tfrac{1}{2}\{1,\omega,\omega^2\}$
-  (via $|\ker G|=2$, \cref{cor:S3-from-euler}),
+  (via $\vert\ker G\vert=2$, \cref{cor:S3-from-euler}),
   the spectral constraint transfers to the analytic side.
   This is the analogue of Weil's intersection positivity:
   the mechanism by which a geometric bound on one side of a
