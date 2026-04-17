@@ -396,71 +396,10 @@ The algebraic and spectral results of \cref{sec:bridges,ssec:unifying} have been
 pentagonal identity $\golden = 2\cos(\pi/5)$
 (\lean{cos_pi_div_five_eq}, \lean{pentagon_identity}).
 
-Table~\ref{tab:lean-audit} lists the correspondence between
+Table~\ref{tab:lean-audit-app} (see \cref{ssec:lean-audit-table} in the Appendix) lists the correspondence between
 the paper's results and the Lean identifiers in
 \lean{odd_zeta_pcf_v1.lean}.
 
-\begin{table}[ht]
-\centering
-\caption{Lean audit: correspondence between paper results and
-formalised identifiers. All dependencies are fully verified.
-The single axiom is $\golden^2=\golden+1$.}
-\label{tab:lean-audit}
-\footnotesize
-\begin{tabular}{lll}
-\toprule
-Paper result & Lean identifier & Method \\
-\midrule
-\multicolumn{3}{l}{\textbf{Part 1: PCF isomorphism chain}} \\
-$\golden^2=\golden+1$ & \lean{phi_sq} & axiom \\
-$4(\golden/2)^2-2(\golden/2)-1=0$ & \lean{phi_half_quadratic} & \texttt{nlinarith} \\
-$\cos(5\theta)$ expansion & \lean{cos_five_mul} & \texttt{nlinarith} \\
-$\cos(\pi/5)>0$ & \lean{cos_pi_five_pos} & monotonicity \\
-$4\cos^2(\pi/5)-2\cos(\pi/5)-1=0$ & \lean{cos_pi_five_quadratic} & unique root \\
-$\golden = 2\cos(\pi/5)$ & \lean{pentagon_identity} & \texttt{linarith} \\
-$\vert\mathbb{Z}_{20}^\times\vert=8$ & \lean{Z20star_card} & \texttt{decide} \\
-Mult.\ closed & \lean{mul_closed} & \texttt{decide} \\
-Add.\ destroyed & \lean{add_destroyed} & \texttt{decide} \\
-$G$ homomorphism & \lean{G_hom} & \texttt{decide} \\
-$G$ surjective & \lean{G_surj} & \lean{fin_cases} \\
-$\vert\ker G\vert=2$ & \lean{G_kernel} & \texttt{decide} \\
-Exponent $2$ & \lean{exponent_two} & \texttt{decide} \\
-$\mu_2/\mu_3 = 2 = \vert\ker G\vert$ & \lean{contraction_is_kernel} & \lean{norm_num} \\
-$(\sigma,\mu)=(3/2,1/2)$ unique & \lean{spectral_uniqueness} & \texttt{nlinarith} \\
-Diagonal blocked & \lean{diagonal_blocked} & \texttt{nlinarith} \\
-$\mathrm{Re}(\omega_{\mathrm{pcf}})=-1/2$ & \lean{omega_properties} & \lean{exp_mul_I} \\
-$\mathrm{Re}>0 \implies \mathrm{Re}=1/2$ & \lean{eigenvalue_half} & exhaustion \\
-\midrule
-\multicolumn{3}{l}{\textbf{Part 2: Isomorphism with Euler product}} \\
-$\forall p>5$: $p\bmod 20\in\mathbb{Z}_{20}^\times$ & \lean{primes_land_in_Z20star} & \texttt{omega+decide} \\
-$\chi_5$ from $G$ & \lean{chi5_from_G} & \texttt{rfl} \\
-$\chi_5$ classification & \lean{chi5_values} & \texttt{decide} \\
-$\chi_5(p)\equiv F_p\pmod{p}$ & \lean{fib_split_criterion} & \lean{native_decide} \\
-$f_p$ type from $G$ & \lean{euler_type_from_G} & \texttt{rfl} \\
-\midrule
-\multicolumn{3}{l}{\textbf{Part 3: Transport}} \\
-$\zeta$ spectral $=$ PCF & \lean{spectral_identification} & \texttt{rfl} \\
-Transport principle & \lean{transport_spectral} & rewrite \\
-$\zeta$ positive $\implies \mathrm{Re}(s)=1/2$ & \lean{zeta_positive_spectral_half} & transport \\
-\midrule
-\multicolumn{3}{l}{\textbf{Part 4: $\mathbb{F}_1$-descent, Weil, physics}} \\
-$z^2 = zy + y^2$ & \lean{self_measurement} & \texttt{nlinarith} \\
-$\psi_p\circ\psi_q = \psi_{pq}$ & \lean{frobenius_composition} & \lean{pow_mul} \\
-$\mathbb{F}_1$-descent data & \lean{F1_descent_data} & conjunction \\
-Weil analogy & \lean{weil_analogy} & conjunction \\
-$\mu_3^2 = 1/4$ & \lean{mu3_squared} & \lean{norm_num} \\
-$1-\mu_3^2 = 3/4$ & \lean{holographic_ratio} & \lean{norm_num} \\
-$c = 3\ell/(2G_N) = 3$ & \lean{brown_henneaux_c} & \lean{norm_num} \\
-$1/(4G_N) = \mu_3$ & \lean{BH_factor} & \lean{norm_num} \\
-$-1/i = i$ (S-duality) & \lean{S_duality_fixed} & \lean{Complex.I_mul_I} \\
-$\ell=1/\ell \implies \ell=1$ & \lean{ads_radius_one} & \texttt{nlinarith} \\
-$\bar\golden = 1-\golden$ & \lean{phi_bar_eq} & \lean{field_simp} \\
-$\mathrm{Tr}(\golden) = 1$ & \lean{trace_one} & \texttt{ring} \\
-$N(\golden) = -1$ & \lean{norm_neg_one} & \lean{field_simp} \\
-$\mathrm{disc}(\mathbb{Q}(\sqrt{5})) = 5$ & \lean{discriminant_five} & \texttt{nlinarith} \\
-\bottomrule
-\end{tabular}
-\end{table}
 
 The categorical structures of \cref{sec:categorical-framework}---the
 Frobenius functor (functoriality verified via
