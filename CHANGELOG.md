@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.4.8](https://github.com/omega-pcf/02-odd-zeta/compare/v1.4.7...v1.4.8) (2026-04-17)
+
+### Documentation
+
+* replace 'PCF torus' with 'Apéry's constant' in keywords ([dd2b069](https://github.com/omega-pcf/02-odd-zeta/commit/dd2b0692765897a474302cdb713c690bdbeea814))
+
 ## [1.4.7](https://github.com/omega-pcf/02-odd-zeta/compare/v1.4.6...v1.4.7) (2026-04-17)
 
 ### Bug Fixes
