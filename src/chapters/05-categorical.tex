@@ -32,7 +32,7 @@ which add factors without altering existing coefficients.
 
 \begin{definition}[Spectral category]\label{def:SpecOmega}
 $\mathrm{Spec}(\OmH)$ is the category whose objects are spectral
-triples $(\sigma,\mu,\{\lambda_k\})$ satisfying $\sigma+\mu=2$,
+triples $(\sigma,\mu,\{\lambda\_k\})$ satisfying $\sigma+\mu=2$,
 $\sigma\mu=3/4$, $\lambda_k = (\mu/1)\omega^k$.
 By spectral uniqueness (\cref{cor:S3-from-euler}), the only
 solution with $\mu<1$ is $(\sigma,\mu)=(3/2,1/2)$; hence
@@ -64,7 +64,7 @@ The \emph{Frobenius functor} of $\Rpcf$ is the monoid homomorphism
 $\Psi$ preserves composition and identity:
 $\Psi(mn) = \Psi(m)\circ\Psi(n)$ and $\Psi(1)=\mathrm{id}_{\Rpcf}$.
 The restriction to primes generates $\Psi$ through
-$\Psi(p_1^{a_1}\cdots p_k^{a_k}) = \psi_{p_1}^{a_1}\circ\cdots\circ\psi_{p_k}^{a_k}$.
+$\Psi(p_1^{a\_1}\cdots p_k^{a\_k}) = \psi_{p\_1}^{a\_1}\circ\cdots\circ\psi_{p\_k}^{a\_k}$.
 \end{proposition}
 
 \begin{proof}
@@ -84,7 +84,7 @@ constituting $\mathbb{F}_1$-descent data.
 The decidability of this descent is ensured by the
 \emph{additive destruction} of $\Ztwenty$ (\cref{prop:Z20-arithmetic}),
 which isolates the multiplicative fragment
-(Lean: \lean{F1_descent_data}).
+(Lean: \lean{F1_descent\_data}).
 \end{remark}
 
 \begin{lemma}[From Frobenius to Euler factors]\label{lem:psi-to-euler}
@@ -197,7 +197,7 @@ $\mathbb{Q}(\sqrt{-5})$ & $\chi_4\chi_5$ &
 \bottomrule
 \end{tabular}
 \end{center}
-The four characters $\{1,\chi_4,\chi_5,\chi_4\chi_5\}$ are exactly
+The four characters $\{1,\chi_4,\chi_5,\chi_4\chi\_5\}$ are exactly
 the four characters of $\mathbb{Z}_2\times\mathbb{Z}_2$
 (\cref{thm:bridge3}), one for each fiber of~$G$.
 \end{theorem}
@@ -234,8 +234,8 @@ $8$ morphisms, and:
 \begin{enumerate}
 \item[\textup{(i)}] $F_{\mathrm{arith}}$:
   $\mathbf{B}\Ztwenty \xrightarrow{G}
-  \mathbf{B}(\mathbb{Z}_2{\times}\mathbb{Z}_2) \xrightarrow{\chi_5}
-  \{f_p\} \xrightarrow{\varinjlim} \zeta_{\mathbb{Q}(\sqrt{5})}(s)
+  \mathbf{B}(\mathbb{Z}_2{\times}\mathbb{Z}_2) \xrightarrow{\chi\_5}
+  \{f\_p\} \xrightarrow{\varinjlim} \zeta_{\mathbb{Q}(\sqrt{5})}(s)
   \xrightarrow{\eta^{-1}} \zeta(s)$.
 \item[\textup{(ii)}] $F_{\mathrm{spec}}$:
   $\mathbf{B}\Ztwenty \xrightarrow{G}
@@ -261,8 +261,8 @@ The two branches are co-determined by $G$:
 \item[\textup{(c)}] Both reduce to properties of $G$
   (Definition~5 of~\cite{V11}) verified
   in Lean~$4$:
-  \texttt{G\_hom}, \texttt{G\_surj},
-  \texttt{G\_kernel} (\cite{V11}).
+  \lean{G\_hom}, \lean{G\_surj},
+  \lean{G\_kernel} (\cite{V11}).
 \end{enumerate}
 \end{theorem}
 
@@ -274,7 +274,7 @@ The two branches are co-determined by $G$:
 (b) $|\ker G|=2$ $\to$ $\mu_3=1/2$ $\to$ arity uniqueness $\to$
 $S_3$ $\to$ $\omega^k/2$.
 (c) Lean identifiers from
-\lean{PCF_Complete_v11_Unified.lean}~(\cite{V11}).
+\lean{PCF_Complete_v11\_Unified.lean}~(\cite{V11}).
 \end{proof}
 
 \begin{corollary}[Diagram coherence]\label{cor:diagram-coherence}
@@ -289,8 +289,8 @@ $\zeta(s)$ also produces $\mathrm{spec}(\OmH)$.
 % ------------------------------------------------------------------
 
 The arithmetic--spectral span discharges the
-\texttt{bridge\_axiom} of the Primitive Structure~\cite{V11}:
-the hypothesis \texttt{bounded\_by\_mu} ($\rho_{\mathrm{re}}\le\mu_3$)
+\lean{bridge\_axiom} of the Primitive Structure~\cite{V11}:
+the hypothesis \lean{bounded\_by\_mu} ($\rho_{\mathrm{re}}\le\mu_3$)
 is not an independent assumption but the conjunction of
 (a)~the Euler product colimit (present work),
 (b)~analytic continuation (Riemann~\cite{Riemann}),
@@ -314,12 +314,12 @@ Definition~7 of~\cite{V11} is established
 by the co-determination theorem (\cref{thm:co-determination}):
 the same $G$ that produces $\mu_3 = 1/2$ also produces $\zeta(s)$
 via the Euler product, so $\rho_{\mathrm{re}}$ inherits the spectral
-bound.  The \texttt{bridge\_axiom} thereby becomes a theorem.
+bound.  The \lean{bridge\_axiom} thereby becomes a theorem.
 
 \begin{remark}[How the classical theorems operate on the span]%
 \label{rmk:classical-bridge}
 The Primitive Structure~\cite{V11} cites three classical results as
-justification for \texttt{bridge\_axiom}: Euler~\cite{Euler},
+justification for \lean{bridge\_axiom}: Euler~\cite{Euler},
 Gelfand~\cite{Gelfand}, and Dunford--Schwartz~\cite{DunfordSchwartz}.
 The categorical framework developed in the current study identifies the
 \emph{concrete object} on which each operates.
@@ -339,7 +339,7 @@ the specific colimit assembled by~$G$.
 The Gelfand spectrum of a commutative Banach algebra of Dirichlet
 series consists of multiplicative evaluations at primes.
 Restricted to $\Ztwenty$, these evaluations are classified by~$G$
-into exactly four characters $\{1,\chi_4,\chi_5,\chi_4\chi_5\}$---the
+into exactly four characters $\{1,\chi_4,\chi_5,\chi_4\chi\_5\}$---the
 dual group of $\mathbb{Z}_2\times\mathbb{Z}_2$
 (\cref{thm:dedekind-natural}).
 Each character determines an $L$-function; the four $L$-functions
@@ -416,9 +416,9 @@ Weil's proof has three components:
 \item[\textup{(i)}] The self-product $C\times C$ with
   horizontal copy $C\times\{P\}$, vertical copy $\{P\}\times C$,
   and diagonal~$\Delta$;
-\item[\textup{(ii)}] An upper bound $|{\alpha_i}|\le q^{1/2}$
+\item[\textup{(ii)}] An upper bound $|{\alpha\_i}|\le q^{1/2}$
   from the positivity of the intersection form;
-\item[\textup{(iii)}] A lower bound $|{\alpha_i}|\ge q^{1/2}$
+\item[\textup{(iii)}] A lower bound $|{\alpha\_i}|\ge q^{1/2}$
   from the functional equation.
 \end{enumerate}
 The PCF span provides the analogues over~$\mathbb{Z}$:
@@ -471,11 +471,11 @@ The PCF span provides the analogues over~$\mathbb{Z}$:
 
 The conjunction of (ii$'$) and (iii$'$) forces
 $\mathrm{Re}(\rho)=1/2$ (Theorem~10 of~\cite{V11}),
-mirroring Weil's squeeze $|{\alpha_i}| = q^{1/2}$.
+mirroring Weil's squeeze $|{\alpha\_i}| = q^{1/2}$.
 The eigenvalues $\omega^k/2$ of~$\OmH$, all of modulus
 $\mu_3 = 1/2$ (\cref{lem:spectral-re}), are the
 analogue of the Frobenius eigenvalues~$\alpha_i$ with
-$|{\alpha_i}|=q^{1/2}$.
+$|{\alpha\_i}|=q^{1/2}$.
 The full correspondence is:
 \begin{center}
 \begin{tabular}{ll}
@@ -495,16 +495,16 @@ Diagonal $\Delta$
 $\mathrm{Fr}\colon x\mapsto x^q$
   & $G\colon\Ztwenty\to\mathbb{Z}_2{\times}\mathbb{Z}_2$
     (Definition~5 of~\cite{V11}) \\
-$|{\alpha_i}|\le q^{1/2}$ (intersection)
+$|{\alpha\_i}|\le q^{1/2}$ (intersection)
   & $\mathrm{Re}(\rho)\le\mu_3$ (\cref{thm:co-determination}) \\
-Functional eq.\ $\rightarrow |{\alpha_i}|\ge q^{1/2}$
+Functional eq.\ $\rightarrow |{\alpha\_i}|\ge q^{1/2}$
   & Hecke $\rightarrow 1{-}\mathrm{Re}(\rho)\le\mu_3$
     (\cref{cor:same-Z2}) \\
-$|{\alpha_i}|=q^{1/2}$
+$|{\alpha\_i}|=q^{1/2}$
   & $\mathrm{Re}(\rho)=1/2$ (Theorem~10 of~\cite{V11}) \\
 Eigenvalues on $H^1_{\textup{\'et}}$
   & Eigenvalues of $\OmH$ (\cref{lem:spectral-re}) \\
-All $|{\alpha_i}|$ equal
+All $|{\alpha\_i}|$ equal
   & All $|\omega^k/2|=1/2=\mu_3$ \\
 \bottomrule
 \end{tabular}

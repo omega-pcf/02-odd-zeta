@@ -16,7 +16,7 @@ $\log\golden$ being transcendental (Lindemann--Weierstrass~\cite{lindemann1882za
 
 The key identity is the Dedekind factorisation
 \begin{equation}\label{eq:main-factorization}
-  \zeta(s) = \frac{\zeta_{\mathbb{Q}(\sqrt{5})}(s)}{L(s,\chi_5)},
+  \zeta(s) = \frac{\zeta_{\mathbb{Q}(\sqrt{5})}(s)}{L(s,\chi\_5)},
 \end{equation}
 where the Artin character $\chi_5$ is dictated by the pentagon:
 \begin{equation}\label{eq:chi5-pentagon}
@@ -36,7 +36,7 @@ in the $\mathcal{N}{=}4$ SYM EFT are fixed by this arithmetic.
 The objective is summarized in the following diagram:
 \begin{equation}\label{eq:objective}
   \begin{tikzcd}[column sep=1.4em, row sep=2.5em]
-  & & & {\textstyle\prod f_p}
+  & & & {\textstyle\prod f\_p}
     \ar[r, "{\text{\tiny colimit}}"', "{\text{\tiny\cref{prop:euler-colimit}}}"]
     & \zeta_{\mathbb{Q}(\sqrt{5})}
     \ar[r, "{\text{\tiny factorise}}"', "{\text{\tiny\cref{thm:factorisation}}}"]
@@ -73,26 +73,33 @@ arithmetic size of the field ($L(1,\chi_5) = 2R/\sqrt{5}$), the
 worldsheet period ($T = 2\pi R$), and the entropy anchor
 ($S_{\mathrm{BH}}/k_B = \lambda_{\log}\cdot R$).
 \Cref{sec:categorical-framework} makes the categorical content
-explicit: $\{\psi_p\}$ is a functor, the Euler product is a colimit,
+explicit: $\{\psi\_p\}$ is a functor, the Euler product is a colimit,
 the Dedekind factorisation is a natural isomorphism across the four
 quadratic fields classified by~$G$, and the two branches form a span
 with common source~$G$.
 
-This span discharges the \texttt{bridge\_axiom} of the Primitive
+This span discharges the \lean{bridge_axiom} of the Primitive
 Structure~\cite{V11} (\emph{The Hilbert P\'olya Operator and the
   Primitive Structure of the Complex Plane}, hereafter
 \emph{the Primitive Structure}): because~$G$ simultaneously
 produces~$\zeta(s)$ (via the Euler product~\cite{Euler} and analytic
 continuation~\cite{Riemann}) and the spectral constraint
-$\mu_3 = 1/2$ (via $|\ker G| = 2$), the same map that
+$\mu_3 = 1/2$ (via $\vert\ker G\vert = 2$), the same map that
 determines~$\zeta(s)$ everywhere also constrains
 $\mathrm{Re}(\rho)$.
 The Primitive Structure establishes the functorial transport of the
-eigenvalue constraint $\mathrm{Re}>0 \Rightarrow \mathrm{Re}=1/2$
-from $\OmH$ to~$\zeta$ across the full critical strip; the present
-paper provides the \emph{mechanism} underlying that transport.
-\Cref{thm:unifying} shows that every structure in this
-paper derives from the single relation $\golden^2 = \golden + 1$.
+spectral result across the entire complex plane.
+The spectral identification (verified through the $G$-homomorphism
+\lean{G_hom}, $G$-surjectivity \lean{G_surj}, and parity $|\ker G|=2$
+in \lean{odd_zeta_pcf_v1.lean}) forces $\mu_3 = 1/2$, delivering
+$S_3$ symmetry and fixing the lower bound on the eigenvalue.
+The odd values $\zeta(2k+1)$ then arise as the remaining
+non-vanishing components of the PCF partition function after the
+even values have been factored out by the pentagon.
+The full determination of the odd values represents the complete
+discharging of the \lean{bridge_axiom}, equivalently the structure field
+\lean{bounded_by_mu} (satisfying $\mathrm{Re}(\rho)\le\mu_3$) of
+the PCF torus, derived from $\golden^2 = \golden + 1$.
 
 %%% ====================================================================
 \subsection{Context}\label{sec:context}
@@ -108,13 +115,13 @@ at~$1/2$. The squeeze itself is formally verified in Lean~4.
 However, the step connecting the categorical
 machinery to the zeros of~$\zeta$---the identification of
 $\mathrm{Re}(\rho)$ with an eigenvalue of~$\OmH$---is left as an
-axiom (\texttt{bridge\_axiom}, equivalently the structure field
+axiom (\lean{bridge\_axiom}, equivalently the structure field
 \texttt{bounded\_by\_mu :\ $\rho_{\mathrm{re}}\le\mu_3$} of
 \texttt{TernaryLZero}, Definition~7 of~\cite{V11}).
 
 The axiom states $\rho_{\mathrm{re}}\le\mu_3=1/2$: it is
 Premise~A of the squeeze (Proposition~3 of~\cite{V11}).
-Once provided, \texttt{hecke\_1920}
+Once provided, \lean{hecke\_1920}
 derives the companion bound $1-\rho_{\mathrm{re}}\le\mu_3$
 (Premise~B in Theorem~10 of~\cite{V11}), and the two together force
 $\rho_{\mathrm{re}}=1/2$ by \texttt{linarith}.  The mathematical
@@ -186,7 +193,7 @@ the fundamental formula, the even-value consistency, and the
 pentagonal source of the determination.
 In \cref{sec:bridges}, we derive the physical invariants (Bekenstein--Hawking
 entropy, central charge $c=3$, AdS radius $\ell=1$) and discharge
-the \texttt{bridge\_axiom} of the Primitive Structure~\cite{V11}.
+the \lean{bridge\_axiom} of the Primitive Structure~\cite{V11}.
 In \cref{sec:categorical-framework}, we formalise the arithmetic--spectral span
 and the Weil analogy.
 We conclude in \cref{sec:elvang} with the discussion, open problems,

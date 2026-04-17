@@ -4,7 +4,7 @@
 The preceding sections established $\zeta(2k+1)$ as determined by the
 arithmetic-geometric structure of $T^2_{\mathrm{PCF}}$.  We now derive
 three results connecting the PCF torus to string theory and holography,
-discharging the \texttt{bridge\_axiom} and resolving the Physical Formalization
+discharging the \lean{bridge\_axiom} and resolving the Physical Formalization
 (Open Problem~3) of the Primitive Structure~\cite{V11}: making rigorous the
 structural content of $\mu_3^2 = 1/4$ in the
 Bekenstein--Hawking formula and the relationship between the PCF tower
@@ -29,7 +29,7 @@ The worldline $\Omega(\tau) = \tfrac{1}{2}\,e^{i\tau\log\golden}$
   holographic area factor $\mu_3^2 = 1/4$ and Newton's constant
   $G_N := \mu_3 = 1/2$ satisfy
   \begin{equation}\label{eq:SBH}
-    \frac{1}{4G_N} = \frac{1}{2} = \mu_3 = |\Omega|.
+    \frac{1}{4G\_N} = \frac{1}{2} = \mu_3 = |\Omega|.
   \end{equation}
 \end{enumerate}
 \end{proposition}
@@ -143,7 +143,7 @@ The holographic area factor $\mu_3^2 = 1/4$ in the Bekenstein--Hawking
 formula is not an independent constant.  Via \cref{eq:bridge1}
 and $G_N = 1/2$:
 \[
-  \frac{1}{4G_N} = \frac{1}{4\cdot\tfrac{1}{2}} = \frac{1}{2}
+  \frac{1}{4G\_N} = \frac{1}{4\cdot\tfrac{1}{2}} = \frac{1}{2}
   = |\Omega| = \golden^{-\lambda_{\log}},
 \]
 where $\golden^{-\lambda_{\log}} = 2^{-1}$ (Mersenne bridge).  The
@@ -175,7 +175,7 @@ Let $R = \log\golden$ be the regulator of $\mathbb{Q}(\sqrt{5})$.  Then:
   L(1,\chi_5) &= \frac{2R}{\sqrt{5}}
     \qquad\text{\emph{(class-number residue, \cref{thm:L1})}},
     \label{eq:R-Lvalue}\\
-  \frac{S_{\mathrm{BH}}}{k_B} &= \lambda_{\log}\cdot R
+  \frac{S_{\mathrm{BH}}}{k\_B} &= \lambda_{\log}\cdot R
     \qquad\text{\emph{(BH entropy, \cref{prop:worldline-entropy})}}.
     \label{eq:R-SBH}
 \end{align}
@@ -212,7 +212,7 @@ Together they determine $T^2_{\mathrm{PCF}}$ completely.
 The Bekenstein--Hawking entropy of the PCF torus measures the
 \emph{arithmetic size} of $\mathbb{Q}(\sqrt{5})$ via its regulator:
 \begin{equation}\label{eq:SBH-regulator}
-  \frac{S_{\mathrm{BH}}}{k_B} = \lambda_{\log}\cdot R,
+  \frac{S_{\mathrm{BH}}}{k\_B} = \lambda_{\log}\cdot R,
   \qquad R = \log\golden = \mathrm{Reg}(\mathbb{Q}(\sqrt{5})).
 \end{equation}
 Here $\lambda_{\log} = \log 2/\log\golden$ counts how many regulators
@@ -229,7 +229,7 @@ by \cref{def:Rpcf} and \cref{thm:mersenne}.
 \end{proof}
 
 % ------------------------------------------------------------------
-\subsection{Geometric unity at \texorpdfstring{$\tau_{\mathrm{PCF}}=i$}{tau_PCF = i}}%
+\subsection{Geometric unity at \texorpdfstring{$\tau_{\mathrm{PCF}}=i$}{tau\_PCF = i}}%
 \label{ssec:bridge-partition}
 % ------------------------------------------------------------------
 
@@ -260,7 +260,7 @@ independently.
 \textit{Modular side.}
 $\tau_{\mathrm{PCF}}=i$ is the unique fixed point of the S-duality
 $\tau\mapsto -1/\tau$ (\cref{lem:ads-radius}).  Evaluating the Virasoro partition
-function $Z(\tau) = \mathrm{Tr}\,q^{L_0-c/24}\bar q^{\bar L_0-c/24}$
+function $Z(\tau) = \mathrm{Tr}\,q^{L\_0-c/24}\bar q^{\bar L\_0-c/24}$
 at $\tau=i$ with $c=D=3$ gives $Z_{\mathrm{PCF}}(i)=e^{-3\pi/2}|\eta(i)|^{-6}$
 (\cref{prop:pcf-partition}).  The modular parameter $\tau=i$ is
 not integrated over (as in the free-string path integral) but is fixed
@@ -358,7 +358,7 @@ fields is classical genus theory for Dirichlet characters of
 conductor dividing~$20$ (see~\cite{Neukirch}, Ch.~VII):
 each primitive quadratic character $\chi_d = (d/\cdot)$
 is the Artin character of $\mathbb{Q}(\sqrt{d})$, and the
-four characters $\{1,\chi_4,\chi_5,\chi_4\chi_5\}$
+four characters $\{1,\chi_4,\chi_5,\chi_4\chi\_5\}$
 correspond to the four fields in the table.
 The correspondence for $3 \le p \le 31$ is shown in \cref{tab:fib-split}.
 \end{proof}
@@ -417,7 +417,7 @@ bound.
   constraint of the Primitive Structure~\cite{V11}.
 \end{enumerate}
 
-Together, these physical results discharge the \texttt{bridge\_axiom} and resolve the
+Together, these physical results discharge the \lean{bridge\_axiom} and resolve the
 Physical Formalization (Open Problem~3) of the Primitive Structure~\cite{V11}:
 the structural content of $\mu_3^2=1/4$ (equivalently $1/(4G_N)=\mu_3=1/2$) is the class-number
 formula $L(1,\chi_5)=2\log\golden/\sqrt{5}$ expressed as
@@ -427,7 +427,7 @@ $S_3$ symmetry of $T^2_{\mathrm{PCF}}$ that fixes $\tau_{\mathrm{PCF}}=i$
 and hence both $Z_{\mathrm{PCF}}(i)$ and $L(1,\chi_5)$ (Geometric unity);
 and the $\chi_5$-character organising odd zeta values is the
 binary $(0,1)$-component of the Galois functor whose exponent-$2$ property
-discharges the \texttt{bridge\_axiom} of the Primitive Structure~\cite{V11} and
+discharges the \lean{bridge\_axiom} of the Primitive Structure~\cite{V11} and
 produces the self-duality of $L(1,\chi_5)$ (Algebraic symmetry).
 
 % ------------------------------------------------------------------
@@ -576,20 +576,20 @@ by the symmetric group $S_3$.  This $S_3$ determines:
 the golden coupling $z = \golden y$
 (\cref{prop:dim-chain}),
 the space $E^3 = \{(x,y,\golden y)\}$, and the central charge
-$c = 3\ell/(2G_N)|_{\ell=1,\,G_N=1/2} = 3$
+$c = 3\ell/(2G_N)|_{\ell=1,\,G\_N=1/2} = 3$
 (\cref{lem:ads-radius}).
 
 The chain is therefore:
 \[
   \underbrace{\golden^2 = \golden+1}_{\textup{generator}}
   \;\to\;
-  \underbrace{\prod_p f_p(s)}_{\textup{Euler product on }\mathbb{C}}
+  \underbrace{\prod_p f\_p(s)}_{\textup{Euler product on }\mathbb{C}}
   \;\to\;
   \underbrace{|\ker G|=2}_{\textup{contraction}}
   \;\to\;
   \underbrace{\mu_3 = \tfrac{1}{2}}_{\textup{norm}}
   \;\to\;
-  \underbrace{S_3}_{\textup{symmetry}}
+  \underbrace{S\_3}_{\textup{symmetry}}
   \;\to\;
   \underbrace{E^3,\; c=3.}_{\textup{geometry}}
 \]
@@ -597,8 +597,8 @@ The chain is therefore:
 data---they are consequences of the Euler product of
 $\golden^2 = \golden + 1$ over the primes.
 Both are formally verified in Lean~$4$:
-\texttt{norm\_Omega\_is\_half}, \texttt{spectral\_uniqueness},
-and \texttt{galois\_functor\_complete} (\cite{V11}).\par}
+\lean{norm\_Omega\_is\_half}, \lean{spectral\_uniqueness},
+and \lean{galois\_functor\_complete} (\cite{V11}).\par}
 \end{corollary}
 
 \begin{proof}
@@ -641,7 +641,7 @@ $\omega^2 = \bar\omega$, so $\mathrm{Re}(\omega^2/2) = -1/4$.
 Only $k = 0$ gives $\mathrm{Re} > 0$, and
 $\mathrm{Re}(\omega^0/2) = 1/2 = \mu_3$
 (\cref{prop:worldline-entropy}).
-Verified in Lean~$4$: \texttt{eigenvalue\_half}.
+Verified in Lean~$4$: \lean{eigenvalue\_half}.
 \end{proof}
 
 \begin{proposition}[Spectral structure of the Euler product]%
@@ -691,13 +691,13 @@ Step (5) is \cref{cor:S3-from-euler} and
 
 \begin{remark}[Discharge of the bridge axiom]\label{rmk:bridge-resolution}
 \Cref{prop:spectral-id} makes explicit the mechanism that
-the Primitive Structure~\cite{V11} formalises as \texttt{bridge\_axiom}
+the Primitive Structure~\cite{V11} formalises as \lean{bridge\_axiom}
 in Lean~4.  In the Primitive Structure, Step~4 of the Spectral Embedding
 (Proposition~5 of~\cite{V11}) states that zeros of $L$-functions factorising
 through~$\Ztwenty$ inherit the spectral constraint
 $\mathrm{Re}(\rho)\in\mathrm{Re}(\mathrm{spec}(\OmH))
 = \{1/2,\,-1/4\}$.  The Lean formalisation encodes this as an axiom
-(\texttt{bounded\_by\_mu}) because Mathlib currently lacks Dirichlet
+(\lean{bounded\_by\_mu}) because Mathlib currently lacks Dirichlet
 series and the spectral mapping theorem for Banach algebras.
 
 The present paper provides the mathematical justification:
@@ -713,7 +713,7 @@ The present paper provides the mathematical justification:
 \end{enumerate}
 The bridge is therefore not an additional hypothesis: it is the conjunction
 of steps (1)--(2) (classical number theory) with step~(3) (verified in
-Lean).  The \texttt{bridge\_axiom} of the Primitive Structure is the
+Lean).  The \lean{bridge\_axiom} of the Primitive Structure is the
 formalisation of the fact that the same map~$G$ simultaneously produces
 the analytic object ($\zeta$, via the Euler product) and the spectral
 constraint ($\mu_3=1/2$, via the kernel).
@@ -723,7 +723,7 @@ constraint ($\mu_3=1/2$, via the kernel).
 The present work establishes the isomorphism between
 $\golden^2=\golden+1$ and the components of~$\zeta(s)$ at every level
 of the Euler product (\cref{prop:spectral-id}), thereby
-discharging the \texttt{bridge\_axiom}
+discharging the \lean{bridge\_axiom}
 (\cref{rmk:bridge-resolution}).
 
 {\sloppy What is \emph{not} addressed here is the \emph{functorial transport}
@@ -732,8 +732,8 @@ from $\OmH$ to~$\zeta$ across the full critical strip---this requires the
 forgetful functor chain
 $C^*$-$\mathbf{Alg}\to\mathbf{Hilb}\to\mathbf{Met}\to\mathbf{Set}$
 and the categorical limit theorem, which are established in the Primitive
-Structure~\cite{V11} (Lean: \texttt{categorical\_limit\_theorem},
-\texttt{Omega\_hat\_unique\_positive\_re}).\par}
+Structure~\cite{V11} (Lean: \lean{categorical\_limit\_theorem},
+\lean{Omega\_hat\_unique\_positive\_re}).\par}
 \end{remark}
 
 \begin{remark}[Classical inputs]\label{rmk:classical-inputs}
@@ -757,7 +757,7 @@ beyond the results established in the current study, three classical theorems:
 \end{enumerate}
 All three are established results with known proofs; none is specific
 to the PCF framework.  Their conjunction is what the Primitive
-Structure~\cite{V11} formalises as \texttt{bridge\_axiom}
+Structure~\cite{V11} formalises as \lean{bridge\_axiom}
 (\cref{rmk:bridge-resolution}).
 \end{remark}
 
