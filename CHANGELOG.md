@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.5.2](https://github.com/omega-pcf/02-odd-zeta/compare/v1.5.1...v1.5.2) (2026-04-19)
+
+### Styles
+
+* use shortened author list in headers to prevent overflow ([b533d8e](https://github.com/omega-pcf/02-odd-zeta/commit/b533d8e38fe95087ea413107545def1e2401a4ec))
+
 ## [1.5.1](https://github.com/omega-pcf/02-odd-zeta/compare/v1.5.0...v1.5.1) (2026-04-19)
 
 ### Refinements
