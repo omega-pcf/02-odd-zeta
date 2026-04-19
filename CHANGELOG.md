@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.4.15](https://github.com/omega-pcf/02-odd-zeta/compare/v1.4.14...v1.4.15) (2026-04-19)
+
+### Styles
+
+* remove table of contents and fix font leaks in frontmatter ([4f205c9](https://github.com/omega-pcf/02-odd-zeta/commit/4f205c91936b444f82e2a9fdb35247d3d9bdca23))
+
+### Documentation
+
+* update journal mentions from SIGMA to CNTP ([090abf1](https://github.com/omega-pcf/02-odd-zeta/commit/090abf1dd871fef166bdb3f543f05f192c1ec8d1))
+
+### Chores
+
+* migrate manuscript to CNTP template ([b540a4f](https://github.com/omega-pcf/02-odd-zeta/commit/b540a4fd5c5b5b0d08f4743310882bf856ea17a3))
+
 ## [1.4.14](https://github.com/omega-pcf/02-odd-zeta/compare/v1.4.13...v1.4.14) (2026-04-18)
 
 ### Refinements
