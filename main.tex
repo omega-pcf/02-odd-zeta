@@ -1,10 +1,5 @@
 \pdfoutput=1
-\RequirePackage{ifpdf}
-\ifpdf % We are running pdfTeX in pdf mode
-\documentclass[pdftex]{sigma}
-\else
-\documentclass{sigma}
-\fi
+\documentclass[cntp]{ipart}
 
 \usepackage{mathtools}
 \usepackage{amssymb}
@@ -16,6 +11,8 @@
 \usepackage{enumitem}
 \usepackage{hyperref}
 \usepackage[capitalize,nameinlink]{cleveref}
+\usepackage{colortbl}
+
 \crefname{section}{\S}{\S\S}
 \Crefname{section}{\S}{\S\S}
 \crefname{subsection}{\S}{\S\S}
@@ -26,35 +23,51 @@
 \Crefname{Theorem}{Theorem}{Theorems}
 \crefname{Proposition}{Proposition}{Propositions}
 \Crefname{Proposition}{Proposition}{Propositions}
-\usepackage{setspace}
-\usepackage{lineno}
-\usepackage{colortbl}
 
-\setstretch{1.0}
-\linenumbers
-
+\startlocaldefs
 \numberwithin{equation}{section}
 
-\newtheorem{Theorem}{Theorem}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem*{theorem*}{Theorem}
+\newtheorem{Theorem}[theorem]{Theorem}
 \newtheorem*{Theorem*}{Theorem}
-\newtheorem{Corollary}[Theorem]{Corollary}
-\newtheorem{Lemma}[Theorem]{Lemma}
-\newtheorem{Proposition}[Theorem]{Proposition}
-\newtheorem{Conjecture}[Theorem]{Conjecture}
-\newtheorem{Observation}[Theorem]{Observation}
+
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{Corollary}[theorem]{Corollary}
+
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{Lemma}[theorem]{Lemma}
+
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{Proposition}[theorem]{Proposition}
+
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{Conjecture}[theorem]{Conjecture}
+
+\newtheorem{observation}[theorem]{Observation}
+\newtheorem{Observation}[theorem]{Observation}
 
 \theoremstyle{definition}
-\newtheorem{Definition}[Theorem]{Definition}
-\newtheorem{Note}[Theorem]{Note}
-\newtheorem{Example}[Theorem]{Example}
-\newtheorem{Remark}[Theorem]{Remark}
-% Missing environments from the monolithic source
-\newtheorem{openproblem}[Theorem]{Open Problem}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{Definition}[theorem]{Definition}
+
+\newtheorem{note}[theorem]{Note}
+\newtheorem{Note}[theorem]{Note}
+
+\newtheorem{example}[theorem]{Example}
+\newtheorem{Example}[theorem]{Example}
+
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{Remark}[theorem]{Remark}
+
+\newtheorem{openproblem}{Open Problem}
+\newtheorem{Openproblem}{Open Problem}
+
 \crefname{openproblem}{Open Problem}{Open Problems}
 \Crefname{openproblem}{Open Problem}{Open Problems}
 
 %%% ====================================================================
-%%% CUSTOM COMMANDS FROM V11
+%%% CUSTOM COMMANDS
 %%% ====================================================================
 \newcommand{\cat}[1]{\mathcal{#1}}
 \newcommand{\Set}{\mathbf{Set}}
@@ -73,56 +86,39 @@
 \newcommand{\lean}[1]{\nolinkurl{#1}}
 \newcommand{\pcfrepo}{https://github.com/omega-pcf/02-odd-zeta}
 
+\endlocaldefs
 
 %%% ====================================================================
-%%% PREPRINT CUSTOMIZATION (SIGMA targeting)
+%%% JOURNAL SETTINGS
 %%% ====================================================================
-\makeatletter
-% Custom FirstPageHeading to include PREPRINT VERSION
-\renewcommand{\FirstPageHeading}{%
-  \thispagestyle{empty}%
-  \noindent\raisebox{35pt}[0pt][0pt]{\makebox[\textwidth]{\protect\footnotesize \sf
-      Symmetry, Integrability and Geometry: Methods and Applications
-      \hfill  SIGMA \Volume \ (\PublicationYear), \PaperNumber,
-      \pageref*{\ArticleLabel-lp} pages}}\par
-  \noindent\raisebox{20pt}[0pt][0pt]{\makebox[\textwidth]{\protect\footnotesize \sf
-      \hfill \textbf{PREPRINT VERSION} \hfill}}\par
-  \vspace{-15pt}
-}
-
-% Adding PREPRINT legend to all footers
-\renewcommand{\@evenfoot}{\footnotesize \sf PREPRINT VERSION \hfil}
-\renewcommand{\@oddfoot}{\hfil \footnotesize \sf PREPRINT VERSION}
-
-% Redefining ArticleDates to include Zenodo DOI and remove empty SIGMA DOI
-\renewcommand{\ArticleDates}[1]{%
-  \vspace{2mm}\par\noindent {\small {\rm #1} \par
-  \noindent {\rm Zenodo All Versions DOI: \href{https://doi.org/10.5281/zenodo.19492791}{10.5281/zenodo.19492791}} \par
-  } \vspace{3mm} \par
-}
-\makeatother
+\pubyear{2026}
+\volume{0}
+\issue{0}
+\firstpage{1}
+\lastpage{1}
 
 \begin{document}
 
-\renewcommand{\PaperNumber}{***}
+\begin{frontmatter}
 
-\FirstPageHeading
+\title[Odd Zeta from the PCF Torus]{Odd Zeta Values from the PCF Torus: $\golden$ and $\pi$ as Arithmetic-Geometric Sources\protect\thanksref{T1}}
+\thankstext{T1}{Zenodo All Versions DOI: \href{https://doi.org/10.5281/zenodo.19492791}{10.5281/zenodo.19492791}}
 
-\ShortArticleName{Odd Zeta Values from the PCF Torus}
-\ArticleName{Odd Zeta Values from the PCF Torus: $\golden$ and $\pi$ as Arithmetic-Geometric Sources}
+\begin{aug}
+\author{\fnms{Jorge Armando} \snm{GONZÁLEZ GARCÍA}\ead[label=e1]{jorge@ttamayo.com}}
+\author{\fnms{Víctor Manuel} \snm{GONZÁLEZ GARCÍA}\ead[label=e2]{victor@ttamayo.com}}
+\address{TTAMAYO PUNTO COM, S.A.P.I. de C.V.; Research \& Development Division; Naucalpan de Juárez, State of Mexico, Mexico\\\printead{e1}, \printead{e2}}
 
-\Author{Jorge Armando GONZÁLEZ GARCÍA~$^{\rm a}$, Víctor Manuel GONZÁLEZ GARCÍA~$^{\rm a}$, Itzel Marion DRESSLER PÉREZ~$^{\rm b}$ and Luz María GARCÍA ORDÓÑEZ~$^{\rm a}$}
+\author{\fnms{Itzel Marion} \snm{DRESSLER PÉREZ}\ead[label=e3]{}}
+\author{\fnms{Luz María} \snm{GARCÍA ORDÓÑEZ}\ead[label=e4]{}}
+\address{Independent Researcher\\\printead{e3}, \printead{e4}}
+\end{aug}
 
-\AuthorNameForHeading{Gonz\'alez Garc\'ia et al.}
-
-\Address{$^{\rm a)}$~TTAMAYO PUNTO COM, S.A.P.I. de C.V.; Research \& Development Division; Naucalpan de Juárez, State of Mexico, Mexico}
-\EmailD{\mail{jorge@ttamayo.com}, \mail{victor@ttamayo.com}}
-
-\Address{$^{\rm b)}$~Independent Researcher}
-
-\ArticleDates{Received April 10, 2026; Updated \today; Preprint hosted at Zenodo}
+\received{\sday{10} \smonth{4} \syear{2026}}
 
 \input{src/chapters/abstract}
+
+\end{frontmatter}
 
 \tableofcontents
 
@@ -137,10 +133,8 @@
 \input{src/chapters/acknowledgments}
 \input{src/chapters/appendix}
 
-\pdfbookmark[1]{References}{ref}
-\bibliographystyle{sigma}
+\bibliographystyle{imsart-number}
 \bibliography{src/bibliography}
 
-\LastPageEnding
-
 \end{document}
+
