@@ -1,6 +1,7 @@
 \pdfoutput=1
-\documentclass[cntp]{ipart}
+\documentclass[11pt,reqno]{amsart}
 
+\usepackage[margin=1in]{geometry}
 \usepackage{mathtools}
 \usepackage{amssymb}
 \usepackage{tikz-cd}
@@ -24,7 +25,6 @@
 \crefname{Proposition}{Proposition}{Propositions}
 \Crefname{Proposition}{Proposition}{Propositions}
 
-\startlocaldefs
 \numberwithin{equation}{section}
 
 \newtheorem{theorem}{Theorem}[section]
@@ -86,43 +86,36 @@
 \newcommand{\lean}[1]{\nolinkurl{#1}}
 \newcommand{\pcfrepo}{https://github.com/omega-pcf/02-odd-zeta}
 
-\endlocaldefs
-
-%%% ====================================================================
-%%% JOURNAL SETTINGS
-%%% ====================================================================
-\pubyear{2026}
-\volume{0}
-\issue{0}
-\firstpage{1}
-\lastpage{1}
-
 \begin{document}
 
-\begin{frontmatter}
+\title[Odd Zeta from the PCF Torus]{Odd Zeta Values from the PCF Torus: $\golden$ and $\pi$ as Arithmetic-Geometric Sources}
+\thanks{Zenodo All Versions DOI: \href{https://doi.org/10.5281/zenodo.19492791}{10.5281/zenodo.19492791}}
 
-\title[Odd Zeta from the PCF Torus]{Odd Zeta Values from the PCF Torus: $\golden$ and $\pi$ as Arithmetic-Geometric Sources\protect\thanksref{T1}}
-\thankstext{T1}{Zenodo All Versions DOI: \href{https://doi.org/10.5281/zenodo.19492791}{10.5281/zenodo.19492791}}
+\author{Jorge Armando GONZÁLEZ GARCÍA}
+\email{jorge@ttamayo.com}
+\author{Víctor Manuel GONZÁLEZ GARCÍA}
+\email{victor@ttamayo.com}
+\address{TTAMAYO PUNTO COM, S.A.P.I. de C.V.; Research \& Development Division; Naucalpan de Juárez, State of Mexico, Mexico}
 
-\begin{aug}
-\author{\fnms{Jorge Armando} \snm{GONZÁLEZ GARCÍA}\ead[label=e1]{jorge@ttamayo.com}}
-\author{\fnms{Víctor Manuel} \snm{GONZÁLEZ GARCÍA}\ead[label=e2]{victor@ttamayo.com}}
-\address{TTAMAYO PUNTO COM, S.A.P.I. de C.V.; Research \& Development Division; Naucalpan de Juárez, State of Mexico, Mexico\\\printead{e1}, \printead{e2}}
+\author{Itzel Marion DRESSLER PÉREZ}
+\email{itzel@omega-pcf.com}
+\author{Luz María GARCÍA ORDÓÑEZ}
+\email{luz@ttamayo.com}
+\address{Independent Researcher}
 
-\author{\fnms{Itzel Marion} \snm{DRESSLER PÉREZ}}
-\ead[label=e3]{itzel@omega-pcf.com}
-\author{\fnms{Luz María} \snm{GARCÍA ORDÓÑEZ}}
-\ead[label=e4]{luz@ttamayo.com}
-\address{Independent Researcher\\\printead{e3}, \printead{e4}}
-\end{aug}
+\date{April 10, 2026}
 
-\received{\sday{10} \smonth{4} \syear{2026}}
+\keywords{Riemann Hypothesis, Odd zeta values, field with one element, Elliptic curves, $\Lambda$-rings, String theory, Category theory, Golden ratio, Mersenne primes, Formal verification}
 
+\subjclass[2020]{Primary 11M06, 11R42, 11G05, 11J72, 81T30, 14G99; Secondary 68V20}
+
+\begin{abstract}
 \input{src/chapters/abstract}
+\end{abstract}
+
+\maketitle
 
 \tableofcontents
-
-\end{frontmatter}
 
 \input{src/chapters/01-introduction}
 \input{src/chapters/02-foundations}
@@ -135,8 +128,7 @@
 \input{src/chapters/disclosure}
 \input{src/chapters/acknowledgments}
 
-\bibliographystyle{imsart-number}
+\bibliographystyle{plain}
 \bibliography{src/bibliography}
 
 \end{document}
-
