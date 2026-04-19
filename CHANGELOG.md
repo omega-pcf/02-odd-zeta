@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.5.1](https://github.com/omega-pcf/02-odd-zeta/compare/v1.5.0...v1.5.1) (2026-04-19)
+
+### Refinements
+
+* migrate to vanilla amsart class and clean up journal-specific metadata ([70fe272](https://github.com/omega-pcf/02-odd-zeta/commit/70fe272a5a4d9fd40be2153d85a054a8451f25a1))
+
 ## [1.5.0](https://github.com/omega-pcf/02-odd-zeta/compare/v1.4.16...v1.5.0) (2026-04-19)
 
 ### Features
