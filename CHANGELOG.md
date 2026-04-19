@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.16](https://github.com/omega-pcf/02-odd-zeta/compare/v1.4.15...v1.4.16) (2026-04-19)
+
+### Styles
+
+* final standardization of end-matter and disclosure sections ([50edcf8](https://github.com/omega-pcf/02-odd-zeta/commit/50edcf81470dded9832f5bd5bd15ed2c89f5033e))
+* restore table of contents inside frontmatter ([ff6e7cb](https://github.com/omega-pcf/02-odd-zeta/commit/ff6e7cba966f696bcfd422bc6e19a48f6143f202))
+
 ## [1.4.15](https://github.com/omega-pcf/02-odd-zeta/compare/v1.4.14...v1.4.15) (2026-04-19)
 
 ### Styles
