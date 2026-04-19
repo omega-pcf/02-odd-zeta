@@ -20,7 +20,7 @@ We demonstrate that the odd values $\zeta(2k+1)$ of the Riemann zeta function ar
 
 ## Citation
 
-González García, J. A., González García, V. M., Dressler Pérez, I. M., & García Ordóñez, L. M. (2026). *Odd Zeta Values from the PCF Torus: φ and π as Arithmetic-Geometric Sources*. Preprint prepared for SIGMA (Symmetry, Integrability and Geometry: Methods and Applications). DOI: [10.5281/zenodo.19492791](https://doi.org/10.5281/zenodo.19492791).
+González García, J. A., González García, V. M., Dressler Pérez, I. M., & García Ordóñez, L. M. (2026). *Odd Zeta Values from the PCF Torus: φ and π as Arithmetic-Geometric Sources*. Preprint prepared for Communications in Number Theory and Physics (CNTP). DOI: [10.5281/zenodo.19492791](https://doi.org/10.5281/zenodo.19492791).
 
 ```bibtex
 @article{Gonzalez2026OddZeta,
@@ -30,7 +30,7 @@ González García, J. A., González García, V. M., Dressler Pérez, I. M., & Ga
   year    = {2026},
   doi     = {10.5281/zenodo.19492791},
   url     = {https://doi.org/10.5281/zenodo.19492791},
-  note    = {Preprint prepared for SIGMA (Symmetry, Integrability and Geometry: Methods and Applications)}
+  note    = {Preprint prepared for Communications in Number Theory and Physics (CNTP)}
 }
 ```
 
