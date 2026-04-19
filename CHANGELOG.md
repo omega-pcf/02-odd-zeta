@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.5.0](https://github.com/omega-pcf/02-odd-zeta/compare/v1.4.16...v1.5.0) (2026-04-19)
+
+### Features
+
+* add author email addresses for Itzel and Luz ([e88f96c](https://github.com/omega-pcf/02-odd-zeta/commit/e88f96c8f8c4379d5057ea088ebeb850bf62d2b7))
+
+### Bug Fixes
+
+* resolve blank email addresses by moving ead tags outside author tags ([4f5a0f9](https://github.com/omega-pcf/02-odd-zeta/commit/4f5a0f958e70442927762a3ef7c544d55d81c269))
+
 ## [1.4.16](https://github.com/omega-pcf/02-odd-zeta/compare/v1.4.15...v1.4.16) (2026-04-19)
 
 ### Styles
