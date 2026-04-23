@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.3](https://github.com/omega-pcf/02-odd-zeta/compare/v1.5.2...v1.5.3) (2026-04-23)
+
+### Styles
+
+* add extended date metadata (received, last modified, compiled) ([ca075fe](https://github.com/omega-pcf/02-odd-zeta/commit/ca075fe0b5565f0f81449506d18c2d6945e894f8))
+* set Last modified date to \today for automatic updates ([b773bd6](https://github.com/omega-pcf/02-odd-zeta/commit/b773bd6b0759bfc67fad13167ac818016ead5529))
+
 ## [1.5.2](https://github.com/omega-pcf/02-odd-zeta/compare/v1.5.1...v1.5.2) (2026-04-19)
 
 ### Styles
