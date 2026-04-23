@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.5.4](https://github.com/omega-pcf/02-odd-zeta/compare/v1.5.3...v1.5.4) (2026-04-23)
+
+### Bug Fixes
+
+* correct keywords to match README with symbols ([7a9f3be](https://github.com/omega-pcf/02-odd-zeta/commit/7a9f3be9afd9e19fae750eb4aaa21f5c1c7309e0))
+
 ## [1.5.3](https://github.com/omega-pcf/02-odd-zeta/compare/v1.5.2...v1.5.3) (2026-04-23)
 
 ### Styles
