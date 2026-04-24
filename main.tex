@@ -10,8 +10,10 @@
 \usepackage{array}
 \usepackage{graphicx}
 \usepackage{enumitem}
-\usepackage[numbers]{natbib}
 \usepackage{doi}
+\usepackage[backend=biber,style=numeric,sorting=none,doi=true,url=true,isbn=false]{biblatex}
+\addbibresource{src/bibliography.bib}
+\AtEveryBibitem{\iffieldundef{doi}{}{\clearfield{url}}}
 \usepackage{hyperref}
 \usepackage[capitalize,nameinlink]{cleveref}
 \usepackage{colortbl}
@@ -130,7 +132,6 @@
 \input{src/chapters/disclosure}
 \input{src/chapters/acknowledgments}
 
-\bibliographystyle{plainnat}
-\bibliography{src/bibliography}
+\printbibliography[heading=bibintoc]
 
 \end{document}

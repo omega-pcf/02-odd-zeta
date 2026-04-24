@@ -32,9 +32,9 @@ export function compilePDF(config: ReleaseConfig): void {
   console.log('  Running pdflatex (pass 1/4)...');
   runDockerCommand(`pdflatex -interaction=nonstopmode -output-directory=build ${sourceTex}`, commitEpoch);
 
-  // Step 2: bibtex for bibliography
-  console.log('  Running bibtex (pass 2/4)...');
-  runDockerCommand(`bibtex build/${baseName}`, commitEpoch);
+  // Step 2: biber for bibliography
+  console.log('  Running biber (pass 2/4)...');
+  runDockerCommand(`biber build/${baseName}`, commitEpoch);
 
   // Step 3: Second pdflatex pass for bibliography
   console.log('  Running pdflatex (pass 3/4)...');
