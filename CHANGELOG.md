@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.5](https://github.com/omega-pcf/02-odd-zeta/compare/v1.5.4...v1.5.5) (2026-04-24)
+
+### Bug Fixes
+
+* **bib:** enable DOI and URL links in references using plainnat and natbib ([0935a95](https://github.com/omega-pcf/02-odd-zeta/commit/0935a95d57e9d54c428f0bc0ac1a3fd31e136241))
+* **bib:** migrate to biblatex and biber for cleaner references ([5a3076f](https://github.com/omega-pcf/02-odd-zeta/commit/5a3076f671f04a51b0fd894ef89dd82546986e29))
+
 ## [1.5.4](https://github.com/omega-pcf/02-odd-zeta/compare/v1.5.3...v1.5.4) (2026-04-23)
 
 ### Bug Fixes
