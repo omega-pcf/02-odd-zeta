@@ -76,6 +76,76 @@
       "identifier": "https://github.com/omega-pcf/02-odd-zeta",
       "relation": "isSupplementTo",
       "resource_type": "software"
+    },
+    {
+      "identifier": "10.5281/zenodo.17619486",
+      "relation": "cites",
+      "resource_type": "publication"
+    },
+    {
+      "identifier": "10.1007/BF01211590",
+      "relation": "cites",
+      "resource_type": "publication"
+    },
+    {
+      "identifier": "10.1007/BF01612081",
+      "relation": "cites",
+      "resource_type": "publication"
+    },
+    {
+      "identifier": "10.1134/S2070046613040055",
+      "relation": "cites",
+      "resource_type": "publication"
+    },
+    {
+      "identifier": "10.1007/s00209-009-0638-0",
+      "relation": "cites",
+      "resource_type": "publication"
+    },
+    {
+      "identifier": "10.5281/zenodo.17100303",
+      "relation": "cites",
+      "resource_type": "publication"
+    },
+    {
+      "identifier": "10.1023/A:1026654312961",
+      "relation": "cites",
+      "resource_type": "publication"
+    },
+    {
+      "identifier": "10.1007/BFb0080769",
+      "relation": "cites",
+      "resource_type": "publication"
+    },
+    {
+      "identifier": "10.2178/bsl/1058448677",
+      "relation": "cites",
+      "resource_type": "publication"
+    },
+    {
+      "identifier": "10.1088/1126-6708/1998/02/003",
+      "relation": "cites",
+      "resource_type": "publication"
+    },
+    {
+      "identifier": "10.1112/S0025579300003971",
+      "relation": "cites",
+      "resource_type": "publication"
+    },
+    {
+      "identifier": "10.1007/978-3-642-56478-9_39",
+      "relation": "cites",
+      "resource_type": "publication"
+    },
+    {
+      "identifier": "10.1007/BF02684807",
+      "relation": "cites",
+      "resource_type": "publication"
+    },
+    {
+      "identifier": "10.1007/BF01446522",
+      "relation": "cites",
+      "resource_type": "publication"
     }
   ]
 }

@@ -266,6 +266,27 @@ export class MetadataPipeline {
       ];
     }
 
+    // Add references with DOIs as related identifiers
+    (cff.references || []).forEach((ref: any) => {
+      if (ref.doi) {
+        if (!zenodo.related_identifiers) zenodo.related_identifiers = [];
+        
+        // Map CFF resource types to Zenodo resource types
+        let resourceType = 'publication';
+        const type = ref.type?.toLowerCase();
+        if (type === 'software') resourceType = 'software';
+        else if (type === 'dataset') resourceType = 'dataset';
+        else if (type === 'image') resourceType = 'image';
+        else if (type === 'video') resourceType = 'video';
+        
+        zenodo.related_identifiers.push({
+          identifier: ref.doi,
+          relation: 'cites',
+          resource_type: resourceType as any
+        });
+      }
+    });
+
     writeFileSync(PATHS.ZENODO, JSON.stringify(zenodo, null, 2) + '\n');
     this.validator.validate(zenodo, PATHS.ZENODO_SCHEMA, '.zenodo.json');
     console.log(`  ✓ ${PATHS.ZENODO} generated from CITATION.cff.`);
