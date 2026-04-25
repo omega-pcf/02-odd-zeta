@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.5.7](https://github.com/omega-pcf/02-odd-zeta/compare/v1.5.6...v1.5.7) (2026-04-25)
+
+### Bug Fixes
+
+* **bib:** remove redundant TOC entry for references ([b6b21a9](https://github.com/omega-pcf/02-odd-zeta/commit/b6b21a92a51458ef9fc32b0115dfc5362c92d576))
+
 ## [1.5.6](https://github.com/omega-pcf/02-odd-zeta/compare/v1.5.5...v1.5.6) (2026-04-25)
 
 ### Documentation
