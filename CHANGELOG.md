@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.5.6](https://github.com/omega-pcf/02-odd-zeta/compare/v1.5.5...v1.5.6) (2026-04-25)
+
+### Documentation
+
+* update running head title for odd pages ([1acf681](https://github.com/omega-pcf/02-odd-zeta/commit/1acf681e32723c97606b6528d759d06f55379f9e))
+
 ## [1.5.5](https://github.com/omega-pcf/02-odd-zeta/compare/v1.5.4...v1.5.5) (2026-04-24)
 
 ### Bug Fixes
