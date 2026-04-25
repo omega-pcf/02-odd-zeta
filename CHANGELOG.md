@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.5.8](https://github.com/omega-pcf/02-odd-zeta/compare/v1.5.7...v1.5.8) (2026-04-25)
+
+### Bug Fixes
+
+* **auth:** correct Luz María affiliation to TTAMAYO ([cd78442](https://github.com/omega-pcf/02-odd-zeta/commit/cd784421b4342393e6d88d03e230cb74c9729da4))
+
 ## [1.5.7](https://github.com/omega-pcf/02-odd-zeta/compare/v1.5.6...v1.5.7) (2026-04-25)
 
 ### Bug Fixes
