@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.6.0](https://github.com/omega-pcf/02-odd-zeta/compare/v1.5.8...v1.6.0) (2026-04-25)
+
+### Features
+
+* **zenodo:** add structured related identifiers for references with DOIs ([ba84e60](https://github.com/omega-pcf/02-odd-zeta/commit/ba84e601358b438919eb30b5d4dd446904bc9ab1))
+
 ## [1.5.8](https://github.com/omega-pcf/02-odd-zeta/compare/v1.5.7...v1.5.8) (2026-04-25)
 
 ### Bug Fixes
