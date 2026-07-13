@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.6.1](https://github.com/omega-pcf/02-odd-zeta/compare/v1.6.0...v1.6.1) (2026-07-13)
+
+### Bug Fixes
+
+* **citation:** use CSL id as BibTeX key; fix apostol id mismatch ([a0f0d68](https://github.com/omega-pcf/02-odd-zeta/commit/a0f0d6870a642c5307d130425ff47abdbaf72847))
+* **metadata:** use 𝔽₁ (double-struck) for field with one element ([b010d37](https://github.com/omega-pcf/02-odd-zeta/commit/b010d3718b379869312c75970ae1697025de5f86))
+* **tex:** add hypersetup for colored hyperlinks ([ff58659](https://github.com/omega-pcf/02-odd-zeta/commit/ff586599ecff3af3c185c7795b536979be798e9f))
+* **tex:** add urlcolor=blue to hypersetup ([48785e6](https://github.com/omega-pcf/02-odd-zeta/commit/48785e638465bceb49b91a4ecf39636bf9429f1b))
+* **tex:** red cross-refs, blue citations (no green) ([e4cb02d](https://github.com/omega-pcf/02-odd-zeta/commit/e4cb02d65b5a192c53a34c7fd97aebb60fd2d643))
+* **tex:** remove explicit hypersetup, amsart handles blue links natively ([5cbc578](https://github.com/omega-pcf/02-odd-zeta/commit/5cbc578f53ddf52ff543f2fe71ef709e72cfc5ee))
+
+### Documentation
+
+* remove journal prep note and sync keywords ([489c67d](https://github.com/omega-pcf/02-odd-zeta/commit/489c67dace5b3f4e07d8b0a71c5b9781ee1bfc3a))
+
 ## [1.6.0](https://github.com/omega-pcf/02-odd-zeta/compare/v1.5.8...v1.6.0) (2026-04-25)
 
 ### Features
