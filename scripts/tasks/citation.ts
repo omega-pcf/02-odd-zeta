@@ -3,14 +3,14 @@ import { parse as parseYaml, stringify as stringifyYaml } from 'yaml';
 import { Ajv, type ValidateFunction } from 'ajv';
 import addFormats from 'ajv-formats';
 // @ts-ignore
-import { Cite } from '@citation-js/core';
+import { Cite, plugins } from '@citation-js/core';
 import '@citation-js/plugin-csl';
 import '@citation-js/plugin-cff';
 import '@citation-js/plugin-bibtex';
 import '@citation-js/plugin-zenodo';
 import type { CslItem } from '@citestyle/types';
-import type { 
-  CitationFileFormat, 
+import type {
+  CitationFileFormat,
   Reference,
   ZenodoDepositionMetadata
 } from '../types.js';
@@ -104,6 +104,10 @@ export class MetadataPipeline {
   }
 
   private syncBibtex(items: CslItem[]): void {
+    // Use CSL `id` as the BibTeX key instead of citation-js's auto-generated
+    // AuthorYearWord labels. Ensures the bib keys match the \cite{key} calls
+    // in the chapter files and emits valid BibTeX openers.
+    (plugins as any).config.get('@bibtex').format.useIdAsLabel = true;
     const data = new Cite(items);
     const bib = data.format('bibtex');
     writeFileSync(PATHS.BIB, bib);
