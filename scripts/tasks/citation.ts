@@ -164,9 +164,12 @@ export class MetadataPipeline {
         });
       }
       
-      // 5. Normalize publisher metadata (ensure 2-letter ISO country codes)
+      // 5. Normalize publisher/institution metadata (ensure 2-letter ISO country codes)
       if (ref.publisher && ref.publisher.country && !/^[A-Z]{2}$/.test(ref.publisher.country)) {
         delete ref.publisher.country;
+      }
+      if (ref.institution && ref.institution.country && !/^[A-Z]{2}$/.test(ref.institution.country)) {
+        delete ref.institution.country;
       }
       
       // 6. Normalize language codes (ensure 2-3 letter ISO codes)
