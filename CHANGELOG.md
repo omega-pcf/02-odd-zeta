@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.7.0](https://github.com/omega-pcf/02-odd-zeta/compare/v1.6.4...v1.7.0) (2026-07-29)
+
+### Features
+
+* **ci:** add Zenodo upload workflow via REST API ([bddc623](https://github.com/omega-pcf/02-odd-zeta/commit/bddc623f65b25f7a4810140fea071250420ca60f))
+
+### Bug Fixes
+
+* **citation:** add doi to package.json, propagate via pipeline ([de1f3e5](https://github.com/omega-pcf/02-odd-zeta/commit/de1f3e5f8d022b0c63d93cffded12e1c2d35732e))
+* **citation:** replace invalid resource_type 'publication-technicalreport' with 'publication' ([5ea7f71](https://github.com/omega-pcf/02-odd-zeta/commit/5ea7f7197afc561491555519ab7f38565a429320))
+* **citation:** set Zenodo upload_type to publication/preprint ([342bdd6](https://github.com/omega-pcf/02-odd-zeta/commit/342bdd6050a643cc8eb0f867b8f76305d5172e2a))
+
 ## [1.6.4](https://github.com/omega-pcf/02-odd-zeta/compare/v1.6.3...v1.6.4) (2026-07-29)
 
 ### Bug Fixes
