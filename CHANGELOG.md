@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.6.2](https://github.com/omega-pcf/02-odd-zeta/compare/v1.6.1...v1.6.2) (2026-07-29)
+
+### Bug Fixes
+
+* **build:** clean stale LaTeX artifacts and tolerate pdflatex non-zero exit ([f4d3492](https://github.com/omega-pcf/02-odd-zeta/commit/f4d3492d487f14ccccd2b43cd3c1429d6a5bb6ae))
+* **citation:** normalize institution.country to ISO codes ([3edadfc](https://github.com/omega-pcf/02-odd-zeta/commit/3edadfc9148de72435e103e7c474e66d17a2638b))
+* **citation:** repair CSL→Zenodo pipeline bugs ([5fa16b3](https://github.com/omega-pcf/02-odd-zeta/commit/5fa16b33794ee02fe46b5269c1fdc4586dba627a))
+* **citations:** add 9 DOIs and correct title for DunfordSchwartz ([d2941e1](https://github.com/omega-pcf/02-odd-zeta/commit/d2941e1d198b5e9629f366aa4abc4cd8beadc9b7))
+* **citations:** correct 4 metadata issues in 02-odd-zeta ([ae0d870](https://github.com/omega-pcf/02-odd-zeta/commit/ae0d870cc115f12e4aacbef61c8a22a7422a593c))
+* **tex:** rename duplicate label rmk:squeeze-mechanism ([80b7954](https://github.com/omega-pcf/02-odd-zeta/commit/80b7954bb49ec0bbeccccc734b4d9ecf2fb3cb5e))
+
+### Styles
+
+* use muted red for linkcolor across all repos ([1ce23f5](https://github.com/omega-pcf/02-odd-zeta/commit/1ce23f57e4e0d344af13b51e5059a252f4d16b4d))
+
 ## [1.6.1](https://github.com/omega-pcf/02-odd-zeta/compare/v1.6.0...v1.6.1) (2026-07-13)
 
 ### Bug Fixes
