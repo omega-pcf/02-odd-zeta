@@ -159,6 +159,7 @@ export class MetadataPipeline {
     cff['date-released'] = new Date().toISOString().split('T')[0];
     cff.abstract = pkg.metadata?.abstract || cff.abstract;
     cff.keywords = pkg.keywords || cff.keywords;
+    if (pkg.metadata?.doi) cff.doi = pkg.metadata.doi;
     
     // Map CSL items to CFF references using citation-js
     const data = new Cite(items);
@@ -326,6 +327,7 @@ export class MetadataPipeline {
       access_right: 'open',
       license: Array.isArray(cff.license) ? cff.license[0] : (cff.license as string || 'cc-by-4.0'),
       language: (cff as any).language || 'eng',
+      ...(cff.doi ? { doi: cff.doi } : {}),
       references: references
     };
 
