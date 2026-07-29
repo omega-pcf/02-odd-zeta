@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.6.4](https://github.com/omega-pcf/02-odd-zeta/compare/v1.6.3...v1.6.4) (2026-07-29)
+
+### Bug Fixes
+
+* **citation:** remove invalid publication_type from .zenodo.json ([825019d](https://github.com/omega-pcf/02-odd-zeta/commit/825019dbc3b36f5839157e633ac2b62a6bbef9a9))
+
 ## [1.6.3](https://github.com/omega-pcf/02-odd-zeta/compare/v1.6.2...v1.6.3) (2026-07-29)
 
 ### Bug Fixes
