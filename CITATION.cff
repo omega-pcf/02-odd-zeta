@@ -215,7 +215,7 @@ references:
   - authors:
       - family-names: Veneziano
         given-names: G.
-    title: Construction of a crossing-symmetric, Regge-behaved amplitude for
+    title: Construction of a crossing-simmetric, Regge-behaved amplitude for
       linearly rising trajectories
     date-published: 1968-01-01
     year: 1968
@@ -358,7 +358,7 @@ references:
         value: https://doi.org/10.1023/A:1026654312961
       - type: other
         value: urn:issn:1572-9575
-    title: The Large-ℕ Limit of Superconformal Field Theories and Supergravity
+    title: The Large-N Limit of Superconformal Field Theories and Supergravity
     url: https://doi.org/10.1023/A:1026654312961
     date-published: 1999-04-01
     year: 1999
@@ -456,7 +456,7 @@ references:
         given-names: N.
       - family-names: Schwartz
         given-names: J. T.
-    title: "Linear Operators: General Theory"
+    title: "Linear Operators, Part I: General Theory"
     date-published: 1958-01-01
     year: 1958
     publisher:
@@ -578,7 +578,7 @@ references:
         value: 10.1007/BF01446522
       - type: url
         value: https://doi.org/10.1007/BF01446522
-    title: Über die Zahl π
+    title: Ueber die Zahl π
     url: https://doi.org/10.1007/BF01446522
     date-published: 1882-01-01
     year: 1882
