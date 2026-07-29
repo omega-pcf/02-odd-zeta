@@ -3,7 +3,7 @@ message: If you use this software, please cite it using these metadata.
 title: "Odd Zeta Values from the PCF Torus: φ and π as Arithmetic-Geometric Sources"
 type: software
 version: 1.6.1
-date-released: 2026-07-13
+date-released: 2026-07-29
 authors:
   - family-names: González García
     given-names: Jorge Armando
@@ -55,6 +55,18 @@ abstract: "We demonstrate that the odd values ζ(2k+1) of the Riemann zeta
   Herderschee and Morales in the N=4 SYM S-matrix bootstrap: those values are
   free only relative to the EFT; the pentagonal arithmetic fixes them."
 references:
+  - type: article
+    title: String Theory from Maximal Supersymmetry
+    authors:
+      - family-names: Elvang
+        given-names: Henriette
+      - family-names: Herderschee
+        given-names: Aidan
+      - family-names: Morales
+        given-names: Roger
+    year: 2026
+    journal: arXiv preprint arXiv:2601.11705 [hep-th]
+    url: https://arxiv.org/abs/2601.11705
   - authors:
       - family-names: González García
         given-names: Jorge Armando

@@ -72,8 +72,8 @@ export class MetadataPipeline {
   public sync(version: string): void {
     this.cleanup();
     console.log(`  Initiating standards-compliant metadata sync v${version}...`);
-
-    const cslData = this.loadCsl();
+    
+    const cslData = this.sanitizeCsl(this.loadCsl());
     
     // 1. Bibliography (handled by citation-js)
     this.syncBibtex(cslData);
@@ -103,13 +103,49 @@ export class MetadataPipeline {
     return JSON.parse(readFileSync(PATHS.CSL, 'utf8'));
   }
 
+  private sanitizeCsl(items: CslItem[]): CslItem[] {
+    const supMap: Record<string, string> = {
+      '⁰': '0', '¹': '1', '²': '2', '³': '3', '⁴': '4',
+      '⁵': '5', '⁶': '6', '⁷': '7', '⁸': '8', '⁹': '9'
+    };
+    
+    const sanitize = (str: any): any => {
+      if (typeof str !== 'string') return str;
+      return str.replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹]+/g, (match) => {
+        const digits = match.split('').map(char => supMap[char] || char).join('');
+        return `<sup>${digits}</sup>`;
+      });
+    };
+
+    return items.map(item => {
+      if (item.title) item.title = sanitize(item.title);
+      if (item.note) item.note = sanitize(item.note);
+      if (item.abstract) item.abstract = sanitize(item.abstract);
+      return item;
+    });
+  }
+
   private syncBibtex(items: CslItem[]): void {
-    // Use CSL `id` as the BibTeX key instead of citation-js's auto-generated
-    // AuthorYearWord labels. Ensures the bib keys match the \cite{key} calls
-    // in the chapter files and emits valid BibTeX openers.
-    (plugins as any).config.get('@bibtex').format.useIdAsLabel = true;
+    // Generate BibTeX from CSL, then post-process to replace auto-generated
+    // keys with the original CSL `id` values, so \cite{key} in the tex
+    // matches the bib entries. citation-js preserves item order, so item[i]
+    // corresponds to the i-th @entry in the output.
     const data = new Cite(items);
-    const bib = data.format('bibtex');
+    let bib = data.format('bibtex');
+
+    // Extract generated keys in order
+    const autoKeys = [...bib.matchAll(/@\w+\{([^,]+)/g)].map(m => m[1]);
+
+    // Build replacement map: autoKey → CSL id (by position)
+    for (let i = 0; i < items.length && i < autoKeys.length; i++) {
+      const autoKey = autoKeys[i];
+      const cslId = items[i].id;
+      if (autoKey && cslId && autoKey !== cslId) {
+        const escaped = autoKey.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        bib = bib.replace(new RegExp(escaped, 'g'), cslId);
+      }
+    }
+
     writeFileSync(PATHS.BIB, bib);
     console.log(`  ✓ ${PATHS.BIB} generated.`);
   }
@@ -127,6 +163,33 @@ export class MetadataPipeline {
     // Map CSL items to CFF references using citation-js
     const data = new Cite(items);
     const cffRefData = data.format('cff', { type: 'object' }) as any;
+    
+    // Bug fix: citation-js treats the first CSL item as the CFF root,
+    // discarding it from references. Detect and re-add it.
+    const firstItem = items[0];
+    const existingRefs = cffRefData.references || [];
+    const firstRefId = firstItem?.id;
+    const firstAlreadyPresent = existingRefs.some((r: any) => r.name === firstRefId);
+    if (firstItem && !firstAlreadyPresent) {
+      // Convert first CSL item to CFF reference format
+      const authors = (firstItem.author || []).map((a: any) => {
+        if (a.literal) return { name: a.literal };
+        return { 'family-names': a.family, 'given-names': a.given };
+      });
+      const firstRef: any = {
+        type: 'article',
+        title: firstItem.title,
+        authors,
+        year: firstItem.issued?.['date-parts']?.[0]?.[0],
+      };
+      if (firstItem['container-title']) firstRef.journal = firstItem['container-title'];
+      if (firstItem.volume) firstRef.volume = String(firstItem.volume);
+      if (firstItem.issue) firstRef.issue = String(firstItem.issue);
+      if (firstItem.page) firstRef.pages = firstItem.page;
+      if (firstItem.DOI) firstRef.doi = firstItem.DOI;
+      if (firstItem.URL) firstRef.url = firstItem.URL;
+      existingRefs.unshift(firstRef);
+    }
     
     // Normalize citation-js output to strict CFF 1.2.0
     cff.references = (cffRefData.references || []).map((ref: any) => {
@@ -164,10 +227,12 @@ export class MetadataPipeline {
         });
       }
       
-      // 5. Normalize publisher/institution metadata (ensure 2-letter ISO country codes)
+      // 5. Normalize publisher metadata (ensure 2-letter ISO country codes)
       if (ref.publisher && ref.publisher.country && !/^[A-Z]{2}$/.test(ref.publisher.country)) {
         delete ref.publisher.country;
       }
+      
+      // 5b. Normalize institution metadata (same ISO country check)
       if (ref.institution && ref.institution.country && !/^[A-Z]{2}$/.test(ref.institution.country)) {
         delete ref.institution.country;
       }
@@ -199,6 +264,7 @@ export class MetadataPipeline {
 
 
   private syncZenodo(cff: CitationFileFormat, version: string): void {
+    // Generate references from sanitized CFF references to avoid re-parsing slop
     const references = (cff.references || [])
       .map((ref: any) => {
         const authors = (ref.authors || [])
@@ -281,10 +347,22 @@ export class MetadataPipeline {
         // Map CFF resource types to Zenodo resource types
         let resourceType = 'publication';
         const type = ref.type?.toLowerCase();
-        if (type === 'software') resourceType = 'software';
-        else if (type === 'dataset') resourceType = 'dataset';
-        else if (type === 'image') resourceType = 'image';
-        else if (type === 'video') resourceType = 'video';
+        const typeMap: Record<string, string> = {
+          'software': 'software',
+          'dataset': 'dataset',
+          'image': 'image',
+          'video': 'video',
+          'article': 'publication-article',
+          'book': 'publication-book',
+          'book-section': 'publication-section',
+          'proceedings-article': 'publication-conferencepaper',
+          'conference-paper': 'publication-conferencepaper',
+          'report': 'publication-technicalreport',
+          'thesis': 'publication-thesis',
+          'manuscript': 'publication-preprint',
+          'preprint': 'publication-preprint',
+        };
+        resourceType = typeMap[type] || 'publication';
         
         zenodo.related_identifiers.push({
           identifier: ref.doi,
