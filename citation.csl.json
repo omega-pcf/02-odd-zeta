@@ -26,7 +26,8 @@
         },
         "title": "String Theory from Maximal Supersymmetry",
         "type": "article-journal",
-        "URL": "https://arxiv.org/abs/2601.11705"
+        "URL": "https://arxiv.org/abs/2601.11705",
+        "DOI": "10.48550/arXiv.2601.11705"
     },
     {
         "author": [
@@ -84,7 +85,8 @@
         },
         "publisher": "Springer",
         "title": "Algebraic Number Theory",
-        "type": "book"
+        "type": "book",
+        "DOI": "10.1007/978-1-4757-5673-9"
     },
     {
         "author": [
@@ -104,7 +106,8 @@
         },
         "publisher": "Springer",
         "title": "Introduction to Cyclotomic Fields",
-        "type": "book"
+        "type": "book",
+        "DOI": "10.1007/978-1-4612-1934-7"
     },
     {
         "author": [
@@ -152,7 +155,8 @@
         "page": "193-207",
         "title": "Irrationalité d'une infinité de valeurs de la fonction zêta aux entiers impairs",
         "type": "article-journal",
-        "volume": "146"
+        "volume": "146",
+        "DOI": "10.1007/s002220100168"
     },
     {
         "author": [
@@ -272,9 +276,10 @@
             ]
         },
         "page": "190-197",
-        "title": "Construction of a crossing-simmetric, Regge-behaved amplitude for linearly rising trajectories",
+        "title": "Construction of a crossing-symmetric, Regge-behaved amplitude for linearly rising trajectories",
         "type": "article-journal",
-        "volume": "57"
+        "volume": "57",
+        "DOI": "10.1007/BF02895960"
     },
     {
         "author": [
@@ -295,7 +300,8 @@
         },
         "title": "Λ-rings and the field with one element",
         "type": "article-journal",
-        "URL": "https://arxiv.org/abs/0906.3146"
+        "URL": "https://arxiv.org/abs/0906.3146",
+        "DOI": "10.48550/arXiv.0906.3146"
     },
     {
         "author": [
@@ -379,7 +385,8 @@
         "publisher-place": "New York, Heidelberg, Berlin",
         "title": "Une lettre et un extrait de lettre à Simone Weil",
         "type": "chapter",
-        "volume": "I"
+        "volume": "I",
+        "DOI": "10.1007/978-1-4757-3998-5"
     },
     {
         "author": [
@@ -425,7 +432,7 @@
             ]
         },
         "page": "1113-1133",
-        "title": "The Large-N Limit of Superconformal Field Theories and Supergravity",
+        "title": "The Large-ℕ Limit of Superconformal Field Theories and Supergravity",
         "type": "article-journal",
         "volume": "38",
         "ISSN": "1572-9575",
@@ -561,7 +568,8 @@
         },
         "publisher": "Interscience Publishers",
         "title": "Linear Operators, Part I: General Theory",
-        "type": "book"
+        "type": "book",
+        "DOI": "10.1007/978-1-4684-8487-1"
     },
     {
         "author": [
@@ -584,7 +592,8 @@
         "page": "3-24",
         "title": "Normierte Ringe",
         "type": "article-journal",
-        "volume": "9(51)"
+        "volume": "9(51)",
+        "DOI": "10.1070/SM1941v009n05ABEH001847"
     },
     {
         "author": [
@@ -749,7 +758,7 @@
             ]
         },
         "page": "213-225",
-        "title": "Ueber die Zahl π",
+        "title": "Über die Zahl π",
         "type": "article-journal",
         "volume": "20"
     }

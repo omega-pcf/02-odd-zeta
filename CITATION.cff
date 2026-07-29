@@ -66,6 +66,7 @@ references:
         given-names: Roger
     year: 2026
     journal: arXiv preprint arXiv:2601.11705 [hep-th]
+    doi: 10.48550/arXiv.2601.11705
     url: https://arxiv.org/abs/2601.11705
   - authors:
       - family-names: González García
@@ -94,6 +95,10 @@ references:
   - authors:
       - family-names: Neukirch
         given-names: J.
+    doi: 10.1007/978-1-4757-5673-9
+    identifiers:
+      - type: doi
+        value: 10.1007/978-1-4757-5673-9
     title: Algebraic Number Theory
     date-published: 1999-01-01
     year: 1999
@@ -103,6 +108,10 @@ references:
   - authors:
       - family-names: Washington
         given-names: L. C.
+    doi: 10.1007/978-1-4612-1934-7
+    identifiers:
+      - type: doi
+        value: 10.1007/978-1-4612-1934-7
     title: Introduction to Cyclotomic Fields
     date-published: 1997-01-01
     year: 1997
@@ -125,6 +134,10 @@ references:
         given-names: Keith
       - family-names: Rivoal
         given-names: Tanguy
+    doi: 10.1007/s002220100168
+    identifiers:
+      - type: doi
+        value: 10.1007/s002220100168
     title: Irrationalité d'une infinité de valeurs de la fonction zêta aux entiers
       impairs
     date-published: 2001-01-01
@@ -215,7 +228,11 @@ references:
   - authors:
       - family-names: Veneziano
         given-names: G.
-    title: Construction of a crossing-simmetric, Regge-behaved amplitude for
+    doi: 10.1007/BF02895960
+    identifiers:
+      - type: doi
+        value: 10.1007/BF02895960
+    title: Construction of a crossing-symmetric, Regge-behaved amplitude for
       linearly rising trajectories
     date-published: 1968-01-01
     year: 1968
@@ -227,7 +244,10 @@ references:
   - authors:
       - family-names: Borger
         given-names: James
+    doi: 10.48550/arXiv.0906.3146
     identifiers:
+      - type: doi
+        value: 10.48550/arXiv.0906.3146
       - type: url
         value: https://arxiv.org/abs/0906.3146
     title: Λ-rings and the field with one element
@@ -303,6 +323,10 @@ references:
   - authors:
       - family-names: Weil
         given-names: André
+    doi: 10.1007/978-1-4757-3998-5
+    identifiers:
+      - type: doi
+        value: 10.1007/978-1-4757-3998-5
     title: Une lettre et un extrait de lettre à Simone Weil
     date-published: 1940-01-01
     year: 1940
@@ -358,7 +382,7 @@ references:
         value: https://doi.org/10.1023/A:1026654312961
       - type: other
         value: urn:issn:1572-9575
-    title: The Large-N Limit of Superconformal Field Theories and Supergravity
+    title: The Large-ℕ Limit of Superconformal Field Theories and Supergravity
     url: https://doi.org/10.1023/A:1026654312961
     date-published: 1999-04-01
     year: 1999
@@ -456,6 +480,10 @@ references:
         given-names: N.
       - family-names: Schwartz
         given-names: J. T.
+    doi: 10.1007/978-1-4684-8487-1
+    identifiers:
+      - type: doi
+        value: 10.1007/978-1-4684-8487-1
     title: "Linear Operators, Part I: General Theory"
     date-published: 1958-01-01
     year: 1958
@@ -465,6 +493,10 @@ references:
   - authors:
       - family-names: Gelfand
         given-names: Israel M.
+    doi: 10.1070/SM1941v009n05ABEH001847
+    identifiers:
+      - type: doi
+        value: 10.1070/SM1941v009n05ABEH001847
     title: Normierte Ringe
     date-published: 1941-01-01
     year: 1941
@@ -578,7 +610,7 @@ references:
         value: 10.1007/BF01446522
       - type: url
         value: https://doi.org/10.1007/BF01446522
-    title: Ueber die Zahl π
+    title: Über die Zahl π
     url: https://doi.org/10.1007/BF01446522
     date-published: 1882-01-01
     year: 1882
