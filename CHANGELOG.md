@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.6.3](https://github.com/omega-pcf/02-odd-zeta/compare/v1.6.2...v1.6.3) (2026-07-29)
+
+### Bug Fixes
+
+* **citation:** set upload_type to software for Zenodo ([f5191b7](https://github.com/omega-pcf/02-odd-zeta/commit/f5191b78cfb463afe25842ac8e050ac7c8d7cd25))
+
 ## [1.6.2](https://github.com/omega-pcf/02-odd-zeta/compare/v1.6.1...v1.6.2) (2026-07-29)
 
 ### Bug Fixes
