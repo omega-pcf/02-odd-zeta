@@ -14,8 +14,9 @@
 \usepackage[backend=biber,style=numeric,sorting=none,doi=true,url=true,isbn=false]{biblatex}
 \addbibresource{src/bibliography.bib}
 \AtEveryBibitem{\iffieldundef{doi}{}{\clearfield{url}}}
+\usepackage{xcolor}\definecolor{linkred}{rgb}{0.78,0.08,0.12}
 \usepackage{hyperref}
-\hypersetup{colorlinks=true,urlcolor=blue,linkcolor=red,citecolor=blue}
+\hypersetup{colorlinks=true,urlcolor=blue,linkcolor=linkred,citecolor=blue}
 \usepackage[capitalize,nameinlink]{cleveref}
 \usepackage{colortbl}
 
