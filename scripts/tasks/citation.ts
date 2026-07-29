@@ -356,7 +356,7 @@ export class MetadataPipeline {
           'book-section': 'publication-section',
           'proceedings-article': 'publication-conferencepaper',
           'conference-paper': 'publication-conferencepaper',
-          'report': 'publication-technicalreport',
+          'report': 'publication',
           'thesis': 'publication-thesis',
           'manuscript': 'publication-preprint',
           'preprint': 'publication-preprint',
