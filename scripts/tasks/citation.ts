@@ -321,7 +321,8 @@ export class MetadataPipeline {
         orcid: a.orcid?.replace(/.*orcid.org\//, '')
       })),
       keywords: cff.keywords || [],
-      upload_type: 'software',
+      upload_type: 'publication',
+      publication_type: 'preprint',
       access_right: 'open',
       license: Array.isArray(cff.license) ? cff.license[0] : (cff.license as string || 'cc-by-4.0'),
       language: (cff as any).language || 'eng',
