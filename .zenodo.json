@@ -35,8 +35,7 @@
     "Mersenne primes",
     "Formal verification"
   ],
-  "upload_type": "publication",
-  "publication_type": "preprint",
+  "upload_type": "software",
   "access_right": "open",
   "license": "CC-BY-4.0",
   "language": "eng",
