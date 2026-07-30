@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.7.1](https://github.com/omega-pcf/02-odd-zeta/compare/v1.7.0...v1.7.1) (2026-07-30)
+
+### Bug Fixes
+
+* **build:** use latexmk instead of manual pdflatex/biber ([1badd15](https://github.com/omega-pcf/02-odd-zeta/commit/1badd15dbcb3d3f33304d5459a6affad4b7f440c))
+
+### Documentation
+
+* add standardized build pipeline docs ([c189af3](https://github.com/omega-pcf/02-odd-zeta/commit/c189af3606eb0138381ff97cea249e7c883b230a))
+
 ## [1.7.0](https://github.com/omega-pcf/02-odd-zeta/compare/v1.6.4...v1.7.0) (2026-07-29)
 
 ### Features
