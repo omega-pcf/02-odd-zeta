@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.7.2](https://github.com/omega-pcf/02-odd-zeta/compare/v1.7.1...v1.7.2) (2026-07-31)
+
+### Bug Fixes
+
+* **build:** use biblatex format, clean stale artifacts, surface latex errors ([52d4796](https://github.com/omega-pcf/02-odd-zeta/commit/52d4796f7fbbdbecf08d6f1e4f308891fba37149))
+
+### Chores
+
+* regenerate metadata and PDF after biblatex format fix ([35c6f69](https://github.com/omega-pcf/02-odd-zeta/commit/35c6f69eed63c3f46aaba8ec8d3c3dabb306e781))
+* update .gitignore (add /.hermes, build/src, lockfiles) ([6c54e09](https://github.com/omega-pcf/02-odd-zeta/commit/6c54e09bd8c1b573a08000f2f8b96d808318f458))
+
 ## [1.7.1](https://github.com/omega-pcf/02-odd-zeta/compare/v1.7.0...v1.7.1) (2026-07-30)
 
 ### Bug Fixes
