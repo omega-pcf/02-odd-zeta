@@ -126,12 +126,12 @@ export class MetadataPipeline {
   }
 
   private syncBibtex(items: CslItem[]): void {
-    // Generate BibTeX from CSL, then post-process to replace auto-generated
-    // keys with the original CSL `id` values, so \cite{key} in the tex
-    // matches the bib entries. citation-js preserves item order, so item[i]
-    // corresponds to the i-th @entry in the output.
+    // Generate BibLaTeX from CSL (not BibTeX, since we use biber backend).
+    // BibLaTeX format produces native biblatex fields (journaltitle, date,
+    // location) and entry types (@online, @report), and avoids the
+    // howpublished=url duplication that the bibtex format introduces.
     const data = new Cite(items);
-    let bib = data.format('bibtex');
+    let bib = data.format('biblatex');
 
     // Extract generated keys in order
     const autoKeys = [...bib.matchAll(/@\w+\{([^,]+)/g)].map(m => m[1]);

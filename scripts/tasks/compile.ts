@@ -1,7 +1,22 @@
-import { execSync, spawnSync } from 'child_process';
+import { spawnSync } from 'child_process';
 import { existsSync, mkdirSync, readFileSync, renameSync } from 'fs';
 import { getCommitEpoch } from '../utils/git.js';
 import type { ReleaseConfig } from '../types.js';
+
+/**
+ * Print the tail of the LaTeX log file when compilation fails, so the
+ * actual TeX error is visible instead of being swallowed by latexmk.
+ */
+function printLogTail(logPath: string): void {
+  if (!existsSync(logPath)) {
+    console.error(`    (log file ${logPath} not found)`);
+    return;
+  }
+  const log = readFileSync(logPath, 'utf8');
+  const lines = log.split('\n');
+  const tail = lines.slice(-80).join('\n');
+  console.error(`\n--- last 80 lines of ${logPath} ---\n${tail}\n--- end log ---\n`);
+}
 
 const DOCKER_IMAGE = 'kjarosh/latex:2024.4-full';
 
@@ -33,7 +48,7 @@ export function compilePDF(config: ReleaseConfig): void {
     '-e', 'TZ=UTC',
     ...DOCKER_TEX_ENV.split(' '),
     DOCKER_IMAGE,
-    'latexmk', '-pdf', '-interaction=nonstopmode', '-quiet', sourceTex,
+    'latexmk', '-pdf', '-interaction=nonstopmode', sourceTex,
   ];
 
   const result = spawnSync('docker', args, {
@@ -59,6 +74,7 @@ export function compilePDF(config: ReleaseConfig): void {
 
   const sourcePdf = 'build/main.pdf';
   if (!existsSync(sourcePdf)) {
+    printLogTail(`build/${baseName}.log`);
     throw new Error(
       `PDF compilation failed - ${sourcePdf} not found.\n` +
       `Docker exit: ${result.status}`

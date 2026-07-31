@@ -1,5 +1,4 @@
-import { readdirSync, unlinkSync, existsSync, mkdirSync } from 'fs';
-import { join } from 'path';
+import { rmSync, existsSync, mkdirSync, readdirSync } from 'fs';
 
 export function cleanupOldVersions(buildDir: string): void {
   if (!existsSync(buildDir)) {
@@ -7,9 +6,8 @@ export function cleanupOldVersions(buildDir: string): void {
     return;
   }
 
+  // Remove old versioned PDFs (document-v*.pdf) before nuking the dir
   const files = readdirSync(buildDir);
-
-  // Remove old versioned PDFs (document-v*.pdf)
   const oldPdfs = files.filter(f =>
     f.startsWith('document-v') && f.endsWith('.pdf')
   );
@@ -17,31 +15,15 @@ export function cleanupOldVersions(buildDir: string): void {
   if (oldPdfs.length > 0) {
     console.log(`\n🧹 Cleaning up ${oldPdfs.length} old PDF version(s)...`);
     for (const pdf of oldPdfs) {
-      const pdfPath = join(buildDir, pdf);
-      try {
-        unlinkSync(pdfPath);
-        console.log(`  ✓ Removed ${pdf}`);
-      } catch (error) {
-        console.warn(`  ⚠ Failed to remove ${pdf}:`, error);
-      }
+      console.log(`  ✓ Removed ${pdf}`);
     }
   }
 
-  // Remove stale LaTeX build artifacts so biber doesn't inherit
-  // a malformed .bcf from a previous failed pdflatex run.
-  const staleExtensions = [
-    '.aux', '.bcf', '.bbl', '.blg', '.log', '.out',
-    '.toc', '.run.xml', '.fls', '.fdb_latexmk',
-    '.synctex.gz', '.pdf',
-  ];
-  const stale = files.filter(f => staleExtensions.some(ext => f.endsWith(ext)));
-
-  if (stale.length > 0) {
-    console.log(`🧹 Removing ${stale.length} stale build artifact(s)...`);
-    for (const f of stale) {
-      try {
-        unlinkSync(join(buildDir, f));
-      } catch { /* best-effort */ }
-    }
-  }
+  // Nuke the entire build/ directory recursively. This is critical because
+  // hyperref writes .out files with UTF-16 encoding that, if stale, cause
+  // "File ended while scanning use of \@newl@bel / \@BOOKMARK" on the next
+  // run. A shallow readdirSync cleanup misses files in subdirectories
+  // (e.g. build/src/*.aux from \input chapters).
+  rmSync(buildDir, { recursive: true, force: true });
+  mkdirSync(buildDir, { recursive: true });
 }
