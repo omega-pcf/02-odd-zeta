@@ -1,27 +1,26 @@
 .env
 .DS_Store
 /*.code-workspace
-
+/.hermes
 /tmp
-indent.log
 
-# LaTeX generic auxiliary files (root and build)
-*.aux
-*.bbl
-*.bcf
-*.blg
-*.fdb_latexmk
-*.fls
-*.log
-*.out
-*.toc
-*.run.xml
-*.suppinfo
-*.synctex*
-*.pdf
+# LaTeX auxiliary files (but keep PDF for Zenodo)
+build/*.aux
+build/*.bbl
+build/*.bbl-*
+build/*.bcf
+build/*.blg
+build/*.fdb_latexmk
+build/*.fls
+build/*.log
+build/*.out
+build/*.toc
+build/*.run.xml
+build/*.suppinfo
+build/*.synctex*
+build/src
+build/main.pdf
 !build/*.pdf
-
-# Build directory artifacts handled by patterns above
 
 # Node
 node_modules/
@@ -53,3 +52,5 @@ dmypy.json
 venv/
 ENV/
 env/
+
+lean/.lake/
