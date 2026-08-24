@@ -157,6 +157,7 @@ export class MetadataPipeline {
     const pkg = JSON.parse(readFileSync('package.json', 'utf8'));
     cff.version = version;
     cff['date-released'] = new Date().toISOString().split('T')[0];
+    if (pkg.description) cff.title = pkg.description;
     cff.abstract = pkg.metadata?.abstract || cff.abstract;
     cff.keywords = pkg.keywords || cff.keywords;
     if (pkg.metadata?.doi) cff.doi = pkg.metadata.doi;
