@@ -68,6 +68,15 @@ export function compilePDF(config: ReleaseConfig): void {
   if (result.stderr) process.stderr.write(result.stderr);
 
   const baseName = sourceTex.replace('.tex', '');
+
+  // Fail loudly: a non-zero latexmk exit must abort the build even if a
+  // stale PDF from a previous run is still on disk.
+  if (result.status !== 0) {
+    printLogTail(`build/${baseName}.log`);
+    throw new Error(
+      `latexmk failed with exit code ${result.status} - see log tail above.`
+    );
+  }
   const bcfPath = `build/${baseName}.bcf`;
   if (existsSync(bcfPath)) {
     const bcfContent = readFileSync(bcfPath, 'utf8');
@@ -77,6 +86,17 @@ export function compilePDF(config: ReleaseConfig): void {
         `Biber/biblatex version mismatch: bcf has bltxversion=${versionMatch[1]}, expected 3.20.`
       );
     }
+  }
+
+  // A biber abort (e.g. malformed bibliography data) can leave the build
+  // without entries; catch it instead of shipping a PDF with no references.
+  const bblPath = `build/${baseName}.bbl`;
+  if (existsSync(bcfPath)
+      && !(existsSync(bblPath) && readFileSync(bblPath, 'utf8').includes('\\entry'))) {
+    printLogTail(`build/${baseName}.log`);
+    throw new Error(
+      'biber produced no or an empty .bbl - the bibliography would be missing.'
+    );
   }
 
   const sourcePdf = 'build/main.pdf';
