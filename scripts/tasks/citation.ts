@@ -133,16 +133,21 @@ export class MetadataPipeline {
     const data = new Cite(items);
     let bib = data.format('biblatex');
 
-    // Extract generated keys in order
-    const autoKeys = [...bib.matchAll(/@\w+\{([^,]+)/g)].map(m => m[1]);
-
-    // Build replacement map: autoKey → CSL id (by position)
-    for (let i = 0; i < items.length && i < autoKeys.length; i++) {
-      const autoKey = autoKeys[i];
+    // Extract generated keys in order, then rewrite each one to its CSL id
+    // BY POSITION. A global string replace collapses every occurrence onto
+    // the first id when citation-js emits the same auto key twice (two works
+    // by the same author in the same year opening with the same word), which
+    // silently drops one reference from the .bib. Rewriting backwards from
+    // the last match keeps the offsets of the earlier matches valid.
+    const matches = [...bib.matchAll(/@\w+\{([^,]+)/g)];
+    const last = Math.min(items.length, matches.length) - 1;
+    for (let i = last; i >= 0; i--) {
+      const m = matches[i];
+      const autoKey = m[1];
       const cslId = items[i].id;
-      if (autoKey && cslId && autoKey !== cslId) {
-        const escaped = autoKey.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-        bib = bib.replace(new RegExp(escaped, 'g'), cslId);
+      if (autoKey && cslId && autoKey !== cslId && m.index !== undefined) {
+        const start = m.index + m[0].length - autoKey.length;
+        bib = bib.slice(0, start) + cslId + bib.slice(start + autoKey.length);
       }
     }
 
