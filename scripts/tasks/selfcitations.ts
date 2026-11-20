@@ -58,7 +58,7 @@ const TEX_VERSION_END = `% selfcite:end id="${TEX_VERSION_ID}"`;
  * development form `v0.1.0-dev@a1b2c3d` / `v0.1.0-dev@a1b2c3d-dirty`
  * (SPEC-004 §2).  Applied only inside the `id="version"` region.
  */
-const VERSION_TOKEN = /v\d+\.\d+\.\d+(?:-dev@[0-9a-f]{7,}(?:-dirty)?)?/;
+export const VERSION_TOKEN = /v\d+\.\d+\.\d+(?:-dev@[0-9a-f]{7,}(?:-dirty)?)?/;
 
 /** Tier 1 is never suffixed: `package.json` and the release argument stay clean. */
 const CLEAN_VERSION = /^\d+\.\d+\.\d+$/;
