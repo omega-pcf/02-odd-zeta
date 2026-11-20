@@ -17,7 +17,7 @@
     "generate:types": "pnpm exec tsx scripts/generate_types.ts",
     "verify:py": "uv run python tests/verify_odd_zeta_pcf_unified.py",
     "verify:lean": "cd lean && lake build",
-    "verify": "pnpm run verify:py && pnpm run verify:lean",
+    "verify": "pnpm run verify:py && pnpm run verify:lean && pnpm run type-check",
     "selfcitations": "pnpm exec tsx scripts/tasks/selfcitations.ts",
     "selfcitations:check": "pnpm exec tsx scripts/tasks/selfcitations.ts --check",
     "validate": "pnpm run selfcitations:check && pnpm exec tsx scripts/tasks/parity.ts && pnpm run verify",
