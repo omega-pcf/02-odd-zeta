@@ -1,6 +1,9 @@
 # Odd Zeta Values from the PCF Torus: φ and π as Arithmetic-Geometric Sources
 
+<!-- selfcite:begin id="badge" -->
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19492791.svg)](https://doi.org/10.5281/zenodo.19492791)
+<!-- selfcite:end id="badge" -->
+
 [![Project Page](https://img.shields.io/badge/Project%20Page-omega--pcf.com-blue)](https://omega-pcf.com/odd-zeta)
 
 ## Authors
@@ -18,13 +21,14 @@ We demonstrate that the odd values $\zeta(2k+1)$ of the Riemann zeta function ar
 
 **Keywords:** Riemann Hypothesis, Odd zeta values, F1 (field with one element), Elliptic curves, Lambda-rings, String theory, Category theory, Golden ratio, Mersenne primes, Formal verification.
 
+<!-- selfcite:begin id="citation" -->
 ## Citation
 
 González García, J. A., González García, V. M., Dressler Pérez, I. M., & García Ordóñez, L. M. (2026). *Odd Zeta Values from the PCF Torus: φ and π as Arithmetic-Geometric Sources*. Preprint. DOI: [10.5281/zenodo.19492791](https://doi.org/10.5281/zenodo.19492791).
 
 ```bibtex
 @article{Gonzalez2026OddZeta,
-  author  = {González García, J. A. and González García, V. M. and Dressler Pérez, I. M. and García Ordóñez, L. M},
+  author  = {González García, J. A. and González García, V. M. and Dressler Pérez, I. M. and García Ordóñez, L. M.},
   title   = {Odd Zeta Values from the PCF Torus: φ and π as Arithmetic-Geometric Sources},
   journal = {Preprint},
   year    = {2026},
@@ -32,6 +36,7 @@ González García, J. A., González García, V. M., Dressler Pérez, I. M., & Ga
   url     = {https://doi.org/10.5281/zenodo.19492791}
 }
 ```
+<!-- selfcite:end id="citation" -->
 
 ## Structure
 

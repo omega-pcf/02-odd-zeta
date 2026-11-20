@@ -1,5 +1,6 @@
 #!/usr/bin/env tsx
 import { syncCitationMetadata } from './tasks/citation.js';
+import { syncSelfCitations } from './tasks/selfcitations.js';
 import { cleanupOldVersions } from './tasks/cleanup.js';
 import { compilePDF } from './tasks/compile.js';
 import { generateChecksums } from './tasks/checksums.js';
@@ -16,8 +17,12 @@ function createReleaseConfig(version: string): ReleaseConfig {
 }
 
 async function main(): Promise<void> {
-  // Get version from command line argument (provided by release-it) or package.json
-  let version = process.argv[2];
+  // Version from the command line argument (provided by release-it) or package.json.
+  // The RAW argument picks the tier of the printed version (SPEC-004 §2): with it
+  // the release build prints `vX.Y.Z`, without it a development build prints
+  // `vX.Y.Z-dev@<sha>` — so the package.json fallback must not be passed down.
+  const releaseVersion = process.argv[2];
+  let version = releaseVersion;
 
   if (!version) {
     const packageJsonPath = new URL('../package.json', import.meta.url);
@@ -37,6 +42,7 @@ async function main(): Promise<void> {
 
     cleanupOldVersions(config.buildDir);
     syncCitationMetadata(config.version);
+    syncSelfCitations(releaseVersion);
     compilePDF(config);
     generateChecksums(config);
 
@@ -45,7 +51,8 @@ async function main(): Promise<void> {
     console.log(`  - ${config.outputPdf}`);
     console.log(`  - ${config.checksumsFile}`);
     console.log(`  - CITATION.cff (updated)`);
-    console.log(`  - .zenodo.json (generated from CITATION.cff)\n`);
+    console.log(`  - .zenodo.json (generated from CITATION.cff)`);
+    console.log(`  - README.md (self-citation regions regenerated)\n`);
   } catch (error) {
     console.error(`\n❌ Build failed:`, error);
     process.exit(1);

@@ -24,6 +24,11 @@ export default {
     publish: false,
   },
   hooks: {
+    'before:init': [
+      // SPEC-004 §2 guardrail (a): a suffixed package.json.version must fail
+      // the release before anything is written.
+      `node --input-type=commonjs -e "const v=JSON.parse(require('fs').readFileSync('package.json','utf8')).version;if(!/^\\d+\\.\\d+\\.\\d+$/.test(v)){console.error('before:init: package.json.version must be a clean X.Y.Z, got '+v);process.exit(1)}"`,
+    ],
     'after:bump': [
       'pnpm exec tsx scripts/build.ts ${version}',
     ],
