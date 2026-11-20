@@ -11,6 +11,7 @@
   "type": "module",
   "scripts": {
     "type-check": "tsc --noEmit",
+    "figures": "if [ -n \"$(git ls-files images/)\" ]; then echo 'figures: images/ has tracked files; point this alias at the repository generator' >&2; exit 1; fi; echo 'figures: no committed figures in this repository (images/ empty); nothing to regenerate'",
     "generate:figures": "uv run python scripts/figures/main.py",
     "generate:figures:list": "uv run python scripts/figures/main.py --list",
     "generate:types": "pnpm exec tsx scripts/generate_types.ts",

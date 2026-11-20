@@ -5,7 +5,7 @@
  * Fails when this repository drifts from the contract every sibling exposes:
  *
  *   (a) the contract script keys exist in `package.json` and are non-empty:
- *       `build`, `verify`, `selfcitations`, `selfcitations:check`, `validate`;
+ *       `build`, `verify`, `figures`, `selfcitations`, `selfcitations:check`, `validate`;
  *   (b) `main.tex` carries exactly one `selfcite id="version"` marker pair,
  *       not inverted;
  *   (c) the token inside that region equals `computeDisplayVersion()` — the
@@ -22,7 +22,7 @@ import { computeDisplayVersion, VERSION_TOKEN } from './selfcitations.js';
 
 const PACKAGE = 'package.json';
 const TEX = 'main.tex';
-const REQUIRED_SCRIPTS = ['build', 'verify', 'selfcitations', 'selfcitations:check', 'validate'] as const;
+const REQUIRED_SCRIPTS = ['build', 'verify', 'figures', 'selfcitations', 'selfcitations:check', 'validate'] as const;
 const TEX_VERSION_BEGIN = '% selfcite:begin id="version"';
 const TEX_VERSION_END = '% selfcite:end id="version"';
 
