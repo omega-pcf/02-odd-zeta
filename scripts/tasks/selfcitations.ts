@@ -25,12 +25,16 @@
  *
  * Modes:
  *   (default)  rewrite only the bytes between the markers
- *   --check    three validations, exit 1 on any mismatch: (i) exactly one
+ *   --check    four validations, exit 1 on any mismatch: (i) exactly one
  *              marker pair per id, not inverted; (ii) the README regions equal
  *              the rendered output (a unified diff is printed); (iii) the
  *              committed main.tex token is the clean `vX.Y.Z` of
  *              package.json — never a `-dev@<sha>` suffix, so a committed tree
- *              is green at rest.  Exit 0 otherwise.
+ *              is green at rest; (iv) that token sits inside `\texttt{…}` on
+ *              the page-1 line — only the identifier is monospace, the labels
+ *              stay `\textbf` and `Version: ` itself is not typed.  The
+ *              default mode restores (iii) and (iv) in place.  Exit 0
+ *              otherwise.
  */
 import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { execSync } from 'child_process';
@@ -69,6 +73,24 @@ export const VERSION_TOKEN = /v\d+\.\d+\.\d+(?:-dev@[0-9a-f]{7,}(?:-dirty)?)?/;
 
 /** Tier 1 is never suffixed: `package.json` and the release argument stay clean. */
 const CLEAN_VERSION = /^\d+\.\d+\.\d+$/;
+
+/** The opener of the monospace wrapper around the token (8 characters). */
+const TEXTT_OPEN = '\\texttt{';
+
+/**
+ * Is the `length`-long token that starts at `at` inside `text` wrapped in
+ * `\texttt{…}`?
+ *
+ * The page-1 line sets ONLY the version identifier in monospace
+ * (`\textbf{Version:} \texttt{vX.Y.Z}` — the label stays bold and `Version: `
+ * itself is not typed).  The wrapper is part of the contract: `--check` fails
+ * without it, the default mode restores it, `parity` reuses this predicate,
+ * and `injectDevVersion()` replaces the token strictly inside it.
+ */
+export function isVersionTokenWrapped(text: string, at: number, length: number): boolean {
+  const open = text.lastIndexOf(TEXTT_OPEN, at);
+  return open >= 0 && open + TEXTT_OPEN.length === at && text.charAt(at + length) === '}';
+}
 
 /** Non-volatile fields of the block (SPEC-001 §3.3/§3.4). */
 interface SelfCitationData {
@@ -307,6 +329,15 @@ export function injectDevVersion(tex: string, releaseVersion?: string): string {
   if (!token) {
     throw new Error(`${PATHS.TEX}: no version token inside the "${TEX_VERSION_ID}" markers`);
   }
+  if (!isVersionTokenWrapped(region.content, token.index, token[0].length)) {
+    throw new Error(
+      `${PATHS.TEX}: the version token inside the "${TEX_VERSION_ID}" markers is outside ` +
+        `\\texttt{…} — only the identifier is monospace on the page-1 line.  ` +
+        `Run \`pnpm run selfcitations\`.`
+    );
+  }
+  // The replacement stays strictly inside the \texttt{...} wrapper: only the
+  // token's own bytes are swapped, so the dev form prints in monospace too.
   const at = region.start + token.index;
   return tex.slice(0, at) + display + tex.slice(at + token[0].length);
 }
@@ -338,14 +369,17 @@ function findTexVersionRegion(tex: string): TexRegion {
 }
 
 /**
- * Keep the printed version of main.tex equal to package.json's clean version.
+ * Keep the printed version of main.tex equal to package.json's clean version,
+ * and keep it monospaced.
  *
  * The committed token is always the release form `vX.Y.Z` (SPEC-004 §2 as
  * amended 2026-11-20): the `-dev@<sha>` suffix exists only in the rendered
- * PDF, injected by build.ts and never written here.  (--check compares and
- * fails; the default mode rewrites the token in place, the same contract as
- * the README regions.)  Returns true when the on-disk text differs from
- * package.json.
+ * PDF, injected by build.ts and never written here.  It must additionally sit
+ * inside `\texttt{…}` on the page-1 line — only the identifier is monospace
+ * (order of 2026-11-20).  (--check compares and fails on either violation;
+ * the default mode rewrites the token in place, wrapping it when the wrapper
+ * is missing — the same contract as the README regions.)  Returns true when
+ * the on-disk line differs from package.json or lacks the wrapper.
  */
 function syncPaperVersion(check: boolean): boolean {
   const tex = readRequired(PATHS.TEX);
@@ -355,20 +389,43 @@ function syncPaperVersion(check: boolean): boolean {
   if (!token) {
     throw new Error(`${PATHS.TEX}: no version token inside the "${TEX_VERSION_ID}" markers`);
   }
-  if (token[0] === expected) return false;
+  const wrapped = isVersionTokenWrapped(region.content, token.index, token[0].length);
+  const clean = token[0] === expected;
+  if (wrapped && clean) return false;
 
   if (check) {
-    process.stderr.write(
-      `selfcitations:check failed — ${PATHS.TEX} carries "${token[0]}", expected the clean ${expected} ` +
-        `(the committed token never carries a -dev@ suffix; SPEC-004 §2 as amended). ` +
-        `Run \`pnpm run selfcitations\`.\n`
-    );
+    if (!clean) {
+      process.stderr.write(
+        `selfcitations:check failed — ${PATHS.TEX} carries "${token[0]}", expected the clean ${expected} ` +
+          `(the committed token never carries a -dev@ suffix; SPEC-004 §2 as amended). ` +
+          `Run \`pnpm run selfcitations\`.\n`
+      );
+    }
+    if (!wrapped) {
+      process.stderr.write(
+        `selfcitations:check failed — ${PATHS.TEX} carries the version token "${token[0]}" outside ` +
+          `\`\\texttt{…}\`` +
+          `: the page-1 line sets only the identifier in monospace (the labels stay \`\\textbf\`, ` +
+          `\`Version: \` itself is not typed).  Run \`pnpm run selfcitations\`.\n`
+      );
+    }
     return true;
   }
 
+  if (!wrapped && region.content.includes(TEXTT_OPEN)) {
+    throw new Error(
+      `${PATHS.TEX}: the version token sits inside an unexpected \`\\texttt{…}\` span of the ` +
+        `"${TEX_VERSION_ID}" line — fix that line by hand.`
+    );
+  }
+
   const at = region.start + token.index;
-  writeFileSync(PATHS.TEX, tex.slice(0, at) + expected + tex.slice(at + token[0].length));
-  console.log(`  ✓ ${PATHS.TEX} paper version set to ${expected} (was ${token[0]}).`);
+  const replacement = wrapped ? expected : `${TEXTT_OPEN}${expected}}`;
+  writeFileSync(PATHS.TEX, tex.slice(0, at) + replacement + tex.slice(at + token[0].length));
+  const changes: string[] = [];
+  if (!clean) changes.push(`paper version set to ${expected} (was ${token[0]})`);
+  if (!wrapped) changes.push(`version token wrapped in \\texttt{…}`);
+  console.log(`  ✓ ${PATHS.TEX} ${changes.join(', ')}.`);
   return true;
 }
 
@@ -474,7 +531,7 @@ function main(): number {
       if (result.stale.length > 0 || result.staleTex) return 1;
       console.log(
         `selfcitations:check ✓ README.md regions match the rendered output and ` +
-          `${PATHS.TEX} carries the clean vX.Y.Z token from ${PATHS.PACKAGE}.`
+          `${PATHS.TEX} carries the clean vX.Y.Z token from ${PATHS.PACKAGE}, inside \\texttt{…}.`
       );
       return 0;
     }

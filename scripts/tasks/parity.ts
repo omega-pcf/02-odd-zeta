@@ -11,7 +11,9 @@
  *   (c) the token inside that region is the clean release form `vX.Y.Z` of
  *       `package.json` — never a `-dev@<sha>` suffix (SPEC-004 §2 as amended
  *       2026-11-20: that shape lives only in the rendered PDF, injected by
- *       `scripts/build.ts` and restored right after the render);
+ *       `scripts/build.ts` and restored right after the render) — AND sits
+ *       inside `\texttt{…}`, the page-1 line setting only the identifier in
+ *       monospace (the labels stay `\textbf`; order of 2026-11-20);
  *   (d) `validate` runs `selfcitations:check`.
  *
  * It is wired into `validate`, so a repository that drifts fails its own
@@ -19,7 +21,7 @@
  * derives everything from `package.json` and `main.tex`.
  */
 import { readFileSync } from 'fs';
-import { VERSION_TOKEN } from './selfcitations.js';
+import { VERSION_TOKEN, isVersionTokenWrapped } from './selfcitations.js';
 
 const PACKAGE = 'package.json';
 const TEX = 'main.tex';
@@ -80,6 +82,12 @@ function main(): number {
         fail('(c)', `${PACKAGE} "version" is missing or malformed (expected a clean X.Y.Z)`);
       } else if (token[0] !== `v${pkg.version}`) {
         fail('(c)', `${TEX} prints ${token[0]}, ${PACKAGE} says v${pkg.version}`);
+      } else if (!isVersionTokenWrapped(content, token.index, token[0].length)) {
+        fail(
+          '(c)',
+          `${TEX} carries ${token[0]} outside \\texttt{…}; the page-1 line must set only the ` +
+            `version identifier in monospace (the labels stay \\textbf, "Version: " is not typed)`
+        );
       }
     }
   }
@@ -91,7 +99,8 @@ function main(): number {
   }
   console.log(
     'parity ✓ SPEC-004 contract holds: script keys present, exactly one version marker pair, ' +
-      'committed token equals package.json’s clean vX.Y.Z, validate runs selfcitations:check.'
+      'committed token equals package.json’s clean vX.Y.Z inside \\texttt{…}, ' +
+      'validate runs selfcitations:check.'
   );
   return 0;
 }
