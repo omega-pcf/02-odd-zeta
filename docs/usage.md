@@ -11,6 +11,32 @@
 pnpm run build
 ```
 
+## Counts
+
+The numbers the documentation states about the repository are **measured,
+never typed** (family mechanism ported from `05-kkgt`, whose `CVR-001` §5
+named the stale counts): this repository states no count in its prose — it
+commits no figures and its manuscript carries no `\testref{...}` anchor — so
+its ledger reports the Lean source statistics of the one library
+`lean/lakefile.toml` declares and the `images/` inventory, and it carries no
+marked region.
+
+```bash
+pnpm run counts         # rewrite the marked regions and regenerate docs/counts.md
+pnpm run counts:check   # fail, with a diff, when either has drifted
+```
+
+`counts:check` runs inside `validate`, after `parity`. The mechanism follows
+the `selfcitations` precedent (the family SPEC-001 §5.2): a region is delimited
+by `<!-- counts:begin id="..." -->` … `<!-- counts:end id="..." -->` in prose,
+and by `# counts:begin id="..."` … `# counts:end id="..."` on lines of their
+own inside a code fence, where an HTML comment would print as text. Should a
+future document state a count, the region is added next to the claim and the
+task owns it from then on.
+
+Dated documents are snapshots of a moment: they are corrected by hand with
+the reason recorded, never rewritten by the task.
+
 ## Commits
 
 All commits follow [Conventional Commits](https://www.conventionalcommits.org/):
