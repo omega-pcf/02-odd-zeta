@@ -3,7 +3,7 @@ message: If you use this software, please cite it using these metadata.
 title: "Odd Zeta Values from the PCF Torus: φ and π as Arithmetic-Geometric Sources"
 type: software
 version: 1.7.2
-date-released: 2026-11-10
+date-released: 2026-11-20
 authors:
   - family-names: González García
     given-names: Jorge Armando
@@ -85,7 +85,7 @@ references:
         value: 10.5281/zenodo.17619486
       - type: url
         value: https://doi.org/10.5281/zenodo.17619486
-    title: "The Hilbert-Pólya Operator and the Primitive Structure of the Complex
+    title: "The Hilbert–Pólya Operator and the Primitive Structure of the Complex
       Plane: Between 𝔽₁, String Theory, and Ancient Geometry"
     url: https://doi.org/10.5281/zenodo.17619486
     date-published: 2026-01-01
