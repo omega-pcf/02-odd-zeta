@@ -29,6 +29,26 @@ const PATHS = {
 };
 
 /**
+ * Release dates are read from the calendar in the project's fixed zone.
+ *
+ * `toISOString()` is UTC by definition, so a sync started after 18:00 CST
+ * (-06:00) wrote the *next* day into CITATION.cff and .zenodo.json — the same
+ * rollover scripts/tasks/compile.ts guards against for `\today`.  The zone is
+ * pinned to POSIX `CST6`, not `America/Mexico_City`: a build image with no
+ * /usr/share/zoneinfo silently falls back to UTC for a named zone, and the
+ * host's own zone must not be able to move the emitted date either.  This is
+ * the in-process equivalent of the `-e TZ=CST6` compile.ts passes to latexmk.
+ */
+process.env.TZ = 'CST6';
+
+/** Today's calendar date as YYYY-MM-DD in the pinned zone (never UTC). */
+function todayInProjectZone(): string {
+  const now = new Date();
+  const pad = (n: number): string => String(n).padStart(2, '0');
+  return `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
+}
+
+/**
  * Validation Engine
  */
 class ValidationEngine {
@@ -161,7 +181,7 @@ export class MetadataPipeline {
 
     const pkg = JSON.parse(readFileSync('package.json', 'utf8'));
     cff.version = version;
-    cff['date-released'] = new Date().toISOString().split('T')[0];
+    cff['date-released'] = todayInProjectZone();
     if (pkg.description) cff.title = pkg.description;
     cff.abstract = pkg.metadata?.abstract || cff.abstract;
     cff.keywords = pkg.keywords || cff.keywords;
@@ -321,7 +341,7 @@ export class MetadataPipeline {
       title: cff.title,
       description: pkg.metadata?.zenodo_description || cff.abstract || cff.title,
       version: version,
-      publication_date: cff['date-released'] || new Date().toISOString().split('T')[0],
+      publication_date: cff['date-released'] || todayInProjectZone(),
       creators: (cff.authors || []).map((a: any) => ({
         name: a.name || `${a['family-names']}, ${a['given-names'] || ''}`.trim().replace(/,$/, ''),
         affiliation: a.affiliation,

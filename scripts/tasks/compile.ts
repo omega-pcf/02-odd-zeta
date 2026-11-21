@@ -45,7 +45,14 @@ export function compilePDF(config: ReleaseConfig): void {
     '-e', `SOURCE_DATE_EPOCH=${commitEpoch}`,
     '-e', 'LC_ALL=C',
     '-e', 'LANG=C',
-    '-e', 'TZ=UTC',
+    // The paper prints `\today` ("last modified") in its date footnote, so the
+    // calendar date must be the commit's own date as git records it (%ci,
+    // UTC-6) and not the same instant read in UTC, which after 18:00 local
+    // would be the next day.  Still deterministic: the zone is fixed and the
+    // timestamp still comes from SOURCE_DATE_EPOCH, never from the clock.
+    // POSIX form, not America/Mexico_City: the build image carries no
+    // /usr/share/zoneinfo, so a named zone silently falls back to UTC.
+    '-e', 'TZ=CST6',
     ...DOCKER_TEX_ENV.split(' '),
     DOCKER_IMAGE,
     'latexmk', '-pdf', '-interaction=nonstopmode', sourceTex,
