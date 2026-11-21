@@ -42,7 +42,9 @@ git commit -m "docs: update architecture guide"
   carries the tag → **Zenodo archives exactly this version** under the
   repository's Concept DOI (one DOI per version, one Concept DOI for all of
   them). Zenodo therefore consumes the same string the repository declares;
-  the pipeline detail lives in [architecture.md](architecture.md).
+  the pipeline detail lives in [architecture.md](architecture.md), and the
+  row-by-row chain (source → generator → derived file) in
+  [architecture.md §Sources of truth](architecture.md#sources-of-truth).
 - **The paper prints it.** The page-1 footnote of the family is standardised
   as:
 
