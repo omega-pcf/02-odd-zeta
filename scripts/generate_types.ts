@@ -39,7 +39,20 @@ async function generate() {
       'export interface CitationMetadataState {',
       '  version: string;',
       '  csl: CslItem[];',
-      '}'
+      '}',
+      // Hand-written tail: build.ts, compile.ts and checksums.ts import
+      // ReleaseConfig from this file, so regenerating must keep it.
+      '/**',
+      ' * Configuration for the release build.',
+      ' */',
+      'export interface ReleaseConfig {',
+      '  version: string;',
+      '  buildDir: string;',
+      '  sourceTex: string;',
+      '  outputPdf: string;',
+      '  checksumsFile: string;',
+      '}',
+      ''
     ].join('\n');
 
     writeFileSync(outputPath, finalContent);
