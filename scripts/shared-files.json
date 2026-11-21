@@ -1,0 +1,38 @@
+{
+  "algorithm": "sha256",
+  "description": "Files every repository of the family must carry BYTE-IDENTICALLY, pinned with their SHA-256. SPEC-004 §3 (the family manifest) and CVR-001 §5.2 priority 2; verified by scripts/tasks/manifest.ts (`pnpm run manifest` rewrites this file from the working tree, `pnpm run manifest:check` runs inside `validate`). A listed file is a FAMILY file: change it in all five repositories (01-hilbert-polya, 02-odd-zeta, 03-crystalline-worldsheet, 04-mersenne-cr, 05-kk-golden-throat), then run `pnpm run manifest` in each one and commit the refreshed manifest together with the change. SHA-256 is the digest of the checksum-manifest ecosystem; `sha256sum <file>` prints the same value.",
+  "files": {
+    ".latexmkrc": "98e94dadb9fcdcc6fb63d979b1aed0260870a0dee5e2f03395e5aa05aabab413",
+    ".npmrc": "4409c5035f2a72f35e4636eaa3d72fb7696b3d9948d4ca5b76ed7cd165e85b01",
+    ".nvmrc": "075e7674a969687957ce158d8a9bc659c9110fdd1db4cefca59359002cdd9880",
+    ".python-version": "7b55f8e67b5623c4bef3fa691288da9437d79d3aba156de48d481db32ac7d16d",
+    "LICENSE": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94",
+    "scripts/generate_types.ts": "25a337d8256b6653ffffb47ca13bac9385b62e3ef6be7fcfcf2852af0c1844cf",
+    "scripts/schemas/cff-schema.json": "a66c5cb15a5a8c3149debdc834442d9e8a26f988524753122c5390a9dc42b57e",
+    "scripts/schemas/zenodo-schema.json": "ccffd1fb26e74e30295051e5dffc39130be28291d6fe75f5adad649c2a71a6ab",
+    "scripts/tasks/checksums.ts": "6c3e4bfc7e7019285794bfe614bed1d6bad4db4a2fdae3f8a857446894ac5f52",
+    "scripts/tasks/citation.ts": "5b1c57e33d225b2cbe5891b2e4a45599b1f0e9592c430da047ec32db952dabb4",
+    "scripts/tasks/cleanup.ts": "b39081af7e290a101cd2d575ac1459d5485ca2561d401f1ad37006e18802c1df",
+    "scripts/tasks/compile.ts": "7cb2409751235a9aa68e88edb25c4901081fa507d6f22b66b2f3a3c55f14526a",
+    "scripts/tasks/manifest.ts": "6c67612c8c08b7f1fbc1f967a0fca161452a6b13d7c78d4a91b6bc9f33a36fde",
+    "scripts/tasks/parity.ts": "1fbbf9662be25d1aa1864641a5cb2c2351ff03526d2e107bc056cccdd9075147",
+    "scripts/tasks/selfcitations.ts": "e947f0969357ff1c393b8ef5188dcc76e99a53763821b2d211b74d19999a0aee",
+    "scripts/types.ts": "e7fc5ee14bb47d5c6ece4134c03a367f4996196852ebf5caee012506b6156249",
+    "scripts/types/global.d.ts": "4db2b226aabceeaeb8044153383732af681c086fca3199b2246b9babde324c39",
+    "scripts/utils/git.ts": "1595222a6c5dea7ec540541ebf1eec866550145dc89855a523fcd468d4c934ee",
+    "tsconfig.json": "21b2a786ade3958722eabb034f22d28fff35f249dc9e5cd47e16ba3b63ad5c5c"
+  },
+  "excluded": {
+    "package.json": "per-repository identity root (name, version, description, scripts, metadata) — asserted by scripts/tasks/parity.ts instead",
+    "CITATION.cff": "identity root of each repository (authors, title, license, repository-code): hand-edited, never shared",
+    ".zenodo.json": "generated per repository from CITATION.cff by scripts/tasks/citation.ts",
+    "pyproject.toml": "per-repository Python project and dependency set",
+    "uv.lock": "lockfile of that per-repository dependency set",
+    ".release-it.ts": "per-repository release hooks (CVR-001 CT-7: the before:init guardrail differs between repositories)",
+    ".gitignore": "repository-specific ignores (04 differs from the family)",
+    ".chktexrc": "not family-wide: 01/04/05 carry one, 02/03 none, and the copies differ",
+    "scripts/build.ts": "divergent as of 2026-11-21 (CVR-001 B1): 05 calls syncCounts() before the render per SPEC-004 §3.1, 01/02/03/04 do not and their counts.ts exports no syncCounts() — unify the two sides, then pin it here (BLD-001 §4 Option A named it first)",
+    "scripts/tasks/counts.ts": "per-repository counter table by design: its counters, Lean file list and marked regions are that repository's own (SPEC-004 §3.1)",
+    "scripts/shared-files.json": "this manifest — a file cannot contain its own digest"
+  }
+}
