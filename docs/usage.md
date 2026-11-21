@@ -37,6 +37,45 @@ task owns it from then on.
 Dated documents are snapshots of a moment: they are corrected by hand with
 the reason recorded, never rewritten by the task.
 
+## Shared files
+
+Most of the build pipeline is shared by **byte, not by copy**: the five
+repositories of the family (`01-hilbert-polya`, `02-odd-zeta`,
+`03-crystalline-worldsheet`, `04-mersenne-cr`, `05-kk-golden-throat`) carry the
+same `scripts/tasks/*.ts`, `scripts/types*`, `scripts/schemas/*`,
+`scripts/utils/git.ts`, `tsconfig.json`, `.latexmkrc` and the toolchain pins.
+What must stay identical is pinned in
+[`scripts/shared-files.json`](../scripts/shared-files.json) — one SHA-256 per
+file — and verified by `scripts/tasks/manifest.ts`:
+
+```bash
+pnpm run manifest         # rewrite the pinned hashes from the working tree
+pnpm run manifest:check   # fail, naming the file and both digests, when one drifted
+```
+
+`manifest:check` runs inside `validate`, right after `counts:check`. A listed
+file is a **family** file: changing it in one repository only fails the gate.
+A deliberate change is ported to every repository, `pnpm run manifest`
+refreshes the manifest in each one, and the refreshed manifest is committed
+together with the change; a file that legitimately stops being shared moves to
+the manifest's `excluded` table with its reason, again in all five
+repositories, so the manifest itself stays byte-identical family-wide.
+
+The `excluded` table is part of the contract, not a footnote: `package.json`
+and `CITATION.cff` are per-repository identity roots (asserted by `parity`),
+`pyproject.toml` and `uv.lock` are the per-repository dependency sets,
+`scripts/tasks/counts.ts` is a per-repository counter table by design,
+`scripts/build.ts` carries the reason recorded in the manifest, and the
+manifest never lists itself. Each exclusion names its measured reason where a
+file was evaluated and rejected.
+
+The design follows the checksum-manifest pattern (`sha256sum -c` over a
+versioned list) and the lockfile philosophy — pin the bytes, fail loudly on
+drift, update the pin in the same commit as the change — rather than a runtime
+integrity layer: background and sources are recorded in
+the family SPEC-004
+§3.1 (`05-kkgt/docs/specs/20261120_SPEC-004_family_build_alignment_and_version_scheme.md`).
+
 ## Commits
 
 All commits follow [Conventional Commits](https://www.conventionalcommits.org/):
