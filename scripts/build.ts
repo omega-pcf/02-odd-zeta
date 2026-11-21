@@ -1,6 +1,7 @@
 #!/usr/bin/env tsx
+import { readFileSync, writeFileSync } from 'fs';
 import { syncCitationMetadata } from './tasks/citation.js';
-import { syncSelfCitations } from './tasks/selfcitations.js';
+import { syncSelfCitations, injectDevVersion } from './tasks/selfcitations.js';
 import { cleanupOldVersions } from './tasks/cleanup.js';
 import { compilePDF } from './tasks/compile.js';
 import { generateChecksums } from './tasks/checksums.js';
@@ -18,9 +19,11 @@ function createReleaseConfig(version: string): ReleaseConfig {
 
 async function main(): Promise<void> {
   // Version from the command line argument (provided by release-it) or package.json.
-  // The RAW argument picks the tier of the printed version (SPEC-004 §2): with it
-  // the release build prints `vX.Y.Z`, without it a development build prints
-  // `vX.Y.Z-dev@<sha>` — so the package.json fallback must not be passed down.
+  // The RAW argument picks the tier of the token *rendered into the PDF*
+  // (SPEC-004 §2 as amended): with it the release build prints `vX.Y.Z`,
+  // without it a development build prints `vX.Y.Z-dev@<sha>` — so the
+  // package.json fallback must not be passed down.  Either way the committed
+  // main.tex keeps its clean token; the suffix is injected and restored below.
   const releaseVersion = process.argv[2];
   let version = releaseVersion;
 
@@ -42,8 +45,20 @@ async function main(): Promise<void> {
 
     cleanupOldVersions(config.buildDir);
     syncCitationMetadata(config.version);
-    syncSelfCitations(releaseVersion);
-    compilePDF(config);
+    syncSelfCitations();
+
+    // SPEC-004 §2 (amended 2026-11-20): the committed main.tex keeps the clean
+    // `vX.Y.Z` token; the development form lives only in the rendered PDF.
+    // Inject -> render -> restore, and the restore comes from the bytes read
+    // here, never from `git checkout`, so a failing compile cannot leave a
+    // suffixed token behind.
+    const originalTex = readFileSync(config.sourceTex, 'utf8');
+    writeFileSync(config.sourceTex, injectDevVersion(originalTex, releaseVersion));
+    try {
+      compilePDF(config);
+    } finally {
+      writeFileSync(config.sourceTex, originalTex);
+    }
     generateChecksums(config);
 
     console.log(`\n✅ Build completed successfully for v${version}\n`);
