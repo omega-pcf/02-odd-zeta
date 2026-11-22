@@ -100,7 +100,7 @@ For $n\ge3$, $2\cos(2\pi/n)=\zeta_n+\zeta_n^{-1}$ generates the real subfield of
 $\phi(n)/2$ over $\Q$; it is an algebraic integer, so it lies in $\Z$ exactly when that degree is $1$,
 that is, when $\phi(n)\le2$, which is $n\in\{3,4,6\}$; for $n=1,2$ the values are $2$ and $-2$.  For
 $n\ge7$, $0<2\pi/n<\pi/3$ gives $1<2\cos(2\pi/n)<2$.  The values at $n=5,10$ are
-$2\cos(2\pi/5)=\golden-1=\golden^{-1}$ and $2\cos(\pi/5)=\golden$ \eqref{eq:pentagon-id}.  The value is
+$2\cos(2\pi/5)=\golden-1=\golden^{-1}$ and $2\cos(\pi/5)=\golden$ \tier[\testref{2*cos(pi/5) = phi}]{N} \eqref{eq:pentagon-id}.  The value is
 quadratic exactly when $\phi(n)/2=2$, and $\phi(n)=4$ exactly for $n\in\{5,8,10,12\}$.
 \end{proof}
 
@@ -2149,7 +2149,7 @@ the Eisenstein polynomial $E(u)=u^2-5$, generating the ideal $I=(E)$.
     bound.
   \item Its $5$-adic class is $\log_5\golden$, of valuation $\tfrac12$, and Leopoldt's formula
     gives $L_5(1,\chiv)=2\log_5\golden/\sqrt5$ \cite[Thm.~5.18]{washington97}, the twin of
-    $L(1,\chiv)=2\log\golden/\sqrt5$ (\cref{thm:L1}): the two regulators of $\Q(\sqrt5)$ at $s=1$.
+    $L(1,\chiv)=2\log\golden/\sqrt5$ \tier[\testref{L(1,chi5) via digamma = 2*log(phi)/sqrt(5)}]{N} (\cref{thm:L1}): the two regulators of $\Q(\sqrt5)$ at $s=1$.
 \end{enumerate}
 \end{remark}
 \leanline{\LeanStar{F1PaperSixty.bk\_delta\_E}, \LeanStar{F1PaperSixty.bk\_E\_distinguished}
@@ -2896,7 +2896,7 @@ the scale of the construction.  The binary tower $\{2^n\}$ carries the Mersenne 
 (\cref{prop:mersenne-exponent}), which gives the bridge its name.
 
 \begin{proposition}\label{prop:mersenne-bridge}
-With $\lng=\log2/\log\golden$ one has $\golden^{\lng}=2$, so the binary tower
+With $\lng=\log2/\log\golden$ one has $\golden^{\lng}=2$ \tier[\testref{Mersenne bridge: phi\textasciicircum\{lambda\_log\} = 2}]{N}, so the binary tower
 $\{2^n\}$ sits inside the golden one; and $2$ is not an integer power of
 $\golden$.
 \end{proposition}

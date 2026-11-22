@@ -138,7 +138,40 @@
 %%%  definitions of \golden \Rpcf \OmH \lean \Set \Hilb \Met \norm
 %%%  \Ztwenty and \pcfrepo (D1: omega-pcf/02-odd-zeta) are kept as-is.
 %%% ====================================================================
-\providecommand{\tier}[1]{{\footnotesize\textbf{[#1]}}}
+% One macro, one optional argument: [X] bare, or X[ids] when the tag carries
+% the INTERNAL ids of the claim (grammar ported from 05-kkgt
+% docs/citations.md §8.1; the zip's \tier took one argument only, so the
+% N[ids] device is the piece of the family apparatus this port adds).  The
+% optional argument holds a \testref, or raw names of our own file with \_ or
+% ','; anything else — above all a \cite key — is a \PackageError, never a
+% bracket full of a key: an external source stays a \cite set next to the tag.
+% Sizes are the 05 rule 13/15 (05 CVR-001 TYP-4: mark 13, ids 15, prose 16):
+% the letter in \footnotesize, the ids in \small tt, upright.
+\makeatletter
+\DeclareRobustCommand{\brk@us}{\textunderscore\allowbreak}
+% the test that checks a number, cited by its name in the suite that runs
+\providecommand{\testref}[1]{{\upshape\small\ttfamily\let\_\brk@us #1}}
+\def\tier@ids#1#2{{\footnotesize\textbf{#2}[{\upshape\small\ttfamily\let\_\brk@us #1}]}}%
+% every line of the body ends in a comment char: the tag must emit no space
+% of its own, neither before nor after, or a mark would typeset one.
+\providecommand{\tier}[2][]{%
+\ifx\relax#1\relax%
+{\footnotesize\textbf{[#2]}}%
+\else%
+\in@{\cite}{#1}\ifin@
+\PackageError{tier}{the optional argument of \string\tier\space holds internal ids only}%
+{An external source is a \string\cite\space set next to the tag, never its key; an id of our own suite is written inside \string\testref.}%
+\else%
+\in@{\testref}{#1}\ifin@
+\tier@ids{#1}{#2}%
+\else%
+\PackageError{tier}{the optional argument of \string\tier\space holds internal ids only}%
+{Wrap the id in \string\testref: a raw name of our own file is written with \string\_, several of them separated by ','.}%
+\fi%
+\fi%
+\fi%
+}%
+\makeatother
 \newcommand{\PCF}{\mathrm{PCF}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\R}{\mathbb{R}}
