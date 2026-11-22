@@ -99,3 +99,4 @@ evidence and the method.>
 | id | title | status | date | file |
 |---|---|---|---|---|
 | `CIT-003` | Verification of the 179 references imported from the v168 set — 49 corrections applied to `citation.csl.json`, 6 declared unverifiable with their original metadata kept | applied — corrections committed to `citation.csl.json`; `no verificable` rows untouched | 2026-11-21 | [20261121_CIT-003_v168_citation_verification.md](20261121_CIT-003_v168_citation_verification.md) |
+| `F9-001` | Provenance inventory of every statement citing a literal corpus filename — 295 rows / 156 distinct names; 2 unresolved (`hipotesis/pruebas/`, `F1Paper`), the `*` marks and the Mathlib names at risk classified as process artifacts | report only | 2026-11-22 | [20261122_F9-001_provenance_inventory.md](20261122_F9-001_provenance_inventory.md) |
