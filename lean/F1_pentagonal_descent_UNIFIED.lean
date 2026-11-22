@@ -69401,7 +69401,6 @@ theorem same_def_20 : @F1PCFUnified.mu3 = @_root_.apexVal := rfl
 theorem same_def_21 : @F1PCFUnified.realise = @F1SpectraAnchorG.realise := rfl
 theorem same_def_22 : @F1PCFUnified.psi = @F1SpectraAnchorG.psi := rfl
 theorem same_def_23 : @F1v2.normZ = @F1PCFUnified.normForm := rfl
-theorem same_def_24 : @F1PCFUnified.X_PCF = @F1SpectraAnchorG.X_PCF := rfl
 theorem same_def_25 : @F1PCFUnified.psi_mod = @F1SpectraAnchorG.psi_mod := rfl
 theorem same_def_26 : @F1PCFUnified.localScale = @F1PCFUnified.spacingScale := rfl
 theorem same_def_27 : @Complex.abs = @F1PCFUnified.Complex.abs := rfl
