@@ -1,7 +1,7 @@
 name = "odd_zeta"
 version = "0.1.0"
 keywords = ["math"]
-defaultTargets = ["odd_zeta_pcf_v1"]
+defaultTargets = ["F1_pentagonal_descent_UNIFIED"]
 
 [leanOptions]
 pp.unicode.fun = true # pretty-prints `fun a ↦ b`
@@ -15,4 +15,4 @@ scope = "leanprover-community"
 rev = "a8754b1890a7f7f1c859d48281cb84a1fce64139"
 
 [[lean_lib]]
-name = "odd_zeta_pcf_v1"
+name = "F1_pentagonal_descent_UNIFIED"

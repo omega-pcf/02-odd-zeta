@@ -7,9 +7,9 @@
 
 | counter | value | measured from | quoted in |
 |---|---:|---|---|
-| `lean.theorems` | 51 | declarations in `lean/odd_zeta_pcf_v1.lean` (comments stripped) | — |
-| `lean.axioms` | 1 | axioms in `lean/odd_zeta_pcf_v1.lean` (comments stripped) | — |
-| `lean.sorry` | 0 | `sorry` in `lean/odd_zeta_pcf_v1.lean` (comments stripped) | — |
+| `lean.theorems` | 5713 | declarations in `lean/F1_pentagonal_descent_UNIFIED.lean` (comments stripped) | — |
+| `lean.axioms` | 0 | axioms in `lean/F1_pentagonal_descent_UNIFIED.lean` (comments stripped) | — |
+| `lean.sorry` | 0 | `sorry` in `lean/F1_pentagonal_descent_UNIFIED.lean` (comments stripped) | — |
 | `images.files` | 0 | file inventory of `images/` | — |
 
 This repository states no count in its prose, so it carries no marked region; this ledger is its live record.

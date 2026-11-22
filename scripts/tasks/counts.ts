@@ -119,7 +119,7 @@ function countFiles(dir: string): number {
 /* ----------------------------------------------------------------- config */
 /** Lean sources whose statistics the docs state (comments stripped): the one
  *  library `lean/lakefile.toml` declares. */
-const LEAN_FILES = ['lean/odd_zeta_pcf_v1.lean'];
+const LEAN_FILES = ['lean/F1_pentagonal_descent_UNIFIED.lean'];
 
 interface Counter {
   id: string;
