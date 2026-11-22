@@ -7,7 +7,7 @@
 
 | counter | value | measured from | quoted in |
 |---|---:|---|---|
-| `lean.theorems` | 5713 | declarations in `lean/F1_pentagonal_descent_UNIFIED.lean` (comments stripped) | — |
+| `lean.theorems` | 5712 | declarations in `lean/F1_pentagonal_descent_UNIFIED.lean` (comments stripped) | — |
 | `lean.axioms` | 0 | axioms in `lean/F1_pentagonal_descent_UNIFIED.lean` (comments stripped) | — |
 | `lean.sorry` | 0 | `sorry` in `lean/F1_pentagonal_descent_UNIFIED.lean` (comments stripped) | — |
 | `images.files` | 0 | file inventory of `images/` | — |
