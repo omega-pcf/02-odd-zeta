@@ -1,4 +1,4 @@
-# Odd Zeta Values from the PCF Torus: φ and π as Arithmetic-Geometric Sources
+# Odd Zeta Values from Pentagonal 𝔽₁-Descent: a Λ-structure on ℤ[φ], the character χ₅, and the zeta function
 
 <!-- selfcite:begin id="badge" -->
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19492791.svg)](https://doi.org/10.5281/zenodo.19492791)
@@ -19,17 +19,17 @@
 
 We demonstrate that the odd values $\zeta(2k+1)$ of the Riemann zeta function are structurally determined by $\varphi=(1+\sqrt{5})/2$ and $\pi$. The Euler product of $\zeta$ is built from local factors $f_p(s)$, one for each prime. We prove that the Frobenius lift $\varphi^p = F_p\varphi + F_{p-1}$—where $F_n$ is the $n$-th Fibonacci number—determines the splitting type of every prime $p$ in $\mathbb{Z}[\varphi]$, and hence every $f_p(s)$. Through the Dedekind factorisation $\zeta(s) = \zeta_{\mathbb{Q}(\sqrt{5})}(s)/L(s,\chi_5)$, this determines $\zeta(s)$ completely: the isomorphism between the Frobenius structure and the Euler product is demonstrated at every level (primes, splitting types, local factors, $L$-function), anchored by the base case $L(1,\chi_5) = 2\log\varphi/\sqrt{5}$ (the class-number formula for $\mathbb{Q}(\sqrt{5})$), which expresses the $L$-function value entirely in terms of $\varphi$. This resolves the apparent freedom of $\zeta(2k+1)$ noted by Elvang, Herderschee and Morales in the $\mathcal{N}{=}4$ SYM S-matrix bootstrap: those values are free only relative to the EFT; the pentagonal arithmetic fixes them.
 
-**Keywords:** Riemann Hypothesis, Odd zeta values, F1 (field with one element), Elliptic curves, Lambda-rings, String theory, Category theory, Golden ratio, Mersenne primes, Formal verification.
+**Keywords:** Riemann Hypothesis, Odd zeta values, 𝔽₁ (field with one element), Elliptic curves, Lambda-rings, String theory, Category theory, Golden ratio, Mersenne primes, Formal verification.
 
 <!-- selfcite:begin id="citation" -->
 ## Citation
 
-González García, J. A., González García, V. M., Dressler Pérez, I. M., & García Ordóñez, L. M. (2026). *Odd Zeta Values from the PCF Torus: φ and π as Arithmetic-Geometric Sources*. Preprint. DOI: [10.5281/zenodo.19492791](https://doi.org/10.5281/zenodo.19492791).
+González García, J. A., González García, V. M., Dressler Pérez, I. M., & García Ordóñez, L. M. (2026). *Odd Zeta Values from Pentagonal 𝔽₁-Descent: a Λ-structure on ℤ[φ], the character χ₅, and the zeta function*. Preprint. DOI: [10.5281/zenodo.19492791](https://doi.org/10.5281/zenodo.19492791).
 
 ```bibtex
 @article{Gonzalez2026OddZeta,
   author  = {González García, J. A. and González García, V. M. and Dressler Pérez, I. M. and García Ordóñez, L. M.},
-  title   = {Odd Zeta Values from the PCF Torus: φ and π as Arithmetic-Geometric Sources},
+  title   = {Odd Zeta Values from Pentagonal 𝔽₁-Descent: a Λ-structure on ℤ[φ], the character χ₅, and the zeta function},
   journal = {Preprint},
   year    = {2026},
   doi     = {10.5281/zenodo.19492791},
