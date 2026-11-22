@@ -7,6 +7,7 @@
     ".nvmrc": "075e7674a969687957ce158d8a9bc659c9110fdd1db4cefca59359002cdd9880",
     ".python-version": "7b55f8e67b5623c4bef3fa691288da9437d79d3aba156de48d481db32ac7d16d",
     "LICENSE": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94",
+    "scripts/build.ts": "cb9c3b669058478ae5bb435259b873d0681c2a7c5df313e213557e34ec0a0659",
     "scripts/generate_types.ts": "25a337d8256b6653ffffb47ca13bac9385b62e3ef6be7fcfcf2852af0c1844cf",
     "scripts/schemas/cff-schema.json": "a66c5cb15a5a8c3149debdc834442d9e8a26f988524753122c5390a9dc42b57e",
     "scripts/schemas/zenodo-schema.json": "ccffd1fb26e74e30295051e5dffc39130be28291d6fe75f5adad649c2a71a6ab",
@@ -31,7 +32,6 @@
     ".release-it.ts": "per-repository release hooks (CVR-001 CT-7: the before:init guardrail differs between repositories)",
     ".gitignore": "repository-specific ignores (04 differs from the family)",
     ".chktexrc": "not family-wide: 01/04/05 carry one, 02/03 none, and the copies differ",
-    "scripts/build.ts": "divergent as of 2026-11-21 (CVR-001 B1): 05 calls syncCounts() before the render per SPEC-004 §3.1, 01/02/03/04 do not and their counts.ts exports no syncCounts() — unify the two sides, then pin it here (BLD-001 §4 Option A named it first)",
     "scripts/tasks/counts.ts": "per-repository counter table by design: its counters, Lean file list and marked regions are that repository's own (SPEC-004 §3.1)",
     "scripts/shared-files.json": "this manifest — a file cannot contain its own digest"
   }

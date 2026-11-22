@@ -2,6 +2,7 @@
 import { readFileSync, writeFileSync } from 'fs';
 import { syncCitationMetadata } from './tasks/citation.js';
 import { syncSelfCitations, injectDevVersion } from './tasks/selfcitations.js';
+import { syncCounts } from './tasks/counts.js';
 import { cleanupOldVersions } from './tasks/cleanup.js';
 import { compilePDF } from './tasks/compile.js';
 import { generateChecksums } from './tasks/checksums.js';
@@ -18,14 +19,8 @@ function createReleaseConfig(version: string): ReleaseConfig {
 }
 
 async function main(): Promise<void> {
-  // Version from the command line argument (provided by release-it) or package.json.
-  // The RAW argument picks the tier of the token *rendered into the PDF*
-  // (SPEC-004 §2 as amended): with it the release build prints `vX.Y.Z`,
-  // without it a development build prints `vX.Y.Z-dev@<sha>` — so the
-  // package.json fallback must not be passed down.  Either way the committed
-  // main.tex keeps its clean token; the suffix is injected and restored below.
-  const releaseVersion = process.argv[2];
-  let version = releaseVersion;
+  // Get version from command line argument (provided by release-it) or package.json
+  let version = process.argv[2];
 
   if (!version) {
     const packageJsonPath = new URL('../package.json', import.meta.url);
@@ -46,6 +41,11 @@ async function main(): Promise<void> {
     cleanupOldVersions(config.buildDir);
     syncCitationMetadata(config.version);
     syncSelfCitations();
+    // The counts the manuscript prints are measured, not typed: bring the
+    // marked regions of main.tex (and the living documents) up to date with
+    // the working tree before the render, so the PDF cannot print a stale
+    // number (scripts/tasks/counts.ts).
+    syncCounts();
 
     // SPEC-004 §2 (amended 2026-11-20): the committed main.tex keeps the clean
     // `vX.Y.Z` token; the development form lives only in the rendered PDF.
@@ -53,7 +53,7 @@ async function main(): Promise<void> {
     // here, never from `git checkout`, so a failing compile cannot leave a
     // suffixed token behind.
     const originalTex = readFileSync(config.sourceTex, 'utf8');
-    writeFileSync(config.sourceTex, injectDevVersion(originalTex, releaseVersion));
+    writeFileSync(config.sourceTex, injectDevVersion(originalTex, process.argv[2]));
     try {
       compilePDF(config);
     } finally {

@@ -11,8 +11,9 @@
  * unified diff when either has drifted, so a stale count is loud instead of
  * a report's footnote.
  *
- * Markers follow the selfcitations precedent (the family SPEC-001 §5.2) and come in two
- * forms, because a code fence prints HTML comments as text:
+ * Markers follow the selfcitations precedent (the family SPEC-001 §5.2) and come in three
+ * forms, because a code fence prints HTML comments as text and a `%` comments
+ * out the rest of its TeX line:
  *
  *   inline (HTML comment, prose):
  *     <!-- counts:begin id="suite" -->498 tests<!-- counts:end id="suite" -->
@@ -20,6 +21,14 @@
  *     # counts:begin id="commands"
  *     uv run pytest tests/ -q   # whole suite (498 tests)
  *     # counts:end id="commands"
+ *
+ *   tex (LaTeX comment, in main.tex — the markers sit on their own lines, as
+ *   the selfcite version markers do, because `%` comments out the rest of a
+ *   line).  This repository marks no tex region yet; the grammar is carried
+ *   family-wide so a manuscript claim can be owned by this task later:
+ *     % counts:begin id="macros"
+ *     \newcommand{\CountTests}{498}
+ *     % counts:end id="macros"
  *
  * Determinism: no Date, no locale, no network — only local measurements, so
  * f(f(x)) = f(x).  This repository's documents are snapshots of a moment and
@@ -150,8 +159,9 @@ interface Region {
   file: string;
   id: string;
   /** `inline` = one HTML-comment pair around a span of prose; `block` = a
-   *  pair of shell-comment lines around whole lines inside a code fence. */
-  kind: 'inline' | 'block';
+   *  pair of shell-comment lines around whole lines inside a code fence;
+   *  `tex` = a pair of `%` comment lines around whole lines of main.tex. */
+  kind: 'inline' | 'block' | 'tex';
   /** The counters this region quotes (drives the "quoted in" column). */
   uses: string[];
   render: (c: Counts) => string;
@@ -175,6 +185,14 @@ function blockBegin(id: string): RegExp {
 function blockEnd(id: string): RegExp {
   return new RegExp(`^[\\t ]*#\\s*counts:end\\s+id="${id}"[\\t ]*$`, 'gm');
 }
+/** The `%` comment form used by main.tex (a `%` swallows the rest of its line,
+ *  so — like the selfcite version markers — each marker owns a whole line). */
+function texBegin(id: string): RegExp {
+  return new RegExp(`^[\\t ]*%\\s*counts:begin\\s+id="${id}"[\\t ]*$`, 'gm');
+}
+function texEnd(id: string): RegExp {
+  return new RegExp(`^[\\t ]*%\\s*counts:end\\s+id="${id}"[\\t ]*$`, 'gm');
+}
 
 interface Span {
   contentStart: number;
@@ -183,8 +201,9 @@ interface Span {
 
 /** Locate the single marker pair of `region` in `text`, or throw. */
 function findSpan(text: string, region: Region): Span {
-  const beginRe = region.kind === 'inline' ? inlineBegin(region.id) : blockBegin(region.id);
-  const endRe = region.kind === 'inline' ? inlineEnd(region.id) : blockEnd(region.id);
+  const beginRe =
+    region.kind === 'inline' ? inlineBegin(region.id) : region.kind === 'block' ? blockBegin(region.id) : texBegin(region.id);
+  const endRe = region.kind === 'inline' ? inlineEnd(region.id) : region.kind === 'block' ? blockEnd(region.id) : texEnd(region.id);
   const begins = [...text.matchAll(beginRe)];
   const ends = [...text.matchAll(endRe)];
   const where = `${region.file} id="${region.id}"`;
@@ -197,12 +216,12 @@ function findSpan(text: string, region: Region): Span {
   const endStart = ends[0].index;
   if (endStart < beginEnd) throw new Error(`${where}: marker pair is inverted (end before begin)`);
 
-  if (region.kind === 'block') {
+  if (region.kind !== 'inline') {
     // Markers sit on their own lines; the content is everything between them,
     // without the newline that terminates the last content line.
     const contentStart = text.charAt(beginEnd) === '\n' ? beginEnd + 1 : beginEnd;
     if (contentStart !== endStart && text.charAt(endStart - 1) !== '\n') {
-      throw new Error(`${where}: a block marker must sit on a line of its own`);
+      throw new Error(`${where}: a ${region.kind} marker must sit on a line of its own`);
     }
     return { contentStart, contentEnd: endStart - 1 };
   }
@@ -384,4 +403,26 @@ function main(): number {
   }
 }
 
-process.exit(main());
+/**
+ * Called by `scripts/build.ts` before the render, exactly where it calls
+ * `syncSelfCitations()`: the count regions are a build artifact, so the
+ * documents are brought up to date with the measurements before the
+ * manuscript is compiled, and a stale number can never reach the PDF.
+ */
+export function syncCounts(): void {
+  const result = run(false);
+  console.log(
+    result.changed
+      ? `  ✓ count regions regenerated (${[...new Set(result.staleRegions.map((entry) => entry.split(' id=')[0]))].join(', ')}${
+          result.staleLedger ? `, ${LEDGER}` : ''
+        }).`
+      : '  ✓ count regions up to date.'
+  );
+}
+
+// Only run when invoked directly (tsx scripts/tasks/counts.ts), not when
+// build.ts imports syncCounts().
+const invokedDirectly = process.argv[1] !== undefined && process.argv[1].endsWith('counts.ts');
+if (invokedDirectly) {
+  process.exit(main());
+}
