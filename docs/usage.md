@@ -125,7 +125,11 @@ footer is a **major**.
 
 - **Standard:** [Semantic Versioning](https://semver.org) — `vX.Y.Z`
   (major.minor.patch), where `feat` → minor, `fix` → patch,
-  `BREAKING CHANGE`/`!` → major, as declared in the commit subjects above.
+  `BREAKING CHANGE`/`!` → major, as declared in the commit subjects above,
+  and **every other type (`docs`, `chore`, `test`, `build`, `refactor`,
+  `perf`, `ci`, `style`, `revert`) cuts no release at all** — the bump is
+  read from `.release-it.ts` (official `conventionalcommits` preset) by the
+  table in §Commits, not from a hand-written mapping.
 - **Single source:** the `version` field of `package.json`.
 - **Synchronization chain:** `release-it` bumps `package.json` →
   `@release-it/bumper` writes the same value into `CITATION.cff` →
