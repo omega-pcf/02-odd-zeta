@@ -1,13 +1,21 @@
 \pdfoutput=1
 \documentclass[11pt,reqno]{amsart}
 
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
 \usepackage[margin=1in]{geometry}
+\usepackage{letltxmacro}
+\emergencystretch=3em
+\hbadness=10000
 \usepackage{mathtools}
 \usepackage{amssymb}
 \usepackage{tikz-cd}
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{array}
+\usepackage{amsthm}
+\usepackage{longtable}
 \usepackage{graphicx}
 \usepackage{enumitem}
 \usepackage{doi}
@@ -19,6 +27,35 @@
 \hypersetup{colorlinks=true,urlcolor=blue,linkcolor=linkred,citecolor=blue}
 \usepackage[capitalize,nameinlink]{cleveref}
 \usepackage{colortbl}
+
+% ---- ported from F1_v168 preamble (bookmarks, Unicode, TOC depth) ----
+\renewcommand{\thepart}{\Roman{part}}
+\pdfstringdefDisableCommands{%
+  \def\golden{φ}\def\Zphi{Z[φ]}\def\Fone{F₁}\def\chiv{χ₅}\def\OmH{Ω̂}%
+  \def\Lambda{Λ}\def\mathbb#1{#1}\def\mathrm#1{#1}\def\Z{Z}\def\Q{Q}\def\R{R}\def\C{C}%
+  \def\log{log }\def\zeta{ζ}\def\pi{π}\def\mu{μ}\def\lambda{λ}\def\to{→}\def\sqrt#1{√#1}\def\tfrac#1#2{#1/#2}}
+% Greek letters inside Lean identifiers
+\DeclareUnicodeCharacter{03C6}{\ensuremath{\varphi}}
+\DeclareUnicodeCharacter{03C9}{\ensuremath{\omega}}
+\DeclareUnicodeCharacter{03B9}{\ensuremath{\iota}}
+\DeclareUnicodeCharacter{03C3}{\ensuremath{\sigma}}
+\DeclareUnicodeCharacter{03C8}{\ensuremath{\psi}}
+\DeclareUnicodeCharacter{03B4}{\ensuremath{\delta}}
+\DeclareUnicodeCharacter{03B5}{\ensuremath{\varepsilon}}
+\DeclareUnicodeCharacter{03BB}{\ensuremath{\lambda}}
+\DeclareUnicodeCharacter{039B}{\ensuremath{\Lambda}}
+\DeclareUnicodeCharacter{03BC}{\ensuremath{\mu}}
+\DeclareUnicodeCharacter{03C4}{\ensuremath{\tau}}
+\DeclareUnicodeCharacter{03C7}{\ensuremath{\chi}}
+\DeclareUnicodeCharacter{2081}{\ensuremath{_1}}
+\DeclareUnicodeCharacter{2082}{\ensuremath{_2}}
+\DeclareUnicodeCharacter{2083}{\ensuremath{_3}}
+\DeclareUnicodeCharacter{2085}{\ensuremath{_5}}
+\hyphenation{gen-er-al-ised Gel-fond Schnei-der}
+\raggedbottom
+% Table of contents to sub-subsections; run-in paragraph headings stay out of it
+\setcounter{tocdepth}{3}
+\makeatletter\def\l@paragraph#1#2{}\makeatother
 
 \crefname{section}{\S}{\S\S}
 \Crefname{section}{\S}{\S\S}
@@ -49,6 +86,9 @@
 
 \newtheorem{conjecture}[theorem]{Conjecture}
 \newtheorem{Conjecture}[theorem]{Conjecture}
+
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{Assumption}[theorem]{Assumption}
 
 \newtheorem{observation}[theorem]{Observation}
 \newtheorem{Observation}[theorem]{Observation}
@@ -92,10 +132,91 @@
 \newcommand{\lean}[1]{\nolinkurl{#1}}
 \newcommand{\pcfrepo}{https://github.com/omega-pcf/02-odd-zeta}
 
+%%% ====================================================================
+%%%  PENTAGONAL F1-DESCENT MACROS — ported from F1_v168.tex (F1).
+%%%  Only macros the shell did NOT already define are added; the shell
+%%%  definitions of \golden \Rpcf \OmH \lean \Set \Hilb \Met \norm
+%%%  \Ztwenty and \pcfrepo (D1: omega-pcf/02-odd-zeta) are kept as-is.
+%%% ====================================================================
+\providecommand{\tier}[1]{{\footnotesize\textbf{[#1]}}}
+\newcommand{\PCF}{\mathrm{PCF}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\F}{\mathbb{F}}
+\renewcommand{\Re}{\operatorname{Re}}
+\newcommand{\OK}{\mathcal{O}_K}
+\newcommand{\Mpcf}{M_{\mathrm{PCF}}}
+\newcommand{\GN}{G_{N}}
+\newcommand{\epsz}{\varepsilon_{0}}
+\newcommand{\lng}{\lambda_{\log}}
+\newcommand{\Lean}[1]{\par\noindent\hfill{\small\ttfamily[#1]}\par}
+% Lean names and file names may break after an underscore or a dot, so that long
+% identifiers never run into the margin.
+\LetLtxMacro\oldtexttt\texttt
+\ExplSyntaxOn
+\tl_new:N \l__tt_text_tl
+\DeclareRobustCommand{\texttt}[1]
+  {
+    \tl_set:Nn \l__tt_text_tl {#1}
+    \tl_replace_all:Nnn \l__tt_text_tl { . } { . \allowbreak }
+    \oldtexttt { \def\_{\textunderscore\allowbreak} \tl_use:N \l__tt_text_tl }
+  }
+\ExplSyntaxOff
+\ExplSyntaxOn
+\tl_new:N \l__lean_name_tl
+\DeclareRobustCommand{\LeanInline}[1]
+  {
+    \tl_set:Nn \l__lean_name_tl {#1}
+    \tl_replace_all:Nnn \l__lean_name_tl { . } { . \allowbreak }
+    \textnormal { \small \ttfamily \def\_{\textunderscore\allowbreak} [ \tl_use:N \l__lean_name_tl ] }
+  }
+\ExplSyntaxOff
+% an underscore may break a line anywhere in running text
+\AtBeginDocument{\DeclareRobustCommand{\_}{\ifmmode\mathunderscore\else\textunderscore\allowbreak\fi}}
+%%% paper-specific
+\newcommand{\Fone}{\mathbb{F}_1}
+\newcommand{\Zphi}{\Z[\golden]}
+\newcommand{\Zst}{(\Z/20)^{\times}}
+\newcommand{\chiv}{\chi_5}
+\newcommand{\Frob}{\mathrm{Fr}}
+\newcommand{\LPCF}{\Lambda_{\PCF}}
+\newcommand{\Oone}{\mathsf{O}}
+\newcommand{\Rloc}{\Z[\golden,\golden^{-1},\tfrac15]}
+\newcommand{\Ecore}{\ensuremath{\mathrm{(E)}}}
+\newcommand{\keyres}{$\star$\ }
+\newcommand{\tierP}{\tier{P}}
+\newcommand{\tierPnew}{\tier{P$^{*}$}}
+\newcommand{\tierC}{\tier{C}}
+\newcommand{\tierN}{\tier{N}}
+\newcommand{\tierO}{\tier{O}}
+\newcommand{\tierT}{\tier{T}}
+% computer-assisted with explicit error accounting, not in Lean
+\newcommand{\tierNc}{\tier{N$_{\mathrm{c}}$}}
+\newcommand{\pending}{{\footnotesize\textbf{[pending compilation]}}}
+% A Lean declaration written for this version and not yet compiled, cited inside a
+% group whose tier is [P]: it is [P*].
+\newcommand{\LeanStar}[1]{\LeanInline{#1}$^{*}$}
+% a tally: a classification made in the text, recorded as an enumerated type whose
+% count is checked by decision; it certifies the count, not the classification
+\newcommand{\LeanTally}[1]{\LeanInline{#1}$^{\circ}$}
+% A Lean declaration of the companion development of \cite{gonzalez26cw}, not part of
+% this paper's build.
+\newcommand{\LeanCW}[1]{\LeanInline{#1}$^{\dagger}$}
+% Lean accounting of a statement, set after it and outside the statement
+\newcommand{\leanline}[1]{\par\noindent{\footnotesize\raggedright\textsc{Lean:} #1\par}\smallskip}
+\newcommand{\todo}[1]{\par\noindent\raggedright\footnotesize\textcolor{linkred}{\textbf{TODO:} #1}\par}
+% provenance notes are kept in the source and not printed; see the source map
+\newcommand{\src}[1]{}
+
 \begin{document}
 
-\title[Odd Zeta Values from the PCF Torus]{Odd Zeta Values from the PCF Torus: \\
-    $\golden$ and $\pi$ as Arithmetic-Geometric Sources}
+\title[Odd Zeta Values from Pentagonal $\Fone$-Descent]
+{Odd Zeta Values from Pentagonal $\Fone$-Descent:\\
+    a $\Lambda$-structure on $\Zphi$, the character $\chiv$,\\
+    and the zeta function}
 \thanks{Zenodo All Versions DOI: \href{https://doi.org/10.5281/zenodo.19492791}{10.5281/zenodo.19492791}}
 
 \author[J. A. González García et al.]{Jorge Armando GONZÁLEZ GARCÍA}
@@ -121,9 +242,11 @@
 \date{April 10, 2026; \textbf{Last modified:} \today; \textbf{Version:} \texttt{v1.7.2}}
 % selfcite:end id="version"
 
-\keywords{Riemann Hypothesis, Odd zeta values, $\mathbb{F}_1$ (field with one element), Elliptic curves, $\Lambda$-rings, String theory, Category theory, Golden ratio, Mersenne primes, Formal verification}
+\keywords{Field with one element ($\mathbb{F}_1$); $\Lambda$-rings; golden ratio;
+Frobenius lifts; Dirichlet $L$-functions; Weil positivity; explicit formula;
+formal verification}
 
-\subjclass[2020]{Primary 11M06, 11R42, 11G05, 11J72, 81T30, 14G99; Secondary 68V20}
+\subjclass[2020]{Primary 11M26, 11R04, 14G99; Secondary 11M20, 68V20}
 
 \begin{abstract}
 \input{src/chapters/abstract}

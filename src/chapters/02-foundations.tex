@@ -1,286 +1,910 @@
-\section{Definitions: the PCF ring and torus}\label{sec:background}
-%%% ====================================================================
+\section{Background: what $\Fone$ is and where it comes from}\label{sec:background}
 
-\begin{definition}[PCF ring]\label{def:Rpcf}
-  The \emph{PCF ring} is
-  \[
-    \Rpcf = \mathbb{Z}\!\left[\golden,\,\golden^{-1},\,\tfrac{1}{2}\right],
-  \]
-  the ring of integers of $\mathbb{Q}(\sqrt{5})$ localised at $2$.  Here
-  $\golden = (1+\sqrt{5})/2$ satisfies $\golden^2 = \golden + 1$,
-  $N(\golden) = \golden\bar\golden = -1$ (unit), $\operatorname{Tr}(\golden)=1$.
-  The discriminant of $\mathbb{Q}(\sqrt{5})$ is $\Delta = 5$.
-\end{definition}
+\subsection{The odd zeta values: a problem older than the Riemann hypothesis}\label{sec:odd-history}
 
-\begin{definition}[Frobenius lifts]\label{def:frobenius}
-  For each prime $p$, the \emph{Frobenius lift} is the ring endomorphism
-  \[
-    \psi_p\colon \Rpcf \to \Rpcf,\qquad
-    \psi_p(\golden) = \golden^p = F_p\golden + F_{p-1},
-  \]
-  where $F_n$ denotes the $n$-th Fibonacci number.  These satisfy the
-  composition law $\psi_p \circ \psi_q = \psi_{pq}$, mirroring the
-  multiplicative structure of the Euler product.
-\end{definition}
+The sum of the reciprocals of the squares was posed by Mengoli in 1650~\cite{mengoli1650}, and it withstood the
+attempts of the Bernoullis.  Euler found it in 1734 and read the result to the St Petersburg Academy in 1735:
+$\zeta(2)=\pi^2/6$.  In the same memoir he gave $\zeta(4),\dots,\zeta(12)$ as rational multiples of the
+corresponding powers of $\pi$~\cite{euler1740}.  The general law came later:
+$\zeta(2k)=(-1)^{k+1}B_{2k}(2\pi)^{2k}/\bigl(2\,(2k)!\bigr)$, with $B_{2k}$ the Bernoulli
+numbers~\cite{lagarias13}.  That memoir already lists the sum of the reciprocal cubes among the series he had not
+been able to sum, and the odd values never yielded to his methods.  In 1772 he reduced $\zeta(3)$ to an integral,
+\[
+  \tfrac78\,\zeta(3)=\tfrac{\pi^2}{4}\log2+2\int_0^{\pi/2}x\log\sin x\,dx,
+\]
+which he could not evaluate~\cite{euler1773,lagarias13}.
 
-\begin{definition}[PCF torus and worldline]\label{def:torus}
-  The \emph{PCF torus} is $T^2_{\mathrm{PCF}} = \mathbb{C}/\Lambda_{\mathrm{PCF}}$
-  with modular parameter $\tau_{\mathrm{PCF}} = i$, the unique
-  fixed point of S-duality $S\colon\tau\mapsto -1/\tau$ on the
-  upper half-plane (since $-1/i = i$).
-  The worldline on $T^2_{\mathrm{PCF}}$ is
-  \[
-    \Omega(\tau) = \tfrac{1}{2}\,e^{i\tau\log\golden}.
-  \]
-  Its natural period, obtained by closing on the circle of $T^2_{\mathrm{PCF}}$, is
-  \begin{equation}\label{eq:period}
-    T = 2\pi\log\golden.
-  \end{equation}
-\end{definition}
+The zeta function grew out of these sums.  In 1737 Euler showed that the sum over the integers is a product over
+the primes, $\sum_n n^{-s}=\prod_p(1-p^{-s})^{-1}$~\cite{euler1737}, and this tied the values to the distribution
+of the primes.  In 1859 Riemann took $s$ complex, continued the function to the whole plane, proved its functional
+equation, and stated the hypothesis that bears his name~\cite{riemann1859}.  The
+question of the odd values is therefore more than a century older than the Riemann hypothesis, and it is still
+open.  Ap\'ery proved that $\zeta(3)$ is irrational~\cite{apery79}.  Ball and Rivoal proved that infinitely many
+odd values are irrational~\cite{ballrivoal01}, and Zudilin that one of $\zeta(5),\zeta(7),\zeta(9),\zeta(11)$
+is~\cite{zudilin01}.  No closed form is known for any of them.
 
-\begin{remark}[The circle is there]\label{rmk:circle}
-  Although $\log\golden$ appears without $\pi$ in the class-number formula
-  (\cref{sec:fundamental}), the period $T = 2\pi\log\golden$ shows that
-  $\pi$ is the circumference of the circle in $T^2_{\mathrm{PCF}}$.  At $s=1$,
-  the $\pi$ of the period and the $\pi$ of the Dedekind residue formula cancel,
-  leaving $2\log\golden/\sqrt{5}$; but the circle origin is geometric,
-  not algebraic.
-\end{remark}
+In physics, a free parameter is a quantity that a theory does not fix and that has to be supplied from outside it,
+by measurement or by hand.  The odd values are expected to be free in the corresponding arithmetic sense.  The
+prevailing expectation, a consequence of Grothendieck's period conjecture~\cite{grothendieck66,kontsevichzagier01},
+is that $\pi,\zeta(3),\zeta(5),\dots$ are algebraically independent over $\Q$.  No polynomial relation with rational
+coefficients would then hold among them, so no odd value would be fixed by $\pi$ or by the other odd values.  For
+their motivic versions this is a theorem.  The motivic Galois group of mixed Tate motives over $\Z$ has a unipotent
+part whose Lie algebra is free on one generator in each odd degree $2n+1\ge3$~\cite{delignegoncharov05}.  The
+motivic odd zeta values are algebraically independent~\cite{brown12}, so each one is a new constant.  The same
+freedom appears in physics: in the bootstrap of Elvang, Herderschee and Morales, maximal supersymmetry and
+factorisation leave unfixed exactly the Wilson coefficients that carry $\zeta(2k+1)$~\cite{elvang26}.
 
-\begin{remark}[Canonical identifications]\label{rmk:standard-id}
-  The following classical identifications are used throughout:
-  \begin{enumerate}
-    \item $\mathbb{R}\cong$ the real line as a 1D topological manifold
-          (Euclidean topology);
-    \item $\golden^\sigma\colon\mathbb{R}\to\mathbb{R}_{>0}$ is a
-          bijection (exponential with base $\golden > 1$);
-    \item every positive integer factors uniquely into primes
-          (Fundamental Theorem of Arithmetic; Euclid, \cite[Prop.~IX.14]{heath1956thirteen});
-    \item $[\mathbb{Q}(\sqrt{5}):\mathbb{Q}] = 2$ (minimal polynomial
-          $x^2 - x - 1$ is irreducible over $\mathbb{Q}$).
-  \end{enumerate}
-\end{remark}
+Number theory and physics share a long history around $\zeta$, and the odd values are part of it.  It begins with
+the values that the continuation assigns at the negative integers.  Where the series $1+2+3+\cdots$ diverges, the
+continued function takes the value $\zeta(-1)=-\tfrac1{12}$, and physics uses that value: in the bosonic string the
+zero-point energy of the transverse oscillators is $(D-2)\cdot\tfrac12\zeta(-1)$, and requiring it to be $-1$ fixes
+the critical dimension $D=26$~\cite{polchinski98}.  Hawking introduced the regularisation of divergent sums and
+determinants by zeta functions for path integrals in curved spacetime~\cite{hawking77}.  That regularisation is
+also a standard method for computing Casimir energies~\cite{elizalde94}.  The odd values appear in at least three
+places:
+\begin{itemize}
+  \item In quantum electrodynamics, $\zeta(3)$ enters the two-loop coefficient of the anomalous magnetic moment of
+    the electron~\cite{petermann58,sommerfield57}, and $\zeta(3)$ and $\zeta(5)$ enter the three-loop
+    coefficient~\cite{laporta96}.
+  \item In string theory, they appear in the coefficients of the low-energy ($\alpha'$) expansion of the Veneziano
+    amplitude~\cite{veneziano68}.  These are the same coefficients that the bootstrap of Elvang, Herderschee and
+    Morales leaves unfixed.
+  \item In the path integrals of quantum field theory, they arise as periods of Feynman diagrams: the counterterms
+    of $\phi^4$ theory yield multiple zeta values, beginning with $\zeta(3)$, at high loop
+    orders~\cite{broadhurstkreimer97}.
+\end{itemize}
 
+Through its zeros, $\zeta$ also meets the physics of random matrices: the zeros and the spectra of black holes in
+low-dimensional holography share the same statistics, a meeting that \cref{sec:polya-hist,ssec:four-requirements}
+take up.
 
-%%% ====================================================================
-\subsection{Uniqueness of \texorpdfstring{$\golden$}{phi} and \texorpdfstring{$\mathbb{Q}(\sqrt{5})$}{Q(sqrt(5))}}\label{sec:unique}
-%%% ====================================================================
+The rest of this section examines two frameworks that stand where these fields meet.  The first is the
+construction of the Hilbert--P\'olya operator, a self-adjoint operator whose eigenvalues would be the ordinates
+$\gamma$ of the non-trivial zeros $\tfrac12+i\gamma$~\cite{polya1982letter,berry99,connes99}.  The second is
+Manin's.  It includes the noncommutative tori of M-theory~\cite{connes98}, which he proposed as the geometry of real
+multiplication~\cite{manin04}.  It also includes the frameworks for a geometry below $\mathrm{Spec}\,\Z$ with which
+he approached the Riemann hypothesis~\cite{manin95}: one with Borger's $\Lambda$-rings~\cite{borger09,manin13}, and
+one with cyclotomic polynomials~\cite{manin08}.  The first framework is where the circularity of the problem
+becomes visible, and the next subsection begins there.
 
-The \cref{eq:main-factorization} uses the specific field
-$\mathbb{Q}(\sqrt{5})$.  We show this choice is \emph{forced}, not ad hoc.
+\subsection{The circularity problem and Hilbert--P\'olya}\label{sec:circularity}
+\src{HP \S1.1 \texttt{ssec:polya-hist} (L90--L217), rewritten}
 
-\begin{proposition}[Uniqueness of $\golden$]%
-  \label{prop:phi-unique}
-  $\golden$ is the unique real quadratic irrationality whose minimal
-  polynomial $p(x) = x^2 - x - 1$ is self-dual under $x\mapsto -1/x$:
-  \[
-    p(-1/x) = -\frac{p(x)}{x^2}.
-  \]
-  Any other real quadratic irrationality $\xi$ with minimal polynomial
-  $q(x) = x^2 + ax + b$ satisfies this self-duality only if $a=-1$,
-  $b=-1$, i.e.\ $q = p$ uniquely.
-\end{proposition}
+\subsubsection{Why the zeros cannot be referred to}
 
-\begin{proof}
-  $p(-1/x) = 1/x^2 + 1/x - 1 = -(x^2-x-1)/x^2 = -p(x)/x^2$.
-  For $q(x)=x^2+ax+b$: $q(-1/x) = -(bx^2+ax-1)/x^2$.
-  Equality $q(-1/x) = -q(x)/x^2$ requires $b=-1$ and $a=-1$.
-\end{proof}
+The Riemann hypothesis asks where the non-trivial zeros of $\zeta(s)$ lie.  The classical analytic theory obtains
+information about the zeros from $\zeta$ itself~\cite{titchmarsh86}, and there is no circularity in that.  The
+circularity meant in this paper concerns a construction: a structure meant to force the zeros onto the critical
+line --- an operator whose spectrum they would be, or a geometry of whose Frobenius they would be the eigenvalues
+--- that is defined from the zeros, or from the primes that the Euler product encodes, presupposes what it has to
+explain.  Riemann's 1859 memoir~\cite{riemann1859} makes the duality between zeros and primes exact.  Through von
+Mangoldt's explicit formula,
+\begin{equation}\label{eq:explicit-formula}
+  \psi(x) = x - \sum_\rho \frac{x^\rho}{\rho}
+    - \log(2\pi) - \tfrac12\log(1-x^{-2}),
+\end{equation}
+the primes and the zeros are two descriptions of the same arithmetic content:
+if $\mathrm{Re}(\rho)=\tfrac12$ for every $\rho$, each oscillatory term has
+amplitude $x^{1/2}$ and $|\psi(x)-x| = O(x^{1/2}\log^2 x)$; a zero with
+$\mathrm{Re}(\rho)>\tfrac12$ would create a dominant mode~\cite{titchmarsh86}.
+A structure defined from the distribution of the primes is therefore defined from the zeros.  The two most
+influential proposals for approaching the problem ask for a structure \emph{external} to $\zeta$, one whose own
+properties force the zeros onto the critical line: a self-adjoint operator (Hilbert--P\'olya), treated in the rest
+of this subsection, and a geometric Frobenius with a positivity (Weil, \cref{sec:weil}).  This paper follows the
+second route through the $\Fone$ programme, and records at each step what is proved and what is assumed.
 
-\begin{corollary}[Uniqueness of $\mathbb{Q}(\sqrt{5})$]\label{cor:Qsqrt5-unique}
-  $\mathbb{Q}(\sqrt{5})$ is the unique real quadratic field in which:
-  \begin{enumerate}
-    \item The fundamental unit $\golden$ satisfies $\golden^2 = \golden+1$
-          \emph{(PCF relation)};
-    \item The norm is $N(\golden) = \golden\bar\golden = -1$
-          \emph{($\golden$ is a unit of norm $-1$)};
-    \item The discriminant is $\Delta = 5$, making $p=5$ the unique
-          ramified prime;
-    \item The Galois conjugation $\golden\leftrightarrow\bar\golden = -1/\golden$
-          is a self-duality of the lattice $\Lambda_{\mathrm{PCF}}$
-          \emph{(\cref{prop:phi-unique})}.
-  \end{enumerate}
-  These four properties together single out $\mathbb{Q}(\sqrt{5})$ as the
-  unique quadratic field on which the PCF Euler product factorisation
-  $\zeta(s) = \zeta_{\mathbb{Q}(\sqrt{5})}(s)/L(s,\chi_5)$ rests.
-\end{corollary}
+\subsubsection{The P\'olya operator}\label{sec:polya-hist}
 
-%%% ====================================================================
-\subsection{Frobenius lifts and the splitting criterion}\label{sec:frobenius-split}
-%%% ====================================================================
+In correspondence with Odlyzko in 1982, P\'olya recalled his conjecture of
+1914: the Riemann hypothesis would follow if the non-trivial zeros were the
+eigenvalues of a self-adjoint operator~\cite{polya1982letter,odlyzko87}.
+Montgomery's pair correlation (1973) and Dyson's observation identified the
+statistics of the spacings with those of the Gaussian Unitary
+Ensemble~\cite{dyson62,montgomery73}, and Odlyzko's computations near the $10^{12}$-th zero~\cite{odlyzko87} and, later, near the $10^{22}$-nd~\cite{odlyzko01} confirmed the agreement.
 
-We now make explicit the connection between the Frobenius lift
-$\psi_p(\golden)=\golden^p$ and the prime splitting type
-$\chi_5(p)$, closing the chain pentagon $\to\golden\to\chi_5\to G\to\Rpcf$.
+Random matrices entered physics as a model for spectra whose Hamiltonian is not known: Wigner
+replaced the unknown Hamiltonian of a heavy nucleus by a random symmetric matrix~\cite{wigner51},
+and Bohigas, Giannoni and Schmit conjectured that a quantum system whose classical limit is chaotic
+has the level statistics of the ensemble of its symmetry class --- GOE with time-reversal symmetry,
+GUE without~\cite{bgs84}.  The zeros of $\zeta$ show the GUE statistics with no Hamiltonian known.
+The broken time-reversal symmetry has an arithmetic reading: the phases $e^{-is\log p}$ contributed
+by the Euler factors are mutually incoherent, because the logarithms of the primes are linearly
+independent over $\mathbb{Q}$.  Berry and Keating read the zeros as the spectrum of the quantisation
+of a chaotic system without time-reversal symmetry~\cite{berry99}; Keating and Snaith modelled $\zeta$
+by characteristic polynomials of random unitary matrices~\cite{keating00}, and the Euler product
+enters that model through an arithmetic factor, which the hybrid Euler--Hadamard product of Gonek,
+Hughes and Keating incorporates~\cite{gonekhugheskeating07}.
 
-\begin{proposition}[Fibonacci splitting criterion]\label{prop:fib-split}
-  For every prime $p\neq 2,5$, the Frobenius lift
-  $\psi_p(\golden) = \golden^p = F_p\golden + F_{p-1}$ determines the
-  splitting type of $p$ in $\mathbb{Z}[\golden]$ through:
-  \begin{equation}\label{eq:fib-criterion}
-    \chi_5(p) \equiv F_p \pmod{p},
-  \end{equation}
-  where $\chi_5(p)\in\{+1,-1\}$ is read as $\pm 1$ in $\mathbb{Z}/p\mathbb{Z}$.
-  Explicitly:
-  \[
-    \chi_5(p) = \begin{cases}
-      +1 & \text{(p splits)} \iff F_p\equiv +1\pmod{p}
-      \iff F_{p-1}\equiv 0\pmod{p},                    \\
-      -1 & \text{(p inert)} \iff F_p\equiv -1\pmod{p}
-      \iff F_{p+1}\equiv 0\pmod{p}.
-    \end{cases}
-  \]
-\end{proposition}
+The programme has resisted realisation for more than a century.  Classical
+analytic methods address local properties of $\zeta$~\cite{hardy14,vinogradov47,titchmarsh86};
+random matrix theory supplies the statistics but, as above, not the
+operator~\cite{keating00,katz99}; Connes' noncommutative geometry reduces the
+hypothesis to the validity of a trace formula~\cite{connes99,connes95};
+Berry--Keating and Bender--Brody--M\"uller identify classes of candidate
+operators~\cite{berry99,bender17}; Yakaboylu constructs a Hamiltonian on the half-line whose eigenvalues are fixed by the zeros, and whose self-adjointness is the contested point~\cite{yakaboylu24}.
+Each approach meets either \emph{constructional circularity}---the operator
+needs its own spectrum to be defined---or a limitation of \emph{scope}.
+In the tower of this paper --- the powers $\golden^n$, with a group of six elements, the fibre, over each level $n$
+(\cref{sec:objective}) --- a third limit can be stated exactly, and it is structural:
+an operator that depends on the level alone, with everything in its functional calculus, cannot
+separate the points of a fibre, and the operators that separate them do not commute with the
+symmetry of the fibre (\cref{prop:level-operators,rmk:one-operator}).
 
-\begin{proof}
-  The Frobenius lift satisfies $\psi_p(a)\equiv a^p\pmod{p}$ (\cref{sec:frobenius-split}).
+\subsubsection{The requirements of an operator}\label{ssec:four-requirements}
 
-  If $p$ splits in $\mathbb{Z}[\golden]$: the Frobenius acts as the
-  identity on the residue field, so $\golden^p \equiv \golden\pmod{p}$,
-  giving $F_p\equiv 1$ and $F_{p-1}\equiv 0\pmod{p}$.  Then $\chi_5(p)=+1=F_p\bmod p$.
+An operator for the zeros has to meet a number of requirements, set out since P\'olya and added to by later authors;
+the corpus makes four of them explicit: the operator must be non-circular, be self-adjoint, have a spectrum given
+exactly, and not asymptotically or by calibration on data, and be unconditional (\LeanTally{four\_requirements}).
+The Primitive Structure~\cite{gonzalez25hp} distinguishes three distinct problems behind them.  The first is
+circularity: an operator defined from the zeros, or from the primes, presupposes what it has to explain;
+\cite{gonzalez25hp} sets beside it, as a term of comparison, a circularity of another kind, the diagonal argument of
+Lawvere and Yanofsky.  The second is the binary against the third dimension: the real division algebras have
+dimension $1$, $2$, $4$ or $8$, and none has dimension three.  The third is the statistics of the zeros: the unitary
+class is one class of a classification that is itself binary, it is the class of quantum chaos without
+time-reversal symmetry, and it is the class of the black holes of AdS/CFT~\cite{cotler17}, which is where the
+statistics and the holographic duality meet.  The three are set out in \cref{ssec:intro-binary}, once the $\Fone$
+programme and Manin's two programmes have been presented, together with the question they leave, how to pass
+between dimensions; \cref{ssec:why-phi} then states by what means this paper meets each.
 
-  If $p$ is inert: the Frobenius acts as the non-trivial Galois
-  automorphism $\golden\mapsto\bar\golden = 1-\golden$, so
-  $\golden^p\equiv\bar\golden\pmod{p}$, giving $F_p\equiv -1$ and
-  $F_{p-1}\equiv 1\pmod{p}$.  Then $\chi_5(p)=-1\equiv F_p\bmod p$.
+Of the framework's two candidates, the operator $\tilde H_{\mathrm{PCF}}$
+meets non-circularity and self-adjointness, the latter proved in the text of \cite{gonzalez25hp}
+(\LeanTally{hpps\_meets\_two}), and the operator $\OmH$ meets three: non-circularity, self-adjointness, in its
+tower form (\cref{thm:operator-forms}), and exact spectrum, fixed by $\golden$ and not calibrated on data
+(\cref{prop:omega-spectrum}; \LeanTally{omega\_meets\_three}).  The requirement that remains, unconditionality, is
+the one \cref{ssec:core} identifies as the core, which the closure conjecture would supply (\cref{conj:closure});
+\cref{ssec:disc-hp-ledger} returns to the three problems with the results of the paper.
 
-  In both cases $\chi_5(p) \equiv F_p\pmod{p}$.
-  Representative values for $3 \leq p \leq 59$ are provided in \cref{tab:fib-split}.
-\end{proof}
+\subsection{Weil's letter and the Rosetta stone}\label{sec:weil}
+\src{HP \S1.1 (L165--L185), \texttt{ssec:weil} (L1457--L1530), rewritten}
 
-\begin{table}[ht]
-  \centering
-  \caption{Fibonacci criterion for prime splitting in $\mathbb{Z}[\golden]$.
-    $\chi_5(p)\equiv F_p\pmod{p}$ in all cases.}
-  \label{tab:fib-split}
-  \begin{tabular}{rcccc}
-    \toprule
-    $p$ & $p\bmod 5$ & $\chi_5(p)$ & Type  & $F_p\bmod p$ \\
-    \midrule
-    3   & 3          & $-1$        & inert & $-1$         \\
-    7   & 2          & $-1$        & inert & $-1$         \\
-    11  & 1          & $+1$        & split & $+1$         \\
-    13  & 3          & $-1$        & inert & $-1$         \\
-    17  & 2          & $-1$        & inert & $-1$         \\
-    19  & 4          & $+1$        & split & $+1$         \\
-    23  & 3          & $-1$        & inert & $-1$         \\
-    29  & 4          & $+1$        & split & $+1$         \\
-    31  & 1          & $+1$        & split & $+1$         \\
-    \bottomrule
-  \end{tabular}
-\end{table}
+\subsubsection{The letter of 1940 and the three columns}\label{ssec:weil-letter}
 
-\begin{remark}[The Artin character is the Fibonacci character]%
-  \label{rmk:fibonacci-artin}
-  \Cref{prop:fib-split} expresses the Artin character
-  $\chi_5 = (\cdot/5)$ of $\mathbb{Q}(\sqrt{5})/\mathbb{Q}$ in terms
-  of Fibonacci numbers: $\chi_5(p) = F_p\bmod p$.  This is a direct
-  consequence of $\psi_p(\golden) = \golden^p = F_p\golden+F_{p-1}$ and
-  the Frobenius-splitting correspondence.  It shows that the prime
-  decomposition of $\mathbb{Z}[\golden]$---which governs every local
-  factor $f_p(s)$ of $\zeta_{\mathbb{Q}(\sqrt{5})}(s)$---is encoded in the Fibonacci
-  sequence itself.
-\end{remark}
+Writing to his sister Simone from prison in Rouen in 1940, Andr\'e Weil
+described mathematics as a Rosetta stone with three columns: number fields,
+function fields over finite fields, and Riemann surfaces~\cite{weil_letter40}.
+A statement proved in one column suggests its translation into the others, and
+the translation between domains is itself the method.  The Riemann hypothesis
+is the case where the translation is known in one direction and missing in the
+other: it is a theorem in the middle column and open in the first.
 
-%%% ====================================================================
-\subsection{Mersenne bridge and localization at \texorpdfstring{$2$}{2}}%
-\label{sec:rpcf-role}
-%%% ====================================================================
+\subsubsection{RH for curves over finite fields}\label{ssec:weil-curves}
 
-We now explain why $\Rpcf = \mathbb{Z}[\golden,\golden^{-1},\tfrac{1}{2}]$
-rather than $\mathbb{Z}[\golden]$ is the correct ring, and how
-the localization at~$2$ connects to the binary structure.
+For a smooth projective curve $C$ of genus $g$ over $\mathbb{F}_q$, the
+Frobenius $x\mapsto x^q$ acts on $H^1_{\text{\'et}}(C,\mathbb{Q}_\ell)$ with
+eigenvalues $\alpha_1,\dots,\alpha_{2g}$, and
+$\#C(\mathbb{F}_{q^m}) = 1 - \sum_i\alpha_i^m + q^m$.  The analogue of the
+Riemann hypothesis is $|\alpha_i| = q^{1/2}$.  Hasse proved it for elliptic
+curves~\cite{hasse34}, Weil for all curves~\cite{weil40,weil48}, and Deligne for
+arbitrary varieties~\cite{deligne74}.  Weil's argument works on the surface
+$C\times C$: the intersection form, with Riemann--Roch and Serre duality, gives
+an inequality that, applied to the graph of the iterated Frobenius, yields
+$|\alpha_i|\le q^{1/2}$; the functional equation gives the reverse
+bound~\cite{milne15,oort14}.
 
-\begin{theorem}[Mersenne bridge; González García et al.~\cite{V11}]%
-  \label{thm:mersenne}
-  \begin{equation}\label{eq:mersenne}
-    \golden^{\lambda_{\log}} = 2,
-    \qquad \lambda_{\log} = \frac{\log 2}{\log\golden} \approx 1.4404.
-  \end{equation}
-\end{theorem}
+\subsubsection{The Weil template}\label{ssec:weil-template}
 
-\begin{proof}
-  $\golden^{\lambda_{\log}} = e^{(\log 2/\log\golden)\cdot\log\golden}
-    = e^{\log 2} = 2$.
-\end{proof}
-
-\begin{proposition}[Inertness of $p=2$ and the localization]\label{prop:p2-inert}
-  The prime $p=2$ is \emph{inert} in $\mathbb{Z}[\golden]$: the Kronecker
-  symbol $(5/2) = \chi_5(2) = -1$.  Its local Euler factor in
-  $\zeta_{\mathbb{Q}(\sqrt{5})}(s)$ is $(1-2^{-2s})^{-1}$, not $(1-2^{-s})^{-2}$.
-
-  Localising at~$2$ to form $\Rpcf = \mathbb{Z}[\golden,\golden^{-1},\tfrac{1}{2}]$
-  is justified by the Mersenne bridge~\cref{eq:mersenne}: $\golden^{\lambda_{\log}}=2$
-  means that $2$ is a natural scale in the tower generated by $\golden$,
-  and the factor $\tfrac{1}{2}$ in $\Rpcf$ captures the inert place
-  $p=2$ without introducing a new ramified prime.
-\end{proposition}
-
-\begin{proof}
-  $\chi_5(2) = (5/2) = -1$ since $2\not\equiv\pm 1\pmod{5}$.  The local
-  factor follows from \cref{prop:local-factors}.
-  The Mersenne bridge is \cref{thm:mersenne}.
-\end{proof}
-
-\begin{remark}[The non-circularity chain]\label{rmk:chain}
-  The full acyclic chain from the pentagon to the Euler product is:
-  \begin{equation*}
-    \begin{split}
-       & \underbrace{2\cos\tfrac{\pi}{5}=\golden}_{\text{pentagon}}
-      \;\to\;
-      \underbrace{\golden^2=\golden+1}_{\Rpcf}
-      \;\to\;
-      \underbrace{\chi_5(p) = F_p\bmod p}_{\text{Artin char.}}
-      \;\to\;
-      \underbrace{G(p\bmod 20)=(\chi_4(p),\chi_5(p))}_{\text{class functor}} \\[6pt]
-       & \qquad\qquad\qquad\qquad\qquad\;\to\;
-      \underbrace{\zeta_{\mathbb{Q}(\sqrt{5})}(s)=\textstyle\prod_p f_p(s)}_{\text{Euler product}}
-      \;\to\;
-      \zeta(s).
-    \end{split}
-  \end{equation*}
-  At no point does $\zeta(s)$ itself enter the construction of $\chi_5$
-  or $\zeta_{\mathbb{Q}(\sqrt{5})}$; the chain is acyclic.  The localisation at~$2$ is
-  justified by $\golden^{\lambda_{\log}}=2$ (\cref{thm:mersenne}).
-  Each arrow in this chain is a functor or natural transformation
-  in the categorical framework of \cref{sec:categorical-framework}:
-  $\golden^2=\golden+1$ generates the Frobenius functor $\Psi$
-  (\cref{def:frobenius-functor}), $\Psi$ determines $\chi_5$
-  via the Fibonacci splitting criterion
-  (\cref{prop:fib-split}), $\chi_5$ is a component of
-  $G$ (\cref{thm:bridge3}), and $G$ assembles
-  the Euler product as a colimit
-  (\cref{prop:euler-colimit}).
-  The acyclicity of the chain is the acyclicity of a composed functor.
-\end{remark}
-
-% ------------------------------------------------------------------
-\subsection{The classification group
-\texorpdfstring{$\Ztwenty$}{(Z/20Z)*}}\label{sec:Z20}
-% ------------------------------------------------------------------
-
-The group $\Ztwenty = \{1,3,7,9,11,13,17,19\}$ of
-order $8$ classifies every prime $p > 5$ by its residue
-class modulo $20$ (\cref{prop:fib-split}).  The arithmetic
-of this group has two key properties:
-
-\begin{proposition}[Multiplicative closure and additive destruction]
-\label{prop:Z20-arithmetic}
+Weil's proof has three ingredients, and they fix what any analogue over
+$\mathbb{Z}$ must supply:
 \begin{enumerate}
-\item[\textup{(i)}] $\Ztwenty$ is closed under multiplication:
-  for all $a, b \in \Ztwenty$, the product $ab \bmod 20 \in \Ztwenty$.
-\item[\textup{(ii)}] $\Ztwenty$ is destroyed under addition:
-  for all $a, b \in \Ztwenty$, the sum $a + b \bmod 20 \notin \Ztwenty$.
+  \item[(a)] \textbf{A space on which Frobenius acts}: the cohomology of $C$, or
+    the surface $C\times C$ with its intersection theory.
+  \item[(b)] \textbf{Zeros as eigenvalues}: the zeros of the zeta function of $C$
+    are read from the Frobenius eigenvalues.
+  \item[(c)] \textbf{Positivity}: an inequality (Castelnuovo--Severi) that bounds
+    the eigenvalues, combined with the functional equation.
 \end{enumerate}
-\end{proposition}
+The aspiration to transport this template from $\mathbb{F}_q$ to $\mathbb{Z}$
+is the $\Fone$ programme (\cref{sec:f1-programme}).  The Euler product
+$\prod_p(1-p^{-s})^{-1}$, with one factor per prime, is where the transport
+starts: L\'opez Pe\~na and Lorscheid write each local factor as the zeta
+function of the residue field $\mathbb{F}_p$~\cite{lopezpena09torified}, and
+Connes reads the zeros as the absorption spectrum of a trace formula on the
+ad\`ele class space~\cite{connes99,connes16}.
 
-\begin{proof}
-Both statements are decidable by exhaustive check over the
-$64 = 8 \times 8$ pairs (Lean: \lean{mul_closed} and
-\lean{add_destroyed}, both verified by \texttt{decide};
-cf.~Proposition~2 of~\cite{V11}).
-Intuition for (ii): every element of $\Ztwenty$ is odd, so every
-sum $a + b$ is even, hence not coprime to $20$, hence not in
-$\Ztwenty$.
-\end{proof}
+% ---------------------------------------------------------------------
+\subsection{The $\Fone$ programme}\label{sec:f1-programme}
+\src{HP \texttt{ssec:convergence} (L395--L460), rewritten; literature checked in Consensus}
 
+\subsubsection{Tits and the limit $q\to1$}
+
+Tits observed in 1956 (published 1957) that combinatorial analogues of algebraic groups over
+$\mathbb{F}_q$ persist as $q\to1$, where they become Weyl groups and
+buildings~\cite{tits56}: a ``field with one element'' would be the base over
+which these limits live.  The programme that grew from this remark has one
+driving motivation: to read $\mathrm{Spec}\,\mathbb{Z}$ as a curve over $\Fone$,
+with a completion analogous to a curve over a finite field, so that Weil's proof
+(\cref{sec:weil}) could be translated~\cite{lorscheid12blueprints}.
+
+\subsubsection{The obstruction the programme addresses}\label{ssec:f1-obstruction}
+
+Weil's proof lives on the surface $C\times C$.  Over $\mathbb{Z}$ the analogous
+product collapses: $\mathrm{Spec}\,\mathbb{Z}\times_{\mathbb{Z}}\mathrm{Spec}\,\mathbb{Z}
+=\mathrm{Spec}\,\mathbb{Z}$ is one-dimensional, which is why the direct
+translation of Weil's and Bombieri's proofs has so far been
+unsuccessful~\cite{vanfrankenhuijsen08}.  The collapse has a precise source:
+$\mathbb{F}_p[T]$ has a coefficient field, $\mathbb{Z}$ has none that is
+visible~\cite{kurokawa03}.  The $\Fone$ programme is the search for that missing
+base---an object \emph{below} $\mathrm{Spec}\,\mathbb{Z}$ over which the product
+$\mathrm{Spec}\,\mathbb{Z}\times_{\Fone}\mathrm{Spec}\,\mathbb{Z}$ is a genuine
+surface~\cite{haran07,toen09}.
+
+\paragraph{Hilbert--P\'olya and $\Fone$.}
+Over $\mathbb{F}_q$, Frobenius acting on $H^1$ plays the role of a
+Hilbert--P\'olya operator: the zeros of $Z(C,q^{-s})$ are the $s$ with
+$q^{s}=\alpha_i$, where $\alpha_1,\dots,\alpha_{2g}$ are its eigenvalues
+(\cref{ssec:weil-curves}).  Deninger proposed an analogue over $\mathbb{Z}$: a
+cohomological formalism in which the archimedean and the local factors are
+regularised determinants~\cite{deninger91,deninger92}, and in which the zeros
+would be the spectrum of an operator $\Theta$ on an $H^1$ of
+$\overline{\mathrm{Spec}\,\mathbb{Z}}$~\cite{deninger94}, later sought as the
+generator of a flow on a foliated space~\cite{deninger98}; the cohomology itself
+has not been constructed.  Manin read that formalism as a cohomology over
+$\Fone$~\cite{manin95}, so that the Frobenius of the sought base would fulfil, for
+$\mathbb{Z}$, the function that Frobenius fulfils over $\mathbb{F}_q$.  Connes
+realised the zeros spectrally on the ad\`ele class space~\cite{connes99}, and the
+arithmetic site of Connes and Consani (\cref{ssec:f1-strategies}) relates that
+realisation to $\Fone$.
+
+\subsubsection{The strategies of the $\Fone$ programme}\label{ssec:f1-strategies}
+
+\paragraph{Non-additive geometry and monoid schemes.}
+Soul\'e gave the first framework for algebraic geometry over $\Fone$~\cite{soule03};
+Deitmar's monoid schemes~\cite{deitmar05}, Haran's non-additive
+geometry~\cite{haran07}, To\"en--Vaqui\'e's schemes below
+$\mathrm{Spec}\,\mathbb{Z}$~\cite{toen09} and Lorscheid's
+blueprints~\cite{lorscheid12blueprints} drop or weaken addition.  On a monoid
+the $p$-th power $u\mapsto u^p$ is always an endomorphism, so Frobenius comes
+for free at the multiplicative level.
+
+\begin{definition}[$\Lambda$-monoid]\label{def:lambda-monoid}
+A commutative monoid $M$ with commuting endomorphisms $\Frob_p$, one for each
+prime, satisfying $\Frob_p\circ\Frob_q=\Frob_{pq}$; the basic example is
+$\Frob_p(u)=u^p$.
+\end{definition}
+
+\paragraph{Borger: $\Lambda$-rings as descent data.}
+Borger identified the structure that plays the role of Frobenius in
+characteristic zero~\cite{borger09,borger11}.
+
+\begin{definition}[$\Lambda$-ring, torsion-free case]\label{def:lambda-ring}
+A torsion-free commutative ring $A$ with commuting \emph{ring} endomorphisms
+$\Frob_p$, one for each prime $p$, such that $\Frob_p(a)\equiv a^p\pmod{pA}$
+for all $a\in A$.
+\end{definition}
+
+A $\Lambda$-ring structure is descent data from $\mathrm{Spec}\,A$ to $\Fone$ and
+globalises to a big topos over $\Fone$~\cite{borger09,borger11}; the Euler
+product, with one factor per prime, is its analytic shadow.  The difference
+between \cref{def:lambda-monoid} and \cref{def:lambda-ring} is additivity:
+$\Frob_p$ must respect sums.  That difference is the subject of
+\cref{sec:lambda-monoid,sec:lambda-ring}.  When the lifts and the congruence are required only at the primes of
+a set $E$, the structure is a $\Lambda_{\Z,E}$-structure in the sense of Borger~\cite[\S1]{borger11}.  That is the sense of \emph{away
+from $5$} in this paper, with $E$ the set of primes other than $5$: commuting ring endomorphisms $\Frob_p$ of $\Zphi$ for every prime $p\ne5$, each congruent
+to the $p$-th power modulo $p$ (\cref{thm:frobenius-congruence,thm:descent-datum}), with no lift at $5$
+(\cref{thm:obstruction-five}); the comparison of \cref{ssec:non-toric} writes it as a $\Lambda$-structure on
+$\Zphi[\tfrac15]$, where $5$ is invertible and the congruence at $5$ is empty.
+\begin{remark}
+Ramification obstructs $\Lambda$-structures on rings of integers.  Borger and de Smit
+show that a reduced $\Lambda$-ring finite flat over $\Z$ is a sub-$\Lambda$-ring of a
+product of group rings $\Z[C]$ of finite cyclic groups, so that its rational algebra
+lies in a product of cyclotomic fields and its Frobenius lifts are Frobenius
+elements \cite[Thm.~0.1 and Cor.~0.3]{borgerdesmit08}; a Frobenius element exists only where the
+extension is unramified.  For $\Zphi$ the failure at the ramified prime is proved
+directly, by a nilpotent, in \cref{thm:obstruction-five}.
+\end{remark}
+
+\paragraph{Connes--Consani: the arithmetic site and three strategies.}
+Connes and Consani connected $\Fone$ to noncommutative geometry and built the
+arithmetic site~\cite{connes08,connes14,connes16}.  Connes distinguishes three
+strategies at the level of the explicit formulas: an analytic one through the
+trace formula, an algebro-geometric one that transposes Weil's proof through a
+Riemann--Roch theorem in characteristic one, and a cohomological one through a
+suitable Weil cohomology~\cite{connes15essay}.
+
+\paragraph{Cyclotomic towers as $\bar{\mathbb{F}}_1$.}
+Kapranov and Smirnov, and later Manin, take the cyclotomic tower in place of the algebraic closure of $\Fone$.
+In the analogy between $\mathbb{Z}$ and $\mathbb{F}_q[T]$, the analogue of
+$\bar{\mathbb{F}}_q[T]$ would be $\mathbb{Z}\otimes_{\Fone}\bar{\mathbb{F}}_1$, and the cyclotomic tower $\bigcup_r\mathbb{Z}[\zeta_{p^r}]$ of Iwasawa theory is taken in its place~\cite{kapranovsmirnov,manin08}; roots of unity play the role of the extensions of
+$\Fone$~\cite{kapranovsmirnov}.
+
+\subsubsection{Desiderata of the $\mathbb{F}_1$ programme}
+\label{ssec:desiderata}
+
+The literature has converged on a list of properties that any
+candidate theory of $\mathbb{F}_1$-geometry should satisfy.  The
+list is implicit in Tits~\cite{tits56}, articulated in
+Manin~\cite{manin95}, formalised in Soul\'e~\cite{soule03},
+and surveyed comparatively in
+L\'opez Pe\~na--Lorscheid~\cite{lopezpena09mapping} and
+Lorscheid~\cite{lorscheid18}.  We adopt the following nine-item
+list as a working specification.
+
+\begin{enumerate}[label=(D\arabic*),leftmargin=*,nosep]
+\item $\mathrm{Spec}\,\mathbb{F}_1$ is a single point.
+\label{D1}
+\item $\mathrm{GL}_n(\mathbb{F}_1) = \Sigma_n$, the symmetric
+group on~$n$ letters
+(Tits~\cite{tits56}: combinatorial limit $q\to 1$ of
+$\mathrm{GL}_n(\mathbb{F}_q)$).\label{D2}
+\item $\mathbb{P}^n(\mathbb{F}_1)$ has exactly $n+1$ points
+(buildings: combinatorial limit of $\mathbb{P}^n(\mathbb{F}_q)$).
+\label{D3}
+\item Counting function: a candidate $\mathbb{F}_1$-object~$X$ has
+a counting function $N_X(q)$ which extends to $q\to 1$ either
+polynomially (Soul\'e) or distributionally (Connes--Consani).
+\label{D4}
+\item $\mathrm{Spec}\,\mathbb{Z}$ admits a curve structure
+over~$\mathbb{F}_1$, whose compactification
+$\overline{\mathrm{Spec}\,\mathbb{Z}}$ is the
+$\mathbb{F}_1$-arithmetic analogue of a smooth projective
+curve.\label{D5}
+\item There is a base-change functor
+$-\otimes_{\mathbb{F}_1}\mathbb{Z}$ from
+$\mathbb{F}_1$-schemes to ordinary schemes.\label{D6}
+\item Toric varieties (split torus actions on themselves) admit
+$\mathbb{F}_1$-models.  This is the minimal test case: any
+candidate theory must reproduce the toric case.\label{D7}
+\item The Riemann zeta function emerges as the
+$\mathbb{F}_1$-counting zeta of
+$\overline{\mathrm{Spec}\,\mathbb{Z}}$ (Manin~\cite{manin95}).
+\label{D8}
+\item There is a Weil-style proof of the Riemann Hypothesis
+following from absolute geometry over~$\mathbb{F}_1$
+(Deninger--Manin programme,~\cite{deninger91,deninger92,manin95}).
+\label{D9}
+\end{enumerate}
+
+These nine items serve as criteria of the field, against which
+any candidate construction is to be assessed.  We state them here
+abstractly; the verification of which items the present
+construction satisfies is given in \cref{ssec:position}, after
+the relevant material has been developed, and the items each approach to $\Fone$ engages are
+tabulated in \cref{app:comparison}.
+
+\subsubsection{Soul\'e's varieties and the polynomial counting
+condition}\label{ssec:soule}
+
+The first formal proposal for an algebraic geometry over
+$\mathbb{F}_1$ was made by Soul\'e~\cite{soule03}, refining
+ideas of Kapranov--Smirnov~\cite{kapranovsmirnov}.  An
+$\mathbb{F}_1$-variety is a finite-type scheme $X$
+over~$\mathbb{Z}$ together with a polynomial $N_X\in\mathbb{Z}[x]$
+such that
+\begin{equation}\label{eq:soule-counting}
+  \#X(\mathbb{F}_{p^n}) \;=\; N_X(p^n)
+  \qquad\text{for all primes } p \text{ and all } n\ge 1.
+\end{equation}
+The polynomial $N_X$ is called the \emph{counting polynomial}
+of~$X$, and~\eqref{eq:soule-counting} is referred to as
+\emph{Soul\'e's condition}.  When the condition holds, the
+Hasse--Weil generating function
+$Z(X,T) = \exp\!\left(\sum_{r\ge 1} N_X(q^r)T^r/r\right)$
+is rational, and the limit
+\begin{equation}\label{eq:soule-zeta-2}
+  \zeta_X(s) \;:=\; \lim_{q\to 1}\,Z(X,q^{-s})\,(q-1)^{N_X(1)}
+\end{equation}
+defines the $\mathbb{F}_1$-zeta of~$X$~\cite[\S6]{soule03}, in the form corrected in \cite[Eq.~(3)]{connesconsani10}.
+
+The toric varieties satisfy~\eqref{eq:soule-counting} cleanly: for
+$X = \mathbb{P}^n_\mathbb{Z}$, $N_X(q) = q^n + q^{n-1} +
+\cdots + 1$, and $\zeta_X(s) = \prod_{k=0}^n (s-k)^{-1}$ is
+the elementary $\mathbb{F}_1$-zeta of projective space.  However,
+$\mathrm{Spec}\,\mathbb{Z}$ does not satisfy
+Soul\'e's condition: $\zeta$ has infinitely many zeros, so it is not $\zeta_N$ for any
+polynomial $N$, and the candidate counting function for
+$\overline{\mathrm{Spec}\,\mathbb{Z}}$ falls outside~\eqref{eq:soule-counting}.  This is the limitation
+that motivates the extension of \cref{ssec:cc}.
+
+\begin{remark}[Algebraic extensions
+$\mathbb{F}_{1^n}$]\label{rmk:F1n}
+Following Kapranov--Smirnov~\cite{kapranovsmirnov} and
+Soul\'e~\cite{soule03}, the algebraic extensions of
+$\mathbb{F}_1$ are defined by base change as
+\begin{equation}\label{eq:F1n}
+  \mathbb{F}_{1^n}\otimes_{\mathbb{F}_1}\mathbb{Z}
+  \;:=\; \mathbb{Z}[T]/(T^n - 1).
+\end{equation}
+This realises the cyclotomic side of $\mathbb{F}_1$-geometry:
+adjoining roots of unity is the analogue of taking a finite
+field extension of~$\mathbb{F}_q$.  The Connes--Consani
+refinement~\cite{connesconsani11} singles out
+$\mathbb{F}_{1^2}$ as a fundamental sub-case, with
+generator $-1$ \textup{(}the unique non-trivial second root of
+unity\textup{)} and balanced ternary multiplicative monoid
+$\{-1,0,+1\}$.  In the present construction $-1$ appears as the norm of the
+fundamental unit, $N(\golden)=-1$ \textup{(\cref{sec:ring})}.
+\end{remark}
+
+\subsubsection{Connes--Consani's distributional extension}
+\label{ssec:cc}
+
+Connes and Consani~\cite{connesconsani10} extend Soul\'e's
+framework to objects whose counting function is not polynomial
+but distributional.  The technical step is the replacement of the
+limit $q\to 1$ in~\eqref{eq:soule-zeta-2} by an integral against
+a counting distribution.
+
+The integral formula that makes this precise is \cref{lem:cc-integral}.  Applied to
+$\overline{\mathrm{Spec}\,\mathbb{Z}}$, it gives the complete Riemann zeta function for the counting distribution
+\[
+  N_\mathbb{Q}(u) \;=\; u
+  \;-\; \frac{d}{du}\!\left[\sum_{\rho}\mathrm{ord}(\rho)\,\frac{u^{\rho+1}}{\rho+1}\right]
+  \;+\; 1,
+\]
+the sum running over the non-trivial zeros of $\zeta$ (\cref{thm:cc-zeta-Q}, equation~\eqref{eq:N-Q}).
+
+The structural content of this formula is
+the same shape as the Lefschetz formula for curves
+over~$\mathbb{F}_q$:
+\begin{equation}\label{eq:weil-shape}
+  \#C(\mathbb{F}_{q^n}) \;=\; q^n
+  \;-\; \sum_{i=1}^{2g}\alpha_i^n
+  \;+\; 1,
+\end{equation}
+with the non-trivial zeros~$\rho$ playing the role of Frobenius
+eigenvalues~$\alpha_i$.  Connes and Consani thereby identify
+the zeros of~$\zeta(s)$ with the would-be eigenvalues of a
+Frobenius operator on $\overline{\mathrm{Spec}\,\mathbb{Z}}/\mathbb{F}_1$,
+and the genus appears as $N_\mathbb{Q}(1) = -\infty$ \textup{(}an
+infinite-genus curve\textup{)}.
+
+The Connes--Consani extension specifically addresses
+desideratum~\ref{D8}.  It does not, by itself, exhibit the
+descent data structurally: \eqref{eq:N-Q} requires the zeros of
+$\zeta(s)$ as analytic input.  Combining a structural source for
+the descent data (Borger's $\Lambda$-rings) with the
+distributional output (Connes--Consani's $N(u)$) is the
+combination the present paper provides for the case
+$K=\mathbb{Q}(\sqrt{5})$.
+
+\subsubsection{Other approaches and the position of this paper}
+\label{ssec:landscape}
+
+Several other frameworks for $\mathbb{F}_1$-geometry exist; we
+summarise them briefly.  L\'opez Pe\~na and Lorscheid survey them~\cite{lopezpena09mapping}, and Manin and
+Marcolli survey the homotopical approaches below $\mathrm{Spec}\,\mathbb{Z}$~\cite{maninmarcolli20}.  \Cref{app:comparison} compares them, with the present one, in a single
+table: the objects each defines, how it counts, whether it has Frobenius lifts, its strategy for
+the Riemann hypothesis, Soul\'e's condition, and the desiderata it engages.
+
+\paragraph{Monoid schemes (Deitmar~\cite{deitmar05}).}
+$\mathbb{F}_1$-schemes are defined by replacing rings with
+commutative monoids and then taking $\mathrm{Spec}$ of monoids.
+The functor $\mathrm{Spec}\,M\mapsto\mathrm{Spec}\,\mathbb{Z}[M]$
+gives the base change to $\mathbb{Z}$.  Monoid schemes recover
+toric varieties cleanly but do not handle non-toric arithmetic
+structure.
+
+\paragraph{Relative schemes
+(To\"en--Vaqui\'e~\cite{toen09}).}
+$\mathbb{F}_1$-schemes are defined as schemes relative to a
+symmetric monoidal category~$\mathcal{C}$.  Choosing
+$\mathcal{C}=\mathrm{CommMon}$ recovers Deitmar; choosing
+$\mathcal{C}=\mathrm{Set}_*$ recovers a more rigid theory.
+
+\paragraph{Blueprints (Lorscheid~\cite{lorscheid12blueprints}).}
+Blueprints unify the previous frameworks: a blueprint is a
+commutative semiring~$B$ together with a multiplicative
+sub-monoid~$A\subseteq B$ generating~$B$ as a semiring.  The
+resulting category subsumes Deitmar monoid schemes, Soul\'e
+varieties, and To\"en--Vaqui\'e schemes.  Semiring schemes in the sense of To\"en--Vaqui\'e connect $\mathbb{F}_1$-geometry to tropical geometry: Giansiracusa and Giansiracusa use them to give tropical varieties a scheme structure~\cite{giansiracusa16}, a construction later recast with blueprints.
+
+\paragraph{Generalised rings (Durov~\cite{durov07}).}
+A generalised ring is an algebraic monad on the category of
+sets.  Durov's framework treats Arakelov geometry uniformly with
+$\mathbb{F}_1$-geometry: the place at infinity of~$\mathbb{Q}$
+becomes an $\mathbb{F}_1$-object alongside the finite primes.
+
+\paragraph{Torified varieties
+(L\'opez Pe\~na--Lorscheid~\cite{lopezpena09torified}).}
+A torified variety is a scheme $X$ over~$\mathbb{Z}$ together with
+a decomposition into split tori.  These provide a class of
+schemes admitting both Deitmar and Soul\'e structures.
+
+\paragraph{$M_o$-schemes
+(Connes--Consani~\cite{connesconsani10}).}
+A refinement combining Soul\'e and Deitmar:
+$\mathrm{Spec}$ of a multiplicative monoid endowed with a
+distinguished system of homomorphisms to fields.  This is the
+framework in which the distributional extension of
+\cref{ssec:cc} is most naturally stated.
+
+\paragraph{Position of this paper.}
+Of these geometries, the one this paper uses is Borger's: a $\Lambda$-structure as
+descent datum to $\Fone$, carried out on the cyclotomic strand, on the ring $\Zphi$ of
+the pentagon.  It does not use monoid schemes, blueprints, torified varieties or the
+homotopical approaches; where it meets them is recorded in
+\cref{sec:discussion,ssec:non-toric}.
+The construction is a Borger-style $\Lambda$-monoid on the tower
+$\langle\golden\rangle$ of units, together with an Artin $\Lambda$-structure on
+$\Zphi$ away from the ramified prime (\cref{sec:lambda-ring}); the ring
+$\Rpcf=\mathbb{Z}[\golden,\golden^{-1},\tfrac{1}{2}]$ carries the first but not the
+second (\cref{cor:localisation}).  The
+counting function we attach to it
+\textup{(\cref{thm:pcf-counting})} is distributional in the
+Connes--Consani sense.  We do not develop a blueprint or
+$M_o$-scheme structure for~$\langle\golden\rangle$; whether the
+construction admits such a structure is left as an open problem
+\textup{(\cref{ssec:future})}.  The toric machinery of
+Deitmar applies cleanly to the trivial case $K=\mathbb{Q}$
+\textup{(}corresponding to $\zeta_\mathbb{Q}=\zeta$\textup{)} but
+not to the pentagonal case $K=\mathbb{Q}(\sqrt{5})$, which
+requires the non-toric Borger descent.  This dichotomy is
+articulated in \cref{ssec:non-toric}.
+
+
+
+
+% ---------------------------------------------------------------------
+\subsection{Manin's two programmes}\label{sec:manin}
+\src{HP \texttt{ssec:convergence} (L438--L500), rewritten}
+
+\subsubsection{\emph{Numbers as Functions}: Buium's $p$-derivations}
+
+In \emph{Numbers as Functions}~\cite{manin13}, Manin surveys Buium's theory of
+differential equations in the arithmetic direction~\cite{buium05}.  The prime
+$p$ plays the role of a variable, and the $p$-derivation
+\begin{equation}\label{eq:buium}
+  \delta_p(a) = \frac{\Frob_p(a) - a^p}{p}
+\end{equation}
+is well defined exactly when $\Frob_p$ is a Frobenius lift; for $A=\mathbb{Z}$,
+$\Frob_p=\mathrm{id}$ and $\delta_p(a)=(a-a^p)/p$ by Fermat.  Arithmetic jet
+spaces follow.  Borger's $\Lambda$-rings are the global form of the same data; on $\Zphi$ these $p$-derivations exist at every $p\neq5$ (\cref{prop:delta-ring}).
+Buium's route, through the $p$-adic completions, is
+$p$-adic; its formalisation in Lean belongs to the
+perfectoid line discussed in \cref{sec:discussion},
+except for the order of $\golden$ modulo each prime, the clock of the prime (\cref{sec:objective}), which the
+cyclotomic polynomials already read in finite arithmetic.
+
+Scholze and Weinstein justify the name of the diamonds of $p$-adic geometry by an image: a geometric point is
+like an impurity inside a gem, which gives it a colour; it is not seen directly, only through the reflections it
+produces on the surface~\cite[\S9.2]{scholzeweinstein20}.  In that image the $p$-adic reading is the one from
+inside the gem, prime by prime, and the reading by the regular polygons is the one on its surface.  This paper
+takes both, the inside one as far as finite arithmetic reads it: the $p$-derivations, the polar form of $\golden$
+at the primes and the prism at $5$ (\cref{prop:delta-ring,prop:polar,rmk:prism-five}); on the surface, the cyclotomic polynomials evaluated at
+$\golden$; and it proves that at each prime the two read the same order (\cref{prop:clock-cyclotomic}).  In the
+order of the construction the surface comes first, since the clock is read before any completion is taken.
+
+\subsubsection{Real multiplication and noncommutative tori}
+
+In \emph{Real Multiplication and Noncommutative Geometry}~\cite{manin04}, Manin
+proposes the noncommutative tori $T_\theta$ with $\theta$ a real quadratic
+irrationality as the geometric arena for the arithmetic of real quadratic
+fields, with $\theta=\golden$ as the canonical case.  Connes, Douglas and
+Schwarz showed that toroidal compactification in M-theory produces the same
+tori~\cite{connes98}.  The arena is given; what it lacks is dynamics: Manin
+proposes the space, not the flow---no operator whose spectrum is the zeros and
+whose construction does not refer to the zeros (\cref{sec:circularity}).
+
+\subsubsection{A synthesis and the problems it has to confront}\label{ssec:intro-binary}
+
+Manin's two programmes give a requirement and an arena, and the Hilbert--P\'olya proposal asks for an operator
+(\cref{sec:polya-hist}).  How can they be synthesised in one coherent framework?  A synthesis has to confront the
+three problems that the Primitive Structure distinguishes (\cref{ssec:four-requirements}) --- the circularity of
+the operator, the binary limit on the algebras over which it can be built, and the correspondence of that limit
+with the statistics of the zeros --- and the question they leave: how to pass between dimensions.
+
+\medskip
+\paragraph{Circularity.}
+The first problem is the one with which the account of the noncommutative tori ends: there is no operator whose spectrum is the zeros and
+whose construction does not refer to the zeros (\cref{sec:polya-hist,sec:circularity}).  The Primitive
+Structure~\cite{gonzalez25hp} compared this circularity with the self-reference of the fixed-point theorem, and
+proposed that a setting in which that self-reference cannot be formed could exclude it.
+Lawvere's fixed-point theorem~\cite{lawvere69} states that in a cartesian closed
+category, if a map $A\to Y^{A}$ is weakly point-surjective, every endomorphism of
+$Y$ has a fixed point; the diagonal arguments of Cantor, Russell, G\"odel and
+Tarski's undefinability of truth are instances of its
+contrapositive~\cite{lawvere69,yanofsky03}.  The theorem and its contrapositive
+are formalised for the category of types, where point-surjectivity is
+surjectivity (\LeanInline{F1Lawvere.lawvere\_fixed\_point},
+\LeanInline{F1Lawvere.no\_surjection\_of\_fixedPointFree} \tierP).  There are
+settings in which the self-reference the paradoxes rest on cannot be formed.  In a
+stratified type theory, self-application $x(x)$ and self-membership $x\in x$ are
+not well-typed, since an object of a given type does not take arguments of that
+same type, so Russell's paradox and the liar cannot be stated.  In the theory of
+real closed fields, which is complete and decidable~\cite{tarski1951},
+$\mathbb{N}$ is not definable, so the theory cannot represent its own formulas
+and G\"odel's diagonal construction does not arise.
+
+\medskip
+\paragraph{The binary limit and the statistics of the zeros.}
+Beyond the fixed-point paradox of Lawvere and Yanofsky~\cite{lawvere69,yanofsky03}, binary structure limits the algebras over which the operator sought by the
+Hilbert--P\'olya proposal and the $\Fone$ programme can be built (\cref{sec:polya-hist,ssec:f1-obstruction}).
+The finite-dimensional associative division algebras over $\R$ are $\R$, $\mathbb{C}$ and
+$\mathbb{H}$~\cite{frobenius1878}; without associativity the dimension is still $1$, $2$, $4$ or
+$8$~\cite{bottmilnor58,kervaire58}, and the normed ones are these three and the
+octonions~\cite{hurwitz1898,baez02}.  There is no real division algebra of dimension $3$.
+
+The limit bears on the zeros through their statistics, which are what such an operator has to reproduce
+(\cref{sec:polya-hist}).  Dyson's three symmetry classes of Hermitian random-matrix ensembles --- real
+symmetric, complex Hermitian and quaternion self-dual --- correspond to the three associative division
+algebras~\cite{dyson62threefold}, and the pair correlation of the zeros of $\zeta$ agrees with that of the
+complex class, the Gaussian Unitary Ensemble: an operator reproducing it lies in the complex class, Hermitian over $\mathbb{C}$, of real dimension $2$, and not in the real or the quaternionic class.
+The Primitive Structure and the Crystalline Worldsheet attach to the Euler product, on the other hand, a ternary
+structure~\cite{gonzalez25hp,gonzalez26cw}: the tripartite object $\Omega=P\cdot C\cdot F$, with three eigenvalues
+$\tfrac12\zeta_3^{\,k}$ permuted by $S_3$, whose parameter $\sigma=|\mathrm{rot}(S_3)|^2/|S_3|=\tfrac32$ is the value
+$\zeta(2)/(\pi/3)^2$ of the Euler product at $s=2$ (\LeanInline{zeta\_two\_over\_pi\_third\_sq} \tierP).  An
+operator with these three eigenvalues acts on three directions, and by the limit just stated three directions
+cannot be the dimensions of a real division algebra: this is the binary against the third dimension.
+
+\medskip
+\paragraph{The passage between dimensions.}
+In the holographic correspondence, a gravitational theory on a $(d+1)$-dimensional anti-de~Sitter bulk
+is dual to a conformal field theory on its $d$-dimensional boundary~\cite{maldacena98}, and in low dimensions the boundary is an ensemble rather than a single theory: two-dimensional Jackiw--Teitelboim gravity is dual to a double-scaled Hermitian matrix integral~\cite{saad19}, of the
+unitary class, the class of the statistics of the zeros and of quantum chaos without time-reversal symmetry
+(\cref{sec:polya-hist}), and approaches to three-dimensional gravity also average over ensembles of two-dimensional conformal field theories~\cite{cooper26}.  In the error-correcting formulation of the
+correspondence, the bulk is embedded in the boundary by an isometry~\cite{almheiri15,pastawski15}: the
+map preserves the norm, so it is injective, and the passage loses a dimension while keeping the
+information, which the Primitive Structure reads as a faithful forgetful functor.  This passage is developed in more
+detail in the Primitive Structure and in the Crystalline Worldsheet~\cite{gonzalez25hp,gonzalez26cw}, and \cref{sec:disc-cw}
+connects it with this construction.
+
+The holographic correspondence has an arithmetic form, and part of it comes from Manin.  Manin and Marcolli showed that the
+relation between hyperbolic geometry and Arakelov geometry at arithmetic infinity involves the same geometric data
+as the Euclidean holography of black holes in $\mathrm{AdS}_3$: a Riemann surface uniformised by a Schottky group is
+the conformal boundary of a hyperbolic handlebody, and the Green functions that give the Arakelov intersection
+indices are geodesic lengths in that bulk.  At a prime the Bruhat--Tits tree replaces hyperbolic space, with ends
+$\mathbb P^1(K)$ for $K$ a finite extension of $\Q_p$, and its quotient by a Schottky group, whose boundary is a
+Mumford curve, is the non-archimedean analogue of the black hole; for the modular curves the boundary is
+noncommutative~\cite{maninmarcolli01holo}.  Gubser, Knaute, Parikh, Samberg and Witaszczyk constructed a
+$p$-adic AdS/CFT, with an unramified extension of $\Q_p$ as the boundary and the Bruhat--Tits tree as the bulk; the
+correlators of a massive scalar in the bulk, written with the local zeta functions, are strikingly close to the real
+ones~\cite{gubser17padic}.  Heydeman, Marcolli, Saberi and Stoica took the bulk to be the tree of
+$\mathrm{PGL}(2,\Q_p)$, whose isometries are the conformal transformations of the boundary, so that the
+discretisation breaks no symmetry; they proposed the tree as the natural setting of the tensor networks that model
+bulk reconstruction by error-correcting codes, read its vertical direction as a scale of renormalisation, and found
+the Ryu--Takayanagi formula there~\cite{heydeman18tensor}.  Marcolli built holographic codes on the trees and
+buildings of Bruhat--Tits and on the Drinfeld symmetric spaces, in the line of Manin's reading of
+$\mathrm{Spec}\,\Z$ as the arithmetic coordinate of physics, where the archimedean place has non-archimedean shadows
+at the primes~\cite{marcolli18codes}; and Heydeman, Marcolli, Parikh and Saberi obtained, for networks of perfect
+tensors on the tree and on its Schottky quotients, an entropy of the Ryu--Takayanagi form and one of the
+Bekenstein--Hawking form for the $p$-adic black hole~\cite{heydeman21entropy}.
+
+\subsubsection{The two programmes and this paper: why $\golden$}\label{ssec:why-phi}
+
+This paper takes from the first programme the requirement (a Frobenius lift,
+additive, at every prime) and from the second the object ($\golden$ and the
+quadratic field $\mathbb{Q}(\sqrt5)$), and reaches the $p$-adic data by the cyclotomic route, the strand of the
+$\Fone$ programme in which the cyclotomic tower stands for $\bar{\mathbb F}_1$ and the roots of unity for the extensions
+of $\Fone$ (\cref{sec:f1-programme}):
+$\golden$ lives in $\mathbb{Q}(\zeta_5)$, the pentagon (\cref{sec:choice}),
+and the cyclotomic polynomials evaluated at $\golden$
+read at each prime the order of the angle that the
+$p$-adic route reads in the completion (the paragraph
+\emph{The two readings of the $n$-gon} below).
+
+In plain terms the construction is this.  The powers of $\golden$ form a line, the tower $\golden^n$, inside
+the ring $\Zphi$; on that line the operator has its self-adjoint form, $H=\operatorname{diag}(m_0\golden^i)$, with $m_0>0$ a scale that cancels in every ratio of eigenvalues: it is the modulus of the operator (\cref{thm:one-operator}).  The line winds onto the plane, where the Euler products and the zeta functions
+live.  Over each level of the line there is a fibre of six elements, the hexagon $\mu_6$, which carries the
+ternary structure, and a third direction over the plane enters through the geometry of $E^3$
+(\cref{thm:one-two-three}).  That third dimension is geometric and not algebraic: no real division algebra has
+dimension three (\cref{ssec:intro-binary}), so it is reached by symmetry, through roots of unity, and by an
+isometry, which keeps the information.  It stays in step with the arithmetic: at each prime the cyclotomic
+polynomials evaluated at $\golden$ read at once the regular $n$-gon and the order of $\golden$ modulo the prime,
+its clock.  Through the roots of unity of the pentagon the same structure determines the Euler factors and,
+with them, the odd values of $\zeta$ (\cref{thm:odd-zeta}).  It reaches the zeros of $L(s,\chiv)$ as well: every
+zero $\rho$ in the critical strip comes with its companion $1-\rho$, the coordinates $r(\rho)=|1-1/\rho|$ of the
+two multiply to $1$, and, given the height of the first zero, a classical input, each lies in a window around $1$ in which the only power of $\golden$ is $\golden^0$ (\cref{prop:each-zero,prop:two-halves}).  What remains open is the exact position: that the coordinate is
+exactly $1$, which is $\Re\rho=\tfrac12$, the statement \Ecore.  The paragraphs that follow take these points in
+turn.
+
+\begin{figure}[ht]
+\centering\small
+\begin{tikzcd}[column sep=1.4em,row sep=2.6em,ampersand replacement=\&]
+\begin{array}{c}\text{hexagonal fibre}\\ \mu_6\text{ over each level}\end{array} \arrow[d]
+\& \begin{array}{c}\text{self-adjoint operator}\\ H=\operatorname{diag}(m_0\golden^i)\end{array} \arrow[dl,dash,dotted]
+\& \begin{array}{c}\text{pentagon}\\ \zeta_5^{\,a},\ 2\cos(\pi a/5)=\golden^{\pm1}\end{array} \arrow[d]
+\\
+\begin{array}{c}\text{line in the ring}\\ \golden^n\in\Zphi\end{array} \arrow[r,"{\text{lift at }p}"] \arrow[d,"{\Phi_n(\golden)}"']
+\& \begin{array}{c}\text{Frobenius lift}\\ \Frob_p(a)\equiv a^p\ (p)\end{array} \arrow[r,dash,"{\text{same sign}}"] \arrow[d]
+\& \begin{array}{c}\text{character}\\ \chiv(a)=\log_\golden|2\cos(\pi a/5)|\end{array} \arrow[d]
+\\
+\begin{array}{c}\text{clock of each prime}\\ \mathfrak p\mid\Phi_n(\golden)\end{array} \arrow[d,"{\text{product formula}}"']
+\& \begin{array}{c}\text{Euler factors}\\ (1-\chiv(p)p^{-s})^{-1}(1-p^{-s})^{-1}\end{array} \arrow[l,dash,dotted] \arrow[r,"{\prod_p}"]
+\& \begin{array}{c}\text{Dedekind zeta}\\ \zeta_K=\zeta\cdot L(s,\chiv)\end{array} \arrow[d] \arrow[dl]
+\\
+\begin{array}{c}\text{$n$-gon $=$ $p$-adic order}\\ \text{archimedean}=p\text{-adic}\end{array}
+\& \begin{array}{c}\text{odd values}\\ \zeta(2k+1)=\zeta_K/L\end{array}
+\& \begin{array}{c}\text{zeros of $L$}\\ r(\rho)\,r(1-\rho)=1\\ \text{window where the only power of }\golden\text{ is }\golden^0\end{array} \arrow[d,dashed,"{\Ecore}"]
+\\
+\& \& \begin{array}{c}\text{exact position}\\ r(\rho)=1\iff\Re\rho=\tfrac12\end{array}
+\end{tikzcd}
+\caption{The construction, with names and formulas (\cref{ssec:why-phi}).  Solid arrows are proved; the dashed arrow is the open
+statement \Ecore; dotted lines join objects that live on the same line or the same prime.  The same diagram, with
+the statement behind each arrow, is \cref{fig:construction-formulas}.}
+\label{fig:construction-words}
+\end{figure}
+
+
+The choice of $\golden$ is not incidental.  A translation between the columns of
+Weil's Rosetta stone (\cref{sec:weil}) needs an object that is at home in all of
+them, and $\golden$ already is.  It is at once
+\begin{itemize}
+  \item a \textbf{magnitude and a ratio}: the positive root of $x^2=x+1$
+    (\LeanInline{phi\_sq} \tierP), and its only positive root
+    (\LeanInline{golden\_fixed\_point\_unique} \tierP);
+  \item a \textbf{geometry}: the diagonal of the regular pentagon,
+    $\golden=2\cos(\pi/5)=1+\zeta_5+\zeta_5^4$
+    (\LeanInline{phi\_eq\_two\_cos\_pi\_fifth}, \LeanInline{phi\_cyclotomic\_inscription} \tierP);
+  \item a \textbf{line and a function}: $x\mapsto\golden^x$, the golden tower, with the line of its integer
+    levels $\golden^n$, which reaches
+    the binary scale through $\golden^{\lambda_{\log}}=2$
+    (\LeanInline{mersenne\_bridge} \tierP);
+  \item an \textbf{operator}: multiplication by $\golden$ on $\Zphi$, with matrix
+    $\left(\begin{smallmatrix}0&1\\1&1\end{smallmatrix}\right)$, and the
+    Frobenius lifts of \cref{sec:lambda-monoid,sec:lambda-ring};
+  \item a \textbf{recursion}: $\golden^{n+1}=F_{n+1}\golden+F_n$, so the powers of
+    $\golden$ are written in Fibonacci numbers (\LeanInline{phi\_pow\_binet\_integral},
+    \LeanInline{fib\_pow\_aux} \tierP).
+\end{itemize}
+$\golden$ therefore translates between domains by itself: a statement about the
+number is a statement about the pentagon, about the recursion and about the
+operator.  What makes it arithmetic is that it also reaches the primes, and it
+does so through the work of two Colombian mathematicians.
+
+\paragraph{Grisales Herrera: $\golden$ and the cyclotomic pentagon.}
+Grisales Herrera's \emph{Golden Prime Symmetry Theory}~\cite{grisales25}, his undergraduate thesis at the University of
+Tolima, shows that the
+golden ratio orders the primes $p>5$ into eight infinite families according to their
+class modulo $20$, which their last two digits determine, through eight rational angles
+invariant under the rotations of the regular pentagon in the complex plane; the eight
+classes correspond to the zeros of the cyclotomic polynomial $\Phi_{20}$, and an
+analogous relation holds for the Fibonacci numbers $F_{12(5m+j)}$.  It is the direct
+link between $\golden$, the pentagon and the primes that this paper needs.  What
+of it is proved here: the Galois homomorphism of the classification
+(\LeanInline{G\_hom} \tierP); the pentagonal values themselves,
+$|2\cos(\pi a/5)|=\golden^{\chiv(a)}$ (\LeanStar{F1CW.norm\_cosine\_phi} \tierPnew); and the
+fact that $\chiv$ selects the Fibonacci number $F_p\bmod p$ for every prime
+(\LeanInline{additive\_spectrum\_governed\_by\_chi5} \tierP).  The closed formula for
+the classification is cited, not formalised (\cref{sec:grisales}).
+
+\paragraph{Acevedo Agudelo: primes through rotations and the Mersenne primes.}
+Acevedo Agudelo classifies the Mersenne primes completely by their residue
+classes in the multiplicative group modulo $360$, splitting the search into four
+disjoint subgroups and representing the classification geometrically by a
+``Mersenne trapeze''~\cite{acevedo20}.  In a second work he characterises the
+\emph{ova-angular rotations} of a prime, constructed from Dirichlet's theorem, and
+derives geometric properties of the primes from them~\cite{acevedo21}; the
+ova-angular classification has since been used to select Mersenne
+candidates~\cite{acevedo23}.  Both read the primes through angular and cyclic
+structure --- residue classes as rotations --- and not
+through $p$-adic analysis, and that is where this paper
+starts; the next paragraph shows that the angular
+reading also gives the order of the $p$-adic angle.
+The meeting point is the Mersenne bridge
+$\golden^{\lambda_{\log}}=2$ and the binary tower inside
+the golden one (\cref{sec:mersenne}).
+
+\paragraph{The two readings of the $n$-gon.}
+The eight classes of Grisales Herrera correspond to the
+primitive $20$th roots of unity, the roots of
+$\Phi_{20}$, so both classifications read the primes on
+the circle.  Evaluated at $\golden$, the cyclotomic
+polynomials read the primes at their own places.  At a
+prime $\mathfrak p$ of $\Zphi$ the angle of $\golden$ ---
+its Teichm\"uller part in the completion --- is a root of
+unity, and its order is the \emph{clock} of
+$\mathfrak p$; for $\mathfrak p$ prime to $n$, the clock
+is $n$ exactly when $\mathfrak p$ divides
+$\Phi_n(\golden)$.  For $n\ge2$ the norm
+$N(\Phi_n(\golden))$ is a positive integer with two
+readings.  On the circle it is the product of the
+distances from $\golden$ and $-1/\golden$ to the
+primitive vertices of the regular $n$-gon, of logarithm
+$\phi(n)\log\golden$ up to a bounded term: the weight of
+the tower at the level $n$.  At the primes it is the
+product of the norms of the primes of clock $n$, and of
+some primes dividing $n$.  The product formula equates
+the two, so on each level of the clock the archimedean
+and the $p$-adic readings of $\Phi_n(\golden)$ are
+already glued; the statements, their proofs and the
+values at the primes of the conductor are in the Methods
+(\cref{prop:clock-cyclotomic}).  The polygons of the construction combine by laws that are proved: the
+square and the pentagon in the conductor $20=\operatorname{lcm}(4,5)$, through the two components $\chi_4$ and
+$\chiv$ of $G$ (\cref{prop:conductor,prop:G}); the hexagon in the fibre $\mu_6$ over each level
+(\cref{prop:level-operators}); the orders $3$ and $4$ carried by the angle of $\golden$ at the primes $2$ and $3$,
+those of the hexagonal and the Gauss lattices, of least common multiple $12$ (\cref{prop:polar}); and the three
+characters of the Gauss, the Eisenstein and the golden lattices, which depend on a prime only through its class
+modulo $60$ (\cref{prop:euler-tower}).  What the clock does not
+give is the size of each prime: the clock divides $p-1$
+or $2(p+1)$, and the quotient, the index, is not fixed
+by it.  Ordering the primes by size instead of by clock
+is where the fluctuation of the zeros is expected to
+enter, as the closure conjecture of the Results
+proposes.
+
+\paragraph{The descent and the circularity.}
+Borger's descent has in common with the settings in which the self-reference cannot be formed (\cref{ssec:intro-binary}) the direction of
+construction: the object under study is not among the inputs.  On $\Zphi$ the
+descent datum is indexed by the multiplicative monoid of the integers prime
+to~$5$ and generated by its values at the primes, $\Frob_m\circ\Frob_n=\Frob_{mn}$
+(\cref{prop:frob-compose}), with $\Frob_p(a)\equiv a^p\pmod p$
+(\cref{thm:frobenius-congruence}); the character $\chiv$ is read off the
+Frobenius (\cref{thm:sign-is-chi5,thm:chi5-from-frobenius}); and for $p\ne5$ the inverse local
+factor of $\zeta_{\mathbb{Q}(\sqrt5)}=\zeta\cdot L(s,\chiv)$ at $t=p^{-s}$ is
+$\det(1-tM_p)$, with $M_p$ the matrix of $\Frob_p$ (\cref{thm:frob-eigen}).
+Neither $\zeta$ nor its zeros enter the definition of $\Frob_p$ or of $\chiv$; the
+local factors at $p\ne5$ are their output.  With them come the Dedekind factorisation and the determination
+of the odd values, $\zeta(2k+1)=\zeta_K(2k+1)/L(2k+1,\chiv)$, in which $L(s,\chiv)$ is a combination of the
+Hurwitz values at the pentagonal points $a/5$ (\cref{thm:odd-zeta}): the roots of unity of the pentagon reach
+the zeta functions by proved steps.  The primes enter as an index set, through their classes, and no
+property of their distribution is used (\cref{sec:topological-proof}).  Nor can a Frobenius lift play the part of the
+fixed-point-free map that the diagonal argument needs, which on the truth values $\{0,1\}$ is $\alpha(x)=1-x$
+(\cref{ssec:disc-hp-ledger}): every ring endomorphism fixes the image
+of $\mathbb{Z}$, so each lift has fixed points and the whole family has a common one
+(\LeanInline{F1Lawvere.ringHom\_fixes\_intCast}, \LeanInline{F1Lawvere.family\_common\_fixed\_point},
+\LeanInline{F1Lawvere.\ensuremath{\psi}\_fixes\_int} \tierP).  This is the property that
+\cref{sec:polya-hist,ssec:four-requirements} require of a non-circular
+construction, and it is the respect in which the descent of this paper answers,
+within the $\Fone$ programme, the proposal of the Primitive Structure.
+
+\paragraph{The passage between dimensions in this paper.}
+This paper also passes between dimensions by an isometry, on the arithmetic side.  The ternary structure is obtained by symmetry and not by an algebra, through roots of unity: the ring $\Zphi$ of the descent lies in $\Z[\zeta_5]$, with $\golden=1+\zeta_5+\zeta_5^4$; the eight classes of the primes correspond to the primitive $20$th roots of unity, $a\mapsto\zeta_{20}^{\,a}$, the roots of $\Phi_{20}$~\cite{grisales25,acevedo21}; and the spectrum $\tfrac12\zeta_3^{\,k}$ of the operator
+is carried by the cube roots of unity, among which,
+read afterwards at the prime $2$, is the angle of
+$\golden$ there: the level $3$ of the clock,
+$\Phi_3(\golden)=2\golden^2$, of norm $4$.  In the fibre of the golden tower it is the colour, of order three, inside the deck group
+$\mu_6=\Z[\zeta_3]^{\times}$: it is torsion, so no level reads it ($\operatorname{Hom}(\mu_6,\Z)=0$), its operator
+$\tfrac12\operatorname{diag}(1,\zeta_3,\zeta_3^2)$ is normal and not self-adjoint (\cref{prop:level-operators}),
+and the third direction enters through the geometry of $E^3$ (\cref{thm:one-two-three}).
+
+The descent takes neither the distribution of the primes, nor the Euler product, nor the zeros as input, and the information is kept by an isometry: each eigenvalue $\tfrac12\zeta_3^{\,k}$ has modulus $\tfrac12$, so the triad has squared norm $\tfrac34$, and normalised it is a column $\mathcal V\colon\mathbb{C}\to\mathbb{C}^3$ whose three squared moduli are $\tfrac13$, so $\mathcal V^\dagger\mathcal V=1$ (\LeanStar{F1PaperNew.triad\_isometry} \tierPnew); it reaches dimension $3$ without a product in dimension $3$
+\cite[the lemma \emph{Isometric embedding of the triad} and the proposition \emph{Two towers, one microstate}]{gonzalez26cw}
+(\LeanCW{bulkBoundary\_isometry} \tierP).  The modulus $\tfrac12$ is the same at every level of the tower, whose levels are related by the composition law of the descent, $\Frob_p(\golden^n)=(\golden^n)^p$
+(\LeanCW{tower\_frobenius\_common} \tierP).
+
+Read as a code, $\mathcal V$ is an encoding whose code subspace, the image
+of $\mathcal V\mathcal V^\dagger$, has dimension one: a state and not a space of logical states~\cite{almheiri15,pastawski15}.  What is
+proved is this isometry of the triad; what the passage needs on the zeros, that their modes are modes of an
+isometry, whose eigenvalues lie on the unit circle, is open (\cref{ssec:disc-binary}).
+
+Of the $p$-adic form of the correspondence (\cref{ssec:intro-binary}), the arithmetic side
+does not appear here as the Bruhat--Tits tree: at each prime it appears as the angle of $\golden$ on the $p$-adic circle, which is the
+period of the Fibonacci dynamics on the $p$-torsion of the real torus, and the product formula glues the
+archimedean and the $p$-adic readings (\cref{prop:two-faces}).  How the circle of each prime sits in its tree is not
+treated here.  \Cref{ssec:disc-binary} states what of the binary zone the construction reaches and what remains open.
+
+\paragraph{The companion papers and what this paper adds.}
+This perspective---$\golden$ as the object that translates between domains and, as the preceding paragraphs show,
+reaches the primes through the pentagon and the Mersenne tower---was explored in
+two earlier works of this programme.  \emph{Simultaneous identities of the golden
+ratio and Euler's identity}~\cite{gonzalez26mersenne} proves in Lean that $\golden$
+satisfies simultaneously twelve identities, inclusions and identifications across
+five canonical structures --- the complex rotor of Euler's identity, the real
+trigonometric and real-multiplicative lines, the Mersenne numbers modulo $20$, and
+the Galois group of $\Q(\zeta_{20})/\Q$ --- with the central clause
+$3\golden^{\sigma(p)}=2^p$, $\sigma(p)=p\lng-\log_\golden3$.  The clause holds for every real $p$, with $\sigma(p)$
+its only solution; what that paper proves is that its constituents are fixed independently of it --- the slope
+$\lng=\log_\golden2$ is transcendental by Gelfond--Schneider~\cite{gelfond34,schneider35}, and the factor $3$ is the
+Mersenne number $M_2$ and the number of classes modulo $20$ that the Mersenne primes occupy --- and it specialises
+the clause to the $52$ known Mersenne prime exponents~\cite{gimps}.  The Primitive Structure~\cite{gonzalez25hp} constructs the operator side and the chain from $\Zst$
+to $\mathrm{Re}(\rho)=\tfrac12$, stating its dependence on one classical axiom,
+\texttt{hecke\_1920} (Hecke 1920), besides the geometric constants of its
+construction, and on the hypothesis \texttt{bridge\_axiom} (the spectral mapping
+of Gelfand and Dunford--Schwartz, applied through the Euler factorisation), and
+deferring the construction of the arithmetic--spectral span to the present paper.
+
+This paper extends the framework of both.  Relative to~\cite{gonzalez25hp} it
+\begin{itemize}
+  \item \emph{discharges Hecke}: the functional equation of $\Lambda(s,\chiv)$ and
+    the companion zero are theorems (\LeanInline{functionalEquation\_chi5\_discharged},
+    \LeanInline{hecke\_chi5\_derived} \tierP), together with the conjugation symmetry
+    $\overline{L(\bar s)}=L(s)$ (\LeanStar{hconj\_discharged} \tierPnew);
+  \item \emph{constructs the arithmetic--spectral span} with common source $G$ ---
+    its two branches meeting at $\log2$ (\LeanInline{branches\_meet\_at\_log\_two},
+    \LeanTally{the\_span\_is\_the\_identification}) --- and proves the pieces of the
+    bridge that concern $G$ and $L(1,\chiv)$ (\LeanTally{the\_bridge\_pieces\_formalized});
+  \item \emph{derives membership from the bridge}
+    (\LeanInline{the\_membership\_derived} \tierP), leaving the bridge as the only
+    substantive input (\cref{ssec:core});
+  \item \emph{replaces the $\Lambda$-ring claim} by the Artin $\Lambda$-structure on
+    $\Zphi$ away from $5$ and the obstruction at $5$ (\cref{sec:lambda-ring}).
+\end{itemize}
+What remains of \texttt{bridge\_axiom} is the identification of the two branches of
+the span (\LeanInline{TheSpanIdentifiesThem} \tierO); every form of it is proved
+equivalent to \Ecore\ (\cref{ssec:core-forms}), and along Weil's route it would follow from the closure conjecture (\cref{cor:closure}).
+
+
+
+\Cref{sec:methods,sec:results} build the structure, carry it to the zeta functions and to the zeros, and collect the results; \cref{sec:disc-cw} records where the torus comes from.
+
+% =====================================================================
