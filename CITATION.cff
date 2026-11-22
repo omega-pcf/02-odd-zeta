@@ -44,17 +44,21 @@ identifiers:
 abstract: "We demonstrate that the odd values ζ(2k+1) of the Riemann zeta
   function are structurally determined by φ=(1+√5)/2 and π. The Euler product of
   ζ is built from local factors f_p(s), one for each prime. We prove that the
-  Frobenius lift φ^p = F_p φ + F_{p-1}—where F_n is the n-th Fibonacci
-  number—determines the splitting type of every prime p in Z[φ], and hence every
-  local factor f_p(s). These lifts constitute 𝔽₁-descent data in the sense of
-  Borger. Through the Dedekind factorisation ζ(s) = ζ_ℚ(√5)(s)/L(s,χ_5), this
-  determines ζ(s) completely: the isomorphism between the Frobenius structure
-  and the Euler product is demonstrated at every level (primes, splitting types,
-  local factors, L-function), anchored by the base case L(1,χ_5) = 2logφ/√5 (the
+  Frobenius lift at each prime p≠5, congruent modulo p to φ^p = F_p φ +
+  F_{p-1}—where F_n is the n-th Fibonacci number—determines the splitting type
+  of p in Z[φ], and hence, with the ramified prime 5, which admits no lift,
+  every f_p(s). These lifts constitute 𝔽₁-descent data in the sense of Borger
+  away from 5. Through the Dedekind factorisation ζ(s) = ζ_ℚ(√5)(s)/L(s,χ_5),
+  this determines ζ(s) completely: the Frobenius structure implies the Euler
+  product at every level (primes, splitting types, local factors, L-function),
+  each implication proved, anchored by the base case L(1,χ_5) = 2logφ/√5 (the
   class-number formula for ℚ(√5)), which expresses the L-function value entirely
-  in terms of φ. This resolves the apparent freedom of ζ(2k+1) noted by Elvang,
-  Herderschee and Morales in the N=4 SYM S-matrix bootstrap: those values are
-  free only relative to the EFT; the pentagonal arithmetic fixes them."
+  in terms of φ; and the factorisation is a natural isomorphism over ℚ and the
+  quadratic fields of discriminant dividing 20. The determination fixes the odd
+  values through the pentagonal arithmetic without evaluating them, and by
+  itself it does not decide their arithmetic nature. The arithmetic is
+  formalised in Lean 4 with Mathlib, and every statement marks the evidence it
+  rests on."
 references:
   - type: article
     title: "The Hilbert–Pólya Operator and the Primitive Structure of the Complex
