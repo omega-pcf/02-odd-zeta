@@ -56,19 +56,9 @@ abstract: "We demonstrate that the odd values ζ(2k+1) of the Riemann zeta
   free only relative to the EFT; the pentagonal arithmetic fixes them."
 references:
   - type: article
-    title: String Theory from Maximal Supersymmetry
+    title: "The Hilbert–Pólya Operator and the Primitive Structure of the Complex
+      Plane: Between 𝔽₁, String Theory, and Ancient Geometry"
     authors:
-      - family-names: Elvang
-        given-names: Henriette
-      - family-names: Herderschee
-        given-names: Aidan
-      - family-names: Morales
-        given-names: Roger
-    year: 2026
-    journal: arXiv preprint arXiv:2601.11705 [hep-th]
-    doi: 10.48550/arXiv.2601.11705
-    url: https://arxiv.org/abs/2601.11705
-  - authors:
       - family-names: González García
         given-names: Jorge Armando
       - family-names: González García
@@ -79,26 +69,1113 @@ references:
         given-names: Luz María
       - family-names: Moreno
         given-names: M.
+    year: 2026
     doi: 10.5281/zenodo.17619486
+  - authors:
+      - family-names: González García
+        given-names: Jorge Armando
+      - family-names: González García
+        given-names: Víctor Manuel
+      - family-names: Dressler Pérez
+        given-names: Itzel Marion
+      - family-names: García Ordóñez
+        given-names: Luz María
+    doi: 10.5281/zenodo.19492791
     identifiers:
       - type: doi
-        value: 10.5281/zenodo.17619486
-      - type: url
-        value: https://doi.org/10.5281/zenodo.17619486
-    title: "The Hilbert–Pólya Operator and the Primitive Structure of the Complex
-      Plane: Between 𝔽₁, String Theory, and Ancient Geometry"
-    url: https://doi.org/10.5281/zenodo.17619486
+        value: 10.5281/zenodo.19492791
+    title: Odd Zeta Values from Pentagonal 𝔽₁-Descent
     date-published: 2026-01-01
     year: 2026
-    journal: Preprint
-    type: article
+    notes: "Concept DOI; v1.4.10 (17 April 2026) appeared as <i>Odd Zeta Values from
+      the PCF Torus: φ and π as Arithmetic-Geometric Sources</i>,
+      10.5281/zenodo.19636252. The present paper is its successor version. Code:
+      github.com/omega-pcf/02-odd-zeta; doi:10.5281/zenodo.19492791"
+    publisher:
+      name: Preprint, Zenodo
+    type: generic
   - authors:
-      - family-names: Neukirch
-        given-names: J.
-    doi: 10.1007/978-1-4757-5673-9
+      - family-names: González García
+        given-names: Jorge Armando
+      - family-names: González García
+        given-names: Víctor Manuel
+      - family-names: García Ordóñez
+        given-names: Luz María
+      - family-names: Dressler Pérez
+        given-names: Itzel Marion
+    doi: 10.5281/zenodo.21343602
     identifiers:
       - type: doi
-        value: 10.1007/978-1-4757-5673-9
+        value: 10.5281/zenodo.21343602
+    title: "The Crystalline Worldsheet: A String Theoretical Framework Based on 𝔽₁,
+      for the de Sitter Observer Problem"
+    date-published: 2026-01-01
+    year: 2026
+    notes: Concept DOI (all versions); cited in its version 1.0.4;
+      doi:10.5281/zenodo.21343602
+    publisher:
+      name: Preprint, Zenodo
+    type: generic
+  - authors:
+      - family-names: González García
+        given-names: Jorge Armando
+      - family-names: González García
+        given-names: Víctor Manuel
+      - family-names: Dressler Pérez
+        given-names: Itzel Marion
+      - family-names: García Ordóñez
+        given-names: Luz María
+    doi: 10.5281/zenodo.21731878
+    identifiers:
+      - type: doi
+        value: 10.5281/zenodo.21731878
+    title: Simultaneous Identities of the Golden Ratio and Euler's Identity,
+      Formally Verified in Lean 4 over the Known Mersenne Prime Exponents
+    date-published: 2026-01-01
+    year: 2026
+    notes: doi:10.5281/zenodo.21731878
+    publisher:
+      name: Preprint, Zenodo
+    type: generic
+  - authors:
+      - family-names: Grisales Herrera
+        given-names: Javier
+    doi: 10.5281/zenodo.17100303
+    identifiers:
+      - type: doi
+        value: 10.5281/zenodo.17100303
+    title: Golden Prime Symmetry Theory
+    date-published: 2025-01-01
+    year: 2025
+    notes: doi:10.5281/zenodo.17100303
+    publisher:
+      name: University of Tolima, Colombia
+    type: generic
+  - authors:
+      - family-names: Acevedo Agudelo
+        given-names: Yeisson Alexis
+    doi: 10.33571/rpolitec.v16n32a10
+    identifiers:
+      - type: doi
+        value: 10.33571/rpolitec.v16n32a10
+    title: A complete classification of the Mersenne's primes and its implications
+      for computing
+    date-published: 2020-01-01
+    year: 2020
+    issue: "32"
+    journal: Revista Politécnica
+    notes: doi:10.33571/rpolitec.v16n32a10
+    start: "111"
+    end: "119"
+    type: article
+    volume: "16"
+  - authors:
+      - family-names: Acevedo Agudelo
+        given-names: Yeisson Alexis
+    doi: 10.17654/nt052010127
+    identifiers:
+      - type: doi
+        value: 10.17654/nt052010127
+    title: "Prime numbers: an alternative study using ova-angular rotations"
+    date-published: 2021-01-01
+    year: 2021
+    issue: "1"
+    journal: JP Journal of Algebra, Number Theory and Applications
+    notes: doi:10.17654/nt052010127
+    start: "127"
+    end: "161"
+    type: article
+    volume: "52"
+  - authors:
+      - family-names: Acevedo Agudelo
+        given-names: Yeisson Alexis
+      - family-names: Loaiza Ossa
+        given-names: Gabriel Ignacio
+    doi: 10.33571/rpolitec.v19n37a7
+    identifiers:
+      - type: doi
+        value: 10.33571/rpolitec.v19n37a7
+    title: Identificación de candidatos a primos de Mersenne mediante clasificación
+      ova-angular utilizando aprendizaje automático con regresión SVM y kernel
+      gaussiano
+    date-published: 2023-01-01
+    year: 2023
+    issue: "37"
+    journal: Revista Politécnica
+    notes: doi:10.33571/rpolitec.v19n37a7
+    start: "102"
+    end: "110"
+    type: article
+    volume: "19"
+  - authors:
+      - family-names: Riemann
+        given-names: Bernhard
+    title: Ueber die Anzahl der Primzahlen unter einer gegebenen Grösse
+    date-published: 1859-01-01
+    year: 1859
+    journal: Monatsberichte der Königlich Preußischen Akademie der Wissenschaften zu
+      Berlin
+    start: "671"
+    end: "680"
+    type: article
+  - authors:
+      - family-names: Pólya
+        given-names: George
+    title: Letter to Andrew Odlyzko, 3 January 1982
+    date-published: 1982-01-01
+    year: 1982
+    notes: Correspondence
+    type: generic
+  - authors:
+      - family-names: Odlyzko
+        given-names: Andrew M.
+    doi: 10.1090/S0025-5718-1987-0866115-0
+    identifiers:
+      - type: doi
+        value: 10.1090/S0025-5718-1987-0866115-0
+    title: On the distribution of spacings between zeros of the zeta function
+    date-published: 1987-01-01
+    year: 1987
+    issue: "177"
+    journal: Mathematics of Computation
+    notes: doi:10.1090/S0025-5718-1987-0866115-0
+    start: "273"
+    end: "308"
+    type: article
+    volume: "48"
+  - authors:
+      - family-names: Odlyzko
+        given-names: Andrew M.
+    doi: 10.1090/conm/290/04578
+    identifiers:
+      - type: doi
+        value: 10.1090/conm/290/04578
+    title: The 10<sup>22</sup>-nd zero of the Riemann zeta function
+    collection-title: Contemp. Math.
+    date-published: 2001-01-01
+    year: 2001
+    journal: Dynamical, Spectral, and Arithmetic Zeta Functions
+    publisher:
+      name: Amer. Math. Soc.
+    start: "139"
+    end: "144"
+    type: generic
+    volume: "290"
+  - authors:
+      - family-names: Montgomery
+        given-names: Hugh L.
+    doi: 10.1090/pspum/024/9944
+    identifiers:
+      - type: doi
+        value: 10.1090/pspum/024/9944
+    title: The pair correlation of zeros of the zeta function
+    collection-title: Proc. Sympos. Pure Math.
+    date-published: 1973-01-01
+    year: 1973
+    journal: Analytic Number Theory
+    publisher:
+      name: Amer. Math. Soc.
+    start: "181"
+    end: "193"
+    type: generic
+    volume: "24"
+  - authors:
+      - family-names: Dyson
+        given-names: Freeman J.
+    doi: 10.1063/1.1703773
+    identifiers:
+      - type: doi
+        value: 10.1063/1.1703773
+    title: Statistical theory of the energy levels of complex systems. I
+    date-published: 1962-01-01
+    year: 1962
+    journal: Journal of Mathematical Physics
+    notes: doi:10.1063/1.1703773
+    start: "140"
+    end: "156"
+    type: article
+    volume: "3"
+  - authors:
+      - family-names: Keating
+        given-names: Jonathan P.
+      - family-names: Snaith
+        given-names: Nina C.
+    doi: 10.1007/s002200000261
+    identifiers:
+      - type: doi
+        value: 10.1007/s002200000261
+    title: Random matrix theory and ζ(1/2+it)
+    date-published: 2000-01-01
+    year: 2000
+    journal: Communications in Mathematical Physics
+    notes: doi:10.1007/s002200000261
+    start: "57"
+    end: "89"
+    type: article
+    volume: "214"
+  - authors:
+      - family-names: Katz
+        given-names: Nicholas M.
+      - family-names: Sarnak
+        given-names: Peter
+    title: Random Matrices, Frobenius Eigenvalues, and Monodromy
+    collection-title: AMS Colloquium Publications
+    date-published: 1999-01-01
+    year: 1999
+    publisher:
+      name: Amer. Math. Soc.
+    type: book
+    volume: "45"
+  - authors:
+      - family-names: Titchmarsh
+        given-names: Edward C.
+    title: The Theory of the Riemann Zeta-Function
+    date-published: 1986-01-01
+    year: 1986
+    edition: 2nd
+    notes: Revised by D. R. Heath-Brown
+    publisher:
+      name: Oxford University Press
+    type: book
+  - authors:
+      - family-names: Hardy
+        given-names: G. H.
+    title: Sur les zéros de la fonction ζ(s) de Riemann
+    date-published: 1914-01-01
+    year: 1914
+    journal: C. R. Acad. Sci. Paris
+    start: "1012"
+    end: "1014"
+    type: article
+    volume: "158"
+  - authors:
+      - family-names: Vinogradov
+        given-names: I. M.
+    title: The Method of Trigonometrical Sums in the Theory of Numbers
+    collection-title: Trudy Mat. Inst. Steklov.
+    date-published: 1947-01-01
+    year: 1947
+    notes: "English translation: Interscience, London, 1954"
+    publisher:
+      name: Izdat. Akad. Nauk SSSR
+    type: book
+    volume: "23"
+  - authors:
+      - family-names: Berry
+        given-names: Michael V.
+      - family-names: Keating
+        given-names: Jonathan P.
+    doi: 10.1137/S0036144598347497
+    identifiers:
+      - type: doi
+        value: 10.1137/S0036144598347497
+    title: The Riemann zeros and eigenvalue asymptotics
+    date-published: 1999-01-01
+    year: 1999
+    issue: "2"
+    journal: SIAM Review
+    notes: doi:10.1137/S0036144598347497
+    start: "236"
+    end: "266"
+    type: article
+    volume: "41"
+  - authors:
+      - family-names: Bender
+        given-names: Carl M.
+      - family-names: Brody
+        given-names: Dorje C.
+      - family-names: Müller
+        given-names: Markus P.
+    doi: 10.1103/PhysRevLett.118.130201
+    identifiers:
+      - type: doi
+        value: 10.1103/PhysRevLett.118.130201
+    title: Hamiltonian for the zeros of the Riemann zeta function
+    date-published: 2017-01-01
+    year: 2017
+    journal: Physical Review Letters
+    notes: doi:10.1103/PhysRevLett.118.130201
+    start: "130201"
+    type: article
+    volume: "118"
+  - authors:
+      - family-names: Yakaboylu
+        given-names: Enderalp
+    doi: 10.1088/1751-8121/ad4c2d
+    identifiers:
+      - type: doi
+        value: 10.1088/1751-8121/ad4c2d
+    title: Hamiltonian for the Hilbert–Pólya conjecture
+    date-published: 2024-01-01
+    year: 2024
+    issue: "23"
+    journal: "Journal of Physics A: Mathematical and Theoretical"
+    notes: doi:10.1088/1751-8121/ad4c2d
+    start: "235204"
+    type: article
+    volume: "57"
+  - authors:
+      - family-names: Connes
+        given-names: Alain
+    title: Noncommutative geometry and the Riemann zeta function
+    date-published: 2000-01-01
+    year: 2000
+    journal: "Mathematics: Frontiers and Perspectives"
+    publisher:
+      name: American Mathematical Society
+      city: Providence
+    start: "35"
+    end: "54"
+    type: generic
+  - authors:
+      - family-names: Connes
+        given-names: Alain
+    doi: 10.1007/s000290050042
+    identifiers:
+      - type: doi
+        value: 10.1007/s000290050042
+    title: Trace formula in noncommutative geometry and the zeros of the Riemann
+      zeta function
+    date-published: 1999-01-01
+    year: 1999
+    journal: Selecta Mathematica
+    notes: doi:10.1007/s000290050042
+    start: "29"
+    end: "106"
+    type: article
+    volume: "5"
+  - authors:
+      - family-names: Connes
+        given-names: Alain
+      - family-names: Consani
+        given-names: Caterina
+      - family-names: Marcolli
+        given-names: Matilde
+    doi: 10.1016/j.jnt.2008.08.007
+    identifiers:
+      - type: doi
+        value: 10.1016/j.jnt.2008.08.007
+    title: Fun with 𝔽₁
+    date-published: 2009-01-01
+    year: 2009
+    issue: "6"
+    journal: Journal of Number Theory
+    notes: doi:10.1016/j.jnt.2008.08.007
+    start: "1532"
+    end: "1561"
+    type: article
+    volume: "129"
+  - authors:
+      - family-names: Connes
+        given-names: Alain
+      - family-names: Consani
+        given-names: Caterina
+    doi: 10.1016/j.crma.2014.07.009
+    identifiers:
+      - type: doi
+        value: 10.1016/j.crma.2014.07.009
+    title: The arithmetic site
+    date-published: 2014-01-01
+    year: 2014
+    issue: "12"
+    journal: C. R. Acad. Sci. Paris
+    notes: doi:10.1016/j.crma.2014.07.009
+    start: "971"
+    end: "975"
+    type: article
+    volume: "352"
+  - authors:
+      - family-names: Connes
+        given-names: Alain
+      - family-names: Consani
+        given-names: Caterina
+    doi: 10.1016/j.aim.2015.11.045
+    identifiers:
+      - type: doi
+        value: 10.1016/j.aim.2015.11.045
+    title: Geometry of the arithmetic site
+    date-published: 2016-01-01
+    year: 2016
+    journal: Advances in Mathematics
+    notes: doi:10.1016/j.aim.2015.11.045
+    start: "274"
+    end: "329"
+    type: article
+    volume: "291"
+  - authors:
+      - family-names: Connes
+        given-names: Alain
+    doi: 10.1007/978-3-319-32162-2_5
+    identifiers:
+      - type: doi
+        value: 10.1007/978-3-319-32162-2_5
+    title: An essay on the Riemann hypothesis
+    date-published: 2016-01-01
+    year: 2016
+    journal: Open Problems in Mathematics
+    notes: doi:10.1007/978-3-319-32162-2_5
+    publisher:
+      name: Springer
+    start: "225"
+    end: "257"
+    type: generic
+  - authors:
+      - family-names: Connes
+        given-names: Alain
+      - family-names: Douglas
+        given-names: Michael R.
+      - family-names: Schwarz
+        given-names: Albert
+    doi: 10.1088/1126-6708/1998/02/003
+    identifiers:
+      - type: doi
+        value: 10.1088/1126-6708/1998/02/003
+    title: Noncommutative geometry and Matrix theory
+    date-published: 1998-01-01
+    year: 1998
+    issue: "02"
+    journal: Journal of High Energy Physics
+    notes: doi:10.1088/1126-6708/1998/02/003
+    start: "003"
+    type: article
+    volume: "1998"
+  - authors:
+      - family-names: Borger
+        given-names: James
+    title: Λ-rings and the field with one element
+    date-published: 2009-01-01
+    year: 2009
+    notes: arXiv:0906.3146
+    type: generic
+  - authors:
+      - family-names: Borger
+        given-names: James
+    doi: 10.2140/ant.2011.5.231
+    identifiers:
+      - type: doi
+        value: 10.2140/ant.2011.5.231
+    title: "The basic geometry of Witt vectors, I: The affine case"
+    date-published: 2011-01-01
+    year: 2011
+    issue: "2"
+    journal: Algebra & Number Theory
+    notes: doi:10.2140/ant.2011.5.231
+    start: "231"
+    end: "285"
+    type: article
+    volume: "5"
+  - authors:
+      - family-names: Manin
+        given-names: Yuri I.
+    doi: 10.1134/S2070046613040055
+    identifiers:
+      - type: doi
+        value: 10.1134/S2070046613040055
+    title: Numbers as functions
+    date-published: 2013-01-01
+    year: 2013
+    issue: "4"
+    journal: P-Adic Numbers, Ultrametric Analysis and Applications
+    notes: doi:10.1134/S2070046613040055
+    start: "313"
+    end: "325"
+    type: article
+    volume: "5"
+  - authors:
+      - family-names: Manin
+        given-names: Yuri I.
+    doi: 10.1007/978-3-642-18908-1_23
+    identifiers:
+      - type: doi
+        value: 10.1007/978-3-642-18908-1_23
+    title: Real multiplication and noncommutative geometry
+    date-published: 2004-01-01
+    year: 2004
+    journal: The Legacy of Niels Henrik Abel
+    publisher:
+      name: Springer
+    start: "685"
+    end: "727"
+    type: generic
+  - authors:
+      - family-names: Buium
+        given-names: Alexandru
+    doi: 10.1090/surv/118
+    identifiers:
+      - type: doi
+        value: 10.1090/surv/118
+    title: Arithmetic Differential Equations
+    collection-title: Math. Surveys Monogr.
+    date-published: 2005-01-01
+    year: 2005
+    publisher:
+      name: Amer. Math. Soc.
+    type: book
+    volume: "118"
+  - authors:
+      - family-names: Manin
+        given-names: Yuri I.
+      - family-names: Marcolli
+        given-names: Matilde
+    doi: 10.1090/conm/744/14978
+    identifiers:
+      - type: doi
+        value: 10.1090/conm/744/14978
+    title: Homotopy types and geometries below Spec ℤ
+    collection-title: Contemp. Math.
+    date-published: 2020-01-01
+    year: 2020
+    journal: "Dynamics: Topology and Numbers"
+    notes: arXiv:1806.10801
+    publisher:
+      name: American Mathematical Society
+    start: "27"
+    end: "56"
+    type: generic
+    volume: "744"
+  - authors:
+      - family-names: Soulé
+        given-names: Christophe
+    doi: 10.17323/1609-4514-2004-4-1-217-244
+    identifiers:
+      - type: doi
+        value: 10.17323/1609-4514-2004-4-1-217-244
+    title: Les variétés sur le corps à un élément
+    date-published: 2004-01-01
+    year: 2004
+    issue: "1"
+    journal: Moscow Mathematical Journal
+    start: "217"
+    end: "244"
+    type: article
+    volume: "4"
+  - authors:
+      - family-names: Tits
+        given-names: Jacques
+    title: Sur les analogues algébriques des groupes semi-simples complexes
+    date-published: 1957-01-01
+    year: 1957
+    journal: Colloque d'algèbre supérieure, Bruxelles
+    start: "261"
+    end: "289"
+    type: article
+  - authors:
+      - family-names: Haran
+        given-names: Shai M. J.
+    doi: 10.1112/S0010437X06002624
+    identifiers:
+      - type: doi
+        value: 10.1112/S0010437X06002624
+    title: Non-additive geometry
+    date-published: 2007-01-01
+    year: 2007
+    issue: "3"
+    journal: Compositio Mathematica
+    notes: doi:10.1112/S0010437X06002624
+    start: "618"
+    end: "688"
+    type: article
+    volume: "143"
+  - authors:
+      - family-names: Toën
+        given-names: Bertrand
+      - family-names: Vaquié
+        given-names: Michel
+    doi: 10.1017/is008004027jkt048
+    identifiers:
+      - type: doi
+        value: 10.1017/is008004027jkt048
+    title: Au-dessous de Spec ℤ
+    date-published: 2009-01-01
+    year: 2009
+    issue: "3"
+    journal: Journal of K-Theory
+    notes: doi:10.1017/is008004027jkt048
+    start: "437"
+    end: "500"
+    type: article
+    volume: "3"
+  - authors:
+      - family-names: Lorscheid
+        given-names: Oliver
+    doi: 10.1016/j.jnt.2014.04.006
+    identifiers:
+      - type: doi
+        value: 10.1016/j.jnt.2014.04.006
+    title: Blueprints—towards absolute arithmetic?
+    date-published: 2014-01-01
+    year: 2014
+    journal: Journal of Number Theory
+    notes: doi:10.1016/j.jnt.2014.04.006
+    start: "408"
+    end: "421"
+    type: article
+    volume: "144"
+  - authors:
+      - family-names: López Peña
+        given-names: Javier
+      - family-names: Lorscheid
+        given-names: Oliver
+    doi: 10.1007/s00209-009-0638-0
+    identifiers:
+      - type: doi
+        value: 10.1007/s00209-009-0638-0
+    title: Torified varieties and their geometries over 𝔽₁
+    date-published: 2011-01-01
+    year: 2011
+    issue: "3"
+    journal: Mathematische Zeitschrift
+    notes: doi:10.1007/s00209-009-0638-0
+    start: "605"
+    end: "643"
+    type: article
+    volume: "267"
+  - authors:
+      - family-names: López Peña
+        given-names: Javier
+      - family-names: Lorscheid
+        given-names: Oliver
+    title: "Mapping 𝔽₁-land: An overview of geometries over the field with one
+      element"
+    date-published: 2011-01-01
+    year: 2011
+    journal: Noncommutative Geometry, Arithmetic, and Related Topics
+    publisher:
+      name: Johns Hopkins Univ. Press
+    start: "241"
+    end: "265"
+    type: generic
+  - authors:
+      - family-names: Kurokawa
+        given-names: Nobushige
+      - family-names: Ochiai
+        given-names: Hiroyuki
+      - family-names: Wakayama
+        given-names: Masato
+    doi: 10.4171/dms/3/15
+    identifiers:
+      - type: doi
+        value: 10.4171/dms/3/15
+    title: Absolute derivations and zeta functions
+    date-published: 2003-01-01
+    year: 2003
+    journal: Documenta Mathematica
+    start: "565"
+    end: "584"
+    type: article
+    volume: Extra Vol. Kato
+  - authors:
+      - family-names: Frankenhuijsen
+        given-names: Machiel
+        name-particle: van
+    title: The Riemann hypothesis for function fields over a finite field
+    date-published: 2008-01-01
+    year: 2008
+    notes: "See also his book <i>The Riemann Hypothesis for Function Fields:
+      Frobenius Flow and Shift Operators</i>, London Math. Soc. Student Texts
+      80, Cambridge University Press, 2014; arXiv:0806.0044"
+    type: generic
+  - authors:
+      - family-names: Hasse
+        given-names: Helmut
+    doi: 10.1007/bf02940685
+    identifiers:
+      - type: doi
+        value: 10.1007/bf02940685
+    title: Abstrakte Begründung der komplexen Multiplikation und Riemannsche
+      Vermutung in Funktionenkörpern
+    date-published: 1934-01-01
+    year: 1934
+    journal: Abh. Math. Sem. Univ. Hamburg
+    start: "325"
+    end: "348"
+    type: article
+    volume: "10"
+  - authors:
+      - family-names: Weil
+        given-names: André
+    title: Sur les courbes algébriques et les variétés qui s'en déduisent
+    date-published: 1948-01-01
+    year: 1948
+    publisher:
+      name: Hermann
+    type: book
+  - authors:
+      - family-names: Weil
+        given-names: André
+    title: Sur les fonctions algébriques à corps de constantes fini
+    date-published: 1940-01-01
+    year: 1940
+    journal: C. R. Acad. Sci. Paris
+    start: "592"
+    end: "594"
+    type: article
+    volume: "210"
+  - authors:
+      - family-names: Weil
+        given-names: André
+    doi: 10.1007/978-1-4757-1705-1_33
+    identifiers:
+      - type: doi
+        value: 10.1007/978-1-4757-1705-1_33
+    title: Une lettre et un extrait de lettre à Simone Weil
+    date-published: 1979-01-01
+    year: 1979
+    journal: Œuvres Scientifiques / Collected Papers
+    notes: Letter of 1940
+    publisher:
+      name: Springer
+    start: "244"
+    end: "255"
+    type: generic
+    volume: I
+  - authors:
+      - family-names: Deligne
+        given-names: Pierre
+    doi: 10.1007/bf02684373
+    identifiers:
+      - type: doi
+        value: 10.1007/bf02684373
+    title: La conjecture de Weil. I
+    date-published: 1974-01-01
+    year: 1974
+    journal: Publications Mathématiques de l'IHÉS
+    start: "273"
+    end: "307"
+    type: article
+    volume: "43"
+  - authors:
+      - family-names: Milne
+        given-names: James S.
+    title: "The Riemann hypothesis over finite fields: from Weil to the present day"
+    date-published: 2015-01-01
+    year: 2015
+    publisher:
+      name: arXiv:1509.00797
+    type: generic
+  - authors:
+      - family-names: Oort
+        given-names: Frans
+      - family-names: Schappacher
+        given-names: Norbert
+    title: Early history of the Riemann hypothesis in positive characteristic
+    collection-title: Advanced Lectures in Mathematics
+    date-published: 2016-01-01
+    year: 2016
+    journal: The Legacy of Bernhard Riemann after One Hundred and Fifty Years
+    publisher:
+      name: International Press
+    type: generic
+    volume: "35"
+  - authors:
+      - family-names: Buzzard
+        given-names: Kevin
+      - family-names: Commelin
+        given-names: Johan
+      - family-names: Massot
+        given-names: Patrick
+    doi: 10.1145/3372885.3373830
+    identifiers:
+      - type: doi
+        value: 10.1145/3372885.3373830
+    title: Formalising perfectoid spaces
+    date-published: 2020-01-01
+    year: 2020
+    notes: doi:10.1145/3372885.3373830
+    publisher:
+      name: Proc. CPP 2020
+    type: generic
+  - authors:
+      - family-names: Scholze
+        given-names: Peter
+    doi: 10.1080/10586458.2021.1926016
+    identifiers:
+      - type: doi
+        value: 10.1080/10586458.2021.1926016
+    title: Liquid tensor experiment
+    date-published: 2022-01-01
+    year: 2022
+    issue: "2"
+    journal: Experimental Mathematics
+    notes: doi:10.1080/10586458.2021.1926016
+    start: "349"
+    end: "354"
+    type: article
+    volume: "31"
+  - authors:
+      - family-names: Yamaç Akbıyık
+        given-names: Seda
+      - family-names: Yüce
+        given-names: Salim
+    doi: 10.1002/mma.5490
+    identifiers:
+      - type: doi
+        value: 10.1002/mma.5490
+    title: On metallic ratio in ℤₛ
+    date-published: 2019-01-01
+    year: 2019
+    issue: "16"
+    journal: Mathematical Methods in the Applied Sciences
+    notes: doi:10.1002/mma.5490
+    start: "5535"
+    end: "5550"
+    type: article
+    volume: "42"
+  - authors:
+      - family-names: Weil
+        given-names: André
+    title: Sur les “formules explicites” de la théorie des nombres premiers
+    date-published: 1952-01-01
+    year: 1952
+    journal: Comm. Sém. Math. Univ. Lund
+    start: "252"
+    end: "265"
+    type: article
+  - authors:
+      - family-names: Iwaniec
+        given-names: Henryk
+      - family-names: Kowalski
+        given-names: Emmanuel
+    title: Analytic Number Theory
+    collection-title: AMS Colloquium Publications
+    date-published: 2004-01-01
+    year: 2004
+    publisher:
+      name: Amer. Math. Soc.
+    type: book
+    volume: "53"
+  - authors:
+      - family-names: Connes
+        given-names: Alain
+      - family-names: Consani
+        given-names: Caterina
+    doi: 10.1007/s00029-021-00689-4
+    identifiers:
+      - type: doi
+        value: 10.1007/s00029-021-00689-4
+    title: "Weil positivity and trace formula: the archimedean place"
+    date-published: 2021-01-01
+    year: 2021
+    journal: Selecta Mathematica
+    notes: doi:10.1007/s00029-021-00682-x
+    start: "77"
+    type: article
+    volume: "27"
+  - authors:
+      - family-names: Yoshida
+        given-names: Hiroyuki
+    doi: 10.2969/aspm/02110281
+    identifiers:
+      - type: doi
+        value: 10.2969/aspm/02110281
+    title: On Hermitian forms attached to zeta functions
+    collection-title: Adv. Stud. Pure Math.
+    date-published: 1992-01-01
+    year: 1992
+    journal: Zeta Functions in Geometry
+    publisher:
+      name: Kinokuniya
+    start: "281"
+    end: "325"
+    type: generic
+    volume: "21"
+  - authors:
+      - family-names: Bombieri
+        given-names: Enrico
+    title: Remarks on Weil's quadratic functional in the theory of prime numbers, I
+    date-published: 2000-01-01
+    year: 2000
+    journal: Atti Accad. Naz. Lincei Cl. Sci. Fis. Mat. Natur. Rend. Lincei (9) Mat.
+      Appl.
+    start: "183"
+    end: "233"
+    type: article
+    volume: "11"
+  - authors:
+      - family-names: Zhu
+        given-names: Xuefeng
+    title: "Weil positivity in compact windows: a finite reduction, certified
+      two-sided bounds, and a Landau–Widom decay law"
+    date-published: 2026-01-01
+    year: 2026
+    publisher:
+      name: arXiv:2608.24827v2 [math.NT]
+    type: generic
+  - authors:
+      - family-names: Connes
+        given-names: Alain
+      - family-names: Consani
+        given-names: Caterina
+    doi: 10.1112/S0010437X09004692
+    identifiers:
+      - type: doi
+        value: 10.1112/S0010437X09004692
+    title: Schemes over 𝔽₁ and zeta functions
+    date-published: 2010-01-01
+    year: 2010
+    issue: "6"
+    journal: Compositio Mathematica
+    notes: doi:10.1112/S0010437X09004692
+    start: "1383"
+    end: "1415"
+    type: article
+    volume: "146"
+  - authors:
+      - family-names: Connes
+        given-names: Alain
+      - family-names: Consani
+        given-names: Caterina
+    doi: 10.1090/S1056-3911-2010-00535-8
+    identifiers:
+      - type: doi
+        value: 10.1090/S1056-3911-2010-00535-8
+    title: On the notion of geometry over 𝔽₁
+    date-published: 2011-01-01
+    year: 2011
+    issue: "3"
+    journal: Journal of Algebraic Geometry
+    notes: doi:10.1090/S1056-3911-2010-00535-8
+    start: "525"
+    end: "557"
+    type: article
+    volume: "20"
+  - authors:
+      - family-names: Deitmar
+        given-names: Anton
+    title: Schemes over 𝔽₁
+    collection-title: Progr. Math.
+    date-published: 2005-01-01
+    year: 2005
+    journal: Number Fields and Function Fields—Two Parallel Worlds
+    publisher:
+      name: Birkhäuser
+    start: "87"
+    end: "100"
+    type: generic
+    volume: "239"
+  - authors:
+      - family-names: Deninger
+        given-names: Christopher
+    doi: 10.1007/bf01245075
+    identifiers:
+      - type: doi
+        value: 10.1007/bf01245075
+    title: On the Γ-factors attached to motives
+    date-published: 1991-01-01
+    year: 1991
+    journal: Inventiones Mathematicae
+    start: "245"
+    end: "261"
+    type: article
+    volume: "104"
+  - authors:
+      - family-names: Deninger
+        given-names: Christopher
+    doi: 10.1007/bf01231885
+    identifiers:
+      - type: doi
+        value: 10.1007/bf01231885
+    title: Local L-factors of motives and regularized determinants
+    date-published: 1992-01-01
+    year: 1992
+    journal: Inventiones Mathematicae
+    start: "135"
+    end: "150"
+    type: article
+    volume: "107"
+  - authors:
+      - family-names: Durov
+        given-names: Nikolai
+    title: New approach to Arakelov geometry
+    date-published: 2007-01-01
+    year: 2007
+    publisher:
+      name: arXiv:0704.2030
+    type: generic
+  - authors:
+      - family-names: Giansiracusa
+        given-names: Jeffrey
+      - family-names: Giansiracusa
+        given-names: Noah
+    doi: 10.1215/00127094-3645544
+    identifiers:
+      - type: doi
+        value: 10.1215/00127094-3645544
+    title: Equations of tropical varieties
+    date-published: 2016-01-01
+    year: 2016
+    issue: "18"
+    journal: Duke Mathematical Journal
+    start: "3379"
+    end: "3433"
+    type: article
+    volume: "165"
+  - authors:
+      - family-names: Hecke
+        given-names: Erich
+    doi: 10.1007/bf01202991
+    identifiers:
+      - type: doi
+        value: 10.1007/bf01202991
+    title: Eine neue Art von Zetafunktionen und ihre Beziehungen zur Verteilung der
+      Primzahlen (Zweite Mitteilung)
+    date-published: 1920-01-01
+    year: 1920
+    journal: Mathematische Zeitschrift
+    notes: doi:10.1007/BF01612081
+    start: "11"
+    end: "51"
+    type: article
+    volume: "6"
+  - authors:
+      - family-names: Kapranov
+        given-names: Mikhail
+      - family-names: Smirnov
+        given-names: Alexander
+    title: "Cohomology determinants and reciprocity laws: number field case"
+    date-published: 1995-01-01
+    year: 1995
+    notes: Unpublished preprint
+    type: generic
+  - authors:
+      - family-names: Lorscheid
+        given-names: Oliver
+    doi: 10.1365/s13291-018-0177-x
+    identifiers:
+      - type: doi
+        value: 10.1365/s13291-018-0177-x
+    title: 𝔽₁ for everyone
+    date-published: 2018-01-01
+    year: 2018
+    publisher:
+      name: Jahresbericht der DMV 120, 83–116
+    type: generic
+  - authors:
+      - family-names: Manin
+        given-names: Yuri I.
+    title: Lectures on zeta functions and motives (according to Deninger and Kurokawa)
+    collection-title: Astérisque
+    date-published: 1995-01-01
+    year: 1995
+    journal: Columbia University Number Theory Seminar
+    publisher:
+      name: Société Mathématique de France
+    start: "121"
+    end: "163"
+    type: generic
+    volume: "228"
+  - authors:
+      - family-names: Manin
+        given-names: Yuri I.
+    title: Cyclotomy and analytic geometry over 𝔽₁
+    date-published: 2008-01-01
+    year: 2008
+    publisher:
+      name: arXiv:0809.1564
+    type: generic
+  - authors:
+      - family-names: Neukirch
+        given-names: Jürgen
     title: Algebraic Number Theory
     date-published: 1999-01-01
     year: 1999
@@ -106,18 +1183,333 @@ references:
       name: Springer
     type: book
   - authors:
-      - family-names: Washington
-        given-names: L. C.
-    doi: 10.1007/978-1-4612-1934-7
+      - family-names: Apostol
+        given-names: Tom M.
+    title: Introduction to Analytic Number Theory
+    date-published: 1976-01-01
+    year: 1976
+    publisher:
+      name: Springer-Verlag
+    type: book
+  - authors:
+      - family-names: Elvang
+        given-names: Henriette
+      - family-names: Herderschee
+        given-names: Aidan
+      - family-names: Morales
+        given-names: Roger
+    doi: 10.1007/JHEP07(2026)105
     identifiers:
       - type: doi
-        value: 10.1007/978-1-4612-1934-7
-    title: Introduction to Cyclotomic Fields
-    date-published: 1997-01-01
-    year: 1997
+        value: 10.1007/JHEP07(2026)105
+    title: String theory from maximal supersymmetry
+    date-published: 2026-01-01
+    year: 2026
+    issue: "07"
+    journal: Journal of High Energy Physics
+    notes: arXiv:2601.11705
+    start: "105"
+    type: article
+    volume: "2026"
+  - authors:
+      - family-names: Veneziano
+        given-names: Gabriele
+    doi: 10.1007/BF02824451
+    identifiers:
+      - type: doi
+        value: 10.1007/BF02824451
+    title: Construction of a crossing-symmetric, Regge-behaved amplitude for
+      linearly rising trajectories
+    date-published: 1968-01-01
+    year: 1968
+    journal: Il Nuovo Cimento A
+    notes: doi:10.1007/BF02824451
+    start: "190"
+    end: "197"
+    type: article
+    volume: "57"
+  - authors:
+      - family-names: Laporta
+        given-names: Stefano
+      - family-names: Remiddi
+        given-names: Ettore
+    doi: 10.1016/0370-2693(96)00439-X
+    identifiers:
+      - type: doi
+        value: 10.1016/0370-2693(96)00439-X
+    title: The analytical value of the electron (g-2) at order α<sup>3</sup> in QED
+    date-published: 1996-01-01
+    year: 1996
+    journal: Physics Letters B
+    notes: doi:10.1016/0370-2693(96)00439-X
+    start: "283"
+    end: "291"
+    type: article
+    volume: "379"
+  - authors:
+      - family-names: Hartnoll
+        given-names: Sean A.
+      - family-names: Yang
+        given-names: Ming
+    title: The conformal primon gas at the end of time
+    date-published: 2025-01-01
+    year: 2025
+    journal: Journal of High Energy Physics
+    notes: arXiv:2502.02661
+    start: "281"
+    type: article
+    volume: "07"
+  - authors:
+      - family-names: De Clerck
+        given-names: Marine
+      - family-names: Hartnoll
+        given-names: Sean A.
+      - family-names: Yang
+        given-names: Ming
+    title: Wheeler–DeWitt wavefunctions for 5d BKL dynamics, automorphic L-functions
+      and complex primon gases
+    date-published: 2025-01-01
+    year: 2025
+    journal: Journal of High Energy Physics
+    notes: arXiv:2507.08788
+    start: "160"
+    type: article
+    volume: "11"
+  - authors:
+      - family-names: Julia
+        given-names: Bernard L.
+    doi: 10.1007/978-3-642-75405-0_30
+    identifiers:
+      - type: doi
+        value: 10.1007/978-3-642-75405-0_30
+    title: Statistical theory of numbers
+    date-published: 1990-01-01
+    year: 1990
+    journal: Number Theory and Physics
     publisher:
       name: Springer
+    start: "276"
+    end: "293"
+    type: generic
+  - authors:
+      - family-names: Brown
+        given-names: J. David
+      - family-names: Henneaux
+        given-names: Marc
+    doi: 10.1007/BF01211590
+    identifiers:
+      - type: doi
+        value: 10.1007/BF01211590
+    title: "Central charges in the canonical realization of asymptotic symmetries:
+      an example from three-dimensional gravity"
+    date-published: 1986-01-01
+    year: 1986
+    journal: Communications in Mathematical Physics
+    notes: doi:10.1007/BF01211590
+    start: "207"
+    end: "226"
+    type: article
+    volume: "104"
+  - authors:
+      - family-names: Saad
+        given-names: Phil
+      - family-names: Shenker
+        given-names: Stephen H.
+      - family-names: Stanford
+        given-names: Douglas
+    title: JT gravity as a matrix integral
+    date-published: 2019-01-01
+    year: 2019
+    notes: arXiv:1903.11115
+    type: generic
+  - authors:
+      - family-names: Cooper
+        given-names: Nico
+    title: Holographic equidistribution
+    date-published: 2026-01-01
+    year: 2026
+    notes: arXiv:2602.12265
+    type: generic
+  - authors:
+      - family-names: Bost
+        given-names: Jean-Benoît
+      - family-names: Connes
+        given-names: Alain
+    doi: 10.1007/BF01589495
+    identifiers:
+      - type: doi
+        value: 10.1007/BF01589495
+    title: Hecke algebras, type III factors and phase transitions with spontaneous
+      symmetry breaking in number theory
+    date-published: 1995-01-01
+    year: 1995
+    issue: "3"
+    journal: Selecta Mathematica (N.S.)
+    notes: doi:10.1007/BF01589495
+    start: "411"
+    end: "457"
+    type: article
+    volume: "1"
+  - authors:
+      - family-names: Borger
+        given-names: James
+      - family-names: Smit
+        given-names: Bart
+        name-particle: de
+    doi: 10.1112/blms/bdn024
+    identifiers:
+      - type: doi
+        value: 10.1112/blms/bdn024
+    title: Galois theory and integral models of Λ-rings
+    date-published: 2008-01-01
+    year: 2008
+    issue: "3"
+    journal: Bulletin of the London Mathematical Society
+    notes: doi:10.1112/blms/bdn024
+    start: "439"
+    end: "446"
+    type: article
+    volume: "40"
+  - authors:
+      - family-names: Pacioli
+        given-names: Luca
+    title: De divina proportione
+    date-published: 1509-01-01
+    year: 1509
+    publisher:
+      name: Paganino Paganini
     type: book
+  - authors:
+      - family-names: Vitruvius
+    title: De architectura
+    notes: Book III treats the proportions of the human figure
+    publisher:
+      name: Written c. 30–15 BC
+    type: generic
+  - authors:
+      - family-names: Bhatt
+        given-names: Bhargav
+      - family-names: Scholze
+        given-names: Peter
+    title: Prisms and prismatic cohomology
+    date-published: 2022-01-01
+    year: 2022
+    issue: "3"
+    journal: Annals of Mathematics
+    notes: arXiv:1905.08229
+    start: "1135"
+    end: "1275"
+    type: article
+    volume: "196"
+  - authors:
+      - family-names: González García
+        given-names: Jorge Armando
+    title: "The transform matched to the golden mapping torus: μ₆-Fourier, and the
+      classical decomposition as its trivial character"
+    date-published: 2026-01-01
+    year: 2026
+    publisher:
+      name: Companion note, with Lean 4 development
+    type: generic
+  - authors:
+      - family-names: Scholze
+        given-names: Peter
+    title: Perfectoid spaces
+    date-published: 2012-01-01
+    year: 2012
+    journal: Publications Mathématiques de l'IHÉS
+    start: "245"
+    end: "313"
+    type: article
+    volume: "116"
+  - authors:
+      - family-names: Gonek
+        given-names: Steven M.
+      - family-names: Hughes
+        given-names: Christopher P.
+      - family-names: Keating
+        given-names: Jonathan P.
+    doi: 10.1215/s0012-7094-07-13634-2
+    identifiers:
+      - type: doi
+        value: 10.1215/s0012-7094-07-13634-2
+    title: A hybrid Euler–Hadamard product for the Riemann zeta function
+    date-published: 2007-01-01
+    year: 2007
+    issue: "3"
+    journal: Duke Mathematical Journal
+    start: "507"
+    end: "549"
+    type: article
+    volume: "136"
+  - authors:
+      - family-names: Connes
+        given-names: Alain
+      - family-names: Consani
+        given-names: Caterina
+    title: On the absolute geometry of Spec ℤ and the Fargues–Fontaine curve
+    date-published: 2026-01-01
+    year: 2026
+    publisher:
+      name: arXiv:2606.06604
+    type: generic
+  - authors:
+      - family-names: Alpöge
+        given-names: Levent
+      - family-names: Furman
+        given-names: Ralph
+    title: More than two thirds of the zeta zeros are simple and on the critical line
+    date-published: 2026-01-01
+    year: 2026
+    publisher:
+      name: arXiv:2608.13637
+    type: generic
+  - authors:
+      - family-names: Higham
+        given-names: Nicholas J.
+    doi: 10.1137/1.9780898718027
+    identifiers:
+      - type: doi
+        value: 10.1137/1.9780898718027
+    title: Accuracy and Stability of Numerical Algorithms
+    date-published: 2002-01-01
+    year: 2002
+    edition: 2nd
+    notes: Thm. 10.3
+    publisher:
+      name: SIAM
+    type: book
+  - authors:
+      - family-names: Moura
+        given-names: Leonardo
+        name-particle: de
+      - family-names: Ullrich
+        given-names: Sebastian
+    title: The Lean 4 Theorem Prover and Programming Language
+    collection-title: Lecture Notes in Computer Science
+    date-published: 2021-01-01
+    year: 2021
+    journal: Automated Deduction – CADE 28
+    publisher:
+      name: Springer
+    start: "625"
+    end: "635"
+    type: conference-paper
+    volume: "12699"
+  - authors:
+      - family-names: The mathlib Community
+    doi: 10.1145/3372885.3373824
+    identifiers:
+      - type: doi
+        value: 10.1145/3372885.3373824
+    title: The Lean Mathematical Library
+    date-published: 2020-01-01
+    year: 2020
+    journal: Proceedings of the 9th ACM SIGPLAN International Conference on
+      Certified Programs and Proofs (CPP 2020)
+    start: "367"
+    end: "381"
+    type: conference-paper
   - authors:
       - family-names: Apéry
         given-names: Roger
@@ -142,280 +1534,143 @@ references:
       impairs
     date-published: 2001-01-01
     year: 2001
-    journal: Invent. Math.
+    issue: "1"
+    journal: Inventiones Mathematicae
     start: "193"
     end: "207"
     type: article
     volume: "146"
-  - abstract: It is shown that the global charges of a gauge theory may yield a
-      nontrivial central extension of the asymptotic symmetry algebra already at
-      the classical level. This is done by studying three dimensional gravity
-      with a negative cosmological constant. The asymptotic symmetry group in
-      that case is eitherR×SO(2) or the pseudo-conformal group in two
-      dimensions, depending on the boundary conditions adopted at spatial
-      infinity. In the latter situation, a nontrivial central charge appears in
-      the algebra of the canonical generators, which turns out to be just the
-      Virasoro central charge.
-    authors:
-      - family-names: Brown
-        given-names: J. D.
-      - family-names: Henneaux
-        given-names: Marc
-    doi: 10.1007/BF01211590
-    identifiers:
-      - type: doi
-        value: 10.1007/BF01211590
-      - type: url
-        value: https://doi.org/10.1007/BF01211590
-      - type: other
-        value: urn:issn:1432-0916
-    title: "Central charges in the canonical realization of asymptotic symmetries:
-      An example from three dimensional gravity"
-    url: https://doi.org/10.1007/BF01211590
-    date-published: 1986-01-01
-    year: 1986
-    issn: 1432-0916
-    issue: "2"
-    journal: Communications in Mathematical Physics
-    start: "207"
-    end: "226"
-    type: article
-    volume: "104"
   - authors:
-      - family-names: Hecke
-        given-names: Erich
-    doi: 10.1007/BF01612081
-    identifiers:
-      - type: doi
-        value: 10.1007/BF01612081
-      - type: url
-        value: https://doi.org/10.1007/BF01612081
-    title: Eine neue Art von Zetafunktionen und ihre Beziehungen zur Verteilung der
-      Primzahlen (Zweite Mitteilung)
-    url: https://doi.org/10.1007/BF01612081
-    date-published: 1920-01-01
-    year: 1920
-    journal: Math. Z.
+      - family-names: Zudilin
+        given-names: Wadim
+    title: One of the numbers ζ(5), ζ(7), ζ(9), ζ(11) is irrational
+    date-published: 2001-01-01
+    year: 2001
+    issue: "4"
+    journal: Russian Mathematical Surveys
+    start: "774"
+    end: "776"
+    type: article
+    volume: "56"
+  - authors:
+      - family-names: Washington
+        given-names: Lawrence C.
+    title: Introduction to Cyclotomic Fields
+    collection-title: Graduate Texts in Mathematics
+    date-published: 1997-01-01
+    year: 1997
+    edition: 2nd
     publisher:
       name: Springer
-    start: "11"
-    end: "51"
-    type: article
-    volume: "6"
+    type: book
+    volume: "83"
   - authors:
-      - family-names: Riemann
-        given-names: Bernhard
-    title: Ueber die Anzahl der Primzahlen unter einer gegebenen Grösse
-    date-published: 1859-01-01
-    year: 1859
-    journal: Monatsberichte der Königlichen Preußischen Akademie der Wissenschaften
-      zu Berlin
-    start: "671"
-    end: "680"
+      - family-names: Lucas
+        given-names: Édouard
+    title: Théorie des fonctions numériques simplement périodiques
+    date-published: 1878-01-01
+    year: 1878
+    journal: American Journal of Mathematics
+    start: "184"
+    end: 240, 289–321
     type: article
+    volume: "1"
   - authors:
-      - family-names: Euler
-        given-names: Leonhard
-    title: Variae observationes circa series infinitas
-    date-published: 1744-01-01
-    year: 1744
-    journal: Commentarii academiae scientiarum Petropolitanae
-    notes: Presented in 1737; Eneström index E72
-    start: "160"
-    end: "188"
-    type: article
-    volume: "9"
-  - authors:
-      - family-names: Veneziano
-        given-names: G.
-    doi: 10.1007/BF02895960
+      - family-names: Lehmer
+        given-names: Derrick H.
+    doi: 10.2307/1968235
     identifiers:
       - type: doi
-        value: 10.1007/BF02895960
-    title: Construction of a crossing-symmetric, Regge-behaved amplitude for
-      linearly rising trajectories
-    date-published: 1968-01-01
-    year: 1968
-    journal: Nuovo Cimento A
-    start: "190"
-    end: "197"
-    type: article
-    volume: "57"
-  - authors:
-      - family-names: Borger
-        given-names: James
-    doi: 10.48550/arXiv.0906.3146
-    identifiers:
-      - type: doi
-        value: 10.48550/arXiv.0906.3146
-      - type: url
-        value: https://arxiv.org/abs/0906.3146
-    title: Λ-rings and the field with one element
-    url: https://arxiv.org/abs/0906.3146
-    date-published: 2009-01-01
-    year: 2009
-    journal: arXiv preprint arXiv:0906.3146 [math.NT]
-    type: article
-  - abstract: In this survey I discuss A. Buium’s theory of “differential equations
-      in the p-adic direction” ([8]) and its interrelations with “geometry over
-      the field 𝔽₁”, on the background of various approaches to p-adic models
-      in theoretical physics (cf. [1, 30]).
-    authors:
-      - family-names: Manin
-        given-names: Yuri I.
-    doi: 10.1134/S2070046613040055
-    identifiers:
-      - type: doi
-        value: 10.1134/S2070046613040055
-      - type: url
-        value: https://doi.org/10.1134/S2070046613040055
-      - type: other
-        value: urn:issn:2070-0474
-    title: Numbers as functions
-    url: https://doi.org/10.1134/S2070046613040055
-    date-published: 2013-01-01
-    year: 2013
-    issn: 2070-0474
-    issue: "4"
-    journal: P-Adic Numbers, Ultrametric Analysis, and Applications
-    start: "313"
-    end: "325"
-    type: article
-    volume: "5"
-  - abstract: "This paper invents the notion of torified varieties: A torification
-      of a scheme is a decomposition of the scheme into split tori. A torified
-      variety is a reduced scheme of finite type over ℤ that admits a
-      torification. Toric varieties, split Chevalley schemes and flag varieties
-      are examples of this type of scheme. Given a torified variety whose
-      torification is compatible with an affine open covering, we construct a
-      gadget in the sense of Connes–Consani and an object in the sense of Soulé
-      and show that both are varieties over 𝔽₁ in the corresponding notion.
-      Since toric varieties and split Chevalley schemes satisfy the
-      compatibility condition, we shed new light on all examples of varieties
-      over 𝔽₁ in the literature so far. Furthermore, we compare
-      Connes–Consani’s geometry, Soulé’s geometry and Deitmar’s geometry, and we
-      discuss to what extent Chevalley groups can be realized as group objects
-      over 𝔽₁ in the given categories."
-    authors:
-      - family-names: López Peña
-        given-names: Javier
-      - family-names: Lorscheid
-        given-names: Oliver
-    doi: 10.1007/s00209-009-0638-0
-    identifiers:
-      - type: doi
-        value: 10.1007/s00209-009-0638-0
-      - type: url
-        value: https://doi.org/10.1007/s00209-009-0638-0
-      - type: other
-        value: urn:issn:1432-1823
-    title: Torified varieties and their geometries over 𝔽₁
-    url: https://doi.org/10.1007/s00209-009-0638-0
-    date-published: 2011-04-01
-    year: 2011
-    issn: 1432-1823
+        value: 10.2307/1968235
+    title: An extended theory of Lucas' functions
+    date-published: 1930-01-01
+    year: 1930
     issue: "3"
-    journal: Mathematische Zeitschrift
-    start: "605"
-    end: "643"
+    journal: Annals of Mathematics (2)
+    start: "419"
+    end: "448"
     type: article
-    volume: "267"
+    volume: "31"
   - authors:
-      - family-names: Weil
-        given-names: André
-    doi: 10.1007/978-1-4757-3998-5
+      - family-names: GIMPS
     identifiers:
-      - type: doi
-        value: 10.1007/978-1-4757-3998-5
-    title: Une lettre et un extrait de lettre à Simone Weil
-    date-published: 1940-01-01
-    year: 1940
-    journal: "André Weil: Oeuvres Scientifiques / Collected Papers"
-    notes: Original letter written in 1940
-    publisher:
-      name: Springer-Verlag
-      region: Heidelberg
-      city: New York
-    start: "244"
-    end: "255"
+      - type: url
+        value: https://www.mersenne.org/primes/
+    title: "The Great Internet Mersenne Prime Search: list of known Mersenne prime
+      exponents"
+    url: https://www.mersenne.org/primes/
+    date-published: 2026-01-01
+    year: 2026
+    notes: Consulted October 2026
     type: generic
-    volume: I
   - authors:
-      - family-names: Grisales Herrera
-        given-names: Javier
-    doi: 10.5281/zenodo.17100303
-    identifiers:
-      - type: doi
-        value: 10.5281/zenodo.17100303
-      - type: url
-        value: https://doi.org/10.5281/zenodo.17100303
-    title: Golden Prime Symmetry Theory
-    url: https://doi.org/10.5281/zenodo.17100303
-    date-published: 2025-09-01
-    year: 2025
-    publisher:
-      name: University of Tolima, Colombia
-    type: report
-  - abstract: "We show that the large-ℕ limits of certain conformal field theories
-      in various dimensions include in their Hilbert space a sector describing
-      supergravity on the product of anti-de Sitter spacetimes, spheres, and
-      other compact manifolds. This is shown by taking some branes in the full
-      M/string theory and then taking a low-energy limit where the field theory
-      on the brane decouples from the bulk. We observe that, in this limit, we
-      can still trust the near-horizon geometry for large ℕ. The enhanced
-      supersymmetries of the near-horizon geometry correspond to the extra
-      supersymmetry generators present in the superconformal group (as opposed
-      to just the super-Poincare group). The 't Hooft limit of 3 + 1 ℕ = 4
-      super-Yang–Mills at the conformal point is shown to contain strings: they
-      are IIB strings. We conjecture that compactifications of M/string theory
-      on various anti-de Sitter spacetimes is dual to various conformal field
-      theories. This leads to a new proposal for a definition of M-theory which
-      could be extended to include five noncompact dimensions."
-    authors:
-      - family-names: Maldacena
-        given-names: Juan M.
-    doi: 10.1023/A:1026654312961
-    identifiers:
-      - type: doi
-        value: 10.1023/A:1026654312961
-      - type: url
-        value: https://doi.org/10.1023/A:1026654312961
-      - type: other
-        value: urn:issn:1572-9575
-    title: The Large-ℕ Limit of Superconformal Field Theories and Supergravity
-    url: https://doi.org/10.1023/A:1026654312961
-    date-published: 1999-04-01
-    year: 1999
-    issn: 1572-9575
+      - family-names: Gelfond
+        given-names: Aleksandr O.
+    title: Sur le septième problème de Hilbert
+    date-published: 1934-01-01
+    year: 1934
     issue: "4"
-    journal: International Journal of Theoretical Physics
-    start: "1113"
-    end: "1133"
+    journal: Bulletin de l'Académie des Sciences de l'URSS
+    start: "623"
+    end: "634"
     type: article
-    volume: "38"
+    volume: "7"
+  - authors:
+      - family-names: Schneider
+        given-names: Theodor
+    doi: 10.1515/crll.1935.172.65
+    identifiers:
+      - type: doi
+        value: 10.1515/crll.1935.172.65
+    title: Transzendenzuntersuchungen periodischer Funktionen. I
+    date-published: 1935-01-01
+    year: 1935
+    journal: Journal für die reine und angewandte Mathematik
+    start: "65"
+    end: "69"
+    type: article
+    volume: "172"
+  - authors:
+      - family-names: Wall
+        given-names: Donald D.
+    title: Fibonacci series modulo m
+    date-published: 1960-01-01
+    year: 1960
+    issue: "6"
+    journal: American Mathematical Monthly
+    start: "525"
+    end: "532"
+    type: article
+    volume: "67"
+  - authors:
+      - family-names: NIST
+    identifiers:
+      - type: url
+        value: https://dlmf.nist.gov/5.4
+    title: Digital Library of Mathematical Functions
+    url: https://dlmf.nist.gov/5.4
+    date-published: 2026-01-01
+    year: 2026
+    notes: §5.4(iii), eq. 5.4.19 (Gauss's digamma theorem)
+    type: generic
   - authors:
       - family-names: Lawvere
         given-names: F. William
-    doi: 10.1007/BFb0080769
+    doi: 10.1007/bfb0080769
     identifiers:
       - type: doi
-        value: 10.1007/BFb0080769
-      - type: url
-        value: https://doi.org/10.1007/BFb0080769
-      - type: other
-        value: urn:isbn:978-3-540-36101-5
+        value: 10.1007/bfb0080769
     title: Diagonal arguments and cartesian closed categories
-    url: https://doi.org/10.1007/BFb0080769
+    collection-title: Lecture Notes in Mathematics
     date-published: 1969-01-01
     year: 1969
-    isbn: 978-3-540-36101-5
     journal: Category Theory, Homology Theory and their Applications II
     publisher:
-      name: Springer Berlin Heidelberg
-      city: Berlin
+      name: Springer
     start: "134"
     end: "145"
-    type: conference-paper
+    type: generic
+    volume: "92"
   - authors:
       - family-names: Yanofsky
         given-names: Noson S.
@@ -423,100 +1678,853 @@ references:
     identifiers:
       - type: doi
         value: 10.2178/bsl/1058448677
-      - type: url
-        value: https://doi.org/10.2178/bsl/1058448677
     title: A universal approach to self-referential paradoxes, incompleteness and
       fixed points
-    url: https://doi.org/10.2178/bsl/1058448677
     date-published: 2003-01-01
     year: 2003
-    journal: Bull. Symb. Log.
+    issue: "3"
+    journal: Bulletin of Symbolic Logic
     start: "362"
     end: "386"
     type: article
     volume: "9"
   - authors:
-      - family-names: Argand
-        given-names: Jean-Robert
-    title: Essai sur une manière de représenter les quantités imaginaires dans les
-      constructions géométriques
-    date-published: 1806-01-01
-    year: 1806
-    notes: Published anonymously; reissued by Gauthier-Villars in 1874
+      - family-names: Tarski
+        given-names: Alfred
+    title: A Decision Method for Elementary Algebra and Geometry
+    date-published: 1951-01-01
+    year: 1951
+    edition: 2nd
     publisher:
-      name: Madame Veuve Dumesnil
+      name: University of California Press
     type: book
-  - abstract: We study toroidal compactification of Matrix theory, using ideas and
-      results of non-commutative geometry. We generalize this to
-      compactification on the noncommutative torus, explain the classification
-      of these backgrounds, and argue that they correspond in supergravity to
-      tori with constant background three-form tensor field. The paper includes
-      an introduction for mathematicians to the IKKT formulation of Matrix
-      theory and its relation to the BFSS Matrix theory.
-    authors:
-      - family-names: Connes
-        given-names: Alain
-      - family-names: Douglas
-        given-names: Michael R.
-      - family-names: Schwarz
-        given-names: Albert
-    doi: 10.1088/1126-6708/1998/02/003
-    identifiers:
-      - type: doi
-        value: 10.1088/1126-6708/1998/02/003
-      - type: url
-        value: https://doi.org/10.1088/1126-6708/1998/02/003
-    title: Noncommutative geometry and Matrix theory
-    url: https://doi.org/10.1088/1126-6708/1998/02/003
-    date-published: 1998-02-01
-    year: 1998
-    issue: "02"
-    journal: Journal of High Energy Physics
-    start: "003"
-    type: article
-    volume: "1998"
   - authors:
-      - family-names: Dunford
-        given-names: N.
-      - family-names: Schwartz
-        given-names: J. T.
-    doi: 10.1007/978-1-4684-8487-1
+      - family-names: Deninger
+        given-names: Christopher
+    doi: 10.1007/978-3-0348-9110-3_16
     identifiers:
       - type: doi
-        value: 10.1007/978-1-4684-8487-1
-    title: "Linear Operators, Part I: General Theory"
+        value: 10.1007/978-3-0348-9110-3_16
+    title: Evidence for a cohomological approach to analytic number theory
+    collection-title: Progress in Mathematics
+    date-published: 1994-01-01
+    year: 1994
+    journal: First European Congress of Mathematics, Vol. I (Paris, 1992)
+    publisher:
+      name: Birkhäuser
+    start: "491"
+    end: "510"
+    type: generic
+    volume: "119"
+  - authors:
+      - family-names: Deninger
+        given-names: Christopher
+    doi: 10.4171/dms/1-1/2
+    identifiers:
+      - type: doi
+        value: 10.4171/dms/1-1/2
+    title: Some analogies between number theory and dynamical systems on foliated
+      spaces
+    date-published: 1998-01-01
+    year: 1998
+    journal: Documenta Mathematica
+    start: "163"
+    end: "186"
+    type: article
+    volume: Extra Vol. ICM 1998, I
+  - authors:
+      - family-names: Frobenius
+        given-names: Georg
+    title: Über lineare Substitutionen und bilineare Formen
+    date-published: 1878-01-01
+    year: 1878
+    journal: Journal für die reine und angewandte Mathematik
+    start: "1"
+    end: "63"
+    type: article
+    volume: "84"
+  - authors:
+      - family-names: Hurwitz
+        given-names: Adolf
+    title: Über die Composition der quadratischen Formen von beliebig vielen Variablen
+    date-published: 1898-01-01
+    year: 1898
+    journal: Nachrichten von der Gesellschaft der Wissenschaften zu Göttingen,
+      Mathematisch-Physikalische Klasse
+    start: "309"
+    end: "316"
+    type: article
+  - authors:
+      - family-names: Bott
+        given-names: Raoul
+      - family-names: Milnor
+        given-names: John
+    doi: 10.1090/s0002-9904-1958-10166-4
+    identifiers:
+      - type: doi
+        value: 10.1090/s0002-9904-1958-10166-4
+    title: On the parallelizability of the spheres
     date-published: 1958-01-01
     year: 1958
-    publisher:
-      name: Interscience Publishers
-    type: book
+    issue: "3"
+    journal: Bulletin of the American Mathematical Society
+    start: "87"
+    end: "89"
+    type: article
+    volume: "64"
+  - authors:
+      - family-names: Kervaire
+        given-names: Michel A.
+    doi: 10.1073/pnas.44.3.280
+    identifiers:
+      - type: doi
+        value: 10.1073/pnas.44.3.280
+    title: Non-parallelizability of the n-sphere for n>7
+    date-published: 1958-01-01
+    year: 1958
+    issue: "3"
+    journal: Proceedings of the National Academy of Sciences of the USA
+    start: "280"
+    end: "283"
+    type: article
+    volume: "44"
+  - authors:
+      - family-names: Baez
+        given-names: John C.
+    doi: 10.1090/s0273-0979-01-00934-x
+    identifiers:
+      - type: doi
+        value: 10.1090/s0273-0979-01-00934-x
+    title: The octonions
+    date-published: 2002-01-01
+    year: 2002
+    issue: "2"
+    journal: Bulletin of the American Mathematical Society
+    start: "145"
+    end: "205"
+    type: article
+    volume: "39"
+  - authors:
+      - family-names: Dyson
+        given-names: Freeman J.
+    doi: 10.1063/1.1703863
+    identifiers:
+      - type: doi
+        value: 10.1063/1.1703863
+    title: The threefold way. Algebraic structure of symmetry groups and ensembles
+      in quantum mechanics
+    date-published: 1962-01-01
+    year: 1962
+    issue: "6"
+    journal: Journal of Mathematical Physics
+    start: "1199"
+    end: "1215"
+    type: article
+    volume: "3"
+  - authors:
+      - family-names: Maldacena
+        given-names: Juan
+    doi: 10.4310/atmp.1998.v2.n2.a1
+    identifiers:
+      - type: doi
+        value: 10.4310/atmp.1998.v2.n2.a1
+    title: The large N limit of superconformal field theories and supergravity
+    date-published: 1998-01-01
+    year: 1998
+    journal: Advances in Theoretical and Mathematical Physics
+    start: "231"
+    end: "252"
+    type: article
+    volume: "2"
+  - authors:
+      - family-names: Almheiri
+        given-names: Ahmed
+      - family-names: Dong
+        given-names: Xi
+      - family-names: Harlow
+        given-names: Daniel
+    doi: 10.1007/jhep04(2015)163
+    identifiers:
+      - type: doi
+        value: 10.1007/jhep04(2015)163
+    title: Bulk locality and quantum error correction in AdS/CFT
+    date-published: 2015-01-01
+    year: 2015
+    issue: "4"
+    journal: Journal of High Energy Physics
+    start: "163"
+    type: article
+    volume: "2015"
+  - authors:
+      - family-names: Pastawski
+        given-names: Fernando
+      - family-names: Yoshida
+        given-names: Beni
+      - family-names: Harlow
+        given-names: Daniel
+      - family-names: Preskill
+        given-names: John
+    doi: 10.1007/jhep06(2015)149
+    identifiers:
+      - type: doi
+        value: 10.1007/jhep06(2015)149
+    title: "Holographic quantum error-correcting codes: toy models for the
+      bulk/boundary correspondence"
+    date-published: 2015-01-01
+    year: 2015
+    issue: "6"
+    journal: Journal of High Energy Physics
+    start: "149"
+    type: article
+    volume: "2015"
+  - authors:
+      - family-names: Euler
+        given-names: Leonhard
+    title: Variae observationes circa series infinitas
+    date-published: 1744-01-01
+    year: 1744
+    journal: Commentarii Academiae Scientiarum Petropolitanae
+    notes: Presented 1737 (E72)
+    start: "160"
+    end: "188"
+    type: article
+    volume: "9"
   - authors:
       - family-names: Gelfand
         given-names: Israel M.
-    doi: 10.1070/SM1941v009n05ABEH001847
-    identifiers:
-      - type: doi
-        value: 10.1070/SM1941v009n05ABEH001847
     title: Normierte Ringe
     date-published: 1941-01-01
     year: 1941
     issue: "1"
-    journal: Matematicheskii Sbornik
+    journal: Matematicheskii Sbornik (N.S.)
     start: "3"
     end: "24"
     type: article
     volume: 9(51)
   - authors:
+      - family-names: Dunford
+        given-names: Nelson
+      - family-names: Schwartz
+        given-names: Jacob T.
+    title: "Linear Operators, Part I: General Theory"
+    date-published: 1958-01-01
+    year: 1958
+    publisher:
+      name: Interscience
+    type: book
+  - authors:
+      - family-names: Lindemann
+        given-names: Ferdinand
+    doi: 10.1007/bf01446522
+    identifiers:
+      - type: doi
+        value: 10.1007/bf01446522
+    title: Über die Zahl π
+    date-published: 1882-01-01
+    year: 1882
+    journal: Mathematische Annalen
+    start: "213"
+    end: "225"
+    type: article
+    volume: "20"
+  - authors:
+      - family-names: Wigner
+        given-names: Eugene P.
+    doi: 10.1017/s0305004100027237
+    identifiers:
+      - type: doi
+        value: 10.1017/s0305004100027237
+    title: On the statistical distribution of the widths and spacings of nuclear
+      resonance levels
+    date-published: 1951-01-01
+    year: 1951
+    issue: "4"
+    journal: Mathematical Proceedings of the Cambridge Philosophical Society
+    start: "790"
+    end: "798"
+    type: article
+    volume: "47"
+  - authors:
+      - family-names: Bohigas
+        given-names: Oriol
+      - family-names: Giannoni
+        given-names: Marie-Joya
+      - family-names: Schmit
+        given-names: Charles
+    doi: 10.1103/physrevlett.52.1
+    identifiers:
+      - type: doi
+        value: 10.1103/physrevlett.52.1
+    title: Characterization of chaotic quantum spectra and universality of level
+      fluctuation laws
+    date-published: 1984-01-01
+    year: 1984
+    issue: "1"
+    journal: Physical Review Letters
+    start: "1"
+    end: "4"
+    type: article
+    volume: "52"
+  - authors:
+      - family-names: Weil
+        given-names: André
+    doi: 10.1090/s0002-9904-1949-09219-4
+    identifiers:
+      - type: doi
+        value: 10.1090/s0002-9904-1949-09219-4
+    title: Numbers of solutions of equations in finite fields
+    date-published: 1949-01-01
+    year: 1949
+    journal: Bulletin of the American Mathematical Society
+    start: "497"
+    end: "508"
+    type: article
+    volume: "55"
+  - authors:
+      - family-names: Gross
+        given-names: Benedict H.
+      - family-names: Koblitz
+        given-names: Neal
+    doi: 10.2307/1971226
+    identifiers:
+      - type: doi
+        value: 10.2307/1971226
+    title: Gauss sums and the p-adic Γ-function
+    date-published: 1979-01-01
+    year: 1979
+    issue: "3"
+    journal: Annals of Mathematics (2)
+    start: "569"
+    end: "581"
+    type: article
+    volume: "109"
+  - authors:
+      - family-names: Kummer
+        given-names: Ernst E.
+    doi: 10.1515/crll.1846.32.341
+    identifiers:
+      - type: doi
+        value: 10.1515/crll.1846.32.341
+    title: De residuis cubicis disquisitiones nonnullae analyticae
+    date-published: 1846-01-01
+    year: 1846
+    journal: Journal für die reine und angewandte Mathematik
+    start: "341"
+    end: "359"
+    type: article
+    volume: "32"
+  - authors:
+      - family-names: Patterson
+        given-names: Samuel J.
+    doi: 10.1515/crll.1978.303-304.126
+    identifiers:
+      - type: doi
+        value: 10.1515/crll.1978.303-304.126
+    title: On the distribution of Kummer sums
+    date-published: 1978-01-01
+    year: 1978
+    journal: Journal für die reine und angewandte Mathematik
+    start: "126"
+    end: "143"
+    type: article
+    volume: 303/304
+  - authors:
+      - family-names: Heath-Brown
+        given-names: D. Roger
+      - family-names: Patterson
+        given-names: Samuel J.
+    doi: 10.1515/crll.1979.310.111
+    identifiers:
+      - type: doi
+        value: 10.1515/crll.1979.310.111
+    title: The distribution of Kummer sums at prime arguments
+    date-published: 1979-01-01
+    year: 1979
+    journal: Journal für die reine und angewandte Mathematik
+    start: "111"
+    end: "130"
+    type: article
+    volume: "310"
+  - authors:
+      - family-names: Dunn
+        given-names: Alexander
+      - family-names: Radziwiłł
+        given-names: Maksym
+    doi: 10.4007/annals.2024.200.3.3
+    identifiers:
+      - type: doi
+        value: 10.4007/annals.2024.200.3.3
+    title: "Bias in cubic Gauss sums: Patterson's conjecture"
+    date-published: 2024-01-01
+    year: 2024
+    issue: "3"
+    journal: Annals of Mathematics
+    start: "967"
+    end: "1057"
+    type: article
+    volume: "200"
+  - authors:
+      - family-names: Kubota
+        given-names: Tomio
+    title: On Automorphic Functions and the Reciprocity Law in a Number Field
+    collection-title: Lectures in Mathematics, Kyoto University
+    date-published: 1969-01-01
+    year: 1969
+    publisher:
+      name: Kinokuniya
+    type: book
+  - authors:
+      - family-names: OpenAI
+    title: The quasi-Riemann hypothesis
+    date-published: 2026-01-01
+    year: 2026
+    notes: Manuscript, 30 September 2026, in the repository
+      https://github.com/openai/math; main theorem formalised in Lean by its
+      authors
+    type: generic
+  - authors:
+      - family-names: Patterson
+        given-names: Samuel J.
+    doi: 10.1112/plms/s3-54.2.193
+    identifiers:
+      - type: doi
+        value: 10.1112/plms/s3-54.2.193
+    title: The distribution of general Gauss sums and similar arithmetic functions
+      at prime arguments
+    date-published: 1987-01-01
+    year: 1987
+    issue: "2"
+    journal: Proceedings of the London Mathematical Society (3)
+    start: "193"
+    end: "215"
+    type: article
+    volume: "54"
+  - authors:
+      - family-names: Cox
+        given-names: David A.
+    title: "Primes of the Form x<sup>2+ny</sup><sup>2</sup>: Fermat, Class Field
+      Theory, and Complex Multiplication"
+    date-published: 2013-01-01
+    year: 2013
+    edition: "2"
+    publisher:
+      name: Wiley
+    type: book
+  - authors:
+      - family-names: Berndt
+        given-names: Bruce C.
+    doi: 10.1216/RMJ-1972-2-1-151
+    identifiers:
+      - type: doi
+        value: 10.1216/RMJ-1972-2-1-151
+    title: On the Hurwitz zeta-function
+    date-published: 1972-01-01
+    year: 1972
+    issue: "1"
+    journal: Rocky Mountain Journal of Mathematics
+    start: "151"
+    end: "157"
+    type: article
+    volume: "2"
+  - authors:
+      - family-names: Dilcher
+        given-names: Karl
+    doi: 10.1090/S0025-5718-1992-1134726-5
+    identifiers:
+      - type: doi
+        value: 10.1090/S0025-5718-1992-1134726-5
+    title: Generalized Euler constants for arithmetical progressions
+    date-published: 1992-01-01
+    year: 1992
+    issue: "199"
+    journal: Mathematics of Computation
+    start: "259"
+    end: "282"
+    type: article
+    volume: "59"
+  - authors:
+      - family-names: Rubinstein
+        given-names: Michael
+      - family-names: Sarnak
+        given-names: Peter
+    doi: 10.1080/10586458.1994.10504289
+    identifiers:
+      - type: doi
+        value: 10.1080/10586458.1994.10504289
+    title: Chebyshev's bias
+    date-published: 1994-01-01
+    year: 1994
+    issue: "3"
+    journal: Experimental Mathematics
+    start: "173"
+    end: "197"
+    type: article
+    volume: "3"
+  - authors:
+      - family-names: Fontaine
+        given-names: Jean-Marc
+    title: Il n'y a pas de variété abélienne sur ℤ
+    date-published: 1985-01-01
+    year: 1985
+    issue: "3"
+    journal: Inventiones Mathematicae
+    start: "515"
+    end: "538"
+    type: article
+    volume: "81"
+  - authors:
+      - family-names: Kisin
+        given-names: Mark
+    doi: 10.1007/978-0-8176-4532-8_7
+    identifiers:
+      - type: doi
+        value: 10.1007/978-0-8176-4532-8_7
+    title: Crystalline representations and F-crystals
+    collection-title: Progress in Mathematics
+    date-published: 2006-01-01
+    year: 2006
+    journal: Algebraic Geometry and Number Theory
+    publisher:
+      name: Birkhäuser
+    start: "459"
+    end: "496"
+    type: generic
+    volume: "253"
+  - authors:
+      - family-names: Hooley
+        given-names: Christopher
+    title: On Artin's conjecture
+    date-published: 1967-01-01
+    year: 1967
+    journal: Journal für die reine und angewandte Mathematik
+    start: "209"
+    end: "220"
+    type: article
+    volume: "225"
+  - authors:
+      - family-names: Montgomery
+        given-names: Hugh L.
+      - family-names: Vaughan
+        given-names: Robert C.
+    title: Multiplicative Number Theory I. Classical Theory
+    collection-title: Cambridge Studies in Advanced Mathematics
+    date-published: 2007-01-01
+    year: 2007
+    publisher:
+      name: Cambridge University Press
+    type: book
+    volume: "97"
+  - authors:
+      - family-names: Gurevich
+        given-names: Shamgar
+      - family-names: Hadani
+        given-names: Ronny
+      - family-names: Sochen
+        given-names: Nir
+    doi: 10.1109/TIT.2008.926440
+    identifiers:
+      - type: doi
+        value: 10.1109/TIT.2008.926440
+    title: The finite harmonic oscillator and its applications to sequences,
+      communication, and radar
+    date-published: 2008-01-01
+    year: 2008
+    issue: "9"
+    journal: IEEE Transactions on Information Theory
+    notes: arXiv:0808.1495
+    start: "4239"
+    end: "4253"
+    type: article
+    volume: "54"
+  - authors:
+      - family-names: Thomas
+        given-names: Teruji
+    doi: 10.1112/jlms/jdm098
+    identifiers:
+      - type: doi
+        value: 10.1112/jlms/jdm098
+    title: The character of the Weil representation
+    date-published: 2008-01-01
+    year: 2008
+    issue: "1"
+    journal: Journal of the London Mathematical Society (2)
+    notes: arXiv:math/0610644
+    start: "221"
+    end: "239"
+    type: article
+    volume: "77"
+  - authors:
+      - family-names: Kurlberg
+        given-names: Pär
+      - family-names: Rudnick
+        given-names: Zeév
+    doi: 10.1215/s0012-7094-00-10314-6
+    identifiers:
+      - type: doi
+        value: 10.1215/s0012-7094-00-10314-6
+    title: Hecke theory and equidistribution for the quantization of linear maps of
+      the torus
+    date-published: 2000-01-01
+    year: 2000
+    issue: "1"
+    journal: Duke Mathematical Journal
+    start: "47"
+    end: "77"
+    type: article
+    volume: "103"
+  - authors:
+      - family-names: Stone
+        given-names: Marshall H.
+    doi: 10.2307/1968538
+    identifiers:
+      - type: doi
+        value: 10.2307/1968538
+    title: On one-parameter unitary groups in Hilbert space
+    date-published: 1932-01-01
+    year: 1932
+    issue: "3"
+    journal: Annals of Mathematics
+    start: "643"
+    end: "648"
+    type: article
+    volume: "33"
+  - authors:
+      - family-names: Gelfand
+        given-names: Israel M.
+      - family-names: Naimark
+        given-names: Mark A.
+    title: On the imbedding of normed rings into the ring of operators in Hilbert
+      space
+    date-published: 1943-01-01
+    year: 1943
+    journal: Matematicheskii Sbornik (N.S.)
+    notes: "Reprinted in <i>C<sup>*</sup>-Algebras: 1943–1993</i>, Contemp. Math.
+      167, AMS, 1994, doi:10.1090/conm/167/16"
+    start: "197"
+    end: "217"
+    type: article
+    volume: 12(54)
+  - authors:
+      - family-names: Keating
+        given-names: Jonathan P.
+    doi: 10.1088/0951-7715/4/2/006
+    identifiers:
+      - type: doi
+        value: 10.1088/0951-7715/4/2/006
+    title: "The cat maps: quantum mechanics and classical motion"
+    date-published: 1991-01-01
+    year: 1991
+    issue: "2"
+    journal: Nonlinearity
+    start: "309"
+    end: "341"
+    type: article
+    volume: "4"
+  - authors:
+      - family-names: Bogomolny
+        given-names: Eugene
+      - family-names: Georgeot
+        given-names: Bertrand
+      - family-names: Giannoni
+        given-names: Marie-Joya
+      - family-names: Schmit
+        given-names: Charles
+    doi: 10.1103/PhysRevLett.69.1477
+    identifiers:
+      - type: doi
+        value: 10.1103/PhysRevLett.69.1477
+    title: Chaotic billiards generated by arithmetic groups
+    date-published: 1992-01-01
+    year: 1992
+    issue: "10"
+    journal: Physical Review Letters
+    start: "1477"
+    end: "1480"
+    type: article
+    volume: "69"
+  - authors:
+      - family-names: Manin
+        given-names: Yuri I.
+      - family-names: Marcolli
+        given-names: Matilde
+    doi: 10.4310/ATMP.2001.v5.n3.a6
+    identifiers:
+      - type: doi
+        value: 10.4310/ATMP.2001.v5.n3.a6
+    title: Holography principle and arithmetic of algebraic curves
+    date-published: 2001-01-01
+    year: 2001
+    issue: "3"
+    journal: Adv. Theor. Math. Phys.
+    start: "617"
+    end: "650"
+    type: article
+    volume: "5"
+  - authors:
+      - family-names: Gubser
+        given-names: Steven S.
+      - family-names: Knaute
+        given-names: Johannes
+      - family-names: Parikh
+        given-names: Sarthak
+      - family-names: Samberg
+        given-names: Andreas
+      - family-names: Witaszczyk
+        given-names: Przemek
+    doi: 10.1007/s00220-016-2813-6
+    identifiers:
+      - type: doi
+        value: 10.1007/s00220-016-2813-6
+    title: p-adic AdS/CFT
+    date-published: 2017-01-01
+    year: 2017
+    issue: "3"
+    journal: Comm. Math. Phys.
+    start: "1019"
+    end: "1059"
+    type: article
+    volume: "352"
+  - authors:
+      - family-names: Heydeman
+        given-names: Matthew
+      - family-names: Marcolli
+        given-names: Matilde
+      - family-names: Saberi
+        given-names: Ingmar A.
+      - family-names: Stoica
+        given-names: Bogdan
+    title: "Tensor networks, p-adic fields, and algebraic curves: arithmetic and the
+      AdS₃/CFT₂ correspondence"
+    date-published: 2018-01-01
+    year: 2018
+    issue: "1"
+    journal: Adv. Theor. Math. Phys.
+    start: "93"
+    end: "176"
+    type: article
+    volume: "22"
+  - authors:
+      - family-names: Marcolli
+        given-names: Matilde
+    title: Holographic codes on Bruhat–Tits buildings and Drinfeld symmetric spaces
+    date-published: 2018-01-01
+    year: 2018
+    publisher:
+      name: arXiv:1801.09623
+    type: generic
+  - authors:
+      - family-names: Heydeman
+        given-names: Matthew
+      - family-names: Marcolli
+        given-names: Matilde
+      - family-names: Parikh
+        given-names: Sarthak
+      - family-names: Saberi
+        given-names: Ingmar
+    doi: 10.4310/atmp.2021.v25.n3.a2
+    identifiers:
+      - type: doi
+        value: 10.4310/atmp.2021.v25.n3.a2
+    title: Nonarchimedean holographic entropy from networks of perfect tensors
+    date-published: 2021-01-01
+    year: 2021
+    issue: "3"
+    journal: Adv. Theor. Math. Phys.
+    start: "591"
+    end: "721"
+    type: article
+    volume: "25"
+  - authors:
+      - family-names: González García
+        given-names: J. A.
+      - family-names: González García
+        given-names: V. M.
+      - family-names: Dressler Pérez
+        given-names: I. M.
+      - family-names: García Ordóñez
+        given-names: L. M.
+    title: One object instead of a choice of vacuum to put the observer in de Sitter
+      space
+    date-published: 2026-01-01
+    year: 2026
+    publisher:
+      name: Preprint
+    type: generic
+  - authors:
+      - family-names: Cotler
+        given-names: Jordan S.
+      - family-names: Gur-Ari
+        given-names: Guy
+      - family-names: Hanada
+        given-names: Masanori
+      - family-names: Polchinski
+        given-names: Joseph
+      - family-names: Saad
+        given-names: Phil
+      - family-names: Shenker
+        given-names: Stephen H.
+      - family-names: Stanford
+        given-names: Douglas
+      - family-names: Streicher
+        given-names: Alexandre
+      - family-names: Tezuka
+        given-names: Masaki
+    doi: 10.1007/JHEP05(2017)118
+    identifiers:
+      - type: doi
+        value: 10.1007/JHEP05(2017)118
+    title: Black holes and random matrices
+    date-published: 2017-01-01
+    year: 2017
+    issue: "5"
+    journal: Journal of High Energy Physics
+    start: "118"
+    type: article
+    volume: "2017"
+  - authors:
+      - family-names: Scholze
+        given-names: Peter
+      - family-names: Weinstein
+        given-names: Jared
+    doi: 10.23943/princeton/9780691202082.001.0001
+    identifiers:
+      - type: doi
+        value: 10.23943/princeton/9780691202082.001.0001
+    title: Berkeley Lectures on p-adic Geometry
+    collection-title: Annals of Mathematics Studies
+    date-published: 2020-01-01
+    year: 2020
+    publisher:
+      name: Princeton University Press
+    type: book
+    volume: "207"
+  - authors:
+      - family-names: González García
+        given-names: Jorge Armando
+    title: ?`Cómo representar un agujero de gusano? Presentación de un programa de
+      investigación sobre modelos de juguete en gravedad cuántica desde una
+      perspectiva de tendencia realista crítica
+    date-published: 2026-01-01
+    year: 2026
+    notes: In preparation
+    type: generic
+  - authors:
+      - family-names: González García
+        given-names: Jorge Armando
+    title: Representación y representado en la física teórica. Planteamiento de un
+      programa de investigación sobre el problema de la unificación
+    date-published: 2026-01-01
+    year: 2026
+    notes: In preparation
+    type: generic
+  - authors:
       - family-names: Baker
-        given-names: A.
+        given-names: Alan
     doi: 10.1112/S0025579300003971
     identifiers:
       - type: doi
         value: 10.1112/S0025579300003971
-      - type: url
-        value: https://doi.org/10.1112/S0025579300003971
     title: Linear forms in the logarithms of algebraic numbers
-    url: https://doi.org/10.1112/S0025579300003971
     date-published: 1966-01-01
     year: 1966
     issue: "2"
@@ -526,38 +2534,20 @@ references:
     type: article
     volume: "13"
   - authors:
-      - family-names: Apostol
-        given-names: Tom M.
+      - family-names: Grothendieck
+        given-names: Alexander
+    doi: 10.1007/BF02684807
     identifiers:
-      - type: other
-        value: urn:isbn:0-387-90163-9
-    title: Introduction to Analytic Number Theory
-    date-published: 1976-01-01
-    year: 1976
-    isbn: 0-387-90163-9
-    publisher:
-      name: Springer-Verlag
-    start: "340"
-    type: book
-  - authors:
-      - family-names: Heath
-        given-names: Thomas Little
-    title: The thirteen books of Euclid's Elements
-    date-published: 1956-01-01
-    year: 1956
-    publisher:
-      name: Courier Corporation
-    type: book
-  - authors:
-      - family-names: Tarski
-        given-names: Alfred
-    title: A Decision Method for Elementary Algebra and Geometry
-    date-published: 1951-01-01
-    year: 1951
-    edition: 2nd ed., rev.
-    publisher:
-      name: University of California Press
-    type: book
+      - type: doi
+        value: 10.1007/BF02684807
+    title: On the de Rham cohomology of algebraic varieties
+    date-published: 1966-01-01
+    year: 1966
+    journal: Publications Mathématiques de l'IHÉS
+    start: "95"
+    end: "103"
+    type: article
+    volume: "29"
   - authors:
       - family-names: Kontsevich
         given-names: Maxim
@@ -567,56 +2557,231 @@ references:
     identifiers:
       - type: doi
         value: 10.1007/978-3-642-56478-9_39
-      - type: url
-        value: https://doi.org/10.1007/978-3-642-56478-9_39
     title: Periods
-    url: https://doi.org/10.1007/978-3-642-56478-9_39
     date-published: 2001-01-01
     year: 2001
-    journal: Mathematics Unlimited — 2001 and Beyond
+    editors:
+      - family-names: Engquist
+        given-names: Björn
+      - family-names: Schmid
+        given-names: Wilfried
+    journal: Mathematics Unlimited—2001 and Beyond
     publisher:
       name: Springer
     start: "771"
     end: "808"
     type: generic
   - authors:
-      - family-names: Grothendieck
-        given-names: Alexandre
-    doi: 10.1007/BF02684807
+      - family-names: Petermann
+        given-names: André
+    doi: 10.1016/0029-5582(58)90065-8
     identifiers:
       - type: doi
-        value: 10.1007/BF02684807
-      - type: url
-        value: https://doi.org/10.1007/BF02684807
-      - type: other
-        value: urn:issn:1618-1913
-    title: On the de Rham cohomology of algebraic varieties
-    url: https://doi.org/10.1007/BF02684807
-    date-published: 1966-01-01
-    year: 1966
-    issn: 1618-1913
-    issue: "1"
-    journal: Publications Mathématiques de l'Institut des Hautes Études Scientifiques
-    start: "95"
-    end: "103"
+        value: 10.1016/0029-5582(58)90065-8
+    title: Fourth order magnetic moment of the electron
+    date-published: 1958-01-01
+    year: 1958
+    journal: Nuclear Physics
+    start: "677"
+    end: "683"
     type: article
-    volume: "29"
+    volume: "5"
   - authors:
-      - family-names: Lindemann
-        given-names: Ferdinand
-    doi: 10.1007/BF01446522
+      - family-names: Sommerfield
+        given-names: Charles M.
+    doi: 10.1103/PhysRev.107.328
     identifiers:
       - type: doi
-        value: 10.1007/BF01446522
-      - type: url
-        value: https://doi.org/10.1007/BF01446522
-    title: Über die Zahl π
-    url: https://doi.org/10.1007/BF01446522
-    date-published: 1882-01-01
-    year: 1882
-    journal: Mathematische Annalen.
-    start: "213"
-    end: "225"
+        value: 10.1103/PhysRev.107.328
+    title: Magnetic dipole moment of the electron
+    date-published: 1957-01-01
+    year: 1957
+    issue: "1"
+    journal: Physical Review
+    start: "328"
+    end: "329"
     type: article
-    volume: "20"
+    volume: "107"
+  - authors:
+      - family-names: Argand
+        given-names: Jean-Robert
+    title: Essai sur une manière de représenter les quantités imaginaires dans les
+      constructions géométriques
+    date-published: 1806-01-01
+    year: 1806
+    publisher:
+      name: Paris
+    type: book
+  - authors:
+      - family-names: Borel
+        given-names: Armand
+    title: Cohomologie de SLₙ et valeurs de fonctions zêta aux points entiers
+    date-published: 1977-01-01
+    year: 1977
+    issue: "4"
+    journal: Annali della Scuola Normale Superiore di Pisa, Classe di Scienze (4)
+    start: "613"
+    end: "636"
+    type: article
+    volume: "4"
+  - authors:
+      - family-names: Zagier
+        given-names: Don
+    doi: 10.1007/BF01343950
+    identifiers:
+      - type: doi
+        value: 10.1007/BF01343950
+    title: A Kronecker limit formula for real quadratic fields
+    date-published: 1975-01-01
+    year: 1975
+    journal: Mathematische Annalen
+    start: "153"
+    end: "184"
+    type: article
+    volume: "213"
+  - authors:
+      - family-names: Deligne
+        given-names: Pierre
+      - family-names: Goncharov
+        given-names: Alexander B.
+    doi: 10.1016/j.ansens.2004.11.001
+    identifiers:
+      - type: doi
+        value: 10.1016/j.ansens.2004.11.001
+    title: Groupes fondamentaux motiviques de Tate mixte
+    date-published: 2005-01-01
+    year: 2005
+    issue: "1"
+    journal: Annales Scientifiques de l'École Normale Supérieure (4)
+    start: "1"
+    end: "56"
+    type: article
+    volume: "38"
+  - authors:
+      - family-names: Brown
+        given-names: Francis
+    doi: 10.4007/annals.2012.175.2.10
+    identifiers:
+      - type: doi
+        value: 10.4007/annals.2012.175.2.10
+    title: Mixed Tate motives over ℤ
+    date-published: 2012-01-01
+    year: 2012
+    issue: "2"
+    journal: Annals of Mathematics
+    start: "949"
+    end: "976"
+    type: article
+    volume: "175"
+  - authors:
+      - family-names: Mengoli
+        given-names: Pietro
+    title: Novae quadraturae arithmeticae, seu de additione fractionum
+    date-published: 1650-01-01
+    year: 1650
+    publisher:
+      name: Giacomo Monti
+    type: book
+  - authors:
+      - family-names: Euler
+        given-names: Leonhard
+    title: De summis serierum reciprocarum
+    date-published: 1740-01-01
+    year: 1740
+    journal: Commentarii Academiae Scientiarum Petropolitanae
+    notes: Read 1735 (E41); Opera Omnia I.14, 73–86
+    start: "123"
+    end: "134"
+    type: article
+    volume: "7"
+  - authors:
+      - family-names: Euler
+        given-names: Leonhard
+    title: Exercitationes analyticae
+    date-published: 1773-01-01
+    year: 1773
+    journal: Novi Commentarii Academiae Scientiarum Petropolitanae
+    notes: Written 1772 (E432); Opera Omnia I.15, 131–167
+    start: "173"
+    end: "204"
+    type: article
+    volume: "17"
+  - authors:
+      - family-names: Lagarias
+        given-names: Jeffrey C.
+    doi: 10.1090/S0273-0979-2013-01423-X
+    identifiers:
+      - type: doi
+        value: 10.1090/S0273-0979-2013-01423-X
+    title: "Euler's constant: Euler's work and modern developments"
+    date-published: 2013-01-01
+    year: 2013
+    issue: "4"
+    journal: Bulletin of the American Mathematical Society
+    start: "527"
+    end: "628"
+    type: article
+    volume: "50"
+  - authors:
+      - family-names: Polchinski
+        given-names: Joseph
+    title: "String Theory, Vol. 1: An Introduction to the Bosonic String"
+    date-published: 1998-01-01
+    year: 1998
+    notes: §1.3
+    publisher:
+      name: Cambridge University Press
+    type: book
+  - authors:
+      - family-names: Hawking
+        given-names: Stephen W.
+    doi: 10.1007/BF01626516
+    identifiers:
+      - type: doi
+        value: 10.1007/BF01626516
+    title: Zeta function regularization of path integrals in curved spacetime
+    date-published: 1977-01-01
+    year: 1977
+    issue: "2"
+    journal: Communications in Mathematical Physics
+    start: "133"
+    end: "148"
+    type: article
+    volume: "55"
+  - authors:
+      - family-names: Elizalde
+        given-names: Emilio
+      - family-names: Odintsov
+        given-names: Sergei D.
+      - family-names: Romeo
+        given-names: August
+      - family-names: Bytsenko
+        given-names: Andrei A.
+      - family-names: Zerbini
+        given-names: Sergio
+    title: Zeta Regularization Techniques with Applications
+    date-published: 1994-01-01
+    year: 1994
+    publisher:
+      name: World Scientific
+    type: book
+  - authors:
+      - family-names: Broadhurst
+        given-names: David J.
+      - family-names: Kreimer
+        given-names: Dirk
+    doi: 10.1016/S0370-2693(96)01623-1
+    identifiers:
+      - type: doi
+        value: 10.1016/S0370-2693(96)01623-1
+    title: Association of multiple zeta values with positive knots via Feynman
+      diagrams up to 9 loops
+    date-published: 1997-01-01
+    year: 1997
+    issue: 3–4
+    journal: Physics Letters B
+    start: "403"
+    end: "412"
+    type: article
+    volume: "393"
 doi: 10.5281/zenodo.19492791
