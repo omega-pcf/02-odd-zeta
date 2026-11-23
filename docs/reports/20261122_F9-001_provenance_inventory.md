@@ -467,3 +467,33 @@ every statement is confirmed):
 | 133 | `W4Isometria` | sec:results-weil--sec:results-verdict Weil analogy, windows, verdict | `src/chapters/appendix.tex:650` | Source map | lean/F1_pentagonal_descent_UNIFIED.lean (namespace W4Isometria) | - | si | verificado (repo) |
 | 134 | `certificates` | sec:results-weil--sec:results-verdict Weil analogy, windows, verdict | `src/chapters/appendix.tex:650` | Source map / columna Corpus (token sin \texttt) | lean/F1_pentagonal_descent_UNIFIED.lean (mención) | scripts/weil_certificates/ (directorio del zip) | si | verificado (repo) |
 | 135 | `F1_v2` | sec:disc-cw Crystalline Worldsheet | `src/chapters/appendix.tex:654` | Source map | lean/… (abreviatura de F1_v2_formalizations) | - | - | verificado (repo) |
+
+
+---
+
+## Addendum (2026-11-22) — `hipotesis/pruebas/` imported (F12)
+
+**The NO IDENTIFICADO #1 above (`hipotesis/pruebas/`, rows 103, 116 and 158) is resolved.** The
+directory now exists in this repository: imported from the principal author's pass
+(`Downloads/F1_v168_scripts_faltantes.zip`, 2026-11-22) to `hipotesis/pruebas/`, with **38 `.py`
+scripts**, **35 `salidas/*.txt`**, the **3 data JSON** (`datos/ceros_nivel80.json`,
+`datos/ceros_nivel135.json`, `chi5_zeros_500.json`), `zeta_zeros_3000.npy` and `correr_todo.sh`.
+
+Recorded without editing anything above: the table, its status line and the counts in the header
+stay the snapshot of this report at `623c20a`. What the import changes for its rows:
+
+- **rows 103 (`appendix.tex:451`) and 116 (`appendix.tex:502`)** — `NO IDENTIFICADO` because the
+  path was unported; the path now resolves in the repository.
+- **row 158 (`appendix.tex:650`)** — `deferido-D7`; the path now resolves, but the
+  `% pending(D7)` marker on that line is **kept**: the line also names corpus identifiers outside
+  this import (`W4Isometria`, `F1_weil_functional`, `F1_v2`, …), so the line-scoped signal is not
+  fully discharged by the import.
+- **35 of the 103 `% pending(D7)` manuscript lines were cleared** in the same wave (68 remain),
+  each of them citing only scripts now present at `hipotesis/pruebas/`; every line that still
+  names at least one absent script keeps its marker (`appendix.tex:508` is the mixed case:
+  `x_sweep.py`, `oz_carried.py`, `retro*.py`, `chi5_zeros.py` and others are still absent).
+
+The second NO IDENTIFIED (`F1Paper`, Lake project name) is untouched by this wave.
+
+Related: `docs/reports/20261122_F12-001_author_text_changes_v168.md` — the author's pass that
+supplied the scripts and the four paragraph changes.
