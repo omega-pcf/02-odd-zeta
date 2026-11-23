@@ -27,7 +27,7 @@ def test_phi_squared_equals_phi_plus_one() -> None:
 
 
 def test_phi_unit_norm_negative_one() -> None:
-    """N(phi) = phi * phi_bar = -1: the fundamental unit of norm -1.
+    """Norm of the fundamental unit: phi times its conjugate is -1.
 
     Witness id cited by ``src/chapters/02-foundations.tex``.
     """

@@ -75,7 +75,7 @@ def test_generalized_bernoulli_numbers_equal_rationals() -> None:
 
 
 def test_two_cos_pi_over_five_equals_phi() -> None:
-    """2*cos(pi/5) = phi: the pentagon identity the manuscript cites.
+    """Twice the cosine of pi/5 equals phi: the pentagon identity the manuscript cites.
 
     Witness id cited by ``src/chapters/03-mechanisms.tex``.
     """
