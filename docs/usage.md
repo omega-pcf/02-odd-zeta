@@ -15,11 +15,14 @@ pnpm run build
 
 The numbers the documentation states about the repository are **measured,
 never typed** (family mechanism ported from `05-kkgt`, whose `CVR-001` §5
-named the stale counts): this repository states no count in its prose — it
-commits no figures and its manuscript carries no `\testref{...}` anchor — so
-its ledger reports the Lean source statistics of the one library
-`lean/lakefile.toml` declares and the `images/` inventory, and it carries no
-marked region.
+named the stale counts): this repository does state counts in its prose — the
+manuscript carries `\tier[\testref{…}]{N}` anchors over ids of its own suite
+and the appendix states counts of the Lean corpus — so its ledger measures
+them where it can: the pytest suite totals (`pytest.collected`,
+`pytest.not_slow`), the Lean source statistics of the one library
+`lean/lakefile.toml` declares, and the `images/` inventory.  The marked
+regions live in the document that states the numbers (`tests/README.md`), and
+every measured value is tabled in [`counts.md`](counts.md).
 
 ```bash
 pnpm run counts         # rewrite the marked regions and regenerate docs/counts.md
