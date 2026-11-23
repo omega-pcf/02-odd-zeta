@@ -118,11 +118,23 @@ All four paragraphs of the author's pass are in their **new** state; the three e
    (`03-mechanisms.tex:1167`) — both `needs-decision`; the ported apparatus has no
    `\witness` block to move them to, and no caption rule existed in the zip.
 8. **`\LeanStar` unification** — recommendation α, §6, pending the author.
-9. **Bibliography settings divergence** (new this wave): this repository renders with
-   `sorting=none` and no `giveninits` (citation order, full given names), while the four
-   siblings render `sorting=nyt,giveninits=true`. Measured on the built PDF and on
-   `main.tex:22`; recorded in `docs/citations.md` §3, **not changed** — it is an author
-   decision because it changes the printed reference list.
+9. **Bibliography settings divergence — CLOSED by the citation-standardisation wave.**
+   This repository rendered with `sorting=none` and no `giveninits` (citation order, full
+   given names) while the siblings render `sorting=nyt,giveninits=true`; `main.tex:22`
+   now carries the family line verbatim. Verified with `pdftotext` on the rebuilt PDF:
+   the 176-entry reference list is alphabetical (Apéry → Apostol → Argand → … →
+   Frankenhuijsen → Frobenius → … and Montgomery → de Moura is ordered by *Moura*) and the given
+   names print as initials (`J. A. González García et al.`, which printed
+   `Jorge Armando González García et al.` before). `docs/citations.md` §3, §5 and §7 and
+   `docs/witness-contract.md` §4.3 were rewritten to the same state in that pass.
+   **Carried laguna:** 37 of the 109 DOI-bearing entries print the DOI **twice**
+   (`doi:10.33571/…` from `note = {doi:…}` and `doi: 10.33571/…` from the `doi` field);
+   the cause is in `citation.csl.json` (37 records carry both fields), it is
+   **pre-existing** (the reference list carried 146 `doi:` occurrences before and after
+   this change), and it is absent from the siblings (01/03/04: 0 entries, 05: 1).
+   Reported, **not fixed**: `citation.csl.json` is outside this wave's scope. The
+   duplication the §3 contract actually suppresses — a `doi.org` URL printed beside a
+   DOI — is **0** entries, as in every sibling.
 10. **Two stale claims outside this wave's scope** (same falsehood F1 fixed in
     `docs/usage.md`): `docs/README.md` — *“the manuscript itself states no count”* — and
     `docs/architecture.md:88` — *“this repository states no count in its prose, so it
