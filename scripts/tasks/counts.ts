@@ -121,6 +121,9 @@ function countFiles(dir: string): number {
  *  library `lean/lakefile.toml` declares. */
 const LEAN_FILES = ['lean/F1_pentagonal_descent_UNIFIED.lean'];
 
+/** The suite's own entrypoint (package.json `verify:py` runs it with `-m 'not slow'`). */
+const PYTEST = 'uv run pytest tests/ -q';
+
 interface Counter {
   id: string;
   /** How the value is measured — printed verbatim in `docs/counts.md`. */
@@ -129,6 +132,16 @@ interface Counter {
 }
 
 const COUNTERS: Counter[] = [
+  {
+    id: 'pytest.collected',
+    source: `\`${PYTEST} --collect-only\``,
+    measure: () => collected(`${PYTEST} --collect-only`),
+  },
+  {
+    id: 'pytest.not_slow',
+    source: `\`${PYTEST} -m 'not slow' --collect-only\``,
+    measure: () => collected(`${PYTEST} -m 'not slow' --collect-only`),
+  },
   {
     id: 'lean.theorems',
     source: `declarations in ${LEAN_FILES.map((f) => `\`${f}\``).join(', ')} (comments stripped)`,
@@ -168,7 +181,31 @@ interface Region {
 }
 
 const REGIONS: Region[] = [
-
+  {
+    file: 'tests/README.md',
+    id: 'commands',
+    kind: 'block',
+    uses: ['pytest.collected', 'pytest.not_slow'],
+    render: (c) =>
+      [
+        `uv run pytest tests/ -q                 # whole suite   (${c['pytest.collected']} tests)`,
+        `uv run pytest tests/ -q -m 'not slow'   # without >10 s (${c['pytest.not_slow']} tests)`,
+      ].join('\n'),
+  },
+  {
+    file: 'tests/README.md',
+    id: 'suite-total',
+    kind: 'inline',
+    uses: ['pytest.collected'],
+    render: (c) => String(c['pytest.collected']),
+  },
+  {
+    file: 'tests/README.md',
+    id: 'suite-not-slow',
+    kind: 'inline',
+    uses: ['pytest.not_slow'],
+    render: (c) => String(c['pytest.not_slow']),
+  },
 ];
 
 /* ---------------------------------------------------------------- markers */

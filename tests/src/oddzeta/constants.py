@@ -43,6 +43,7 @@ L_ONE_CHI5 = 2 * LOG_PHI / mp.sqrt(5)
 # Regulator of Q(sqrt 5): R = log(phi) (the invariant of section "Props A, B, C").
 R_REGULATOR = LOG_PHI
 
-# The script's default comparison tolerance (verify_odd_zeta_pcf_unified.py,
-# its ``check`` helper), inherited unchanged.
+# The default comparison tolerance of the verification script this suite
+# ported (its ``check`` helper compared at 1e-45 at 50 digits), inherited
+# unchanged.
 DEFAULT_TOL = mp.mpf("1e-45")

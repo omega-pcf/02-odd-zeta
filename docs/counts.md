@@ -7,10 +7,12 @@
 
 | counter | value | measured from | quoted in |
 |---|---:|---|---|
+| `pytest.collected` | 94 | `uv run pytest tests/ -q --collect-only` | `tests/README.md` (`commands`), `tests/README.md` (`suite-total`) |
+| `pytest.not_slow` | 94 | `uv run pytest tests/ -q -m 'not slow' --collect-only` | `tests/README.md` (`commands`), `tests/README.md` (`suite-not-slow`) |
 | `lean.theorems` | 5712 | declarations in `lean/F1_pentagonal_descent_UNIFIED.lean` (comments stripped) | — |
 | `lean.axioms` | 0 | axioms in `lean/F1_pentagonal_descent_UNIFIED.lean` (comments stripped) | — |
 | `lean.sorry` | 0 | `sorry` in `lean/F1_pentagonal_descent_UNIFIED.lean` (comments stripped) | — |
 | `images.files` | 0 | file inventory of `images/` | — |
 
-This repository states no count in its prose, so it carries no marked region; this ledger is its live record.
+The marked regions live in the documents that state the numbers: [`tests/README.md`](../tests/README.md) `commands`, [`tests/README.md`](../tests/README.md) `suite-total`, [`tests/README.md`](../tests/README.md) `suite-not-slow`.
 Regenerate everything with `pnpm run counts`; `validate` runs `pnpm run counts:check` after `parity`.
