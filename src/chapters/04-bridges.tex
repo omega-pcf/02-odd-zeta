@@ -43,7 +43,7 @@ regimes by height, and each carries its own status.
     (\LeanInline{liCoeff}); the
     lower end is an identity and vanishes term by term exactly on the line, the
     upper end comes from the Hadamard product (\LeanInline{the\_sandwich}, \tierP\
-    given two inputs taken as hypotheses: the value of the second Li sum \tierC\ and an
+    given two inputs taken as hypotheses: the value of the second Li sum\ and an
     asymptotic bound on its ratio to the excess).  Numerically the bound is
     $3.5695\cdot10^{-4}$.  The corpus also records a sharper value, $3.472359\cdot10^{-7}$,
     obtained by composing the sandwich with the decided range below $\gamma=70$; that
@@ -123,7 +123,7 @@ $n$-th zero.
   \item The fluctuation term is carried by no operator whose eigenvalues depend on the
     index alone: two sequences of heights that differ at $n$ cannot both be matched there.
 \end{enumerate}
-{\raggedright \LeanStar{F1PaperHyp.height\_from\_envelope}, \LeanStar{F1PaperHyp.error\_decomposition}, \LeanStar{F1PaperHyp.parametrisation\_removable}, \LeanStar{F1PaperHyp.no\_index\_operator\_fits\_both} \tierPnew, on the counting law of the corpus (\LeanInline{CountingLaw})\par}
+{\raggedright \LeanInline{F1PaperHyp.height\_from\_envelope}, \LeanInline{F1PaperHyp.error\_decomposition}, \LeanInline{F1PaperHyp.parametrisation\_removable}, \LeanInline{F1PaperHyp.no\_index\_operator\_fits\_both} \tierP, on the counting law of the corpus (\LeanInline{CountingLaw})\par}
 \end{proposition}
 
 \begin{remark}[What is removable, and what is not]\label{rmk:two-errors}
@@ -377,8 +377,8 @@ $\gamma=(\rho-\tfrac12)/i$.  We write the right-hand side as $A(g)-2P(g)$: $A(g)
 integral, and $P(g)=\sum_{p\ne5}\sum_{k\ge1}\frac{\log p}{p^{k/2}}\mathrm{tr}(\Frob_p^{\,k}\mid\sqrt5)\,g(k\log p)$ the prime
 side.  Here $\gamma$ is real exactly when $\rho$ is on the line; for
 complex $\gamma$, $h(\gamma)$ is the value of the entire extension of $h$.
-The formula is classical (\tierC, \cite{weil52}; \cite[Thm.~5.12]{iwaniec04});
-that its prime coefficients are Frobenius traces is \tierPnew
+The formula is classical (, \cite{weil52}; \cite[Thm.~5.12]{iwaniec04});
+that its prime coefficients are Frobenius traces is \tierP
 (\LeanStar{prime\_side\_is\_frobenius\_trace}).  $\Lambda(s,\chiv)$ is entire, so
 there are no pole terms.  The normalisation is checked numerically: with the
 $40$ zeros of height $\le80$ (first $\gamma=6.6484533447$) and Gaussian $g$,
@@ -392,13 +392,13 @@ $h(r)=|\hat f(r)|^2\ge0$ on $\R$, and let the \emph{Weil form} be the zero side 
 for every such $f$ --- is equivalent to
 $2P(f*\tilde f)\le A(f*\tilde f)$ for all $f$: the Frobenius-trace side bounded
 by the archimedean one.
-\LeanStar{positivity\_is\_a\_prime\_side\_bound} \tierPnew; positivity $\Leftrightarrow$
-GRH$(\chiv)$ is Weil's criterion \tierC; the bound itself is \tierO.
+\LeanInline{positivity\_is\_a\_prime\_side\_bound} \tierP; positivity $\Leftrightarrow$
+GRH$(\chiv)$ is Weil's criterion; the bound itself is \tierO.
 \end{theorem}
 
 \begin{remark}
 If all ordinates are real the zero side is a sum of $|F(\gamma)|^2$ and is
-non-negative (\LeanStar{zero\_side\_nonneg\_of\_real\_ordinates} \tierPnew): that is
+non-negative (\LeanInline{zero\_side\_nonneg\_of\_real\_ordinates} \tierP): that is
 the easy half.  Given \Ecore, \LeanInline{position\_is\_interval\_meets\_discreteness}, \LeanInline{radius\_one\_is\_E}
 places every zero at $k=0$ of the additive monoid.
 \end{remark}
@@ -406,7 +406,7 @@ places every zero at $k=0$ of the additive monoid.
 \begin{remark}[What the numerics say about the bound]\label{rmk:saturation}
 Split the prime side by the Frobenius: $P=P_{\mathrm{split}}-P_{\mathrm{inert}}$,
 the primes with $\Frob_p=\mathrm{id}$ against those with $\Frob_p=\sigma$
-(\LeanStar{prime\_side\_splits\_by\_frobenius} \tierPnew).  For Gaussian test
+(\LeanInline{prime\_side\_splits\_by\_frobenius} \tierP).  For Gaussian test
 functions of width $w\in[0.2,1]$ the inert primes dominate ($2$ and $3$
 are inert), the archimedean term becomes negative, and $2P$ follows $A$ ever
 more closely: the margin $A-2P$ equals the zero side and falls from $0.63$ to
@@ -454,8 +454,8 @@ form of $L(s,\chiv)$ satisfies
 the second term only when $L>\log2$.  At $L=\log2$, $m=0.0841$.
 \LeanStar{F1v2.first\_window\_integral}, \LeanStar{F1v2.dirichlet\_localisation},
 \LeanStar{F1v2.midpoint\_bound}, \LeanStar{F1v2.potential\_integral\_bound},
-\LeanStar{F1v2.absorption} \tierPnew, given the explicit formula with Gauss's integral
-for the digamma function \tierC{} and the numerical values of the potential \tierN{}
+\LeanInline{F1v2.absorption} \tierP, given the explicit formula with Gauss's integral
+for the digamma function and the numerical values of the potential \tierN{}
 (\texttt{weil\_window\_rigorous\_check.py}); the value $\psi(\tfrac12)=-\gamma_E-2\log2$ it % pending(D7)
 uses is proved (\LeanInline{digamma\_half\_is\_negative} \tierP)
 \end{theorem}
@@ -652,7 +652,7 @@ ending in \cref{conj:closure,cor:closure}.
 \toprule Form of the step & Equivalence & Condition & Tier\\\midrule\endhead
 The real part of each zero is a spectral position of $\OmH$ (the last link of the bridge) & \LeanInline{GDS\_iff\_E}, \LeanInline{landing\_iff\_E} & none & \tierP\\
 The coordinate of each zero is $1$ & \LeanInline{face\_coordinate\_iff\_GRH}, \LeanInline{liMap\_on\_unit\_circle\_iff} & none & \tierP\\
-No two zeros share an ordinate & \LeanStar{E\_iff\_no\_shared\_ordinate\_chi5}, \LeanInline{E\_iff\_no\_shared\_ordinate\_of\_fe\_rc} & none & \tierPnew\\
+No two zeros share an ordinate & \LeanStar{E\_iff\_no\_shared\_ordinate\_chi5}, \LeanInline{E\_iff\_no\_shared\_ordinate\_of\_fe\_rc} & none & \tierP\\
 The symmetric product $\rho(1-\rho)$ of every zero is real & \LeanInline{no\_shared\_ordinate\_iff\_e2\_real} with the previous row & no zero on the real axis & \tierP\\
 Premise A: $\Re\rho\le\mu_3$ for all zeros & \LeanInline{premise\_A\_iff\_GRH\_chi5} & none & \tierP\\
 The coordinate is a power of $\golden$ (membership in the tower) & \LeanInline{the\_zeros\_must\_sit\_at\_level\_zero}, \LeanInline{descending\_to\_F1\_is\_E} & discriminant bound of the zero & \tierP\\
@@ -664,7 +664,7 @@ The primes act by powers on the zero coordinates & \LeanInline{B\_iff\_E\_one\_h
 
 The conditions are three, and each is settled: the discriminant bound is proved for
 every zero with $|\gamma|\ge2$ (\LeanInline{discBound\_discharged\_high} \tierP); the
-height of the first zero is the classical input \LeanInline{NoLowZeros} \tierC; and the
+height of the first zero is the classical input \LeanInline{NoLowZeros}; and the
 unit structure used by the membership form is proved in its corrected version, with
 $r\in\Q(\sqrt5)$ (\LeanStar{F1v2.arrowB\_full}).  The forms are also linked to one
 another without passing through \Ecore: an integer degree gives membership, the
@@ -745,7 +745,7 @@ that the coordinate lies in the image of the exponent monoid $X_{\PCF}$ of
 \cref{thm:lambda-monoid}.
 
 \begin{theorem}[Equivalence with the power action]\label{thm:reduction}
-Assume \LeanInline{NoLowZeros} \tierC.  Then \Ecore\ holds if and only if the
+Assume \LeanInline{NoLowZeros}.  Then \Ecore\ holds if and only if the
 zero coordinates carry the power action of the golden monoid --- for every prime $p$ and every zero $\rho$ there is a zero
 $\rho'$ with $r(\rho')=r(\rho)^p$, as the lift $\Frob_p$ sends $\golden^n$ to $\golden^{pn}$ on the tower
 (\LeanInline{ZeroCoordsCarryPowerAction}); all the analytic
@@ -789,7 +789,7 @@ Let $\rho$ be a zero of $L(s,\chiv)$ in the strip, $r=r(\rho)$ and $r'=r(1-\rho)
     $t(\rho)=r+1/r$, and the line at $\rho$, $\Re\rho=\tfrac12$, is the additive half $r+r'=2$: $r\cdot r'=1$ and $r+r'=2$ give
     $r=1$, and $t=2\iff r=1$.
   \item \emph{The additive half, confined.}  On every zero $t(\rho)\ge2$; with the height of the first zero
-    \tierC, $t(\rho)^2\le4+\tfrac1{12}$, and in fact $t\le2.00013$ (\cref{prop:rbound}); and
+   , $t(\rho)^2\le4+\tfrac1{12}$, and in fact $t\le2.00013$ (\cref{prop:rbound}); and
     $t=\bigl(|\rho-1|^2+|\rho|^2\bigr)/\bigl(|\rho-1|\,|\rho|\bigr)$.  The next trace values of the tower,
     $3=L_2$ at even index and $\sqrt5$ at odd index, lie outside that window
     (\cref{prop:lucas-spectrum}), so the only value of the tower inside it is $2$.
@@ -801,7 +801,7 @@ Let $\rho$ be a zero of $L(s,\chiv)$ in the strip, $r=r(\rho)$ and $r'=r(1-\rho)
 (iii) \LeanInline{trace\_ge\_two}, \LeanInline{the\_trace\_is\_confined\_to\_a\_tiny\_interval},
 \LeanInline{the\_trace\_as\_a\_quotient}, \LeanInline{the\_exclusion\_is\_complete\_over\_both\_parities};
 (iv) \LeanInline{what\_remains\_of\_the\_gap}, \LeanInline{the\_condition\_is\_exactly\_E}, \LeanInline{the\_ladder\_is\_complete} \tierP, with the
-height of the first zero \tierC\ in (iii) and (iv)
+height of the first zero\ in (iii) and (iv)
 \end{proposition}
 
 So the chain is closed on the multiplicative side, and on the additive side it is closed up to one
@@ -820,17 +820,17 @@ rest definite; (W4) Castelnuovo--Severi bounds the point counts on the Frobenius
 \begin{center}\small
 \begin{tabular}{@{}lp{7.4cm}p{3.6cm}@{}}
 \toprule step & here & status\\\midrule
-W1 & $\Frob_p$ on $\Zphi$, Euler factor = characteristic polynomial; the eight classes & \tierP, \tierPnew\\
-W2 & Weil form; translation by $\log p$ is the Frobenius; the orbit matrix is Toeplitz & \tierPnew\\
+W1 & $\Frob_p$ on $\Zphi$, Euler factor = characteristic polynomial; the eight classes & \tierP, \tierP\\
+W2 & Weil form; translation by $\log p$ is the Frobenius; the orbit matrix is Toeplitz & \tierP\\
 W3 & one negative direction (the pole, the ample
 class); primitive part definite on orbits; on the angles
 of $\golden$, roots of unity, a sum of squares; the
 modulus normalised by the tower; positivity on the
 windows $L\le0.7447$, $1$ and $1.3$
-& \tierN; angles and normalisation \tierPnew; windows
-\tierPnew{} with declared inputs, \tierNc\\
-W4 & $|t_k|\le t_0$ on the orbit, class by class, with $t_k$ the Weil form between a test function and its translate by $k\log p$, the $k$-th power of the Frobenius at $p$: the Weil face of \cref{conj:closure}; it is \textup{(W3)} on the planes of the orbit (\cref{prop:W4-from-W3}) & on the planes of the windows \tierPnew; certified for $k\le25$ \tierNc; for every $k$ \tierO\\
-W5 & bounded orbit $\Rightarrow$ no zero off the line & \tierPnew\\
+& \tierN; angles and normalisation \tierP; windows
+\tierP{} with declared inputs, \tierNc\\
+W4 & $|t_k|\le t_0$ on the orbit, class by class, with $t_k$ the Weil form between a test function and its translate by $k\log p$, the $k$-th power of the Frobenius at $p$: the Weil face of \cref{conj:closure}; it is \textup{(W3)} on the planes of the orbit (\cref{prop:W4-from-W3}) & on the planes of the windows \tierP; certified for $k\le25$ \tierNc; for every $k$ \tierO\\
+W5 & bounded orbit $\Rightarrow$ no zero off the line & \tierP\\
 \bottomrule\end{tabular}
 \end{center}
 
@@ -864,7 +864,7 @@ line $T\mapsto(T\log p)_p$.
   \item If $L(s,\chiv)\ne0$ for $\tfrac12<\Re s<1$ (the open statement written as a zero-free region), every zero of the strip lies on the line;
     the left half is given by the functional equation.
 \end{enumerate}
-{\raggedright \LeanStar{F1PaperTorus.torusFactor\_on\_line}, \LeanStar{F1PaperTorus.term\_modulus\_is\_height\_free}, \LeanStar{F1PaperTorus.log\_primes\_independent}, \LeanStar{F1PaperTorus.flucTorus\_on\_line}, \LeanStar{F1PaperTorus.typical\_line\_gives\_the\_line}, and Kronecker's density for two primes, \LeanStar{F1PaperTorus.kronecker\_two\_primes} (from the irrationality of $\log p/\log q$), \tierPnew; Weyl, Bohr--Jessen and Bagchi as named inputs \tierC\par}
+{\raggedright \LeanInline{F1PaperTorus.torusFactor\_on\_line}, \LeanInline{F1PaperTorus.term\_modulus\_is\_height\_free}, \LeanInline{F1PaperTorus.log\_primes\_independent}, \LeanInline{F1PaperTorus.flucTorus\_on\_line}, \LeanInline{F1PaperTorus.typical\_line\_gives\_the\_line}, and Kronecker's density for two primes, \LeanInline{F1PaperTorus.kronecker\_two\_primes} (from the irrationality of $\log p/\log q$), \tierP; Weyl, Bohr--Jessen and Bagchi as named inputs\par}
 \end{proposition}
 
 The law of the fluctuation is geometric.  Along the true line, at random points of the
@@ -885,7 +885,7 @@ The partial sums of $\chiv$ depend only on $N\bmod5$ (they are $0,0,1,0,-1$) and
 by $1$.  Hence, by Abel summation, $|\sum_{n<N}f(n)\chiv(n)|\le f(0)$ for every decreasing
 $f\ge0$ and every $N$, and the Dirichlet series of $L(s,\chiv)$ converges in the whole region
 $\Re s>0$.
-{\raggedright \LeanStar{F1PaperTorus.partialChi\_eq}, \LeanStar{F1PaperTorus.partialChi\_bounded}, \LeanStar{F1PaperTorus.abel\_bound}, \LeanStar{F1PaperTorus.integer\_block\_bounded} \tierPnew; the convergence is Dirichlet's test \tierC\par}
+{\raggedright \LeanInline{F1PaperTorus.partialChi\_eq}, \LeanInline{F1PaperTorus.partialChi\_bounded}, \LeanInline{F1PaperTorus.abel\_bound}, \LeanInline{F1PaperTorus.integer\_block\_bounded} \tierP; the convergence is Dirichlet's test\par}
 \end{proposition}
 
 \begin{proposition}[The multiplicative side, and the inverse of the structure]\label{prop:multiplicative-side}
@@ -899,18 +899,18 @@ $\Re s>0$.
     there, the open statement itself in another form, as in \cref{prop:torus-line}(v) --- every zero of the
     strip lies on the line.
 \end{enumerate}
-{\raggedright \LeanStar{F1PaperTorus.chi5\_mul}, \LeanStar{F1PaperTorus.inverse\_of\_the\_structure}, \LeanStar{F1PaperTorus.three\_four\_one\_signed}, \LeanStar{F1PaperTorus.circle\_positivity}, \LeanStar{F1PaperTorus.inverse\_gives\_the\_line} \tierPnew\par}
+{\raggedright \LeanInline{F1PaperTorus.chi5\_mul}, \LeanInline{F1PaperTorus.inverse\_of\_the\_structure}, \LeanInline{F1PaperTorus.three\_four\_one\_signed}, \LeanInline{F1PaperTorus.circle\_positivity}, \LeanInline{F1PaperTorus.inverse\_gives\_the\_line} \tierP\par}
 \end{proposition}
 
 Neither side is enough alone.  The additive side is not: the Davenport--Heilbronn
 sequence, periodic modulo $5$ with values $1,\kappa_{\mathrm{DH}},-\kappa_{\mathrm{DH}},-1,0$
 ($\kappa_{\mathrm{DH}}=(\sqrt{10-2\sqrt5}-2)/(\sqrt5-1)$), has bounded partial sums and the functional
-equation of conductor $5$, and its series has zeros off the line \tierC; the partial sums of
+equation of conductor $5$, and its series has zeros off the line; the partial sums of
 its inverse grow like $y^{0.788}$, those of $\mu\chiv$ like $y^{0.443}$ (\texttt{dh.py} \tierN).
 The multiplicative side is not: summing the positivity of all circles requires absolute
 convergence --- for $\sigma>1$ it gives $\|L(\chi^0,\sigma)^3L(\chiv,\sigma+it)^4L(\chiv^2,\sigma+2it)\|\ge1$
-(\LeanStar{F1PaperTorus.mertens\_positivity\_mathlib} \tierPnew, through Mathlib), and hence no zero on
-$\Re s\ge1$ (\LeanStar{F1PaperTorus.nonvanishing\_from\_one} \tierPnew) --- and the product stays $\ge1$ only down to
+(\LeanInline{F1PaperTorus.mertens\_positivity\_mathlib} \tierP, through Mathlib), and hence no zero on
+$\Re s\ge1$ (\LeanInline{F1PaperTorus.nonvanishing\_from\_one} \tierP) --- and the product stays $\ge1$ only down to
 $\sigma\approx0.9$ (\texttt{mertens341.py} \tierN).  What would join them is the bound
 $\sum_{n\le y}\mu(n)\chiv(n)=O(y^{1/2+\varepsilon})$ on the inverse of the structure
 (\LeanStar{F1PaperTorus.InverseStructureBound} \tierO; measured $\le1.23\sqrt y$ up to $3\cdot10^7$,
@@ -927,7 +927,7 @@ therefore use the support on prime powers, as the windows of \cref{ssec:weil-rou
 \cref{thm:weil-closure} do; a statement that holds equally for this sequence is a form of the open
 statement, not a step towards it.  The exponent $0.788$ measured for its inverse is close to the real part
 $0.8085$ of its first zero off the line, as the classical relation between the partial sums of $1/L$ and
-the supremum of the real parts of the zeros gives \tierC; this calibrates the value $y^{0.443}$ measured
+the supremum of the real parts of the zeros gives; this calibrates the value $y^{0.443}$ measured
 for $\mu\chiv$.
 
 \subsubsection{W3. Positivity on the fibres of $G$: the Fej\'er form of $\Q(i,\sqrt5)$}\label{ssec:field-positivity}
@@ -938,10 +938,10 @@ carries no character because $\chiv(p^2)=1$, and the higher powers.  The corpus 
 is forced, $-\kappa-c_2-c_3=-0.0802$, from the conductor in the archimedean kernel
 ($-\kappa=\gamma_E+\log8+\pi/2+\log\pi-\log5$, with $\kappa$ the constant of \cref{thm:first-window}), the
 contribution $c_2$ of the block of squares, which carries Mertens' constant, and the contribution $c_3$ of the higher powers
-(\LeanStar{F1PaperTorus.forcedLimit}, \LeanStar{F1PaperTorus.character\_block\_gives\_the\_line} \tierPnew; \texttt{blocks.py} \tierN).  Equivalently, the Fej\'er sum over the
+(\LeanInline{F1PaperTorus.forcedLimit}, \LeanInline{F1PaperTorus.character\_block\_gives\_the\_line} \tierP; \texttt{blocks.py} \tierN).  Equivalently, the Fej\'er sum over the
 zeros $Z(L)=\sum_\rho h_L(\gamma_\rho)$, with $h_L(r)=2L(\sin Lr/Lr)^2\ge0$, computed from primes
 alone as prime side plus archimedean term, must be $\ge0$ and tend to $0$
-(\LeanStar{F1PaperTorus.fejerKernel\_nonneg}, \LeanStar{F1PaperTorus.fejer\_sum\_nonneg} \tierPnew; checked against the $397$ zeros to
+(\LeanInline{F1PaperTorus.fejerKernel\_nonneg}, \LeanInline{F1PaperTorus.fejer\_sum\_nonneg} \tierP; checked against the $397$ zeros to
 $3\cdot10^{-4}$, \texttt{fejer\_check.py} \tierN).
 
 \begin{proposition}[The Klein orbits and the four fibres of $G$]\label{prop:four-fibres}
@@ -955,7 +955,7 @@ $3\cdot10^{-4}$, \texttt{fejer\_check.py} \tierN).
   \item If each of the four Fej\'er sums of $\Q(i,\sqrt5)$ is $\ge0$ and their sum tends to
     $0$, each tends to $0$.
 \end{enumerate}
-{\raggedright \LeanStar{F1PaperTorus.four\_fibre\_indicators}, \LeanStar{F1PaperTorus.squares\_in\_kernel\_fibre}, \LeanStar{F1PaperTorus.each\_decays\_of\_field\_decays} \tierPnew\par}
+{\raggedright \LeanInline{F1PaperTorus.four\_fibre\_indicators}, \LeanInline{F1PaperTorus.squares\_in\_kernel\_fibre}, \LeanInline{F1PaperTorus.each\_decays\_of\_field\_decays} \tierP\par}
 \end{proposition}
 
 The positivity is a balance between the two kinds of Klein orbit.  At $2L=18$ (primes below
@@ -968,7 +968,7 @@ the squares and the primes $2$ and $5$ alone, up to exactly $-\frac18\sum_\psi\p
 measured $-2.7954,0.6963,0.7488,1.3504$, predicted $-2.7815,0.6871,0.7376,1.3568$, remainders
 equal to $-\frac18\sum_\psi\psi(g)Z_\psi$ with $Z_4=0.019$, $Z_5=0.0113$, $Z_{20}=0.0814$
 (\texttt{fibres.py} \tierN).  The four characters are those of $\Q(i,\sqrt5)$, the field of
-conductor $20$ with Galois group $\Z_2\times\Z_2$, whose Artin map is $G$ \tierC.  Its Fej\'er
+conductor $20$ with Galois group $\Z_2\times\Z_2$, whose Artin map is $G$.  Its Fej\'er
 sum, the sum of the four, falls from $0.398$ ($2L=6$) to $0.118$ ($2L=18$), with every part
 positive (\texttt{dedekind.py} \tierN).
 
@@ -1018,7 +1018,7 @@ The analogue of the intersection form is the Weil quadratic form on a space of t
     pole, the ample direction, plus the local part --- is nonnegative, then $M_{\mathrm{loc}}$ is nonnegative
     on the orthogonal complement of $v$.
 \end{enumerate}
-{\raggedright\LeanStar{F1PaperTorus.gram\_form\_nonneg}, \LeanStar{F1PaperTorus.primitive\_positivity} \tierPnew\par}
+{\raggedright\LeanInline{F1PaperTorus.gram\_form\_nonneg}, \LeanInline{F1PaperTorus.primitive\_positivity} \tierP\par}
 \end{proposition}
 
 With eight even test functions (triangles centred at $0,\pm1,\dots,\pm7$, support up to $16$)
@@ -1057,7 +1057,7 @@ as the translation by $\log p$, which on the zero side multiplies by $p^{i\gamma
 \end{enumerate}
 {\raggedright\LeanStar{F1PaperTorus.translation\_factor}, \LeanStar{F1PaperTorus.translation\_is\_rotation\_on\_the\_line},
 \LeanStar{F1PaperTorus.translation\_is\_boost\_off\_the\_line}, \LeanStar{F1PaperTorus.offline\_contribution\_is\_hyperbolic},
-\LeanStar{F1PaperTorus.hyperbolic\_plane\_is\_indefinite}, \LeanStar{F1PaperTorus.golden\_boost} \tierPnew\par}
+\LeanInline{F1PaperTorus.hyperbolic\_plane\_is\_indefinite}, \LeanInline{F1PaperTorus.golden\_boost} \tierP\par}
 \end{proposition}
 
 A quadruple placed at $\gamma=20$ with $\delta=0.1$ contributes the eigenvalues
@@ -1107,7 +1107,7 @@ are roots of unity the Toeplitz form of an orbit is a
 sum of squares and the orbit is bounded by $t_0$, with
 no zeros used
 (\LeanStar{F1PaperClosureClock.clock\_angles\_W3\_W4}
-\tierPnew).  The radial part is not left free either.  On the
+\tierP).  The radial part is not left free either.  On the
 arithmetic side the tower normalises it exactly, as
 $q^{-1/2}$ does in Weil's proof: the Fibonacci matrix
 $M$ has eigenvalues $\golden$ and $-1/\golden$, its
@@ -1116,7 +1116,7 @@ modulus removed the eigenvalues are $\pm1$ and the bound
 holds
 (\LeanStar{W4Isometria.golden\_torus\_fails\_W4},
 \LeanStar{W4Isometria.normalized\_M\_satisfies\_W4}
-\tierPnew); at $2$ the modulus is exactly
+\tierP); at $2$ the modulus is exactly
 $|2|_2=\tfrac12=\golden^{-\lng}$
 (\cref{prop:omega-two-adic}); at $5$ the principal unit
 has exactly the half valuation
@@ -1130,7 +1130,7 @@ $r(\rho)\,r(1-\rho)=1$ is proved
 suffices, since a pair in which neither member expands
 lies on the line
 (\LeanStar{W4Isometria.line\_from\_bounded\_pair}
-\tierPnew).  What stays open in the radial part is the
+\tierP).  What stays open in the radial part is the
 last margin: the size of each prime one by one, and on
 the zero side $t=2$ exactly.
 What the line requires, in this language, is that the boost does not reach the zero side:
@@ -1148,7 +1148,7 @@ class, and with it the Hodge picture of \cref{ssec:product-surface}.  Its places
 weighs $2$ at every power (two places of norm $p$); an inert prime weighs $0$ at odd powers and $2$
 at even ones (one place of norm $p^2$).  Since $2$ and $3$ are inert, $\Q(\sqrt5)$ has no place of norm
 $2$ or $3$; its first places have norms $4,5,9,11,19,29,\dots$
-(\LeanStar{F1PaperTorus.place\_weights}, \LeanStar{F1PaperTorus.no\_places\_of\_norm\_two\_or\_three} \tierPnew).
+(\LeanInline{F1PaperTorus.place\_weights}, \LeanInline{F1PaperTorus.no\_places\_of\_norm\_two\_or\_three} \tierP).
 
 \paragraph{The pole is the ample direction.}  Split into the two kinds of Klein orbit, the
 Weil form of $\chiv$ on a space of test functions is (archimedean $-$ split primes) $+$
@@ -1160,7 +1160,7 @@ rank one, $2vv^{\mathsf T}$ with $v_j=\hat g_j(i/2)$, and each orbit type carrie
 (ratio $0.4994$).  Pole and main term cancel exactly, and the total form is
 $\mathsf K-\mathsf R$, with $\mathsf K$ the archimedean term plus a bounded explicit part (no primes) and $\mathsf R$ the
 remainder $\psi_K(x)-x$ of the primes
-(\LeanStar{F1PaperTorus.pole\_form\_rank\_one}, \LeanStar{F1PaperTorus.total\_is\_structural\_minus\_remainder} \tierPnew; the measurements \tierN).  For
+(\LeanInline{F1PaperTorus.pole\_form\_rank\_one}, \LeanInline{F1PaperTorus.total\_is\_structural\_minus\_remainder} \tierP; the measurements \tierN).  For
 $\zeta_K$ the local part (archimedean minus places) has exactly one negative eigenvalue, in the
 direction of the pole, and the total is nonnegative, with $8$, $12$, $16$, $20$ and $24$ test
 functions: the signature of the Hodge index, with the pole as the ample class
@@ -1176,7 +1176,7 @@ integral for $\psi$ gives the prime-free part $Q_\infty$ of the Weil form of $\z
   Q_\infty(g)=2\,\hat g(i/2)^2+C_0\|g\|^2+D(g),\qquad D(g)=4\int_0^\infty w(u)\bigl(h(0)-h(u)\bigr)\,du,
 \]
 with $w(u)=e^{-u/2}/(1-e^{-2u})$ and $C_0=\log5-2\log\pi-2\gamma_E+4\int_0^\infty\frac{e^{-2u}-e^{-u/2}}{1-e^{-2u}}\,du=-9.13493$,
-where $D\ge0$ because $h(0)-h(u)=\frac12\int(g(x)-g(x+u))^2\,dx$ (\LeanStar{F1PaperTorus.autocorrelation\_le\_energy} \tierPnew).  The
+where $D\ge0$ because $h(0)-h(u)=\frac12\int(g(x)-g(x+u))^2\,dx$ (\LeanInline{F1PaperTorus.autocorrelation\_le\_energy} \tierP).  The
 conductor enters as $\log5$ in $C_0$; the pole is the ample term.  Without the pole the form is
 negative from support length $\approx0.45$; with it, the pole removes the ground mode of $D$, and
 positivity asks that the second eigenvalue of $D$ exceed $|C_0|$, which holds up to support length
@@ -1189,8 +1189,8 @@ $m_K(r)=W_K(r)-2\sum_n c_n\cos(r\log n)$, where $W_K(r)=\log(5/\pi^2)+2\Re\psi(\
 increasing, $c_n=\Lambda(n)\bigl(1+\chiv(n)\bigr)n^{-1/2}$ are the weights of the places, and the prime part is bounded by $2\sum_nc_n$.  A function orthogonal to the
 polynomials of degree $<N$ has at most the fraction
 $(2/\pi)(RL)^{2N+1}/((2N+1)^2(N!)^2)$ of its energy below frequency $R$ ($L=S/2$); by min--max this
-gives a proved lower bound $\varrho\le\lambda_{N+1}$ (\LeanStar{F1PaperTorus.lowFrequencyFraction\_nonneg} \tierPnew; the analytic
-estimate \tierC; $\varrho$ enclosed in interval arithmetic).  Lehmann's method on the full space of
+gives a proved lower bound $\varrho\le\lambda_{N+1}$ (\LeanInline{F1PaperTorus.lowFrequencyFraction\_nonneg} \tierP; the analytic
+estimate; $\varrho$ enclosed in interval arithmetic).  Lehmann's method on the full space of
 polynomials of degree $<N$, with that $\varrho$ (\LeanStar{F1PaperTorus.LehmannBounds} \tierC), then gives
 lower bounds for the smallest eigenvalue with no assumption on any eigenvalue:
 
@@ -1242,7 +1242,7 @@ can be stated exactly, and every piece of it is already in the corpus.
     $\Gamma(3/2)/\sqrt\pi$ (the face of $\pi$), $\golden^{-\lambda_{\log}}$ (the face of $\golden$), the
     fixed set of $s\mapsto1-\bar s$ and the positive eigenvalue of $\hat\Omega$.
 \end{enumerate}
-{\raggedright \LeanStar{F1PaperClosure.heights\_from\_structure}, \LeanStar{F1PaperClosure.the\_height\_is\_the\_structure\_up\_to\_the\_correction}, \LeanInline{envelope\_splits}, \LeanInline{hpps\_parameters\_are\_the\_cocone}, \LeanStar{F1PaperClosure.operator\_error\_is\_correction\_plus\_parametrisation}, \LeanStar{F1PaperClosure.the\_half\_is\_given} \tierPnew, on declarations of the corpus \tierP\par}
+{\raggedright \LeanInline{F1PaperClosure.heights\_from\_structure}, \LeanInline{F1PaperClosure.the\_height\_is\_the\_structure\_up\_to\_the\_correction}, \LeanInline{envelope\_splits}, \LeanInline{hpps\_parameters\_are\_the\_cocone}, \LeanInline{F1PaperClosure.operator\_error\_is\_correction\_plus\_parametrisation}, \LeanInline{F1PaperClosure.the\_half\_is\_given} \tierP, on declarations of the corpus \tierP\par}
 \end{proposition}
 
 The positions are given, and closely.  For $\zeta$, with the parameters of the operator of
@@ -1268,7 +1268,7 @@ zeros is a fraction of a spacing.
   \item \emph{What remains, in the corpus's own words.}  The apex is the centre of the zero, not
     the membership of the zero itself; everything descends but the verdict; and what remains is the additive half of \Ecore.
 \end{enumerate}
-{\raggedright \LeanStar{F1PaperClosure.the\_primes\_belong}, \LeanStar{F1PaperClosure.the\_zeros\_belong}, \LeanStar{F1PaperClosure.what\_is\_discharged}, \LeanStar{F1PaperClosure.what\_remains\_is\_the\_verdict} \tierPnew, on declarations of the corpus \tierP\par}
+{\raggedright \LeanInline{F1PaperClosure.the\_primes\_belong}, \LeanInline{F1PaperClosure.the\_zeros\_belong}, \LeanInline{F1PaperClosure.what\_is\_discharged}, \LeanInline{F1PaperClosure.what\_remains\_is\_the\_verdict} \tierP, on declarations of the corpus \tierP\par}
 \end{proposition}
 
 What remains is therefore precision, of two kinds: of the real part, the radius $0$ that the additive half of \Ecore\ would give --- the open statement of \cref{ssec:core-forms}, and the only one the line
@@ -1299,7 +1299,7 @@ $\mathcal E(X)=\sum_{p\leq X}a_p^2\log^2p$.
     $|\Sigma(X)|\leq C'_\varepsilon X^{1/2+\varepsilon}\sqrt{\log X}$: the scale $\tfrac12$ is the
     square root of the energy.
   \item On the side of the zeros, a zero $\rho=\beta+i\gamma$ contributes $X^\rho/\rho$ to the
-    explicit formula \tierC, with $X^\rho=X^\beta e^{i\gamma\log X}$: a rotation of modulus $X^\beta$.  For a prime $p$, its
+    explicit formula, with $X^\rho=X^\beta e^{i\gamma\log X}$: a rotation of modulus $X^\beta$.  For a prime $p$, its
     value $\lambda(\rho)=p^{\rho-1/2}$ lies on the unit circle if and only if $\beta=\tfrac12$.  So
     the scale of \textup{(iii)}, read from the primes, and the modulus of the terms of the zeros
     agree exactly on the line.
@@ -1308,9 +1308,9 @@ $\mathcal E(X)=\sum_{p\leq X}a_p^2\log^2p$.
 \LeanStar{W4Isometria.split\_layer\_indicator} (i);
 \LeanStar{W4Isometria.symEnergy\_le} (ii, the bound);
 \LeanStar{W4Isometria.sqrt\_law\_of\_pythagoras} (iii);
-\LeanStar{W4Isometria.specLam\_on\_circle\_iff} (iv) \tierPnew; the hypothesis of (iii),
+\LeanInline{W4Isometria.specLam\_on\_circle\_iff} (iv) \tierP; the hypothesis of (iii),
 \LeanStar{W4Isometria.PythagorasLaw}, \tierO; the limit in (ii) by Schur orthogonality in the
-Galois group and Chebotarev \tierC, measured $0.993$, $0.998$ and $1.000$ up to $10^6$, and
+Galois group and Chebotarev, measured $0.993$, $0.998$ and $1.000$ up to $10^6$, and
 $\Sigma(X)^2<\mathcal E(X)$ at every scale measured (\texttt{v12\_pitagoras\_raiz\_X.py}) \tierN.  From the primes up to $10^6$, the % pending(D7)
 exponent $\nu$ that best fits $\Sigma(X)\approx X^\nu R(X)$, with $R$ written with the computed
 zeros of the forms of levels $80$ and $135$, is $0.500$ and $0.5065$, within $\pm0.01$; the first
@@ -1366,14 +1366,14 @@ Let $Z(u)=\sum_jc_je^{i\gamma_ju}$, $u=\log X$, with finitely many distinct real
 \LeanStar{W4Isometria.CramerConteo.cramer\_K\_bounded} (ii);
 \LeanStar{W4Isometria.FormulaExplicita.energy\_bounded\_of\_explicit\_formula} (iii);
 \LeanStar{W4Isometria.LandauPlancherel.offline\_energy\_unbounded},
-\LeanStar{W4Isometria.off\_line\_excess\_pos} (iv) \tierPnew.  With $c_j=1/\rho_j$ and
+\LeanInline{W4Isometria.off\_line\_excess\_pos} (iv) \tierP.  With $c_j=1/\rho_j$ and
 $V=2\Re\,(\Lambda'/\Lambda)(1,\chiv)$, the logarithmic derivative of the completed $L$-function at $1$, (iii) bounds the energy of the normalised error of the explicit
 formula given the line, the counting law of Riemann--von Mangoldt and the truncated explicit
-formula; the last two are classical \tierC\ and not formalised here, and the line is the
+formula; the last two are classical\ and not formalised here, and the line is the
 open hypothesis.  For $\zeta$, the mean of $|(\psi(x)-x)/\sqrt x|^2$ in $\log x$ is bounded at every scale
 if and only if $\zeta$ has no zeros with $\Re s>\tfrac12$: under the line by Cram\'er's
 mean-square theorem \cite[\S13.1]{montgomeryvaughan07}, and conversely by Mellin--Plancherel;
-likewise for the $L$-functions here \tierC.  With $2000$
+likewise for the $L$-functions here.  With $2000$
 zeros of $\zeta$, $\sum|c_j|^2=0.04531$ against the value $2+\gamma_{\mathrm E}-\log4\pi=0.04619$ of
 $2\Re\,\xi'/\xi(1)$ for $\zeta$, with $\xi(s)=\tfrac12s(s-1)\pi^{-s/2}\Gamma(\tfrac s2)\zeta(s)$ the completed zeta function and $\gamma_{\mathrm E}$ Euler's constant, and $\mathcal K=0.158$ ($\approx0.19$ extrapolated); for the form of level $80$ with the primes up to $10^9$, the mean energy of the
 error is $0.626$ and the part beyond its $66$ computed zeros $0.066$, which does not grow from
@@ -1420,7 +1420,6 @@ for finitely many frequencies is \cref{prop:energy-scale}.  The law
     entering through its character, its modulus and its angle on the circle
     (\cref{prop:what-fluctuation-takes} below).
 \end{enumerate}
-\tierO
 \end{conjecture}
 {\raggedright\LeanStar{F1PaperClosure.ExactClosure} \tierO, with the residual of each class defined
 from $\Lambda$ (\LeanStar{F1PaperClosure.trueResidual});
@@ -1438,18 +1437,18 @@ second step in the form of the clock,
 bounds the energy of every real combination of the
 layers
 (\LeanStar{F1PaperClosureClock.family\_energy\_of\_clock\_layers}
-\tierPnew; that the families and their twists are such
+\tierP; that the families and their twists are such
 combinations is \tierN\ beyond level $80$); each form implies the one before,
 \LeanStar{F1PaperClosureClock.assembledLim\_of\_throughClock},
 \LeanStar{F1PaperClosure.exactClosure\_of\_assembledLim}
-\tierPnew; the earlier form with an unconditional sum,
+\tierP; the earlier form with an unconditional sum,
 \LeanStar{F1PaperClosure.ExactClosureAssembled}, is
 vacuous in (iii)\par}
 
 
 \begin{remark}[The status of each clause]\label{rmk:closure-status}
 For the true residuals, clause~(ii) is equivalent to GRH for the characters modulo $20$
-(the classical equivalence, \LeanStar{F1PaperClosure.ClassicalHalfScale} \tierC), and given it the
+(the classical equivalence, \LeanStar{F1PaperClosure.ClassicalHalfScale}), and given it the
 explicit formula writes the correction from the primes by classes.  What the conjecture asserts
 beyond that classical content is the source: that the residuals of~(i) and the correction of~(iii)
 are produced by the structure, at the resolution~(iii) names, without enumerating primes.  The Lean
@@ -1468,7 +1467,7 @@ $T=0$, so the sum is $0$ for every $T$ and its
 clause~(iii) reduces to $\Im\rho_n=E^{-1}(n)$.  The form with the
 limit implies the first statement of the closure
 (\LeanStar{F1PaperClosure.exactClosure\_of\_assembledLim}
-\tierPnew).  Neither formalises the derivation from
+\tierP).  Neither formalises the derivation from
 the structure, nor the windows of
 clause~(iii), so both are weaker than the conjecture
 as stated.
@@ -1489,7 +1488,7 @@ error of the class is at scale $\tfrac12$, in count and
 in proportion
 (\LeanStar{W4Isometria.class\_error\_of\_unified},
 \LeanStar{W4Isometria.proportion\_error\_bound}
-\tierPnew).  The decomposition and the remainder are
+\tierP).  The decomposition and the remainder are
 hypotheses, not constructed.  In the form of the clock
 the open statement is one: uniformly over a finite set of
 layers $i$, the deviation of the index from the model of the uniform
@@ -1560,12 +1559,12 @@ Euler's constant.
     $\theta(x;20,a)=\sum_{p\leq x,\,p\equiv a}\log p$ in place of $\psi$ the variance is the same and the mean is $-n_2(a)/8$, with $n_2(a)$ the number of square
     roots of $a$ modulo $20$.
 \end{enumerate}
-{\raggedright (i) \tierC; (ii) termwise
+{\raggedright (i); (ii) termwise
 \LeanStar{W4Isometria.pair\_defect}, and for finite families
 \LeanStar{W4Isometria.amplitude\_defect}, \LeanStar{W4Isometria.amplitude\_eq\_iff\_line}
-\tierPnew, the sum by Hadamard's product \tierC; (iii) \cite{rubinsteinsarnak94} \tierC.  On a
+\tierP, the sum by Hadamard's product; (iii) \cite{rubinsteinsarnak94}.  On a
 finite range the cross terms between characters make single classes deviate; in the mean over the
-eight classes they cancel exactly (\LeanStar{W4Isometria.class\_parseval} \tierPnew, on the
+eight classes they cancel exactly (\LeanInline{W4Isometria.class\_parseval} \tierP, on the
 centred values).  Over the primes up to $10^8$, with $\theta$, the logarithmic means are $-0.497$
 and $-0.500$ in the classes $1$ and $9$ and below $0.04$ in absolute value in the others, and the
 mean of the eight variances is $0.0379$ on $[10^4,10^8]$, within $3.5\%$ of $0.0376$ on five other
@@ -1585,7 +1584,7 @@ $h(x)=e^{-|x|/2}$: its transform
 $\hat h(\gamma)=1/(\tfrac14+\gamma^2)$ is
 $1/(\rho(1-\rho))$ at $\gamma=(\rho-\tfrac12)/i$, and
 $\sum_\rho1/(\rho(1-\rho))=V_\chi$ by Hadamard's product
-\tierC.  With $h=g*\tilde g$ and $g(x)=e^{-x/2}$ on
+.  With $h=g*\tilde g$ and $g(x)=e^{-x/2}$ on
 $x>0$, the Gram value of
 \cref{prop:intersection-form}(i) is
 $\sum_\rho|\hat g(\gamma_\rho)|^2=\sum_\rho1/|\rho|^2$.
@@ -1596,7 +1595,7 @@ fixed by the conductors and the Hurwitz values.  The
 function $h$ sits at the edge of Weil's class: its
 prime side is $L'/L(1,\chi^*)$, a conditionally
 convergent sum over the primes, which (i) computes
-without them \tierC~\cite{berndt72,dilcher92}.  Clause~(iii) asks for more, every
+without them~\cite{berndt72,dilcher92}.  Clause~(iii) asks for more, every
 height and not their sum $\sum_\rho1/|\rho|^2$.
 
 \begin{corollary}[The closure, conditional on the conjecture]\label{cor:closure}
@@ -1609,9 +1608,9 @@ that last link of the bridge through (ii).
 distinct for distinct zeros would also give the line (\cref{thm:shared-ordinate}), but distinctness
 is not a consequence of exactness: no two zeros sharing an ordinate is itself one of the forms of the
 open statement (\cref{thm:topological-proof}~(iv)).  It is stated for any $L$ of character modulo $20$ and for $\zeta$, whose operator is
-that of \cite{gonzalez25hp}.  \tierPnew
+that of \cite{gonzalez25hp}.  \tierP
 \end{corollary}
-{\raggedright \LeanStar{F1PaperClosure.the\_line\_from\_exact\_closure}, \LeanStar{F1PaperClosure.heights\_exact\_from\_exact\_closure}, \LeanStar{F1PaperClosure.landing\_from\_exact\_closure}, \LeanStar{F1PaperClosure.the\_line\_for\_chi5}, \LeanStar{F1PaperClosure.the\_line\_from\_injective\_heights\_chi5}, \LeanStar{F1PaperClosure.the\_line\_from\_injective\_heights}, \LeanStar{F1PaperClosure.the\_line\_from\_exact\_closure\_by\_heights} \tierPnew; the equivalence of the first way,
+{\raggedright \LeanInline{F1PaperClosure.the\_line\_from\_exact\_closure}, \LeanInline{F1PaperClosure.heights\_exact\_from\_exact\_closure}, \LeanInline{F1PaperClosure.landing\_from\_exact\_closure}, \LeanInline{F1PaperClosure.the\_line\_for\_chi5}, \LeanInline{F1PaperClosure.the\_line\_from\_injective\_heights\_chi5}, \LeanInline{F1PaperClosure.the\_line\_from\_injective\_heights}, \LeanInline{F1PaperClosure.the\_line\_from\_exact\_closure\_by\_heights} \tierP; the equivalence of the first way,
 \LeanStar{F1PaperClosure.ClassicalHalfScale} \tierC\par}
 
 \begin{proposition}[The height fixes the phase, the isometry the modulus]\label{prop:phase-modulus}
@@ -1625,7 +1624,7 @@ line gives the modulus.
   \item An eigenvalue of an isometry has modulus $1$; so if the mode of each zero is an eigenvector
     of an isometry, its modulus $p^{-(\beta-1/2)}$ is $1$ and every zero lies on the line.
 \end{enumerate}
-{\raggedright \LeanStar{F1PaperClosure.no\_shared\_ordinate\_of\_injective\_heights}, \LeanStar{F1PaperClosure.the\_line\_from\_injective\_heights}, \LeanStar{F1PaperClosure.eigenvalue\_of\_isometry\_norm\_one}, \LeanStar{F1PaperClosure.the\_line\_from\_isometric\_modes} \tierPnew\par}
+{\raggedright \LeanInline{F1PaperClosure.no\_shared\_ordinate\_of\_injective\_heights}, \LeanInline{F1PaperClosure.the\_line\_from\_injective\_heights}, \LeanInline{F1PaperClosure.eigenvalue\_of\_isometry\_norm\_one}, \LeanInline{F1PaperClosure.the\_line\_from\_isometric\_modes} \tierP\par}
 \end{proposition}
 
 The two parts are one statement in two languages.  A zero off the line and its partner
@@ -1671,7 +1670,7 @@ What the law has to predict, and nothing else, is fixed by the local factors.
     \cref{prop:phi-layers}.
 
 \end{enumerate}
-{\raggedright \LeanStar{F1PaperPadic.local\_phase\_contribution}, \LeanStar{F1FrobeniusEigen.euler\_factor\_is\_char\_poly}, \LeanStar{F1PaperPadic.angular\_order\_not\_a\_function\_of\_the\_class}, \LeanStar{F1PaperPadic.position\_from\_angular\_order} \tierPnew; (i) term by term for $|u|<1$, the sum over $p$ on the line by the explicit formula (\cref{thm:explicit}) \tierC\par}
+{\raggedright \LeanInline{F1PaperPadic.local\_phase\_contribution}, \LeanInline{F1FrobeniusEigen.euler\_factor\_is\_char\_poly}, \LeanInline{F1PaperPadic.angular\_order\_not\_a\_function\_of\_the\_class}, \LeanInline{F1PaperPadic.position\_from\_angular\_order} \tierP; (i) term by term for $|u|<1$, the sum over $p$ on the line by the explicit formula (\cref{thm:explicit})\par}
 \end{proposition}
 
 So the fluctuation takes from each prime its character $\chi(p^k)$, its modulus $p^{-k/2}$ and its
@@ -1706,7 +1705,7 @@ multiplicative, and let $U_N=W_N(M^2)$ and $e$ the order of $M^2$ modulo $N$.
 (ii)--(iii).  $M^2$ lies in a maximal torus $T$ of $\mathrm{SL}_2(\mathbb F_p)$, cyclic of order $q=p-\chiv(p)$:
 split if $p$ splits, non-split if $p$ is inert.  Restricted to $T$, the Weil representation contains every
 character of $T$ once, except the quadratic character $\eta$ of $T$, which occurs twice if $T$ is split and not at all
-if it is non-split \cite{gurevichhadani} \tierC.  Restricting further to $\langle M^2\rangle$, of index $m=q/e$, each
+if it is non-split \cite{gurevichhadani}.  Restricting further to $\langle M^2\rangle$, of index $m=q/e$, each
 of the $e$ characters of $\langle M^2\rangle$ receives $m$ characters of $T$, and $\eta$ restricts to the
 character $M^2\mapsto\eta(\golden^2)=\golden^{q}$, which is $\golden^{p-1}=1$ if $p$ splits and
 $\golden^{p+1}=N(\golden)=-1$ if $p$ is inert.  \tierP\
@@ -1717,23 +1716,23 @@ $\operatorname{tr}U^n=1$ for odd $n$ and $\operatorname{tr}U^{2m}=5^v\sqrt5\,\ch
 $5^k\nmid m$ (and $5^k$ at $m=0$), the odd terms give $\pm\frac12$ at $j=0,5^k$ and $0$ elsewhere; in the even
 terms the part with $v_5(m)=v$ is a Gauss sum of $\chiv$ at level $5^{k-v}$, nonzero only when $v=k-1-v_5(j)$,
 where it equals $5^k\chiv(j')$, since $\chiv$ is even and its Gauss sum is $\sqrt5$.  So the multiplicity is
-$\frac12(1+\chiv(j'))$ for $5^k\nmid j$, $1$ at $j=0$ and $0$ at $j=5^k$.  \tierT\ given the traces.
+$\frac12(1+\chiv(j'))$ for $5^k\nmid j$, $1$ at $j=0$ and $0$ at $j=5^k$.  Given the traces.
 \par
 {\raggedright \emph{The traces at $5^k$.}  If the entry $a$ of $g=\bigl(\begin{smallmatrix}a&b\\c&d\end{smallmatrix}\bigr)$ is a unit,
 the Bruhat decomposition of $g$ gives
 $\operatorname{tr}W(g)=\bigl(\tfrac a5\bigr)^k5^{-k}\sum_{x,\xi}e\bigl(q(x,\xi)/5^k\bigr)$ with
-$q=\tfrac{b}{2a}x^2+(1-a^{-1})x\xi-\tfrac{c}{2a}\xi^2$ \tierC, whose discriminant is $4AC-X^2=-(t-2)/a$, $t=\operatorname{tr}g$.
+$q=\tfrac{b}{2a}x^2+(1-a^{-1})x\xi-\tfrac{c}{2a}\xi^2$, whose discriminant is $4AC-X^2=-(t-2)/a$, $t=\operatorname{tr}g$.
 For $g=M^{2n}$, $t-2=L_n^2$ if $n$ is odd and $5F_n^2$ if $n$ is even.  If $n$ is odd the form is nondegenerate, the sum is
 $\bigl(\tfrac a5\bigr)^k5^k$ and the trace is $1$.  If $n=2m$, $m=5^vm'$, then $g\equiv1\pmod{5^v}$, the three coefficients are
 divisible by $5^v$, the sum is $5^{2v}$ times the sum of $q/5^v$ at level $5^{k-v}$, and completing the square there gives
 $G(A_1)\,G(5w')$ with $\bigl(\tfrac{A_1w'}5\bigr)=1$; hence $\operatorname{tr}=5^v\sqrt5\,\bigl(\tfrac{A_1}5\bigr)$, and
 $\bigl(\tfrac{A_1}5\bigr)=\bigl(\tfrac{2F_{4m}/5^v}5\bigr)=\chiv(m')$ because $F_{5n}/5F_n\equiv1$ and $F_{4m'}\equiv3m'\pmod5$.
-The Fibonacci steps, $t-2=L_n^2$ or $5F_n^2$, $F_{5n}/5F_n\equiv1$ and $F_{4m'}\equiv3m'$, are \LeanInline{PasosDelTexto.trace\_sub\_two\_odd}, \LeanInline{PasosDelTexto.trace\_sub\_two\_even}, \LeanInline{PasosDelTexto.fib\_five\_mul}, \LeanInline{PasosDelTexto.fib\_four\_mul\_mod\_five} \tierP; the completion of the square \tierT\ given the decomposition, which is checked on $115$ elements, units and congruent to $1$ modulo $5$ and $25$; every
+The Fibonacci steps, $t-2=L_n^2$ or $5F_n^2$, $F_{5n}/5F_n\equiv1$ and $F_{4m'}\equiv3m'$, are \LeanInline{PasosDelTexto.trace\_sub\_two\_odd}, \LeanInline{PasosDelTexto.trace\_sub\_two\_even}, \LeanInline{PasosDelTexto.fib\_five\_mul}, \LeanInline{PasosDelTexto.fib\_four\_mul\_mod\_five} \tierP; the completion of the square\ given the decomposition, which is checked on $115$ elements, units and congruent to $1$ modulo $5$ and $25$; every
 step of the chain for $k\le7$, and the traces themselves exactly for $k\le9$.  Their modulus is
 $|\ker(M^{2n}-1)|^{1/2}$, as \cite{thomas08} predicts.  The restriction count for the $301$ primes $7\le p<2000$;
 the Fourier step for $k\le7$; the whole statement against the diagonalisation
 (\texttt{retro81.py}--\texttt{retro87.py} \tierN).  The systematic degeneracies of the quantised map are those of % pending(D7)
-\cite{kurlbergrudnick00} \tierC.\par}
+\cite{kurlbergrudnick00}.\par}
 \end{proof}
 
 This is clause~(iv) of \cref{prop:what-fluctuation-takes} read as a spectrum: $e_p\,i_p=p-1$ or $2(p+1)$ becomes
@@ -1767,7 +1766,7 @@ By \cref{prop:what-fluctuation-takes}(i)--(ii), each prime enters with an exact 
 (\cref{prop:multiplicative-side}(ii)), and with its archimedean angle $t\log p$ on the torus of
 \cref{prop:torus-line}.  Nothing statistical enters prime by prime.  The open step is in the assembly
 of the primes along $T\mapsto(T\log p)_p$, which is what clause~(iii) of \cref{conj:closure} asks for.
-The two angles are those of the propositions cited; that the open step lies in their assembly is a reading \tier{R}.
+The two angles are those of the propositions cited; that the open step lies in their assembly is a reading.
 \end{remark}
 
 \begin{proposition}[Euler's product, the tower and the positions]\label{prop:euler-tower}
@@ -1783,7 +1782,7 @@ The two angles are those of the propositions cited; that the open step lies in t
     $\chiv$, depend on $p$ only modulo $60$; for the Mersenne primes they are $(-1,+1,\pm1)$
     (\cref{prop:mersenne-exponent}).
 \end{enumerate}
-{\raggedright \LeanInline{euler\_product\_identity},  \LeanStar{F1PaperPadic.euler\_log\_local\_factor}, \LeanStar{F1PaperPadic.euler\_product\_at\_two}, \LeanStar{F1PaperPadic.sum\_of\_prime\_reciprocals\_diverges}, \LeanStar{F1PaperPadic.frequency\_is\_tower\_coordinate}, \LeanStar{F1PaperPadic.tower\_coord\_two}, \LeanStar{F1PaperPadic.tower\_coord\_two\_pow}, \LeanStar{F1PaperPadic.tower\_coord\_mersenne}, \LeanStar{F1PaperPadic.tower\_coordinate\_is\_padic\_valuation},  \LeanStar{F1PaperPadic.three\_lattices\_level\_sixty} \tierPnew,
+{\raggedright \LeanInline{euler\_product\_identity},  \LeanInline{F1PaperPadic.euler\_log\_local\_factor}, \LeanInline{F1PaperPadic.euler\_product\_at\_two}, \LeanInline{F1PaperPadic.sum\_of\_prime\_reciprocals\_diverges}, \LeanInline{F1PaperPadic.frequency\_is\_tower\_coordinate}, \LeanInline{F1PaperPadic.tower\_coord\_two}, \LeanInline{F1PaperPadic.tower\_coord\_two\_pow}, \LeanInline{F1PaperPadic.tower\_coord\_mersenne}, \LeanInline{F1PaperPadic.tower\_coordinate\_is\_padic\_valuation},  \LeanInline{F1PaperPadic.three\_lattices\_level\_sixty} \tierP,
 (i), (ii) from Mathlib\par}
 \end{proposition}
 
@@ -1831,7 +1830,7 @@ the line, given the classical expansion of the orbit
 with non-negative weights
 (\LeanStar{W4Isometria.orbits\_match\_of\_line},
 \LeanStar{W4Isometria.W4\_of\_orbits\_match}
-\tierPnew, the expansion \tierC), and through
+\tierP, the expansion \tierC), and through
 \cref{cor:closure} from the conjecture; it is not a
 separate statement.
   The lattice of W1 is that of the eight classes, and the orbit is formalised to the
@@ -1849,12 +1848,12 @@ end.
     $(p^{|\beta-1/2|})^k$; a bounded sum of such terms with positive weights forces every factor
     to be $1$, and averages of unimodular cross terms tend to $0$ like $1/K$.
 \end{enumerate}
-{\raggedright \LeanStar{F1PaperTorus.eight\_classes\_orthogonality}, \LeanStar{F1PaperTorus.frobenius\_on\_classes\_has\_order\_dividing\_four}, \LeanStar{F1PaperTorus.frobenius\_orbit\_is\_periodic}, \LeanStar{F1PaperTorus.toeplitz\_bound}, \LeanStar{F1PaperTorus.offline\_orbit\_unbounded}, \LeanStar{F1PaperTorus.bounded\_both\_ways\_forces\_one}, \LeanStar{F1PaperTorus.weil\_route\_assembly}, \LeanStar{F1PaperTorus.cesaro\_cross\_term} \tierPnew\par}
+{\raggedright \LeanInline{F1PaperTorus.eight\_classes\_orthogonality}, \LeanInline{F1PaperTorus.frobenius\_on\_classes\_has\_order\_dividing\_four}, \LeanInline{F1PaperTorus.frobenius\_orbit\_is\_periodic}, \LeanInline{F1PaperTorus.toeplitz\_bound}, \LeanInline{F1PaperTorus.offline\_orbit\_unbounded}, \LeanInline{F1PaperTorus.bounded\_both\_ways\_forces\_one}, \LeanInline{F1PaperTorus.weil\_route\_assembly}, \LeanInline{F1PaperTorus.cesaro\_cross\_term} \tierP\par}
 \end{proposition}
 
 The orbit decomposes into the eight character blocks, and each block is exactly a Toeplitz
 sequence: the Weil form of two translates depends only on the difference of the translations
-(\LeanStar{F1PaperTorus.crossCorrPair\_eq}, \LeanStar{F1PaperTorus.orbit\_is\_toeplitz} \tierPnew).  The evidence for
+(\LeanInline{F1PaperTorus.crossCorrPair\_eq}, \LeanInline{F1PaperTorus.orbit\_is\_toeplitz} \tierP).  The evidence for
 (W4) has four layers.
 
 \emph{The explicit formula on the orbit, checked.}  For $\chiv$, width $a=0.3$ and $p=3$, the
@@ -1913,8 +1912,8 @@ $t_k(a)=t(k\log p)$ for $g=g_a$.
 \end{enumerate}
 {\raggedright\LeanInline{W4DeW3.plane\_values}, \LeanInline{W4DeW3.W4\_of\_W3\_on\_plane}, \LeanInline{W4DeW3.W3\_on\_plane\_of\_W4},
 \LeanInline{ParidadesJuntas.other\_parity\_value}, \LeanInline{MedioPeriodo.line\_factor}, \LeanInline{MedioPeriodo.orbit\_factor},
-\LeanInline{MedioPeriodo.half\_period\_closes} \tierP; (iii) with the tiers of the window theorems, \tierPnew\ with declared inputs and \tierNc;
-(iv) with the explicit formula on the orbit, as in \cref{thm:weil-closure} \tierC\par}
+\LeanInline{MedioPeriodo.half\_period\_closes} \tierP; (iii) with the tiers of the window theorems, \tierP\ with declared inputs and \tierNc;
+(iv) with the explicit formula on the orbit, as in \cref{thm:weil-closure}\par}
 \end{proposition}
 \begin{proof}
 (i) $W(\tau_ug\mp g)=W(\tau_ug)+W(g)\mp2W(g,\tau_ug)=2t(0)\mp2t(u)$, by translation invariance; the two values are
@@ -1940,13 +1939,13 @@ form of $L(s,\chiv)$, both written explicitly.  Assume \textup{(W4)} for the blo
 every $a>0$ and every $k$, $|t_k(a)|\le t_0(a)$.  Assume the explicit formula on the orbit with the separation of phases:
 a zero with $\Re\rho\neq\tfrac12$ and a test function not vanishing at its ordinate give
 $c\,(p^{|\Re\rho-1/2|})^k\le|t_k|+C$ for infinitely many $k$.  Then every zero of $L(s,\chiv)$ in
-the strip has real part $\tfrac12$.  \tierPnew
+the strip has real part $\tfrac12$.  \tierP
 \end{theorem}
-{\raggedright\LeanStar{F1PaperTorus.the\_line\_from\_W4\_explicit}, with the orbit defined in \LeanStar{F1PaperTorus.chi5WeilOrbit} \tierPnew;
+{\raggedright\LeanInline{F1PaperTorus.the\_line\_from\_W4\_explicit}, with the orbit defined in \LeanInline{F1PaperTorus.chi5WeilOrbit} \tierP;
 (W4), \LeanStar{F1PaperTorus.W4Chi5} \tierO; the explicit formula on the orbit,
-\LeanStar{F1PaperTorus.OrbitDetectsOffLine} \tierC, whose combinatorial core --- a dominant term growing like
+\LeanStar{F1PaperTorus.OrbitDetectsOffLine}, whose combinatorial core --- a dominant term growing like
 $R^k$ in infinitely many $k$ plus a tail that does not reach it makes the orbit unbounded --- is
-\LeanStar{F1PaperTorus.dominant\_plus\_tail\_unbounded} \tierPnew\par}
+\LeanInline{F1PaperTorus.dominant\_plus\_tail\_unbounded} \tierP\par}
 
 \begin{proof}
 Let $\rho$ be a zero in the strip with $\Re\rho\neq\tfrac12$, and choose the width $a$ so that $\hat g_a$ does not vanish

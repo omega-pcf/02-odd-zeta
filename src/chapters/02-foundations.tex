@@ -752,7 +752,7 @@ analogous relation holds for the Fibonacci numbers $F_{12(5m+j)}$.  It is the di
 link between $\golden$, the pentagon and the primes that this paper needs.  What
 of it is proved here: the Galois homomorphism of the classification
 (\LeanInline{G\_hom} \tierP); the pentagonal values themselves,
-$|2\cos(\pi a/5)|=\golden^{\chiv(a)}$ (\LeanStar{F1CW.norm\_cosine\_phi} \tierPnew); and the
+$|2\cos(\pi a/5)|=\golden^{\chiv(a)}$ (\LeanInline{F1CW.norm\_cosine\_phi} \tierP); and the
 fact that $\chiv$ selects the Fibonacci number $F_p\bmod p$ for every prime
 (\LeanInline{additive\_spectrum\_governed\_by\_chi5} \tierP).  The closed formula for
 the classification is cited, not formalised (\cref{sec:grisales}).
@@ -847,7 +847,7 @@ $\mu_6=\Z[\zeta_3]^{\times}$: it is torsion, so no level reads it ($\operatornam
 $\tfrac12\operatorname{diag}(1,\zeta_3,\zeta_3^2)$ is normal and not self-adjoint (\cref{prop:level-operators}),
 and the third direction enters through the geometry of $E^3$ (\cref{thm:one-two-three}).
 
-The descent takes neither the distribution of the primes, nor the Euler product, nor the zeros as input, and the information is kept by an isometry: each eigenvalue $\tfrac12\zeta_3^{\,k}$ has modulus $\tfrac12$, so the triad has squared norm $\tfrac34$, and normalised it is a column $\mathcal V\colon\mathbb{C}\to\mathbb{C}^3$ whose three squared moduli are $\tfrac13$, so $\mathcal V^\dagger\mathcal V=1$ (\LeanStar{F1PaperNew.triad\_isometry} \tierPnew); it reaches dimension $3$ without a product in dimension $3$
+The descent takes neither the distribution of the primes, nor the Euler product, nor the zeros as input, and the information is kept by an isometry: each eigenvalue $\tfrac12\zeta_3^{\,k}$ has modulus $\tfrac12$, so the triad has squared norm $\tfrac34$, and normalised it is a column $\mathcal V\colon\mathbb{C}\to\mathbb{C}^3$ whose three squared moduli are $\tfrac13$, so $\mathcal V^\dagger\mathcal V=1$ (\LeanInline{F1PaperNew.triad\_isometry} \tierP); it reaches dimension $3$ without a product in dimension $3$
 \cite[the lemma \emph{Isometric embedding of the triad} and the proposition \emph{Two towers, one microstate}]{gonzalez26cw}
 (\LeanCW{bulkBoundary\_isometry} \tierP).  The modulus $\tfrac12$ is the same at every level of the tower, whose levels are related by the composition law of the descent, $\Frob_p(\golden^n)=(\golden^n)^p$
 (\LeanCW{tower\_frobenius\_common} \tierP).
@@ -888,7 +888,7 @@ This paper extends the framework of both.  Relative to~\cite{gonzalez25hp} it
   \item \emph{discharges Hecke}: the functional equation of $\Lambda(s,\chiv)$ and
     the companion zero are theorems (\LeanInline{functionalEquation\_chi5\_discharged},
     \LeanInline{hecke\_chi5\_derived} \tierP), together with the conjugation symmetry
-    $\overline{L(\bar s)}=L(s)$ (\LeanStar{hconj\_discharged} \tierPnew);
+    $\overline{L(\bar s)}=L(s)$ (\LeanInline{hconj\_discharged} \tierP);
   \item \emph{constructs the arithmetic--spectral span} with common source $G$ ---
     its two branches meeting at $\log2$ (\LeanInline{branches\_meet\_at\_log\_two},
     \LeanTally{the\_span\_is\_the\_identification}) --- and proves the pieces of the
@@ -900,7 +900,7 @@ This paper extends the framework of both.  Relative to~\cite{gonzalez25hp} it
     $\Zphi$ away from $5$ and the obstruction at $5$ (\cref{sec:lambda-ring}).
 \end{itemize}
 What remains of \texttt{bridge\_axiom} is the identification of the two branches of
-the span (\LeanInline{TheSpanIdentifiesThem} \tierO); every form of it is proved
+the span (\LeanInline{TheSpanIdentifiesThem}); every form of it is proved
 equivalent to \Ecore\ (\cref{ssec:core-forms}), and along Weil's route it would follow from the closure conjecture (\cref{cor:closure}).
 
 

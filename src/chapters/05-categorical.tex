@@ -330,7 +330,7 @@ angle: at a split prime $p\nmid n$ the residue of
 $\golden$ has order $n$ exactly when it is a root of
 $\Phi_n$ in $\mathbb{F}_p$
 (\LeanStar{W4Isometria.clock\_iff\_cyclotomic\_root}
-\tierPnew), while the lift itself stays classical.  The limits are visible too: unbounded
+\tierP), while the lift itself stays classical.  The limits are visible too: unbounded
 self-adjointness is not in Mathlib \cite{gonzalez25hp}, and the analytic steps of
 \cref{thm:explicit} are not formalised here.  The first window of Weil positivity is
 formalised in its four steps, with the two inputs the paper declares --- Gauss's
@@ -455,7 +455,7 @@ attach to a quantum system without further symmetry the statistics of the ensemb
 systems with arithmetic symmetries, in which further commuting operators exist, depart from those statistics
 \cite{bggs92,keating91}.  In the tower, an operator of the level fixes the envelope, conductor included
 (\cref{prop:envelope-exact}), and cannot separate the fibre; the GUE statistics of the zeros is then what such an
-operator shows of a structure whose fibre it does not resolve.  This is a reading \tier{R}, not a theorem: it does
+operator shows of a structure whose fibre it does not resolve.  This is a reading, not a theorem: it does
 not say that the zeros carry the fibre, only where, in this framework, an operator built on the level stops.
 
 \subsubsection{Continuing the framework}\label{ssec:disc-hp-framework}
@@ -552,7 +552,7 @@ an eigenvector of an isometry (\cref{prop:phase-modulus}); on Weil's side this i
 the multiplicative half is already proved (\cref{prop:two-halves}(i)); clause~(5) gives the
 additive half, since the eigenvalue of an isometry has modulus $1$, that is $r=1$, which with the
 multiplicative half is $t=2$; and clauses~(1)--(4) give the magnitudes and the correction of the
-heights.  \tierO
+heights.
 \end{conjecture}
 
 \begin{center}\small
@@ -560,13 +560,13 @@ heights.  \tierO
 \toprule
 Clause & Already proved, at the level of $\Zphi$ & Open & Refuted if \\
 \midrule
-Prisms at $p\ne5$ & $\Zphi$ is a $\delta$-ring (\cref{prop:delta-ring}) \tierPnew; a $p$-complete, $p$-torsion-free $\delta$-ring with $(p)$ is a crystalline prism \cite{bhattscholze22} \tierC & the formalisation & --- \\
-(1) local factors & characteristic polynomial (\cref{thm:frob-eigen}) \tierPnew & that it comes from $H$ & the factor of $H$ differs from Euler's \\
-(2) template at $2$ & $2$-adic polar form, anchor (\cref{prop:omega-two-adic,prop:euler-tower}) \tierPnew & its prismatic reading & the component at $2$ does not give $\zeta_3$, $|2|_2$ \\
-(3) gluing & product formula at $2$; $\sigma_p=\log_\golden p$ (\cref{prop:euler-tower}) \tierPnew; exact on each level of the clock (\cref{prop:clock-cyclotomic}) \tierC, with the clock as cyclotomic polynomials \tierPnew & from the clock to the size & some exact magnitude is not $\log_\golden p$ \\
-the prime $5$ & the obstruction (\cref{thm:obstruction-five}) \tierP; the prism, distinguished, $\delta(E)\equiv-1$; special fibre $=\delta_5$; defect $\tau(\chiv)^2$ \tierPnew; conductor $5^7$ \tierC; Kisin class $h=u$ \tierC+\tierN\ (\cref{rmk:prism-five}) & the gluing & --- \\
-(4) assembly & the classes and the fluctuation's intake (\cref{prop:what-fluctuation-takes}) \tierPnew; the layers of the index (\cref{prop:phi-layers}) and the energy of their phases (\cref{prop:sqrt-x}) \tierPnew & the law at resolution $1/T$; the scale $\tfrac12$ of the power-residue symbols & the assembled correction does not give exact heights \\
-(5) positivity & modulus $1$ $\Leftrightarrow$ the line (\cref{prop:phase-modulus}) \tierPnew; windows (\cref{thm:first-window}); (W4) certified for $k\le25$ \tierNc\ (\cref{ssec:weil-closure}) & the pairing & (W4) fails \\
+Prisms at $p\ne5$ & $\Zphi$ is a $\delta$-ring (\cref{prop:delta-ring}) \tierP; a $p$-complete, $p$-torsion-free $\delta$-ring with $(p)$ is a crystalline prism \cite{bhattscholze22} & the formalisation & --- \\
+(1) local factors & characteristic polynomial (\cref{thm:frob-eigen}) \tierP & that it comes from $H$ & the factor of $H$ differs from Euler's \\
+(2) template at $2$ & $2$-adic polar form, anchor (\cref{prop:omega-two-adic,prop:euler-tower}) \tierP & its prismatic reading & the component at $2$ does not give $\zeta_3$, $|2|_2$ \\
+(3) gluing & product formula at $2$; $\sigma_p=\log_\golden p$ (\cref{prop:euler-tower}) \tierP; exact on each level of the clock (\cref{prop:clock-cyclotomic}), with the clock as cyclotomic polynomials \tierP & from the clock to the size & some exact magnitude is not $\log_\golden p$ \\
+the prime $5$ & the obstruction (\cref{thm:obstruction-five}) \tierP; the prism, distinguished, $\delta(E)\equiv-1$; special fibre $=\delta_5$; defect $\tau(\chiv)^2$ \tierP; conductor $5^7$; Kisin class $h=u$ \tierN\ (\cref{rmk:prism-five}) & the gluing & --- \\
+(4) assembly & the classes and the fluctuation's intake (\cref{prop:what-fluctuation-takes}) \tierP; the layers of the index (\cref{prop:phi-layers}) and the energy of their phases (\cref{prop:sqrt-x}) \tierP & the law at resolution $1/T$; the scale $\tfrac12$ of the power-residue symbols & the assembled correction does not give exact heights \\
+(5) positivity & modulus $1$ $\Leftrightarrow$ the line (\cref{prop:phase-modulus}) \tierP; windows (\cref{thm:first-window}); (W4) certified for $k\le25$ \tierNc\ (\cref{ssec:weil-closure}) & the pairing & (W4) fails \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -669,7 +669,7 @@ the positivity (\cref{prop:semilocal}).  Like the law of \cref{conj:closure}, it
 
 \emph{Prisms.}  No digit sees the fifth-turns: $11$ and $211$ lie in the same class modulo $20$, and
 $\golden$ is a fifth power at $211$ and not at $11$, for either root of $x^2-x-1$ (\cref{prop:phi-residue};
-\LeanStar{F1PaperNew.phi\_residue\_not\_class\_function} \tierPnew).  They are read on the $p$-adic circle
+\LeanInline{F1PaperNew.phi\_residue\_not\_class\_function} \tierP).  They are read on the $p$-adic circle
 of the prisms $(\Z_p[\golden],(p))$ from which the cohomology of \cref{conj:prismatic-route} is assembled;
 the order of the angle of $\golden$ on that circle is the period of the Fibonacci dynamics on the $p$-torsion of the
 real torus
@@ -687,7 +687,7 @@ A cohomology that yields clause~(ii) must therefore separate the classes in each
 see $\mu_{20}$, a finite level of the cyclotomic towers at $2$ and $5$; with a prism at $5$ and a positive
 pairing, this is the cohomology of \cref{conj:prismatic-route}.  That it exists is not proved; the paper
 establishes where the open step lies, what the construction must satisfy clause by clause, and what would
-refute each clause.  \tierO
+refute each clause.
 
 \subsection{Connection with physics}\label{sec:disc-cw}
 
@@ -751,7 +751,7 @@ contradiction.
 Two features of that construction meet objects of \cref{sec:methods}.
 
 \emph{The self-dual point.}  The modular parameter of the torus is $\tau=i$, the
-fixed point of $\tau\mapsto-1/\tau$ (\LeanStar{F1CW.s\_duality\_fixes\_i} \tierPnew),
+fixed point of $\tau\mapsto-1/\tau$ (\LeanInline{F1CW.s\_duality\_fixes\_i} \tierP),
 and the same involution appears in the Schwinger variable as $t\mapsto1/t$, whose
 unique fixed point is $t=1$ (\LeanInline{selfdual\_fixed\_point} \tierP).
 The period of the torus is $T_K=2\pi\log\golden=2\pi R_K$: the regulator of
@@ -896,7 +896,7 @@ which the construction meets them, not implications between them:
   \underbrace{S_3}_{\text{symmetry}}\;\to\;
   \underbrace{E^3,\ c=3.}_{\text{geometry}}
 \]
-\LeanStar{F1v2.S3\_E3\_c3\_from\_the\_euler\_product} \tierPnew, which states the whole display; the three of this
+\LeanInline{F1v2.S3\_E3\_c3\_from\_the\_euler\_product} \tierP, which states the whole display; the three of this
 statement are \LeanStar{F1CW.s\_duality\_fixes\_i}, \LeanInline{selfdual\_fixed\_point},
 \LeanStar{F1CW.hinge\_central\_charge} \tierP
 \end{proposition}
@@ -928,7 +928,7 @@ dimension, $T_K=2\pi R_K$; the size of the plane over the line,
 $L(1,\chiv)=2R_K/\sqrt5$; the information of the projection,
 $S_{\mathrm{BH}}/k_{\mathrm B}=\lambda_{\log}R_K=\log2$; and the rapidity of the boost
 in the third dimension, $\golden^2=e^{2R_K}$.
-\LeanStar{F1v2.regulator\_measures\_the\_chain} \tierPnew; \LeanStar{F1CW.period\_eq\_two\_pi\_regulator},
+\LeanInline{F1v2.regulator\_measures\_the\_chain} \tierP; \LeanInline{F1CW.period\_eq\_two\_pi\_regulator},
 \LeanInline{anchor\_is\_a\_crossed\_identity}, \LeanStar{F1CW.lambda\_log\_mul\_regulator}
 \tierP\ given the class-number formula \tierC
 \end{proposition}
@@ -967,7 +967,7 @@ enters inside the logarithm, $\mu n+\sigma=\golden^{-\lng}(n+3)$, and in $\sigma
 the three directions of $E^3$.  The conductor enters in
 $\alpha_0=(dN-1)/(|\ker G|\,N)$ with $N=20$.
 \LeanStar{F1v2.hp\_operator\_in\_phi\_alone},
-\LeanStar{F1v2.hp\_operator\_carries\_three\_dimensions} \tierPnew;
+\LeanInline{F1v2.hp\_operator\_carries\_three\_dimensions} \tierP;
 \LeanInline{Tstar\_rewritten\_in\_phi}, \LeanInline{Tstar\_carries\_both\_faces},
 \LeanInline{mu\_n\_plus\_sigma\_factors}, \LeanInline{eleven\_components\_anchored} \tierP
 \end{proposition}
@@ -1026,7 +1026,7 @@ geometry whose curvature invariants are fixed by the modulus, the scalar curvatu
 $\Lambda_5=-6$, $G_{AB}=6g_{AB}$ (\LeanCW{R\_scalar\_pcf},
 \LeanCW{lambda5\_pcf}, \LeanCW{G\_AB\_pcf} \tierP); with $\ell=1$ and
 $\GN=\tfrac12$ the Brown--Henneaux charge is $c=3$
-(\LeanStar{F1CW.hinge\_central\_charge} \tierPnew), the arity of
+(\LeanInline{F1CW.hinge\_central\_charge} \tierP), the arity of
 \cref{sec:ring}.
 
 The per-level statement is the one that matters structurally.  The bulk
@@ -1100,7 +1100,7 @@ so the holographic bit is the regulator of $\Q(\sqrt5)$ measured in the unit
 $\lng$; this is \eqref{eq:log-two} again, and it is the arithmetic branch of the
 span of \cref{prop:span}.  The inputs are $h_K=1$, proved from the Minkowski
 bound $\sqrt5/2<2$ (\LeanStar{F1CW.minkowski\_bound\_lt\_two},
-\LeanStar{F1CW.class\_number\_one\_K} \tierPnew), and the class-number formula, which
+\LeanInline{F1CW.class\_number\_one\_K} \tierP), and the class-number formula, which
 enters as a classical input.
 
 \emph{The Regge tower is the Euler product.}  The poles of the Veneziano
@@ -1108,7 +1108,7 @@ amplitude sit at the integers, every level is populated and carries spin
 $\le n-1$ (\LeanCW{regge\_residue\_ne\_zero},
 \LeanCW{regge\_residue\_degree} \tierP), and unique factorisation turns the
 spectral Dirichlet series into the Euler product
-(\LeanStar{F1CW.dirichlet\_is\_euler} \tierPnew).  The product over all
+(\LeanInline{F1CW.dirichlet\_is\_euler} \tierP).  The product over all
 places is the completed zeta (\LeanCW{framework\_partition\_eq\_completed\_zeta},
 \LeanCW{places\_assembly} \tierP), the archimedean place being fixed by the
 self-dual Gaussian, which is normalised, equal to its own Fourier transform, and
@@ -1228,7 +1228,7 @@ is proved; the list is derived from \cref{app:ledger}.
   \item \emph{Certificates.}  The window $L\le1$ is certified in interval arithmetic; the operator windows up to $L=1.3$ are validated, with every rounding error bounded and the eigenvalue bound verified by Cholesky (\cref{rmk:rigour}); the windows of the golden field up to length $2.3$ are not yet validated: their
     Lehmann matrices are computed in double precision (\cref{ssec:golden-field}).
   \item \emph{The first window} is formalised with two declared inputs, Gauss's
-    integral \tierC\ and the values of the potential \tierN\ (\cref{thm:first-window}).
+    integral\ and the values of the potential \tierN\ (\cref{thm:first-window}).
   \item \emph{The counting density.}  The function
     \texttt{kappa\_K} of Block~1 of the unified file is not the archimedean density $\kappa_K$ of \cref{thm:pcf-counting}, and is not used.
   \item \emph{The measurements of the closure.}  The positions from the structure, the
@@ -1248,7 +1248,7 @@ is proved; the list is derived from \cref{app:ledger}.
     the open content is (W3) for every power of the Frobenius.
   \item \emph{The statistics of the zeros.}  The spacings are measured below height $330$; the exclusion of sectors of
     order two and six assumes that the sectors are independent, and an operator whose sectors are coupled is not
-    excluded by them; that the fibre enters the zeros through an operator that does not commute with its symmetry is a reading \tier{R}.
+    excluded by them; that the fibre enters the zeros through an operator that does not commute with its symmetry is a reading.
 \end{enumerate}
 
 \subsubsection{Future work}\label{ssec:future}
