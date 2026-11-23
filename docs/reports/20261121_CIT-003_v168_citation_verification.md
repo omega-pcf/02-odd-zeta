@@ -269,6 +269,30 @@ Correcciones aplicadas al `csl`: **49**. Filas en blanco: **0**.
 
 ---
 
+## Addendum (2026-11-22) — retarget de `grisales25`
+
+La fila 5 de la tabla maestra documenta la verificación **tal como estaba al 2026-11-21** (el depósito
+Zenodo `10.5281/zenodo.17100303`). Posteriormente, por decisión del operador, el record se re-apuntó a la
+**versión firmada por la Universidad del Tolima** — la misma que el manuscrito describe como *undergraduate
+thesis*:
+
+- **Fuente canónica:** `https://repository.ut.edu.co/entities/publication/8f90e22e-d00a-4341-ac57-651b89ae0f01`
+  (categoría del repositorio: **"Tesis y Trabajos de Grado"**; bitstream
+  `https://repository.ut.edu.co/bitstreams/706f9ce8-1e57-4d01-9728-d18389bb05df/download`).
+- **Metadato local (PDF de la obra):** *Simetría Áurea Prima*, Javier Grisales Herrera, Universidad del
+  Tolima, Ibagué, **2024**; *"Trabajo de grado para optar al título de Profesional en Matemáticas con énfasis
+  en Estadística"*; director Arnold Oostra van Noppen; **acta de sustentación con nota 4.3**.
+- **Cita institucional de la UT:** `SIMETRÍA ÁUREA PRIMA. (Universidad del Tolima, 2024) GRISALES HERRERA,
+  JAVIER; OOSTRA, ARNOLD`.
+- **Versión separada (no citada):** el depósito Zenodo *"Golden Prime Symmetry Theory"* (2025-09-11) está
+  tipado por Zenodo como `resource_type: Journal article`
+  (verificado vía `https://zenodo.org/api/records/17100303`, 2026-11-22); su DOI vive ahora sólo en el `note`
+  del record, no en el campo `DOI`.
+- **Alcance:** unificación aplicada el mismo día en `01-hilbert-polya`, `03-crystalline-worldsheet`,
+  `04-mersenne-cr` y `05-kk-golden-throat` (keys locales preservadas).
+
+La fila 5 se conserva sin editar (snapshot histórico); el estado vigente del record es el del `citation.csl.json`.
+
 ## Related documents
 
 - `docs/reports/README.md` — índice de informes del repositorio.
