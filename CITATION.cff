@@ -145,17 +145,24 @@ references:
   - authors:
       - family-names: Grisales Herrera
         given-names: Javier
-    doi: 10.5281/zenodo.17100303
     identifiers:
-      - type: doi
-        value: 10.5281/zenodo.17100303
-    title: Golden Prime Symmetry Theory
-    date-published: 2025-01-01
-    year: 2025
-    notes: doi:10.5281/zenodo.17100303
-    publisher:
-      name: University of Tolima, Colombia
-    type: generic
+      - type: url
+        value: https://repository.ut.edu.co/entities/publication/8f90e22e-d00a-4341-ac57-651b89ae0f01
+    title: Simetría Áurea Prima
+    url: https://repository.ut.edu.co/entities/publication/8f90e22e-d00a-4341-ac57-651b89ae0f01
+    date-published: 2024-01-01
+    year: 2024
+    thesis-type: Trabajo de grado para optar al título de Profesional en Matemáticas
+      con énfasis en Estadística
+    notes: "Trabajo de grado, Facultad de Ciencias, Programa de Matemáticas con
+      Énfasis en Estadística, Ibagué; directed by Arnold Oostra van Noppen;
+      defended (acta, grade 4.3); repository category 'Tesis y Trabajos de
+      Grado' (English: undergraduate thesis). The later Zenodo deposit 'Golden
+      Prime Symmetry Theory' (2025-09-11, doi:10.5281/zenodo.17100303, typed
+      'journal article' by Zenodo) is a separate version."
+    institution:
+      name: Universidad del Tolima
+    type: thesis
   - authors:
       - family-names: Acevedo Agudelo
         given-names: Yeisson Alexis

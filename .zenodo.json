@@ -121,7 +121,7 @@
     "González García, Jorge Armando; González García, Víctor Manuel; Dressler Pérez, Itzel Marion; García Ordóñez, Luz María (2026). Simultaneous Identities of the Golden Ratio and Euler's Identity, Formally Verified in Lean 4 over the Known Mersenne Prime Exponents. Preprint, Zenodo. https://doi.org/10.5281/zenodo.21731878",
     "González García, Jorge Armando; González García, Víctor Manuel; Dressler Pérez, Itzel Marion; García Ordóñez, Luz María; Moreno, M. (2026). The Hilbert–Pólya Operator and the Primitive Structure of the Complex Plane: Between 𝔽₁, String Theory, and Ancient Geometry. https://doi.org/10.5281/zenodo.17619486",
     "González García, Jorge Armando; González García, Víctor Manuel; García Ordóñez, Luz María; Dressler Pérez, Itzel Marion (2026). The Crystalline Worldsheet: A String Theoretical Framework Based on 𝔽₁, for the de Sitter Observer Problem. Preprint, Zenodo. https://doi.org/10.5281/zenodo.21343602",
-    "Grisales Herrera, Javier (2025). Golden Prime Symmetry Theory. University of Tolima, Colombia. https://doi.org/10.5281/zenodo.17100303",
+    "Grisales Herrera, Javier (2024). Simetría Áurea Prima. https://repository.ut.edu.co/entities/publication/8f90e22e-d00a-4341-ac57-651b89ae0f01",
     "Gross, Benedict H.; Koblitz, Neal (1979). Gauss sums and the p-adic Γ-function. Annals of Mathematics (2). 109(3), 569–581. https://doi.org/10.2307/1971226",
     "Grothendieck, Alexander (1966). On the de Rham cohomology of algebraic varieties. Publications Mathématiques de l'IHÉS. 29, 95–103. https://doi.org/10.1007/BF02684807",
     "Gubser, Steven S.; Knaute, Johannes; Parikh, Sarthak; Samberg, Andreas; Witaszczyk, Przemek (2017). p-adic AdS/CFT. Comm. Math. Phys. 352(3), 1019–1059. https://doi.org/10.1007/s00220-016-2813-6",
@@ -245,11 +245,6 @@
     },
     {
       "identifier": "10.5281/zenodo.21731878",
-      "relation": "cites",
-      "resource_type": "publication"
-    },
-    {
-      "identifier": "10.5281/zenodo.17100303",
       "relation": "cites",
       "resource_type": "publication"
     },
