@@ -19,11 +19,20 @@ Two tolerances, both documented:
 Reconciliation source: ``src/chapters/04-bridges.tex`` cites each script by
 name beside its numbers (castelnuovo, corrected_operator, law_resolution,
 circle_and_detect).
+
+One exception to "nothing is recomputed": the ``[3e7, e^18]`` maxima of
+``test_castelnuovo_window_maxima`` are RE-DERIVED here, because the
+committed ``castelnuovo.txt`` predates that window and the manuscript's
+clause quotes it.  The sieve and the characters are local to the test (no
+test imports a script).
 """
 
 from __future__ import annotations
 
+import math
 import re
+
+import numpy as np
 
 import pytest
 
@@ -95,6 +104,74 @@ def test_castelnuovo_matches_manuscript_claim() -> None:
     assert values["worst_fibre"] <= bound, (
         f"worst fibre {values['worst_fibre']} exceeds the manuscript's at most {bound}"
     )
+
+
+# The window of the B2 clause: the maxima over the prime powers of
+# [3e7, e^18], re-derived (the committed artifact stops at [1e7, e^18]).
+_WINDOW_TOL = 5e-3  # printing tolerance; see test_castelnuovo_window_maxima
+_WINDOW_LOWER = 3e7
+_WINDOW_UPPER = math.exp(18)
+
+
+def _window_maxima() -> dict[str, float]:
+    """max |psi(x,chi)|/sqrt(x) over the prime powers x of [3e7, e^18].
+
+    psi is constant between consecutive prime powers (Lambda vanishes
+    elsewhere) and sqrt(x) grows, so on each step the ratio attains its
+    maximum at the step's left end: evaluating AT the prime powers is
+    evaluating the maximum -- the argument the author's castelnuovo.py
+    makes in its own docstring, reproduced here without importing it (no
+    test may import a script).
+    """
+    limit = int(_WINDOW_UPPER)
+    sieve = np.ones(limit + 1, dtype=bool)
+    sieve[:2] = False
+    for i in range(2, int(limit**0.5) + 1):
+        if sieve[i]:
+            sieve[i * i :: i] = False
+    primes = np.nonzero(sieve)[0]
+
+    powers_n, powers_p = [primes], [primes]
+    exponent = 2
+    while True:
+        base = primes[primes.astype(float) ** exponent <= limit]  # float: int64 ** 3 overflows
+        if base.size == 0:
+            break
+        powers_n.append(base.astype(np.int64) ** exponent)
+        powers_p.append(base)
+        exponent += 1
+    n = np.concatenate(powers_n)
+    p = np.concatenate(powers_p)
+    order = np.argsort(n, kind="stable")
+    n, p = n[order], p[order]
+
+    log_p = np.log(p.astype(float))
+    x = n.astype(float)
+    window = (x >= _WINDOW_LOWER) & (x <= _WINDOW_UPPER)
+    chars = {
+        "chi_4": np.where(n % 2 == 0, 0, np.where(n % 4 == 1, 1, -1)),
+        "chi_5": np.array([0, 1, -1, -1, 1])[n % 5],
+    }
+    chars["chi_20"] = chars["chi_4"] * chars["chi_5"]
+    return {
+        name: float(np.max(np.abs(np.cumsum(log_p * chi))[window] / np.sqrt(x[window])))
+        for name, chi in chars.items()
+    }
+
+
+@pytest.mark.golden
+def test_castelnuovo_window_maxima() -> None:
+    """The B2 clause's window: max |psi|/sqrt(x) on the prime powers of
+    ``[3e7, e^18]`` is 1.13 / 1.07 / 1.76 for chi_4 / chi_5 / chi_20.
+
+    ``_WINDOW_TOL`` (5e-3) is a PRINTING tolerance, not a golden one: the
+    recomputed maxima are 1.1321 / 1.0695 / 1.7636 and the manuscript
+    prints them rounded to two decimals, so the assertion accepts anything
+    within half of that last printed digit (0.005).
+    """
+    maxima = _window_maxima()
+    for key, want in (("chi_4", 1.13), ("chi_5", 1.07), ("chi_20", 1.76)):
+        assert_close(maxima[key], want, _WINDOW_TOL, f"castelnuovo [3e7, e^18] {key}")
 
 
 # ---------------------------------------------------------------------------
