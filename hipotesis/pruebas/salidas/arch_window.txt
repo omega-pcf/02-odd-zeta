@@ -1,0 +1,10 @@
+C_0 = -9.13493  (articulo -9.13493)
+  S       lambda_2(D)   C_0 + lambda_1(D)   min(C_0 + D + polo)
+  1.386   9.498        -2.649             +0.0068
+  1.500   9.333        -2.853             +0.0046
+  1.600   9.196        -3.021             -0.0895
+  1.650   9.131        -3.102             -0.1702
+  1.700   9.067        -3.181             -0.2503
+sin el polo: C_0 + D deja de ser positiva en S = 0.453  (articulo ~0.45)
+segundo autovalor de D = |C_0| en S = 1.647  (articulo ~1.65);  log 4 = 1.386
+C_0 + D + polo, positiva hasta S = 1.545

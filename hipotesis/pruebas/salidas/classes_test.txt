@@ -1,0 +1,10 @@
+con las ocho clases: 0.0377
+  sin la clase  1: 0.0432  (peor)
+  sin la clase  3: 0.1163  (peor)
+  sin la clase  7: 0.0753  (peor)
+  sin la clase  9: 0.0452  (peor)
+  sin la clase 11: 0.0638  (peor)
+  sin la clase 13: 0.0579  (peor)
+  sin la clase 17: 0.0538  (peor)
+  sin la clase 19: 0.0511  (peor)
+quitar cualquiera empeora: True ; articulo: si

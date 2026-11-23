@@ -1,0 +1,26 @@
+1. delta_p(phi):
+   p =  2 (inerte): delta = 0 + -1 phi;  |delta|/(phi^p/p) = 1.236068
+   p =  3 (inerte): delta = 0 + -1 phi;  |delta|/(phi^p/p) = 1.145898
+   p =  7 (inerte): delta = -1 + -2 phi;  |delta|/(phi^p/p) = 1.021286
+   p = 11 (partido): delta = -5 + -8 phi;  |delta|/(phi^p/p) = 0.991869
+   p = 13 (inerte): delta = -11 + -18 phi;  |delta|/(phi^p/p) = 1.001186
+   p = 17 (inerte): delta = -58 + -94 phi;  |delta|/(phi^p/p) = 1.000173
+   p = 19 (partido): delta = -136 + -220 phi;  |delta|/(phi^p/p) = 0.999827
+   p = 23 (inerte): delta = -770 + -1246 phi;  |delta|/(phi^p/p) = 1.000010
+   p = 29 (partido): delta = -10959 + -17732 phi;  |delta|/(phi^p/p) = 0.999999
+   p = 31 (partido): delta = -26840 + -43428 phi;  |delta|/(phi^p/p) = 0.999999
+2. Teichmuller:
+   p = 2, precision 2^8: [phi] = 226 + 59 phi;  orden 3;  <phi> = phi [phi]^-1 = (197, 226) (= 1 mod 2: True)
+   p = 3, precision 3^5: [phi] = 129 + 7 phi;  orden 8;  <phi> = phi [phi]^-1 = (7, 114) (= 1 mod 3: True)
+      ([phi]^2)^2 = (242, 0)  (= -1 mod 3^5: True)
+   -15 mod 16 = 1: -15 es cuadrado 2-adico, Q2(sqrt5) = Q2(sqrt-3)
+3. grupo de color en F_(p^2)^* (p inerte):
+   p =  3: orden de phi = 8 (de 8);  phi^(p+1) = (2, 0) (= -1)
+   p =  7: orden de phi = 16 (de 48);  phi^(p+1) = (6, 0) (= -1)
+   p = 13: orden de phi = 28 (de 168);  phi^(p+1) = (12, 0) (= -1)
+   p = 17: orden de phi = 36 (de 288);  phi^(p+1) = (16, 0) (= -1)
+   p = 23: orden de phi = 48 (de 528);  phi^(p+1) = (22, 0) (= -1)
+   p = 37: orden de phi = 76 (de 1368);  phi^(p+1) = (36, 0) (= -1)
+   p = 43: orden de phi = 88 (de 1848);  phi^(p+1) = (42, 0) (= -1)
+   p = 47: orden de phi = 32 (de 2208);  phi^(p+1) = (46, 0) (= -1)
+articulo: delta_11 = -5-8phi, delta_13 = -11-18phi; 1.236, 1.146, 0.992, ..., 0.999999; 16 en 7, 28 en 13

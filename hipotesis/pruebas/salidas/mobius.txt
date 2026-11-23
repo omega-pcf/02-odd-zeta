@@ -1,0 +1,8 @@
+y >=       1: max |M(y)|/sqrt(y) = 1.8898  en y = 7  (M = 5)
+y >=      10: max |M(y)|/sqrt(y) = 1.6977  en y = 17  (M = 7)
+y >=     100: max |M(y)|/sqrt(y) = 1.2229  en y = 113  (M = 13)
+y >=    1000: max |M(y)|/sqrt(y) = 0.7147  en y = 2398  (M = 35)
+y >=   10000: max |M(y)|/sqrt(y) = 0.6814  en y = 17446  (M = 90)
+y >=  100000: max |M(y)|/sqrt(y) = 0.5843  en y = 10485311  (M = 1892)
+y >= 1000000: max |M(y)|/sqrt(y) = 0.5843  en y = 10485311  (M = 1892)
+M(30000000) = 1619;  articulo: <= 1.23 sqrt(y) hasta 3*10^7

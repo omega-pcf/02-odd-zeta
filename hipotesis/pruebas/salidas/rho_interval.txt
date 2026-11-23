@@ -1,0 +1,14 @@
+  S      N    R*        eps(R*)     rho (encierro, extremo inferior)    articulo
+  1.386   28   16.3634  2.765e-03    [3.4884664, 3.4884664]      3.4808
+  1.500   50   26.0240  1.456e-03    [3.0455276, 3.0455276]      3.0425
+  1.700   60   27.3251  1.207e-03    [1.7068506, 1.7068506]      1.7039
+  2.000   80   30.6300  8.922e-04    [1.9393233, 1.9393233]      1.9369
+  2.300  150   49.1120  4.471e-04    [1.4245766, 1.4245766]      1.4234
+rho con N = m (cota de lambda_(m+1), la que pide Lehmann para lambda_1):
+  S = 1.386: m = 7, rho = +1.0060
+  S = 1.500: m = 7, rho = -0.5365
+  S = 1.700: m = 3, rho = -3.5855
+  S = 2.000: m = 4, rho = -3.4675
+  S = 2.300: m = 4, rho = -5.2113
+Los valores del articulo estan en la misma curva rho(R), un poco por debajo de su maximo (rho(R) es cota
+valida para todo R); rigorous_chain.py usa los del articulo.

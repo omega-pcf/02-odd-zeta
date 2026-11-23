@@ -1,0 +1,7 @@
+sin cuadruple: min_(2L en [2,240]) Z = +6.49e-04 en 2L = 224.91  (sin la cola: +6.09e-04);  articulo: +6.3e-4
+cuadruple en gamma = 100, delta = 0.1, malla de 2L con paso 0.1: primer Z < 0 en 2L = 63.400
+cuadruple en gamma = 100, delta = 0.1, malla de 2L con paso 0.001: primer Z < 0 en 2L = 61.446
+cuadruple en gamma = 100, delta = 0.05, malla de 2L con paso 0.1: primer Z < 0 en 2L = 126.600
+cuadruple en gamma = 100, delta = 0.05, malla de 2L con paso 0.001: primer Z < 0 en 2L = 121.891
+articulo: 2L ~ 63 (delta = 0.1) y ~ 127 (delta = 0.05).  El termino del cuadruple oscila con periodo
+2 pi/gamma = 0.063 en 2L, asi que el primer cruce depende de la malla; log(gamma)/delta = 46 y 92.

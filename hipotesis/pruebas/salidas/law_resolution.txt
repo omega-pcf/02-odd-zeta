@@ -1,0 +1,13 @@
+X = 500: sin correccion mediana 0.195 (media 0.225);  primo por primo mediana 0.021 (media 0.038)
+X = 300: sin correccion mediana 0.195 (media 0.225);  primo por primo mediana 0.025 (media 0.043)
+ley por ventanas (rejilla fija, promedio en la ventana), X = 500:
+   delta   1e-02  3e-03  1e-03  3e-04  1e-04
+   mediana 0.194  0.170  0.089  0.041  0.025
+   media   0.221  0.203  0.125  0.058  0.041
+ley por ventanas (ventana centrada en cada primo), X = 500:
+   delta   1e-02  3e-03  1e-03  3e-04  1e-04
+   mediana 0.193  0.143  0.047  0.023  0.021
+   media   0.221  0.191  0.075  0.041  0.038
+rejilla de la torre (NUM11), X = 300, n = 0..4:  mediana 0.196, 0.191, 0.141, 0.034, 0.027;  media 0.225, 0.221, 0.181, 0.054, 0.044
+articulo: 0.183, 0.087, 0.053, 0.028, 0.023; sin correccion 0.20; primo por primo 0.020
+NUM11:    0.209, 0.194, 0.150, 0.040, 0.030; primo a primo 0.030

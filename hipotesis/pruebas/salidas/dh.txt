@@ -1,0 +1,4 @@
+kappa_DH = 0.2840790438;  inversas comprobadas hasta 2000: DH True, chi5 True
+inversa de DH:  max_(n<=y)|B| ~ y^0.786   (max hasta 3000000: 7683)
+mu*chi_5:       max_(n<=y)|M| ~ y^0.442   (max hasta 3000000: 516)
+articulo: 0.788 y 0.443

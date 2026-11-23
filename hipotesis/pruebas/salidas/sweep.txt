@@ -1,0 +1,11 @@
+zeta          : max_k |t_k|/t_0 = 0.9290
+psi_5         : max_k |t_k|/t_0 = 0.9856
+chi_5         : max_k |t_k|/t_0 = 0.9352
+psi_5^3       : max_k |t_k|/t_0 = 0.9856
+chi_4         : max_k |t_k|/t_0 = 0.9716
+chi_4 psi_5   : max_k |t_k|/t_0 = 0.9827
+chi_20        : max_k |t_k|/t_0 = 0.9791
+chi_4 psi_5^3 : max_k |t_k|/t_0 = 0.9827
+valores de la orbita (k >= 1): 2208;  max|t_k|/t_0 entre 0.929 (zeta) y 0.986 (psi_5)
+menor autovalor de Toeplitz / t_0: 1.272e-04 en ('chi_5', 0.3, 2)  (todas definidas positivas)
+articulo: 2208 valores; entre 0.929 (zeta) y 0.986 (psi_5, psi_5^3); menor autovalor >= 1.27e-4 t_0

@@ -1,0 +1,26 @@
+   V(zeta         ) = +0.04619
+   V(psi_5        ) = +0.20322
+   V(chi_5        ) = +0.15656
+   V(psi_5^3      ) = +0.20322
+   V(chi_4        ) = +0.15557
+   V(chi_4 psi_5  ) = +0.50105
+   V(chi_20       ) = +0.63876
+   V(chi_4 psi_5^3) = +0.50105
+(i) sum V_chi = 2.4056;  (1/64) sum = 0.0376   (articulo 2.4056, 0.0376)
+(iii) clase  n_2   media log   -n_2/8    varianza log
+        1    4    -0.497    -0.500     0.0454
+        3    0    -0.015    +0.000     0.0281
+        7    0    -0.006    +0.000     0.0483
+        9    4    -0.502    -0.500     0.0297
+       11    0    -0.023    +0.000     0.0450
+       13    0    -0.019    +0.000     0.0289
+       17    0    -0.036    +0.000     0.0488
+       19    0    -0.028    +0.000     0.0313
+     media de las ocho varianzas en [1e4, 1e8]: 0.0382 (+1.6% de 0.0376)
+     [1e+04, 1e+06]: media de las varianzas 0.0375 (-0.1%);  clases de -30% a +44%
+     [1e+06, 1e+08]: media de las varianzas 0.0386 (+2.7%);  clases de -53% a +68%
+     [1e+04, 1e+07]: media de las varianzas 0.0364 (-3.2%);  clases de -27% a +23%
+     [1e+05, 1e+08]: media de las varianzas 0.0376 (+0.1%);  clases de -48% a +31%
+     [1e+03, 1e+08]: media de las varianzas 0.0383 (+1.9%);  clases de -23% a +40%
+     en los seis rangos, las clases sueltas se desvian de -53% a +68%
+articulo: -0.497, -0.500; |media| < 0.04; 0.0379; 3.5%; -54% a +68%

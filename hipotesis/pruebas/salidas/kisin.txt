@@ -1,0 +1,11 @@
+(i)  D = 5*u**8 - 50*u**6 + 250*u**4 - 625*u**2 + 624 ; D mod 5 = -1 (-1: unidad)
+(ii) A/(5,E) = F_5[u]/(u^2): True
+(iii) phi_A(E)(sqrt5) = 3120 = 5 * 624
+(iv) phi^4 - 1 = (Fraction(5, 2), Fraction(3, 2)) = sqrt5 (3 + sqrt5)/2: True ; v_5 = 1/2
+     phi^4 = 1 + 4 sqrt5 + 5(1 - phi): True
+(v)  T(g) = g^5 - u^2 g en F_5[u]/(u^34), g de grado < 32: rango de la imagen 32; con u y u^2 agregados 34 = 34: el conucleo es F_5 u + F_5 u^2 (T(1) = 1 - u^2: la clase de 1 es la de u^2)
+(vi) 2 log_5(phi)/sqrt5 = 557 (mod 5^4);  parte racional del log (debe tener valuacion alta): v_5 >= 11
+     L_5(1-n, chi_5) = -B_(n,chi_5)/n con n = 4*5^1 = 20: 532 (mod 5^4)
+     L_5(1-n, chi_5) = -B_(n,chi_5)/n con n = 4*5^2 = 100: 432 (mod 5^4)
+     L_5(1-n, chi_5) = -B_(n,chi_5)/n con n = 4*5^3 = 500: 557 (mod 5^4)
+articulo: ambos = 557 (mod 5^4)

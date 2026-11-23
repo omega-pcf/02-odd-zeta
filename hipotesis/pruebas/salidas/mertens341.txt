@@ -1,0 +1,8 @@
+3 + 4c cos x + cos 2x >= 0 para c = +-1: True
+  sigma = 0.95: min_(0<t<=120) P = 61.75  (en t = 90.560)
+  sigma = 0.90: min_(0<t<=120) P = 4.386  (en t = 90.558)
+  sigma = 0.85: min_(0<t<=120) P = 0.6892  (en t = 90.556)
+  sigma = 0.80: min_(0<t<=120) P = 0.1426  (en t = 90.555)
+  sigma = 0.70: min_(0<t<=120) P = 0.007946  (en t = 90.573)
+  sigma = 0.60: min_(0<t<=120) P = 0.0002834  (en t = 90.691)
+P >= 1 en 0 < t <= 120 hasta sigma = 0.8609  (articulo: ~0.9; nota [N]: 0.148 en 0.8 y 3e-4 en 0.6)

@@ -1,0 +1,8 @@
+formula explicita en la recta (T = 37, 211.3, 433.9): |primos - ceros| <= 9.7e-14
+muestra                         desv.   sesgo   curtosis   KS contra (a): valor p
+(a) recta verdadera             0.613  -0.374  -0.524     
+(b) toro al azar                0.606  -0.337  -0.576     0.99
+(c) primos sustitutos           0.604  -0.317  -0.558     0.16
+(d) lado de los ceros           0.605  -0.405  -0.309     0.64
+ley del toro (20000 puntos):     0.623  -0.318  -0.585
+articulo: desv. ~0.62, sesgo ~-0.33, curtosis ~-0.55; KS entre 0.14 y 0.69

@@ -1,0 +1,6 @@
+ S      lugares   N    rho      Ritz lambda_1   Rayleigh(op. exacto)   cota inferior lambda_1
+ 1.386  -          28  3.4808   6.8081e-03      6.8081e-03            +6.8052e-03   (7 de 28 mu < 0; Ritz bajo rho: 7)
+ 1.500  4          50  3.0425   2.4904e-03      2.4904e-03            +2.4876e-03   (7 de 50 mu < 0; Ritz bajo rho: 7)
+ 1.700  4,5        60  1.7039   3.7152e-04      3.7152e-04            +3.7002e-04   (3 de 60 mu < 0; Ritz bajo rho: 3)
+ 2.000  4,5        80  1.9369   1.2171e-05      1.2171e-05            +1.2108e-05   (4 de 80 mu < 0; Ritz bajo rho: 4)
+ 2.300  4,5,9     150  1.4234   1.8873e-07      1.8873e-07            +1.8771e-07   (4 de 150 mu < 0; Ritz bajo rho: 4)

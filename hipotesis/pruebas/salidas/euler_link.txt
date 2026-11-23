@@ -1,0 +1,14 @@
+(ii) prod_(p<1e7) (1-p^-2)^-1 = 1.6449340572;  pi^2/6 = 1.6449340668
+     sum_(p<=1e+03) 1/p = 2.1981  (log log x + 0.2615 = 2.1941)
+     sum_(p<=1e+05) 1/p = 2.7053  (log log x + 0.2615 = 2.7050)
+     sum_(p<=1e+07) 1/p = 3.0414  (log log x + 0.2615 = 3.0414)
+(iii) lambda_log = log 2/log phi = 1.44042009041256
+     e =  2: sigma_(2^e-1) = 2.2830118285893;  e*lambda_log + log_phi(1-2^-e) = 2.2830118285893;  segundo termino -0.598;  phi^sigma = 3.0
+     e =  3: sigma_(2^e-1) = 4.0437704306503;  e*lambda_log + log_phi(1-2^-e) = 4.0437704306503;  segundo termino -0.277;  phi^sigma = 7.0
+     e =  5: sigma_(2^e-1) = 7.136123897329;  e*lambda_log + log_phi(1-2^-e) = 7.136123897329;  segundo termino -0.066;  phi^sigma = 31.0
+     e =  7: sigma_(2^e-1) = 10.066641828385;  e*lambda_log + log_phi(1-2^-e) = 10.066641828385;  segundo termino -0.0163;  phi^sigma = 127.0
+     e = 13: sigma_(2^e-1) = 18.725207487159;  e*lambda_log + log_phi(1-2^-e) = 18.725207487159;  segundo termino -0.000254;  phi^sigma = 8191.0
+     e = 17: sigma_(2^e-1) = 24.487125682408;  e*lambda_log + log_phi(1-2^-e) = 24.487125682408;  segundo termino -1.59e-5;  phi^sigma = 131071.0
+     e = 19: sigma_(2^e-1) = 27.367977754199;  e*lambda_log + log_phi(1-2^-e) = 27.367977754199;  segundo termino -3.96e-6;  phi^sigma = 524287.0
+     e = 31: sigma_(2^e-1) = 44.653022801822;  e*lambda_log + log_phi(1-2^-e) = 44.653022801822;  segundo termino -9.68e-10;  phi^sigma = 2147483647.0
+articulo: -2.5e-4 (e = 13), -9.7e-10 (e = 31)

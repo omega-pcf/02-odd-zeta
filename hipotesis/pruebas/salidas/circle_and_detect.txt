@@ -1,0 +1,23 @@
+1. densidad de Fejer en el circulo de p = 3, a = 0.3 (minimo sobre theta):
+   zeta          : minimo 1.187e-04
+   psi_5         : minimo 9.184e-03
+   chi_5         : minimo 8.187e-03
+   psi_5^3       : minimo 9.184e-03
+   chi_4         : minimo 4.542e-03
+   chi_4 psi_5   : minimo 2.767e-02
+   chi_20        : minimo 3.242e-02
+   chi_4 psi_5^3 : minimo 2.767e-02
+   todas positivas: True; de 1.2e-04 (zeta) a 0.032 (chi_20)
+2. menor delta detectado (alguna Toeplitz del barrido indefinida):
+   gamma ~ 30 (cero en 29.708): delta >= 0.1010
+   gamma ~ 100 (cero en 99.838): delta >= 0.3840
+   gamma ~ 200 (cero en 200.245): ninguno con delta < 1/2
+   gamma ~ 300 (cero en 299.767): ninguno con delta < 1/2
+   gamma ~ 400 (cero en 400.127): ninguno con delta < 1/2
+articulo: minimos de 1.2e-4 (zeta) a 0.032 (chi_20); delta >= 0.001 (30), 0.057 (100), 0.31 (200); ninguno sobre ~300
+3. lado de los ceros: menor delta detectado segun la longitud de la orbita s_max:
+   s_max =  14.2: gamma~30: 0.103, gamma~100: 0.385, gamma~200: ninguno, gamma~300: ninguno
+   s_max =    25: gamma~30: 0.049, gamma~100: 0.112, gamma~200: 0.316, gamma~300: 0.376
+   s_max =    60: gamma~30: 0.006, gamma~100: 0.028, gamma~200: 0.085, gamma~300: 0.118
+   s_max =   120: gamma~30: 0.001, gamma~100: 0.009, gamma~200: 0.022, gamma~300: 0.028
+articulo: 0.001 (30), 0.057 (100), 0.31 (200), ninguno sobre ~300

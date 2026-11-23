@@ -1,0 +1,5 @@
+chi_5: max |M - Gram de los ceros| = 7.1e-08;  autovalores de M: de 2.6e-05 a 0.048  (todos positivos)
+zeta, parte local: autovalores -3646, 5.433e-07, 1.799e-05, 2.311e-05, 7.57e-05, 0.0003283, 0.001216, 0.002921
+  negativos: 1; el negativo -3646, coseno con la direccion del polo 1.0000
+  total (polo + local): menor autovalor 6.80e-08  (>= 0)
+articulo: chi_5 a 3.5e-6, autovalores de 3e-5 a 0.048; zeta: un negativo -3646, siete positivos, total >= 0

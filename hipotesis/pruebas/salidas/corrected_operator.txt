@@ -1,0 +1,11 @@
+n = 1..1000: T*: error medio 4.96 espaciamientos (con signo -4.91);  envolvente exacta: media 0.212, mediana 0.186 espaciamientos
+n = 1..2000: T*: error medio 6.68 espaciamientos (con signo -6.65);  envolvente exacta: media 0.219, mediana 0.188 espaciamientos
+n = 100..3000: T*: error medio 7.20 espaciamientos (con signo -7.20);  envolvente exacta: media 0.225, mediana 0.195 espaciamientos
+  error relativo de E^-1(n - 1/2) en n = 10: 9.2e-03
+  error relativo de E^-1(n - 1/2) en n = 50: 2.9e-03
+  error relativo de E^-1(n - 1/2) en n = 100: 2.3e-03
+  error relativo de E^-1(n - 1/2) en n = 500: 3.2e-04
+  error relativo de E^-1(n - 1/2) en n = 1000: 6.7e-05
+  error relativo de E^-1(n - 1/2) en n = 2000: 5.0e-05
+  en n = 1000: error relativo de T* 0.63%, de la envolvente exacta 0.0067%  (nota: 0.64% y 0.007%)
+articulo: T* ~4.9 espaciamientos; envolvente 0.20; relativo 3e-3 (altura baja) a 5e-5 (n = 2000)

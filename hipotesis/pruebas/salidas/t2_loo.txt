@@ -1,0 +1,4 @@
+92 primos 7 <= p <= 500; u_p > 0 (quitar p empeora) en 78
+R^2 con la posicion (1/sqrt p, log p): 0.987;  agregando el orden angular (log i_p, log e_p): 0.988
+prueba F del orden angular dada la posicion: F = 1.01, p = 0.37
+articulo: dada la posicion, el orden angular no explica el uso de ningun primo

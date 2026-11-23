@@ -1,0 +1,8 @@
+2L = 18 (primos bajo e^18 = 65659969):
+  primos partidos (orbitas degeneradas):   -1787.59
+  primos inertes (orbita libre):           +1796.72
+  termino arquimediano:                       -3.29
+  potencias k >= 2:                           -5.83   (cuadrados -6.37, k >= 3 +0.54)
+  Z = 0.0113
+  las dos orbitas se cancelan al 0.51%: queda 9.129
+articulo: -1787.59, +1796.72, -3.29, -5.83, Z = 0.0113; cancelacion al 0.5%
