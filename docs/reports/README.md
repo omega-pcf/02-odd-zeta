@@ -12,10 +12,15 @@ Reports are the *specific* material of the documentation: per-site
 inventories, decision logs, verdict tables, audits and incident records
 tied to one repository state. The generic, portable documents live one
 level up in `docs/` (`README.md`, `architecture.md`, `citations.md`,
-`figures.md`, `installation.md`, `style-guide.md`, `usage.md`,
-`witness-contract.md`, `style/grammar.md`); a report is what a generic
+`figures.md`, `installation.md`, `usage.md`,
+`witness-contract.md`); a report is what a generic
 rule *refers to* for its concrete instances. Anything tied to one
 repository state goes here — never to a document at the `docs/` root.
+
+Two names of that list are **not** documents of this repository: there is
+no `style-guide.md` and no `style/grammar.md` here. The editorial style
+contract arrives with the witness specification (WIT-SPEC, in composition);
+until it lands these documents are neither linked nor created.
 
 ## Naming
 
