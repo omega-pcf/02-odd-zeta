@@ -967,7 +967,7 @@ makes the condition at $5$ vacuous, and \cref{thm:frobenius-congruence} gives th
 structure on $\Rloc$.
 \end{corollary}
 \leanline{The congruence at each $p\ne5$ is \tierP\ (\cref{thm:frobenius-congruence}); the
-localisation itself is not formalised, \tierO.}
+localisation itself is not formalised and remains open.}
 \begin{proof}
 The nilpotent argument of \cref{thm:obstruction-five} applies to $\Z[\golden,\golden^{-1},\tfrac12]$,
 since $\delta_5$ extends to it ($2$ and $3+\varepsilon$ are units of $\mathbb F_5[\varepsilon]$).
@@ -984,7 +984,7 @@ extends to $\Rloc$, on which the condition at $5$ is empty.
 \end{theorem}
 \leanline{\LeanInline{FrobeniusUnico.lambda\_structure\_away\_from\_five},
 \LeanInline{FrobeniusUnico.frob\_commute}, \LeanInline{FrobeniusUnico.frobenius\_exists\_unique} \tierP;
-\LeanInline{no\_frobenius\_lift\_at\_five} \tierP; the localisation \tierO.}
+\LeanInline{no\_frobenius\_lift\_at\_five} \tierP; the localisation remains open.}
 \begin{proof}
 $\Zphi$ is torsion-free, and for a torsion-free ring a $\Lambda_{\Z,E}$-structure is a family of commuting
 ring endomorphisms, one for each $p\in E$, each congruent to the $p$-th power modulo $p$
@@ -1167,7 +1167,7 @@ $p\mid F_{p+1}$ holds exactly when $p$ is inert (\LeanInline{F1PaperPadic.fib\_s
 \caption{The Fibonacci criterion for $3\le p\le31$, $p\ne5$: $F_p\equiv\chiv(p)\pmod p$, and $p$
 divides $F_{p-\chiv(p)}$.  The values of $F_p$ and $F_{p-1}$ modulo $p$ are those of the $p$-derivation of
 \cref{prop:delta-ring} (\LeanStar{F1PaperPadic.delta\_table\_inert}, \LeanStar{F1PaperPadic.delta\_table\_split}
-\tierPnew; up to $p=19$ also \LeanInline{fib\_split\_criterion} \tierP).}
+; up to $p=19$ also \LeanInline{fib\_split\_criterion} \tierP).}
 \label{tab:fib-split}
 \begin{tabular}{rccccc}
 \toprule
@@ -1312,7 +1312,7 @@ $-\golden$, are roots of $x^2+x-1$.
 \begin{remark}[What is not verified]\label{rmk:grisales-not-verified}
 The closed formula of \cite{grisales25} for the classification, in its sine form,
 is cited and not formalised; in the Lean file it is a marker
-(\LeanInline{GLandsInTheTower} \tierO).  What is proved is
+(\LeanInline{GLandsInTheTower}, open).  What is proved is
 \cref{thm:pentagonal-values}, the homomorphism of \cref{prop:G}, and the
 logarithmic signature $\sum_{a=1}^4\chiv(a)\log(2\sin(\pi a/5))=-2\log\golden$.  In
 Lean the proved statement is $\sin(2\pi/5)/\sin(\pi/5)=\golden$
@@ -1539,7 +1539,7 @@ Let $n\geq3$ and let $\mathfrak p$ be a prime of $\Zphi$ of clock $n$ over $p\ne
 \leanline{\LeanInline{FibrasPorNivel.split\_level\_four},
 \LeanInline{FibrasPorNivel.split\_level\_twenty}, \LeanInline{FibrasPorNivel.inert\_level\_four},
 \LeanInline{FibrasPorNivel.inert\_one\_mod\_four}, \LeanInline{FibrasPorNivel.inert\_not\_at\_five} (i)
-\tierP; (ii), the first statement, \LeanInline{PasosDelTexto.palindromic\_norm}, \LeanInline{PasosDelTexto.norm\_odd\_level\_doubled} \tierP\ given that $\Phi_m$ is palindromic and $\Phi_{2m}(x)=\Phi_m(-x)$ for odd $m\ge3$, the second \tierT; (iii) from $\sum_{m\leq x,\ m\ \mathrm{odd}}\phi(m)=2x^2/\pi^2+O(x\log x)$;
+\tierP; (ii), the first statement, \LeanInline{PasosDelTexto.palindromic\_norm}, \LeanInline{PasosDelTexto.norm\_odd\_level\_doubled} \tierP\ given that $\Phi_m$ is palindromic and $\Phi_{2m}(x)=\Phi_m(-x)$ for odd $m\ge3$, the second, proved in the text; (iii) from $\sum_{m\leq x,\ m\ \mathrm{odd}}\phi(m)=2x^2/\pi^2+O(x\log x)$;
 (i)--(iii) on every prime of every level $n\leq420$; there the inert primes carry between $0.066$ and
 $0.084$ of the mass and the kernel between $0.47$ and $0.56$, with no stable value
 (\texttt{retro94.py} \tierN).} % pending(D7)
@@ -1618,8 +1618,7 @@ $d=2$, the cubic for $d=3$, the quintic for $d=5$.
 \LeanStar{W4Isometria.even\_index\_iff\_squares},
 \LeanStar{W4Isometria.even\_index\_indicator}
 \tierP;
-(iii), stated as \LeanStar{W4Isometria.KernelLaw}
-\tierO, follows from (ii) since $p\equiv1\pmod4$ there: $x^4-x^2-1$ generates the ring class field of
+(iii), stated as \LeanStar{W4Isometria.KernelLaw}, open, follows from (ii) since $p\equiv1\pmod4$ there: $x^4-x^2-1$ generates the ring class field of
 $\Z[\sqrt{-20}]$, and $p=a^2+20b^2$ exactly when
 $p$ splits completely in it
 \cite[Thm.~9.2, Thm.~9.4]{cox13}; checked on
@@ -1981,7 +1980,7 @@ the set of its prime factors.
 directed set of finite sets of primes.
 \end{proof}
 
-\tier{R} The predecessor version
+The predecessor version
 \cite{gonzalez26oddzeta} read this colimit beside the tower limit $\|\Omega\|_k\to0$ of
 \cite{gonzalez25hp}: both are limits of diagrams fixed by $G$, the first assembled from $\chiv(p)$, the
 second iterated from $\mu_3=\tfrac12$.
@@ -2265,7 +2264,7 @@ $|1-\zeta_5|^2=(5-\sqrt5)/2$, $|1-\zeta_5^2|^2=(5+\sqrt5)/2$ and ratio $\golden^
 \LeanInline{F1OZ.baker\_ratio} \tierP), so $\sqrt5\,L(1,\chiv)=\log\bigl(|1-\zeta_5^2|^2/|1-\zeta_5|^2\bigr)
 =2\log\golden$, a nonzero linear form in logarithms of algebraic numbers, transcendental by Baker's theorem
 \ \cite{baker66}.  If $L(2k+1,\chiv)$ is transcendental, then $\zeta(2k+1)$ and $\zeta_K(2k+1)$ are not
-both algebraic, by \eqref{eq:dedekind} and \LeanInline{PasosDelTexto.algebraic\_scale} \tierP.  \tier{R} The linear form is the same for every $s$ --- the points $\zeta_5^{\,a}$ and the weights
+both algebraic, by \eqref{eq:dedekind} and \LeanInline{PasosDelTexto.algebraic\_scale} \tierP.  The linear form is the same for every $s$ --- the points $\zeta_5^{\,a}$ and the weights
 $\chiv(a)/\sqrt5$ --- and only the kernel $\mathrm{Li}_s$ changes; at $s=1$ it reduces to logarithms and at
 even $s$ to Bernoulli polynomials, and at odd $s\ge3$ to neither.  The predecessor version
 \cite{gonzalez26oddzeta} read this as the reason no cancellation is expected there; it is not an argument,
@@ -2440,7 +2439,7 @@ $\zeta_{\mathbb{Q}(\sqrt{5})}(2k+1)$ are built from the same values $\zeta(2k+1,
 weights $\chi_5(a)$ and the second as the product of the weighted and the unweighted sums.  No
 parameter beyond $\golden$, $\pi$, and the pentagonal arithmetic of
 $\mathbb{Q}(\sqrt{5})$ is required.
-\tierP/\tierPnew
+\tierP
 \end{corollary}
 
 \begin{proof}
@@ -2657,7 +2656,6 @@ value at $u=1$ when $N(1)\neq0$ \cite[Eqs.~(9)--(10)]{connesconsani10}.  Then
 for $\mathrm{Re}(s)>k$.  When $N\in\mathbb{Z}[x]$
 the polynomial counting case is recovered, with
 $\zeta_N(s) = \lim_{q\to 1}Z(q,q^{-s})(q-1)^{N(1)}$.
-\tierC
 \end{lemma}
 
 \Cref{lem:cc-integral} converts the limit definition into an
@@ -3024,7 +3022,7 @@ stated as \LeanInline{LOneIsTheAnchor}),
 \LeanInline{sqrt\_five\_from\_phi}, \LeanStar{F1CW.pi\_eq\_five\_arccos},
 \LeanInline{mersenne\_bridge}, \LeanStar{F1CW.even\_zeta\_bernoulli},
 \LeanInline{F1CW.norm\_cosine\_phi} \tierP; the class-number formula and the closed forms of
-$L(2,\chiv)$, $L(4,\chiv)$ \tierC/\tierN.}
+$L(2,\chiv)$, $L(4,\chiv)$ \tierN.}
 
 \begin{proof}
 (i) $2\log\golden=\log\golden^2=\log(\golden+1)$; $\Lambda(1,\chiv)=(5/\pi)^{1/2}\Gamma(\tfrac12)L(1,\chiv)=\sqrt5\,L(1,\chiv)$,
@@ -3100,7 +3098,7 @@ $(\Zphi/2)^\times=\F_4^\times$ and the second is the norm $N(\golden^n)=(-1)^n$.
 identifications on $\Z^2\times\Z$: \LeanInline{TodoEnLean.gam\_Dstep} ($\gamma\circ D=\mathrm{id}$),
 \LeanInline{TodoEnLean.gam6\_Dstep6} ($\gamma_6\circ D^6=\mathrm{id}$), \LeanInline{TodoEnLean.Dstep\_gam6}
 ($D\gamma_6=\gamma_6D$), \LeanInline{TodoEnLean.Dstep\_iter\_shift} (the base shift of $D^k$ is $k$) \tierP; that the
-quotients by these properly discontinuous free actions are covering spaces \tierC\par}
+quotients by these properly discontinuous free actions are covering spaces\par}
 \end{theorem}
 
 \begin{proof}
@@ -3274,7 +3272,7 @@ $\golden^k(\golden y)=\golden(\golden^k y)$; the norm is
 $(\golden\bar\golden)^k=(-1)^k$.
 \end{proof}
 
-\tier{R} In the same terms the predecessor version \cite{gonzalez26oddzeta} read the factorisation
+In the same terms the predecessor version \cite{gonzalez26oddzeta} read the factorisation
 $\zeta=\zeta_K/L(\cdot,\chiv)$ as a projection: the one-dimensional $\zeta$, over the primes of $\Q$, is the
 quotient of the two-dimensional $\zeta_K$, over the primes of $\Q(\sqrt5)$, by the character that records how
 the second coordinate projects onto the first; the even values are the circle already closed, and the odd
@@ -3560,7 +3558,7 @@ Let $M$ act on the torus $\mathbb T=\R^2/\Z^2$.
 endomorphism of the torus of nonzero determinant has $|\det|$ points, counted in Lean for $n<20$ and by
 enumeration for $n\le8$; in (ii), the divisibility for every prime, Wall's law, in Lean on eleven primes and
 by \texttt{retro109.py} for the primes below $400$ \tierN; in (iii), the passage from trigonometric polynomials to % pending(D7)
-$L^2$, by density \tierC\par}
+$L^2$, by density\par}
 \end{proposition}
 
 \begin{proof}
@@ -3737,7 +3735,7 @@ $\overline{L(\bar s)}=L(s)$ & \LeanStar{hconj\_discharged} & \tierP\\
 Closure under the mate; real coefficients & \LeanStar{closedUnderMate\_chi5}, \LeanStar{realCoefficients\_chi5} & \tierP\\
 $|\gamma|\ge2$ for the zeros used & \LeanInline{discBound\_discharged\_high} & \tierP\\
 \texttt{hmate}: each zero has a zero $\rho'$ with $|1-1/\rho'|=|1-1/\rho|^{-1}$; \texttt{hcoord}: for $\Re\rho>0$, $|1-1/\rho|=1\iff\Re\rho=\tfrac12$ & \LeanInline{mate\_hypothesis\_discharged}, \LeanInline{hcoord\_discharged} & \tierP\\
-First zero at $\gamma\approx6.6485$ (\LeanInline{NoLowZeros}) & classical; not proved in Lean & \tierC\\
+First zero at $\gamma\approx6.6485$ (\LeanInline{NoLowZeros}) & classical; not proved in Lean & classical\\
 \bottomrule\end{longtable}
 The root number of the functional equation is $+1$: the Gauss sum of $\chiv$ is $\tau(\chiv)=+\sqrt5$,
 by Gauss's determination of the sign of the quadratic Gauss sum (\cref{rmk:nature-L}).
@@ -3840,7 +3838,7 @@ zeros coincide in ordinate, which is strictly weaker than repulsion.
 $\chi$ the functional equation carries the zeros of $L(s,\chi)$ to those of $L(s,\bar\chi)$ by
 $\rho\mapsto1-\rho$, and $L(\bar s,\bar\chi)=\overline{L(s,\chi)}$ carries them back by conjugation; the
 composite is the mate, so the zero set of every $L(s,\chi)$ is closed under $\rho\mapsto1-\bar\rho$
-(\LeanInline{MateSinG.closed\_under\_mate\_of\_fe\_dual} \tierP; the functional equation \tierC).  The reality
+(\LeanInline{MateSinG.closed\_under\_mate\_of\_fe\_dual} \tierP; the functional equation).  The reality
 of $\chi$ --- modulo $20$, that $\chi$ factors through $G$, whose kernel is the set of squares
 (\cref{prop:G}) --- adds the other two involutions, and by \textup{(ii)} neither of them fixes a zero with
 $\gamma\ne0$ other than through the mate.  So the orbit dichotomy in its mate-only form
@@ -4182,7 +4180,7 @@ the conics.  In it the statements of this section read: $e\le1$ for every zero
 (\cref{rmk:nodes}); the pair $\{\rho,1-\bar\rho\}$ shares its conic, since $r\mapsto1/r$ fixes $t$
 (\cref{prop:apollonius-coordinate}); $e>0.99993$ with the height of the first zero (\cref{prop:rbound}); $e=1$ exactly on the degenerate conic, $r=1$, the line (\cref{prop:joukowski}); and the structural values are
 $2/L_{2m}=1,\tfrac23,\tfrac27,\dots$, of which only $1$ lies above $\tfrac23$ (\cref{prop:lucas-spectrum}).
-\LeanInline{F1PaperClosure.eccentricity\_le\_one}, \LeanInline{F1PaperClosure.klein\_pair\_shares\_the\_conic}, \LeanInline{F1PaperClosure.eccentricity\_confined}, \LeanInline{F1PaperClosure.eccentricity\_eq\_one\_iff}, \LeanInline{F1PaperClosure.zero\_conic\_degenerate\_iff\_line}, \LeanInline{F1PaperClosure.integral\_trace\_gives\_degenerate} \tierP; the bound with the first zero \tierC
+\LeanInline{F1PaperClosure.eccentricity\_le\_one}, \LeanInline{F1PaperClosure.klein\_pair\_shares\_the\_conic}, \LeanInline{F1PaperClosure.eccentricity\_confined}, \LeanInline{F1PaperClosure.eccentricity\_eq\_one\_iff}, \LeanInline{F1PaperClosure.zero\_conic\_degenerate\_iff\_line}, \LeanInline{F1PaperClosure.integral\_trace\_gives\_degenerate} \tierP; the bound with the first zero
 \end{remark}
 
 \begin{remark}[Two integralities]\label{rmk:two-integralities}
@@ -4208,7 +4206,7 @@ $r(\rho)^2\le1+1/\gamma^2$ of \cref{prop:rbound}.
 3 & $k$ even & $t=L_k$, a Lucas number, hence an integer & \tierP\\
 4 & trace & the matrices $F^{k}$, $k$ even, lie in $SL_2(\Z)$ and are constructed, not posited & \tierP\\
 5 & norm & $N(r)=+1$ forces $k$ even & \tierP\\
-6 & bound & $t\le2.00013$ from the strip and $|\gamma|\ge6.6485$ (\cref{prop:rbound}) & \tierP,\,\tierC\\
+6 & bound & $t\le2.00013$ from the strip and $|\gamma|\ge6.6485$ (\cref{prop:rbound}) & \tierP,\,classical\\
 7 & value & $t=2$ is the value at which $\Re\rho=\tfrac12=1/|\ker G|$, the inverse of the fibre size of $G$ (\cref{cor:value-is-kernel}) & \tierP\\
 8 & closure & $t=2\iff r=1\iff\Re\rho=\tfrac12$ & \tierP\\
 \bottomrule\end{longtable}
@@ -4312,7 +4310,7 @@ $r(\rho)=|1-1/\rho|$ its coordinate.
 \LeanInline{the\_orbit\_embedding\_is\_unconditional}, \LeanInline{orbit\_card\_upstairs},
 \LeanInline{where\_the\_chain\_breaks}, \LeanInline{rSq\_le\_in\_strip},
 \LeanInline{trace\_ge\_two\_by\_triangle}, \LeanInline{liMap\_on\_unit\_circle\_iff} \tierP;
-the height of the first zero \tierC\par}
+the height of the first zero\par}
 \end{proposition}
 
 What these facts do not give is that the zero is a member of the structure and not

@@ -58,7 +58,7 @@ form of the first Li coefficient, $\lambda_1=\sum1/\rho=\kappa/2+1-\gamma_E/2$, 
 $\kappa=\log(q/\pi)+\psi(\tfrac14)$, $q=5$, $\psi=\Gamma'/\Gamma$ (the constant of \cref{thm:first-window}); and the value at $0$ of the
 derivative of the phase $\vartheta(t)=\tfrac t2\log(q/\pi)+\Im\log\Gamma(\tfrac14+\tfrac{it}2)$ of the gamma factor
 of $\Lambda(\tfrac12+it,\chiv)$, which gives the smooth part of the counting function: $\vartheta'(0)=\kappa/2$, the same $\kappa$
-(\LeanInline{four\_equalities\_on\_the\_set} \tierP\ given \tierC).  The first is the multiplicative half of \Ecore, proved for every zero; the additive half, $r+r'=2$, is what remains --- the one-sidedness of \cref{rmk:nodes} seen in the pair $\{r,r'\}$.
+(\LeanInline{four\_equalities\_on\_the\_set} \tierP\ given a classical input).  The first is the multiplicative half of \Ecore, proved for every zero; the additive half, $r+r'=2$, is what remains --- the one-sidedness of \cref{rmk:nodes} seen in the pair $\{r,r'\}$.
 
 \begin{remark}[An earlier Weil window, and how it compares]\label{rmk:earlier-window}
 The corpus also records a Weil margin $Q(g_L)\ge0.0443$ for $2L<\log64$
@@ -393,7 +393,7 @@ for every such $f$ --- is equivalent to
 $2P(f*\tilde f)\le A(f*\tilde f)$ for all $f$: the Frobenius-trace side bounded
 by the archimedean one.
 \LeanInline{positivity\_is\_a\_prime\_side\_bound} \tierP; positivity $\Leftrightarrow$
-GRH$(\chiv)$ is Weil's criterion; the bound itself is \tierO.
+GRH$(\chiv)$ is Weil's criterion; the bound itself is open.
 \end{theorem}
 
 \begin{remark}
@@ -496,7 +496,7 @@ $Q\ge\int_{I\setminus S}f^2V+\int_S f^2\bigl(V-\frac{\log2}{\sqrt2}\bigr)\ge m(L
 
 \begin{theorem}[Positivity up to $L=1$, through the Frobenius at $2$]\label{thm:second-window}
 For every $f\in L^2(\mathbb{R})$ supported in an interval of length $L\le1$,
-the Weil form of $L(s,\chiv)$ satisfies $Q(f)\ge0.0445\,\|f\|^2$. \tierNc{} computer-assisted in interval arithmetic, with outward rounding (\cref{rmk:rigour}); certificate \texttt{weil\_certificates/cert\_L1.0.json}, replay \texttt{verify\_iv.py}. % pending(D7)
+the Weil form of $L(s,\chiv)$ satisfies $Q(f)\ge0.0445\,\|f\|^2$.  Computer-assisted in interval arithmetic, with outward rounding (\cref{rmk:rigour}); certificate \texttt{weil\_certificates/cert\_L1.0.json}, replay \texttt{verify\_iv.py}. % pending(D7)
 \end{theorem}
 
 \begin{proof}
@@ -526,7 +526,7 @@ The earlier double-precision replay (\texttt{verify\_rig.py}, Lipschitz cells) g
 \begin{theorem}[Positivity up to $L=1.3$, operator form]\label{thm:third-window}
 For every $f\in L^2(\mathbb{R})$ supported in an interval of length $L\le1.3$,
 $Q(f)\ge0.0027\,\|f\|^2$; at $L\le1.2$ the margin is $0.0077$ and at $L\le1.1$,
-$0.0261$. \tierNc{} computer-assisted with validated numerics: every rounding error bounded explicitly and the top eigenvalue bounded by a verified Cholesky factorisation (\cref{rmk:rigour}); \texttt{weil\_certificates/op\_rig\_validated.py}. % pending(D7)
+$0.0261$.  Computer-assisted with validated numerics: every rounding error bounded explicitly and the top eigenvalue bounded by a verified Cholesky factorisation (\cref{rmk:rigour}); \texttt{weil\_certificates/op\_rig\_validated.py}. % pending(D7)
 \end{theorem}
 
 \begin{proof}
@@ -828,8 +828,8 @@ of $\golden$, roots of unity, a sum of squares; the
 modulus normalised by the tower; positivity on the
 windows $L\le0.7447$, $1$ and $1.3$
 & \tierN; angles and normalisation \tierP; windows
-\tierP{} with declared inputs, \tierNc\\
-W4 & $|t_k|\le t_0$ on the orbit, class by class, with $t_k$ the Weil form between a test function and its translate by $k\log p$, the $k$-th power of the Frobenius at $p$: the Weil face of \cref{conj:closure}; it is \textup{(W3)} on the planes of the orbit (\cref{prop:W4-from-W3}) & on the planes of the windows \tierP; certified for $k\le25$ \tierNc; for every $k$ \tierO\\
+\tierP{} with declared inputs, computer-assisted\\
+W4 & $|t_k|\le t_0$ on the orbit, class by class, with $t_k$ the Weil form between a test function and its translate by $k\log p$, the $k$-th power of the Frobenius at $p$: the Weil face of \cref{conj:closure}; it is \textup{(W3)} on the planes of the orbit (\cref{prop:W4-from-W3}) & on the planes of the windows \tierP; certified for $k\le25$ (computer-assisted); open for every $k$\\
 W5 & bounded orbit $\Rightarrow$ no zero off the line & \tierP\\
 \bottomrule\end{tabular}
 \end{center}
@@ -913,7 +913,7 @@ convergence --- for $\sigma>1$ it gives $\|L(\chi^0,\sigma)^3L(\chiv,\sigma+it)^
 $\Re s\ge1$ (\LeanInline{F1PaperTorus.nonvanishing\_from\_one} \tierP) --- and the product stays $\ge1$ only down to
 $\sigma\approx0.9$ (\texttt{mertens341.py} \tierN).  What would join them is the bound
 $\sum_{n\le y}\mu(n)\chiv(n)=O(y^{1/2+\varepsilon})$ on the inverse of the structure
-(\LeanStar{F1PaperTorus.InverseStructureBound} \tierO; measured $\le1.23\sqrt y$ up to $3\cdot10^7$,
+(\LeanStar{F1PaperTorus.InverseStructureBound}, open; measured $\le1.23\sqrt y$ up to $3\cdot10^7$,
 \texttt{mobius.py} \tierN), while the direct side is bounded by a constant.
 
 The same sequence separates the equivalent forms of the open statement from the routes to it.  It has
@@ -983,7 +983,7 @@ $\chiv$ be $\ge0$ for every $L$ --- one of the four.  The golden field $\Q(\sqrt
 $\zeta\cdot L(s,\chiv)$, adds the sum of $\zeta$: it brings the pole, the ample class of the Hodge
 picture (\cref{ssec:golden-field}), and it also asserts the Riemann hypothesis for $\zeta$.  The
 field $\Q(i,\sqrt5)$ of the four fibres of $G$ adds $\chi_4$ and $\chi_{20}$: \emph{the four Fej\'er sums of
-$\Q(i,\sqrt5)$ are $\ge0$ for every $L$} (\LeanStar{F1PaperTorus.FieldFejerPositivity} \tierO), which gives the
+$\Q(i,\sqrt5)$ are $\ge0$ for every $L$} (\LeanStar{F1PaperTorus.FieldFejerPositivity}, open), which gives the
 line of $\chiv$ and more.  It
 is the analogue, for $\mathrm{Spec}\,\Z$ and this field, of the positivity that Weil obtains on
 $C\times C$ from the Hodge index; the Castelnuovo--Severi bound itself is (W4) of \cref{ssec:weil-closure}.  Here, as there, the positivity is not local --- the split primes
@@ -1029,7 +1029,7 @@ eigenvalue, $-3646$, in the direction of the pole, and seven positive ones, and 
 is nonnegative (\texttt{gram.py} \tierN).  That is the signature of the Hodge index, in
 dimension eight.  What remains, in the language of the surface, is that this holds in every
 finite dimension for each character of $\Q(i,\sqrt5)$
-(\tierO; recorded in Lean only schematically, as \LeanStar{F1PaperTorus.ArithmeticHodgeIndex}; the statement Weil's route needs at this point is (W4) of \cref{thm:weil-closure}, the Weil face of
+(open; recorded in Lean only schematically, as \LeanStar{F1PaperTorus.ArithmeticHodgeIndex}; the statement Weil's route needs at this point is (W4) of \cref{thm:weil-closure}, the Weil face of
 \cref{conj:closure}): Weil obtains it because the
 intersection form of a projective surface has that signature, and the object whose geometry
 would impose it here is the one the $\Fone$ programme seeks.  The closing theorem needs less:
@@ -1135,7 +1135,7 @@ last margin: the size of each prime one by one, and on
 the zero side $t=2$ exactly.
 What the line requires, in this language, is that the boost does not reach the zero side:
 that every Frobenius translation acts there by rotations
-(\LeanStar{F1PaperTorus.FrobeniusActsByRotations} \tierO).  On one Frobenius orbit this is exactly
+(\LeanStar{F1PaperTorus.FrobeniusActsByRotations}, open).  On one Frobenius orbit this is exactly
 the bound $|t_k|\le t_0$ of \cref{ssec:weil-closure}: rotations keep the orbit bounded, a boost
 makes it grow.
 
@@ -1166,7 +1166,7 @@ direction of the pole, and the total is nonnegative, with $8$, $12$, $16$, $20$ 
 functions: the signature of the Hodge index, with the pole as the ample class
 (\texttt{field\_signature.py} \tierN).  The open statement, in this language, is that the
 signature persists in every finite dimension, equivalently $\mathsf R\le\mathsf K$ as quadratic forms
-(\tierO; recorded in Lean only schematically, as \LeanStar{F1PaperTorus.GoldenFieldHodgeIndex} and
+(open; recorded in Lean only schematically, as \LeanStar{F1PaperTorus.GoldenFieldHodgeIndex} and
 \LeanStar{F1PaperTorus.RemainderDominated}; the statement Weil's route needs at this point is (W4) of \cref{thm:weil-closure}, the Weil face of
 \cref{conj:closure}).
 
@@ -1180,7 +1180,7 @@ where $D\ge0$ because $h(0)-h(u)=\frac12\int(g(x)-g(x+u))^2\,dx$ (\LeanInline{F1
 conductor enters as $\log5$ in $C_0$; the pole is the ample term.  Without the pole the form is
 negative from support length $\approx0.45$; with it, the pole removes the ground mode of $D$, and
 positivity asks that the second eigenvalue of $D$ exceed $|C_0|$, which holds up to support length
-$\approx1.65$, beyond the prime-free range $[0,\log4]$ (\texttt{arch\_window.py} \tierNc).
+$\approx1.65$, beyond the prime-free range $[0,\log4]$ (\texttt{arch\_window.py}).
 
 \paragraph{The first windows, over the whole function space.}  For $g$ supported in an interval
 of length $S$ (the convention of \cref{thm:first-window}), the Weil form is
@@ -1191,7 +1191,7 @@ polynomials of degree $<N$ has at most the fraction
 $(2/\pi)(RL)^{2N+1}/((2N+1)^2(N!)^2)$ of its energy below frequency $R$ ($L=S/2$); by min--max this
 gives a proved lower bound $\varrho\le\lambda_{N+1}$ (\LeanInline{F1PaperTorus.lowFrequencyFraction\_nonneg} \tierP; the analytic
 estimate; $\varrho$ enclosed in interval arithmetic).  Lehmann's method on the full space of
-polynomials of degree $<N$, with that $\varrho$ (\LeanStar{F1PaperTorus.LehmannBounds} \tierC), then gives
+polynomials of degree $<N$, with that $\varrho$ (\LeanStar{F1PaperTorus.LehmannBounds}), then gives
 lower bounds for the smallest eigenvalue with no assumption on any eigenvalue:
 
 \begin{center}\small
@@ -1205,7 +1205,7 @@ $2.3$ & $4,5,9$ & $150$ & $1.4234$ & $1.8873\cdot10^{-7}$ & $+1.8771\cdot10^{-7}
 \bottomrule\end{tabular}
 \end{center}
 
-\noindent (\texttt{rigorous\_chain.py}, \texttt{rho\_interval.py} \tierNc.)  So the Weil form of $\Q(\sqrt5)$ is positive on
+\noindent (\texttt{rigorous\_chain.py}, \texttt{rho\_interval.py}).  So the Weil form of $\Q(\sqrt5)$ is positive on
 every test function supported in an interval of length $\le2.3$, with the places of norm $4$
 (the inert Frobenius at $2$), $5$ (ramified) and $9$ (the inert prime $3$) inside.  The status is
 that of the windows of \cref{thm:second-window,thm:third-window}: the analytic steps and $\varrho$ are
@@ -1309,7 +1309,7 @@ $\mathcal E(X)=\sum_{p\leq X}a_p^2\log^2p$.
 \LeanStar{W4Isometria.symEnergy\_le} (ii, the bound);
 \LeanStar{W4Isometria.sqrt\_law\_of\_pythagoras} (iii);
 \LeanInline{W4Isometria.specLam\_on\_circle\_iff} (iv) \tierP; the hypothesis of (iii),
-\LeanStar{W4Isometria.PythagorasLaw}, \tierO; the limit in (ii) by Schur orthogonality in the
+\LeanStar{W4Isometria.PythagorasLaw}, open; the limit in (ii) by Schur orthogonality in the
 Galois group and Chebotarev, measured $0.993$, $0.998$ and $1.000$ up to $10^6$, and
 $\Sigma(X)^2<\mathcal E(X)$ at every scale measured (\texttt{v12\_pitagoras\_raiz\_X.py}) \tierN.  From the primes up to $10^6$, the % pending(D7)
 exponent $\nu$ that best fits $\Sigma(X)\approx X^\nu R(X)$, with $R$ written with the computed
@@ -1421,19 +1421,19 @@ for finitely many frequencies is \cref{prop:energy-scale}.  The law
     (\cref{prop:what-fluctuation-takes} below).
 \end{enumerate}
 \end{conjecture}
-{\raggedright\LeanStar{F1PaperClosure.ExactClosure} \tierO, with the residual of each class defined
+{\raggedright\LeanStar{F1PaperClosure.ExactClosure}, open, with the residual of each class defined
 from $\Lambda$ (\LeanStar{F1PaperClosure.trueResidual});
 with clause~(iii)'s assembly as the limit of its
 partial sums,
 \LeanStar{F1PaperClosure.ExactClosureAssembledLim},
-\LeanStar{F1PaperClosure.CorrectionIsLimit} \tierO;
+\LeanStar{F1PaperClosure.CorrectionIsLimit}, open;
 together with the scale $\tfrac12$ of a finite family
 of symbols, given as a parameter,
 \LeanStar{F1PaperClosureClock.ExactClosureThroughClock}
-\tierO, a hypothesis that implies the limit form; the
+open, a hypothesis that implies the limit form; the
 second step in the form of the clock,
 \LeanStar{F1PaperClosureClock.ClockLayerEnergyBounded}
-\tierO, uniform over a finite set of layers, which
+open, uniform over a finite set of layers, which
 bounds the energy of every real combination of the
 layers
 (\LeanStar{F1PaperClosureClock.family\_energy\_of\_clock\_layers}
@@ -1506,7 +1506,7 @@ be the characters modulo $20$ and the power-residue
 symbols of $\golden$, the hypothesis is clause~(ii) and
 GRH for the $L$-functions of the forms of levels $80$ and
 $135$ and of the quintic layer.  The evidence is the scale $\tfrac12$ fixed at the low
-zeros (\cref{prop:sqrt-x}).  \tierO
+zeros (\cref{prop:sqrt-x}).  This remains open.
 \end{remark}
 
 \begin{remark}[The window and the clock]\label{rmk:closure-window}
@@ -1611,7 +1611,7 @@ open statement (\cref{thm:topological-proof}~(iv)).  It is stated for any $L$ of
 that of \cite{gonzalez25hp}.  \tierP
 \end{corollary}
 {\raggedright \LeanInline{F1PaperClosure.the\_line\_from\_exact\_closure}, \LeanInline{F1PaperClosure.heights\_exact\_from\_exact\_closure}, \LeanInline{F1PaperClosure.landing\_from\_exact\_closure}, \LeanInline{F1PaperClosure.the\_line\_for\_chi5}, \LeanInline{F1PaperClosure.the\_line\_from\_injective\_heights\_chi5}, \LeanInline{F1PaperClosure.the\_line\_from\_injective\_heights}, \LeanInline{F1PaperClosure.the\_line\_from\_exact\_closure\_by\_heights} \tierP; the equivalence of the first way,
-\LeanStar{F1PaperClosure.ClassicalHalfScale} \tierC\par}
+\LeanStar{F1PaperClosure.ClassicalHalfScale}\par}
 
 \begin{proposition}[The height fixes the phase, the isometry the modulus]\label{prop:phase-modulus}
 Under the Frobenius of $p$, translation by $\log p$, the mode of a zero $\rho=\beta+i\gamma$ is
@@ -1758,7 +1758,6 @@ The local models glue by the Chinese remainder theorem: for odd $N$, $W_N=\bigot
 $U_N^{\,n}$ is the product of the local traces --- at $5^k$ twisted by $(\tfrac{c}{5})$, $c=(N/5^k)^{-1}$ --- and
 $|\operatorname{tr}U_N^{\,n}|^2$ is the number of fixed points of $M^{2n}$ on $(\Z/N)^2$, the part of the count of
 \cref{prop:clock-cyclotomic} at the primes of $N$ whose clock divides $n$ (\texttt{retro89.py} \tierN). % pending(D7)
-\tierT
 \end{remark}
 
 \begin{remark}[Where the open step lies]\label{rmk:open-step}
@@ -1830,7 +1829,7 @@ the line, given the classical expansion of the orbit
 with non-negative weights
 (\LeanStar{W4Isometria.orbits\_match\_of\_line},
 \LeanStar{W4Isometria.W4\_of\_orbits\_match}
-\tierP, the expansion \tierC), and through
+\tierP, the expansion), and through
 \cref{cor:closure} from the conjecture; it is not a
 separate statement.
   The lattice of W1 is that of the eight classes, and the orbit is formalised to the
@@ -1874,7 +1873,7 @@ blocks, $\zeta$ included, with minima from $1.2\cdot10^{-4}$ ($\zeta$) to $0.032
 for $\chiv$ with width $a=0.01$ and $p=2$, $|t_k|\le0.1122\,t_0$ for $k\le25$ and the Toeplitz matrix is
 positive definite with smallest eigenvalue at least $0.248\,t_0$; for the representation of the
 quintic layer, of conductor $5^7$, with $a=0.1$, the same holds with $0.158\,t_0$ and $0.506\,t_0$
-(\texttt{orbita\_cert.py} \tierNc).  The orbit of $\chiv$ computed from the primes alone is fitted by
+(\texttt{orbita\_cert.py}).  The orbit of $\chiv$ computed from the primes alone is fitted by
 a single oscillation of frequency $6.649$, the height $6.6485$ of the first zero of $L(s,\chiv)$
 (\texttt{W3\_orbita\_lado\_primos.py} \tierN).  The three power-residue symbols of \cref{prop:phi-layers} have $L$-functions with % pending(D7)
 functional equations of conductor $80$, $135$ and $5^7$; their zeros up to $t=60$, $50$ and $6.5$
@@ -1912,7 +1911,7 @@ $t_k(a)=t(k\log p)$ for $g=g_a$.
 \end{enumerate}
 {\raggedright\LeanInline{W4DeW3.plane\_values}, \LeanInline{W4DeW3.W4\_of\_W3\_on\_plane}, \LeanInline{W4DeW3.W3\_on\_plane\_of\_W4},
 \LeanInline{ParidadesJuntas.other\_parity\_value}, \LeanInline{MedioPeriodo.line\_factor}, \LeanInline{MedioPeriodo.orbit\_factor},
-\LeanInline{MedioPeriodo.half\_period\_closes} \tierP; (iii) with the tiers of the window theorems, \tierP\ with declared inputs and \tierNc;
+\LeanInline{MedioPeriodo.half\_period\_closes} \tierP; (iii) with the tiers of the window theorems, \tierP\ with declared inputs;
 (iv) with the explicit formula on the orbit, as in \cref{thm:weil-closure}\par}
 \end{proposition}
 \begin{proof}
@@ -1942,7 +1941,7 @@ $c\,(p^{|\Re\rho-1/2|})^k\le|t_k|+C$ for infinitely many $k$.  Then every zero o
 the strip has real part $\tfrac12$.  \tierP
 \end{theorem}
 {\raggedright\LeanInline{F1PaperTorus.the\_line\_from\_W4\_explicit}, with the orbit defined in \LeanInline{F1PaperTorus.chi5WeilOrbit} \tierP;
-(W4), \LeanStar{F1PaperTorus.W4Chi5} \tierO; the explicit formula on the orbit,
+(W4), \LeanStar{F1PaperTorus.W4Chi5}, open; the explicit formula on the orbit,
 \LeanStar{F1PaperTorus.OrbitDetectsOffLine}, whose combinatorial core --- a dominant term growing like
 $R^k$ in infinitely many $k$ plus a tail that does not reach it makes the orbit unbounded --- is
 \LeanInline{F1PaperTorus.dominant\_plus\_tail\_unbounded} \tierP\par}

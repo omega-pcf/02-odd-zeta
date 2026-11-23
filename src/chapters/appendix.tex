@@ -9,7 +9,7 @@ declaration that carries it, and what it supersedes.  The declarations are those
 \texttt{F1\_pentagonal\_descent\_UNIFIED.lean} and of the twenty-seven modules compiled for this version
 (\cref{app:lean}).
 Tiers are those of \cref{ssec:protocol}.  The entries of the compiled modules are \tierP; the entries
-marked \tierPnew\ are written and not yet compiled, and become \tierP\ or are corrected when they are.
+written for this version are compiled in the development as well, and corrected when they are found wrong.
 The first part of the table gives the claims with what they supersede; the second lists, in the order of
 the text, every other statement of the body that cites Lean, labelled or in a paragraph of the text, so that
 no statement the text relies on is left out; the last row is the closing step.
@@ -23,7 +23,7 @@ Pisano period $\pi(5)=20$ & \tierP & \texttt{pisano\_five\_is\_twenty} & Closes 
 $\zeta(2k+1)=\zeta_K(2k+1)/L(2k+1,\chi_5)$, every $k\ge1$ & \tierP & \texttt{F1PaperNew.zeta\_odd\_pentagonal\_determination\_unconditional} & Discharges the hypothesis $L(2k+1,\chi_5)\ne0$ of \texttt{zeta\_odd\_pentagonal\_determination} \tierP\ from Mathlib's non-vanishing on $\Re s\ge1$.\\
 $L_{2m}<3\iff m=0$, every $m$ & \tierP & \texttt{F1PaperNew.even\_lucas\_below\_three\_iff} & Extends \texttt{bound\_selects\_one}, which checks the first five values.\\
 Closure conjecture with clause (iii) formalised
-& \tierO
+& open
 & \texttt{F1PaperClosure.ExactClosureAssembledLim},
   \texttt{CorrectionIsLimit}
 & Implies \texttt{ExactClosure}
@@ -33,18 +33,18 @@ Closure conjecture with clause (iii) formalised
   structure is not formalised
   (\cref{rmk:closure-status}).\\
 The clock as cyclotomic polynomials & \tierP & \texttt{W4Isometria.RelojCiclotomico.clock\_iff\_cyclotomic\_root}, \texttt{prod\_Ncyc}, \texttt{log\_Ncyc\_bound}, \texttt{clock\_sum\_mertens} & New (\cref{prop:clock-cyclotomic}); product formula.\\
-The index by layers & \tierP & \texttt{W4Isometria.split\_layer\_law}, \texttt{even\_index\_indicator} & New (\cref{prop:phi-layers}); \texttt{KernelLaw} \tierO.\\
+The index by layers & \tierP & \texttt{W4Isometria.split\_layer\_law}, \texttt{even\_index\_indicator} & New (\cref{prop:phi-layers}); \texttt{KernelLaw} (open).\\
 The index on the $n$-gon & \tierP; the hyperbola and its bound \tierP & \texttt{PasosDelTexto.hyperbola}, \texttt{hyperbola\_sqrt}, \texttt{W4Isometria.HiperbolaRelojTamano.large\_index\_clock}, \texttt{GeometriaDelPoligono.card\_large\_index}, \texttt{ReduccionAlReloj.level80\_coeff\_in} & New (\cref{prop:index-ngon}).\\
-The prism at $5$ & \tierP, \tierC & \texttt{F1PaperSixty.bk\_delta\_E}, \texttt{bk\_special\_fiber\_is\_delta5}, \texttt{leopoldt\_unit} & New (\cref{rmk:prism-five}); arithmetic only.\\
-$\sqrt X$ as the root of the energy & \tierP, \tierO & \texttt{W4Isometria.symEnergy\_le}, \texttt{sqrt\_law\_of\_pythagoras}; \texttt{PythagorasLaw} \tierO & New (\cref{prop:sqrt-x}).\\
+The prism at $5$ & \tierP, classical & \texttt{F1PaperSixty.bk\_delta\_E}, \texttt{bk\_special\_fiber\_is\_delta5}, \texttt{leopoldt\_unit} & New (\cref{rmk:prism-five}); arithmetic only.\\
+$\sqrt X$ as the root of the energy & \tierP, open & \texttt{W4Isometria.symEnergy\_le}, \texttt{sqrt\_law\_of\_pythagoras}; \texttt{PythagorasLaw} (open) & New (\cref{prop:sqrt-x}).\\
 Energy at every scale & \tierP & \texttt{W4Isometria.LandauPlancherel.cramer\_uniform}, \texttt{CramerConteo.cramer\_K\_bounded}, \texttt{FormulaExplicita.energy\_bounded\_of\_explicit\_formula} & New (\cref{prop:energy-scale}); counting law and truncated explicit formula.\\
-Amplitude of clause (ii) & \tierP, \tierC & \texttt{W4Isometria.pair\_defect}, \texttt{amplitude\_eq\_iff\_line} & New (\cref{prop:closure-amplitude}).\\
-Second step of the closure, in the form of the clock & \tierO & \texttt{F1PaperClosureClock.ClockLayerEnergyBounded}; \texttt{family\_energy\_of\_clock\_layers} \tierP & New (\cref{conj:closure,rmk:closure-status}).\\
+Amplitude of clause (ii) & \tierP, classical & \texttt{W4Isometria.pair\_defect}, \texttt{amplitude\_eq\_iff\_line} & New (\cref{prop:closure-amplitude}).\\
+Second step of the closure, in the form of the clock & open & \texttt{F1PaperClosureClock.ClockLayerEnergyBounded}; \texttt{family\_energy\_of\_clock\_layers} \tierP & New (\cref{conj:closure,rmk:closure-status}).\\
 W3 on the angles of $\golden$ & \tierP & \texttt{F1PaperClosureClock.clock\_angles\_W3\_W4} & New (\cref{ssec:bridge-boosts}).\\
 
-Window $L\le1$, $Q\ge0.0445\|f\|^2$ & \tierNc & \texttt{weil\_certificates/verify\_iv.py} & Interval arithmetic; supersedes the double-precision $0.0431$.\\ % pending(D7)
-Windows $L\le1.1,1.2,1.3$ & \tierNc & \texttt{weil\_certificates/op\_rig\_validated.py} & Validated numerics, eigenvalue verified by Cholesky; margins $0.0261$, $0.0077$, $0.0027$.\\ % pending(D7)
-Prismatic route to the closure & \tierO & --- & \cref{conj:prismatic-route}; its clauses' proved parts are listed with it.\\
+Window $L\le1$, $Q\ge0.0445\|f\|^2$ & computer-assisted & \texttt{weil\_certificates/verify\_iv.py} & Interval arithmetic; supersedes the double-precision $0.0431$.\\ % pending(D7)
+Windows $L\le1.1,1.2,1.3$ & computer-assisted & \texttt{weil\_certificates/op\_rig\_validated.py} & Validated numerics, eigenvalue verified by Cholesky; margins $0.0261$, $0.0077$, $0.0027$.\\ % pending(D7)
+Prismatic route to the closure & open & --- & \cref{conj:prismatic-route}; its clauses' proved parts are listed with it.\\
 $G$ is the quotient of $\Zst$ by its squares: $\ker G=\{1,9\}$ & \tierP & \texttt{F1PaperNew.G\_kernel\_eq\_squares}, \texttt{squares\_of\_units\_twenty} & \cref{prop:G}\\
 The $n$-th power residue symbol of $\golden$ at a split $p$ is the image of its angular part in $\mu_n$ & \tierP & \texttt{F1PaperNew.units\_pow\_iff}, \texttt{phi\_residue\_symbol} & \cref{prop:phi-residue}\\
 The fifth-power residue symbol of $\golden$ is not a function of the class mod $20$ ($p=11$, $211$) & \tierP & \texttt{F1PaperNew.phi\_residue\_not\_class\_function} & \cref{ssec:disc-binary}\\
@@ -59,20 +59,20 @@ Hecke's companion zero & \tierP & \texttt{hecke\_chi5\_derived} & The axiom \tex
 $L(\bar s)=\overline{L(s)}$ & \tierP & \texttt{hconj\_discharged} & Previously conditional on four pieces; all four proved.\\
 Closure under the mate; real coefficients & \tierP & \texttt{closedUnderMate\_chi5}, \texttt{realCoefficients\_chi5} & The conjugation is no longer a hypothesis.\\
 Disc bound for $|\gamma|\ge2$ & \tierP & \texttt{discBound\_discharged\_high} & \\
-First zero at $\gamma\approx6.6485$ & \tierC & \texttt{NoLowZeros} (definition) & Classical; not proved in Lean.  Not equivalent to \Ecore.\\
+First zero at $\gamma\approx6.6485$ & classical & \texttt{NoLowZeros} (definition) & Classical; not proved in Lean.  Not equivalent to \Ecore.\\
 \texttt{hmate}, \texttt{hcoord} & \tierP & \texttt{mate\_hypothesis\_discharged}, \texttt{hcoord\_discharged} & \\
-Strip bound on $r$ (link 6) & \tierP\ ($t\le2.00013$ also uses \tierC) & \texttt{rSq\_le\_in\_strip} & Previously a numerical observation.\\
+Strip bound on $r$ (link 6) & \tierP\ ($t\le2.00013$ also uses a classical input) & \texttt{rSq\_le\_in\_strip} & Previously a numerical observation.\\
 The eight links of the operator chain & \tierP\ (links); tally & \texttt{the\_chain\_is\_now\_all\_P}$^\circ$, \texttt{eight\_links\_none\_from\_E}$^\circ$ & They describe the operator; that one speaks of a zero is the core.\\
 Tower Hamiltonian Hermitian & \tierP & \texttt{F1CW.tower\_ham\_is\_hermitian} & Real diagonal $m_0\varphi^i$; says nothing about zeros.\\
 Traces of the Fibonacci powers & \tierP & \texttt{the\_three\_pieces}; \texttt{the\_count\_is\_the\_golden\_lattice}$^\circ$ & \\
 Orbit centre & \tierP & \texttt{the\_orbit\_embedding\_is\_unconditional} & \\
 Integrality of $t(\rho)$ $\Leftrightarrow$ \Ecore & \tierP & \texttt{the\_two\_labels\_are\_one\_gap} & For $|\gamma|\ge2$.\\
 Membership, given the bridge & \tierP\ given \texttt{BridgeAxiom} & \texttt{the\_membership\_derived}; \texttt{five\_proved\_three\_classical}$^\circ$ & Supersedes \texttt{MembershipStillOpen}.\\
-Identification of the two branches of the span & \tierO & \texttt{TheSpanIdentifiesThem} (marker) & The branches meet at $\log2$ (\texttt{branches\_meet\_at\_log\_two}, \tierP).\\
+Identification of the two branches of the span & open & \texttt{TheSpanIdentifiesThem} (marker) & The branches meet at $\log2$ (\texttt{branches\_meet\_at\_log\_two}, \tierP).\\
 Pieces of the bridge & \tierP\ (pieces); tally & \texttt{branches\_meet\_at\_log\_two}, \texttt{G\_hom}, \texttt{G\_pi2\_is\_chi5}; \texttt{the\_bridge\_pieces\_formalized}$^\circ$ & None speaks of a zero; \texttt{BridgeIsCToP} is a marker.\\
 Premise A $\Leftrightarrow$ \Ecore & \tierP & \texttt{premise\_A\_iff\_GRH\_chi5} & \\
 \texttt{GDS}/\texttt{bridge\_axiom} $\Leftrightarrow$ \Ecore & \tierP & \texttt{GDS\_iff\_E} & The only substantive input.\\
-Power action on zero coordinates $\Leftrightarrow$ \Ecore & \tierP\ given \tierC & \texttt{B\_iff\_E\_one\_hypothesis} & Given \texttt{NoLowZeros}.\\
+Power action on zero coordinates $\Leftrightarrow$ \Ecore & \tierP\ given a classical input & \texttt{B\_iff\_E\_one\_hypothesis} & Given \texttt{NoLowZeros}.\\
 Descent to $\mathbb F_1$ $\Leftrightarrow$ \Ecore & \tierP & \texttt{descending\_to\_F1\_is\_E} & \\
 Spectral embedding on zeros $\Rightarrow$ \Ecore & \tierP & \texttt{the\_zero\_restricted\_form\_gives\_E} & The version with $\Re$ is false (\texttt{the\_embedding\_with\_Re\_is\_false}).\\
 \Ecore\ $\Leftrightarrow$ no shared ordinate & \tierP & \texttt{E\_iff\_no\_shared\_ordinate\_chi5} & Previously conditional on closure under the mate.\\
@@ -81,23 +81,23 @@ Radius in the tower & $\Leftrightarrow$ \Ecore & \texttt{position\_is\_interval\
 $\Lambda$-monoid on $\langle\varphi\rangle$ & \tierP & \texttt{F1\_monoidal\_descent\_data} & \\
 Artin $\Lambda$-structure on $\mathbb Z[\varphi]$ away from $5$: the lift at each $p\ne5$ exists, is unique, and is fixed by the roots of $x^2-x-1$ modulo $p$ & \tierP; the congruence \tierP & \texttt{FrobeniusUnico.frobenius\_exists\_unique}, \texttt{F1Pendientes.frobenius\_congruence} & The monoid is not additive (\texttt{add\_destroyed}, \texttt{F1CW.psi\_not\_additive}).\\
 Obstruction at $5$ & \tierP & \texttt{no\_frobenius\_lift\_at\_five} & \\
-Golden Prime classification & \tierP\ (homomorphism), \tierP\ (values) & \texttt{G\_hom}, \texttt{F1CW.norm\_cosine\_phi} & The closed sine formula of \cite{grisales25} is a marker (\texttt{GLandsInTheTower}, \tierO).\\
+Golden Prime classification & \tierP\ (homomorphism), \tierP\ (values) & \texttt{G\_hom}, \texttt{F1CW.norm\_cosine\_phi} & The closed sine formula of \cite{grisales25} is a marker (\texttt{GLandsInTheTower}, open).\\
 $\Zphi$ a $\delta$-ring at each $p\ne5$; polar form of $\golden$ at $2$ and $3$; colour group & \tierP; colour group \tierP & \texttt{F1PaperPadic.delta\_structure\_exists}, \texttt{polar\_at\_two}, \texttt{PCFGranularity.colour\_order\_even} & \cref{prop:delta-ring,prop:polar}.\\
 The classes fix the $2$-adic part of the angular part of $\golden$, except on $\ker G$ & \tierP; for every prime \tierP; \tierN & \texttt{PasosDelTexto.inert\_two\_part}, \texttt{split\_three\_mod\_four}, \texttt{F1PaperPadic.inert\_norm\_is\_minus\_one}, \texttt{kernel\_classes\_do\_not\_fix\_it} & \cref{prop:class-angular}.\\
 What the exponent of a Mersenne number fixes; rank of apparition & \tierP & \texttt{F1PaperPadic.fib\_succ\_zero\_iff\_inert}, \texttt{mersenne\_mod\_sixty} & \cref{prop:mersenne-exponent}.\\
 The spectrum of $\OmH$ read at the place $2$ & \tierP & \texttt{F1PaperPadic.half\_is\_two\_adic\_norm\_of\_two} & \cref{prop:omega-two-adic}.\\
-What the fluctuation takes from each prime & \tierP, \tierC, \tierN & \texttt{F1PaperPadic.local\_phase\_contribution}, \texttt{angular\_order\_not\_a\_function\_of\_the\_class} & \cref{prop:what-fluctuation-takes}.\\
+What the fluctuation takes from each prime & \tierP, classical, \tierN & \texttt{F1PaperPadic.local\_phase\_contribution}, \texttt{angular\_order\_not\_a\_function\_of\_the\_class} & \cref{prop:what-fluctuation-takes}.\\
 Euler's product, the tower of $\golden$ and the level $60$ & \tierP, \tierN & \texttt{F1PaperPadic.euler\_product\_at\_two}, \texttt{frequency\_is\_tower\_coordinate}, \texttt{three\_lattices\_level\_sixty} & \cref{prop:euler-tower}.\\
-Pappus' parameter: the zeros classified by the eccentricity $e=2/t$ of their conic & \tierP, \tierC & \texttt{F1PaperClosure.eccentricity\_eq\_one\_iff}, \texttt{zero\_conic\_degenerate\_iff\_line} & \cref{rmk:pappus}.\\
+Pappus' parameter: the zeros classified by the eccentricity $e=2/t$ of their conic & \tierP, classical & \texttt{F1PaperClosure.eccentricity\_eq\_one\_iff}, \texttt{zero\_conic\_degenerate\_iff\_line} & \cref{rmk:pappus}.\\
 Logarithmic signature of the pentagon & \tierP & \texttt{F1v2.pentagon\_log\_signature\_full} & \\
 Crystallographic restriction, pentagonal nodes & \tierP\ given cosine values; \tierP\ without & \texttt{trZeta\_*}, \texttt{pentagon\_nodes\_are\_golden}; \texttt{F1v2.cosineWindow\_holds}, \texttt{F1v2.pentagon\_nodes\_unconditional} & The hypotheses are proved in \texttt{F1\_v2}, \S O.\\
 Units of $\mathbb Z[\varphi]$ are $\pm\varphi^k$ & \tierP\ (abstract), \tierP\ (instance) & \texttt{unit\_is\_a\_power\_of\_phi}; \texttt{F1v2.arrowB} & Without Dirichlet.\\
 Frobenius eigenvalue on $\sqrt5$ & \tierP & \texttt{F1FrobeniusEigen.frobenius\_eigenvalue\_on\_sqrt5}, \texttt{euler\_factor\_is\_char\_poly} & The Euler factor is $\det(1-tM_p)$.\\
-Explicit formula for $L(s,\chi_5)$ & \tierC; coefficients \tierP & \texttt{F1WeilFunctional.ExplicitFormulaChi5}, \texttt{prime\_side\_is\_frobenius\_trace} & Checked numerically to $10^{-18}$ with 40 zeros \tierN.\\
-Weil positivity (full) & $\Leftrightarrow$ \Ecore, \tierO; the reduction to the prime side \tierP & \texttt{positivity\_is\_a\_prime\_side\_bound} & A bound on the Frobenius-trace side by the archimedean one.\\
+Explicit formula for $L(s,\chi_5)$ & classical; coefficients \tierP & \texttt{F1WeilFunctional.ExplicitFormulaChi5}, \texttt{prime\_side\_is\_frobenius\_trace} & Checked numerically to $10^{-18}$ with 40 zeros \tierN.\\
+Weil positivity (full) & $\Leftrightarrow$ \Ecore, open; the reduction to the prime side \tierP & \texttt{positivity\_is\_a\_prime\_side\_bound} & A bound on the Frobenius-trace side by the archimedean one.\\
 Semilocal positivity & \tierN & \texttt{weil\_window\_chi5.py} & Archimedean alone up to $L=0.9251$; with $\chi_5(2)=+1$ it fails from $L\approx0.9$.\\ % pending(D7)
-First window, $L\le0.7447$ & \tierP, inputs \tierC/\tierN & \texttt{F1v2.first\_window\_integral} and its steps & $m(\log2)=0.0841$.\\
-Windows $L\le1$ and $L\le1.3$ & \tierNc & \texttt{weil\_certificates/} & Margins $0.0445$ (interval arithmetic) and $0.0027$ (validated numerics, verified Cholesky).\\ % pending(D7)
+First window, $L\le0.7447$ & \tierP, inputs \tierN & \texttt{F1v2.first\_window\_integral} and its steps & $m(\log2)=0.0841$.\\
+Windows $L\le1$ and $L\le1.3$ & computer-assisted & \texttt{weil\_certificates/} & Margins $0.0445$ (interval arithmetic) and $0.0027$ (validated numerics, verified Cholesky).\\ % pending(D7)
 Envelope and fluctuation & \tierN & \texttt{envelope.py}, \texttt{tstar.py} & $\gamma_n=E^{-1}(n-S(\gamma_n))$, 40 zeros.\\ % pending(D7)
 Integrality of the trace with $t<3$ & \tierP & \texttt{trace\_integer\_plus\_bound} & Closes link (iii) without the tower.\\
 $r\in\mathbb Q(\sqrt5)$, $t\in\mathbb Z\Rightarrow r=\varphi^k$ & \tierP & \texttt{F1v2.arrowB\_full} & The hypothesis on the field is needed: $2+\sqrt3$ has trace $4$.\\
@@ -107,10 +107,10 @@ Link 7: the value $2$ & \tierP & \texttt{the\_apex\_is\_the\_inverse\_fibre\_siz
 Diagonal contraction & \tierP; general form \tierP & \texttt{diagonal\_blocked}; \texttt{F1v2.sq\_lt\_self\_on\_unit\_interval} & The categorical reading is a remark.\\
 Local factorisation, four characters & \tierP & \texttt{F1v2.factorisation\_natural} & \\
 Failure of Soul\'e's condition & \tierP & \texttt{F1v2.not\_soule} & No $N\in\mathbb Z[x]$ with $N(p)=1+\chi_5(p)$.\\
-Counting function: weights, local assembly & \tierP; global \tierC & \texttt{F1v2.pcf\_counting\_weights}, \texttt{local\_log\_deriv} & Global identity: Connes--Consani integral formula.\\
-Residue of $\zeta_K$ at $s=1$ & \tierP\ given \tierC & \texttt{L1\_from\_class\_number\_formula}, \texttt{class\_number\_one\_K} & Given the class-number formula.\\
+Counting function: weights, local assembly & \tierP; global (classical) & \texttt{F1v2.pcf\_counting\_weights}, \texttt{local\_log\_deriv} & Global identity: Connes--Consani integral formula.\\
+Residue of $\zeta_K$ at $s=1$ & \tierP\ given a classical input & \texttt{L1\_from\_class\_number\_formula}, \texttt{class\_number\_one\_K} & Given the class-number formula.\\
 $\kappa_K$ & \tierP & \texttt{F1CW.kappaK} & $\kappa_K=2u^2/(u^2-1)$; the \texttt{kappa\_K} of the first block is a different function and is not used.\\
-Each zero, unconditionally: closure under the symmetries, orbit centred at $\tfrac12$, $r(1-\rho)=r(\rho)^{-1}$, confinement of $r$ and $t$ & \tierP\ (closure under conjugation and mate \tierP; confinement given the first zero \tierC) & \cref{prop:each-zero} & None uses that the zero is on the line.\\
+Each zero, unconditionally: closure under the symmetries, orbit centred at $\tfrac12$, $r(1-\rho)=r(\rho)^{-1}$, confinement of $r$ and $t$ & \tierP\ (closure under conjugation and mate \tierP; confinement given the first zero, classical) & \cref{prop:each-zero} & None uses that the zero is on the line.\\
 Cocone and colimit of the apex & \tierP & \texttt{modulus\_cocone\_six\_routes}, \texttt{apex\_colimit\_universal} & \\
 The bridge, link by link & \tierP & \texttt{bridge\_components}, \texttt{bridge\_assembled} & The last link is open; the closure conjecture would give it.\\
 Forms of the closing step & each \tierP\ equivalent to \Ecore\ & \cref{ssec:core-forms} & One step in several forms; conditions settled or classical.\\
@@ -120,17 +120,17 @@ Partition of an operator's error; only the parametrisation is removable & \tierP
 Fluctuation as a function of the torus; independence of the $\log p$; law of the fluctuation & \tierP; law \tierN & \texttt{torusFactor\_on\_line}, \texttt{log\_primes\_independent} & \cref{prop:torus-line}.\\
 Additive side bounded; multiplicativity and the inverse of the structure & \tierP & \texttt{abel\_bound}, \texttt{chi5\_mul}, \texttt{inverse\_of\_the\_structure} & Davenport--Heilbronn shows the additive side alone is not enough.\\
 Four fibres of $G$; squares in the kernel; field squeeze & \tierP; balances \tierN & \texttt{four\_fibre\_indicators}, \texttt{squares\_in\_kernel\_fibre} & \cref{prop:four-fibres}.\\
-Positivity for the field of the four fibres & \tierO & \texttt{FieldFejerPositivity} & The four Fej\'er sums of $\Q(i,\sqrt5)$ are $\ge0$ for every $L$; stronger than the line of $\chiv$, which needs only its own sum.\\
+Positivity for the field of the four fibres & open & \texttt{FieldFejerPositivity} & The four Fej\'er sums of $\Q(i,\sqrt5)$ are $\ge0$ for every $L$; stronger than the line of $\chiv$, which needs only its own sum.\\
 Finite-dimensional intersection form; Hodge index, primitive direction & \tierP; signature \tierN & \texttt{gram\_form\_nonneg}, \texttt{primitive\_positivity} & \cref{prop:intersection-form}; one negative direction (the pole) for $\zeta$.\\
 Frobenius translation: rotation on the line, boost off it; the golden boost & \tierP & \texttt{translation\_is\_boost\_off\_the\_line}, \texttt{golden\_boost} & \cref{prop:bridge-boosts}; an off-line quadruple is a hyperbolic plane.\\
 Golden field: place weights, rank-one pole, total $=K-R$; first windows up to length $2.3$ & \tierP; windows \tierN & \texttt{place\_weights}, \texttt{pole\_form\_rank\_one}, \texttt{total\_is\_structural\_minus\_remainder} & \cref{ssec:golden-field}; $\rho\le\lambda_{N+1}$ proved, matrices in double precision.\\
-The closure: positions from the structure, belonging of the primes and entry of the zeros, the conjecture of the two precisions & \tierP; closure conjecture \tierO & \texttt{F1PaperClosure.ExactClosure}, \texttt{the\_line\_from\_W4}, \texttt{eight\_classes\_orthogonality} & \cref{thm:weil-closure}; (W4) measured in all eight classes.\\
-The fibres of $G$ on the levels of the clock & \tierP; mass \tierC; one statement of (ii) \tierT & \texttt{FibrasPorNivel}, \texttt{PasosDelTexto.palindromic\_norm} & New (\cref{prop:fibres-levels}).\\
+The closure: positions from the structure, belonging of the primes and entry of the zeros, the conjecture of the two precisions & \tierP; closure conjecture (open) & \texttt{F1PaperClosure.ExactClosure}, \texttt{the\_line\_from\_W4}, \texttt{eight\_classes\_orthogonality} & \cref{thm:weil-closure}; (W4) measured in all eight classes.\\
+The fibres of $G$ on the levels of the clock & \tierP; mass (classical); one statement of (ii) (in text) & \texttt{FibrasPorNivel}, \texttt{PasosDelTexto.palindromic\_norm} & New (\cref{prop:fibres-levels}).\\
 Free Klein orbits and the inertia index & \tierP & \texttt{OrbitaLibre.quadruple\_form}, \texttt{even\_part}, \texttt{odd\_part} & New (\cref{prop:free-orbit-index}); completes \cref{prop:bridge-boosts}(ii).\\
-(W4) is (W3) on the planes of the orbit; half period & \tierP; windows \tierNc & \texttt{W4DeW3}, \texttt{ParidadesJuntas}, \texttt{MedioPeriodo} & New (\cref{prop:W4-from-W3}); (W4) for every $k$ remains \tierO.\\
-The mate without the reality of the character & \tierP; functional equation \tierC & \texttt{MateSinG.closed\_under\_mate\_of\_fe\_dual} & New (\cref{rmk:mate-without-G}).\\
+(W4) is (W3) on the planes of the orbit; half period & \tierP; windows (computer-assisted) & \texttt{W4DeW3}, \texttt{ParidadesJuntas}, \texttt{MedioPeriodo} & New (\cref{prop:W4-from-W3}); (W4) for every $k$ remains open.\\
+The mate without the reality of the character & \tierP; functional equation (classical) & \texttt{MateSinG.closed\_under\_mate\_of\_fe\_dual} & New (\cref{rmk:mate-without-G}).\\
 Davenport--Heilbronn as a test of routes & \tierN & \texttt{retro99.py}, \texttt{dh\_logderiv.py} & New (\cref{ssec:two-sides}).\\ % pending(D7)
-What an operator of the level does not separate & \tierP; spectral theorem \tierC & \texttt{PCFGranularity}, \texttt{ObservablesDelNivel}, \texttt{FibraYReloj} & New (\cref{prop:level-operators}); brings in the content of the granularity module.\\
+What an operator of the level does not separate & \tierP; spectral theorem (classical) & \texttt{PCFGranularity}, \texttt{ObservablesDelNivel}, \texttt{FibraYReloj} & New (\cref{prop:level-operators}); brings in the content of the granularity module.\\
 The two faces of the Fibonacci dynamics: periodic on the torsion, mixing on the characters & \tierP; the count of fixed points, Wall's law and the density step & \texttt{DosCarasFibonacci}, \texttt{PeriodicasSol} & New (\cref{prop:two-faces}).\\
 What a symmetry shows in a spectrum; the spacings of the zeros & \tierP; spacings \tierN & \texttt{EstructuraEnGUE}, \texttt{retro105.py} & New (\cref{prop:symmetry-spectrum}, \cref{ssec:envelope-fluctuation}).\\ % pending(D7)
 \midrule\multicolumn{4}{l}{\emph{Statements of the body not listed above, with the tiers and the declarations the body gives}}\\\midrule
@@ -145,7 +145,7 @@ $\golden=2\cos(\pi/5)$ from Chebyshev's identity for $\cos5\theta$ & \tierP & \t
 The two levels of the conductor in the twentieth roots of unity & \tierP & \texttt{zeta20\_pow\_five\_eq\_I}, \texttt{zeta20\_pow\_four\_eq\_zeta5} & \cref{sec:choice}.\\
 The conductor is derived, and its four is one four & \tierP, \tierP & \texttt{conductor\_is\_derived}, \texttt{conductor\_is\_joint\_period}, \texttt{F1CW.binary\_period\_mod\_five}, \dots & \cref{prop:conductor}.\\
 Crystallographic restriction & \tierP, \tierP & \texttt{trZeta\_crystallographic\_values}, \texttt{F1v2.three\_conductors\_unconditional}, \dots & \cref{prop:crystallographic}.\\
-Unit ranks & \tierP, \tierC & \texttt{unit\_rank\_splits\_branches}, \texttt{branches\_are\_the\_unit\_groups}, \texttt{dirichlet\_ranks\_arithmetic} & \cref{prop:unit-ranks}.\\
+Unit ranks & \tierP, classical & \texttt{unit\_rank\_splits\_branches}, \texttt{branches\_are\_the\_unit\_groups}, \texttt{dirichlet\_ranks\_arithmetic} & \cref{prop:unit-ranks}.\\
 $\Zphi=\Z[X]/(X^2-X-1)$ and its real embedding onto the tower & \tierP & \texttt{Z\ensuremath{\varphi}}, \texttt{\ensuremath{\omega}\_sq}, \texttt{\ensuremath{\iota}\_pow} & \cref{sec:ring}.\\
 $\Zphi$ is an integral domain & \tierP & \texttt{f\ensuremath{\varphi}\_map\_two\_irreducible}, \texttt{f\ensuremath{\varphi}\_prime} & \cref{prop:domain}.\\
 Self-duality under $x\mapsto-1/x$ & \tierP & \texttt{F1OZ.selfdual\_iff}, \texttt{F1OZ.selfdual\_disc\_not\_square}, \texttt{phi\_quadratic} & \cref{prop:selfdual}; corrects \cite{gonzalez26oddzeta}.\\
@@ -154,7 +154,7 @@ Factorisations and parities & \tierP & \texttt{quadratic\_factor\_upper}, \textt
 Multiplication in the tower read as addition of Fibonacci coordinates & \tierP & \texttt{multiplicative\_reads\_as\_additive}, \texttt{carry\_in\_base\_phi} & After \cref{prop:factor-parity}.\\
 The matrix of multiplication by $\omega$; its determinant is the norm $-1$ & \tierP & \texttt{M\_is\_mul\_by\_phi}, \texttt{det\_M\_eq\_norm\_phi}, \texttt{znorm\_phi} & \cref{ssec:unit-norm}.\\
 The prime $2$ is inert, and $\omega$ has order three in $\F_4^\times$ & \tierP & \texttt{two\_is\_inert}, \texttt{f4phi\_order\_three} & \cref{ssec:unit-norm}.\\
-The ring of integers & \tierP, \tierP, \tierC & \texttt{quadratic\_ring\_is\_Z\_phi}, \texttt{the\_rule\_is\_proved}, \texttt{F1v2.arrowB\_Q} & \cref{prop:OK}.\\
+The ring of integers & \tierP, \tierP, classical & \texttt{quadratic\_ring\_is\_Z\_phi}, \texttt{the\_rule\_is\_proved}, \texttt{F1v2.arrowB\_Q} & \cref{prop:OK}.\\
 The unit structure derived without Dirichlet's theorem & \tierP & \texttt{unit\_structure\_is\_derivable} & After \cref{thm:units}.\\
 Continued-fraction self-reference & \tierP & \texttt{phi\_continued\_fraction} & \cref{lem:phi-cf}.\\
 Nested-radical self-reference & \tierP & \texttt{phi\_nested\_radical} & \cref{lem:phi-nr}.\\
@@ -168,7 +168,7 @@ The additive law of the tower characterises its base & \tierP & \texttt{adjacent
 $\log\golden=6\sqrt3\,\pi/M_{\PCF}$, the base scale of the metric tower & \tierP & \texttt{eps0\_relates\_log\_and\_geometry}, \texttt{component\_one\_denominator} & After \cref{prop:tower-image}.\\
 The conjugation $\sigma(\omega)=1-\omega$, an involution & \tierP, \tierP & \texttt{FrobeniusUnico.Q.σ}, \texttt{FrobeniusUnico.Q.σ\_ω}, \texttt{\ensuremath{\sigma}\_comp\_\ensuremath{\sigma}} & \cref{def:sigma}.\\
 $\Frob_m\circ\Frob_n=\Frob_{mn}$; the lifts commute & \tierP & \texttt{\ensuremath{\psi}\_comp}, \texttt{\ensuremath{\psi}\_commute} & \cref{prop:frob-compose}.\\
-The pentagonal descent datum: exactly one $\Lambda_{\Z,E}$-structure on $\Zphi$, $E$ the primes $\ne5$; none at $5$ & \tierP; localisation \tierO & \texttt{FrobeniusUnico.lambda\_structure\_away\_from\_five}, \texttt{frob\_commute} & \cref{thm:descent-datum}.\\
+The pentagonal descent datum: exactly one $\Lambda_{\Z,E}$-structure on $\Zphi$, $E$ the primes $\ne5$; none at $5$ & \tierP; localisation (open) & \texttt{FrobeniusUnico.lambda\_structure\_away\_from\_five}, \texttt{frob\_commute} & \cref{thm:descent-datum}.\\
 The bridge between the two directions & \tierP & \texttt{monoid\_ring\_bridge}, \texttt{monoid\_side\_is\_realise} & \cref{thm:monoid-ring-bridge}.\\
 The machinery of the obstruction, and the norm sign & \tierP, \tierP & \texttt{hom\_ext}, \texttt{five\_eq\_zero\_dual}, \texttt{eps\_ne\_zero'}, \dots & \cref{prop:artin-machinery}.\\
 The Frobenius sign is $\chiv$ & \tierP & \texttt{five\_sq\_iff\_mod5}, \texttt{root\_x2mx1\_iff\_five\_sq}, \texttt{chi5\_is\_the\_mod5\_component} & \cref{thm:sign-is-chi5}; the first point at which $\chiv$ enters the chain.\\
@@ -180,36 +180,36 @@ $\Frob_p$ is the identity at split primes and $\sigma$ at inert ones & \tierP & 
 The classification needs base $20$ & \tierP, \tierP & \texttt{base20\_bijection}, \texttt{decoration\_matches\_G}, \texttt{off\_diagonal\_inaccessible}, \dots & \cref{prop:base-twenty}.\\
 The angles as cyclotomic norms & \tierP, \tierN & \texttt{W4Isometria.conductor\_cyclotomic\_norms}, \texttt{F1PaperSixty.phi\_clock\_identity}, \texttt{F1PaperSixty.phi\_clock\_exact}, \dots & \cref{rmk:angles-cyclotomic}.\\
 The kernel of $G$ leaves the $2$-adic angular part free; its order is the contraction factor & \tierP & \texttt{F1PCFUnified.contraction\_is\_kernel} & After \cref{prop:class-angular}.\\
-The golden ratio names the fifth roots of unity & \tierP; Chebotarev \tierC; frequencies \tierN & \texttt{PasosDelTexto.fifth\_root\_trace}, \texttt{PasosDelTexto.second\_trace}, \texttt{PasosDelTexto.pair\_from\_trace}, \dots, \texttt{retro78.py} & \cref{prop:phi-names-mu5}.\\ % pending(D7)
+The golden ratio names the fifth roots of unity & \tierP; Chebotarev (classical); frequencies \tierN & \texttt{PasosDelTexto.fifth\_root\_trace}, \texttt{PasosDelTexto.second\_trace}, \texttt{PasosDelTexto.pair\_from\_trace}, \dots, \texttt{retro78.py} & \cref{prop:phi-names-mu5}.\\ % pending(D7)
 The two involutions at the primes: the class $9$ and the conjugation by the classes with $\chiv=-1$ & \tierP & \texttt{RelojTres.class\_nine}, \texttt{RelojTres.classes\_that\_conjugate}, \texttt{TodoEnLean.class\_nine\_fixes\_phi} & After \cref{prop:phi-names-mu5}.\\
-Ideals of norm $n$; split primes of density $\tfrac12$ & \tierC; the classes \tierP & \texttt{G\_pi2\_is\_chi5} & \cref{sec:dedekind}.\\
+Ideals of norm $n$; split primes of density $\tfrac12$ & classical; the classes \tierP & \texttt{G\_pi2\_is\_chi5} & \cref{sec:dedekind}.\\
 The degree formula and the norms of the prime ideals of $\OK$ & \tierP & \texttt{F1CW.degree\_formula\_K}, \texttt{F1CW.ideal\_norm\_values\_K}, \texttt{F1CW.euler\_from\_ideals\_K} & \cref{sec:dedekind}.\\
 The two shapes of the local factor; $\chiv(p)=\mathrm{tr}\,M_p-1$ & \tierP & \texttt{euler\_factor\_split}, \texttt{euler\_factor\_inert}, \texttt{trace\_minus\_one\_is\_chi5} & After \cref{thm:frob-eigen}.\\
 Two spectral data, one below $1$ & \tierP & \texttt{LadoAnalitico.spectral\_data}, \texttt{LadoAnalitico.spectral\_datum\_below\_one}, \texttt{spectral\_uniqueness} & \cref{prop:spectral-data}.\\
 Functoriality of $\Psi$ & \tierP & \texttt{psi\_comp} & \cref{prop:Psi-functorial}.\\
 From Frobenius to Euler factors & \tierP & \texttt{local\_factor\_identity} & \cref{lem:psi-to-euler}.\\
 Euler product as colimit & \tierP, \tierP & \texttt{F1CW.coeff\_stabilises\_K}, \texttt{F1CW.colimit\_exists\_K} & \cref{prop:euler-colimit}.\\
-The discriminants of the three quadratic fields of the conductor & \tierP; the fields \tierC & \texttt{three\_subfield\_discs}, \texttt{disc\_K\_is\_conductor\_squared} & After \cref{def:QuadExt}.\\
-Split laws of the four fields & \tierP; the fields \tierC & \texttt{three\_quadratic\_subfields} & \cref{thm:dedekind-natural}.\\
+The discriminants of the three quadratic fields of the conductor & \tierP; the fields (classical) & \texttt{three\_subfield\_discs}, \texttt{disc\_K\_is\_conductor\_squared} & After \cref{def:QuadExt}.\\
+Split laws of the four fields & \tierP; the fields (classical) & \texttt{three\_quadratic\_subfields} & \cref{thm:dedekind-natural}.\\
 Dedekind factorisation as natural isomorphism & \tierP & \texttt{dedekind\_factorisation}, \texttt{local\_factor\_identity} & \cref{thm:dedekind-natural}.\\
-Fundamental formula & \tierP, \tierC & \texttt{anchor\_is\_a\_crossed\_identity} & \cref{thm:L1}.\\
-$L(1,\chiv)$ by Gauss--Lerch & \tierP\ given \tierC & \texttt{F1OZ.lerch\_arith} & After \cref{thm:L1}.\\
+Fundamental formula & \tierP, classical & \texttt{anchor\_is\_a\_crossed\_identity} & \cref{thm:L1}.\\
+$L(1,\chiv)$ by Gauss--Lerch & \tierP\ given a classical input & \texttt{F1OZ.lerch\_arith} & After \cref{thm:L1}.\\
 The local Dedekind factorisation at the three kinds of prime & \tierP & \texttt{F1CW.local\_dedekind\_ramified\_K}, \texttt{F1CW.local\_dedekind\_split\_K}, \texttt{F1CW.local\_dedekind\_inert\_K} & \cref{sec:factorisation}.\\
-Generalised Bernoulli values $B_{2k,\chiv}$, $k\le4$ & \tierN; formula \tierC & \texttt{oz\_carried.py} & \cref{ssec:odd-zeta}.\\ % pending(D7)
+Generalised Bernoulli values $B_{2k,\chiv}$, $k\le4$ & \tierN; formula (classical) & \texttt{oz\_carried.py} & \cref{ssec:odd-zeta}.\\ % pending(D7)
 The right-hand side of the determination built from the pentagon; the even values in $\Q\,\pi^{2k}$ & \tierP & \texttt{F1CW.even\_zeta\_bernoulli}, \texttt{F1CW.bernoulli\_eval\_rational} & After \cref{thm:odd-zeta}.\\
-Polylogarithmic form; distances on the circle; the conditional on algebraicity & \tierP; Baker \tierC; the forms at $s=1,3,5$ \tierN & \texttt{F1OZ.fourier\_projection}, \texttt{F1OZ.normSq\_one\_sub\_zeta5}, \texttt{F1OZ.normSq\_one\_sub\_zeta5\_sq}, \texttt{F1OZ.baker\_ratio}, \texttt{PasosDelTexto.algebraic\_scale}, \texttt{oz\_carried.py} & \cref{rmk:nature-L}.\\ % pending(D7)
-$L(2k,\chiv)$ and $\sum\chiv(a)\mathrm{Li}_{2k}(\zeta_5^a)$ transcendental & \tierP\ given \tierC & \texttt{F1OZ.even\_value\_transcendental} & \cref{rmk:nature-L}; Lindemann for $\pi$ as input.\\
-$T_K=5L(1,\chiv)L(1,\chi_4\chiv)$; $T_K$ and $\zeta_K(2k+1)$ & \tierP\ given \tierC; \tierC; the values at $s=3$ \tierN; relation with $\log\golden$ \tierO & \texttt{F1OZ.period\_from\_the\_chi5\_fibre}, \texttt{degenerate\_orbits\_are\_transversals}, \texttt{oz\_carried.py} & \cref{rmk:TK-odd}.\\ % pending(D7)
-$G$ and the motivic Galois group & \tierC, \tierT & --- & \cref{rmk:G-motivic}.\\
-Hurwitz representation of $L(s,\chi_5)$ & \tierP, \tierC & \texttt{hurwitz\_representation\_L\_chi5} & \cref{thm:hurwitz}.\\
-$\sum\chiv(a)\psi(a/5)=-2\sqrt5\log\golden$ & \tierP\ given \tierC & \texttt{F1OZ.digamma\_sum} & \cref{thm:hurwitz}.\\
+Polylogarithmic form; distances on the circle; the conditional on algebraicity & \tierP; Baker (classical); the forms at $s=1,3,5$ \tierN & \texttt{F1OZ.fourier\_projection}, \texttt{F1OZ.normSq\_one\_sub\_zeta5}, \texttt{F1OZ.normSq\_one\_sub\_zeta5\_sq}, \texttt{F1OZ.baker\_ratio}, \texttt{PasosDelTexto.algebraic\_scale}, \texttt{oz\_carried.py} & \cref{rmk:nature-L}.\\ % pending(D7)
+$L(2k,\chiv)$ and $\sum\chiv(a)\mathrm{Li}_{2k}(\zeta_5^a)$ transcendental & \tierP\ given a classical input & \texttt{F1OZ.even\_value\_transcendental} & \cref{rmk:nature-L}; Lindemann for $\pi$ as input.\\
+$T_K=5L(1,\chiv)L(1,\chi_4\chiv)$; $T_K$ and $\zeta_K(2k+1)$ & \tierP\ given a classical input; classical; the values at $s=3$ \tierN; relation with $\log\golden$ (open) & \texttt{F1OZ.period\_from\_the\_chi5\_fibre}, \texttt{degenerate\_orbits\_are\_transversals}, \texttt{oz\_carried.py} & \cref{rmk:TK-odd}.\\ % pending(D7)
+$G$ and the motivic Galois group & classical, in text & --- & \cref{rmk:G-motivic}.\\
+Hurwitz representation of $L(s,\chi_5)$ & \tierP, classical & \texttt{hurwitz\_representation\_L\_chi5} & \cref{thm:hurwitz}.\\
+$\sum\chiv(a)\psi(a/5)=-2\sqrt5\log\golden$ & \tierP\ given a classical input & \texttt{F1OZ.digamma\_sum} & \cref{thm:hurwitz}.\\
 Local factors at $s=3$; $\zeta_K(3)$ and $L(3,\chiv)$ & \tierP; values \tierN & \texttt{F1OZ.local\_factors\_at\_three}, \texttt{oz\_carried.py} & \cref{ex:zeta3}.\\ % pending(D7)
 The binary tower inside the golden one; $2$ is not a power of $\golden$ & \tierP & \texttt{mersenne\_bridge}, \texttt{binary\_tower\_inside\_golden}, \texttt{lambda\_is\_not\_an\_integer} & \cref{prop:mersenne-bridge}.\\
 $\log2=\log|\ker G|$, the kernel exactly $\{1,9\}$ & \tierP & \texttt{kernel\_is\_exactly\_one\_nine} & After \cref{prop:mersenne-bridge}.\\
 The anchor is not special to $\golden$; counting in base $\golden$ is counting in base $2$ rescaled & \tierP & \texttt{modulus\_transports}, \texttt{half\_three\_roles}, \texttt{density\_exact} & After \cref{prop:mersenne-bridge}.\\
 The denominators of $L(2,\chiv)$ and $L(4,\chiv)$ against $\pi^{2k}/\sqrt5$ & \tierP\ for the factorisations & \texttt{denominators\_are\_conductor\_and\_ternary} & \cref{rmk:base-phi}.\\
-The fibre over the tower is $\mu_6$ & \tierP; the cover \tierC & \texttt{PCFGranularity.phiSig\_period\_six}, \texttt{PCFGranularity.phiSig\_six\_are\_distinct}, \texttt{PCFGranularity.cover\_degree\_six}, \dots & \cref{thm:fibre-mu6}.\\
-One operator: simple spectrum, modulus and phase, the forms as functions & \tierP, \tierT & \texttt{UnOperador.spec\_injective}, \texttt{UnOperador.norm\_spec}, \texttt{UnOperador.spec\_polar}, \texttt{UnOperador.forms\_from\_spec} & \cref{thm:one-operator}.\\
+The fibre over the tower is $\mu_6$ & \tierP; the cover (classical) & \texttt{PCFGranularity.phiSig\_period\_six}, \texttt{PCFGranularity.phiSig\_six\_are\_distinct}, \texttt{PCFGranularity.cover\_degree\_six}, \dots & \cref{thm:fibre-mu6}.\\
+One operator: simple spectrum, modulus and phase, the forms as functions & \tierP, in text & \texttt{UnOperador.spec\_injective}, \texttt{UnOperador.norm\_spec}, \texttt{UnOperador.spec\_polar}, \texttt{UnOperador.forms\_from\_spec} & \cref{thm:one-operator}.\\
 The dimensional chain & \tierP, \tierP & \texttt{F1v2.dimensional\_chain}, \texttt{F1v2.line\_is\_the\_tower}, \texttt{F1v2.frobenius\_on\_the\_line}, \dots & \cref{thm:one-two-three}.\\
 The binary forms of $\Zphi$ as a domain of $d=3$ & \tierP & \texttt{F1v2.symF\_preserves\_disc}, \texttt{F1v2.discQ\_signature}, \texttt{F1v2.norm\_form\_disc\_and\_reversed}, \dots & \cref{prop:binary-forms}.\\
 Exact spectrum of $\OmH$ & \tierP, \tierP & \texttt{spectral\_positions\_values}, \texttt{eigenvalue\_half}, \texttt{F1CW.triad\_real\_parts}, \dots & \cref{prop:omega-spectrum}.\\
@@ -249,7 +249,7 @@ The centre of every orbit of zeros is $\tfrac12$; the apex receives the zeros & 
 The last stage: membership as the union of the two halves & \tierP & \texttt{union\_of\_halves\_is\_E} & \cref{ssec:stage7}.\\
 Everything descends from $\golden$ but the verdict & \tierP & \texttt{everything\_descends\_but\_the\_verdict}, \texttt{MonomialHalfP}, \texttt{monomial\_is\_in\_image\_of\_realiseP} & \cref{rmk:left-to-close}.\\
 The three regimes of the zeros: below $\gamma=7.3241$, below $70$, and the sandwich & \tierP\ given the numerical inputs \tierN & \texttt{optimum\_at\_three}, \texttt{covers\_first\_zero}, \texttt{DoubleCount}, \texttt{invariant\_two\_on\_measured\_range}, \dots & After \cref{prop:three-regimes}.\\
-Four equalities on the whole zero set & \tierP\ given \tierC & \texttt{four\_equalities\_on\_the\_set} & After \cref{prop:three-regimes}.\\
+Four equalities on the whole zero set & \tierP\ given a classical input & \texttt{four\_equalities\_on\_the\_set} & After \cref{prop:three-regimes}.\\
 An earlier Weil window, and the prime terms by sign & \tierN; the signs \tierP & \texttt{extended\_window}, \texttt{adverse\_are\_outnumbered}, \texttt{four\_is\_adverse}, \texttt{eight\_is\_favourable} & \cref{rmk:earlier-window}.\\
 The counting law: envelope and fluctuation & \tierP & \texttt{CountingLaw} & \cref{ssec:envelope-fluctuation}.\\
 The zeros select the conductor & \tierP, \tierN & \texttt{scale\_injective\_in\_conductor}, \texttt{envelope\_splits}, \texttt{field\_part\_distinguishes} & \cref{prop:envelope-exact}.\\
@@ -263,20 +263,20 @@ The forms linked without passing through \Ecore & \tierP & \texttt{hasDegree\_gi
 The step as a statement about the coordinate alone & \tierP & \texttt{degenerate\_iff\_valuation\_zero}, \texttt{monomial\_iff\_one\_under\_confinement}, \texttt{step\_six\_membership\_would\_give\_the\_power}, \dots & \cref{prop:step-coordinate}.\\
 The $\golden$ side of the step: from an integral trace to the line & \tierP & \texttt{trace\_of\_integer\_matrix}, \texttt{integer\_trace\_gives\_SL2\_eigenvalue}, \texttt{the\_quadratic\_form\_condition\_gives\_the\_trace}, \dots & \cref{prop:phi-side}.\\
 The zero descends: $r=\golden^k$ with $k=0$ by discreteness & \tierP & \texttt{k\_zero\_by\_discreteness} & After \cref{prop:phi-side}.\\
-The two halves & \tierP, \tierC & \texttt{coordinate\_is\_equivariant}, \texttt{coords\_closed\_under\_inversion}, \texttt{the\_companion\_plays\_the\_conjugate}, \dots & \cref{prop:two-halves}.\\
-Neither side of the structure is enough alone & \tierP; \tierC & \texttt{F1PaperTorus.mertens\_positivity\_mathlib}, \texttt{F1PaperTorus.nonvanishing\_from\_one}, \texttt{F1PaperTorus.InverseStructureBound} & After \cref{prop:multiplicative-side}.\\
+The two halves & \tierP, classical & \texttt{coordinate\_is\_equivariant}, \texttt{coords\_closed\_under\_inversion}, \texttt{the\_companion\_plays\_the\_conjugate}, \dots & \cref{prop:two-halves}.\\
+Neither side of the structure is enough alone & \tierP; classical & \texttt{F1PaperTorus.mertens\_positivity\_mathlib}, \texttt{F1PaperTorus.nonvanishing\_from\_one}, \texttt{F1PaperTorus.InverseStructureBound} & After \cref{prop:multiplicative-side}.\\
 The line from the convergence of the character block of the Fej\'er sum & \tierP, \tierP & \texttt{CharacterBlockConverges}, \texttt{F1PaperTorus.forcedLimit}, \texttt{F1PaperTorus.character\_block\_gives\_the\_line}, \texttt{F1PaperTorus.fejerKernel\_nonneg}, \dots & \cref{ssec:field-positivity}.\\
 The intersection form computed from the primes; the Hodge index for $\chiv$ & \tierP; \tierN & \texttt{F1PaperTorus.ArithmeticHodgeIndex} & After \cref{prop:intersection-form}.\\
 Frobenius translations as rotations on the line and boosts off it & \tierP & \texttt{W4Isometria.golden\_torus\_fails\_W4}, \texttt{W4Isometria.normalized\_M\_satisfies\_W4}, \texttt{W4Isometria.line\_from\_bounded\_pair}, \texttt{F1PaperTorus.FrobeniusActsByRotations} & After \cref{prop:free-orbit-index}.\\
 The places of $\Q(\sqrt5)$: none of norm $2$ or $3$ & \tierP & \texttt{F1PaperTorus.no\_places\_of\_norm\_two\_or\_three} & \cref{ssec:golden-field}.\\
 The pole as the ample direction; the Hodge index of the golden field & \tierP & \texttt{F1PaperTorus.GoldenFieldHodgeIndex}, \texttt{F1PaperTorus.RemainderDominated} & \cref{ssec:golden-field}.\\
-The archimedean form of $\zeta_K$, explicitly; $D\ge0$ & \tierP; \tierC & \texttt{F1PaperTorus.autocorrelation\_le\_energy} & \cref{ssec:golden-field}.\\
-The first windows over the whole function space: the low-frequency fraction and Lehmann's bounds & \tierP; \tierC & \texttt{F1PaperTorus.lowFrequencyFraction\_nonneg}, \texttt{F1PaperTorus.LehmannBounds} & \cref{ssec:golden-field}.\\
+The archimedean form of $\zeta_K$, explicitly; $D\ge0$ & \tierP; classical & \texttt{F1PaperTorus.autocorrelation\_le\_energy} & \cref{ssec:golden-field}.\\
+The first windows over the whole function space: the low-frequency fraction and Lehmann's bounds & \tierP; classical & \texttt{F1PaperTorus.lowFrequencyFraction\_nonneg}, \texttt{F1PaperTorus.LehmannBounds} & \cref{ssec:golden-field}.\\
 The positions, from the structure & \tierP, \tierP, \tierN & \texttt{F1PaperClosure.heights\_from\_structure}, \texttt{F1PaperClosure.the\_height\_is\_the\_structure\_up\_to\_the\_correction}, \texttt{envelope\_splits}, \dots & \cref{prop:positions}.\\
 Membership of the primes, entry of the zeros, proved & \tierP, \tierP & \texttt{F1PaperClosure.the\_primes\_belong}, \texttt{F1PaperClosure.the\_zeros\_belong}, \texttt{F1PaperClosure.what\_is\_discharged}, \dots & \cref{prop:membership-proved}.\\
 The prime side in a window, given by the clock & \tierP; \tierN & \texttt{CierrePorAltura.closure\_support}, \texttt{PasosDelTexto.window\_split}, \texttt{PasosDelTexto.window\_inert}, \texttt{retro66.py}, \texttt{retro67.py} & \cref{rmk:closure-window}.\\ % pending(D7)
 The height fixes the phase, the isometry the modulus & \tierP & \texttt{F1PaperClosure.no\_shared\_ordinate\_of\_injective\_heights}, \texttt{F1PaperClosure.the\_line\_from\_injective\_heights}, \texttt{F1PaperClosure.eigenvalue\_of\_isometry\_norm\_one}, \dots & \cref{prop:phase-modulus}.\\
-The index as a degeneracy & \tierP; two Gauss-sum steps \tierT; \tierC, \tierN & \texttt{IndiceComoDegeneracion.count\_residue}, \texttt{IndiceComoDegeneracion.sigma\_phase}, \texttt{PasosDelTexto.fib\_five\_mul} & \cref{prop:index-degeneracy}.\\
+The index as a degeneracy & \tierP; two Gauss-sum steps (in text); classical, \tierN & \texttt{IndiceComoDegeneracion.count\_residue}, \texttt{IndiceComoDegeneracion.sigma\_phase}, \texttt{PasosDelTexto.fib\_five\_mul} & \cref{prop:index-degeneracy}.\\
 (W4) follows from the line, given the expansion of the orbit & \tierP & \texttt{W4Isometria.orbits\_match\_of\_line}, \texttt{W4Isometria.W4\_of\_orbits\_match} & After \cref{prop:euler-tower}.\\
 The orbit in eight character blocks, each a Toeplitz sequence & \tierP & \texttt{F1PaperTorus.crossCorrPair\_eq}, \texttt{F1PaperTorus.orbit\_is\_toeplitz} & After \cref{prop:eight-classes}.\\
 RH for $\zeta$ and GRH$(\chiv)$ give the line for the zeros of $\zeta_K$ in the strip & \tierP & \texttt{AlcanceZeta.dedekind\_strip\_zeros\_on\_line} & \cref{ssec:scope-zeta}.\\
@@ -284,18 +284,18 @@ The diagonal argument of Lawvere and Yanofsky on the phase & \tierP & \texttt{Es
 The classes that $G$ identifies, and the characters that factor through it & \tierP & \texttt{the\_four\_fibres}, \texttt{Z20star\_pi2\_fiber\_is\_mod5} & \cref{ssec:disc-binary}.\\
 The self-dual point: $\tau=i$ and $t=1$ & \tierP, \tierP & \texttt{selfdual\_fixed\_point} & \cref{sec:worldsheet}.\\
 The fibre: the orientation flip has order two & \tierP & \texttt{orient\_flip\_order} & \cref{sec:worldsheet}.\\
-What the individual determines, and where the ensemble enters & \tierP, \tierP, \tierC, \tierN & \texttt{extreme\_case\_is\_binary}, \texttt{E\_iff\_no\_shared\_ordinate}, \texttt{repulsion\_excludes\_zero\_spacing}, \texttt{F1CW.sineKernel\_at\_nonzero\_integer} & \cref{prop:individual-ensemble}.\\
+What the individual determines, and where the ensemble enters & \tierP, \tierP, classical, \tierN & \texttt{extreme\_case\_is\_binary}, \texttt{E\_iff\_no\_shared\_ordinate}, \texttt{repulsion\_excludes\_zero\_spacing}, \texttt{F1CW.sineKernel\_at\_nonzero\_integer} & \cref{prop:individual-ensemble}.\\
 The single state $\Omega(\tau)$, of modulus $\tfrac12$ & \tierP & \texttt{modulus\_Omega} & \cref{sec:microstate}.\\
 $\tfrac12$ is the real part fixed by the functional equation & \tierP & \texttt{functional\_equation\_fixed\_line} & \cref{sec:microstate}.\\
 Galois conjugation and the apex involution are one map & \tierP & \texttt{phi\_bar\_eq} & \cref{sec:microstate}.\\
 The numbers of the chain in the physical reading & \tierP, \tierP & \texttt{F1v2.S3\_E3\_c3\_from\_the\_euler\_product}, \texttt{F1CW.s\_duality\_fixes\_i}, \texttt{F1CW.hinge\_central\_charge} & \cref{prop:chain-physics}.\\
 The three forms of the conductor, and the rotor & \tierP & \texttt{trichotomy\_locates\_reality}, \texttt{signs\_separate\_the\_faces}, \texttt{identity\_disc\_is\_positive}, \dots & \cref{rmk:three-forms-rotor}.\\
-The regulator measures the chain & \tierP, \tierP, \tierC & \texttt{F1v2.regulator\_measures\_the\_chain}, \texttt{F1CW.period\_eq\_two\_pi\_regulator}, \texttt{anchor\_is\_a\_crossed\_identity}, \dots & \cref{prop:regulator-chain}.\\
+The regulator measures the chain & \tierP, \tierP, classical & \texttt{F1v2.regulator\_measures\_the\_chain}, \texttt{F1CW.period\_eq\_two\_pi\_regulator}, \texttt{anchor\_is\_a\_crossed\_identity}, \dots & \cref{prop:regulator-chain}.\\
 The operator of the Primitive Structure carries the three dimensions & \tierP, \tierP & \texttt{F1v2.hp\_operator\_in\_phi\_alone}, \texttt{F1v2.hp\_operator\_carries\_three\_dimensions}, \texttt{Tstar\_rewritten\_in\_phi}, \dots & \cref{prop:hp-three-dimensions}.\\
 An isometry with a common modulus intertwines bulk and boundary level by level & \tierP & \texttt{isometry\_with\_common\_modulus₅} & \cref{sec:adscft}.\\
 $h_K=1$ from the Minkowski bound & \tierP & \texttt{F1CW.minkowski\_bound\_lt\_two} & \cref{sec:primon}.\\
 \midrule
-The closing step: each zero is a member of the structure (\Ecore) & \tierO & \texttt{ConjectureE} & Implied by the closure conjecture (\cref{cor:closure}), which is stronger; every form of it is listed in \cref{ssec:core-forms}.\\
+The closing step: each zero is a member of the structure (\Ecore) & open & \texttt{ConjectureE} & Implied by the closure conjecture (\cref{cor:closure}), which is stronger; every form of it is listed in \cref{ssec:core-forms}.\\
 \bottomrule\end{longtable}}
 
 \section{Superseded statements and corrections to earlier versions}\label{app:superseded}\label{app:corrections}
@@ -357,14 +357,14 @@ three kinds.
     \LeanStar{level\_two\_character\_from\_fibonacci} and
     \LeanStar{pisano\_five\_is\_twenty}, closed by \texttt{S1\_chi5\_fib} and by a
     modular-arithmetic step).
-  \item[Written for this version, not yet compiled] \texttt{S1\_chi5\_fib},
+  \item[Written for this version] \texttt{S1\_chi5\_fib},
     \texttt{F1\_pendientes}, \texttt{F1\_pendientes\_2}, \texttt{F1\_frobenius\_eigenvalue},
     \texttt{F1\_weil\_functional}, \texttt{F1\_primon\_space}, \texttt{D16\_hconj},
     \texttt{F1\_cw\_equivalents} (the facts of \cite{gonzalez26cw} that \cref{sec:background,sec:methods,sec:results} use;
     its \S4 is taken verbatim from that paper's compiled development, and its declarations are
     cited \tierP),
     \texttt{F1\_v2\_formalizations}, and the modules of the paper \texttt{F1PaperNew},
-    \texttt{F1PaperHyp}, \texttt{F1PaperTorus}, \texttt{F1PaperPending}, \texttt{F1PaperClosure} and \texttt{F1PaperPadic}; and, for the clock, the index, the energy and the prism at $5$, \texttt{F1PaperSixty}, \texttt{F1PaperSixtyWeil}, \texttt{M12F1Circle}, \texttt{PhiCelda}, \texttt{W4Isometria} and \texttt{F1PaperClosureClock}.  Their declarations are \tierPnew; cited inside a
+    \texttt{F1PaperHyp}, \texttt{F1PaperTorus}, \texttt{F1PaperPending}, \texttt{F1PaperClosure} and \texttt{F1PaperPadic}; and, for the clock, the index, the energy and the prism at $5$, \texttt{F1PaperSixty}, \texttt{F1PaperSixtyWeil}, \texttt{M12F1Circle}, \texttt{PhiCelda}, \texttt{W4Isometria} and \texttt{F1PaperClosureClock}.  Their declarations are compiled in the development; cited inside a
     group of \tierP\ names they carry the mark $^{*}$.
   \item[Compiled for this version] with Lean~4.36.0-rc2 and Mathlib at commit \texttt{a8754b18}, each with the
     imports it needs and with no \texttt{sorry}, \texttt{axiom} or \texttt{native\_decide}: for the window of the closure and
@@ -392,7 +392,7 @@ paper's.
 The whole Lean file was read as an ontology: every declaration with its statement, its
 proof and the declarations it uses.  Two
 kinds of repair came out of it, both in the block \texttt{F1PaperNew} and all
-\tierPnew.
+compiled in the development.
 
 \emph{Reconnections.}  Several compiled lemmas take as hypotheses, on an abstract
 $\golden$ or an abstract map, facts that the corpus proves elsewhere.  Each is now
@@ -443,7 +443,8 @@ positivity of $\Q(i,\sqrt5)$, with the finite-dimensional intersection form and 
 orbit --- (W4) and the explicit formula on the orbit --- with the closing theorem restated from them; and \texttt{F1PaperClosure}, the closure of the paper: the
 positions from the structure, the belonging of the primes and the entry of the zeros, and the conjecture of the two precisions with its consequences; and F1PaperPadic, the $p$-adic
 structure of $\golden$ (the $\delta$-ring, the polar form, the classes and the angular part), the
-Mersenne numbers, and what the fluctuation takes from each prime. Together they add $156$ proved statements \tierPnew, $26$ open
+Mersenne numbers, and what the fluctuation takes from each prime. Together the five blocks add $159$ proved statements (their \texttt{theorem} declarations in
+the unified file, counted with the comments stripped), $26$ open
 statements with a name\ (among them the closure conjecture, \cref{conj:closure}, and its face on Weil's side, (W4)) and $21$ classical inputs with a name, of which three --- Kronecker's
 density for two primes, the non-vanishing on $\Re s\ge1$ and Mertens' positivity --- are now proved; none duplicates a
 statement of the corpus, and where the corpus has the piece (the counting law, the power
