@@ -149,7 +149,11 @@ All four paragraphs of the author's pass are in their **new** state; the three e
     **not** created: `docs/reports/README.md` no longer lists them and now says why —
     the editorial style contract arrives with the witness specification (WIT-SPEC, in
     composition).
-12. **Local branches kept** (see §7): `scratch/lean-release`, `scratch/granularity`.
+12. **Local branches — CLOSED by the branch housekeeping wave (§12).** Both
+    `scratch/lean-release` and `scratch/granularity` were salvage-checked and deleted
+    locally; `git branch` shows only `main`. Nothing was pushed and no archive ref was
+    created (the order was explicit: that history is separate from the paper and must
+    not enter the audit trace).
 
 ## 6. Two presentation decisions left to the author (NOT executed)
 
@@ -225,7 +229,8 @@ branches observed. Nothing of it was touched; it is reported, per MERGE_PLAN §F
   neither meets the *merged or dead* bar. MERGE_PLAN §F7 also requires `lean-release` to
   be **archived by a push before deletion** and orders `granularity` to be *reported, not
   deleted without an order*. Both are therefore reported here and left in place; no
-  `push --delete` was performed.
+  `push --delete` was performed. **Superseded by §12**: the later order authorised the
+  deletion after a salvage check, and both branches are now gone.
 
 ---
 
@@ -270,6 +275,36 @@ the `1e-12` used for the committed artifacts. Runtime measured **4.00 s**, below
 
 **Still open (untouched by this addendum):** the author's `0.087` of `law_resolution`
 and his original detection figures — open item 2 of §5, carried as before.
+
+---
+
+## 12. Branch housekeeping (2026-11-23): salvage check, then deletion
+
+Two local branches were carrying work that predates this line: `scratch/lean-release`
+(**46** commits not in `main`) and `scratch/granularity` (**16**). Each named salvage
+item was checked against `main` before anything was deleted; the rest of both histories
+is v3/release/Lean-track work that belongs to a separate track and was not migrated.
+Both branches were then deleted locally — **no push, no archive ref**, per the explicit
+order that separate history must not enter this repository's audit trace. `git branch`
+now lists `main` alone.
+
+**What the check found (all four items already in `main`, so no salvage commit):**
+
+| item | state in `main` |
+|---|---|
+| `613ebc1` family-canonical biber config | `.latexmkrc` is **byte-identical** to `main` and to all four siblings; CVR-001's "this repository differs" does **not** reproduce for this file |
+| `8ec814d` fail on non-zero latexmk exit / empty biber `.bbl` | already in `scripts/tasks/compile.ts` (both guards, lines of the `Fail loudly` block) |
+| `09387c6` root title keeps full Unicode | already in `docs/citations.md` §5 (*Root title carries full Unicode*) |
+| `c09dc83` pipeline best-practices guide | **fully covered**: the ported `docs/citations.md` carries the same §1–§7 headings and every distinctive clause of the branch's 128-line file; two of its statements are superseded by the current contract (its §3 preamble predates `sorting=nyt,giveninits` and the `\AtEveryBibitem` hook; its §7 "open style decision" is now §7 *Settled style decisions* with URL suppression). Nothing added — adding it would have reintroduced a stale preamble |
+
+**`scratch/granularity`: the content already lives elsewhere.** The development is
+`lean/PCF_granularity_UNIFIED.lean`, and its home is the **`05-granularity`** repository,
+which tracks it and has carried it through 27 commits past this snapshot (comments
+translated to English, flagship declarations renamed, the real-field bridge folded in).
+The only byte-level difference between the branch's copy and that repository's initial
+import is a single hunk: the branch leaves the 67-line `#print axioms` probe block
+uncommented while the import comments it out. **No unique content → nothing was
+extracted and nothing was imported into this repository.**
 
 ---
 
