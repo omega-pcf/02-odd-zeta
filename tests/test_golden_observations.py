@@ -157,11 +157,20 @@ def _law_resolution_values():
         re.MULTILINE,
     )
     assert article is not None, "law_resolution reference row not found"
+    reference = re.search(
+        r"^X = 500: sin correccion mediana ([\d.]+) \(media [\d.]+\);"
+        r"\s+primo por primo mediana ([\d.]+) \(media [\d.]+\)",
+        text,
+        re.MULTILINE,
+    )
+    assert reference is not None, "law_resolution reference line for X = 500 not found"
     return {
         "medians": medians,
         "article": tuple(float(v) for v in article.groups()[:5]),
         "uncorrected": float(article.group(6)),
         "prime_by_prime": float(article.group(7)),
+        "uncorrected_median": float(reference.group(1)),
+        "prime_by_prime_median": float(reference.group(2)),
     }
 
 
@@ -178,14 +187,14 @@ def test_law_resolution_golden_values() -> None:
 
 @pytest.mark.golden
 def test_law_resolution_matches_manuscript_claim() -> None:
-    """The manuscript's five figures for law_resolution.py (0.183, 0.087,
-    0.053, 0.028, 0.023 against 0.20 uncorrected and 0.020 prime by prime)
-    are the reference row of the committed output, printed at the same
-    precision."""
+    """The manuscript's five figures for law_resolution.py (0.194, 0.170,
+    0.089, 0.041 and 0.025 against 0.20 uncorrected and 0.021 prime by
+    prime) are the fixed-window medians of the committed output, printed
+    at the same precision."""
     values = _law_resolution_values()
     text = read_tex(_BRIDGES_TEX)
 
-    start = text.find("the mean error of the corrected operator")
+    start = text.find("the median error of the corrected operator")
     assert start != -1, "law_resolution claim not found in 04-bridges.tex"
     # Skip the window "(n = 100 to 3000)": its figure is a count, not a result.
     start = text.find(") is ", start)
@@ -198,10 +207,12 @@ def test_law_resolution_matches_manuscript_claim() -> None:
     quoted = [float(v) for v in re.findall(r"\$([\d.]+)\$", text[start:end])]
     assert len(quoted) == 7, f"expected 7 figures in the law_resolution sentence, found {quoted}"
 
-    for delta, got, want in zip(_DELTAS, values["article"], quoted[:5], strict=True):
-        assert_printed_as_in_manuscript(got, want, f"law_resolution figure at delta = {delta:g}")
-    assert_printed_as_in_manuscript(values["uncorrected"], quoted[5], "law_resolution uncorrected")
-    assert_printed_as_in_manuscript(values["prime_by_prime"], quoted[6], "law_resolution prime by prime")
+    for delta, got, want in zip(_DELTAS, values["medians"], quoted[:5], strict=True):
+        assert_printed_as_in_manuscript(got, want, f"law_resolution median at delta = {delta:g}")
+    assert_printed_as_in_manuscript(values["uncorrected_median"], quoted[5], "law_resolution uncorrected")
+    assert_printed_as_in_manuscript(
+        values["prime_by_prime_median"], quoted[6], "law_resolution prime by prime"
+    )
 
 
 # ---------------------------------------------------------------------------

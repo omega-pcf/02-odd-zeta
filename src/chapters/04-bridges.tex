@@ -1642,13 +1642,15 @@ statement (\cref{thm:topological-proof}).
 
 \emph{What the law has to supply.}  Replacing each prime by the count of its window of width
 $\delta$ in $\log p$ --- what a law that knows how many primes of each kind fall in each window,
-but not the primes one by one, would give --- the mean error of the corrected operator
-($n=100$ to $3000$) is $0.183$ at $\delta=10^{-2}$, $0.087$ at $3\cdot10^{-3}$, $0.053$ at $10^{-3}$,
-$0.028$ at $3\cdot10^{-4}$ and $0.023$ at $10^{-4}$, against $0.20$ with no correction and
-$0.020$ prime by prime (\texttt{law\_resolution.py} \tierN).  Taken as a sum over the primes up to a fixed $X$, the
+but not the primes one by one, would give --- the median error of the corrected operator
+($n=100$ to $3000$) is $0.194$ at $\delta=10^{-2}$, $0.170$ at $3\cdot10^{-3}$, $0.089$ at $10^{-3}$,
+$0.041$ at $3\cdot10^{-4}$ and $0.025$ at $10^{-4}$, against $0.20$ with no correction and
+$0.021$ prime by prime (\texttt{law\_resolution.py} \tierN).  Taken as a sum over the primes up to a fixed $X$, the
 correction does not converge: for $n=100$ to $3000$ the mean error has a minimum at a finite $X$ and grows past it ---
 $0.069$ at $X=20$ and $0.23$ at $X=10^6$ for the plain sum, $0.037$ at $X\approx500$ and $0.12$ at $X=10^6$ with the
-weight $1-\log n/\log X$ on each prime power $n$ (\texttt{x\_sweep.py} \tierN).  The improvement is gradual, and at % pending(D7)
+weight $1-\log n/\log X$ on each prime power $n$ (\texttt{x\_sweep.py} \tierN).  The error falls between
+$\delta=10^{-3}$ and $3\cdot10^{-4}$, the scale $1/T$ of the heights measured ($T\approx240$ to
+$3700$): at % pending(D7)
 height $T$ the law has to resolve a scale of order $1/T$.  Taking the primes one by one is not
 the law: it is the explicit formula, and as a construction it is circular; the classes are the part of the law that is not, and they are needed --- removing any one of the eight worsens the error (\texttt{classes\_test.py} \tierN).
 What the law has to predict, and nothing else, is fixed by the local factors.
