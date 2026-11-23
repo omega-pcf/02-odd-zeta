@@ -11,3 +11,18 @@ dependencies = [
     "scipy>=1.11.0",
     "sympy>=1.14.0",
 ]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["tests/src"]
+addopts = "--tb=short -p no:cacheprovider"
+markers = [
+    "slow: marks tests that take >10 s (deselect with '-m \"not slow\"')",
+    "golden: compares a committed observation output under hipotesis/pruebas/salidas",
+    "witness: contract between the manuscript's \\testref tags and the suite",
+]
