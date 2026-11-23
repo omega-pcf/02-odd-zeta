@@ -108,10 +108,12 @@ gate (§6.2): `01:250` (P\* ×2), `01:253` (C), `01:254` (Nc), `01:255` (O and R
    PDF page **7**. Gloss text: page **10**. The family rule is a flat gloss *at the
    first mark in the body*; the no-first-page-footnote rule is already satisfied (there
    is none).
-3. **The `N` promise is not measured at 47 sites.** Of the 120 body `\tierN`: 6 marks
-   (a separate form, `\tier[…]{N}`) carry a `\testref` id; 71 name a script on the same
-   line; **47 name no test and no script within ±1 line**. The family rule: every
-   numerical mark carries its test, *or* the sentence says where the check is ours.
+3. **The `N` promise is not measured at 46 sites.** Of the **120** body `\tierN`:
+   71 name a script on the same line, 3 more within ±1 line, and **46 name no test
+   and no script within ±1 line**. (The 6 marks of the separate F8 form
+   `\tier[\testref{…}]{N}` do carry verbatim test ids — see §7.3.) The family rule:
+   every numerical mark carries its test, *or* the sentence says where the check is
+   ours.
 4. **The `P*` promise is stale — and its proof is not in this report's reach.**
    "written in Lean with no `sorry` or `axiom`, not yet compiled against the current
    corpus": F9-001 verified **416/416** starred names present in
@@ -151,7 +153,7 @@ them; keeping it (renamed, holding Notation + the index) does not.
    (Notation and the index of statements), or retarget the 5 `\cref`s — decided with
    this gate.
 6. **Measure before wording ships**: the new `N` sentence must match finding 3 —
-   either F10 supplies the ids for the 47 bare sites, or the gloss says where the
+   either F10 supplies the ids for the 46 bare sites, or the gloss says where the
    check is ours.
 
 ## 4. Context patterns with before/after (the most repeated)
@@ -430,7 +432,7 @@ this file; this report adds itself plus one index row to
 1. **F8-001 is not in the index.** `docs/reports/20261122_F8-001_witness_reconciliation.md`
    exists but has no row in `docs/reports/README.md` (and predates the report-header
    template). Not fixed here — this deliverable adds its own row only.
-2. **47 bare `N` marks** (§3.2 finding 3): the gloss's "verified numerically" is
+2. **46 bare `N` marks** (§3.2 finding 3): the gloss's "verified numerically" is
    unanchored at those sites until F10 supplies ids or the sentences name their check.
 3. **P\*→P reconciliation is open**: name presence (F9) is not sorry/axiom freedom;
    the unified file carries contradictory status banners (§3.2 finding 4). D4's
