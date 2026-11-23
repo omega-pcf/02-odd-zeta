@@ -135,15 +135,20 @@ All four paragraphs of the author's pass are in their **new** state; the three e
    Reported, **not fixed**: `citation.csl.json` is outside this wave's scope. The
    duplication the §3 contract actually suppresses — a `doi.org` URL printed beside a
    DOI — is **0** entries, as in every sibling.
-10. **Two stale claims outside this wave's scope** (same falsehood F1 fixed in
-    `docs/usage.md`): `docs/README.md` — *“the manuscript itself states no count”* — and
-    `docs/architecture.md:88` — *“this repository states no count in its prose, so it
-    carries no marked region”*. Both are false today (the manuscript carries six
-    `\tier[\testref{…}]{N}` anchors and the appendix states corpus counts). Reported,
-    **not edited**: F1's order was to rewrite only the `usage.md` §Counts paragraph.
-11. **Generic docs referenced but absent**: `docs/figures.md`, `docs/style-guide.md`,
-    `docs/style/grammar.md` (listed by `docs/reports/README.md` as family-generic
-    documents). Not created — out of this wave's scope.
+10. **Two stale claims — CLOSED by the docs micro-fix wave.** `docs/README.md` said
+    *“the manuscript itself states no count”* and `docs/architecture.md:88` said *“this
+    repository states no count in its prose, so it carries no marked region”*; both are
+    false (the manuscript carries six `\tier[\testref{…}]{N}` anchors and the appendix
+    states corpus counts, and the mechanism's three marked regions live in
+    `tests/README.md`). Both cells were rewritten to that state; `docs/counts.md` itself
+    was already correct (it lists the regions) and is generated, so it needed no edit.
+11. **Generic docs referenced but absent — CLOSED by the docs micro-fix wave.**
+    `docs/figures.md` is now a factual stub (this manuscript generates no figures; it
+    points at `docs/counts.md` `images.files` and at row 7 of `docs/architecture.md`
+    instead of restating them). `docs/style-guide.md` and `docs/style/grammar.md` were
+    **not** created: `docs/reports/README.md` no longer lists them and now says why —
+    the editorial style contract arrives with the witness specification (WIT-SPEC, in
+    composition).
 12. **Local branches kept** (see §7): `scratch/lean-release`, `scratch/granularity`.
 
 ## 6. Two presentation decisions left to the author (NOT executed)
