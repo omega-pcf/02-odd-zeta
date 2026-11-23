@@ -134,7 +134,9 @@ symmetry of the fibre (\cref{prop:level-operators,rmk:one-operator}).
 
 An operator for the zeros has to meet a number of requirements, set out since P\'olya and added to by later authors;
 the corpus makes four of them explicit: the operator must be non-circular, be self-adjoint, have a spectrum given
-exactly, and not asymptotically or by calibration on data, and be unconditional (\LeanTally{four\_requirements}).
+exactly, and not asymptotically or by calibration on data, and be unconditional (\LeanTally{four\_requirements}).  A name marked $^{\circ}$ is a tally: a
+classification of the text recorded in Lean as an enumerated type whose count is checked by decision,
+which certifies the count and not the classification.
 The Primitive Structure~\cite{gonzalez25hp} distinguishes three distinct problems behind them.  The first is
 circularity: an operator defined from the zeros, or from the primes, presupposes what it has to explain;
 \cite{gonzalez25hp} sets beside it, as a term of comparison, a circularity of another kind, the diagonal argument of
@@ -849,7 +851,8 @@ and the third direction enters through the geometry of $E^3$ (\cref{thm:one-two-
 
 The descent takes neither the distribution of the primes, nor the Euler product, nor the zeros as input, and the information is kept by an isometry: each eigenvalue $\tfrac12\zeta_3^{\,k}$ has modulus $\tfrac12$, so the triad has squared norm $\tfrac34$, and normalised it is a column $\mathcal V\colon\mathbb{C}\to\mathbb{C}^3$ whose three squared moduli are $\tfrac13$, so $\mathcal V^\dagger\mathcal V=1$ (\LeanInline{F1PaperNew.triad\_isometry} \tierP); it reaches dimension $3$ without a product in dimension $3$
 \cite[the lemma \emph{Isometric embedding of the triad} and the proposition \emph{Two towers, one microstate}]{gonzalez26cw}
-(\LeanCW{bulkBoundary\_isometry} \tierP).  The modulus $\tfrac12$ is the same at every level of the tower, whose levels are related by the composition law of the descent, $\Frob_p(\golden^n)=(\golden^n)^p$
+(\LeanCW{bulkBoundary\_isometry} \tierP).  A name marked $^{\dagger}$ belongs to the Lean
+development of that paper.  The modulus $\tfrac12$ is the same at every level of the tower, whose levels are related by the composition law of the descent, $\Frob_p(\golden^n)=(\golden^n)^p$
 (\LeanCW{tower\_frobenius\_common} \tierP).
 
 Read as a code, $\mathcal V$ is an encoding whose code subspace, the image

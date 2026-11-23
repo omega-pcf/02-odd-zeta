@@ -100,6 +100,10 @@ distribution, nor the zeros, nor the Euler product is an input.  \emph{PCF} stan
 Precedent--Current--Forthcoming, the three consecutive terms that the Fibonacci recurrence binds
 (\cref{ssec:tripartite}).
 
+\tierP\ marks a statement proved in Lean~4~\cite{demoura21} with Mathlib~\cite{mathlib20};
+\tierN\ marks a statement verified numerically, with the test named in the mark.  The protocol
+they follow is \cref{ssec:protocol}.
+
 The Primitive Structure formalises the forgetful functor chain
 $C^*\text{-}\mathbf{Alg}\to\mathbf{Hilb}\to\mathbf{Met}\to\mathbf{Set}$ and the
 spectral constraint that $\tfrac12$ is the only positive real part in the spectrum of
@@ -247,20 +251,9 @@ one-dimensional code subspace and the closed string as the cut of a tensor netwo
 
 \subsection{Protocol}\label{ssec:protocol}
 
-Statements carry tiers: \tierP\ proved in Lean~4~\cite{demoura21} with Mathlib~\cite{mathlib20}; \tierPnew\ written in Lean with no \texttt{sorry} or \texttt{axiom}, not yet compiled against the current corpus; \tierT\ proved in the text
-and not formalised (after the formalisations of this version five steps remain in this tier: the second statement
-of \cref{prop:fibres-levels}(ii), two computations with Gauss sums in the proof of \cref{prop:index-degeneracy}, the
-gluing of the local models in the remark after it, and the connectedness step of \cref{rmk:G-motivic}); \tierC\ assumed from the
-literature and cited where it enters; \tierN\ verified numerically; \tierNc\ computer-assisted with explicit error
-accounting, outside Lean; \tierO\ open; \tier{R} a reading: a mechanism proposed to join statements of the other tiers, which
-is not claimed as proved and on which no proof depends.  A \tierP\ citation certifies exactly the Lean
-statement named, with its hypotheses: when a declaration takes an input as a
-hypothesis, the input is named with its own tier.  Inside a group of \tierP\
-citations, a name marked $^{*}$ is \tierPnew; a name marked $^{\circ}$ is a
-\emph{tally} --- a classification made in the text, recorded in Lean as an enumerated
-type whose count is checked by decision, which certifies the count and not the
-classification; and a name marked $^{\dagger}$ belongs to the Lean development of \cite{gonzalez26cw} (these
-appear in \cref{ssec:why-phi,sec:disc-cw}).
+Two evidence classes are marked where a statement is stated: \tierP\ for a statement proved in
+Lean~4 with Mathlib, \tierN\ for a statement verified numerically, with the test named in the
+mark; a statement with no mark is standard, and carries its citation where it enters.
 
 \emph{Notation.}  Several symbols are overloaded --- $\psi$, $\Lambda$, $\sigma$, $\tau$, $\ell$, $L$, $S$, $N$, $R$, $T$ and $\mu$ ---
 and the index of notation below gives each reading with the place where it is used.  In particular
