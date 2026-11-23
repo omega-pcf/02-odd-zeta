@@ -19,6 +19,7 @@ they are split here into the two citations they name.
 
 from __future__ import annotations
 
+import ast
 import re
 import subprocess
 import sys
@@ -96,6 +97,37 @@ def test_every_cited_id_resolves_to_a_test() -> None:
     for citation in sorted(set(cited_ids())):
         matches = [i for i in ids if i.rsplit("::", 1)[1].split("[", 1)[0] == citation]
         assert matches, f"the manuscript cites {citation!r}, which no test of the suite defines"
+
+
+@pytest.mark.witness
+def test_the_self_baked_verification_script_is_gone() -> None:
+    """The ported script was folded into this suite and did not survive.
+
+    F10's contract: ``tests/verify_odd_zeta_pcf_unified.py`` no longer
+    exists, and no module of ``tests/`` or ``scripts/`` imports it — the
+    computation lives in the claim tests, the shared numbers in
+    ``oddzeta.constants`` / ``oddzeta.harness``.
+    """
+    leftover = REPO_ROOT / "tests" / "verify_odd_zeta_pcf_unified.py"
+    assert not leftover.exists(), f"{leftover.relative_to(REPO_ROOT)} still exists: the port is not closed"
+
+    offenders: list[str] = []
+    for directory in ("tests", "scripts"):
+        for path in sorted((REPO_ROOT / directory).rglob("*.py")):
+            if "__pycache__" in path.parts:
+                continue
+            tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
+            for node in ast.walk(tree):
+                if isinstance(node, ast.Import):
+                    names = [alias.name for alias in node.names]
+                elif isinstance(node, ast.ImportFrom) and node.module:
+                    names = [node.module]
+                else:
+                    continue
+                for name in names:
+                    if "verify_odd_zeta_pcf_unified" in name:
+                        offenders.append(f"{path.relative_to(REPO_ROOT)} imports {name}")
+    assert not offenders, "the eliminated script is imported again: " + "; ".join(offenders)
 
 
 @pytest.mark.witness
