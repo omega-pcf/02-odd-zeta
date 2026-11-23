@@ -1002,9 +1002,10 @@ complement (the Hodge index), and the Castelnuovo--Severi inequality
 $|N_m-q^m-1|\le2g\,q^{m/2}$ follows.  Both have finite-dimensional analogues here.
 
 The analogue of the point counts is $\psi(x,\chi)=\sum_{n\le x}\Lambda(n)\chi(n)$.  Up to $e^{18}$,
-$|\psi(x,\chi)|/\sqrt x$ stays below $0.80$, $1.14$ and $1.89$ for $x>10^6$ ($\chi_4$, $\chiv$,
-$\chi_{20}$), with no growth, and each fibre of $G$ deviates from a quarter of the total by at
-most $0.63\sqrt x$ (\texttt{castelnuovo.py} \tierN). % pending(D7)
+$|\psi(x,\chi)|/\sqrt x$ stays below $1.27$, $1.28$ and $2.22$ for $x>10^6$ ($\chi_4$, $\chiv$,
+$\chi_{20}$), with no growth,
+and each fibre of $G$ deviates from a quarter of the total by at most $0.79\sqrt x$
+(\texttt{castelnuovo.py} \tierN). % pending(D7)
 
 The analogue of the intersection form is the Weil quadratic form on a space of test functions $g_1,\dots,g_n$: the matrix $\bigl(\text{archimedean term}-\text{prime side}\bigr)$ of the products $g_j*g_k$.  Finite compressions of this form have recently carried an unconditional result: with a rank--trace inequality and Sylvester's law of inertia for the off-line pairs, more than two thirds of the zeros of $\zeta$ are simple and on the line, the result extends to primitive Dirichlet $L$-functions, and it is formally verified in Lean~4 \cite{alpogefurman26}.
 
@@ -1246,8 +1247,8 @@ can be stated exactly, and every piece of it is already in the corpus.
 
 The positions are given, and closely.  For $\zeta$, with the parameters of the operator of
 \cite{gonzalez25hp} and the zeros used only to measure: the mean error of $T^*(n)$ is about
-$4.9$ mean spacings; with the exact envelope, which uses no prime and no zero, it is $0.20$
-spacings, a relative error from $3\cdot10^{-3}$ at low height to $5\cdot10^{-5}$ at $n=2000$
+$4.9$ mean spacings; with the exact envelope, which uses no prime and no zero, it is $0.21$
+spacings ($n\le1000$; the median is $0.19$), a relative error from $3\cdot10^{-3}$ at low height to $5\cdot10^{-5}$ at $n=2000$
 (\texttt{corrected\_operator.py} \tierN).  What separates the structural positions from the % pending(D7)
 zeros is a fraction of a spacing.
 
@@ -1883,9 +1884,10 @@ reproduces the sums of the symbols (\texttt{v09}--\texttt{v11} \tierN).
 
 \emph{What the numbers can and cannot see.}  A zero of $L(s,\chiv)$ at height $\gamma$ with
 $\Re\rho=\tfrac12+\delta$ would have made some Toeplitz matrix of the sweep indefinite as soon as
-$\delta\ge0.001$ at $\gamma=30$, $\delta\ge0.057$ at $\gamma=100$, $\delta\ge0.31$ at $\gamma=200$; above
-$\gamma\approx300$ no admissible $\delta$ is detected, because $|\hat g_a(\gamma)|^2$ decays like
-$\gamma^{-4}$.  The sweep is therefore a verification of the line at low height, of the same kind
+$\delta\ge0.10$ at $\gamma=30$ and $\delta\ge0.38$ at $\gamma=100$; above $\gamma\approx200$ no admissible
+$\delta$ is detected, because $|\hat g_a(\gamma)|^2$ decays like $\gamma^{-4}$.  Longer orbits see
+further: with $k\log p\le120$ in place of $14.2$ the thresholds fall to $0.001$, $0.009$, $0.022$
+and $0.028$ at $\gamma=30$, $100$, $200$ and $300$ (\texttt{circle\_and\_detect.py} \tierN).  The sweep is therefore a verification of the line at low height, of the same kind
 as the classical ones, and not evidence for (W4) at every height.  That is intrinsic: (W4) for
 every $k$ and every width is as strong as the line, and no finite computation reaches it.  It has
 to come from structure, as Castelnuovo--Severi comes from the Hodge index in Weil's proof.
