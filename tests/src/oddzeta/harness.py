@@ -27,6 +27,9 @@ REPO_ROOT = Path(__file__).resolve().parents[3]
 
 SALIDAS_DIR = REPO_ROOT / "hipotesis" / "pruebas" / "salidas"
 
+# The units of (Z/20)*: the domain of the character map G = (chi4, chi5).
+UNITS_MOD_20 = (1, 3, 7, 9, 11, 13, 17, 19)
+
 # The manuscript sources a witness tag or a quoted number can sit in:
 # main.tex plus every chapter it \input{}s.
 TEX_SOURCES = [REPO_ROOT / "main.tex", *sorted((REPO_ROOT / "src" / "chapters").glob("*.tex"))]
@@ -91,6 +94,15 @@ def l_chi4chi5(s) -> mp.mpf:
 def bernoulli_chi5(k: int) -> mp.mpf:
     """Generalised Bernoulli number B_{k, chi5}."""
     return sum(chi5(a) * mp.bernpoly(k, mp.mpf(a) / 5) for a in range(1, 6)) * mp.mpf(5) ** (k - 1)
+
+
+def kernel_of_g() -> list[int]:
+    """Units u with (chi4(u), chi5(u)) = (+1, +1): the kernel of G.
+
+    The manuscript reads |ker G| = 2 from this table, and mu_3 = 1/|ker G|
+    follows.
+    """
+    return [u for u in UNITS_MOD_20 if chi4(u) == 1 and chi5(u) == 1]
 
 
 def euler_product_qsqrt5(s, primes_upto: int = 500) -> mp.mpf:
