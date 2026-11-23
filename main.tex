@@ -151,12 +151,17 @@
 \DeclareRobustCommand{\brk@us}{\textunderscore\allowbreak}
 % the test that checks a number, cited by its name in the suite that runs
 \providecommand{\testref}[1]{{\upshape\small\ttfamily\let\_\brk@us #1}}
-\def\tier@ids#1#2{{\footnotesize\textbf{#2}[{\upshape\small\ttfamily\let\_\brk@us #1}]}}%
+% a tag set inside a display must switch to text first: amsart defines
+% \footnotesize as \Small, and a font-size command is invalid in math mode
+% (the build warned "Command \Small invalid in math mode" at every tag of an
+% equation).  In prose the wrapper is the identity, so nothing moves there.
+\def\tier@text#1{\ifmmode\text{#1}\else#1\fi}%
+\def\tier@ids#1#2{\tier@text{{\footnotesize\textbf{#2}[{\upshape\small\ttfamily\let\_\brk@us #1}]}}}%
 % every line of the body ends in a comment char: the tag must emit no space
 % of its own, neither before nor after, or a mark would typeset one.
 \providecommand{\tier}[2][]{%
 \ifx\relax#1\relax%
-{\footnotesize\textbf{[#2]}}%
+\tier@text{{\footnotesize\textbf{[#2]}}}%
 \else%
 \in@{\cite}{#1}\ifin@
 \PackageError{tier}{the optional argument of \string\tier\space holds internal ids only}%
@@ -223,8 +228,10 @@
 \newcommand{\tierP}{\tier{P}}
 \newcommand{\tierN}{\tier{N}}
 \newcommand{\pending}{{\footnotesize\textbf{[pending compilation]}}}
-% A Lean declaration written for this version and not yet compiled, cited inside a
-% group whose tier is [P]: it is [P*].
+% A Lean declaration of this version's corpus, marked with a star: the star
+% records the pre-compilation provenance of the name (F9-001: process artifact
+% of the build, since the modules compile in the green build), not a tier --
+% the [P*] class it was defined for was retired in the F11 census (P* = 0).
 \newcommand{\LeanStar}[1]{\LeanInline{#1}$^{*}$}
 % a tally: a classification made in the text, recorded as an enumerated type whose
 % count is checked by decision; it certifies the count, not the classification
