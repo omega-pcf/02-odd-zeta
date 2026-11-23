@@ -146,20 +146,21 @@
         "family": "Grisales Herrera"
       }
     ],
-    "DOI": "10.5281/zenodo.17100303",
-    "type": "document",
+    "genre": "Trabajo de grado para optar al título de Profesional en Matemáticas con énfasis en Estadística",
     "id": "grisales25",
     "citation-key": "grisales25",
     "issued": {
       "date-parts": [
         [
-          2025
+          2024
         ]
       ]
     },
-    "note": "doi:10.5281/zenodo.17100303",
-    "publisher": "University of Tolima, Colombia",
-    "title": "Golden Prime Symmetry Theory"
+    "note": "Trabajo de grado, Facultad de Ciencias, Programa de Matemáticas con Énfasis en Estadística, Ibagué; directed by Arnold Oostra van Noppen; defended (acta, grade 4.3); repository category 'Tesis y Trabajos de Grado' (English: undergraduate thesis). The later Zenodo deposit 'Golden Prime Symmetry Theory' (2025-09-11, doi:10.5281/zenodo.17100303, typed 'journal article' by Zenodo) is a separate version.",
+    "publisher": "Universidad del Tolima",
+    "title": "Simetría Áurea Prima",
+    "type": "thesis",
+    "URL": "https://repository.ut.edu.co/entities/publication/8f90e22e-d00a-4341-ac57-651b89ae0f01"
   },
   {
     "container-title": "Revista Politécnica",
