@@ -99,10 +99,11 @@ All four paragraphs of the author's pass are in their **new** state; the three e
 
 ## 5. Open items (carried, not closed here)
 
-1. **B2 clause `[3·10⁷]`** — the author's proposed *“its maximum over
-   `[3·10⁷,e¹⁸]` is 1.13, 1.07 and 1.76”* is **not written**: those values do not appear
-   in `hipotesis/pruebas/salidas/castelnuovo.txt`, whose segments are `[1e6,1e7)` and
-   `[1e7,e^18]` (decision recorded in `fd45327`; see §8).
+1. **B2 clause `[3·10⁷]`** — **CLOSED by §11**: the author's proposed *“its maximum
+   over `[3·10⁷,e¹⁸]` is 1.13, 1.07 and 1.76”* is now written and recomputed. It was
+   deferred in `fd45327` only because the committed
+   `hipotesis/pruebas/salidas/castelnuovo.txt` carries the segments `[1e6,1e7)` and
+   `[1e7,e^18]`, not this window; §11 records the calculation that fills it.
 2. **`0.087` of `law_resolution`** without reproduction, and the author's original
    detection figures `0.001 / 0.057 / 0.31` without an orbit combination — carried
    pending from F12-001.
@@ -181,9 +182,10 @@ the classification is claimed. **Not executed — presentation only.**
    medians are printed as the artifact's fixed-window row, with the scale sentence
    rewritten. Verified in the PDF (`0.194 … 0.025` present, `0.183/0.087/0.053` absent —
    §4).
-2. **B2 clause `[3·10⁷]` — ⏸ deferred.** Not written; the values are not in
-   `castelnuovo.txt`. Recorded in the `fd45327` commit message and in F12-001; carried
-   as open item 1 of §5.
+2. **B2 clause `[3·10⁷]` — ⏸ deferred, then ✅ written (§11).** Deferred in
+   `fd45327` because the values are not in `castelnuovo.txt`; carried as open item 1 of
+   §5 until the recalculation of §11 confirmed the author's figures and the clause
+   landed in `src/chapters/04-bridges.tex`.
 
 ## 9. `galois-decoration` (outside this repository)
 
@@ -207,6 +209,50 @@ branches observed. Nothing of it was touched; it is reported, per MERGE_PLAN §F
   be **archived by a push before deletion** and orders `granularity` to be *reported, not
   deleted without an order*. Both are therefore reported here and left in place; no
   `push --delete` was performed.
+
+---
+
+## 11. Addendum (2026-11-23): the B2 clause `[3·10⁷,e¹⁸]` — calculated and confirmed
+
+**What was deferred, and why.** Open item 1 of §5 deferred the author's clause
+*“its maximum over $[3\cdot10^7,e^{18}]$ is $1.13$, $1.07$ and $1.76$”* because the
+committed artifact `hipotesis/pruebas/salidas/castelnuovo.txt` reports the segments
+`[1e6,1e7)` and `[1e7,e^18]` only — the window `[3·10⁷,e¹⁸]` appears in no committed
+output. That reason is gone: the window has now been computed.
+
+**Method (the author's, with the window added).** Exactly the semantics of the
+author's `hipotesis/pruebas/castelnuovo.py`: sieve the primes up to `int(e^18)`,
+build every prime power `p^k ≤ e^18`, form
+`ψ(x,χ) = Σ_{n≤x} Λ(n)χ(n)` as a cumulative sum of `log p` weighted by the character
+(`χ₄`, `χ₅`, `χ₂₀ = χ₄χ₅`), and take `max |ψ(x,χ)|/√x` over the prime powers `x` of
+`[3·10⁷, e^18]`. Evaluating at the prime powers *is* evaluating the maximum: `ψ` is
+constant between consecutive prime powers (Λ vanishes elsewhere) and `√x` grows, so
+each step attains its maximum at its left end — the argument the script's own
+docstring makes. The script itself was **not** modified; the window is an addition
+made by this calculation, both in the manuscript test and in the orchestrator's run.
+
+**Exact figures recomputed:**
+
+| character | recomputed `max_[3·10⁷, e^18]` | printed (2 decimals) |
+|---|---:|---:|
+| `χ₄` | **1.132056** | 1.13 |
+| `χ₅` | **1.069538** | 1.07 |
+| `χ₂₀` | **1.763632** | 1.76 |
+
+**Conclusion: the author's clause is confirmed** — 1.13 / 1.07 / 1.76 are the
+two-decimal roundings of the recomputed maxima, so the sentence is written verbatim
+in `src/chapters/04-bridges.tex` (`ssec:product-surface`).
+
+**Where the calculation now lives.** `tests/test_golden_observations.py`
+(`test_castelnuovo_window_maxima`) re-derives the three maxima from scratch — sieve,
+prime powers and characters inside the test, no script imported — and asserts them
+against 1.13 / 1.07 / 1.76 with `_WINDOW_TOL = 5e-3`, a **printing** tolerance: half
+of the last digit the manuscript prints (two decimals), not a golden comparison like
+the `1e-12` used for the committed artifacts. Runtime measured **4.00 s**, below the
+10 s threshold, so the test carries **no `slow` marker**.
+
+**Still open (untouched by this addendum):** the author's `0.087` of `law_resolution`
+and his original detection figures — open item 2 of §5, carried as before.
 
 ---
 
