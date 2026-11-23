@@ -8,14 +8,20 @@ This directory contains technical documentation for the shared build and release
 docs/
 ├── README.md          # This file
 ├── architecture.md    # Release system architecture
+├── citations.md       # CSL single-source citation pipeline + witness (tier) contract (§1–§8)
 ├── counts.md          # Generated counts ledger (pnpm run counts; never edited by hand)
 ├── installation.md    # Prerequisites and setup
-└── usage.md           # Build and release commands
+├── usage.md           # Build and release commands
+└── witness-contract.md # Why the marks exist (portable rationale of the witness device, EN)
 ```
 
 ## Contents
 
 - **architecture.md**: Tech stack, execution flow, reproducibility measures, scripts structure.
+- **citations.md**: How `citation.csl.json` (179 records) drives the bibliography,
+  CITATION.cff and .zenodo.json (§1–§7); §8 is the witness (tier) contract of this
+  repository — grammar, writing rules, alphabet (P and N), the hypothesis rule and the
+  retired `P*` history, with the measured state of the manuscript.
 - **counts.md**: The measured counts of this repository — the pytest suite
   totals (`pytest.collected`, `pytest.not_slow`), the Lean source statistics of
   `lean/F1_pentagonal_descent_UNIFIED.lean` and the `images/` inventory — with the command that measures each.
@@ -24,6 +30,9 @@ docs/
   `suite-not-slow`); the manuscript itself states no count.
 - **installation.md**: Prerequisites and setup instructions.
 - **usage.md**: Daily workflow, conventional commits, build and release commands.
+- **witness-contract.md**: The rationale of the witness marks — why they exist, what they
+  do not assert, the compactness method and the honesty declaration. Portable across the
+  family; the applied state of this repository lives in its `docs/reports/`.
 
 ## Conventions
 
