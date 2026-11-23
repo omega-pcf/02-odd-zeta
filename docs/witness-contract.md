@@ -225,8 +225,8 @@ does not serve here:
 The convention, therefore, **does not compete** with alphabetic numbering:
 it uses it for what it is good at (breaking down) and leaves status to
 the mark. In the same way, the mark does not replace the bibliography: the
-reference list keeps ordering the references — in this repository by order
-of first citation (`sorting=none`, `docs/citations.md` §3) — and the mark
+reference list keeps ordering the references — in this repository
+alphabetically (`sorting=nyt`, `docs/citations.md` §3) — and the mark
 does not enter that layer.
 
 ### 4.4 The quantified criterion

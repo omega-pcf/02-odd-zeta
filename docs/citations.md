@@ -76,22 +76,23 @@ The preamble of this repository, as built:
 
 ```latex
 \usepackage{xcolor}\definecolor{linkred}{rgb}{0.78,0.08,0.12}
-\usepackage[backend=biber,style=numeric,sorting=none,doi=true,url=true,isbn=false]{biblatex}
+\usepackage[backend=biber,style=numeric,sorting=nyt,giveninits=true,doi=true,url=true,isbn=false]{biblatex}
 \addbibresource{src/bibliography.bib}
 \AtEveryBibitem{\iffieldundef{doi}{}{\clearfield{url}}}
 \usepackage{hyperref}
 \hypersetup{colorlinks=true,urlcolor=blue,linkcolor=linkred,citecolor=blue}
 ```
 
-**Measured divergence from the siblings.** The four sibling repositories
-render with `sorting=nyt,giveninits=true` (alphabetical, initials). This
-repository was built with `sorting=none` and no `giveninits`, so its
-references print in **order of first citation** with **full given names**
-(verified on `build/document-v1.7.2.pdf`, the reference list). Both settings
-live in this one line of `main.tex`; nothing else in the pipeline depends on
-them. Bringing them in line with the siblings is an author decision — it
-changes the printed bibliography — and is recorded as such, not silently
-changed here.
+**Family standard, adopted.** All sibling repositories render with
+`sorting=nyt,giveninits=true` (alphabetical, initials), and this
+repository's `main.tex` now carries that line verbatim. It previously
+carried `sorting=none` with no `giveninits` — order of first citation with
+full given names — which was measured as a divergence and recorded as an
+author decision; the standardisation wave then applied the family line, so
+the divergence no longer exists. Both settings live in this one line of
+`main.tex`; nothing else in the pipeline depends on them. The rendered
+result (alphabetical order, given names as initials) is verified with
+`pdftotext` against the built PDF at each change.
 
 The body must NOT contain a manual `thebibliography` (this repository has
 none, and no `\nocite`). The bibliography is printed from the database:
@@ -140,9 +141,9 @@ fails the build otherwise.
 - **Preserve the published orthography** of titles (original spellings,
   Unicode names such as Özaydin, Pär); do not "modernise" them.
 - **Name style inside `given`**: full given names preferred in stored CSL
-  data (better Zenodo/CFF metadata); this repository renders them as stored,
-  because `main.tex` sets no `giveninits` (§3). Long author lists abbreviate
-  to "et al." by design.
+  data (better Zenodo/CFF metadata); the rendered PDF abbreviates them to
+  initials, because `main.tex` sets `giveninits=true` (§3). Long author
+  lists abbreviate to "et al." by design.
 - **DOI and URL**: both are stored in CSL/CFF/Zenodo metadata. In the
   rendered PDF the family hook
   `\AtEveryBibitem{\iffieldundef{doi}{}{\clearfield{url}}}` suppresses the
@@ -170,9 +171,9 @@ fails the build otherwise.
 
 - URL duplication with DOI in the rendered bibliography: **suppressed** via
   the `\AtEveryBibitem` hook (see §5); stored metadata keeps both.
-- Reference ordering: **order of first citation** (`sorting=none`, this
-  repository — see the measured note in §3); rendered author names: **as
-  stored** (no `giveninits` in this repository's `main.tex`).
+- Reference ordering: **alphabetical** (`sorting=nyt`, the family
+  standard, §3); rendered author names: **initials** (`giveninits=true` in
+  this repository's `main.tex`).
 - The gates that keep every layer honest: `pnpm run selfcitations:check`,
   `parity`, `counts:check`, `manifest:check` and `verify`, chained by
   `pnpm run validate`.
