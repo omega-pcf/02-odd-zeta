@@ -19,7 +19,7 @@
 \usepackage{graphicx}
 \usepackage{enumitem}
 \usepackage{doi}
-\usepackage[backend=biber,style=numeric,sorting=none,doi=true,url=true,isbn=false]{biblatex}
+\usepackage[backend=biber,style=numeric,sorting=nyt,giveninits=true,doi=true,url=true,isbn=false]{biblatex}
 \addbibresource{src/bibliography.bib}
 \AtEveryBibitem{\iffieldundef{doi}{}{\clearfield{url}}}
 \usepackage{xcolor}\definecolor{linkred}{rgb}{0.78,0.08,0.12}
