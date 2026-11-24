@@ -33,7 +33,7 @@
         ]
       ]
     },
-    "note": "Concept DOI; this-version 10.5281/zenodo.19562532; doi:10.5281/zenodo.17619486",
+    "note": "Concept DOI; this-version 10.5281/zenodo.19562532",
     "publisher": "Preprint, Zenodo",
     "title": "The Hilbert–Pólya Operator and the Primitive Structure of the Complex Plane: Between 𝔽₁, String Theory, and Ancient Geometry"
   },
@@ -67,7 +67,7 @@
         ]
       ]
     },
-    "note": "Concept DOI; v1.4.10 (17 April 2026) appeared as <i>Odd Zeta Values from the PCF Torus: φ and π as Arithmetic-Geometric Sources</i>, 10.5281/zenodo.19636252. The present paper is its successor version. Code: github.com/omega-pcf/02-odd-zeta; doi:10.5281/zenodo.19492791",
+    "note": "Concept DOI; v1.4.10 (17 April 2026) appeared as <i>Odd Zeta Values from the PCF Torus: φ and π as Arithmetic-Geometric Sources</i>, 10.5281/zenodo.19636252. The present paper is its successor version. Code: github.com/omega-pcf/02-odd-zeta",
     "publisher": "Preprint, Zenodo",
     "title": "Odd Zeta Values from Pentagonal 𝔽₁-Descent"
   },
@@ -101,7 +101,7 @@
         ]
       ]
     },
-    "note": "Concept DOI (all versions); cited in its version 1.0.4; doi:10.5281/zenodo.21343602",
+    "note": "Concept DOI (all versions); cited in its version 1.0.4",
     "publisher": "Preprint, Zenodo",
     "title": "The Crystalline Worldsheet: A String Theoretical Framework Based on 𝔽₁, for the de Sitter Observer Problem"
   },
@@ -135,7 +135,6 @@
         ]
       ]
     },
-    "note": "doi:10.5281/zenodo.21731878",
     "publisher": "Preprint, Zenodo",
     "title": "Simultaneous Identities of the Golden Ratio and Euler's Identity, Formally Verified in Lean 4 over the Known Mersenne Prime Exponents"
   },
@@ -182,7 +181,6 @@
         ]
       ]
     },
-    "note": "doi:10.33571/rpolitec.v16n32a10",
     "page": "111-119",
     "title": "A complete classification of the Mersenne's primes and its implications for computing",
     "volume": "16"
@@ -207,7 +205,6 @@
         ]
       ]
     },
-    "note": "doi:10.17654/nt052010127",
     "page": "127-161",
     "title": "Prime numbers: an alternative study using ova-angular rotations",
     "volume": "52"
@@ -236,7 +233,6 @@
         ]
       ]
     },
-    "note": "doi:10.33571/rpolitec.v19n37a7",
     "page": "102-110",
     "title": "Identificación de candidatos a primos de Mersenne mediante clasificación ova-angular utilizando aprendizaje automático con regresión SVM y kernel gaussiano",
     "volume": "19"
@@ -302,7 +298,6 @@
         ]
       ]
     },
-    "note": "doi:10.1090/S0025-5718-1987-0866115-0",
     "page": "273-308",
     "title": "On the distribution of spacings between zeros of the zeta function",
     "volume": "48"
@@ -376,7 +371,6 @@
         ]
       ]
     },
-    "note": "doi:10.1063/1.1703773",
     "page": "140-156",
     "title": "Statistical theory of the energy levels of complex systems. I",
     "volume": "3"
@@ -404,7 +398,6 @@
         ]
       ]
     },
-    "note": "doi:10.1007/s002200000261",
     "page": "57-89",
     "title": "Random matrix theory and ζ(1/2+it)",
     "volume": "214"
@@ -527,7 +520,6 @@
         ]
       ]
     },
-    "note": "doi:10.1137/S0036144598347497",
     "page": "236-266",
     "title": "The Riemann zeros and eigenvalue asymptotics",
     "volume": "41"
@@ -559,7 +551,6 @@
         ]
       ]
     },
-    "note": "doi:10.1103/PhysRevLett.118.130201",
     "page": "130201",
     "title": "Hamiltonian for the zeros of the Riemann zeta function",
     "volume": "118"
@@ -584,7 +575,6 @@
         ]
       ]
     },
-    "note": "doi:10.1088/1751-8121/ad4c2d",
     "page": "235204",
     "title": "Hamiltonian for the Hilbert–Pólya conjecture",
     "volume": "57"
@@ -631,7 +621,6 @@
         ]
       ]
     },
-    "note": "doi:10.1007/s000290050042",
     "page": "29-106",
     "title": "Trace formula in noncommutative geometry and the zeros of the Riemann zeta function",
     "volume": "5"
@@ -664,7 +653,6 @@
         ]
       ]
     },
-    "note": "doi:10.1016/j.jnt.2008.08.007",
     "page": "1532-1561",
     "title": "Fun with 𝔽₁",
     "volume": "129"
@@ -693,7 +681,6 @@
         ]
       ]
     },
-    "note": "doi:10.1016/j.crma.2014.07.009",
     "page": "971-975",
     "title": "The arithmetic site",
     "volume": "352"
@@ -721,7 +708,6 @@
         ]
       ]
     },
-    "note": "doi:10.1016/j.aim.2015.11.045",
     "page": "274-329",
     "title": "Geometry of the arithmetic site",
     "volume": "291"
@@ -745,7 +731,6 @@
         ]
       ]
     },
-    "note": "doi:10.1007/978-3-319-32162-2_5",
     "page": "225-257",
     "publisher": "Springer",
     "title": "An essay on the Riemann hypothesis"
@@ -778,7 +763,6 @@
         ]
       ]
     },
-    "note": "doi:10.1088/1126-6708/1998/02/003",
     "page": "003",
     "title": "Noncommutative geometry and Matrix theory",
     "volume": "1998"
@@ -823,7 +807,6 @@
         ]
       ]
     },
-    "note": "doi:10.2140/ant.2011.5.231",
     "page": "231-285",
     "title": "The basic geometry of Witt vectors, I: The affine case",
     "volume": "5"
@@ -848,7 +831,6 @@
         ]
       ]
     },
-    "note": "doi:10.1134/S2070046613040055",
     "page": "313-325",
     "title": "Numbers as functions",
     "volume": "5"
@@ -994,7 +976,6 @@
         ]
       ]
     },
-    "note": "doi:10.1112/S0010437X06002624",
     "page": "618-688",
     "title": "Non-additive geometry",
     "volume": "143"
@@ -1023,7 +1004,6 @@
         ]
       ]
     },
-    "note": "doi:10.1017/is008004027jkt048",
     "page": "437-500",
     "title": "Au-dessous de Spec ℤ",
     "volume": "3"
@@ -1047,7 +1027,6 @@
         ]
       ]
     },
-    "note": "doi:10.1016/j.jnt.2014.04.006",
     "page": "408-421",
     "title": "Blueprints—towards absolute arithmetic?",
     "volume": "144"
@@ -1076,7 +1055,6 @@
         ]
       ]
     },
-    "note": "doi:10.1007/s00209-009-0638-0",
     "page": "605-643",
     "title": "Torified varieties and their geometries over 𝔽₁",
     "volume": "267"
@@ -1346,7 +1324,6 @@
         ]
       ]
     },
-    "note": "doi:10.1145/3372885.3373830",
     "publisher": "Proc. CPP 2020",
     "title": "Formalising perfectoid spaces"
   },
@@ -1370,7 +1347,6 @@
         ]
       ]
     },
-    "note": "doi:10.1080/10586458.2021.1926016",
     "page": "349-354",
     "title": "Liquid tensor experiment",
     "volume": "31"
@@ -1399,7 +1375,6 @@
         ]
       ]
     },
-    "note": "doi:10.1002/mma.5490",
     "page": "5535-5550",
     "title": "On metallic ratio in ℤₛ",
     "volume": "42"
@@ -1474,7 +1449,6 @@
         ]
       ]
     },
-    "note": "doi:10.1007/s00029-021-00682-x",
     "page": "77",
     "title": "Weil positivity and trace formula: the archimedean place",
     "volume": "27"
@@ -1571,7 +1545,6 @@
         ]
       ]
     },
-    "note": "doi:10.1112/S0010437X09004692",
     "page": "1383-1415",
     "title": "Schemes over 𝔽₁ and zeta functions",
     "volume": "146"
@@ -1600,7 +1573,6 @@
         ]
       ]
     },
-    "note": "doi:10.1090/S1056-3911-2010-00535-8",
     "page": "525-557",
     "title": "On the notion of geometry over 𝔽₁",
     "volume": "20"
@@ -1742,7 +1714,6 @@
         ]
       ]
     },
-    "note": "doi:10.1007/BF01612081",
     "page": "11-51",
     "title": "Eine neue Art von Zetafunktionen und ihre Beziehungen zur Verteilung der Primzahlen (Zweite Mitteilung)",
     "volume": "6"
@@ -1928,7 +1899,6 @@
         ]
       ]
     },
-    "note": "doi:10.1007/BF02824451",
     "page": "190-197",
     "title": "Construction of a crossing-symmetric, Regge-behaved amplitude for linearly rising trajectories",
     "volume": "57"
@@ -1956,7 +1926,6 @@
         ]
       ]
     },
-    "note": "doi:10.1016/0370-2693(96)00439-X",
     "page": "283-291",
     "title": "The analytical value of the electron (g-2) at order α³ in QED",
     "volume": "379"
@@ -2066,7 +2035,6 @@
         ]
       ]
     },
-    "note": "doi:10.1007/BF01211590",
     "page": "207-226",
     "title": "Central charges in the canonical realization of asymptotic symmetries: an example from three-dimensional gravity",
     "volume": "104"
@@ -2143,7 +2111,6 @@
         ]
       ]
     },
-    "note": "doi:10.1007/BF01589495",
     "page": "411-457",
     "title": "Hecke algebras, type III factors and phase transitions with spontaneous symmetry breaking in number theory",
     "volume": "1"
@@ -2173,7 +2140,6 @@
         ]
       ]
     },
-    "note": "doi:10.1112/blms/bdn024",
     "page": "439-446",
     "title": "Galois theory and integral models of Λ-rings",
     "volume": "40"
