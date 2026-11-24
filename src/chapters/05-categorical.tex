@@ -329,8 +329,7 @@ purpose; it also reaches the order of the $p$-adic
 angle: at a split prime $p\nmid n$ the residue of
 $\golden$ has order $n$ exactly when it is a root of
 $\Phi_n$ in $\mathbb{F}_p$
-(\LeanInline{W4Isometria.clock\_iff\_cyclotomic\_root}
-\tier{P}), while the lift itself stays classical.  The limits are visible too: unbounded
+(\tier[W4Isometria.clock\_iff\_cyclotomic\_root]{P}), while the lift itself stays classical.  The limits are visible too: unbounded
 self-adjointness is not in Mathlib \cite{gonzalez25hp}, and the analytic steps of
 \cref{thm:explicit} are not formalised here.  The first window of Weil positivity is
 formalised in its four steps, with the two inputs the paper declares --- Gauss's
@@ -420,8 +419,7 @@ each can be seen inside the tower.  The diagonal argument needs an endomorphism 
 $\{0,1\}$, and on a commutative ring it has a fixed point exactly when $2$ is invertible, the point $\tfrac12$,
 none on $\Z$ or on $\Zphi$ (the paragraph after \cref{prop:cocone}); the mate $\rho\mapsto\alpha(\bar\rho)$, its continuation
 to $\C$ composed with the conjugation, fixes exactly the line (\cref{prop:klein-detail};
-\LeanInline{EstructuraEnGUE.lawvere\_alpha\_no\_fixed\_point}, \LeanInline{F1Lawvere.reflection\_fixed\_iff}
-\tier{P}).  The binary problem is a symmetry of order two in a spectrum: an antiunitary symmetry with $T^2=-1$ fixes no
+\tier[EstructuraEnGUE.lawvere\_alpha\_no\_fixed\_point, F1Lawvere.reflection\_fixed\_iff]{P}).  The binary problem is a symmetry of order two in a spectrum: an antiunitary symmetry with $T^2=-1$ fixes no
 ray and forces every level into a doublet, the
 symplectic class; a commuting symmetry of order two splits the spectrum into two sectors with no repulsion between
 them, as the zeros of $\zeta_K$ show.  The dimensional obstruction is not met by a division algebra either: what separates
@@ -631,8 +629,7 @@ $\ker G=\{1,9\}=\{1,3^2\}$; the fibres of $G$ are $\{1,9\}$, $\{3,7\}$, $\{11,19
 (\cref{prop:G}).  A character of $(\Z/20)^\times$ factors through $G$ exactly when it is trivial on $9$,
 that is, when $\chi(3)^2=1$, which with $\chi(11)^2=1$ means that $\chi$ is quadratic; the other four
 have $\chi(3)=\pm i$ and $\chi(9)=-1$.  Reduction modulo $5$ separates the classes of the kernel,
-$1\mapsto1$ and $9\mapsto4$ (\LeanInline{the\_four\_fibres}, \LeanInline{four\_fibres\_four\_characters},
-\LeanInline{carriers\_have\_order\_four}, \LeanInline{Z20star\_pi2\_fiber\_is\_mod5} \tier{P}).  The descent
+$1\mapsto1$ and $9\mapsto4$ (\tier[the\_four\_fibres, four\_fibres\_four\_characters, carriers\_have\_order\_four, Z20star\_pi2\_fiber\_is\_mod5]{P}).  The descent
 reads only $\chiv$, a quadratic character (\cref{thm:chi5-from-frobenius}).  Clause~(ii) of
 \cref{conj:closure} bounds the residual of each class separately, and by the orthogonality of characters
 that is a statement about all eight characters modulo $20$, the four of order $4$ included, which do not
@@ -668,7 +665,7 @@ the positivity (\cref{prop:semilocal}).  Like the law of \cref{conj:closure}, it
 
 \emph{Prisms.}  No digit sees the fifth-turns: $11$ and $211$ lie in the same class modulo $20$, and
 $\golden$ is a fifth power at $211$ and not at $11$, for either root of $x^2-x-1$ (\cref{prop:phi-residue};
-\LeanInline{F1PaperNew.phi\_residue\_not\_class\_function} \tier{P}).  They are read on the $p$-adic circle
+\tier[F1PaperNew.phi\_residue\_not\_class\_function]{P}).  They are read on the $p$-adic circle
 of the prisms $(\Z_p[\golden],(p))$ from which the cohomology of \cref{conj:prismatic-route} is assembled;
 the order of the angle of $\golden$ on that circle is the period of the Fibonacci dynamics on the $p$-torsion of the
 real torus
@@ -750,9 +747,9 @@ contradiction.
 Two features of that construction meet objects of \cref{sec:methods}.
 
 \emph{The self-dual point.}  The modular parameter of the torus is $\tau=i$, the
-fixed point of $\tau\mapsto-1/\tau$ (\LeanInline{F1CW.s\_duality\_fixes\_i} \tier{P}),
+fixed point of $\tau\mapsto-1/\tau$ (\tier[F1CW.s\_duality\_fixes\_i]{P}),
 and the same involution appears in the Schwinger variable as $t\mapsto1/t$, whose
-unique fixed point is $t=1$ (\LeanInline{selfdual\_fixed\_point} \tier{P}).
+unique fixed point is $t=1$ (\tier[selfdual\_fixed\_point]{P}).
 The period of the torus is $T_K=2\pi\log\golden=2\pi R_K$: the regulator of
 $\Q(\sqrt5)$, which is the invariant that reappears in \eqref{eq:log-two}.
 
@@ -760,7 +757,7 @@ $\Q(\sqrt5)$, which is the invariant that reappears in \eqref{eq:log-two}.
 domain, with the half-turn $e^{i\pi}=-1$: an orientation-reversing involution, so
 the worldsheet is one-sided (\LeanCW{PaperMobius.fibre\_monodromy},
 \LeanCW{fibre\_reflection\_order\_two} \tier{P}; in this paper's corpus the orientation flip
-of the fibre has order exactly two, \LeanInline{orient\_flip\_order} \tier{P}).  The fibre datum is
+of the fibre has order exactly two, \tier[orient\_flip\_order]{P}).  The fibre datum is
 independent of whether the base torus is commutative or a noncommutative
 $T^2_\theta$ (\LeanCW{fibre\_independent\_of\_base} \tier{P}).
 
@@ -838,16 +835,16 @@ same apex --- among them the half-factorial $\Gamma(3/2)/\sqrt\pi$, the product 
 the three component norms of the eigenvalue triangle, $\cos(\pi/3)$, the inverse
 binary turn $\golden^{-\lng}$, the midpoint of the Galois pair
 $(\golden+\bar\golden)/2$, and the fixed set of $x\mapsto1-x$
-(\LeanInline{modulus\_cocone\_six\_routes} \tier{P}\ for the six routes of \cref{prop:cocone}; the eight routes are \LeanCW{PaperS2.mu\_diagram\_commutes}).  And it is the value the
+(\tier[modulus\_cocone\_six\_routes]{P}\ for the six routes of \cref{prop:cocone}; the eight routes are \LeanCW{PaperS2.mu\_diagram\_commutes}).  And it is the value the
 functional equation fixes, since $s$ and $1-s$ have the same real part exactly on
-$\Re s=\tfrac12$ (\LeanInline{functional\_equation\_fixed\_line} \tier{P}; in \cite{gonzalez26cw} \LeanCW{faceLine\_apex}) --- which is the point of contact
+$\Re s=\tfrac12$ (\tier[functional\_equation\_fixed\_line]{P}; in \cite{gonzalez26cw} \LeanCW{faceLine\_apex}) --- which is the point of contact
 between the physical construction and \cref{prop:stau}.
 
 The last two routes deserve a remark, because they are the reason the number is
 the same on both sides.  The midpoint of $\{\golden,\bar\golden\}$ and the fixed
 point of $x\mapsto1-x$ are the same computation: Galois conjugation in
 $\Q(\sqrt5)$ and the apex involution are one map on the orbit
-(\LeanInline{phi\_bar\_eq} \tier{P}).  The arithmetic $\tfrac12$ of \crefrange{sec:choice}{sec:clock} and the holographic $\tfrac12$ of the construction are therefore not two
+(\tier[phi\_bar\_eq]{P}).  The arithmetic $\tfrac12$ of \crefrange{sec:choice}{sec:clock} and the holographic $\tfrac12$ of the construction are therefore not two
 numbers that agree; they are one number read twice.
 
 \subsubsection{From the vanishing point to the dimensional chain}\label{ssec:one-two-three}
@@ -895,9 +892,8 @@ which the construction meets them, not implications between them:
   \underbrace{S_3}_{\text{symmetry}}\;\to\;
   \underbrace{E^3,\ c=3.}_{\text{geometry}}
 \]
-\LeanInline{F1v2.S3\_E3\_c3\_from\_the\_euler\_product} \tier{P}, which states the whole display; the three of this
-statement are \LeanInline{F1CW.s\_duality\_fixes\_i}, \LeanInline{selfdual\_fixed\_point},
-\LeanInline{F1CW.hinge\_central\_charge} \tier{P}%
+\tier[F1v2.S3\_E3\_c3\_from\_the\_euler\_product]{P}, which states the whole display; the three of this
+statement are \tier[F1CW.s\_duality\_fixes\_i, selfdual\_fixed\_point, F1CW.hinge\_central\_charge]{P}%
 \end{proposition}
 
 \begin{proof}
@@ -911,13 +907,11 @@ $\Zphi$, a space of dimension three on which the ratios of the operator act by b
 The binary forms of the three faces have discriminants $-4$ (Gauss, $x^2+y^2$), $-3$
 (Eisenstein) and $5$ (the norm form of $\Zphi$); the two imaginary ones are negative and
 the golden one positive, and $|{-4}|\cdot5=20$ is the conductor
-(\LeanInline{trichotomy\_locates\_reality}, \LeanInline{signs\_separate\_the\_faces},
-\LeanInline{identity\_disc\_is\_positive} \tier{P}).  The Euler rotor of
+(\tier[trichotomy\_locates\_reality, signs\_separate\_the\_faces, identity\_disc\_is\_positive]{P}).  The Euler rotor of
 \cite{gonzalez26mersenne}, $s\mapsto e^{i\pi s}$, restricted to the integers is the sign
 character, $k\mapsto(-1)^k$, with imaginary part vanishing on the integers; at
 $s=\tfrac12$ it is $i$, the self-dual point of the torus, where $t\mapsto1/t$ fixes $t=1$
-(\LeanInline{rotor\_on\_integers}, \LeanInline{rotor\_imaginary\_vanishes\_on\_integers},
-\LeanInline{rotor\_at\_half}, \LeanInline{rotor\_half\_is\_the\_selfdual\_point} \tier{P}).  The
+(\tier[rotor\_on\_integers, rotor\_imaginary\_vanishes\_on\_integers, rotor\_at\_half, rotor\_half\_is\_the\_selfdual\_point]{P}).  The
 vanishing point of that paper sits, in this chain, at the self-dual point.
 \end{remark}
 
@@ -927,9 +921,7 @@ dimension, $T_K=2\pi R_K$; the size of the plane over the line,
 $L(1,\chiv)=2R_K/\sqrt5$; the information of the projection,
 $S_{\mathrm{BH}}/k_{\mathrm B}=\lambda_{\log}R_K=\log2$; and the rapidity of the boost
 in the third dimension, $\golden^2=e^{2R_K}$.
-\LeanInline{F1v2.regulator\_measures\_the\_chain} \tier{P}; \LeanInline{F1CW.period\_eq\_two\_pi\_regulator},
-\LeanInline{anchor\_is\_a\_crossed\_identity}, \LeanInline{F1CW.lambda\_log\_mul\_regulator}
-\tier{P}\ given the class-number formula
+\tier[F1v2.regulator\_measures\_the\_chain]{P}; \tier[F1CW.period\_eq\_two\_pi\_regulator, anchor\_is\_a\_crossed\_identity, F1CW.lambda\_log\_mul\_regulator]{P}\ given the class-number formula
 \end{proposition}
 
 \begin{proof}
@@ -965,10 +957,8 @@ factor $5\arccos(\golden/2)\,n=\pi n$ is the circle, the plane; and the ternary 
 enters inside the logarithm, $\mu n+\sigma=\golden^{-\lng}(n+3)$, and in $\sigma=3\mu$,
 the three directions of $E^3$.  The conductor enters in
 $\alpha_0=(dN-1)/(|\ker G|\,N)$ with $N=20$.
-\LeanInline{F1v2.hp\_operator\_in\_phi\_alone},
-\LeanInline{F1v2.hp\_operator\_carries\_three\_dimensions} \tier{P};
-\LeanInline{Tstar\_rewritten\_in\_phi}, \LeanInline{Tstar\_carries\_both\_faces},
-\LeanInline{mu\_n\_plus\_sigma\_factors}, \LeanInline{eleven\_components\_anchored} \tier{P}%
+\tier[F1v2.hp\_operator\_in\_phi\_alone, F1v2.hp\_operator\_carries\_three\_dimensions]{P};
+\tier[Tstar\_rewritten\_in\_phi, Tstar\_carries\_both\_faces, mu\_n\_plus\_sigma\_factors, eleven\_components\_anchored]{P}%
 \end{proposition}
 
 \begin{proof}
@@ -1025,7 +1015,7 @@ geometry whose curvature invariants are fixed by the modulus, the scalar curvatu
 $\Lambda_5=-6$, $G_{AB}=6g_{AB}$ (\LeanCW{R\_scalar\_pcf},
 \LeanCW{lambda5\_pcf}, \LeanCW{G\_AB\_pcf} \tier{P}); with $\ell=1$ and
 $\GN=\tfrac12$ the Brown--Henneaux charge is $c=3$
-(\LeanInline{F1CW.hinge\_central\_charge} \tier{P}), the arity of
+(\tier[F1CW.hinge\_central\_charge]{P}), the arity of
 \cref{sec:ring}.
 
 The per-level statement is the one that matters structurally.  The bulk
@@ -1035,7 +1025,7 @@ depend on the level (\LeanCW{tower\_e\_eq\_exp\_regulator},
 \LeanCW{modular\_bulk\_ratio\_level\_independent} \tier{P}); an isometry acting
 level by level therefore intertwines them exactly
 (\LeanCW{bulk\_boundary\_intertwine},
-\LeanInline{isometry\_with\_common\_modulus₅} \tier{P}).  Because no level is privileged,
+\tier[isometry\_with\_common\_modulus₅]{P}).  Because no level is privileged,
 the tower is an index over one flow and not a stack of different structures
 (\LeanCW{no\_privileged\_level} \tier{P}).
 
@@ -1049,7 +1039,7 @@ as the Galois conjugation $\golden\mapsto-1/\golden$, T-duality as the conjugate
 pair of lengths, the Kaluza--Klein bridge --- is a projection of the same tower,
 and the shared signature of its two corners is the list
 $|\Omega|=\tfrac12$, $\ell=1$, $\GN=\tfrac12$, $c=3$
-(\LeanInline{apex\_colimit\_universal} \tier{P}).
+(\tier[apex\_colimit\_universal]{P}).
 
 The de Sitter companion develops three points of this holographic reading that this paper uses only through the
 isometry $\mathcal V$.  First, the bulk--boundary map read as a quantum error-correcting code: an isometry $\mathcal V$ with
@@ -1093,13 +1083,12 @@ Three points of \cite{gonzalez26cw} bear directly on this paper.
 \emph{The entropy bridge.}  With $\lng=\log2/\log\golden$,
 \[
   \frac{S_{\mathrm{BH}}}{k_B}=\lng\,R_K=\lng\cdot\frac{\sqrt5}{2}L(1,\chiv)=\log2
-  \qquad(\LeanInline{branches\_meet\_at\_log\_two}\ \tier{P}),
+  \qquad(\tier[branches\_meet\_at\_log\_two]{P}),
 \]
 so the holographic bit is the regulator of $\Q(\sqrt5)$ measured in the unit
 $\lng$; this is \eqref{eq:log-two} again, and it is the arithmetic branch of the
 span of \cref{prop:span}.  The inputs are $h_K=1$, proved from the Minkowski
-bound $\sqrt5/2<2$ (\LeanInline{F1CW.minkowski\_bound\_lt\_two},
-\LeanInline{F1CW.class\_number\_one\_K} \tier{P}), and the class-number formula, which
+bound $\sqrt5/2<2$ (\tier[F1CW.minkowski\_bound\_lt\_two, F1CW.class\_number\_one\_K]{P}), and the class-number formula, which
 enters as a classical input.
 
 \emph{The Regge tower is the Euler product.}  The poles of the Veneziano
@@ -1107,7 +1096,7 @@ amplitude sit at the integers, every level is populated and carries spin
 $\le n-1$ (\LeanCW{regge\_residue\_ne\_zero},
 \LeanCW{regge\_residue\_degree} \tier{P}), and unique factorisation turns the
 spectral Dirichlet series into the Euler product
-(\LeanInline{F1CW.dirichlet\_is\_euler} \tier{P}).  The product over all
+(\tier[F1CW.dirichlet\_is\_euler]{P}).  The product over all
 places is the completed zeta (\LeanCW{framework\_partition\_eq\_completed\_zeta},
 \LeanCW{places\_assembly} \tier{P}), the archimedean place being fixed by the
 self-dual Gaussian, which is normalised, equal to its own Fourier transform, and
