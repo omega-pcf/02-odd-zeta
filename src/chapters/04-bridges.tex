@@ -170,7 +170,7 @@ spacings below $0.1$ out of $388$, the smallest $0.017$, and no ordinate is shar
 the Galois symmetry of order two that splits $\zeta_K$ into its two factors (\cref{eq:dedekind}) shows in its zeros as
 two sectors, as \cref{prop:symmetry-spectrum}\textup{(i)} says a commuting symmetry does; and neither $L(s,\chiv)$ nor
 $\zeta$ shows a sector, a doublet, or the multiplicity six of an operator of the level (\texttt{chi5\_zeros.py}, % pending(D7)
-\texttt{retro105.py} \tier{N}).  If the zeros of $L(s,\chiv)$ are the spectrum of a self-adjoint operator, the data % pending(D7)
+\texttt{retro105.py}).  If the zeros of $L(s,\chiv)$ are the spectrum of a self-adjoint operator, the data % pending(D7)
 then make it neither an operator of the level nor an operator with a commuting symmetry of order two or six whose
 sectors are independent: the fibre, if it acts on it, acts through an operator that does not commute with its symmetry, as in
 \cref{prop:level-operators}\textup{(iv)}.
@@ -375,7 +375,7 @@ that its prime coefficients are Frobenius traces is \tier{P}%
 (\LeanInline{prime\_side\_is\_frobenius\_trace}).  $\Lambda(s,\chiv)$ is entire, so
 there are no pole terms.  The normalisation is checked numerically: with the
 $40$ zeros of height $\le80$ (first $\gamma=6.6484533447$) and Gaussian $g$,
-both sides agree to $10^{-18}$ (\texttt{verify\_weil\_chi5.py}, \tier{N}). % pending(D7)
+both sides agree to $10^{-18}$ (\texttt{verify\_weil\_chi5.py}). % pending(D7)
 \end{theorem}
 
 \begin{theorem}[The core as a prime-side bound]\label{thm:core-positivity}
@@ -419,7 +419,7 @@ That space is the open part of the route.
 \begin{proposition}[Semilocal positivity and the Frobenius at $2$, numerical]\label{prop:semilocal}
 Restrict the Weil form of \cref{thm:core-positivity} to test functions
 supported in $[-L/2,L/2]$ and let $\lambda_{\min}(L)$ be its smallest
-eigenvalue.  Then (\tier{N}, \texttt{weil\_window\_chi5.py}): % pending(D7)
+eigenvalue.  Then (\texttt{weil\_window\_chi5.py}): % pending(D7)
 \begin{enumerate}
   \item for $L<\log2$ no prime enters and the form is the archimedean one;
     archimedean positivity alone holds up to $L_c=0.9251$ and fails beyond;
@@ -446,7 +446,7 @@ form of $L(s,\chiv)$ satisfies
 \]
 the second term only when $L>\log2$.  At $L=\log2$, $m=0.0841$.
 \tier[F1v2.first\_window\_integral, F1v2.dirichlet\_localisation, F1v2.midpoint\_bound, F1v2.potential\_integral\_bound, F1v2.absorption]{P}, given the explicit formula with Gauss's integral
-for the digamma function and the numerical values of the potential \tier{N}
+for the digamma function and the numerical values of the potential
 (\texttt{weil\_window\_rigorous\_check.py}); the value $\psi(\tfrac12)=-\gamma_E-2\log2$ it % pending(D7)
 uses is proved (\tier[digamma\_half\_is\_negative]{P})
 \end{theorem}
@@ -567,11 +567,11 @@ The window $L\le1$ passes the archimedean threshold $L_c=0.925$
 $a_2=-2\log2\cdot\chiv(2)/\sqrt2=+0.980$.  Its sign is $-\chiv(2)$, and $\chiv(2)$
 is the eigenvalue of $\Frob_2$ on $\sqrt5$ (\cref{thm:frob-eigen}): the statement is
 that $2$ is inert.  Replacing that sign, the same linear programme has optimum
-$-0.573$ (\texttt{cert.py}, \tier{N}).  The replaced sequence is not the character of any $L$-function, so this % pending(D7)
+$-0.573$ (\texttt{cert.py}).  The replaced sequence is not the character of any $L$-function, so this % pending(D7)
 is a statement about the certificate, not about another $L$-function: it shows
 which term of the prime side carries the positivity past $L_c$.  \Cref{thm:second-window} is the
 first statement in which the Frobenius of $\Zphi$ does work inside Weil
-positivity.  The certificate method reaches $L=1.08$ (margin $0.013$, \texttt{cert.py}, \tier{N}); beyond, % pending(D7)
+positivity.  The certificate method reaches $L=1.08$ (margin $0.013$, \texttt{cert.py}); beyond, % pending(D7)
 the pointwise criterion is too lossy and the operator form of the next step is
 needed.
 \end{remark}
@@ -595,7 +595,7 @@ length $L$, autocorrelation in $[-L,L]$) that range is $L\le\log2$.  Zhu has rec
 $L(s,\chiv)$ case, and two differences with $\zeta$ are visible in the numbers.  The
 floor for $\chiv$ is far larger at the same window ($\lambda_{\min}\approx0.097$ at
 $L=1$, stable under basis refinement and confirmed from the zero side,
-\texttt{weil\_window\_chi5.py}, \texttt{zeroside\_check.py}, \tier{N}), because the % pending(D7)
+\texttt{weil\_window\_chi5.py}, \texttt{zeroside\_check.py}), because the % pending(D7)
 first zero sits at $6.65$ rather than $14.13$ and a band-limited function cannot
 avoid it; and $\Lambda(s,\chiv)$ has no pole term.  The first window,
 $L\le0.7447$, already passes the classical range, and the certificates reach
@@ -898,9 +898,9 @@ The same sequence separates the equivalent forms of the open statement from the 
 the functional equation, real coefficients and bounded partial sums, so its zero set is closed under the
 Klein group, and \cref{prop:orbits}, \cref{thm:shared-ordinate} and \cref{prop:additive-side} hold for
 it word for word; its zeros off the line, at $0.8085+85.699i$ and $0.6508+114.163i$, are free orbits
-(\texttt{retro99.py} \tier{N}).  What it lacks is on the prime side: the coefficients of $-L'/L$ of an Euler % pending(D7)
+(\texttt{retro99.py}).  What it lacks is on the prime side: the coefficients of $-L'/L$ of an Euler % pending(D7)
 product are supported on prime powers, and for this series $130$ of the coefficients with $n\le400$ fall
-outside them, the first at $n=6$ (\texttt{dh\_logderiv.py} \tier{N}).  An argument that reaches the line must % pending(D7)
+outside them, the first at $n=6$ (\texttt{dh\_logderiv.py}).  An argument that reaches the line must % pending(D7)
 therefore use the support on prime powers, as the windows of \cref{ssec:weil-route} and the orbit of
 \cref{thm:weil-closure} do; a statement that holds equally for this sequence is a form of the open
 statement, not a step towards it.  The exponent $0.788$ measured for its inverse is close to the real part
@@ -983,7 +983,7 @@ The analogue of the point counts is $\psi(x,\chi)=\sum_{n\le x}\Lambda(n)\chi(n)
 $|\psi(x,\chi)|/\sqrt x$ stays below $1.27$, $1.28$ and $2.22$ for $x>10^6$ ($\chi_4$, $\chiv$,
 $\chi_{20}$), with no growth --- its maximum over $[3\cdot10^7,e^{18}]$ is $1.13$, $1.07$ and $1.76$ ---,
 and each fibre of $G$ deviates from a quarter of the total by at most $0.79\sqrt x$
-(\texttt{castelnuovo.py} \tier{N}).
+(\texttt{castelnuovo.py} \tier[\testref{test\_castelnuovo\_golden\_values, test\_castelnuovo\_matches\_manuscript\_claim, test\_castelnuovo\_window\_maxima}]{N}).
 
 The analogue of the intersection form is the Weil quadratic form on a space of test functions $g_1,\dots,g_n$: the matrix $\bigl(\text{archimedean term}-\text{prime side}\bigr)$ of the products $g_j*g_k$.  Finite compressions of this form have recently carried an unconditional result: with a rank--trace inequality and Sylvester's law of inertia for the off-line pairs, more than two thirds of the zeros of $\zeta$ are simple and on the line, the result extends to primitive Dirichlet $L$-functions, and it is formally verified in Lean~4 \cite{alpogefurman26}.
 
@@ -1038,7 +1038,7 @@ as the translation by $\log p$, which on the zero side multiplies by $p^{i\gamma
 
 A quadruple placed at $\gamma=20$ with $\delta=0.1$ contributes the eigenvalues
 $-1.4\cdot10^{-4}$ and $+5.3\cdot10^{-4}$, a hyperbolic plane; the translation by $\log7$ scales
-its two members by $1.2148$ and $0.8232$, with product $1$ (\texttt{bridge.py} \tier{N}).  With
+its two members by $1.2148$ and $0.8232$, with product $1$ (\texttt{bridge.py} \tier[\testref{test\_mersenne\_bridge\_phi\_lambda\_log\_two, test\_mersenne\_bridge\_s\_bh\_is\_log\_two, test\_regulator\_form\_of\_bridge\_equals\_l\_one\_form}]{N}).  With
 eight test functions the total form stays positive: the negative direction is covered by
 the positive contribution of the zeros on the line, and resolving it needs a window of
 length of order $1/\delta$, the scale already met in \cref{ssec:field-positivity}.
@@ -1066,7 +1066,7 @@ odd ones, and $4\Re(A^2)=4(\Re A)^2-4(\Im A)^2$.
 On the zeros of the Davenport--Heilbronn sequence of \cref{ssec:two-sides} below height $100$, which carry one
 free orbit at $\gamma=85.70$, $\delta=0.3085$, the truncated zero side has index $0$ up to window $2$ and one even and
 one odd negative direction from window $3$, against $1/\delta=3.24$; with the second orbit, at height $114.16$,
-two of each (\texttt{retro101.py} \tier{N}).  In the form of $L(s,\chiv)$ with two zeros replaced by a quadruple, the index is $0$ or $2$ on every window tried, never $1$ (\texttt{retro93.py} \tier{N}). % pending(D7)
+two of each (\texttt{retro101.py}).  In the form of $L(s,\chiv)$ with two zeros replaced by a quadruple, the index is $0$ or $2$ on every window tried, never $1$ (\texttt{retro93.py}). % pending(D7)
 
 So the dictionary is exact.  A zero off the line would turn every Frobenius translation into
 a boost on a hyperbolic plane of the Weil form, of the same kind as the golden boost of the
@@ -1220,7 +1220,7 @@ The positions are given, and closely.  For $\zeta$, with the parameters of the o
 \cite{gonzalez25hp} and the zeros used only to measure: the mean error of $T^*(n)$ is about
 $4.9$ mean spacings; with the exact envelope, which uses no prime and no zero, it is $0.21$
 spacings ($n\le1000$; the median is $0.19$), a relative error from $3\cdot10^{-3}$ at low height to $5\cdot10^{-5}$ at $n=2000$
-(\texttt{corrected\_operator.py} \tier{N}).  What separates the structural positions from the
+(\texttt{corrected\_operator.py} \tier[\testref{test\_corrected\_operator\_golden\_values, test\_corrected\_operator\_matches\_manuscript\_claim}]{N}).  What separates the structural positions from the
 zeros is a fraction of a spacing.
 
 \begin{proposition}[Membership of the primes, entry of the zeros, proved]\label{prop:membership-proved}
@@ -1303,7 +1303,7 @@ gives the measured mass of index above $j$ to within $8\%$ for $3\leq j\leq1000$
 densities $0.1237$ and $0.1666$ against $0.1243$ and $0.1667$; the forms of level $135$ and of the
 quintic layer are $3([3\mid i_p]-\tfrac13)$ and $5([5\mid i_p]-\tfrac15)$ in the sums up to $10^9$,
 to $2\cdot10^{-10}$ and $6\cdot10^{-12}$ (\texttt{v30\_vertice\_al\_azar.py}, % pending(D7)
-\texttt{v33\_capas\_1e9.py}, \tier{N}).  What the geometry does not give is that $\golden$ spreads over % pending(D7)
+\texttt{v33\_capas\_1e9.py}).  What the geometry does not give is that $\golden$ spreads over % pending(D7)
 the vertices uniformly as $p$ varies, with an error of size $\sqrt X$: that is the
 equidistribution of Chebotarev in the Kummer fields $\Q(\zeta_i,\golden^{1/i})$, the piece that
 Hooley obtains from the generalised Riemann hypothesis~\cite{hooley67}.
@@ -1466,7 +1466,7 @@ layer (\cref{prop:index-ngon}(iv) for level $80$;
 numerically for $135$ and the quintic layer), and up to $10^9$ the
 twenty layers $2\leq i\leq60$ measured show no systematic
 term and a fluctuation of mean exponent $0.520$
-(range $0.42$--$0.59$) (\texttt{v33\_capas\_1e9.py}, \tier{N}).  With the family taken to % pending(D7)
+(range $0.42$--$0.59$) (\texttt{v33\_capas\_1e9.py}).  With the family taken to % pending(D7)
 be the characters modulo $20$ and the power-residue
 symbols of $\golden$, the hypothesis is clause~(ii) and
 GRH for the $L$-functions of the forms of levels $80$ and
@@ -1481,14 +1481,14 @@ ideal of level $n$ has norm $n\,i+1$ if it lies over a split prime and $(n\,i/2-
 over an inert one, with $i$ its index; norm at most $e^L$ forces $i\le 2(e^L+1)/n$, and the sieve of
 level $n$ with that bound returns all of them and nothing else
 (\LeanInline{CierrePorAltura.closure\_support}; at $e^L=10^6$ the sieve returns the $78\,508$ prime
-ideals and the prime side summed level by level equals the direct sum, \texttt{retro66.py} \tier{N}). % pending(D7)
+ideals and the prime side summed level by level equals the direct sum, \texttt{retro66.py}). % pending(D7)
 So clause~(iii), in this form, asks of the primes nothing that the clock does not compute.
 What \cref{conj:closure} asserts beyond it is the source of the law in (i)--(ii), and, for the
 line, the positivity of the window functional.  That positivity is a global cancellation: the
 archimedean and polar part alone is indefinite, its negative direction being that of the pole,
 and in the window $e^L=10^3$ removing any one of $108$ of the $127$ levels breaks it; along the
 direction of the pole a single prime ideal contributes with the sign of its size, negative below
-$\log N\approx0.38\,L$ and positive above, whatever its level (\texttt{retro67.py} \tier{N}). % pending(D7)
+$\log N\approx0.38\,L$ and positive above, whatever its level (\texttt{retro67.py}). % pending(D7)
 The norms and the bound on the index, \tier[PasosDelTexto.window\_split, PasosDelTexto.window\_inert]{P}.
 \end{remark}
 
@@ -1609,14 +1609,14 @@ $\delta$ in $\log p$ --- what a law that knows how many primes of each kind fall
 but not the primes one by one, would give --- the median error of the corrected operator
 ($n=100$ to $3000$) is $0.194$ at $\delta=10^{-2}$, $0.170$ at $3\cdot10^{-3}$, $0.089$ at $10^{-3}$,
 $0.041$ at $3\cdot10^{-4}$ and $0.025$ at $10^{-4}$, against $0.20$ with no correction and
-$0.021$ prime by prime (\texttt{law\_resolution.py} \tier{N}).  Taken as a sum over the primes up to a fixed $X$, the
+$0.021$ prime by prime (\texttt{law\_resolution.py} \tier[\testref{test\_law\_resolution\_golden\_values, test\_law\_resolution\_matches\_manuscript\_claim}]{N}).  Taken as a sum over the primes up to a fixed $X$, the
 correction does not converge: for $n=100$ to $3000$ the mean error has a minimum at a finite $X$ and grows past it ---
 $0.069$ at $X=20$ and $0.23$ at $X=10^6$ for the plain sum, $0.037$ at $X\approx500$ and $0.12$ at $X=10^6$ with the
-weight $1-\log n/\log X$ on each prime power $n$ (\texttt{x\_sweep.py} \tier{N}).  The error falls between
+weight $1-\log n/\log X$ on each prime power $n$ (\code{x\_sweep.py} \tier[\testref{test\_law\_resolution\_golden\_values, test\_law\_resolution\_matches\_manuscript\_claim}]{N}).  The error falls between
 $\delta=10^{-3}$ and $3\cdot10^{-4}$, the scale $1/T$ of the heights measured ($T\approx240$ to
 $3700$): at % pending(D7)
 height $T$ the law has to resolve a scale of order $1/T$.  Taking the primes one by one is not
-the law: it is the explicit formula, and as a construction it is circular; the classes are the part of the law that is not, and they are needed --- removing any one of the eight worsens the error (\texttt{classes\_test.py} \tier{N}).
+the law: it is the explicit formula, and as a construction it is circular; the classes are the part of the law that is not, and they are needed --- removing any one of the eight worsens the error (\code{classes\_test.py} \tier[\testref{test\_law\_resolution\_golden\_values, test\_law\_resolution\_matches\_manuscript\_claim}]{N}).
 What the law has to predict, and nothing else, is fixed by the local factors.
 
 \begin{proposition}[What the fluctuation takes from each prime]\label{prop:what-fluctuation-takes}
@@ -1697,7 +1697,7 @@ The Fibonacci steps, $t-2=L_n^2$ or $5F_n^2$, $F_{5n}/5F_n\equiv1$ and $F_{4m'}\
 step of the chain for $k\le7$, and the traces themselves exactly for $k\le9$.  Their modulus is
 $|\ker(M^{2n}-1)|^{1/2}$, as \cite{thomas08} predicts.  The restriction count for the $301$ primes $7\le p<2000$;
 the Fourier step for $k\le7$; the whole statement against the diagonalisation
-(\texttt{retro81.py}--\texttt{retro87.py} \tier{N}).  The systematic degeneracies of the quantised map are those of % pending(D7)
+(\texttt{retro81.py}--\texttt{retro87.py}).  The systematic degeneracies of the quantised map are those of % pending(D7)
 \cite{kurlbergrudnick00}.\par}
 \end{proof}
 
@@ -1718,12 +1718,12 @@ On $\operatorname{Reg}(T_p)$, the functions on a finite circle of $p-\chiv(p)$ p
 $\varpi$ of $T_p$ is an isometry with $\varpi\,U\,\varpi^{-1}=\varpi(\golden^2)^{\pm1}U$: it permutes the eigenspaces of $U$
 cyclically, and they are equal.  If $p$ splits, in the basis of the torus $U$ is the scaling
 $f(x)\mapsto(\tfrac{a}{p})f(x/a)$ of $\mathbb F_p$ by $a=\golden^2$, $\varpi$ is a Dirichlet character modulo $p$, and the
-extra state is the delta at the fixed point $0$ (\texttt{retro88.py} \tier{N}).  At $5^k$ the same holds layer by layer: % pending(D7)
+extra state is the delta at the fixed point $0$ (\texttt{retro88.py}).  At $5^k$ the same holds layer by layer: % pending(D7)
 the shift of the phases by $5^{v+1}$ preserves the layer $v_5(j)=v$ and its occupation, and one state is left over.
 The local models glue by the Chinese remainder theorem: for odd $N$, $W_N=\bigotimes_{p^k\,\|\,N}W_{p^k}$, the trace of
 $U_N^{\,n}$ is the product of the local traces --- at $5^k$ twisted by $(\tfrac{c}{5})$, $c=(N/5^k)^{-1}$ --- and
 $|\operatorname{tr}U_N^{\,n}|^2$ is the number of fixed points of $M^{2n}$ on $(\Z/N)^2$, the part of the count of
-\cref{prop:clock-cyclotomic} at the primes of $N$ whose clock divides $n$ (\texttt{retro89.py} \tier{N}). % pending(D7)
+\cref{prop:clock-cyclotomic} at the primes of $N$ whose clock divides $n$ (\texttt{retro89.py}). % pending(D7)
 \end{remark}
 
 \begin{remark}[Where the open step lies]\label{rmk:open-step}
@@ -1829,9 +1829,9 @@ archimedean side in the variable $u$, so no interpolation enters (\texttt{zerosi
 primes $p\in\{2,3,7,11,13\}$ and every $k$ with $k\log p+2a\le14.2$ --- $2208$ orbit values --- the
 bound holds everywhere, with $\max|t_k|/t_0$ between $0.929$ ($\zeta$) and $0.986$ ($\psi_5,\psi_5^3$), and
 every Toeplitz matrix is positive definite, with smallest eigenvalue at least $1.27\cdot10^{-4}\,t_0$
-(\texttt{sweep.py} \tier{N}).  On the circle of $p=3$ the Fej\'er density is positive in all eight
+(\code{sweep.py} \tier[\testref{test\_circle\_and\_detect\_golden\_values, test\_circle\_and\_detect\_matches\_manuscript\_claim}]{N}).  On the circle of $p=3$ the Fej\'er density is positive in all eight
 blocks, $\zeta$ included, with minima from $1.2\cdot10^{-4}$ ($\zeta$) to $0.032$ ($\chi_{20}$)
-(\texttt{circle\_and\_detect.py} \tier{N}).
+(\texttt{circle\_and\_detect.py} \tier[\testref{test\_circle\_and\_detect\_golden\_values, test\_circle\_and\_detect\_matches\_manuscript\_claim}]{N}).
 
 \emph{The certified orbit, and the families.}  In interval arithmetic with outward rounding,
 for $\chiv$ with width $a=0.01$ and $p=2$, $|t_k|\le0.1122\,t_0$ for $k\le25$ and the Toeplitz matrix is
@@ -1849,7 +1849,7 @@ $\Re\rho=\tfrac12+\delta$ would have made some Toeplitz matrix of the sweep inde
 $\delta\ge0.10$ at $\gamma=30$ and $\delta\ge0.38$ at $\gamma=100$; above $\gamma\approx200$ no admissible
 $\delta$ is detected, because $|\hat g_a(\gamma)|^2$ decays like $\gamma^{-4}$.  Longer orbits see
 further: with $k\log p\le120$ in place of $14.2$ the thresholds fall to $0.001$, $0.009$, $0.022$
-and $0.028$ at $\gamma=30$, $100$, $200$ and $300$ (\texttt{circle\_and\_detect.py} \tier{N}).  The sweep is therefore a verification of the line at low height, of the same kind
+and $0.028$ at $\gamma=30$, $100$, $200$ and $300$ (\texttt{circle\_and\_detect.py} \tier[\testref{test\_circle\_and\_detect\_golden\_values, test\_circle\_and\_detect\_matches\_manuscript\_claim}]{N}).  The sweep is therefore a verification of the line at low height, of the same kind
 as the classical ones, and not evidence for (W4) at every height.  That is intrinsic: (W4) for
 every $k$ and every width is as strong as the line, and no finite computation reaches it.  It has
 to come from structure, as Castelnuovo--Severi comes from the Hodge index in Weil's proof.
@@ -1891,7 +1891,7 @@ what separates what is proved and certified from \textup{(W5)} is that the orbit
 the Davenport--Heilbronn zeros below height $130$, with the triangles $g_a$ and $p=7$, $|t_k|/t_0$ grows like
 $7^{0.326k}$, against the real part $0.8085$ of its first zero off the line, the growth that
 \cref{thm:weil-closure} assumes; without the two free orbits, $|t_k|\le t_0$ for every $k\le60$
-(\texttt{retro102.py} \tier{N}). % pending(D7)
+(\texttt{retro102.py}). % pending(D7)
 
 \begin{theorem}[The closing theorem]\label{thm:weil-closure}
 Fix one prime $p$.  For the triangles $g_a(x)=(1-|x|/a)^+$ of every width $a>0$, let

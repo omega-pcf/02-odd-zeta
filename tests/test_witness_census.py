@@ -31,11 +31,25 @@ from oddzeta.harness import REPO_ROOT, TEX_SOURCES
 _TESTREF = re.compile(r"\\testref\{([^}]*)\}")
 _SNAKE_CASE = re.compile(r"^[a-z][a-z0-9_]*$")
 
-# The witness ids the manuscript cites today (six marks, seven ids).
+# The witness ids the manuscript cites today: fifteen marks, nineteen
+# citations, eighteen distinct ids -- test_mersenne_bridge_phi_lambda_log_two
+# is cited by two of them.  W5a added the eleven ids of the nine N claims
+# whose script has a test in this suite (INV-WIT-001 B2).
 PINNED_CITED_IDS = (
+    "test_castelnuovo_golden_values",
+    "test_castelnuovo_matches_manuscript_claim",
+    "test_castelnuovo_window_maxima",
+    "test_circle_and_detect_golden_values",
+    "test_circle_and_detect_matches_manuscript_claim",
+    "test_corrected_operator_golden_values",
+    "test_corrected_operator_matches_manuscript_claim",
+    "test_law_resolution_golden_values",
+    "test_law_resolution_matches_manuscript_claim",
     "test_l_one_chi5_digamma_value",
     "test_mersenne_bridge_phi_lambda_log_two",
+    "test_mersenne_bridge_s_bh_is_log_two",
     "test_phi_unit_norm_negative_one",
+    "test_regulator_form_of_bridge_equals_l_one_form",
     "test_sigma_mu_polynomial_root_one_half",
     "test_sigma_mu_polynomial_root_three_halves",
     "test_two_cos_pi_over_five_equals_phi",

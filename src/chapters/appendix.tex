@@ -95,10 +95,10 @@ Units of $\mathbb Z[\varphi]$ are $\pm\varphi^k$ & \tier{P}\ (abstract), \tier{P
 Frobenius eigenvalue on $\sqrt5$ & \tier{P}& \texttt{F1FrobeniusEigen.frobenius\_eigenvalue\_on\_sqrt5}, \texttt{euler\_factor\_is\_char\_poly} & The Euler factor is $\det(1-tM_p)$.\\
 Explicit formula for $L(s,\chi_5)$ & classical; coefficients \tier{P}& \texttt{F1WeilFunctional.ExplicitFormulaChi5}, \texttt{prime\_side\_is\_frobenius\_trace} & Checked numerically to $10^{-18}$ with 40 zeros \tier{N}.\\
 Weil positivity (full) & $\Leftrightarrow$ \Ecore, open; the reduction to the prime side \tier{P}& \texttt{positivity\_is\_a\_prime\_side\_bound} & A bound on the Frobenius-trace side by the archimedean one.\\
-Semilocal positivity & \tier{N}& \texttt{weil\_window\_chi5.py} & Archimedean alone up to $L=0.9251$; with $\chi_5(2)=+1$ it fails from $L\approx0.9$.\\ % pending(D7)
+Semilocal positivity && \texttt{weil\_window\_chi5.py} & Archimedean alone up to $L=0.9251$; with $\chi_5(2)=+1$ it fails from $L\approx0.9$.\\ % pending(D7)
 First window, $L\le0.7447$ & \tier{P}, inputs \tier{N}& \texttt{F1v2.first\_window\_integral} and its steps & $m(\log2)=0.0841$.\\
 Windows $L\le1$ and $L\le1.3$ & computer-assisted & \texttt{weil\_certificates/} & Margins $0.0445$ (interval arithmetic) and $0.0027$ (validated numerics, verified Cholesky).\\ % pending(D7)
-Envelope and fluctuation & \tier{N}& \texttt{envelope.py}, \texttt{tstar.py} & $\gamma_n=E^{-1}(n-S(\gamma_n))$, 40 zeros.\\ % pending(D7)
+Envelope and fluctuation && \texttt{envelope.py}, \texttt{tstar.py} & $\gamma_n=E^{-1}(n-S(\gamma_n))$, 40 zeros.\\ % pending(D7)
 Integrality of the trace with $t<3$ & \tier{P}& \texttt{trace\_integer\_plus\_bound} & Closes link (iii) without the tower.\\
 $r\in\mathbb Q(\sqrt5)$, $t\in\mathbb Z\Rightarrow r=\varphi^k$ & \tier{P}& \texttt{F1v2.arrowB\_full} & The hypothesis on the field is needed: $2+\sqrt3$ has trace $4$.\\
 \texttt{UnitStructure} (M12) & false as written; corrected \tier{P}& \texttt{F1v2.arrowB\_full} & It omitted $r\in\mathbb Q(\sqrt5)$.\\
@@ -129,10 +129,10 @@ The fibres of $G$ on the levels of the clock & \tier{P}; mass (classical); one s
 Free Klein orbits and the inertia index & \tier{P}& \texttt{OrbitaLibre.quadruple\_form}, \texttt{even\_part}, \texttt{odd\_part} & New (\cref{prop:free-orbit-index}); completes \cref{prop:bridge-boosts}(ii).\\
 (W4) is (W3) on the planes of the orbit; half period & \tier{P}; windows (computer-assisted) & \texttt{W4DeW3}, \texttt{ParidadesJuntas}, \texttt{MedioPeriodo} & New (\cref{prop:W4-from-W3}); (W4) for every $k$ remains open.\\
 The mate without the reality of the character & \tier{P}; functional equation (classical) & \texttt{MateSinG.closed\_under\_mate\_of\_fe\_dual} & New (\cref{rmk:mate-without-G}).\\
-Davenport--Heilbronn as a test of routes & \tier{N}& \texttt{retro99.py}, \texttt{dh\_logderiv.py} & New (\cref{ssec:two-sides}).\\ % pending(D7)
+Davenport--Heilbronn as a test of routes && \texttt{retro99.py}, \texttt{dh\_logderiv.py} & New (\cref{ssec:two-sides}).\\ % pending(D7)
 What an operator of the level does not separate & \tier{P}; spectral theorem (classical) & \texttt{PCFGranularity}, \texttt{ObservablesDelNivel}, \texttt{FibraYReloj} & New (\cref{prop:level-operators}); brings in the content of the granularity module.\\
 The two faces of the Fibonacci dynamics: periodic on the torsion, mixing on the characters & \tier{P}; the count of fixed points, Wall's law and the density step & \texttt{DosCarasFibonacci}, \texttt{PeriodicasSol} & New (\cref{prop:two-faces}).\\
-What a symmetry shows in a spectrum; the spacings of the zeros & \tier{P}; spacings \tier{N}& \texttt{EstructuraEnGUE}, \texttt{retro105.py} & New (\cref{prop:symmetry-spectrum}, \cref{ssec:envelope-fluctuation}).\\ % pending(D7)
+What a symmetry shows in a spectrum; the spacings of the zeros & \tier{P}& \texttt{EstructuraEnGUE}, \texttt{retro105.py} & New (\cref{prop:symmetry-spectrum}, \cref{ssec:envelope-fluctuation}).\\ % pending(D7)
 \midrule\multicolumn{4}{l}{\emph{Statements of the body not listed above, with the tiers and the declarations the body gives}}\\\midrule
 The constraint of the Primitive Structure, $\tfrac12$ the only positive real part of $\OmH$; $G$ a surjective homomorphism & \tier{P}& \texttt{positive\_spectral\_half}, \texttt{G\_surj} & \cref{sec:objective}.\\
 The four requirements of an operator & \tier{P}\ (tally) & \texttt{four\_requirements} & \cref{ssec:four-requirements}.\\
@@ -180,7 +180,7 @@ $\Frob_p$ is the identity at split primes and $\sigma$ at inert ones & \tier{P}&
 The classification needs base $20$ & \tier{P}, \tier{P}& \texttt{base20\_bijection}, \texttt{decoration\_matches\_G}, \texttt{off\_diagonal\_inaccessible}, \dots & \cref{prop:base-twenty}.\\
 The angles as cyclotomic norms & \tier{P}, \tier{N}& \texttt{W4Isometria.conductor\_cyclotomic\_norms}, \texttt{F1PaperSixty.phi\_clock\_identity}, \texttt{F1PaperSixty.phi\_clock\_exact}, \dots & \cref{rmk:angles-cyclotomic}.\\
 The kernel of $G$ leaves the $2$-adic angular part free; its order is the contraction factor & \tier{P}& \texttt{F1PCFUnified.contraction\_is\_kernel} & After \cref{prop:class-angular}.\\
-The golden ratio names the fifth roots of unity & \tier{P}; Chebotarev (classical); frequencies \tier{N}& \texttt{PasosDelTexto.fifth\_root\_trace}, \texttt{PasosDelTexto.second\_trace}, \texttt{PasosDelTexto.pair\_from\_trace}, \dots, \texttt{retro78.py} & \cref{prop:phi-names-mu5}.\\ % pending(D7)
+The golden ratio names the fifth roots of unity & \tier{P}; Chebotarev (classical)& \texttt{PasosDelTexto.fifth\_root\_trace}, \texttt{PasosDelTexto.second\_trace}, \texttt{PasosDelTexto.pair\_from\_trace}, \dots, \texttt{retro78.py} & \cref{prop:phi-names-mu5}.\\ % pending(D7)
 The two involutions at the primes: the class $9$ and the conjugation by the classes with $\chiv=-1$ & \tier{P}& \texttt{RelojTres.class\_nine}, \texttt{RelojTres.classes\_that\_conjugate}, \texttt{TodoEnLean.class\_nine\_fixes\_phi} & After \cref{prop:phi-names-mu5}.\\
 Ideals of norm $n$; split primes of density $\tfrac12$ & classical; the classes \tier{P}& \texttt{G\_pi2\_is\_chi5} & \cref{sec:dedekind}.\\
 The degree formula and the norms of the prime ideals of $\OK$ & \tier{P}& \texttt{F1CW.degree\_formula\_K}, \texttt{F1CW.ideal\_norm\_values\_K}, \texttt{F1CW.euler\_from\_ideals\_K} & \cref{sec:dedekind}.\\
@@ -195,15 +195,15 @@ Dedekind factorisation as natural isomorphism & \tier{P}& \texttt{dedekind\_fact
 Fundamental formula & \tier{P}, classical & \texttt{anchor\_is\_a\_crossed\_identity} & \cref{thm:L1}.\\
 $L(1,\chiv)$ by Gauss--Lerch & \tier{P}\ given a classical input & \texttt{F1OZ.lerch\_arith} & After \cref{thm:L1}.\\
 The local Dedekind factorisation at the three kinds of prime & \tier{P}& \texttt{F1CW.local\_dedekind\_ramified\_K}, \texttt{F1CW.local\_dedekind\_split\_K}, \texttt{F1CW.local\_dedekind\_inert\_K} & \cref{sec:factorisation}.\\
-Generalised Bernoulli values $B_{2k,\chiv}$, $k\le4$ & \tier{N}; formula (classical) & \texttt{oz\_carried.py} & \cref{ssec:odd-zeta}.\\ % pending(D7)
+Generalised Bernoulli values $B_{2k,\chiv}$, $k\le4$ & formula (classical) & \texttt{oz\_carried.py} & \cref{ssec:odd-zeta}.\\ % pending(D7)
 The right-hand side of the determination built from the pentagon; the even values in $\Q\,\pi^{2k}$ & \tier{P}& \texttt{F1CW.even\_zeta\_bernoulli}, \texttt{F1CW.bernoulli\_eval\_rational} & After \cref{thm:odd-zeta}.\\
-Polylogarithmic form; distances on the circle; the conditional on algebraicity & \tier{P}; Baker (classical); the forms at $s=1,3,5$ \tier{N}& \texttt{F1OZ.fourier\_projection}, \texttt{F1OZ.normSq\_one\_sub\_zeta5}, \texttt{F1OZ.normSq\_one\_sub\_zeta5\_sq}, \texttt{F1OZ.baker\_ratio}, \texttt{PasosDelTexto.algebraic\_scale}, \texttt{oz\_carried.py} & \cref{rmk:nature-L}.\\ % pending(D7)
+Polylogarithmic form; distances on the circle; the conditional on algebraicity & \tier{P}; Baker (classical)& \texttt{F1OZ.fourier\_projection}, \texttt{F1OZ.normSq\_one\_sub\_zeta5}, \texttt{F1OZ.normSq\_one\_sub\_zeta5\_sq}, \texttt{F1OZ.baker\_ratio}, \texttt{PasosDelTexto.algebraic\_scale}, \texttt{oz\_carried.py} & \cref{rmk:nature-L}.\\ % pending(D7)
 $L(2k,\chiv)$ and $\sum\chiv(a)\mathrm{Li}_{2k}(\zeta_5^a)$ transcendental & \tier{P}\ given a classical input & \texttt{F1OZ.even\_value\_transcendental} & \cref{rmk:nature-L}; Lindemann for $\pi$ as input.\\
-$T_K=5L(1,\chiv)L(1,\chi_4\chiv)$; $T_K$ and $\zeta_K(2k+1)$ & \tier{P}\ given a classical input; classical; the values at $s=3$ \tier{N}; relation with $\log\golden$ (open) & \texttt{F1OZ.period\_from\_the\_chi5\_fibre}, \texttt{degenerate\_orbits\_are\_transversals}, \texttt{oz\_carried.py} & \cref{rmk:TK-odd}.\\ % pending(D7)
+$T_K=5L(1,\chiv)L(1,\chi_4\chiv)$; $T_K$ and $\zeta_K(2k+1)$ & \tier{P}\ given a classical input; classical; relation with $\log\golden$ (open) & \texttt{F1OZ.period\_from\_the\_chi5\_fibre}, \texttt{degenerate\_orbits\_are\_transversals}, \texttt{oz\_carried.py} & \cref{rmk:TK-odd}.\\ % pending(D7)
 $G$ and the motivic Galois group & classical, in text & --- & \cref{rmk:G-motivic}.\\
 Hurwitz representation of $L(s,\chi_5)$ & \tier{P}, classical & \texttt{hurwitz\_representation\_L\_chi5} & \cref{thm:hurwitz}.\\
 $\sum\chiv(a)\psi(a/5)=-2\sqrt5\log\golden$ & \tier{P}\ given a classical input & \texttt{F1OZ.digamma\_sum} & \cref{thm:hurwitz}.\\
-Local factors at $s=3$; $\zeta_K(3)$ and $L(3,\chiv)$ & \tier{P}; values \tier{N}& \texttt{F1OZ.local\_factors\_at\_three}, \texttt{oz\_carried.py} & \cref{ex:zeta3}.\\ % pending(D7)
+Local factors at $s=3$; $\zeta_K(3)$ and $L(3,\chiv)$ & \tier{P}& \texttt{F1OZ.local\_factors\_at\_three}, \texttt{oz\_carried.py} & \cref{ex:zeta3}.\\ % pending(D7)
 The binary tower inside the golden one; $2$ is not a power of $\golden$ & \tier{P}& \texttt{mersenne\_bridge}, \texttt{binary\_tower\_inside\_golden}, \texttt{lambda\_is\_not\_an\_integer} & \cref{prop:mersenne-bridge}.\\
 $\log2=\log|\ker G|$, the kernel exactly $\{1,9\}$ & \tier{P}& \texttt{kernel\_is\_exactly\_one\_nine} & After \cref{prop:mersenne-bridge}.\\
 The anchor is not special to $\golden$; counting in base $\golden$ is counting in base $2$ rescaled & \tier{P}& \texttt{modulus\_transports}, \texttt{half\_three\_roles}, \texttt{density\_exact} & After \cref{prop:mersenne-bridge}.\\
@@ -257,7 +257,7 @@ The envelope on and off the line; the two separations & \tier{P}& \texttt{off\_l
 Three proved facts aligned with Weil's proof & \tier{P}& \texttt{weil\_analogy}, \texttt{golden\_group\_exponent\_two}, \texttt{G\_genus\_zero} & \cref{ssec:weil-analogy}.\\
 Split and inert as orbits of the Klein action on $\Zst$ & \tier{P}& \texttt{klein\_acts\_on\_Z20\_by\_two\_involutions}, \texttt{fixed\_points\_are\_two\_torsion}, \texttt{free\_orbit\_eq\_order\_four}, \dots & \cref{prop:split-inert-orbits}.\\
 The only operation on the coordinates of the zeros is the inversion & \tier{P}& \texttt{the\_available\_mechanisms\_are\_of\_order\_two} & \cref{ssec:weil-route}.\\
-The prime side split by the Frobenius, and the numerics of the bound & \tier{P}; \tier{N}& \texttt{prime\_side\_splits\_by\_frobenius}, \texttt{weil\_window\_chi5.py} & \cref{rmk:saturation}.\\ % pending(D7)
+The prime side split by the Frobenius, and the numerics of the bound & \tier{P}& \texttt{prime\_side\_splits\_by\_frobenius}, \texttt{weil\_window\_chi5.py} & \cref{rmk:saturation}.\\ % pending(D7)
 The forms of the open statement (table) & \tier{P}& \texttt{landing\_iff\_E}, \texttt{face\_coordinate\_iff\_GRH}, \texttt{liMap\_on\_unit\_circle\_iff}, \texttt{E\_iff\_no\_shared\_ordinate\_of\_fe\_rc}, \dots & \cref{ssec:core-forms}.\\
 The forms linked without passing through \Ecore & \tier{P}& \texttt{hasDegree\_gives\_monomial}, \texttt{GDS\_gives\_routeB} & \cref{ssec:core-forms}.\\
 The step as a statement about the coordinate alone & \tier{P}& \texttt{degenerate\_iff\_valuation\_zero}, \texttt{monomial\_iff\_one\_under\_confinement}, \texttt{step\_six\_membership\_would\_give\_the\_power}, \dots & \cref{prop:step-coordinate}.\\
@@ -274,7 +274,7 @@ The archimedean form of $\zeta_K$, explicitly; $D\ge0$ & \tier{P}; classical & \
 The first windows over the whole function space: the low-frequency fraction and Lehmann's bounds & \tier{P}; classical & \texttt{F1PaperTorus.lowFrequencyFraction\_nonneg}, \texttt{F1PaperTorus.LehmannBounds} & \cref{ssec:golden-field}.\\
 The positions, from the structure & \tier{P}, \tier{P}, \tier{N}& \texttt{F1PaperClosure.heights\_from\_structure}, \texttt{F1PaperClosure.the\_height\_is\_the\_structure\_up\_to\_the\_correction}, \texttt{envelope\_splits}, \dots & \cref{prop:positions}.\\
 Membership of the primes, entry of the zeros, proved & \tier{P}, \tier{P}& \texttt{F1PaperClosure.the\_primes\_belong}, \texttt{F1PaperClosure.the\_zeros\_belong}, \texttt{F1PaperClosure.what\_is\_discharged}, \dots & \cref{prop:membership-proved}.\\
-The prime side in a window, given by the clock & \tier{P}; \tier{N}& \texttt{CierrePorAltura.closure\_support}, \texttt{PasosDelTexto.window\_split}, \texttt{PasosDelTexto.window\_inert}, \texttt{retro66.py}, \texttt{retro67.py} & \cref{rmk:closure-window}.\\ % pending(D7)
+The prime side in a window, given by the clock & \tier{P}& \texttt{CierrePorAltura.closure\_support}, \texttt{PasosDelTexto.window\_split}, \texttt{PasosDelTexto.window\_inert}, \texttt{retro66.py}, \texttt{retro67.py} & \cref{rmk:closure-window}.\\ % pending(D7)
 The height fixes the phase, the isometry the modulus & \tier{P}& \texttt{F1PaperClosure.no\_shared\_ordinate\_of\_injective\_heights}, \texttt{F1PaperClosure.the\_line\_from\_injective\_heights}, \texttt{F1PaperClosure.eigenvalue\_of\_isometry\_norm\_one}, \dots & \cref{prop:phase-modulus}.\\
 The index as a degeneracy & \tier{P}; two Gauss-sum steps (in text); classical, \tier{N}& \texttt{IndiceComoDegeneracion.count\_residue}, \texttt{IndiceComoDegeneracion.sigma\_phase}, \texttt{PasosDelTexto.fib\_five\_mul} & \cref{prop:index-degeneracy}.\\
 (W4) follows from the line, given the expansion of the orbit & \tier{P}& \texttt{W4Isometria.orbits\_match\_of\_line}, \texttt{W4Isometria.W4\_of\_orbits\_match} & After \cref{prop:euler-tower}.\\
