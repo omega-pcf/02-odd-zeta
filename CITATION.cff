@@ -95,7 +95,7 @@ references:
     notes: "Concept DOI; v1.4.10 (17 April 2026) appeared as <i>Odd Zeta Values from
       the PCF Torus: φ and π as Arithmetic-Geometric Sources</i>,
       10.5281/zenodo.19636252. The present paper is its successor version. Code:
-      github.com/omega-pcf/02-odd-zeta; doi:10.5281/zenodo.19492791"
+      github.com/omega-pcf/02-odd-zeta"
     publisher:
       name: Preprint, Zenodo
     type: generic
@@ -116,8 +116,7 @@ references:
       for the de Sitter Observer Problem"
     date-published: 2026-01-01
     year: 2026
-    notes: Concept DOI (all versions); cited in its version 1.0.4;
-      doi:10.5281/zenodo.21343602
+    notes: Concept DOI (all versions); cited in its version 1.0.4
     publisher:
       name: Preprint, Zenodo
     type: generic
@@ -138,7 +137,6 @@ references:
       Formally Verified in Lean 4 over the Known Mersenne Prime Exponents
     date-published: 2026-01-01
     year: 2026
-    notes: doi:10.5281/zenodo.21731878
     publisher:
       name: Preprint, Zenodo
     type: generic
@@ -176,7 +174,6 @@ references:
     year: 2020
     issue: "32"
     journal: Revista Politécnica
-    notes: doi:10.33571/rpolitec.v16n32a10
     start: "111"
     end: "119"
     type: article
@@ -193,7 +190,6 @@ references:
     year: 2021
     issue: "1"
     journal: JP Journal of Algebra, Number Theory and Applications
-    notes: doi:10.17654/nt052010127
     start: "127"
     end: "161"
     type: article
@@ -214,7 +210,6 @@ references:
     year: 2023
     issue: "37"
     journal: Revista Politécnica
-    notes: doi:10.33571/rpolitec.v19n37a7
     start: "102"
     end: "110"
     type: article
@@ -250,7 +245,6 @@ references:
     year: 1987
     issue: "177"
     journal: Mathematics of Computation
-    notes: doi:10.1090/S0025-5718-1987-0866115-0
     start: "273"
     end: "308"
     type: article
@@ -302,7 +296,6 @@ references:
     date-published: 1962-01-01
     year: 1962
     journal: Journal of Mathematical Physics
-    notes: doi:10.1063/1.1703773
     start: "140"
     end: "156"
     type: article
@@ -320,7 +313,6 @@ references:
     date-published: 2000-01-01
     year: 2000
     journal: Communications in Mathematical Physics
-    notes: doi:10.1007/s002200000261
     start: "57"
     end: "89"
     type: article
@@ -386,7 +378,6 @@ references:
     year: 1999
     issue: "2"
     journal: SIAM Review
-    notes: doi:10.1137/S0036144598347497
     start: "236"
     end: "266"
     type: article
@@ -406,7 +397,6 @@ references:
     date-published: 2017-01-01
     year: 2017
     journal: Physical Review Letters
-    notes: doi:10.1103/PhysRevLett.118.130201
     start: "130201"
     type: article
     volume: "118"
@@ -422,7 +412,6 @@ references:
     year: 2024
     issue: "23"
     journal: "Journal of Physics A: Mathematical and Theoretical"
-    notes: doi:10.1088/1751-8121/ad4c2d
     start: "235204"
     type: article
     volume: "57"
@@ -451,7 +440,6 @@ references:
     date-published: 1999-01-01
     year: 1999
     journal: Selecta Mathematica
-    notes: doi:10.1007/s000290050042
     start: "29"
     end: "106"
     type: article
@@ -472,7 +460,6 @@ references:
     year: 2009
     issue: "6"
     journal: Journal of Number Theory
-    notes: doi:10.1016/j.jnt.2008.08.007
     start: "1532"
     end: "1561"
     type: article
@@ -491,7 +478,6 @@ references:
     year: 2014
     issue: "12"
     journal: C. R. Acad. Sci. Paris
-    notes: doi:10.1016/j.crma.2014.07.009
     start: "971"
     end: "975"
     type: article
@@ -509,7 +495,6 @@ references:
     date-published: 2016-01-01
     year: 2016
     journal: Advances in Mathematics
-    notes: doi:10.1016/j.aim.2015.11.045
     start: "274"
     end: "329"
     type: article
@@ -525,7 +510,6 @@ references:
     date-published: 2016-01-01
     year: 2016
     journal: Open Problems in Mathematics
-    notes: doi:10.1007/978-3-319-32162-2_5
     publisher:
       name: Springer
     start: "225"
@@ -547,7 +531,6 @@ references:
     year: 1998
     issue: "02"
     journal: Journal of High Energy Physics
-    notes: doi:10.1088/1126-6708/1998/02/003
     start: "003"
     type: article
     volume: "1998"
@@ -571,7 +554,6 @@ references:
     year: 2011
     issue: "2"
     journal: Algebra & Number Theory
-    notes: doi:10.2140/ant.2011.5.231
     start: "231"
     end: "285"
     type: article
@@ -588,7 +570,6 @@ references:
     year: 2013
     issue: "4"
     journal: P-Adic Numbers, Ultrametric Analysis and Applications
-    notes: doi:10.1134/S2070046613040055
     start: "313"
     end: "325"
     type: article
@@ -683,7 +664,6 @@ references:
     year: 2007
     issue: "3"
     journal: Compositio Mathematica
-    notes: doi:10.1112/S0010437X06002624
     start: "618"
     end: "688"
     type: article
@@ -702,7 +682,6 @@ references:
     year: 2009
     issue: "3"
     journal: Journal of K-Theory
-    notes: doi:10.1017/is008004027jkt048
     start: "437"
     end: "500"
     type: article
@@ -718,7 +697,6 @@ references:
     date-published: 2014-01-01
     year: 2014
     journal: Journal of Number Theory
-    notes: doi:10.1016/j.jnt.2014.04.006
     start: "408"
     end: "421"
     type: article
@@ -737,7 +715,6 @@ references:
     year: 2011
     issue: "3"
     journal: Mathematische Zeitschrift
-    notes: doi:10.1007/s00209-009-0638-0
     start: "605"
     end: "643"
     type: article
@@ -893,7 +870,6 @@ references:
     title: Formalising perfectoid spaces
     date-published: 2020-01-01
     year: 2020
-    notes: doi:10.1145/3372885.3373830
     publisher:
       name: Proc. CPP 2020
     type: generic
@@ -909,7 +885,6 @@ references:
     year: 2022
     issue: "2"
     journal: Experimental Mathematics
-    notes: doi:10.1080/10586458.2021.1926016
     start: "349"
     end: "354"
     type: article
@@ -928,7 +903,6 @@ references:
     year: 2019
     issue: "16"
     journal: Mathematical Methods in the Applied Sciences
-    notes: doi:10.1002/mma.5490
     start: "5535"
     end: "5550"
     type: article
@@ -969,7 +943,6 @@ references:
     date-published: 2021-01-01
     year: 2021
     journal: Selecta Mathematica
-    notes: doi:10.1007/s00029-021-00682-x
     start: "77"
     type: article
     volume: "27"
@@ -1027,7 +1000,6 @@ references:
     year: 2010
     issue: "6"
     journal: Compositio Mathematica
-    notes: doi:10.1112/S0010437X09004692
     start: "1383"
     end: "1415"
     type: article
@@ -1046,7 +1018,6 @@ references:
     year: 2011
     issue: "3"
     journal: Journal of Algebraic Geometry
-    notes: doi:10.1090/S1056-3911-2010-00535-8
     start: "525"
     end: "557"
     type: article
@@ -1134,7 +1105,6 @@ references:
     date-published: 1920-01-01
     year: 1920
     journal: Mathematische Zeitschrift
-    notes: doi:10.1007/BF01612081
     start: "11"
     end: "51"
     type: article
@@ -1235,7 +1205,6 @@ references:
     date-published: 1968-01-01
     year: 1968
     journal: Il Nuovo Cimento A
-    notes: doi:10.1007/BF02824451
     start: "190"
     end: "197"
     type: article
@@ -1253,7 +1222,6 @@ references:
     date-published: 1996-01-01
     year: 1996
     journal: Physics Letters B
-    notes: doi:10.1016/0370-2693(96)00439-X
     start: "283"
     end: "291"
     type: article
@@ -1317,7 +1285,6 @@ references:
     date-published: 1986-01-01
     year: 1986
     journal: Communications in Mathematical Physics
-    notes: doi:10.1007/BF01211590
     start: "207"
     end: "226"
     type: article
@@ -1357,7 +1324,6 @@ references:
     year: 1995
     issue: "3"
     journal: Selecta Mathematica (N.S.)
-    notes: doi:10.1007/BF01589495
     start: "411"
     end: "457"
     type: article
@@ -1377,7 +1343,6 @@ references:
     year: 2008
     issue: "3"
     journal: Bulletin of the London Mathematical Society
-    notes: doi:10.1112/blms/bdn024
     start: "439"
     end: "446"
     type: article
