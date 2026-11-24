@@ -3,14 +3,13 @@
 | Field | Value |
 |---|---|
 | **Document** | `docs/witness-contract.md` |
-| **Status** | In force with the manuscript |
+| **Status** | In force as the standard — §6 states what it does and does not claim about a manuscript's body |
 | **Version** | 1.1 (portable rationale plus the derived standard; generic across the family) |
 | **Date** | 2026-11-23 |
 | **Language** | English; identifiers, macros and file names in English and monospace |
-| **Scope** | Why the witness marks (`\tier`, `\witness`, `\wtag`) exist and what they do not assert — the argument behind the contract of `docs/citations.md` §8, free of anything tied to one repository state; §6 states the standard itself, derived from the positions already settled |
+| **Scope** | Why the marks of evidence of the manuscript (`\tier`, `\witness` where the manuscript has one, with `\testref`) exist and what they do not assert — the argument behind the contract of `docs/citations.md` §8, free of anything tied to one repository state; §6 states the standard itself, derived from the positions already settled |
 
-**Document:** justification of the witness convention (`\tier`, `\witness`,
-`\wtag`) of the manuscript, written so that the convention has a place in a
+**Document:** justification of the witness convention (`\tier`, `\witness`) of the manuscript, written so that the convention has a place in a
 paper of pure mathematics.
 
 **Relation to the rest of the documentation.** This document **argues**; the
@@ -40,9 +39,7 @@ bracket in its own colour (`\tier{P}`, `\tier{N}`,
 `\tier[ids]{X}`), or a right-aligned line of its own when the claim carries
 several witnesses (`\witness{X}{ids}`). The two classes are introduced
 by an in-text gloss — *Evidence tags* — that sits before the first mark of
-the body and defines the classes and nothing else. The label of a premise
-of a numbered witness list (`W1`, `W2`, …) is not a class of evidence: it
-is defined in a sentence at the list itself.
+the body and defines the classes and nothing else.
 
 That device is not a typographic fashion nor an ornament: it is the answer
 to a real problem of reading and of attribution, and its shape — inline or
@@ -359,9 +356,7 @@ paper already gave:
   "proved here" section they were in.
 
 Both eliminations are documented in `docs/citations.md` §8.3 and applied
-in the manuscript: the published alphabet of evidence is `P` and `N`;
-`W` is not a class of evidence but the label of a numbered premise list,
-defined at the list itself.
+in the manuscript: the published alphabet of evidence is `P` and `N`.
 
 ---
 
@@ -374,15 +369,23 @@ argument and the rule together. Where a rule defers, it defers in the
 open; nothing in this section decides a question the family documents
 leave undecided.
 
+**Standard, not applied state.** This section states the standard; it
+does not assert that a manuscript's body already satisfies it. What each
+repository's text does today — which sites follow a rule and which do
+not — is measured and recorded in that repository's `docs/reports/`,
+never here. The shape of a call site is outside it as well: whether the
+ids of an own-line accounting line such as `Lean: …` sit in a block of
+their own or inside the tag as `P[ids]`, and every other body-form
+question, belongs to the convergence that is still pending — W2
+(mechanical renames) and W3 (semantic pass) — and is neither decided,
+nor changed, nor implied by anything below.
+
 ### 6.1 The set of evidence marks
 
 The set of evidence marks is **`P` and `N`, with `\testref` as the test
-anchor — nothing else**. `\wtag` is not a member of it: the `W1`, `W2`,
-… labels are the typographic device of a single description list of
-premises (measured: twelve uses, in the repository that has such a list),
-defined at the list itself, and they certify nothing. The internal `P*`
-dispatch of the preamble (§5) is a work tool, not a class of the printed
-alphabet. No decoration, no accounting line and no label enters the set.
+anchor — nothing else**. No decoration, no accounting line and no label
+enters the set. The internal `P*` dispatch of the preamble (§5) is a work
+tool, not a class of the printed alphabet.
 
 ### 6.2 Placement is prose, never semantics
 
@@ -508,7 +511,7 @@ authorities.
 | `docs/citations.md` §5, §6, §7 | data hygiene, documentation convention and settled style decisions (AMS alphabetical bibliography, initials) |
 | `docs/reports/` (index: `docs/reports/README.md`) | per-site decisions, counters of the harmonisation pass, criterion sites, `u`/`p` verdicts and the author's pending-work list — the applied state of this argument in one repository |
 | `README.md` | link to the witness section of `docs/citations.md`; `docs/README.md` is the directory index |
-| `main.tex` — preamble (witness system, `\tier` dispatch, definition of `\witness` and `\wtag`) and the *Evidence tags* gloss | the implementation and what the reader sees at the first mark of the body |
+| `main.tex` — preamble (witness system, `\tier` dispatch, definition of `\witness`) and the *Evidence tags* gloss | the implementation and what the reader sees at the first mark of the body |
 | the repository's Lean file (`lean/`) | the `P` identifiers the mark can print |
 | `tests/` and the census test of the repository | the numerical suite and the census that fixes the test identifiers the manuscript cites |
 | `citation.csl.json`, `CITATION.cff` | the bibliographic layer the mark does **not** mix with: the external source is a `\cite`, never a mark identifier |
@@ -529,5 +532,5 @@ authorities.
    never mechanically by this document.
 3. **No external guarantee.** While there is no published norm that
    describes the claim-by-claim mark, the convention rests on this
-   documentation and on its review; that is declared in §6 and must not be
+   documentation and on its review; that is declared in §7 and must not be
    presented otherwise.
