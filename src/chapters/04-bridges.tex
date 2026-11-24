@@ -264,7 +264,7 @@ for every $a\in\Zst$,
 and any map $H\colon\Zst\to\mathbb{Z}_2\times\mathbb{Z}_2$
 satisfying these two biconditionals coincides with $G$ on $\Zst$.  The two sets are the kernels of
 $\chi_4$ and of $\chiv$.
-\lean{G\_diagonal\_characterisation}, \lean{G\_diagonal\_unique} \tier{P}%
+\code{G\_diagonal\_characterisation}, \code{G\_diagonal\_unique} \tier{P}%
 \end{proposition}
 \begin{proof}
 The biconditionals are checked on the eight elements $1,3,7,9,11,13,17,19$ of $\Zst$ and on
@@ -273,9 +273,9 @@ $H(a)$ is determined by whether $a$ lies in the corresponding subset, and $G$ sa
 components agree.
 \end{proof}
 
-The characterisation sits beside the multiplicativity (\lean{G\_hom}), the surjectivity
-(\lean{G\_surj}) and the kernel structure $|\ker G| = 2$ (\lean{G\_kernel}), which the
-corpus writes as $|\ker G| = 2 - 2g$ at $g = 0$ (\lean{G\_genus\_zero}), an equality of
+The characterisation sits beside the multiplicativity (\code{G\_hom}), the surjectivity
+(\code{G\_surj}) and the kernel structure $|\ker G| = 2$ (\code{G\_kernel}), which the
+corpus writes as $|\ker G| = 2 - 2g$ at $g = 0$ (\code{G\_genus\_zero}), an equality of
 integers rather than a genus computation, as \cref{ssec:weil-analogy} records.  It is elementary --- a map to
 $\mathbb{Z}_2\times\mathbb{Z}_2$ is fixed by the zero sets of its two components --- and
 its interest is that the two zero sets are the kernels of $\chi_4$ and $\chiv$.

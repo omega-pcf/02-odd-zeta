@@ -366,7 +366,7 @@ characterise it as a fixed point.
 \end{equation}
 The continued fraction $1+1/(1+1/(1+\cdots))$ converges to $\golden$.
 \end{lemma}
-\leanline{\LeanInline{phi\_continued\_fraction} \tier{P}\ for the convergence; the identity is \lean{φ\_self\_ref}.}
+\leanline{\LeanInline{phi\_continued\_fraction} \tier{P}\ for the convergence; the identity is \code{φ\_self\_ref}.}
 
 \begin{proof}
 From $\golden^2 = \golden + 1$ \textup{(\cref{sec:ring})} divide both
@@ -382,7 +382,7 @@ $F_n=(\golden^n-(-\golden)^{-n})/\sqrt5$, so $F_{n+1}/F_n\to\golden$.
 \end{equation}
 The nested radical $\sqrt{1+\sqrt{1+\cdots}}$ converges to $\golden$.
 \end{lemma}
-\leanline{\LeanInline{phi\_nested\_radical} \tier{P}\ for the convergence; the identity is \lean{φ\_nested\_ref}.}
+\leanline{\LeanInline{phi\_nested\_radical} \tier{P}\ for the convergence; the identity is \code{φ\_nested\_ref}.}
 
 \begin{proof}
 From $\golden^2 = \golden + 1 = 1 + \golden$ and $\golden > 0$,
@@ -2045,7 +2045,7 @@ splitting law of those fields, and the classes on which each character is $+1$ a
 \LeanInline{TodoEnLean.dirser\_morphism\_unique} \tier{P}.}
 
 \begin{proof}
-(i) Classical \textup{(\cite{neukirch99}, Ch.~VII)}; for $\Q(\sqrt5)$ it is the local identity behind \eqref{eq:local-K}, assembled over all primes and formalised as \lean{dedekind\_factorisation}.
+(i) Classical \textup{(\cite{neukirch99}, Ch.~VII)}; for $\Q(\sqrt5)$ it is the local identity behind \eqref{eq:local-K}, assembled over all primes and formalised as \code{dedekind\_factorisation}.
 (ii) A morphism $\zeta\to\zeta_K$ of $\mathbf{DirSer}$ is a series $H$ with $\zeta_K=\zeta\cdot H$, and by (i)
 $H=L(\cdot,\chi_K)$, which has $a_1=1$ and converges absolutely for $\Re s>1$; the identity of $\Q$ goes to $1$,
 since $L(\cdot,\chi_\Q)=1$, and no two non-identity morphisms of $\mathbf{QuadExt}_{20}$ compose.
@@ -2389,7 +2389,7 @@ The kernel at odd $s=2k+1$ is the direct Hurwitz series, convergent
 for $\mathrm{Re}(s)>1$.
 
 In the Lean formalisation, this representation is
-\lean{hurwitz\_representation\_L\_chi5}; the proof is definitional in
+\code{hurwitz\_representation\_L\_chi5}; the proof is definitional in
 Mathlib's \texttt{DirichletCharacter.LFunction}, which is constructed
 precisely as the Hurwitz combination weighted by the character (proved by explicit
 enumeration).
@@ -2460,19 +2460,19 @@ their ratio $\zeta(2k+1)$ is fixed by the arithmetic of $\Rpcf$
 without any free parameter beyond the pentagonal data.
 
 The complete cascade is formalised in Lean.  The Euler products are
-\lean{euler\_product\_identity} and \lean{dirichlet\_series\_identity}---direct
+\code{euler\_product\_identity} and \code{dirichlet\_series\_identity}---direct
 invocations of \texttt{riemannZeta\_eulerProduct\_tprod} and
 \texttt{DirichletCharacter.LSeries\_eulerProduct\_tprod} from
 Mathlib's analytic L-series infrastructure.  The local Euler factor
-classification (split, inert, ramified) is \lean{f\_K}, with the
+classification (split, inert, ramified) is \code{f\_K}, with the
 multiplicative identity $f_K = f_\zeta \cdot f_L$ formalised as
-\lean{local\_factor\_identity} (pure algebra, fully verified at all
+\code{local\_factor\_identity} (pure algebra, fully verified at all
 three cases).  The structural and analytic presentations of $\chi_5$
-are identified by \lean{chi5\_structural\_eq\_analytic} (the bridge
+are identified by \code{chi5\_structural\_eq\_analytic} (the bridge
 theorem), and the Dedekind factorisation
 $\zeta_{\mathbb{Q}(\sqrt{5})}(s) = \zeta(s)\cdot L(s,\chi_5)$ is
-\lean{dedekind\_factorisation}.  The final pentagonal determination
-is \lean{zeta\_odd\_pentagonal\_determination}.
+\code{dedekind\_factorisation}.  The final pentagonal determination
+is \code{zeta\_odd\_pentagonal\_determination}.
 \end{proof}
 
 \begin{table}[ht]
@@ -2481,7 +2481,7 @@ is \lean{zeta\_odd\_pentagonal\_determination}.
 are rational multiples of $\pi^{2k}$; odd values are ratios
 $\zeta_{\mathbb{Q}(\sqrt{5})}(s)/L(s,\chi_5)$, both factors determined by
 $\chi_5$ and hence by $\golden$.  The structural identity at every $s$
-is the Dedekind factorisation \lean{dedekind\_factorisation}; numerical
+is the Dedekind factorisation \code{dedekind\_factorisation}; numerical
 entries are verified at 50-digit precision (see the companion verification
 suite in \texttt{tests/}, run with \texttt{pnpm run verify:py}).}
 \label{tab:zeta-values}
