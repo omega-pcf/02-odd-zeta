@@ -218,18 +218,21 @@ before quoting these figures.
                                    one of our Lean declarations printed by
                                    \LeanInline/\LeanStar/\LeanTally/
                                    \LeanCW, an \eqref/\ref, a \cite)
-\tier[\testref{ids}]{X} -> X[ids] the optional argument carries INTERNAL
-                                   ids only, written inside a \testref:
-                                   one id, or several separated by ',' —
+\tier[ids]{X}          -> X[ids] the optional argument carries INTERNAL
+                                   ids only: a \testref, or the raw names of
+                                   declarations of our own file written with
+                                   \_ — one id, or several separated by ',' —
                                    printed in tt inside the tag's own
                                    brackets
 ```
 
 The optional argument means **internal ids and nothing else**, and in this
-repository it must be a `\testref{…}`: the preamble tests the argument for
-`\cite` first (an external key raises `\PackageError`) and then for
-`\testref` (anything else — a bare token, a raw name not wrapped — raises
-`\PackageError` with the message *Wrap the id in \testref*). The render of a
+repository it is read by the strict family grammar (contract §6.4): the
+preamble tests the argument for `\cite` first (an external key raises
+`\PackageError`), then for `\testref`, then for the two markers only a raw
+name list carries — `\_` or `,` — which it renders inside the tag; anything
+else (a bare token, a name written without `\_` or `,`) raises
+`\PackageError` with the message *Wrap the id in \testref*. The render of a
 legal tag is therefore always the same shape: **the tag first, its ids
 inside the brackets** — `N[test_x, test_y]`. The ids never precede the tag,
 so a test witnessed in prose appears as `\tier[\testref{test\_x}]{N}`, never

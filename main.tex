@@ -184,8 +184,16 @@
 \in@{\testref}{#1}\ifin@
 \tier@ids{#1}{#2}%
 \else%
+\in@{\_}{#1}\ifin@
+\tier@ids{#1}{#2}%
+\else%
+\in@{,}{#1}\ifin@
+\tier@ids{#1}{#2}%
+\else%
 \PackageError{tier}{the optional argument of \string\tier\space holds internal ids only}%
 {Wrap the id in \string\testref: a raw name of our own file is written with \string\_, several of them separated by ','.}%
+\fi%
+\fi%
 \fi%
 \fi%
 \fi%
