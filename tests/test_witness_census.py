@@ -135,3 +135,29 @@ def test_cited_ids_are_snake_case() -> None:
     """Every cited id is snake_case in English (lowercase letters, digits, underscores)."""
     for citation in sorted(set(cited_ids())):
         assert _SNAKE_CASE.match(citation), f"cited id {citation!r} is not snake_case"
+
+
+@pytest.mark.witness
+def test_no_lean_star_is_used() -> None:
+    """The star mark is retired: no tracked source invokes it.
+
+    W5a removed the 221 stars of the manuscript.  The star recorded
+    pre-compilation provenance, not an evidence class, and every one of the
+    194 names it marked exists in the green build (``lake build``, 18248
+    jobs, ``sorry = 0``), so the mark carried no information the build did
+    not already carry.
+
+    The definition in the preamble of ``main.tex`` is FLAGGED, not deleted:
+    it stays as provenance of what the mark was.  What this gate forbids is
+    an *invocation* of it, ``\\LeanStar{...}``, anywhere in the tracked
+    sources — the release gate that keeps the count at zero.
+    """
+    offenders: list[str] = []
+    for source in TEX_SOURCES:
+        for number, line in enumerate(source.read_text(encoding="utf-8").splitlines(), 1):
+            if "\\LeanStar{" in line:
+                offenders.append(f"{source.name}:{number}")
+    assert not offenders, (
+        "the retired star mark is invoked again; it was replaced by \\LeanInline "
+        "because the star carried no evidence class: " + ", ".join(offenders)
+    )

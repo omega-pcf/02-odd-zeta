@@ -260,6 +260,12 @@
 % records the pre-compilation provenance of the name (F9-001: process artifact
 % of the build, since the modules compile in the green build), not a tier --
 % the [P*] class it was defined for was retired in the F11 census (P* = 0).
+% FLAGGED, NOT DELETED (W5a): every use of this mark in the manuscript was
+% converted to \LeanInline -- the star carried no evidence class, and all 194
+% names it marked exist in the green build (18248 jobs, sorry = 0).  The
+% definition stays as provenance; the gate that keeps it unused is
+% test_no_lean_star_is_used in tests/test_witness_census.py (0 invocations
+% in the tracked sources, enforced as a release gate).
 \newcommand{\LeanStar}[1]{\LeanInline{#1}$^{*}$}
 % a tally: a classification made in the text, recorded as an enumerated type whose
 % count is checked by decision; it certifies the count, not the classification

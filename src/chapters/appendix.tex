@@ -354,8 +354,8 @@ three kinds.
     use of the Lean development of \cite{gonzalez26cw}, a spectral-uniqueness lemma,
     replaced by the corpus's own \LeanInline{spectral\_uniqueness}, and that import
     removed); \texttt{PCF\_sesion\_completa} (its two \texttt{sorry}, in
-    \LeanStar{level\_two\_character\_from\_fibonacci} and
-    \LeanStar{pisano\_five\_is\_twenty}, closed by \texttt{S1\_chi5\_fib} and by a
+    \LeanInline{level\_two\_character\_from\_fibonacci} and
+    \LeanInline{pisano\_five\_is\_twenty}, closed by \texttt{S1\_chi5\_fib} and by a
     modular-arithmetic step).
   \item[Written for this version] \texttt{S1\_chi5\_fib},
     \texttt{F1\_pendientes}, \texttt{F1\_pendientes\_2}, \texttt{F1\_frobenius\_eigenvalue},
@@ -403,12 +403,12 @@ more, the pentagonal cosines, Binet's $\golden^{2k}-\golden^{-2k}=\sqrt5F_{2k}$,
 cardinals of $G$ computed from $G$, $\chi_4$ as Gauss's sequence, $\|\OmH\|=\tfrac12$
 under two names, the positive spectral position under three, and the closure of the
 zero set under $\rho\mapsto1-\rho$ and conjugation
-(\LeanStar{F1PaperNew.pentagonBridge\_holds}, \LeanStar{F1PaperNew.clauseFour\_holds},
-\LeanStar{F1PaperNew.apexIsPhiPow\_holds}, \LeanStar{F1PaperNew.liActsOnZeros\_holds},
-\LeanStar{F1PaperNew.modulusOnLine\_holds}, \LeanStar{F1PaperNew.pentagonCosines\_holds},
-\LeanStar{F1PaperNew.binetDifference\_holds}, \LeanStar{F1PaperNew.gCardinals\_of\_G},
-\LeanStar{F1PaperNew.gaussSplit\_holds}, \LeanStar{F1PaperNew.operatorNormIsApex\_holds},
-\LeanStar{F1PaperNew.positiveSpectralPosition\_holds}, \LeanStar{F1PaperNew.zIsAVSet\_chi5},
+(\LeanInline{F1PaperNew.pentagonBridge\_holds}, \LeanInline{F1PaperNew.clauseFour\_holds},
+\LeanInline{F1PaperNew.apexIsPhiPow\_holds}, \LeanInline{F1PaperNew.liActsOnZeros\_holds},
+\LeanInline{F1PaperNew.modulusOnLine\_holds}, \LeanInline{F1PaperNew.pentagonCosines\_holds},
+\LeanInline{F1PaperNew.binetDifference\_holds}, \LeanInline{F1PaperNew.gCardinals\_of\_G},
+\LeanInline{F1PaperNew.gaussSplit\_holds}, \LeanInline{F1PaperNew.operatorNormIsApex\_holds},
+\LeanInline{F1PaperNew.positiveSpectralPosition\_holds}, \LeanInline{F1PaperNew.zIsAVSet\_chi5},
 and the discharges of \S O of \texttt{F1\_v2\_formalizations}).
 
 \emph{Connections.}  Some objects are defined separately and no theorem related them to
@@ -416,10 +416,10 @@ the objects built from $\golden$.  Each relation is now stated: the $\chiv$ of t
 machinery is the $\chiv$ of the structural chain; on $\Zst$ the characters of conductor
 $20$ are the two components of $G$; the norm form of $\Zphi$ factors as
 $(x+\golden y)(x+\bar\golden y)$ with discriminant $5$; and the two definitions of the
-eigenvalue triad coincide (\LeanStar{F1PaperNew.chi5\_ideals\_is\_chi5\_structural},
-\LeanStar{F1PaperNew.conductor20\_characters\_are\_G},
-\LeanStar{F1PaperNew.norm\_form\_factors\_through\_phi},
-\LeanStar{F1PaperNew.omega\_eigenvalues\_are\_omega\_hat}).  After them every central
+eigenvalue triad coincide (\LeanInline{F1PaperNew.chi5\_ideals\_is\_chi5\_structural},
+\LeanInline{F1PaperNew.conductor20\_characters\_are\_G},
+\LeanInline{F1PaperNew.norm\_form\_factors\_through\_phi},
+\LeanInline{F1PaperNew.omega\_eigenvalues\_are\_omega\_hat}).  After them every central
 object of the construction is linked to $\golden$ by a chain of at most two theorems.
 
 \emph{Duplicates.}  The corpus names the same object in several ways: $80$ groups of
@@ -427,7 +427,7 @@ definitions, $277$ definitions in all, are the same object under different names
 mate $\rho\mapsto1-\bar\rho$ under seven, the predicate ``$r$ is a power of $\golden$''
 under fifteen, the trace $r+1/r$ under nine, the tower eigenvalues $m_0\golden^i$ under
 seven, and the golden ratio itself under five).  Each group is now linked by
-definitional equalities (\LeanStar{F1PaperNew.same\_def\_1} and the $196$ that follow), and
+definitional equalities (\LeanInline{F1PaperNew.same\_def\_1} and the $196$ that follow), and
 the paper uses one name per object.  In the same way $294$ groups of theorems state the
 same thing under different names; the paper cites one name per group.  Besides these,
 $99$ definitions are markers defined as \texttt{True}; none is cited as evidence.
