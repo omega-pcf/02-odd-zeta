@@ -3572,12 +3572,12 @@ the operator's integrality to the zeros.  The thread of \cref{sec:topological-pr
 
 \subsubsection{Setting}\label{ssec:topo-setting}
 
-A zero is a structure, not a hypothesis: \LeanInline{Chi5Zero} carries $\rho$,
+A zero is a structure, not a hypothesis: \code{Chi5Zero} carries $\rho$,
 the vanishing $L(\rho,\chiv)=0$ and the two strip bounds $0<\Re\rho<1$, so those
 bounds are available in every statement below without being assumed again.  We
 write $\beta=\Re\rho$, $\gamma=\Im\rho$, and
 \[
-  \Ecore\colon\quad \forall z\in\text{\LeanInline{Chi5Zero}},\ \Re z.\rho=\tfrac12 .
+  \Ecore\colon\quad \forall z\in\text{\code{Chi5Zero}},\ \Re z.\rho=\tfrac12 .
 \]
 
 \subsubsection{The analytic inputs, discharged}\label{sec:analytic-inputs}
@@ -3601,10 +3601,10 @@ by Gauss's determination of the sign of the quadratic Gauss sum (\cref{rmk:natur
 The companion deserves a word, because it is what earlier drafts took as an
 axiom.  From the functional equation, if $\rho$ is a zero of $L(s,\chiv)$ in the
 strip then so is $1-\rho$; the corpus derives this and attaches it to the
-structure, so that \LeanInline{Chi5Zero.companion} is a function and not a
+structure, so that \code{Chi5Zero.companion} is a function and not a
 hypothesis.  Its real part is $1-\beta$
-(\LeanInline{Chi5Zero.companion\_re}), which is the only property the squeeze
-uses.  Only \LeanInline{NoLowZeros} remains as a classical input, and it enters
+(\code{Chi5Zero.companion\_re}), which is the only property the squeeze
+uses.  Only \code{NoLowZeros} remains as a classical input, and it enters
 just once, in \cref{thm:reduction}.
 
 \subsubsection{The Klein group and its orbits}\label{ssec:klein}
@@ -3787,7 +3787,7 @@ For $0<\beta<1$ and $\gamma\ne0$, $r(\rho)^2\le1+1/\gamma^2$.  With $|\gamma|\ge
 gives $t(\rho)\le2.0125$; with $|\gamma|\ge6.6485$, the height of the first zero, it
 gives $t(\rho)\le2.00013$.
 \tier[rSq\_le\_in\_strip]{P}; the height of the first zero is the classical
-input \LeanInline{NoLowZeros}
+input \code{NoLowZeros}
 \end{proposition}
 
 \begin{proposition}\label{prop:integrality-is-E}
@@ -3915,7 +3915,7 @@ two by two, so every fibre has the size of the kernel and the apex is its invers
 (\tier[the\_apex\_is\_the\_inverse\_fibre\_size, every\_fibre\_has\_the\_kernel\_size]{P}).  The chain of operators of
 \cref{ssec:chain} closes at this value, in its seventh link, and it passes through $\tfrac12$, not through the equality of the two numbers
 $L_0=2$ and $|\ker G|=2$, which by itself is only an equality of integers
-(\LeanInline{the\_surviving\_value\_is\_the\_kernel}).
+(\tier[the\_surviving\_value\_is\_the\_kernel]{P}).
 \end{corollary}
 
 The same value is where the two branches of the span meet (\cref{prop:span}), and
@@ -4089,11 +4089,11 @@ to be a spectral ratio (\tier[the\_witness\_is\_constructed, is\_a\_spectral\_ra
 \end{remark}
 
 \begin{remark}[A correction to the corpus]\label{rmk:unitstructure}
-The corpus states (b) as \LeanInline{algebraic\_integer\_gives\_MonomialHalf} with an
-input \LeanInline{UnitStructure} that omits the hypothesis $r\in\Q(\sqrt5)$; as
+The corpus states (b) as \code{algebraic\_integer\_gives\_MonomialHalf} with an
+input \code{UnitStructure} that omits the hypothesis $r\in\Q(\sqrt5)$; as
 written that input is false, by (c).  With the hypothesis added it is exactly (b),
 and it is then no longer a classical input: \LeanInline{F1v2.arrowB} proves it,
-instantiating the corpus's descent \LeanInline{unit\_is\_a\_power\_of\_phi} with the units
+instantiating the corpus's descent \code{unit\_is\_a\_power\_of\_phi} with the units
 of $\Zphi$ and proving its three structural inputs --- the floor of the logarithm, the
 group law, and the absence of units in $(1,\golden)$ --- rather than assuming them.
 \end{remark}
@@ -4139,7 +4139,7 @@ bound as a structure field.
 \begin{definition}
 A \emph{ternary $L$-zero} is a real number $\beta$ with $0<\beta<1$,
 $\beta\le\mu_3$ and $1-\beta\le\mu_3$, where $\mu_3=\tfrac12$ is the spectral
-parameter of \cref{ssec:omega}.  \LeanInline{TernaryLZero}
+parameter of \cref{ssec:omega}.  \code{TernaryLZero}
 \end{definition}
 
 \begin{proposition}\label{prop:squeeze}
@@ -4170,7 +4170,7 @@ exactly.
 
 \subsubsection{Membership, derived from the bridge}\label{ssec:membership}
 
-In the corpus the identification is the hypothesis \LeanInline{BridgeAxiom}: that the
+In the corpus the identification is the hypothesis \code{BridgeAxiom}: that the
 real part $\beta$ of a zero is one of the real parts $\tfrac12,-\tfrac14$ of the
 spectrum of $\OmH$.  Granted that, membership in the tower is a derived statement,
 not a separate assumption.
@@ -4186,7 +4186,7 @@ The corpus tallies eight ingredients of the derivation, five proved in Lean and 
 not: the bridge, Hecke's companion and the strip
 (\LeanTally{five\_proved\_three\_classical}).  The last two have since been proved
 (\LeanInline{hecke\_chi5\_derived}, \LeanInline{Chi5Zero}), so the bridge is the only one
-left.  The earlier statement \LeanInline{MembershipStillOpen} is therefore superseded:
+left.  The earlier statement \code{MembershipStillOpen} is therefore superseded:
 membership is neither open nor unconditional; it is derivable from the bridge.
 
 \subsubsection{The span and the bridge}\label{ssec:span}
@@ -4218,11 +4218,11 @@ In \cref{sec:primon} the identity of the first piece is read as the entropy $S_{
 
 \begin{remark}[What is still a marker]\label{rmk:markers}
 Neither \cref{prop:span} nor \cref{prop:bridge-pieces} identifies the two traces.
-In the corpus the identification is a marker, \LeanInline{TheSpanIdentifiesThem},
-defined as \texttt{True}, and so is the label \LeanInline{BridgeIsCToP}: the
+In the corpus the identification is a marker, \code{TheSpanIdentifiesThem},
+defined as \texttt{True}, and so is the label \code{BridgeIsCToP}: the
 spectral mapping theorem is not proved in Lean.  The three pieces speak of
 $L(1,\chiv)$, of constants and of $G$; none speaks of a zero.  The claim of the
-earlier manuscript that they discharge \LeanInline{BridgeAxiom} is not sustained
+earlier manuscript that they discharge \code{BridgeAxiom} is not sustained
 by the corpus, and this paper does not make it (\cref{app:superseded}).
 \end{remark}
 
@@ -4371,7 +4371,7 @@ fixed by $\golden$, not calibrated on data.
 Only now do the zeros appear, and they appear as the objects whose position the structure constrains --- the centre $\tfrac12$ of each pair, the pairing, the heights up to a correction --- not as data.  The correction is what the closure conjecture of the
 Results has to supply, and its first step is already proved: on each level of the clock of $\golden$ the product
 formula on the cyclotomic norms $N(\Phi_n(\golden))$ fixes the weights of the primes of that level
-in sum (\cref{prop:clock-cyclotomic}); what remains is their order by size.  A zero is a structure (\LeanInline{Chi5Zero}),
+in sum (\cref{prop:clock-cyclotomic}); what remains is their order by size.  A zero is a structure (\code{Chi5Zero}),
 and the symmetries it carries --- the functional equation, the companion, the
 conjugation --- are theorems of Stage~3 (\cref{sec:analytic-inputs}).  Three
 contacts are unconditional.
@@ -4495,7 +4495,7 @@ integrality of the trace shown to force $r=1$ and, inside $\Q(\sqrt5)$, to be
 membership in the tower (\cref{thm:arrow}), and the multiplicative half proved on
 every zero; the step still to be written is that the
 coordinate of each zero carries the discreteness of the operator
-(\LeanInline{MonomialHalfP}, \LeanInline{monomial\_is\_in\_image\_of\_realiseP}).  The zeros also return the conductor of Stage~1 --- their unfolded spacing has mean
+(\tier[MonomialHalfP, monomial\_is\_in\_image\_of\_realiseP]{P}).  The zeros also return the conductor of Stage~1 --- their unfolded spacing has mean
 closest to $1$ at $q=5$ (\cref{prop:envelope-exact}) --- and \cref{ssec:three-regimes} records the
 heights where the verdict is already settled, and \cref{ssec:weil-route} the windows
 of Weil positivity proved along the way.

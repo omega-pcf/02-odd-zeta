@@ -122,7 +122,7 @@ $n$-th zero.
   \item The fluctuation term is carried by no operator whose eigenvalues depend on the
     index alone: two sequences of heights that differ at $n$ cannot both be matched there.
 \end{enumerate}
-{\raggedright \tier[F1PaperHyp.height\_from\_envelope, F1PaperHyp.error\_decomposition, F1PaperHyp.parametrisation\_removable, F1PaperHyp.no\_index\_operator\_fits\_both]{P}, on the counting law of the corpus (\LeanInline{CountingLaw})\par}
+{\raggedright \tier[F1PaperHyp.height\_from\_envelope, F1PaperHyp.error\_decomposition, F1PaperHyp.parametrisation\_removable, F1PaperHyp.no\_index\_operator\_fits\_both]{P}, on the counting law of the corpus (\code{CountingLaw})\par}
 \end{proposition}
 
 \begin{remark}[What is removable, and what is not]\label{rmk:two-errors}
@@ -185,7 +185,7 @@ exponent two; the only eigenvalue of $\OmH$ with positive real part is
 $\tfrac12$, the analogue of $|\alpha_i|=q^{1/2}$; and $|\ker G|=2$
 (\tier[weil\_analogy, golden\_group\_exponent\_two, positive\_spectral\_half, G\_kernel]{P}).  The corpus reads the
 last as $2=2-2g$ with $g=0$ (\LeanInline{G\_genus\_zero}); the proved content is the
-cardinal, and the value of $g$ is supplied by the statement.
+cardinal\tier{P}, and the value of $g$ is supplied by the statement.
 
 The analogy must be read with its limit.  For a curve of genus $0$ the first
 cohomology vanishes and the zeta function has no zeros; $L(s,\chiv)$ has
@@ -392,7 +392,7 @@ GRH$(\chiv)$ is Weil's criterion; the bound itself is open.
 \begin{remark}
 If all ordinates are real the zero side is a sum of $|F(\gamma)|^2$ and is
 non-negative (\tier[zero\_side\_nonneg\_of\_real\_ordinates]{P}): that is
-the easy half.  Given \Ecore, \LeanInline{position\_is\_interval\_meets\_discreteness}, \LeanInline{radius\_one\_is\_E}
+the easy half.  Given \Ecore, \tier[position\_is\_interval\_meets\_discreteness, radius\_one\_is\_E]{P}
 places every zero at $k=0$ of the additive monoid.
 \end{remark}
 
