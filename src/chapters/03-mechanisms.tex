@@ -30,25 +30,25 @@ $16c^5-20c^3+5c+1=0$ for $c=\cos(\pi/5)$, whose only positive root satisfies
 $4c^2-2c-1=0$; the positive root of $x^2=x+1$ satisfies the same equation after
 $x\mapsto x/2$, whence
 \begin{equation}\label{eq:pentagon-id}
-  \golden=2\cos(\pi/5)\qquad(\LeanInline{phi\_eq\_two\_cos\_pi\_fifth}\ \tierP).
+  \golden=2\cos(\pi/5)\qquad(\LeanInline{phi\_eq\_two\_cos\_pi\_fifth}\ \tier{P}).
 \end{equation}
 With $\zeta_5=e^{2\pi i/5}$ one has $\zeta_5+\zeta_5^4=2\cos(2\pi/5)=\golden-1$,
 so
 \begin{equation}\label{eq:cyclotomic-inscription}
   \golden=1+\zeta_5+\zeta_5^{4}
-  \qquad(\LeanInline{phi\_cyclotomic\_inscription}\ \tierP),
+  \qquad(\LeanInline{phi\_cyclotomic\_inscription}\ \tier{P}),
 \end{equation}
 and $\Q(\sqrt5)$ is the fixed field of complex conjugation inside
 $\Q(\zeta_5)$: the real quadratic field of $\golden$ is the real subfield of the
 pentagonal cyclotomic field, of conductor $5$.  The identity itself rests on the
 quintuple-angle formula $\cos5\theta=16\cos^5\theta-20\cos^3\theta+5\cos\theta$
-(\LeanInline{cos\_five\_mul} \tierP).
+(\LeanInline{cos\_five\_mul} \tier{P}).
 
 The quarter turn lives one level away.  Adjoining $i$, of conductor $4$, gives
 the conductor $20=\operatorname{lcm}(4,5)$, and the two factors are coprime
-(\LeanInline{conductor\_is\_derived} \tierP), and in the twentieth roots the two levels
+(\LeanInline{conductor\_is\_derived} \tier{P}), and in the twentieth roots the two levels
 are visible: $\zeta_{20}^5=i$ and $\zeta_{20}^4=\zeta_5$ (\LeanInline{zeta20\_pow\_five\_eq\_I},
-\LeanInline{zeta20\_pow\_four\_eq\_zeta5} \tierP).  Neither factor is chosen: the $4$
+\LeanInline{zeta20\_pow\_four\_eq\_zeta5} \tier{P}).  Neither factor is chosen: the $4$
 is the order of $i$, the $5$ is that of the pentagon, and the group
 $\Zst$ has order $8$.
 
@@ -61,7 +61,7 @@ is the only prime with $p-1=4$.
 \end{proposition}
 \leanline{\LeanInline{conductor\_is\_derived}, \LeanInline{conductor\_is\_joint\_period},
 \LeanStar{F1CW.binary\_period\_mod\_five},
-\LeanStar{F1CW.five\_is\_the\_unique\_prime\_with\_four\_units} \tierP.}  The whole of \cref{sec:grisales} lives on that group, and
+\LeanStar{F1CW.five\_is\_the\_unique\_prime\_with\_four\_units} \tier{P}.}  The whole of \cref{sec:grisales} lives on that group, and
 \cref{ssec:two-spectra} shows that each factor governs exactly one of the two
 registers of the tower.
 
@@ -89,7 +89,7 @@ $\Q(\zeta_{12})$.
 \leanline{\LeanInline{trZeta\_crystallographic\_values},
 \LeanInline{trZeta\_not\_integer\_of\_ge\_seven},
 \LeanInline{twenty\_divisor\_lattice\_splits},
-\LeanInline{three\_conductors\_are\_the\_minimal\_failure} \tierP, each taking the
+\LeanInline{three\_conductors\_are\_the\_minimal\_failure} \tier{P}, each taking the
 relevant cosine values as hypotheses; the hypotheses are proved and the lemmas
 instantiated in \LeanStar{F1v2.cosineWindow\_holds},
 \LeanStar{F1v2.trZeta\_not\_integer\_unconditional},
@@ -111,7 +111,7 @@ rank $0$ --- their unit groups are torsion --- while the real branch
 $\Q(\sqrt5)$ has rank $1$; $\pm1$ is the only unit common to all three.
 \end{proposition}
 \leanline{\LeanInline{unit\_rank\_splits\_branches}, \LeanInline{branches\_are\_the\_unit\_groups},
-\LeanInline{dirichlet\_ranks\_arithmetic} \tierP.}
+\LeanInline{dirichlet\_ranks\_arithmetic} \tier{P}.}
 
 The two propositions say the same thing from two sides.  The $4$-side is
 crystallographic and its units are finite, so it has no tower: the quarter turn
@@ -155,7 +155,7 @@ Let $f_\golden=X^2-X-1$ and
 with the real embedding $\iota\colon\Zphi\to\R$, $\omega\mapsto\golden$, which
 carries the abstract tower onto the real one, $\iota(\omega^n)=\golden^n$
 (\LeanStar{Z\ensuremath{\varphi}}, \LeanStar{\ensuremath{\omega}\_sq},
-\LeanInline{\ensuremath{\iota}\_pow} \tierP).  Writing $\omega$ rather than
+\LeanInline{\ensuremath{\iota}\_pow} \tier{P}).  Writing $\omega$ rather than
 $\golden$ inside the ring is not pedantry: the statements of
 \cref{sec:lambda-ring} are about the ring and hold in every quotient
 $\Zphi/(p)$, where no real number is available.
@@ -164,7 +164,7 @@ $\Zphi/(p)$, where no real number is available.
 $\Zphi$ is an integral domain.
 \end{proposition}
 \leanline{\LeanStar{f\ensuremath{\varphi}\_map\_two\_irreducible},
-\LeanInline{f\ensuremath{\varphi}\_prime} \tierP.}
+\LeanInline{f\ensuremath{\varphi}\_prime} \tier{P}.}
 \begin{proof}
 Modulo $2$, $f_\golden=X^2+X+1$ has no root in $\F_2$ ($0\mapsto1$,
 $1\mapsto1$), so it is irreducible there; a monic quadratic that is irreducible
@@ -177,7 +177,7 @@ and the quotient is a domain.
 Every ring endomorphism $f$ of $\Zphi$ satisfies $f(\omega)=\omega$ or
 $f(\omega)=1-\omega$.
 \end{proposition}
-\leanline{\LeanInline{FrobeniusUnico.endo\_dichotomy}, \LeanInline{FrobeniusUnico.hom\_ext} \tierP; \LeanInline{endo\_on\_\ensuremath{\omega}} \tierP.}
+\leanline{\LeanInline{FrobeniusUnico.endo\_dichotomy}, \LeanInline{FrobeniusUnico.hom\_ext} \tier{P}; \LeanInline{endo\_on\_\ensuremath{\omega}} \tier{P}.}
 \begin{proof}
 $f(\omega)^2=f(\omega^2)=f(\omega)+1$, so
 $(f(\omega)-\omega)\bigl(f(\omega)-(1-\omega)\bigr)=f(\omega)^2-f(\omega)-1=0$,
@@ -201,7 +201,7 @@ $(x-1)(x+1)$.  So the smallest $|a|$ with an irreducible self-dual polynomial is
 $x^2-x-1$, the polynomial of $\golden$.
 \end{proposition}
 \leanline{\LeanInline{F1OZ.selfdual\_iff}, \LeanInline{F1OZ.selfdual\_disc\_not\_square},
-\LeanInline{phi\_quadratic} \tierP.}
+\LeanInline{phi\_quadratic} \tier{P}.}
 \begin{proof}
 For $x\ne0$, $x^2q(-1/x)=1-ax+bx^2$ and $-q(x)=-x^2-ax-b$; they agree for every $x\ne0$ exactly when
 $b=-1$, the two linear terms being equal for every $a$.  If $m^2=a^2+4$ with $a\ne0$, then
@@ -217,7 +217,7 @@ In any commutative ring containing $\alpha$ with $\alpha^2=\alpha+1$,
 \end{equation}
 where $F$ is the Fibonacci sequence.
 \end{proposition}
-\leanline{\LeanInline{fib\_pow\_aux}, \LeanInline{phi\_pow\_binet\_integral} \tierP.}
+\leanline{\LeanInline{fib\_pow\_aux}, \LeanInline{phi\_pow\_binet\_integral} \tier{P}.}
 \begin{proof}
 Induction.  For $n=0$ both sides are $\alpha$.  If
 $\alpha^{n+1}=F_{n+1}\alpha+F_n$ then
@@ -232,7 +232,7 @@ Lucas and Fibonacci numbers have the same parity, $L_k\equiv F_k\pmod2$, and
 $L_k^2-5F_k^2\equiv0\pmod4$.
 \end{proposition}
 \leanline{\LeanInline{quadratic\_factor\_upper}, \LeanInline{quadratic\_factor\_lower},
-\LeanInline{two\_sides\_of\_the\_same\_pair} \tierP.}
+\LeanInline{two\_sides\_of\_the\_same\_pair} \tier{P}.}
 \begin{proof}
 $\golden\cdot(-\golden^{-1})=-1$ and $\golden-\golden^{-1}=1$ give the first factorisation, and
 $x\mapsto-x$ the second.  $L_k=F_{k-1}+F_{k+1}=F_k+2F_{k-1}$, so $L_k\equiv F_k\pmod2$; and
@@ -247,16 +247,16 @@ about $\omega^p$.  Multiplication in the tower reads as addition of Fibonacci
 coordinates and adjacent powers carry,
 $\golden^{k+1}+\golden^{k}=\golden^{k+2}$
 (\LeanInline{multiplicative\_reads\_as\_additive},
-\LeanInline{carry\_in\_base\_phi} \tierP).
+\LeanInline{carry\_in\_base\_phi} \tier{P}).
 
 \subsubsection{The unit, the norm, and the inert prime $2$}\label{ssec:unit-norm}
 
 Multiplication by $\omega$ in the basis $(1,\omega)$ has matrix
 $M=\left(\begin{smallmatrix}0&1\\1&1\end{smallmatrix}\right)$
-(\LeanInline{M\_is\_mul\_by\_phi} \tierP), whose determinant is the norm,
+(\LeanInline{M\_is\_mul\_by\_phi} \tier{P}), whose determinant is the norm,
 \[
   \det M=N(\omega)=\omega(1-\omega)=\omega-\omega^2=-1
-  \qquad(\LeanInline{det\_M\_eq\_norm\_phi},\ \LeanInline{znorm\_phi}\ \tierP),
+  \qquad(\LeanInline{det\_M\_eq\_norm\_phi},\ \LeanInline{znorm\_phi}\ \tier{P}),
 \]
 so $\omega$ is a unit of norm $-1$ and the tower $\{\omega^n\}_{n\in\Z}$ is a
 group.  The same matrix is the Fibonacci recurrence, which is
@@ -264,9 +264,9 @@ group.  The same matrix is the Fibonacci recurrence, which is
 $f_\golden$.
 
 The prime $2$ is inert: $\Zphi/(2)=\F_2[X]/(X^2+X+1)\cong\F_4$
-(\LeanInline{two\_is\_inert} \tierP), and there the image of $\omega$ has order
+(\LeanInline{two\_is\_inert} \tier{P}), and there the image of $\omega$ has order
 three, being a generator of $\F_4^\times$
-(\LeanInline{f4phi\_order\_three} \tierP).  This is the first instance of the dichotomy that organises the whole section: at $2$ the polynomial stays irreducible,
+(\LeanInline{f4phi\_order\_three} \tier{P}).  This is the first instance of the dichotomy that organises the whole section: at $2$ the polynomial stays irreducible,
 so the $p$-th power map moves the two roots, and \cref{sec:lambda-ring} records that as
 $\Frob_2=\sigma$.  It is also the
 prime whose Frobenius carries the positivity of \cref{thm:second-window}.
@@ -282,7 +282,7 @@ $\OK=\Zphi$: an element $(a+b\sqrt5)/2$ with $a\equiv b\pmod2$ is
 $c+b\golden$ with $c=(a-b)/2\in\Z$, and conversely $c+b\golden$ has
 $a=2c+b\equiv b\pmod2$.
 \end{proposition}
-\leanline{\LeanInline{quadratic\_ring\_is\_Z\_phi}, \LeanInline{the\_rule\_is\_proved} \tierP\ for the
+\leanline{\LeanInline{quadratic\_ring\_is\_Z\_phi}, \LeanInline{the\_rule\_is\_proved} \tier{P}\ for the
 rewriting; the description of $\OK$ as $\{(a+b\sqrt5)/2 : a\equiv b\ (2)\}$ is classical
 .  For the elements the paper uses --- roots of $x^2-tx+1$ with $t\in\Z$ --- the
 inclusion in $\Zphi$ is proved directly (\LeanStar{F1v2.arrowB\_Q}).}
@@ -292,7 +292,7 @@ There is no unit in the interval $(1,\golden)$; consequently every unit $u>0$ is
 $u=\golden^{k}$ for some $k\in\Z$.
 \end{theorem}
 \leanline{\LeanInline{no\_unit\_below\_phi\_universal}, \LeanInline{unit\_is\_a\_power\_of\_phi},
-\LeanInline{unit\_structure\_no\_dirichlet} \tierP, the last two for an abstract unit
+\LeanInline{unit\_structure\_no\_dirichlet} \tier{P}, the last two for an abstract unit
 predicate with three structural inputs; for the units of $\Zphi$ the inputs are
 proved and the descent instantiated in \LeanStar{F1v2.floorLogφ0},
 \LeanStar{F1v2.noUnitBelowφ0}, \LeanStar{F1v2.unitsZφ\_group}, \LeanStar{F1v2.arrowB}.}
@@ -309,7 +309,7 @@ $u/\golden^{k}\in[1,\golden)$ is a unit, hence equals $1$.
 multiplicative group $\langle\golden\rangle$ of \cref{thm:lambda-monoid} is the
 full group of positive units of $\OK$, and $\golden$ is its fundamental unit.  It
 is proved from the minimality argument above and the group law, with no appeal to
-Dirichlet's unit theorem (\LeanInline{unit\_structure\_is\_derivable} \tierP, instantiated
+Dirichlet's unit theorem (\LeanInline{unit\_structure\_is\_derivable} \tier{P}, instantiated
 for $\Zphi$ in \LeanStar{F1v2.arrowB}), so the whole of \crefrange{sec:choice}{sec:clock}
 rests on nothing classical at this point, other than
 the exceptions named in \cref{ssec:finite-route}.
@@ -366,7 +366,7 @@ characterise it as a fixed point.
 \end{equation}
 The continued fraction $1+1/(1+1/(1+\cdots))$ converges to $\golden$.
 \end{lemma}
-\leanline{\LeanInline{phi\_continued\_fraction} \tierP\ for the convergence; the identity is \lean{φ\_self\_ref}.}
+\leanline{\LeanInline{phi\_continued\_fraction} \tier{P}\ for the convergence; the identity is \lean{φ\_self\_ref}.}
 
 \begin{proof}
 From $\golden^2 = \golden + 1$ \textup{(\cref{sec:ring})} divide both
@@ -382,7 +382,7 @@ $F_n=(\golden^n-(-\golden)^{-n})/\sqrt5$, so $F_{n+1}/F_n\to\golden$.
 \end{equation}
 The nested radical $\sqrt{1+\sqrt{1+\cdots}}$ converges to $\golden$.
 \end{lemma}
-\leanline{\LeanInline{phi\_nested\_radical} \tierP\ for the convergence; the identity is \lean{φ\_nested\_ref}.}
+\leanline{\LeanInline{phi\_nested\_radical} \tier{P}\ for the convergence; the identity is \lean{φ\_nested\_ref}.}
 
 \begin{proof}
 From $\golden^2 = \golden + 1 = 1 + \golden$ and $\golden > 0$,
@@ -395,7 +395,7 @@ $g$ is a contraction of $[1,2]$ and $x_n$ converges to its unique fixed point, w
 For $x>0$, the equation $x^2 = x+1$ has the unique solution
 $x = \golden$.
 \end{proposition}
-\leanline{\LeanInline{golden\_fixed\_point\_unique} \tierP.}
+\leanline{\LeanInline{golden\_fixed\_point\_unique} \tier{P}.}
 
 \begin{proof}
 The polynomial $x^2 - x - 1 = (x-\golden)(x+\golden^{-1})$ since
@@ -428,8 +428,8 @@ half-side; and $\norm{\Omega}=\norm{P}\cdot\norm{C}\cdot\norm{F}$.
 \end{equation}
 which is also the common modulus $|\lambda_k|=|2|_2$ of the triad.
 \end{proposition}
-\leanline{\LeanInline{norm\_Omega\_is\_half} \tierP; \LeanCW{normP\_eq\_tan}, \LeanCW{normF\_eq\_cos},
-\LeanCW{Omega\_eigenvalues} \tierP \cite{gonzalez26cw}.}
+\leanline{\LeanInline{norm\_Omega\_is\_half} \tier{P}; \LeanCW{normP\_eq\_tan}, \LeanCW{normF\_eq\_cos},
+\LeanCW{Omega\_eigenvalues} \tier{P}\cite{gonzalez26cw}.}
 
 \begin{proof}
 $\norm{C}=|\lambda_0|/R=1$.  $\norm{F}=\tfrac12|\zeta_3-1|=\sin(\pi/3)=\tfrac{\sqrt3}2$.  The apothem is
@@ -480,7 +480,7 @@ $(\N_{\ge1},\times)\to\operatorname{End}\langle\golden\rangle$, which is the
 $\Lambda$-structure of Borger in multiplicative form.
 \end{proposition}
 \leanline{\LeanInline{F1\_monoidal\_descent\_data}, \LeanInline{psi\_realise\_pow},
-\LeanInline{psi\_comp}, \LeanInline{psi\_unique}, \LeanInline{X\_PCF} \tierP.}
+\LeanInline{psi\_comp}, \LeanInline{psi\_unique}, \LeanInline{X\_PCF} \tier{P}.}
 \begin{proof}
 On a generator, $\Frob_p(\Frob_q(\golden^n))=\golden^{pqn}$, and every element of
 the tower is such a generator; uniqueness is the observation that a monoid
@@ -495,7 +495,7 @@ object: $\golden\mapsto\golden^p$ does not respect $\golden^2=\golden+1$, since
 $\Frob_p(\golden+1)=\Frob_p(\golden^2)=\golden^{2p}\ne\golden^p+1$ for $p\ge2$.
 It is an endomorphism of the multiplicative monoid, which moves between levels,
 and not a ring endomorphism inside one
-(\LeanInline{add\_destroyed}, \LeanStar{F1CW.psi\_not\_additive} \tierP).
+(\LeanInline{add\_destroyed}, \LeanStar{F1CW.psi\_not\_additive} \tier{P}).
 The additive half lives inside the level: it is carried by the additive register
 below, and \cref{sec:lambda-ring} produces the ring endomorphism the descent
 datum asks for.
@@ -521,10 +521,10 @@ and each factor governs one of them and is blind to the other.
     $\omega^p\equiv1-\omega\pmod{p\Zphi}$ if $\varepsilon_p=-1$.
 \end{enumerate}
 \end{theorem}
-\leanline{(1) \LeanInline{binary\_register\_has\_period\_four} \tierP; (2)
-\LeanInline{fib\_split\_case}, \LeanInline{fib\_inert\_case} \tierP,
+\leanline{(1) \LeanInline{binary\_register\_has\_period\_four} \tier{P}; (2)
+\LeanInline{fib\_split\_case}, \LeanInline{fib\_inert\_case} \tier{P},
 \LeanInline{FrobeniusUnico.omega\_pow\_mod}, \LeanInline{FrobeniusUnico.fib\_eq\_sign},
-\LeanInline{FrobeniusUnico.fib\_pred\_eq\_sign} \tierP.  No statement in (2) uses a character.}
+\LeanInline{FrobeniusUnico.fib\_pred\_eq\_sign} \tier{P}.  No statement in (2) uses a character.}
 
 The word \emph{spectrum} is not used for these registers: in this paper it is kept for the
 spectrum of an operator.  The two factors of the conductor govern the two registers, and
@@ -613,11 +613,11 @@ levels $\sigma=1$ and $\sigma=2$, and analogously
 $\log_\golden p\notin\mathbb{Q}$ for every prime $p$.
 \end{proposition}
 \leanline{\LeanInline{mersenne\_bridge},
-\LeanInline{lambda\_is\_not\_an\_integer} \tierP\ for
+\LeanInline{lambda\_is\_not\_an\_integer} \tier{P}\ for
 $p=2$; for every rational $r>0$, $r\ne1$, so for
 every prime,
 \LeanStar{M12F1Circle.logphi\_rat\_irrational}
-\tierP.}
+\tier{P}.}
 
 \begin{proof}
 Direct from the definition of $\log_\golden$ as the inverse of the
@@ -647,7 +647,7 @@ T_\mathbb{Z} \arrow[d, "\log_\golden"] \\
 commutes, and the two parametrisations of \cref{prop:two-coords}
 generate compatible monoid actions on~$T_\golden$.
 \end{proposition}
-\leanline{\LeanInline{psi\_add}, \LeanInline{psi\_comp} \tierP.}
+\leanline{\LeanInline{psi\_add}, \LeanInline{psi\_comp} \tier{P}.}
 
 \begin{proof}
 Equation~\eqref{eq:psi-as-multiplication} is immediate from
@@ -667,7 +667,7 @@ $\Frob_p\circ\Frob_q = \Frob_{pq}$ is a tautology in the metric
 coordinate; the non-trivial content lies in the
 Frobenius equality $\Frob_p(\golden^n) = (\golden^n)^p$, which is
 read off the lattice $T_\mathbb{Z}\subset T_\golden$ via the
-exponent map $\log_\golden$ (\LeanInline{psi\_comp} \tierP).
+exponent map $\log_\golden$ (\LeanInline{psi\_comp} \tier{P}).
 \end{remark}
 
 \begin{remark}[The descent perspective]\label{rmk:descent-perspective}
@@ -766,16 +766,16 @@ under every power, $(\golden^k)^p=\golden^{j}$ with $j=pk$.
 \end{proposition}
 \leanline{\LeanInline{realise\_injective}, \LeanInline{realise\_strictMono},
 \LeanInline{psi\_multiplicative\_on\_the\_monoid}, \LeanInline{psi\_respects\_inverses},
-\LeanInline{family\_stable\_unconditional}, \LeanInline{family\_is\_equivariant} \tierP.}
+\LeanInline{family\_stable\_unconditional}, \LeanInline{family\_is\_equivariant} \tier{P}.}
 
 The tower's additive law characterises its base: $\golden^\sigma+\golden^{\sigma+1}=\golden^{\sigma+2}$
 for every real $\sigma$, and a positive $r$ with $r^\sigma+r^{\sigma+1}=r^{\sigma+2}$ for
 all real $\sigma$ is $\golden$ (\LeanInline{adjacent\_closure\_real},
-\LeanInline{golden\_unique\_closure} \tierP).
+\LeanInline{golden\_unique\_closure} \tier{P}).
 
 The base scale of the metric tower of \cite{gonzalez26cw} is fixed by the same
 generator: $\log\golden=6\sqrt3\,\varepsilon_0=6\sqrt3\,\pi/M_{\PCF}$
-(\LeanInline{eps0\_relates\_log\_and\_geometry}, \LeanInline{component\_one\_denominator} \tierP).
+(\LeanInline{eps0\_relates\_log\_and\_geometry}, \LeanInline{component\_one\_denominator} \tier{P}).
 
 \subsubsection{Borger's two axioms, verified}\label{ssec:borger-criteria}
 
@@ -800,10 +800,10 @@ the monoid gives the coordinates of $\golden^p$.  That $F_p\equiv\chi_5(p)\pmod 
 statement about the ring $\Zphi$ reduced modulo $p$, and it is proved there
 (\cref{thm:two-spectra}\textup{(2)} and \cref{thm:chi5-from-frobenius}), not by the
 monoid alone.  The monoidal lift is not additive (\cref{rmk:monoid-not-ring};
-\LeanInline{add\_destroyed}, \LeanStar{F1CW.psi\_not\_additive} \tierP): the
+\LeanInline{add\_destroyed}, \LeanStar{F1CW.psi\_not\_additive} \tier{P}): the
 additive half of Borger's datum is the Artin $\Lambda$-structure of \cref{sec:lambda-ring},
 which lives inside each level.  The collected statement for the monoid is
-\LeanInline{F1\_monoidal\_descent\_data} \tierP, with the three standard axioms only.
+\LeanInline{F1\_monoidal\_descent\_data} \tier{P}, with the three standard axioms only.
 \end{remark}
 
 \begin{remark}[Why both halves are needed]\label{rmk:why-monoidal}
@@ -814,8 +814,8 @@ the character: the Euler factor at $p$ needs $\chi_5(p)$, and $\chi_5(p)$ is rea
 the ring Frobenius inside a level (\cref{thm:frobenius-congruence,thm:chi5-from-frobenius}).
 In Lean the monoid is formalised with $\langle\golden\rangle$
 identified with $(\Z,+)$ and $\Frob_p$ with multiplication by $p$
-(\LeanInline{psi\_comp}, \LeanInline{psi\_unique} \tierP), and the ring lift by its congruence
-(\LeanInline{FrobeniusUnico.frobenius\_exists\_unique} \tierP).
+(\LeanInline{psi\_comp}, \LeanInline{psi\_unique} \tier{P}), and the ring lift by its congruence
+(\LeanInline{FrobeniusUnico.frobenius\_exists\_unique} \tier{P}).
 \end{remark}
 
 \subsubsection{Cyclotomic descent and pentagonal descent}
@@ -865,8 +865,8 @@ Let $\sigma\colon\Zphi\to\Zphi$ be the ring homomorphism with
 $\sigma(\omega)=1-\omega$; it exists because $1-\omega$ is a root of
 $f_\golden$, and $\sigma\circ\sigma=\mathrm{id}$ since $\sigma^2(\omega)=1-(1-\omega)=\omega$.
 \end{definition}
-\leanline{\LeanInline{FrobeniusUnico.Q.σ}, \LeanInline{FrobeniusUnico.Q.σ\_ω} \tierP;
-\LeanInline{\ensuremath{\sigma}\_comp\_\ensuremath{\sigma}} \tierP.}
+\leanline{\LeanInline{FrobeniusUnico.Q.σ}, \LeanInline{FrobeniusUnico.Q.σ\_ω} \tier{P};
+\LeanInline{\ensuremath{\sigma}\_comp\_\ensuremath{\sigma}} \tier{P}.}
 
 By \cref{prop:endo}, $\mathrm{id}$ and $\sigma$ are the only ring endomorphisms of $\Zphi$.  The
 lift at $p$ is not chosen between them: the congruence chooses.
@@ -880,8 +880,8 @@ It is the identity if $x^2-x-1$ has a root modulo $p$, and $\sigma$ if it has no
 \end{theorem}
 \leanline{\LeanInline{FrobeniusUnico.frobenius\_exists\_unique},
 \LeanInline{FrobeniusUnico.frob\_congruence}, \LeanInline{FrobeniusUnico.frob\_unique},
-\LeanInline{FrobeniusUnico.endo\_dichotomy}, \LeanInline{FrobeniusUnico.red\_eq\_zero\_iff} \tierP;
-\LeanInline{frobenius\_congruence} \tierP.}
+\LeanInline{FrobeniusUnico.endo\_dichotomy}, \LeanInline{FrobeniusUnico.red\_eq\_zero\_iff} \tier{P};
+\LeanInline{frobenius\_congruence} \tier{P}.}
 \begin{proof}
 \emph{At most one.}  By \cref{prop:endo} a ring endomorphism sends $\omega$ to $\omega$ or to
 $1-\omega$, and is determined by that image.  If both satisfied the congruence, then
@@ -918,7 +918,7 @@ construction --- which is exactly what \cref{rmk:monoid-not-ring} says the monoi
 $\Frob_m\circ\Frob_n=\Frob_{mn}$ and $\varepsilon(mn)=\varepsilon(m)\varepsilon(n)$ for $m,n$
 prime to $5$; in particular the $\Frob_p$ commute.
 \end{proposition}
-\leanline{\LeanInline{\ensuremath{\psi}\_comp}, \LeanInline{\ensuremath{\psi}\_commute} \tierP, stated with
+\leanline{\LeanInline{\ensuremath{\psi}\_comp}, \LeanInline{\ensuremath{\psi}\_commute} \tier{P}, stated with
 $\chiv$ in place of $\varepsilon$ (\cref{thm:sign-is-chi5}).}
 \begin{proof}
 The $\Frob_p$ lie in the group $\{\mathrm{id},\sigma\}$ of order two, which is commutative, so the
@@ -938,7 +938,7 @@ level, not between levels; \cref{thm:descent-datum} below states it with the pri
 \begin{theorem}\label{thm:obstruction-five}
 No ring endomorphism $f$ of $\Zphi$ satisfies $f(\omega)\equiv\omega^5\pmod5$.
 \end{theorem}
-\leanline{\LeanInline{no\_frobenius\_lift\_at\_five} \tierP.}
+\leanline{\LeanInline{no\_frobenius\_lift\_at\_five} \tier{P}.}
 \begin{proof}
 By \eqref{eq:binet-integral}, $\omega^5=F_5\omega+F_4=5\omega+3\equiv3\pmod 5$,
 and by \cref{prop:endo} $f(\omega)\in\{\omega,1-\omega\}$.  So the claim is that
@@ -966,7 +966,7 @@ condition at $5$ is part of the definition and fails.  Inverting $5$ instead
 makes the condition at $5$ vacuous, and \cref{thm:frobenius-congruence} gives the
 structure on $\Rloc$.
 \end{corollary}
-\leanline{The congruence at each $p\ne5$ is \tierP\ (\cref{thm:frobenius-congruence}); the
+\leanline{The congruence at each $p\ne5$ is \tier{P}\ (\cref{thm:frobenius-congruence}); the
 localisation itself is not formalised and remains open.}
 \begin{proof}
 The nilpotent argument of \cref{thm:obstruction-five} applies to $\Z[\golden,\golden^{-1},\tfrac12]$,
@@ -983,8 +983,8 @@ according to the roots of $x^2-x-1$ modulo $p$.  It carries no $\Lambda$-structu
 extends to $\Rloc$, on which the condition at $5$ is empty.
 \end{theorem}
 \leanline{\LeanInline{FrobeniusUnico.lambda\_structure\_away\_from\_five},
-\LeanInline{FrobeniusUnico.frob\_commute}, \LeanInline{FrobeniusUnico.frobenius\_exists\_unique} \tierP;
-\LeanInline{no\_frobenius\_lift\_at\_five} \tierP; the localisation remains open.}
+\LeanInline{FrobeniusUnico.frob\_commute}, \LeanInline{FrobeniusUnico.frobenius\_exists\_unique} \tier{P};
+\LeanInline{no\_frobenius\_lift\_at\_five} \tier{P}; the localisation remains open.}
 \begin{proof}
 $\Zphi$ is torsion-free, and for a torsion-free ring a $\Lambda_{\Z,E}$-structure is a family of commuting
 ring endomorphisms, one for each $p\in E$, each congruent to the $p$-th power modulo $p$
@@ -1006,7 +1006,7 @@ For every prime $p\ne5$ and every $n\in\N$,
 so the lift between levels of \cref{thm:lambda-monoid} and the lift inside the
 level of \cref{thm:frobenius-congruence} agree modulo every prime where the second exists.
 \end{corollary}
-\leanline{\LeanInline{monoid\_ring\_bridge}, \LeanInline{monoid\_side\_is\_realise} \tierP.}
+\leanline{\LeanInline{monoid\_ring\_bridge}, \LeanInline{monoid\_side\_is\_realise} \tier{P}.}
 \begin{proof}
 $\omega^{pn}=(\omega^{n})^{p}\equiv\Frob_p(\omega^{n})$ by
 \cref{thm:frobenius-congruence}; the second identity is the definition of
@@ -1036,7 +1036,7 @@ $\mathrm{realise}$ and $\iota$.
 \LeanInline{norm\_phi\_pow}, \LeanInline{norm\_one\_iff\_even}, \LeanInline{the\_two\_pairs\_are\_one},
 \LeanInline{trace\_carries\_the\_character}, \LeanInline{two\_inert\_of\_trace\_odd},
 \LeanInline{disc\_mod\_eight\_of\_trace\_odd}, \LeanInline{ord\_phiBar\_mod\_two},
-\LeanInline{ord\_phiBar\_mod\_three} \tierP.}
+\LeanInline{ord\_phiBar\_mod\_three} \tier{P}.}
 \begin{proof}
 (i) Every element is $u+v\omega$, so a ring homomorphism is fixed by the image of $\omega$; the rest
 is the computation in the proof of \cref{thm:obstruction-five} and $\omega^5=F_5\omega+F_4$.
@@ -1061,11 +1061,11 @@ $p$-typical $\lambda$-structure in Borger's sense \cite[Remarks~2.2--2.3]{bhatts
     $\delta_{11}(\golden)=-5-8\golden$ and $\delta_{13}(\golden)=-11-18\golden$.
 \end{enumerate}
 \end{proposition}
-\leanline{\LeanInline{F1PaperPadic.delta\_structure\_exists}, \LeanInline{F1PaperPadic.delta\_table\_inert}, \LeanInline{F1PaperPadic.delta\_table\_split} \tierP.}
+\leanline{\LeanInline{F1PaperPadic.delta\_structure\_exists}, \LeanInline{F1PaperPadic.delta\_table\_inert}, \LeanInline{F1PaperPadic.delta\_table\_split} \tier{P}.}
 
 At each prime $\delta_p(\golden)$ measures the difference between the multiplicative half of the
 descent, the tower $\golden\mapsto\golden^p$ (\cref{sec:lambda-monoid}), and the additive half, the Artin Frobenius $\Frob_p$; it is fixed by $F_p$, $F_{p-1}$ and $\chiv(p)$ alone, and its size is that of the tower,
-$|\delta_p(\golden)|/(\golden^p/p)=1.236,\ 1.146,\ 0.992,\ \ldots,\ 0.999999$ at $p=2,3,11,\ldots,31$ (\tierN).
+$|\delta_p(\golden)|/(\golden^p/p)=1.236,\ 1.146,\ 0.992,\ \ldots,\ 0.999999$ at $p=2,3,11,\ldots,31$ (\tier{N}).
 
 In the completion at a prime $\mathfrak p$ the generator splits into an angular and a radial part,
 $\golden=[\golden_{\mathfrak p}]\cdot\langle\golden\rangle$: the Teichm\"uller representative $[\golden_{\mathfrak p}]$ of
@@ -1091,9 +1091,9 @@ and a principal unit $\langle\golden\rangle\equiv1\pmod p$.  No real or complex 
     Gauss integers.
 \end{enumerate}
 \end{proposition}
-\leanline{\LeanInline{F1PaperPadic.polar\_at\_two}, \LeanInline{F1PaperPadic.polar\_at\_three}, \LeanInline{F1PaperPadic.angular\_parts\_give\_twelve}, \LeanInline{F1PaperPadic.minus\_fifteen\_is\_a\_two\_adic\_square} \tierP{}
+\leanline{\LeanInline{F1PaperPadic.polar\_at\_two}, \LeanInline{F1PaperPadic.polar\_at\_three}, \LeanInline{F1PaperPadic.angular\_parts\_give\_twelve}, \LeanInline{F1PaperPadic.minus\_fifteen\_is\_a\_two\_adic\_square} \tier{P}
 at precision $2^8$ and $3^5$, the Teichm\"uller lift itself by Hensel's lemma;
-\LeanInline{PCFGranularity.conjugate\_reduces\_to\_other\_generator}, \LeanInline{PCFGranularity.ord\_phiBar\_mod\_two}, \LeanInline{PCFGranularity.ord\_phiBar\_mod\_three}, \LeanInline{PCFGranularity.colour\_order\_even}, \LeanInline{PCFGranularity.six\_is\_the\_least\_over\_the\_colour\_order}, \LeanInline{PCFGranularity.counterexample\_order\_four}, \LeanInline{PCFGranularity.det\_plus\_one\_breaks\_the\_dichotomy} \tierP{}.}
+\LeanInline{PCFGranularity.conjugate\_reduces\_to\_other\_generator}, \LeanInline{PCFGranularity.ord\_phiBar\_mod\_two}, \LeanInline{PCFGranularity.ord\_phiBar\_mod\_three}, \LeanInline{PCFGranularity.colour\_order\_even}, \LeanInline{PCFGranularity.six\_is\_the\_least\_over\_the\_colour\_order}, \LeanInline{PCFGranularity.counterexample\_order\_four}, \LeanInline{PCFGranularity.det\_plus\_one\_breaks\_the\_dichotomy} \tier{P}.}
 
 The single exponent $n$ of $\golden^n$ carries both coordinates: reduced modulo $6$ it gives the
 angular one, in $\mu_6$, and multiplied by $\log_2\golden$ the radial one; they never resynchronise,
@@ -1111,10 +1111,10 @@ For every prime $p\ne5$, $\varepsilon(p)=\chiv(p)$; hence $\varepsilon(n)=\chiv(
 $5$, and $\Frob_n=\mathrm{id}$ or $\sigma$ according as $\chiv(n)=+1$ or $-1$.
 \end{theorem}
 \leanline{\LeanInline{FrobeniusUnico.hasRoot\_iff\_sq}, \LeanInline{FrobeniusUnico.hasRoot\_iff\_mod5},
-\LeanInline{FrobeniusUnico.sign\_eq\_chi5} \tierP, the reciprocity step by Mathlib's
+\LeanInline{FrobeniusUnico.sign\_eq\_chi5} \tier{P}, the reciprocity step by Mathlib's
 \texttt{ZMod.exists\_sq\_eq\_prime\_iff\_of\_mod\_four\_eq\_one}; \LeanInline{chi5\_is\_the\_mod5\_component}, \LeanInline{five\_sq\_iff\_mod5},
-\LeanInline{root\_x2mx1\_iff\_five\_sq} \tierP; \LeanStar{\ensuremath{\psi}\_of\_split},
-\LeanInline{\ensuremath{\psi}\_of\_inert} \tierP.}
+\LeanInline{root\_x2mx1\_iff\_five\_sq} \tier{P}; \LeanStar{\ensuremath{\psi}\_of\_split},
+\LeanInline{\ensuremath{\psi}\_of\_inert} \tier{P}.}
 \begin{proof}
 For $p=2$: $x^2+x+1$ has no root in $\F_2$, so $\varepsilon(2)=-1=\chiv(2)$.  Let $p$ be odd.  The map
 $\alpha\mapsto2\alpha-1$ turns a root of $x^2-x-1$ in $\F_p$ into a square root of the discriminant $5$,
@@ -1127,8 +1127,8 @@ $p\equiv\pm1\pmod5$, that is, when $\chiv(p)=+1$.  Both $\varepsilon$ and $\chiv
 \begin{theorem}\label{thm:s1}
 For every prime $p\ne5$, $\chiv(p)\equiv F_p\pmod p$.
 \end{theorem}
-\leanline{\LeanInline{S1Closure.chi5\_fib\_all\_primes} \tierP;
-\LeanInline{FrobeniusUnico.fib\_eq\_sign}, \LeanInline{FrobeniusUnico.sign\_eq\_chi5} \tierP.}
+\leanline{\LeanInline{S1Closure.chi5\_fib\_all\_primes} \tier{P};
+\LeanInline{FrobeniusUnico.fib\_eq\_sign}, \LeanInline{FrobeniusUnico.sign\_eq\_chi5} \tier{P}.}
 \begin{proof}
 $F_p\equiv\varepsilon(p)$ is \cref{thm:two-spectra}(2), and $\varepsilon(p)=\chiv(p)$ is
 \cref{thm:sign-is-chi5}.
@@ -1145,8 +1145,8 @@ For every prime $p\ne5$, the congruence $\Frob_p(\omega)\equiv\omega^p\pmod p$, 
 $1,\omega$, gives $F_p\equiv\varepsilon(p)=\chiv(p)$ and $F_{p-1}\equiv\tfrac12(1-\chiv(p))\pmod p$.
 \end{corollary}
 \leanline{\LeanStar{coeffs\_mod\_p}, \LeanStar{chi5\_from\_frobenius},
-\LeanInline{lambda\_structure\_gives\_chi5} \tierP; \LeanInline{FrobeniusUnico.fib\_eq\_sign},
-\LeanInline{FrobeniusUnico.fib\_pred\_eq\_sign} \tierP.}
+\LeanInline{lambda\_structure\_gives\_chi5} \tier{P}; \LeanInline{FrobeniusUnico.fib\_eq\_sign},
+\LeanInline{FrobeniusUnico.fib\_pred\_eq\_sign} \tier{P}.}
 \begin{proof}
 Coordinates can be read modulo $p$: if
 $u\omega+v\in p\Zphi$ with $u,v\in\Z$ then $p\mid u$ and $p\mid v$, because $\Zphi$ is free of rank two
@@ -1160,14 +1160,14 @@ $F_p\equiv-1$, $F_{p-1}\equiv1$ in the second; and $\varepsilon(p)=\chiv(p)$ by
 
 In the inert case the two coordinates give $F_{p+1}=F_p+F_{p-1}\equiv-1+1=0\pmod p$, and in the split
 case $F_{p-1}\equiv0$: every prime $p\ne5$ divides $F_{p-\chiv(p)}$, and for $p\ne2$ the divisibility
-$p\mid F_{p+1}$ holds exactly when $p$ is inert (\LeanInline{F1PaperPadic.fib\_succ\_zero\_iff\_inert} \tierP).
+$p\mid F_{p+1}$ holds exactly when $p$ is inert (\LeanInline{F1PaperPadic.fib\_succ\_zero\_iff\_inert} \tier{P}).
 
 \begin{table}[ht]
 \centering
 \caption{The Fibonacci criterion for $3\le p\le31$, $p\ne5$: $F_p\equiv\chiv(p)\pmod p$, and $p$
 divides $F_{p-\chiv(p)}$.  The values of $F_p$ and $F_{p-1}$ modulo $p$ are those of the $p$-derivation of
 \cref{prop:delta-ring} (\LeanStar{F1PaperPadic.delta\_table\_inert}, \LeanStar{F1PaperPadic.delta\_table\_split}
-; up to $p=19$ also \LeanInline{fib\_split\_criterion} \tierP).}
+; up to $p=19$ also \LeanInline{fib\_split\_criterion} \tier{P}).}
 \label{tab:fib-split}
 \begin{tabular}{rccccc}
 \toprule
@@ -1197,7 +1197,7 @@ lift decides $\varepsilon(p)$, which is read in the coordinates $F_p$, $F_{p-1}$
 \begin{proposition}\label{prop:pisano}
 The Fibonacci sequence modulo $5$ has period $20$, the conductor of \cref{sec:choice}.
 \end{proposition}
-\leanline{\LeanInline{pisano\_five\_is\_twenty} \tierP; the period is classical~\cite{wall60}.}
+\leanline{\LeanInline{pisano\_five\_is\_twenty} \tier{P}; the period is classical~\cite{wall60}.}
 \begin{proof}
 Modulo $5$ the sequence is $0,1,1,2,3,0,3,3,1,4,0,4,4,3,2,0,2,2,4,1,0,1$: the pair $(0,1)$ first
 returns at index $20$.
@@ -1215,7 +1215,7 @@ returns at index $20$.
 \end{proposition}
 \leanline{\LeanInline{the\_two\_periods\_and\_the\_conductor}, \LeanInline{chi5\_Z\_mul},
 \LeanInline{chi5\_depends\_only\_on\_class}, \LeanInline{ramified\_factor\_trivial},
-\LeanInline{fib\_convolution}, \LeanInline{disc\_survives\_the\_norm\_sign} \tierP.}
+\LeanInline{fib\_convolution}, \LeanInline{disc\_survives\_the\_norm\_sign} \tier{P}.}
 
 \subsection{The Golden Prime classification}\label{sec:grisales}
 \src{HP L2636--L2680; \cite{grisales25}}
@@ -1235,7 +1235,7 @@ $|\ker G|=2$ and the eight classes fall into four fibres of two.
 \end{proposition}
 \leanline{\LeanInline{G}, \LeanInline{G\_hom}, \LeanInline{G\_surj},
 \LeanInline{G\_pi1\_is\_chi4}, \LeanInline{G\_pi2\_is\_chi5},
-\LeanInline{G\_kernel} \tierP.}
+\LeanInline{G\_kernel} \tier{P}.}
 
 
 \begin{proposition}[The two registers on the classes]\label{prop:two-registers-G}
@@ -1250,7 +1250,7 @@ $|\ker G|=2$ and the eight classes fall into four fibres of two.
 \end{proposition}
 \leanline{\LeanInline{the\_two\_spectra\_are\_separated}, \LeanInline{conductor\_splits},
 \LeanInline{G\_psi\_equivariant}, \LeanInline{F1\_descends\_to\_Galois},
-\LeanInline{F1\_spectra\_anchor\_G\_bridge} \tierP.}
+\LeanInline{F1\_spectra\_anchor\_G\_bridge} \tier{P}.}
 \begin{proof}
 (1) $1$ and $13$ agree modulo $4$ and differ in $\chiv$; $1$ and $11$ agree modulo
 $5$ and differ in $\chi_4$; and $\Z/20\cong\Z/4\times\Z/5$.  (2) $G$ is a homomorphism (\cref{prop:G}).
@@ -1266,18 +1266,18 @@ closes, in its seventh link.  Second as $\log2=\log|\ker G|$ in the entropy brid
 $\golden^{\lng}=2$ (\cref{sec:mersenne}).  Two branches thus start from $G$ --- the arithmetic one, through $\chiv$ and
 $L(1,\chiv)$, and the spectral one, through $|\ker G|$ --- and they meet at $\log2$; a pair of maps with a common source
 is a span, and this one is \cref{prop:span}
-(\LeanInline{kernel\_is\_one\_nine}, \LeanInline{log\_two\_is\_log\_kernel}, \LeanInline{branches\_meet\_at\_log\_two} \tierP).
+(\LeanInline{kernel\_is\_one\_nine}, \LeanInline{log\_two\_is\_log\_kernel}, \LeanInline{branches\_meet\_at\_log\_two} \tier{P}).
 
 $G$ is the quotient of $\Zst$ by its squares: $\ker G=\{1,9\}$ is exactly the set of squares, so the
 characters of $\Zst$ that factor through $G$ are the quadratic ones
-(\LeanInline{F1PaperNew.G\_kernel\_eq\_squares}, \LeanInline{F1PaperNew.squares\_of\_units\_twenty} \tierP).
+(\LeanInline{F1PaperNew.G\_kernel\_eq\_squares}, \LeanInline{F1PaperNew.squares\_of\_units\_twenty} \tier{P}).
 
 \subsubsection{The component that selects the Frobenius}
 
 For a prime $p\ne5$ the component $\chiv$ of $G$ is exactly the sign of
 \cref{def:artin-frob} (\cref{thm:sign-is-chi5}): $p\equiv\pm1\pmod5$ gives $\Frob_p=\mathrm{id}$, and
 $p\equiv\pm2\pmod5$ gives $\Frob_p=\sigma$
-(\LeanInline{\ensuremath{\psi}\_of\_split}, \LeanInline{\ensuremath{\psi}\_of\_inert} \tierP).  The
+(\LeanInline{\ensuremath{\psi}\_of\_split}, \LeanInline{\ensuremath{\psi}\_of\_inert} \tier{P}).  The
 component $\chi_4$ lives in $\Q(i)$ and does not act on $\Zphi$ at all: it is the
 part of the classification that the ring does not see, which is why
 \cref{prop:two-registers-G} can separate the two registers by the two factors.
@@ -1291,7 +1291,7 @@ themselves are proved.
 $|2\cos(\pi a/5)|=\golden^{\chiv(a)}$ for $a=1,2,3,4$; explicitly the four values
 are $\golden,\golden^{-1},\golden^{-1},\golden$.
 \end{proposition}
-\leanline{\LeanInline{F1CW.norm\_cosine\_phi} \tierP.}
+\leanline{\LeanInline{F1CW.norm\_cosine\_phi} \tier{P}.}
 \begin{proof}
 $2\cos(\pi/5)=\golden$ is \eqref{eq:pentagon-id}.  The double-angle formula with
 $\cos(\pi/5)=\golden/2$ gives
@@ -1316,7 +1316,7 @@ is cited and not formalised; in the Lean file it is a marker
 \cref{thm:pentagonal-values}, the homomorphism of \cref{prop:G}, and the
 logarithmic signature $\sum_{a=1}^4\chiv(a)\log(2\sin(\pi a/5))=-2\log\golden$.  In
 Lean the proved statement is $\sin(2\pi/5)/\sin(\pi/5)=\golden$
-(\LeanInline{F1CW.pentagon\_log\_signature} \tierP), whose whole content is
+(\LeanInline{F1CW.pentagon\_log\_signature} \tier{P}), whose whole content is
 $\sin2x=2\sin x\cos x$ together with \eqref{eq:pentagon-id}; the signature itself follows
 because $\sin(3\pi/5)=\sin(2\pi/5)$ and $\sin(4\pi/5)=\sin(\pi/5)$, so the sum is
 $2\log\bigl(\sin(\pi/5)/\sin(2\pi/5)\bigr)$, and it is proved in full in
@@ -1344,7 +1344,7 @@ the decoration of some digit prime to $b$ lies in it.
 \LeanInline{off\_diagonal\_inaccessible}, \LeanStar{off\_diagonal\_inaccessible'},
 \LeanInline{diagonal\_from\_residue}, \LeanInline{chi\_four\_is\_odd},
 \LeanInline{deviation\_type\_is\_chi\_four}, \LeanInline{free\_orbit\_is\_union\_of\_fibres},
-\LeanInline{free\_orbit\_eq\_order\_four} \tierP.}
+\LeanInline{free\_orbit\_eq\_order\_four} \tier{P}.}
 
 This is why the classification of \cite{grisales25} reads the last \emph{two} digits:
 the last digit determines the class modulo $10$, which reaches only the diagonal of the
@@ -1418,13 +1418,13 @@ $2n$ of a split prime), \LeanStar{W4Isometria.totient\_is\_primitive\_roots},
 \LeanStar{W4Isometria.RelojCiclotomico.log\_Npow\_bound},
 \LeanStar{W4Isometria.RelojCiclotomico.log\_Ncyc\_bound} (iii),
 \LeanStar{W4Isometria.RelojCiclotomico.clock\_sum\_mertens},
-\LeanInline{W4Isometria.RelojCiclotomico.clock\_sum\_le\_of\_mertens} (vi) \tierP;
+\LeanInline{W4Isometria.RelojCiclotomico.clock\_sum\_le\_of\_mertens} (vi) \tier{P};
 (iv) and (v); (vii) from (vi) and $\sum_{n\leq N}\phi(n)=3N^2/\pi^2+O(N\log N)$;
 (ii) for $n\leq600$ and $p\leq20000$, $p\nmid n$ ($1\,355\,192$ pairs,
 $752$ of the $2260$ primes with two clocks), (vi) up to $N=10^6$ to $3.6\cdot10^{-12}$
-(\texttt{v27\_reloj\_ciclotomico.py}, \tierN), and (vii), whose ratio to the main term is % pending(D7)
+(\texttt{v27\_reloj\_ciclotomico.py}, \tier{N}), and (vii), whose ratio to the main term is % pending(D7)
 $1.0038$, $1.0018$, $1.0008$ and $1.0006$ at $N=100$, $500$, $1000$ and $2000$
-(\texttt{retro69.py} \tierN).} % pending(D7)
+(\texttt{retro69.py} \tier{N}).} % pending(D7)
 
 \begin{proof}
 (i) Evaluate $X^n-1=\prod_{d\mid n}\Phi_d(X)$ at $\golden$.
@@ -1463,7 +1463,7 @@ the clock to the order by size.
 The angular parts of \cref{prop:polar} are read by \cref{prop:clock-cyclotomic} on integers,
 without the completion.  For $x$ with $x^2=x+1$ and its conjugate $1-x$, the norms of
 $\Phi_3$, $\Phi_4$, $\Phi_8$, $\Phi_{12}$ and $\Phi_5$ at $x$ are $4$, $5$, $9$, $4$ and $11$
-(\LeanInline{W4Isometria.conductor\_cyclotomic\_norms} \tierP).  So $2$, inert, has clock $3$,
+(\LeanInline{W4Isometria.conductor\_cyclotomic\_norms} \tier{P}).  So $2$, inert, has clock $3$,
 the angular part $\zeta_3$ of \cref{prop:polar}(i); $3$, inert, has clock $8$, the order of
 \cref{prop:polar}(ii); the ramified prime $\sqrt5$ has clock $4$, since $\golden\equiv3$ modulo
 $\sqrt5$; $N(\Phi_{12}(\golden))=4$ is the prime $2$ again, at the level $12=3\cdot2^2$ of
@@ -1472,10 +1472,10 @@ At $5$ the levels $4\cdot5^k$ carry the ramified prime: by
 \cref{prop:clock-cyclotomic}(i), $\golden^{4\cdot5^k}-1$ is the product of the $\Phi_d(\golden)$
 with $d\mid4\cdot5^k$, and $\sqrt5$ divides it exactly $2k+1$ times
 (\LeanStar{F1PaperSixty.phi\_clock\_identity}, \LeanStar{F1PaperSixty.phi\_clock\_exact}
-\tierP), so $v_5(\golden^{4\cdot5^k}-1)=k+\tfrac12$; level by level, $v_5$ of
-$N(\Phi_{4\cdot5^k}(\golden))$ is $1,2,2,2$ for $k=0,1,2,3$ (\tierN).  A root of unity has
+\tier{P}), so $v_5(\golden^{4\cdot5^k}-1)=k+\tfrac12$; level by level, $v_5$ of
+$N(\Phi_{4\cdot5^k}(\golden))$ is $1,2,2,2$ for $k=0,1,2,3$ (\tier{N}).  A root of unity has
 absolute value $1$ in every normed field
-(\LeanInline{M12F1Circle.root\_of\_unity\_norm\_one} \tierP), so at each prime the angular part
+(\LeanInline{M12F1Circle.root\_of\_unity\_norm\_one} \tier{P}), so at each prime the angular part
 carries the clock and the principal unit $\langle\golden\rangle$ carries the size.
 \end{remark}
 
@@ -1500,13 +1500,13 @@ splits, $\Zphi/p\cong\F_p\times\F_p$; if $p$ is inert, $\golden_p^{\,p+1}=N(\gol
     $\golden^{m}\not\equiv1\pmod p$.
 \end{enumerate}
 \end{proposition}
-\leanline{\LeanInline{F1PaperPadic.inert\_norm\_is\_minus\_one}, \LeanInline{F1PaperPadic.split\_three\_mod\_four\_two\_part}, \LeanInline{F1PaperPadic.kernel\_classes\_do\_not\_fix\_it} \tierP{}
-on the primes listed; (i)--(ii) for every prime, \LeanInline{PasosDelTexto.inert\_pow\_succ}, \LeanInline{PasosDelTexto.inert\_two\_part}, \LeanInline{PasosDelTexto.two\_part\_inert\_one\_mod\_four}, \LeanInline{PasosDelTexto.split\_three\_mod\_four} \tierP; (iv)
-\LeanInline{RelojTres.three\_not\_dvd\_order\_iff}, \LeanInline{RelojTres.three\_dvd\_of\_three\_dvd\_order} \tierP; over the
+\leanline{\LeanInline{F1PaperPadic.inert\_norm\_is\_minus\_one}, \LeanInline{F1PaperPadic.split\_three\_mod\_four\_two\_part}, \LeanInline{F1PaperPadic.kernel\_classes\_do\_not\_fix\_it} \tier{P}
+on the primes listed; (i)--(ii) for every prime, \LeanInline{PasosDelTexto.inert\_pow\_succ}, \LeanInline{PasosDelTexto.inert\_two\_part}, \LeanInline{PasosDelTexto.two\_part\_inert\_one\_mod\_four}, \LeanInline{PasosDelTexto.split\_three\_mod\_four} \tier{P}; (iv)
+\LeanInline{RelojTres.three\_not\_dvd\_order\_iff}, \LeanInline{RelojTres.three\_dvd\_of\_three\_dvd\_order} \tier{P}; over the
 primes $7\le p<6000$, (i)--(ii) hold in every case, (iv) holds at every prime, and of the primes that meet the
 condition of (iv) $185$ split and $197$ inert, $42$ and $52$ of them have $e_p$ prime to $3$
-(\texttt{retro119.py} \tierN); the first two, $47$ inert and $139$ split, are \LeanInline{TodoEnLean.witness\_47}, % pending(D7)
-\LeanInline{TodoEnLean.witness\_139} \tierP.}
+(\texttt{retro119.py} \tier{N}); the first two, $47$ inert and $139$ split, are \LeanInline{TodoEnLean.witness\_47}, % pending(D7)
+\LeanInline{TodoEnLean.witness\_139} \tier{P}.}
 \begin{proof}[Proof of \textup{(iv)}]
 $e_p\mid N_p$.  If $3\mid e_p$ then $3\mid N_p$, which is $3\mid p-1$ for $p$ split and $3\mid p+1$ for $p$ inert.
 In the cyclic group generated by $\golden$ modulo $p$, of order $e_p$ dividing $3^km$, the order is prime to $3$
@@ -1517,7 +1517,7 @@ exactly when it divides $m$, that is, when $\golden^m\equiv1\pmod p$.
 So the eight classes fix the $2$-adic part of the angular part of $\golden$ in six of the eight
 classes, and leave it free exactly in the kernel of $G$.  That kernel is the fibre $(0,0)$ of the
 four fibres of $G$, the fibre of the trivial character, and its order is the contraction factor
-$1/\mu_3=|\ker G|=2$ (\LeanInline{F1PCFUnified.four\_fibres\_four\_characters}, \LeanInline{F1PCFUnified.contraction\_is\_kernel} \tierP).
+$1/\mu_3=|\ker G|=2$ (\LeanInline{F1PCFUnified.four\_fibres\_four\_characters}, \LeanInline{F1PCFUnified.contraction\_is\_kernel} \tier{P}).
 What the class does not fix is the odd part of $e_p$, and, in the kernel, its $2$-adic part too.
 
 
@@ -1539,10 +1539,10 @@ Let $n\geq3$ and let $\mathfrak p$ be a prime of $\Zphi$ of clock $n$ over $p\ne
 \leanline{\LeanInline{FibrasPorNivel.split\_level\_four},
 \LeanInline{FibrasPorNivel.split\_level\_twenty}, \LeanInline{FibrasPorNivel.inert\_level\_four},
 \LeanInline{FibrasPorNivel.inert\_one\_mod\_four}, \LeanInline{FibrasPorNivel.inert\_not\_at\_five} (i)
-\tierP; (ii), the first statement, \LeanInline{PasosDelTexto.palindromic\_norm}, \LeanInline{PasosDelTexto.norm\_odd\_level\_doubled} \tierP\ given that $\Phi_m$ is palindromic and $\Phi_{2m}(x)=\Phi_m(-x)$ for odd $m\ge3$, the second, proved in the text; (iii) from $\sum_{m\leq x,\ m\ \mathrm{odd}}\phi(m)=2x^2/\pi^2+O(x\log x)$;
+\tier{P}; (ii), the first statement, \LeanInline{PasosDelTexto.palindromic\_norm}, \LeanInline{PasosDelTexto.norm\_odd\_level\_doubled} \tier{P}\ given that $\Phi_m$ is palindromic and $\Phi_{2m}(x)=\Phi_m(-x)$ for odd $m\ge3$, the second, proved in the text; (iii) from $\sum_{m\leq x,\ m\ \mathrm{odd}}\phi(m)=2x^2/\pi^2+O(x\log x)$;
 (i)--(iii) on every prime of every level $n\leq420$; there the inert primes carry between $0.066$ and
 $0.084$ of the mass and the kernel between $0.47$ and $0.56$, with no stable value
-(\texttt{retro94.py} \tierN).} % pending(D7)
+(\texttt{retro94.py} \tier{N}).} % pending(D7)
 
 \begin{proof}
 (i) If $p$ splits, $n\mid p-1$; if $p$ is inert, $\golden^{p+1}=N(\golden)=-1$ in the residue field, so
@@ -1579,7 +1579,7 @@ power at $p=11$, and is one at $p=211$, where $\golden_{\mathfrak p}=33=94^5$.
 \end{proposition}
 \leanline{\LeanStar{F1PaperNew.units\_pow\_iff}, \LeanStar{F1PaperNew.phi\_residue\_symbol},
 \LeanStar{F1PaperNew.phi\_fifth\_power\_instances}
-\tierP.}
+\tier{P}.}
 
 Write $i_p=(p-1)/e_p$ for $p$ split and
 $i_p=2(p+1)/e_p$ for $p$ inert, the index of
@@ -1617,13 +1617,13 @@ $d=2$, the cubic for $d=3$, the quintic for $d=5$.
 \LeanStar{W4Isometria.inert\_layer\_law},
 \LeanStar{W4Isometria.even\_index\_iff\_squares},
 \LeanStar{W4Isometria.even\_index\_indicator}
-\tierP;
+\tier{P};
 (iii), stated as \LeanStar{W4Isometria.KernelLaw}, open, follows from (ii) since $p\equiv1\pmod4$ there: $x^4-x^2-1$ generates the ring class field of
 $\Z[\sqrt{-20}]$, and $p=a^2+20b^2$ exactly when
 $p$ splits completely in it
 \cite[Thm.~9.2, Thm.~9.4]{cox13}; checked on
 the $555$ primes below $20000$ in those classes
-\tierN.}
+\tier{N}.}
 
 \begin{proposition}[The golden ratio names the fifth roots of unity]\label{prop:phi-names-mu5}
 Let $p\equiv1\pmod5$ and let $\mathfrak p=(p,\golden-r)$ be a prime of $\Zphi$ above $p$.
@@ -1641,10 +1641,10 @@ Let $p\equiv1\pmod5$ and let $\mathfrak p=(p,\golden-r)$ be a prime of $\Zphi$ a
     function of the norm gives the two classes equal parts, exactly.
 \end{enumerate}
 \end{proposition}
-\leanline{(i), (iii) \LeanInline{PasosDelTexto.fifth\_root\_trace}, \LeanInline{PasosDelTexto.second\_trace}, \LeanInline{PasosDelTexto.pair\_from\_trace}, \LeanInline{PasosDelTexto.conjugation\_swaps} \tierP; (ii) Chebotarev in the layer of group $F_{20}$
+\leanline{(i), (iii) \LeanInline{PasosDelTexto.fifth\_root\_trace}, \LeanInline{PasosDelTexto.second\_trace}, \LeanInline{PasosDelTexto.pair\_from\_trace}, \LeanInline{PasosDelTexto.conjugation\_swaps} \tier{P}; (ii) Chebotarev in the layer of group $F_{20}$
 (\cref{prop:phi-layers}); over the $39\,234$ prime ideals of norm $p\equiv1\pmod5$ below $10^6$
 the classes have frequencies $0.2003$, $0.3999$, $0.3999$, the identification is unambiguous at every one,
-and the two exchanged parts of the prime side coincide (\texttt{retro78.py} \tierN).} % pending(D7)
+and the two exchanged parts of the prime side coincide (\texttt{retro78.py} \tier{N}).} % pending(D7)
 
 This is where the two faces of $\golden$ meet at the primes: $\golden=2\cos(\pi/5)$ names the angle, and
 with it the root of unity in which the symbol of $\golden$ is read.  Two involutions act here, and they are
@@ -1655,7 +1655,7 @@ identification of (i) is made up to it, and why the three classes of (ii) are un
 conjugation $\golden\mapsto\bar\golden$ of (iii) is the action of the classes with $\chiv=-1$, which send $\zeta_5$
 to $\zeta_5^{\pm2}$; it is the exact isometry of every such sum, the prime side of the explicit formula among
 them (\LeanInline{RelojTres.class\_nine}, \LeanInline{RelojTres.classes\_that\_conjugate},
-\LeanInline{TodoEnLean.class\_nine\_fixes\_phi} \tierP).  The rotation of order $5$, $z\mapsto\zeta_5z$, does not: the class
+\LeanInline{TodoEnLean.class\_nine\_fixes\_phi} \tier{P}).  The rotation of order $5$, $z\mapsto\zeta_5z$, does not: the class
 $\{1\}$ and the class $\{\zeta_5^{\pm1}\}$ are different primes, and their parts differ as much as a
 random partition of the same primes does.
 
@@ -1688,11 +1688,11 @@ Let $p\neq2,3,5$.
 \LeanStar{W4Isometria.CapasDelPoligono.layer\_iff} (iii);
 \LeanStar{W4Isometria.ReduccionAlReloj.phi\_pow\_one\_split},
 \LeanStar{W4Isometria.ReduccionAlReloj.level80\_coeff\_in},
-\LeanInline{W4Isometria.ReduccionAlReloj.level80\_coeff\_out} (iv) \tierP; the consequence
-in (ii) from the two statements, \LeanInline{PasosDelTexto.hyperbola}, \LeanInline{PasosDelTexto.hyperbola\_sqrt} \tierP.  Over the $78\,495$ primes $7\leq p\leq10^6$, $N_p\leq2(p+1)$
+\LeanInline{W4Isometria.ReduccionAlReloj.level80\_coeff\_out} (iv) \tier{P}; the consequence
+in (ii) from the two statements, \LeanInline{PasosDelTexto.hyperbola}, \LeanInline{PasosDelTexto.hyperbola\_sqrt} \tier{P}.  Over the $78\,495$ primes $7\leq p\leq10^6$, $N_p\leq2(p+1)$
 in all, and the primes of index above $X^{3/4}$ have mass $0$ at $X=10^6$, against the
 bound $1.00\sqrt X$ that the tower gives
-(\texttt{v28\_hiperbola\_reloj\_tamano.py}) \tierN.} % pending(D7)
+(\texttt{v28\_hiperbola\_reloj\_tamano.py}) \tier{N}.} % pending(D7)
 
 \begin{remark}[The layers of the index as $L$-functions]\label{rmk:layers-L}
 The three power-residue symbols of \cref{prop:phi-layers} reach
@@ -1718,18 +1718,18 @@ route, with each step formalised.
 
 A rational prime $p$ has one of three behaviours in $\OK=\Zphi$, and the three
 are exhausted by the degree formula $\sum_ie_if_i=[K:\Q]=2$
-(\LeanStar{F1CW.degree\_formula\_K} \tierP): split ($p\OK=\mathfrak{p}\bar{\mathfrak{p}}$,
+(\LeanStar{F1CW.degree\_formula\_K} \tier{P}): split ($p\OK=\mathfrak{p}\bar{\mathfrak{p}}$,
 two primes of residue degree $1$), inert (one prime of residue degree $2$), or
 ramified (one prime with $e=2$, only $p=5$ since $\Delta_K=5$).  The absolute
 norms follow: $N\mathfrak{p}=p$ in the split and ramified cases, $p^2$ in the
-inert one (\LeanStar{F1CW.ideal\_norm\_values\_K} \tierP).  Writing $u=p^{-s}$, the
+inert one (\LeanStar{F1CW.ideal\_norm\_values\_K} \tier{P}).  Writing $u=p^{-s}$, the
 product of the local factors over the primes above $p$ is
 \begin{equation}\label{eq:local-K}
   \prod_{\mathfrak{p}\mid p}\bigl(1-u^{f(\mathfrak{p})}\bigr)^{-1}
   =\begin{cases}(1-u)^{-2},&\text{split},\\ (1-u^2)^{-1},&\text{inert},\\ (1-u)^{-1},&\text{ramified},\end{cases}
 \end{equation}
 which is the statement that the local factor is a function of $\chiv(p)$
-(\LeanStar{F1CW.euler\_from\_ideals\_K} \tierP): the first case is $\chiv(p)=+1$,
+(\LeanStar{F1CW.euler\_from\_ideals\_K} \tier{P}): the first case is $\chiv(p)=+1$,
 the second $\chiv(p)=-1$, the third $\chiv(p)=0$.  \Cref{eq:local-K} is also
 where the Frobenius of \cref{sec:lambda-ring} enters analytically, since by
 \cref{thm:frob-eigen} the inverse local factor is the characteristic polynomial
@@ -1751,7 +1751,7 @@ inverse local factor of $\zeta_{\mathbb{Q}(\sqrt5)}=\zeta\cdot L(s,\chiv)$ at
 $t=p^{-s}$; at $p=5$ the inverse local factor is $1-t$, the case $\chiv(5)=0$.
 \end{proposition}
 \leanline{\LeanStar{frobenius\_eigenvalue\_on\_sqrt5}, \LeanStar{frobenius\_power\_eigenvalue},
-\LeanInline{euler\_factor\_is\_char\_poly} \tierP.}
+\LeanInline{euler\_factor\_is\_char\_poly} \tier{P}.}
 \begin{proof}
 $(2\omega-1)^2=4(\omega^2-\omega)+1=5$, and $\sigma(\omega)=1-\omega$ gives $\sigma(2\omega-1)=1-2\omega$.  By
 \cref{thm:sign-is-chi5}, $\Frob_n$ is the identity when $\chiv(n)=+1$ and $\sigma$ when $\chiv(n)=-1$, which gives the
@@ -1762,9 +1762,9 @@ split and inert cases of \eqref{eq:local-K}.
 
 The two shapes of the local factor are ring identities, valid in any commutative
 ring: $(1-t)(1-t)=(1-t)^2$ at a split prime and $(1-t)(1+t)=1-t^2$ at an inert one
-(\LeanInline{euler\_factor\_split}, \LeanInline{euler\_factor\_inert} \tierP).
+(\LeanInline{euler\_factor\_split}, \LeanInline{euler\_factor\_inert} \tier{P}).
 The character is the trace of the Frobenius minus one: $\chiv(p)=\mathrm{tr}\,M_p-1$
-(\LeanInline{trace\_minus\_one\_is\_chi5} \tierP).
+(\LeanInline{trace\_minus\_one\_is\_chi5} \tier{P}).
 
 % ---------------------------------------------------------------------
 \subsection{The Euler product as a categorical colimit}\label{sec:colimit}
@@ -1819,7 +1819,7 @@ $F_{\mathrm{spec}}$ is the unique functor to it.  Its triad $\tfrac12\zeta_3^{\,
 of the inert prime $2$ (\cref{def:tripartite-omega}).
 \end{proposition}
 \leanline{\LeanInline{LadoAnalitico.spectral\_data}, \LeanInline{LadoAnalitico.spectral\_datum\_below\_one},
-\LeanInline{spectral\_uniqueness} \tierP.}
+\LeanInline{spectral\_uniqueness} \tier{P}.}
 \begin{proof}
 With $\sigma=2-\mu$, $\sigma\mu=\tfrac34$ is $(\mu-\tfrac12)(\mu-\tfrac32)=0$.  A category with one object and one
 morphism is terminal.
@@ -1828,7 +1828,7 @@ morphism is terminal.
 \begin{lemma}[Diagonal contraction]\label{lem:diagonal-contraction}
 For $0<t\le\mu_3=\tfrac12$ the inequality $t\le t^2$ fails.
 \end{lemma}
-\leanline{\LeanInline{diagonal\_blocked} \tierP.}
+\leanline{\LeanInline{diagonal\_blocked} \tier{P}.}
 
 \begin{proof}
 $t\le t^2$ with $t>0$ gives $1\le t$, against $t\le\tfrac12$.  (The same argument
@@ -1849,7 +1849,7 @@ $\Delta\colon\Omega\to\Omega\otimes\Omega$ is split, $\mathrm{eval}\circ\Delta=\
 evaluation.  This is the No-Diagonal theorem of the Primitive Structure~\cite{gonzalez25hp}.
 \end{theorem}
 \leanline{\LeanInline{LadoAnalitico.contractive\_iff}, \LeanInline{LadoAnalitico.no\_contractive\_eval},
-\LeanInline{diagonal\_blocked}, \LeanStar{F1v2.sq\_lt\_self\_on\_unit\_interval}, \LeanInline{contraction\_is\_kernel} \tierP;
+\LeanInline{diagonal\_blocked}, \LeanStar{F1v2.sq\_lt\_self\_on\_unit\_interval}, \LeanInline{contraction\_is\_kernel} \tier{P};
 of the category the proof uses the multiplicativity of the norm.}
 \begin{proof}
 $\mathrm{eval}$ is contractive when $\norm{\Omega}\le\norm{\Omega\otimes\Omega}=\norm{\Omega}^2$, that is, $t\le t^2$.
@@ -1865,7 +1865,7 @@ gives no obstruction there.  The datum of $\mathrm{Spec}(\OmH)$ has $\norm{\OmH}
 circle $|z|=\tfrac12$.
 \end{corollary}
 \leanline{\LeanInline{LadoAnalitico.contractive\_iff}, \LeanInline{LadoAnalitico.spectral\_data},
-\LeanInline{spectral\_uniqueness}, \LeanInline{diagonal\_blocked} \tierP.}
+\LeanInline{spectral\_uniqueness}, \LeanInline{diagonal\_blocked} \tier{P}.}
 \begin{proof}
 By \cref{prop:spectral-data} the moduli are $\tfrac12$ and $\tfrac32$, and by \cref{thm:no-diagonal} the inequality
 $\mu\le\mu^2$ holds exactly when $\mu\ge1$.
@@ -1895,7 +1895,7 @@ $\Psi(1) = \mathrm{id}_{\langle\golden\rangle}$.
 The restriction to primes generates $\Psi$ through
 $\Psi(p_1^{a_1}\cdots p_k^{a_k}) = \Frob_{p_1}^{a_1}\circ\cdots\circ\Frob_{p_k}^{a_k}$, the monoidal lifts.
 \end{proposition}
-\leanline{\LeanInline{psi\_comp} \tierP.}
+\leanline{\LeanInline{psi\_comp} \tier{P}.}
 
 \begin{proof}
 On the monoid generator,
@@ -1942,7 +1942,7 @@ $\Psi(p)$ together with the reduction of its value modulo $p$ in the ring $\Zphi
 lives; the monoid alone does not determine it (\cref{rmk:why-monoidal}).
 \end{lemma}
 \leanline{\LeanInline{FrobeniusUnico.fib\_eq\_sign}, \LeanInline{FrobeniusUnico.fib\_pred\_eq\_sign},
-\LeanInline{FrobeniusUnico.sign\_eq\_chi5}, \LeanInline{local\_factor\_identity} \tierP.}
+\LeanInline{FrobeniusUnico.sign\_eq\_chi5}, \LeanInline{local\_factor\_identity} \tier{P}.}
 \begin{proof}
 By \cref{thm:frobenius-congruence}, $\golden^p\equiv\Frob_p(\golden)\pmod{p\Zphi}$, and $\Frob_p(\golden)$ is $\golden$
 or $\sigma(\golden)=1-\golden$; since $(\golden,1)$ is a basis of $\Zphi/p$ over $\F_p$, the coordinates are
@@ -1966,9 +1966,9 @@ Let $a_n$ be the coefficients of $\zeta_{\Q(\sqrt5)}(s)$.
     \end{equation}
 \end{enumerate}
 \end{proposition}
-\leanline{\LeanStar{F1CW.coeff\_stabilises\_K}, \LeanStar{F1CW.colimit\_exists\_K} \tierP;
+\leanline{\LeanStar{F1CW.coeff\_stabilises\_K}, \LeanStar{F1CW.colimit\_exists\_K} \tier{P};
 \LeanInline{LadoAnalitico.mono}, \LeanInline{LadoAnalitico.cover}, \LeanInline{LadoAnalitico.upper},
-\LeanInline{LadoAnalitico.least} \tierP.}
+\LeanInline{LadoAnalitico.least} \tier{P}.}
 \begin{proof}
 (i) Each $f_p$ is a series in $p^{-s}$ with constant term $1$.  The coefficient of $n=\prod p^{k_p}$ in a product
 over $S'$ collects the terms $p^{-k_ps}$ of the factors at the primes of $n$ and the constant term $1$ of the others,
@@ -1999,7 +1999,7 @@ $\mathbb{Q}\hookrightarrow K$.  For each $K$ let $\chi_K$ be its quadratic chara
 The three quadratic fields of the conductor have discriminants $-4$, $5$ and $-20$: the
 two imaginary ones are negative and the real one positive, and their product is
 $400=20^2$, the square of the conductor (\LeanInline{three\_subfield\_discs},
-\LeanInline{disc\_K\_is\_conductor\_squared} \tierP\ for the arithmetic of the classical values).
+\LeanInline{disc\_K\_is\_conductor\_squared} \tier{P}\ for the arithmetic of the classical values).
 
 \begin{theorem}[Dedekind factorisation as natural isomorphism]
 \label{thm:dedekind-natural}
@@ -2036,13 +2036,13 @@ The four characters $\{1,\chi_4,\chi_5,\chi_4\chi_5\}$ are exactly
 the four characters of $\mathbb{Z}_2\times\mathbb{Z}_2$
 \textup{(\cref{prop:G})}; as $G$ has four fibres, the image has four characters.
 \end{theorem}
-\leanline{\LeanInline{dedekind\_factorisation}, \LeanInline{local\_factor\_identity} \tierP\ for $\Q(\sqrt5)$;
+\leanline{\LeanInline{dedekind\_factorisation}, \LeanInline{local\_factor\_identity} \tier{P}\ for $\Q(\sqrt5)$;
 for every quadratic character, the Euler product with the local factors of its field equals $\zeta\cdot L(\cdot,\chi_K)$,
 with the split, inert and ramified shapes: \LeanInline{TodoEnLean.dedekind\_factorisation\_any},
-\LeanInline{TodoEnLean.fDed\_shapes} \tierP; that these local factors are those of $\Q(i)$ and $\Q(\sqrt{-5})$ is the
+\LeanInline{TodoEnLean.fDed\_shapes} \tier{P}; that these local factors are those of $\Q(i)$ and $\Q(\sqrt{-5})$ is the
 splitting law of those fields, and the classes on which each character is $+1$ are
-\LeanInline{three\_quadratic\_subfields} \tierP; the morphisms of $\mathbf{DirSer}$ are unique,
-\LeanInline{TodoEnLean.dirser\_morphism\_unique} \tierP.}
+\LeanInline{three\_quadratic\_subfields} \tier{P}; the morphisms of $\mathbf{DirSer}$ are unique,
+\LeanInline{TodoEnLean.dirser\_morphism\_unique} \tier{P}.}
 
 \begin{proof}
 (i) Classical \textup{(\cite{neukirch99}, Ch.~VII)}; for $\Q(\sqrt5)$ it is the local identity behind \eqref{eq:local-K}, assembled over all primes and formalised as \lean{dedekind\_factorisation}.
@@ -2063,7 +2063,7 @@ defined on all of $\mathbf{QuadExt}_{20}$.  What is proved in Lean is the local
 statement: for each of the four characters the local factor of $\zeta_K$ is the
 product of those of $\zeta$ and $L$, uniformly in the character value $0,\pm1$.
 \end{corollary}
-\leanline{\LeanInline{F1v2.factorisation\_natural}, \LeanInline{F1v2.local\_dedekind\_uniform}, \LeanInline{F1v2.four\_fibres\_are\_sign\_pairs} \tierP.}
+\leanline{\LeanInline{F1v2.factorisation\_natural}, \LeanInline{F1v2.local\_dedekind\_uniform}, \LeanInline{F1v2.four\_fibres\_are\_sign\_pairs} \tier{P}.}
 
 
 
@@ -2080,12 +2080,12 @@ product of those of $\zeta$ and $L$, uniformly in the character value $0,\pm1$.
 \end{equation}
 where $T_K = 2\pi\log\golden$ is the period of $T^2_{\mathrm{PCF}}$.
 \end{theorem}
-\leanline{\LeanInline{anchor\_is\_a\_crossed\_identity} \tierP\ given the class-number formula.}
+\leanline{\LeanInline{anchor\_is\_a\_crossed\_identity} \tier{P}\ given the class-number formula.}
 
 \begin{proof}
 Dirichlet class-number formula for $\mathbb{Q}(\sqrt{5})$.  With
 class number $h_K = 1$ --- the Minkowski bound of $K$ is $\tfrac12\sqrt5<2$, so every ideal class contains an ideal
-of norm $1$ (\LeanStar{F1CW.class\_number\_one\_K} \tierP) ---, regulator $R_K = \log\golden$ (\cref{thm:units}), number of
+of norm $1$ (\LeanStar{F1CW.class\_number\_one\_K} \tier{P}) ---, regulator $R_K = \log\golden$ (\cref{thm:units}), number of
 roots of unity $w = 2$, and discriminant $\Delta = 5$:
 \[
   \lim_{s\to 1}(s-1)\,\zeta_K(s)
@@ -2104,7 +2104,7 @@ $L(1,\chiv)=-\frac{\tau(\chiv)}{5}\sum_{a=1}^{4}\chiv(a)\log\bigl(2\sin\tfrac{\p
 \cite[Ch.~4]{washington97}; with $\tau(\chiv)=\sqrt5$ and the logarithmic signature
 $\sum_{a=1}^{4}\chiv(a)\log(2\sin(\pi a/5))=-2\log\golden$ of the pentagon
 (\LeanStar{F1v2.pentagon\_log\_signature\_full}), it is $-\frac{\sqrt5}{5}(-2\log\golden)=2\log\golden/\sqrt5$
-(\LeanInline{F1OZ.lerch\_arith} \tierP).
+(\LeanInline{F1OZ.lerch\_arith} \tier{P}).
 
 \begin{remark}[The unifying invariant
 $R = \log\golden$]\label{rmk:regulator}
@@ -2156,10 +2156,10 @@ the Eisenstein polynomial $E(u)=u^2-5$, generating the ideal $I=(E)$.
 \LeanStar{F1PaperSixty.bk\_frobenius\_defect\_is\_tau\_sq} (iii),
 \LeanStar{F1PaperSixty.fontaine\_bound\_saturated} (iv, the arithmetic),
 \LeanStar{F1PaperSixty.phi\_four\_kisin\_class}, \LeanStar{F1PaperSixty.kisin\_classes\_breaks}
-(v, the arithmetic), \LeanInline{F1PaperSixty.leopoldt\_unit} (vi) \tierP; the prism, the
+(v, the arithmetic), \LeanInline{F1PaperSixty.leopoldt\_unit} (vi) \tier{P}; the prism, the
 breaks, the Kisin classes and Leopoldt's formula; the cokernel of (v) computed up to degree
 $33$, and $L_5(1,\chiv)$ and $2\log_5\golden/\sqrt5$ both $\equiv557\pmod{5^4}$ against the
-Kubota--Leopoldt interpolation (\texttt{kisin.py}) \tierN.}
+Kubota--Leopoldt interpolation (\texttt{kisin.py}) \tier{N}.}
 
 % ---------------------------------------------------------------------
 \subsection{The factorisation and the odd zeta values}\label{sec:factorisation}
@@ -2170,13 +2170,13 @@ Each of the three cases factors as the product of the local factor of $\zeta$ an
 the local factor of $L(\cdot,\chiv)$ --- the inert case being the identity
 $1-u^2=(1-u)(1+u)$
 (\LeanStar{F1CW.local\_dedekind\_ramified\_K}, \LeanStar{F1CW.local\_dedekind\_split\_K},
-\LeanStar{F1CW.local\_dedekind\_inert\_K} \tierP).  Assembling over all primes, with
+\LeanStar{F1CW.local\_dedekind\_inert\_K} \tier{P}).  Assembling over all primes, with
 the Euler product taken as the colimit of the partial products over finite sets
-of primes (\LeanStar{F1CW.coeff\_stabilises\_K}, \LeanStar{F1CW.colimit\_exists\_K} \tierP),
+of primes (\LeanStar{F1CW.coeff\_stabilises\_K}, \LeanStar{F1CW.colimit\_exists\_K} \tier{P}),
 gives
 \begin{equation}\label{eq:dedekind}
   \zeta_{\Q(\sqrt5)}(s)=\zeta(s)\,L(s,\chiv)
-  \qquad(\LeanInline{dedekind\_factorisation}\ \tierP).
+  \qquad(\LeanInline{dedekind\_factorisation}\ \tier{P}).
 \end{equation}
 
 \subsubsection{The pentagonal determination of the odd zeta values}\label{ssec:odd-zeta}
@@ -2202,26 +2202,26 @@ pentagonal points,
 \]
 \end{theorem}
 \leanline{\LeanInline{zeta\_odd\_pentagonal\_determination}, \LeanInline{dedekind\_factorisation},
-\LeanInline{hurwitz\_representation\_L\_chi5} \tierP, with axioms
+\LeanInline{hurwitz\_representation\_L\_chi5} \tier{P}, with axioms
 \texttt{[propext, Classical.choice, Quot.sound]} only, the first under the hypothesis
 $L(2k+1,\chiv)\neq0$; the hypothesis is discharged from Mathlib's non-vanishing of $L(s,\chiv)$ on
-$\Re s\ge1$ in \LeanInline{F1PaperNew.zeta\_odd\_pentagonal\_determination\_unconditional} \tierP.}
+$\Re s\ge1$ in \LeanInline{F1PaperNew.zeta\_odd\_pentagonal\_determination\_unconditional} \tier{P}.}
 
 Every object on the right-hand side is built from the pentagon, and $\zeta$ itself
 appears nowhere on it: the local factors of $\zeta_K$ are the products over the prime
 ideals of $\Zphi$ above $p$, $\prod_{\mathfrak p\mid p}(1-N\mathfrak p^{-s})^{-1}$, with
 the splitting type decided by the Frobenius of $\Zphi$
 (\LeanStar{F1CW.euler\_from\_ideals\_K}, \LeanStar{F1CW.ideal\_norm\_values\_K},
-\LeanStar{F1CW.degree\_formula\_K} \tierP); the
+\LeanStar{F1CW.degree\_formula\_K} \tier{P}); the
 Hurwitz arguments from the points $a/5$; the signs from $\chiv$.  In this sense the
 odd values are \emph{structurally determined} by the pentagonal arithmetic, and the
 determination is a theorem with the analytic objects of Mathlib.  What the theorem
 is not is an evaluation: it expresses $\zeta(2k+1)$ through $\zeta_K(2k+1)$ and the
 Hurwitz values at $a/5$, and says nothing about their arithmetic nature: that $\zeta(3)$ is irrational~\cite{apery79}, that infinitely many odd values are~\cite{ballrivoal01}, and that one of $\zeta(5),\zeta(7),\zeta(9),\zeta(11)$ is~\cite{zudilin01} are proved by other means, and the determination neither uses nor reproves them.  The even values, by contrast, are explicit,
-$\zeta(2k)\in\Q\,\pi^{2k}$ (\LeanInline{F1CW.even\_zeta\_bernoulli} \tierP), and so are
+$\zeta(2k)\in\Q\,\pi^{2k}$ (\LeanInline{F1CW.even\_zeta\_bernoulli} \tier{P}), and so are
 the even values of $L(s,\chiv)$, which lie in $\sqrt5\,\pi^{2k}\Q$ with rational
 coefficients given by Bernoulli polynomials at the points $a/5$: the rationality of the
-Bernoulli values is proved (\LeanInline{F1CW.bernoulli\_eval\_rational} \tierP), and the
+Bernoulli values is proved (\LeanInline{F1CW.bernoulli\_eval\_rational} \tier{P}), and the
 formula expressing $L(2k,\chiv)$ through them is classical\ \cite[Ch.~4]{washington97}:
 \[
   L(2k,\chiv)=\frac{(-1)^{k+1}\sqrt5\,(2\pi)^{2k}\,B_{2k,\chiv}}{2\,(2k)!\,5^{2k}},\qquad
@@ -2229,7 +2229,7 @@ formula expressing $L(2k,\chiv)$ through them is classical\ \cite[Ch.~4]{washing
 \]
 with $B_{2,\chiv}=\tfrac45$, $B_{4,\chiv}=-8$, $B_{6,\chiv}=\tfrac{804}5$, $B_{8,\chiv}=-5776$ in exact rational
 arithmetic, and the formula agreeing with the Hurwitz sums at the points $a/5$ to $40$ digits
-(\texttt{oz\_carried.py} \tierN); % pending(D7)
+(\texttt{oz\_carried.py} \tier{N}); % pending(D7)
 at $s=1$, $L(1,\chiv)=2\log\golden/\sqrt5$ (\cref{sec:mersenne}).
 
 \begin{remark}[What is known of the arithmetic nature of $L(s,\chiv)$]\label{rmk:nature-L}
@@ -2240,7 +2240,7 @@ would be transcendental by Lindemann's theorem~\cite{lindemann1882}; and
 transcendental at $s=2k$, where it is a nonzero element of $\sqrt5\,\pi^{2k}\Q$, by Lindemann's
 theorem for $\pi$; the step from that form to transcendence, for $L(2k,\chiv)$ and for
 $\sqrt5\,L(2k,\chiv)=\sum_{a=1}^{4}\chiv(a)\,\mathrm{Li}_{2k}(\zeta_5^{\,a})$ alike, is
-\LeanInline{F1OZ.even\_value\_transcendental} \tierP, whose inputs are the transcendence of $\pi$
+\LeanInline{F1OZ.even\_value\_transcendental} \tier{P}, whose inputs are the transcendence of $\pi$
 \cite{lindemann1882}\ and $L(2k,\chiv)\ne0$ (Mathlib's
 \texttt{DirichletCharacter.LFunction\_ne\_zero\_of\_one\_le\_re}).  At
 the odd $s=2k+1\ge3$ it is open.  For $s\ge2$ three statements are equivalent:
@@ -2252,19 +2252,19 @@ and $\sum_{a=1}^{4}\chiv(a)\,\zeta(s,a/5)\in5^{s}\,\overline{\Q}$.  Indeed, for 
   \qquad \mathrm{Li}_1(z)=-\log(1-z),
 \]
 because $\sum_{a=1}^{4}\chiv(a)\zeta_5^{\,an}=2\bigl(\cos\tfrac{2\pi n}5-\cos\tfrac{4\pi n}5\bigr)=\sqrt5\,\chiv(n)$
-(\LeanInline{F1OZ.fourier\_projection} \tierP; the two forms agree with the Hurwitz sums at $s=1,3,5$ to
-$40$ digits, \texttt{oz\_carried.py} \tierN); and $L(s,\chiv)$ is the Hurwitz sum divided by $5^{s}$.  Both % pending(D7)
-factors, $\sqrt5$ and $5^{s}$, are algebraic and nonzero (\LeanInline{PasosDelTexto.algebraic\_scale} \tierP),
+(\LeanInline{F1OZ.fourier\_projection} \tier{P}; the two forms agree with the Hurwitz sums at $s=1,3,5$ to
+$40$ digits, \texttt{oz\_carried.py} \tier{N}); and $L(s,\chiv)$ is the Hurwitz sum divided by $5^{s}$.  Both % pending(D7)
+factors, $\sqrt5$ and $5^{s}$, are algebraic and nonzero (\LeanInline{PasosDelTexto.algebraic\_scale} \tier{P}),
 which gives the equivalence; so the determination of \cref{thm:odd-zeta} does not decide whether
 $\zeta(2k+1)$ is irrational.  $\mathrm{Li}_s(\zeta_5^{\,a})=\sum_n\zeta_5^{\,an}n^{-s}$ is the discrete Fourier
 transform of $n^{-s}$ over $\Z/5$, and $L(s,\chiv)$ is its $\chiv$-projection.  At $s=1$ the form gives a second
 proof of the transcendence of $L(1,\chiv)$, as a logarithm of distances on the circle: $2\sin(\pi a/5)=|1-\zeta_5^{\,a}|$, with
 $|1-\zeta_5|^2=(5-\sqrt5)/2$, $|1-\zeta_5^2|^2=(5+\sqrt5)/2$ and ratio $\golden^2$
 (\LeanInline{F1OZ.normSq\_one\_sub\_zeta5}, \LeanInline{F1OZ.normSq\_one\_sub\_zeta5\_sq},
-\LeanInline{F1OZ.baker\_ratio} \tierP), so $\sqrt5\,L(1,\chiv)=\log\bigl(|1-\zeta_5^2|^2/|1-\zeta_5|^2\bigr)
+\LeanInline{F1OZ.baker\_ratio} \tier{P}), so $\sqrt5\,L(1,\chiv)=\log\bigl(|1-\zeta_5^2|^2/|1-\zeta_5|^2\bigr)
 =2\log\golden$, a nonzero linear form in logarithms of algebraic numbers, transcendental by Baker's theorem
 \ \cite{baker66}.  If $L(2k+1,\chiv)$ is transcendental, then $\zeta(2k+1)$ and $\zeta_K(2k+1)$ are not
-both algebraic, by \eqref{eq:dedekind} and \LeanInline{PasosDelTexto.algebraic\_scale} \tierP.  The linear form is the same for every $s$ --- the points $\zeta_5^{\,a}$ and the weights
+both algebraic, by \eqref{eq:dedekind} and \LeanInline{PasosDelTexto.algebraic\_scale} \tier{P}.  The linear form is the same for every $s$ --- the points $\zeta_5^{\,a}$ and the weights
 $\chiv(a)/\sqrt5$ --- and only the kernel $\mathrm{Li}_s$ changes; at $s=1$ it reduces to logarithms and at
 even $s$ to Bernoulli polynomials, and at odd $s\ge3$ to neither.  The predecessor version
 \cite{gonzalez26oddzeta} read this as the reason no cancellation is expected there; it is not an argument,
@@ -2275,7 +2275,7 @@ and the question is the open one above.
 The predecessor version \cite{gonzalez26oddzeta} asked whether $T_K=2\pi\log\golden$ appears in
 $\zeta_K(2k+1)$ through the Kronecker limit formula or Siegel units.  The classes modulo $20$ say where each
 factor of $T_K$ lives.  The class $19\equiv-1$ lies in the fibre $(1,0)$ of $G$
-(\LeanInline{degenerate\_orbits\_are\_transversals} \tierP), so a character of $\Z_2\times\Z_2$ is even
+(\LeanInline{degenerate\_orbits\_are\_transversals} \tier{P}), so a character of $\Z_2\times\Z_2$ is even
 exactly when it is trivial on the first component: of the four characters of \cref{thm:dedekind-natural},
 $1$ and $\chiv$ are even, and $\chi_4$ and $\chi_4\chiv$ are odd.  At $s=1$ the even character $\chiv$ carries
 the regulator, $L(1,\chiv)=2\log\golden/\sqrt5$ (\cref{thm:L1}), and the odd character $\chi_4\chiv$ of
@@ -2284,10 +2284,10 @@ $w=2$ and discriminant $-20$.  So the period is the product over the $\chiv$-fib
 \[
   T_K=2\pi\log\golden=5\,L(1,\chiv)\,L(1,\chi_4\chiv)
 \]
-(\LeanInline{F1OZ.period\_from\_the\_chi5\_fibre} \tierP\ given the two values).  At $s=2k+1$ the parity
+(\LeanInline{F1OZ.period\_from\_the\_chi5\_fibre} \tier{P}\ given the two values).  At $s=2k+1$ the parity
 decides.  An odd character has its odd values in $\Q\,\pi^{2k+1}$ times the square root of its conductor
 \ \cite[Ch.~4]{washington97}, as $L(3,\chi_4)=\pi^3/32$ and $L(3,\chi_4\chiv)=3\pi^3/(40\sqrt5)$
-(\texttt{oz\_carried.py} \tierN), and with $\pi=5\arccos(\golden/2)$ and $\sqrt5=2\golden-1$ % pending(D7)
+(\texttt{oz\_carried.py} \tier{N}), and with $\pi=5\arccos(\golden/2)$ and $\sqrt5=2\golden-1$ % pending(D7)
 (\eqref{eq:pentagon-id}) these are written in $\golden$; while $\zeta_K(2k+1)=\zeta(2k+1)\,L(2k+1,\chiv)$ is the
 product over the two even characters, the part without such a form.  The circle factor of $T_K$ continues at
 odd $s$ on the odd side of $G$, outside $\zeta_K$:
@@ -2360,7 +2360,7 @@ The kernels at the three classes of special values are:
 In all three cases, the organising structure is identical: the same
 $\chi_5(a)$-weights over the same pentagonal points $\{a/5\}_{a=1}^{4}$.
 \end{theorem}
-\leanline{\LeanInline{hurwitz\_representation\_L\_chi5} \tierP\ for \eqref{eq:hurwitz-rep} with
+\leanline{\LeanInline{hurwitz\_representation\_L\_chi5} \tier{P}\ for \eqref{eq:hurwitz-rep} with
 $\Re s>1$; its continuation and the kernels \eqref{eq:kernel-s1}--\eqref{eq:kernel-even}
 are classical.}
 
@@ -2377,7 +2377,7 @@ digamma function, combined with $\sum_{a=1}^{4}\chi_5(a) = 0$ (so the $1/(s-1)$ 
 cancel, and so does the term $\log 5$ from $5^{-s}$).  This yields
 $L(1,\chi_5) = -\sum_a\chi_5(a)\psi(a/5)/5$, which by Gauss's digamma theorem\ produces
 $2\log\golden/\sqrt{5}$, matching \cref{thm:L1}; equivalently
-$\sum_{a=1}^{4}\chi_5(a)\psi(a/5)=-2\sqrt5\log\golden$ (\LeanInline{F1OZ.digamma\_sum} \tierP\ from the
+$\sum_{a=1}^{4}\chi_5(a)\psi(a/5)=-2\sqrt5\log\golden$ (\LeanInline{F1OZ.digamma\_sum} \tier{P}\ from the
 two values of $L(1,\chiv)$).
 
 The kernel at even $s=2k$ uses
@@ -2407,7 +2407,7 @@ function at the points $a/5$: $\zeta$ with weight $1$ over $a=1,\dots,5$, and $L
 $a=1,\dots,4$.
 \end{proposition}
 \leanline{\LeanInline{ZetaPentagonal.riemannZeta\_pentagonal\_points}, \LeanInline{hurwitz\_representation\_L\_chi5},
-\LeanInline{dedekind\_factorisation} \tierP.}
+\LeanInline{dedekind\_factorisation} \tier{P}.}
 \begin{proof}
 For $\Re s>1$ the series $\sum n^{-s}$ converges absolutely, so it can be summed by residues modulo $5$: writing
 $n=5m+a$ with $1\le a\le5$ and $m\ge0$, $n^{-s}=5^{-s}(m+a/5)^{-s}$, and the sum over $m$ is $\zeta(s,a/5)$.  The
@@ -2439,7 +2439,7 @@ $\zeta_{\mathbb{Q}(\sqrt{5})}(2k+1)$ are built from the same values $\zeta(2k+1,
 weights $\chi_5(a)$ and the second as the product of the weighted and the unweighted sums.  No
 parameter beyond $\golden$, $\pi$, and the pentagonal arithmetic of
 $\mathbb{Q}(\sqrt{5})$ is required.
-\tierP
+\tier{P}%
 \end{corollary}
 
 \begin{proof}
@@ -2516,9 +2516,9 @@ At $s=3$ the local factors of $\zeta_K$ are fixed by $\chiv(p)$, which is read o
 (\cref{thm:s1}): at the inert primes $2$ and $3$, $f_K(2,3)=(1-2^{-6})^{-1}=\tfrac{64}{63}$ and
 $f_K(3,3)=\tfrac{729}{728}$; at the ramified prime, $f_K(5,3)=(1-5^{-3})^{-1}=\tfrac{125}{124}$; at the split
 prime $11$, $f_K(11,3)=\bigl(\tfrac{1331}{1330}\bigr)^2$ (\LeanInline{F1OZ.local\_factors\_at\_three}
-\tierP).  No parameter is chosen at any prime.  The two products give $\zeta_K(3)=1.027548\ldots$ and
+\tier{P}).  No parameter is chosen at any prime.  The two products give $\zeta_K(3)=1.027548\ldots$ and
 $L(3,\chiv)=0.85482\ldots$, and their ratio is $\zeta(3)=1.2020569\ldots$ (\cref{tab:zeta-values};
-\texttt{oz\_carried.py} \tierN). % pending(D7)
+\texttt{oz\_carried.py} \tier{N}). % pending(D7)
 \end{example}
 
 \begin{remark}[Structural versus closed-form determination]
@@ -2615,7 +2615,7 @@ every prime $p\ne5$.  So the degree-one count of $\mathcal O_K$ is not a Soul\'e
 polynomial, and $\zeta_K$ is not the zeta function of a scheme satisfying
 \eqref{eq:soule-condition} through that count.
 \end{proposition}
-\leanline{\LeanInline{F1v2.not\_soule}, \LeanInline{F1v2.degree\_one\_count} \tierP.}
+\leanline{\LeanInline{F1v2.not\_soule}, \LeanInline{F1v2.degree\_one\_count} \tier{P}.}
 
 \begin{proof}
 A split prime has two primes of degree one above it and an inert prime none, so the
@@ -2718,7 +2718,7 @@ For $\mathrm{Re}(s)>1$,
   \;=\; \int_1^\infty u^{-s}\,d\psi_K(u).
 \end{equation}
 \end{proposition}
-\leanline{\LeanInline{F1v2.local\_log\_deriv}, \LeanInline{F1v2.local\_dirichlet\_expansion} \tierP; the values of $\Lambda_K$: \LeanInline{F1CW.von\_mangoldt\_k\_values} \tierP.}
+\leanline{\LeanInline{F1v2.local\_log\_deriv}, \LeanInline{F1v2.local\_dirichlet\_expansion} \tier{P}; the values of $\Lambda_K$: \LeanInline{F1CW.von\_mangoldt\_k\_values} \tier{P}.}
 
 \begin{proof}
 The first equality is the standard logarithmic derivative of the
@@ -2758,7 +2758,7 @@ The factor $N(\mathfrak p^k)$ is the normalisation of the Connes--Consani formul
 the Lean statements below concern the local values of $\Lambda_K$ and the number of
 primes above $p$.
 \end{theorem}
-\leanline{\LeanInline{F1v2.pcf\_counting\_weights} \tierP\ for the weights at the prime-power norms, \LeanInline{F1v2.pcf\_counting\_local}, \LeanInline{F1v2.local\_log\_deriv} \tierP\ for the local assembly, the global identity being the Connes--Consani integral formula; its components are \tierP: \LeanInline{F1CW.von\_mangoldt\_k\_values} (the weights $\log N\mathfrak p$), \LeanInline{F1CW.kappa\_k\_two\_real\_places}, \LeanInline{F1CW.kappa\_k\_simple\_pole}, \LeanInline{F1CW.kappa\_per\_real\_place} (the archimedean density and its principal value).}
+\leanline{\LeanInline{F1v2.pcf\_counting\_weights} \tier{P}\ for the weights at the prime-power norms, \LeanInline{F1v2.pcf\_counting\_local}, \LeanInline{F1v2.local\_log\_deriv} \tier{P}\ for the local assembly, the global identity being the Connes--Consani integral formula; its components are \tier{P}: \LeanInline{F1CW.von\_mangoldt\_k\_values} (the weights $\log N\mathfrak p$), \LeanInline{F1CW.kappa\_k\_two\_real\_places}, \LeanInline{F1CW.kappa\_k\_simple\_pole}, \LeanInline{F1CW.kappa\_per\_real\_place} (the archimedean density and its principal value).}
 
 \begin{proof}
 Substituting~\eqref{eq:dlog-zetaK} into
@@ -2800,7 +2800,7 @@ with $r_1=2$, $r_2=0$, $h_K=1$, $R_K=\log\golden$, $w_K=2$ and $|\Delta_K|=5$, t
 \end{corollary}
 \leanline{\LeanInline{TodoEnLean.same\_logDeriv\_proportional}, \LeanInline{TodoEnLean.constant\_is\_one},
 \LeanInline{TodoEnLean.zetaK\_tendsto\_one}, \LeanInline{anchor\_is\_a\_crossed\_identity},
-\LeanInline{dedekind\_factorisation}, \LeanStar{F1CW.class\_number\_one\_K} \tierP\ given the class-number formula.}
+\LeanInline{dedekind\_factorisation}, \LeanStar{F1CW.class\_number\_one\_K} \tier{P}\ given the class-number formula.}
 \begin{proof}
 Two functions holomorphic and without zeros on the half-plane $\Re s>1$ with the same logarithmic derivative have
 a quotient of derivative zero, hence constant on that connected open set.  The Dirichlet series of $\zeta_K$ has
@@ -2873,9 +2873,9 @@ $\mathrm{Spec}\,\Z$.
 What is proved and what is classical here, exactly.  For $L(s,\chiv)$ the
 continuation and the functional equation are proved in Lean from Mathlib's Dirichlet
 $L$-functions (\LeanInline{functionalEquation\_chi5\_discharged},
-\LeanInline{hecke\_chi5\_derived} \tierP); for $\Re s>1$ the Euler products of $\zeta$
+\LeanInline{hecke\_chi5\_derived} \tier{P}); for $\Re s>1$ the Euler products of $\zeta$
 and $L(s,\chiv)$ and the factorisation $\zeta_K=\zeta\cdot L(\cdot,\chiv)$ are proved
-(\LeanInline{dedekind\_factorisation} \tierP).  The meromorphic continuation of
+(\LeanInline{dedekind\_factorisation} \tier{P}).  The meromorphic continuation of
 $\zeta_K$ to all of $\mathbb C$ is then the product of the two continuations; it is
 not stated separately in Lean, and the classical account is Hecke's
 \cite{hecke20} (see \cite[Ch.~VII]{neukirch99}).
@@ -2898,7 +2898,7 @@ $\{2^n\}$ sits inside the golden one; and $2$ is not an integer power of
 $\golden$.
 \end{proposition}
 \leanline{\LeanInline{mersenne\_bridge}, \LeanInline{binary\_tower\_inside\_golden},
-\LeanInline{lambda\_is\_not\_an\_integer} \tierP.}
+\LeanInline{lambda\_is\_not\_an\_integer} \tier{P}.}
 \begin{proof}
 The first identity is the definition of $\lng$ together with
 $\golden^{x}=e^{x\log\golden}$.  For the second: $n\mapsto\golden^n$ is strictly
@@ -2913,14 +2913,14 @@ derived from it.  The
 tower is discrete, and a real number is in it only if its logarithm is an integer
 multiple of $\log\golden$.  The bit itself is the kernel: $\log2=\log|\ker G|$, the
 kernel being exactly $\{1,9\}$ (\LeanInline{kernel\_is\_exactly\_one\_nine},
-\LeanInline{log\_two\_is\_log\_kernel} \tierP).
+\LeanInline{log\_two\_is\_log\_kernel} \tier{P}).
 
 The anchor is not special to $\golden$.  For every unit $\varepsilon>1$ of a real
 quadratic field, $\varepsilon^{-\log2/\log\varepsilon}=\tfrac12$; for $\golden$ the
 exponent is $\lng$, the half-turn is $\golden^{\lng/2}=\sqrt2$, and the counting in base
 $\golden$ is the counting in base $2$ rescaled, $\log_\golden T=\lng\log_2T$
 (\LeanInline{modulus\_transports}, \LeanInline{half\_three\_roles},
-\LeanInline{density\_exact} \tierP).  What singles out $\golden$ is not the anchor but the
+\LeanInline{density\_exact} \tier{P}).  What singles out $\golden$ is not the anchor but the
 conductor: the unit whose field has conductor $5$.
 
 The anchor also connects the arithmetic of $K$ to the one bit, $\log2$.  By \cref{thm:L1},
@@ -2928,7 +2928,7 @@ $L(1,\chiv)=2\log\golden/\sqrt5$, and then
 \begin{equation}\label{eq:log-two}
   \lng\cdot\frac{\sqrt5}2\,L(1,\chiv)=\lng\cdot R_K=\log2
 \end{equation}
-(\LeanInline{branches\_meet\_at\_log\_two} \tierP),
+(\LeanInline{branches\_meet\_at\_log\_two} \tier{P}),
 the regulator cancelling exactly.  \Cref{eq:log-two} is the arithmetic branch of
 the span of \cref{prop:span}, and $\log2=\log|\ker G|$ is where it meets the
 spectral branch.
@@ -2960,8 +2960,8 @@ Let $M=2^e-1$.
     Frobenius in $\mathbb{Q}(i,\sqrt{-3},\sqrt5)$, the field of the three lattices, is $(-1,+1,\pm1)$.
 \end{enumerate}
 \end{proposition}
-\leanline{\LeanInline{F1PaperPadic.mersenne\_mod\_five}, \LeanInline{F1PaperPadic.mersenne\_mod\_twenty}, \LeanInline{F1PaperPadic.mersenne\_mod\_sixty}, \LeanInline{F1PaperPadic.mersenne\_odd\_mod\_three}, \LeanInline{F1PaperPadic.fib\_succ\_zero\_iff\_inert}, \LeanInline{F1PaperPadic.mersenne\_inert\_rank}, \LeanInline{F1PaperPadic.mersenne\_classes\_checked}, \LeanInline{F1PaperPadic.mersenne\_frobenius\_three\_lattices} \tierP; \LeanInline{F1PCFUnified.mersenne\_mod\_four} \tierP;
-\LeanInline{F1PCFUnified.mersenne\_concentration\_general} \tierP{} \cite{gonzalez26mersenne}.}
+\leanline{\LeanInline{F1PaperPadic.mersenne\_mod\_five}, \LeanInline{F1PaperPadic.mersenne\_mod\_twenty}, \LeanInline{F1PaperPadic.mersenne\_mod\_sixty}, \LeanInline{F1PaperPadic.mersenne\_odd\_mod\_three}, \LeanInline{F1PaperPadic.fib\_succ\_zero\_iff\_inert}, \LeanInline{F1PaperPadic.mersenne\_inert\_rank}, \LeanInline{F1PaperPadic.mersenne\_classes\_checked}, \LeanInline{F1PaperPadic.mersenne\_frobenius\_three\_lattices} \tier{P}; \LeanInline{F1PCFUnified.mersenne\_mod\_four} \tier{P};
+\LeanInline{F1PCFUnified.mersenne\_concentration\_general} \tier{P} \cite{gonzalez26mersenne}.}
 \begin{proof}
 (i) Modulo $5$, $2$ has order four, with $2^e\equiv2,4,3,1$ for $e\equiv1,2,3,0\pmod4$; so $M\equiv1$ for $e\equiv1$
 and $M\equiv2$ for $e\equiv3$.  For $e\geq2$, $M\equiv-1\equiv3\pmod4$, and with (ii) the Chinese remainder theorem
@@ -3016,13 +3016,13 @@ Let $\Lambda(s,\chiv)=(5/\pi)^{s/2}\,\Gamma(s/2)\,L(s,\chiv)$ be the completed $
 \leanline{\LeanStar{F1v2.zeta\_values\_in\_base\_phi}, \LeanStar{F1v2.anchor\_in\_phi},
 \LeanStar{F1v2.sqrt5\_in\_phi}, \LeanStar{F1v2.pi\_and\_two\_in\_phi},
 \LeanStar{F1v2.zeta\_zero\_in\_phi}, \LeanStar{F1v2.even\_zeta\_in\_phi},
-\LeanInline{F1v2.even\_L\_in\_phi}, \LeanInline{F1v2.L2\_L4\_in\_phi} \tierP; the
+\LeanInline{F1v2.even\_L\_in\_phi}, \LeanInline{F1v2.L2\_L4\_in\_phi} \tier{P}; the
 anchor \LeanInline{anchor\_is\_a\_crossed\_identity} (given the values of the anchor,
 stated as \LeanInline{LOneIsTheAnchor}),
 \LeanInline{sqrt\_five\_from\_phi}, \LeanStar{F1CW.pi\_eq\_five\_arccos},
 \LeanInline{mersenne\_bridge}, \LeanStar{F1CW.even\_zeta\_bernoulli},
-\LeanInline{F1CW.norm\_cosine\_phi} \tierP; the class-number formula and the closed forms of
-$L(2,\chiv)$, $L(4,\chiv)$ \tierN.}
+\LeanInline{F1CW.norm\_cosine\_phi} \tier{P}; the class-number formula and the closed forms of
+$L(2,\chiv)$, $L(4,\chiv)$ \tier{N}.}
 
 \begin{proof}
 (i) $2\log\golden=\log\golden^2=\log(\golden+1)$; $\Lambda(1,\chiv)=(5/\pi)^{1/2}\Gamma(\tfrac12)L(1,\chiv)=\sqrt5\,L(1,\chiv)$,
@@ -3048,7 +3048,7 @@ $\zeta_K/L$ and the pentagonal points.  The rational coefficients $B_{2k}$ and $
 are untouched: $r_1=4/5^3$ and $r_2=8/(3\cdot5^4)$, and written against
 $\pi^{2k}/\sqrt5$ instead, $L(2,\chiv)=\tfrac4{25}\pi^2/\sqrt5$ and
 $L(4,\chiv)=\tfrac8{375}\pi^4/\sqrt5$, whose denominators $5^2$ and $3\cdot5^3$ can be read as carrying the
-conductor and the ternary (\LeanInline{denominators\_are\_conductor\_and\_ternary} \tierP\ for the factorisations).
+conductor and the ternary (\LeanInline{denominators\_are\_conductor\_and\_ternary} \tier{P}\ for the factorisations).
 \end{remark}
 
 % =====================================================================
@@ -3094,10 +3094,10 @@ $(\Zphi/2)^\times=\F_4^\times$ and the second is the norm $N(\golden^n)=(-1)^n$.
 \LeanInline{PCFGranularity.cover\_degree\_six}, \LeanInline{PCFGranularity.M\_six\_sub\_one},
 \LeanInline{PCFGranularity.colour\_factor\_has\_order\_three},
 \LeanInline{PCFGranularity.orientation\_factor\_has\_order\_two}, \LeanInline{f4phi\_order\_three},
-\LeanInline{toMu6\_bijective}, \LeanInline{generator\_to\_generator} \tierP; for (iii), the deck step and the two
+\LeanInline{toMu6\_bijective}, \LeanInline{generator\_to\_generator} \tier{P}; for (iii), the deck step and the two
 identifications on $\Z^2\times\Z$: \LeanInline{TodoEnLean.gam\_Dstep} ($\gamma\circ D=\mathrm{id}$),
 \LeanInline{TodoEnLean.gam6\_Dstep6} ($\gamma_6\circ D^6=\mathrm{id}$), \LeanInline{TodoEnLean.Dstep\_gam6}
-($D\gamma_6=\gamma_6D$), \LeanInline{TodoEnLean.Dstep\_iter\_shift} (the base shift of $D^k$ is $k$) \tierP; that the
+($D\gamma_6=\gamma_6D$), \LeanInline{TodoEnLean.Dstep\_iter\_shift} (the base shift of $D^k$ is $k$) \tier{P}; that the
 quotients by these properly discontinuous free actions are covering spaces\par}
 \end{theorem}
 
@@ -3170,11 +3170,11 @@ with the domain of $H$, is \emph{the operator}.
 {\raggedright \LeanInline{UnOperador.spec\_injective}, \LeanInline{UnOperador.norm\_spec},
 \LeanInline{UnOperador.spec\_polar}, \LeanInline{UnOperador.norm\_yDiag}, \LeanInline{UnOperador.forms\_from\_spec},
 \LeanInline{FibraYReloj.yDiag\_pow\_three}, \LeanInline{FibraYReloj.yDiag\_pow\_four},
-\LeanInline{FibraYReloj.yDiag\_injective}, \LeanInline{FibraYReloj.deck\_weyl} \tierP, on the eigenvalues; the
+\LeanInline{FibraYReloj.yDiag\_injective}, \LeanInline{FibraYReloj.deck\_weyl} \tier{P}, on the eigenvalues; the
 operator statements: \LeanInline{TodoEnLean.diagonal\_normal}, \LeanInline{TodoEnLean.commute\_diag\_offdiag},
 \LeanInline{TodoEnLean.commute\_diag\_is\_function}, \LeanInline{TodoEnLean.polar\_unique},
 \LeanInline{TodoEnLean.yDiag\_order\_six}, \LeanInline{TodoEnLean.spec\_deck},
-\LeanInline{TodoEnLean.function\_commutes\_with\_deck\_iff}, \LeanInline{TodoEnLean.modulus\_deck\_invariant} \tierP,
+\LeanInline{TodoEnLean.function\_commutes\_with\_deck\_iff}, \LeanInline{TodoEnLean.modulus\_deck\_invariant} \tier{P},
 the commutant on every finite set of levels, and entrywise on $\ell^2(\mathcal J)$ by the proof below\par}
 \end{theorem}
 
@@ -3252,9 +3252,9 @@ $\lambda_i/\lambda_j=\golden^{\,i-j}$ of the operator.
 \LeanStar{F1v2.frobenius\_on\_the\_line}, \LeanStar{F1v2.euler\_product\_from\_the\_line},
 \LeanStar{F1v2.plane\_from\_the\_line}, \LeanStar{F1v2.self\_measurement\_E3},
 \LeanStar{F1v2.ratio\_folds\_back}, \LeanStar{F1v2.E3\_closed\_under\_ratios},
-\LeanInline{F1v2.ratio\_norm} \tierP; \LeanInline{self\_measurement},
+\LeanInline{F1v2.ratio\_norm} \tier{P}; \LeanInline{self\_measurement},
 \LeanStar{F1CW.dirichlet\_is\_euler}, \LeanStar{F1CW.periodK},
-\LeanInline{isometry\_with\_common\_modulus₅}, \LeanStar{F1CW.hinge\_central\_charge} \tierP
+\LeanInline{isometry\_with\_common\_modulus₅}, \LeanStar{F1CW.hinge\_central\_charge} \tier{P}%
 \end{theorem}
 
 \begin{proof}
@@ -3293,8 +3293,8 @@ eigenvalues $\tfrac12\zeta_3^k$ of $\OmH$ form an equilateral triangle of radius
 permuted by $S_3$, with tripartite norms $\|P\|\|C\|\|F\|=\tfrac12$ (\cref{thm:norm-Omega-half}).
 \LeanInline{G\_kernel}, \LeanInline{contraction\_is\_kernel},
 \LeanInline{spectral\_uniqueness}, \LeanInline{mu\_ternary\_param}, \LeanInline{sigma\_ternary},
-\LeanInline{sigma\_mu\_is\_d\_times\_cos\_product}, \LeanInline{norm\_Omega\_is\_half} \tierP; they are components of
-\LeanInline{F1v2.S3\_E3\_c3\_from\_the\_euler\_product} \tierP
+\LeanInline{sigma\_mu\_is\_d\_times\_cos\_product}, \LeanInline{norm\_Omega\_is\_half} \tier{P}; they are components of
+\LeanInline{F1v2.S3\_E3\_c3\_from\_the\_euler\_product} \tier{P}%
 \end{theorem}
 
 \begin{proof}
@@ -3319,7 +3319,7 @@ $\golden^{\,i-j}$ of the operator boosts them by $\golden^{\pm2(i-j)}$.
 \LeanStar{F1v2.symF\_preserves\_disc}, \LeanStar{F1v2.discQ\_signature},
 \LeanStar{F1v2.norm\_form\_disc\_and\_reversed}, \LeanStar{F1v2.null\_boost\_plus},
 \LeanStar{F1v2.null\_boost\_minus}, \LeanStar{F1v2.null\_forms\_and\_rapidity},
-\LeanInline{F1v2.ratio\_boost} \tierP
+\LeanInline{F1v2.ratio\_boost} \tier{P}%
 \end{proposition}
 
 \begin{proof}
@@ -3337,7 +3337,7 @@ On the colour factor, $\OmH=\tfrac12\operatorname{diag}(1,\zeta_3,\zeta_3^2)$ (\
 $\tfrac12$ with real parts $\tfrac12,-\tfrac14,-\tfrac14$; the product of the moduli is
 $2^{-3}$ and that of the real parts is $2^{-5}$; the trace of the real parts is $0$;
 and $\tfrac12$ is the only positive value.
-\LeanInline{spectral\_positions\_values}, \LeanInline{eigenvalue\_half}, \LeanStar{F1CW.triad\_real\_parts}, \LeanInline{positive\_spectral\_half} \tierP
+\LeanInline{spectral\_positions\_values}, \LeanInline{eigenvalue\_half}, \LeanStar{F1CW.triad\_real\_parts}, \LeanInline{positive\_spectral\_half} \tier{P}%
 \end{proposition}
 
 Its spectrum is exact, not asymptotic, and it is fixed before any zero is
@@ -3349,8 +3349,8 @@ mentioned: this is the non-circularity requirement of
 The eigenvalues of $\OmH$ are $\tfrac12\zeta_3^{\,k}$.  The modulus $\tfrac12$ is $|2|_2$, the $2$-adic norm of the
 prime $2$, and by the product formula $|2|_2=1/|2|_\infty=\golden^{-\lambda_{\log}}$; the angle $\zeta_3$ is the angular part of $\golden$ at $2$ (\cref{prop:polar}).  Under either $2$-adic embedding of $\mathbb{Q}(\zeta_3)$ --- the two exchange $\zeta_3$ and $\zeta_3^2$ and permute the eigenvalues --- the spectrum is
 $\{|2|_2\,[\golden_2]^{\,k}\}_{k=0,1,2}$, the factorisation of \cref{thm:operator-forms} read $2$-adically.
-{\raggedright \LeanInline{F1PaperPadic.half\_is\_two\_adic\_norm\_of\_two}, \LeanInline{F1PaperPadic.polar\_at\_two}, \LeanInline{F1PaperPadic.minus\_fifteen\_is\_a\_two\_adic\_square} \tierP;
-\LeanInline{mu\_from\_tower} \tierP\par}
+{\raggedright \LeanInline{F1PaperPadic.half\_is\_two\_adic\_norm\_of\_two}, \LeanInline{F1PaperPadic.polar\_at\_two}, \LeanInline{F1PaperPadic.minus\_fifteen\_is\_a\_two\_adic\_square} \tier{P};
+\LeanInline{mu\_from\_tower} \tier{P}\par}
 \end{proposition}
 
 \subsubsection{One operator, several forms}\label{ssec:operator-forms}
@@ -3375,9 +3375,9 @@ Let $\Oone=HY$ be the operator of \cref{def:operators-J}.
   \item \emph{From the group.}  The three components $(P,C,F)$ of $\OmH$ are the three
     involutions $\sigma(s)=1-s$, $\tau(s)=\bar s$ and $\sigma\tau(s)=1-\bar s$ of the Klein group $V=\operatorname{im}G$:
     the assignment $(P,C,F)\mapsto(\sigma,\tau,\sigma\tau)$ is a bijection onto the three elements of $V$ other than the identity,
-    each of which is an involution (\LeanInline{ComponentesInvoluciones.components\_are\_the\_involutions} \tierP).  The involutions
+    each of which is an involution (\LeanInline{ComponentesInvoluciones.components\_are\_the\_involutions} \tier{P}).  The involutions
     come down from the parity and the reality of $\chiv$: negation $a\mapsto-a$ and inversion $a\mapsto a^{-1}$ on $\Zst$
-    preserve $\chiv$ because it is even and real (\LeanInline{both\_actions\_from\_one\_character} \tierP; the action on the zeros is \cref{prop:descent}).
+    preserve $\chiv$ because it is even and real (\LeanInline{both\_actions\_from\_one\_character} \tier{P}; the action on the zeros is \cref{prop:descent}).
   \item \emph{Isometric.}  Normalised, the spectrum is a column $\mathcal V\colon\mathbb{C}\to\mathbb{C}^3$ with $\mathcal V^\dagger\mathcal V=1$ (\cref{ssec:why-phi}); the diagonal unitary $\operatorname{diag}(i,\zeta_3)$, whose entries generate the rotations of the Gauss lattice $\Z[i]$ and of the Eisenstein lattice $\Z[\zeta_3]$, satisfies the same identity; and the norm of the operator is $\tfrac12$.
   \item \emph{Geometric.}  On the torus the Fibonacci matrix $M$ has no periodic
     frequency --- Fourier blindness, which is the irrationality of $\golden$ --- while
@@ -3425,20 +3425,20 @@ confocal pencil of \cref{ssec:joukowski}); the fifth face counted in the tally \
 \LeanInline{hpps\_parameters\_are\_the\_cocone}, \LeanInline{four\_parameters\_in\_phi},
 \LeanInline{Tstar\_rewritten\_in\_phi}, \LeanInline{eleven\_components\_anchored},
 \LeanInline{Tstar\_carries\_both\_faces}, \LeanInline{Tstar\_in\_connector\_clauses},
-\LeanInline{Tstar\_rewritten\_in\_phi} \tierP; the comparison of the faces is recorded as
+\LeanInline{Tstar\_rewritten\_in\_phi} \tier{P}; the comparison of the faces is recorded as
 \LeanTally{tstarPhi\_is\_the\_bridge}, \LeanTally{five\_faces\_four\_land};
 the identification of the components with the involutions in (iii), which the corpus takes as the hypothesis
 of \LeanInline{F1PCFUnified.operator\_is\_made\_of\_the\_group}, is proved in
-\LeanInline{ComponentesInvoluciones.components\_are\_the\_involutions} \tierP, and the
-descent of the involutions from $\chiv$ is \tierP; the third writing of (vii) is proved
+\LeanInline{ComponentesInvoluciones.components\_are\_the\_involutions} \tier{P}, and the
+descent of the involutions from $\chiv$ is \tier{P}; the third writing of (vii) is proved
 given the Mersenne clause as hypothesis (\LeanInline{Tstar\_in\_connector\_clauses});
-the agreement of $T^*(n)$ with $\gamma_n$ \tierN
+the agreement of $T^*(n)$ with $\gamma_n$ \tier{N}%
 \end{theorem}
 
 \begin{remark}[Why the ordinate form is the bridge]\label{rmk:tstar-bridge}
 Among the forms, only $T^*$ written in $\golden$ carries both the exponent $\lambda$ of the
 anchor and the ordinates of the zeros (recorded as \LeanTally{tstarPhi\_is\_the\_bridge}; the
-rewriting itself is \LeanInline{Tstar\_rewritten\_in\_phi} \tierP): the
+rewriting itself is \LeanInline{Tstar\_rewritten\_in\_phi} \tier{P}): the
 tower has the exponent but not the ordinates, the numerical form of
 \cite{gonzalez25hp} the ordinates but not the exponent.  Rewriting the operator of the Primitive Structure in base $\golden$ is therefore not a change of notation: it is what connects
 the operator of \cite{gonzalez25hp} with the tower of this paper, and through the tower
@@ -3457,7 +3457,7 @@ exactly six, the orientation flip order exactly two, and the Fibonacci matrix $M
 of determinant $-1$, has $\det M^2=1$ and $M^2=M+1$.
 \LeanInline{w\_cubed}, \LeanInline{w\_order\_three}, \LeanInline{z6\_is\_minus\_w\_squared},
 {\raggedright\LeanInline{deck\_order\_six}, \LeanInline{orientation\_order\_two}, \LeanInline{det\_M\_sq},
-\LeanInline{one\_identity\_three\_readings} \tierP\par}
+\LeanInline{one\_identity\_three\_readings} \tier{P}\par}
 \end{proposition}
 
 \begin{proposition}[The spectrum as free part times torsion;\newline the parameters of $T^*$ in $\golden$]\sloppy\label{prop:spectrum-free-torsion}
@@ -3479,7 +3479,7 @@ of determinant $-1$, has $\det M^2=1$ and $M^2=M+1$.
 \LeanInline{beta\_is\_inverse\_conductor\_units}, \LeanInline{alpha\_in\_phi},
 \LeanInline{fiftynine\_is\_M2\_times\_conductor\_minus\_one}, \LeanInline{sigma\_over\_mu\_is\_the\_ternary},
 \LeanInline{sigma\_plus\_mu\_is\_the\_diagonal\_trace}, \LeanInline{c\_excess}, \LeanInline{c\_above\_two},
-\LeanInline{det\_fixes\_mu}, \LeanInline{alpha\_from\_arity\_and\_conductor} \tierP
+\LeanInline{det\_fixes\_mu}, \LeanInline{alpha\_from\_arity\_and\_conductor} \tier{P}%
 \end{proposition}
 
 \begin{proposition}[The spectral pair read from $G$]\label{prop:pair-from-G}
@@ -3491,11 +3491,11 @@ $\mu=1/|\ker G|$, the product of the three cosines is $1/|\operatorname{im}G|$, 
 $|\operatorname{im}G|\cdot|\ker G|=8=\phi(20)$.  The same constants are clauses of the
 Mersenne bridge: $\sigma=M_2\golden^{-\lng}$, $\golden^{\lng}N=40$ and
 $\alpha_0=(M_2N-1)/(\golden^{\lng}N)$, with $M_2=3$ and $N=20$.
-\LeanInline{F1PaperNew.gCardinals\_of\_G}, \LeanInline{F1PaperNew.clauseFour\_holds} \tierP, which
+\LeanInline{F1PaperNew.gCardinals\_of\_G}, \LeanInline{F1PaperNew.clauseFour\_holds} \tier{P}, which
 close the hypotheses of \LeanInline{three\_readings\_are\_G\_invariants},
 \LeanInline{mu\_is\_kernel\_reciprocal}, \LeanInline{cos\_product\_is\_image\_reciprocal},
 \LeanInline{isomorphism\_theorem}, \LeanInline{sigma\_is\_M2\_over\_two},
-\LeanInline{forty\_is\_clause\_four\_times\_conductor}, \LeanInline{alpha\_from\_clauses} \tierP
+\LeanInline{forty\_is\_clause\_four\_times\_conductor}, \LeanInline{alpha\_from\_clauses} \tier{P}%
 \end{proposition}
 
 None of the parameters of the operator is fitted: each is a cardinal of $G$ or a clause of
@@ -3524,7 +3524,7 @@ the anchor.
 \LeanInline{isotypic\_invariant\_under\_dynamics}, \LeanInline{type\_zero\_is\_a\_level\_function},
 \LeanInline{no\_periodic\_frequency}, \LeanInline{det\_npow\_sub\_one}, \LeanInline{det\_npow\_sub\_one\_ne\_zero},
 \LeanInline{convergents\_are\_the\_entries\_of\_M\_pow}, \LeanInline{M\_cube\_sub\_one},
-\LeanInline{colour\_factor\_has\_order\_three}, \LeanInline{orientation\_factor\_has\_order\_two} \tierP
+\LeanInline{colour\_factor\_has\_order\_three}, \LeanInline{orientation\_factor\_has\_order\_two} \tier{P}%
 \end{proposition}
 
 The dynamics of \cref{prop:mu6-fourier}(iv) has two faces, one on the real torus and one at each prime, and the
@@ -3554,10 +3554,10 @@ Let $M$ act on the torus $\mathbb T=\R^2/\Z^2$.
 \LeanInline{DosCarasFibonacci.no\_periodic\_vector}, \LeanInline{DosCarasFibonacci.orbit\_injective},
 \LeanInline{PeriodicasSol.lefschetz\_counts}, \LeanInline{PeriodicasSol.wall\_samples},
 \LeanInline{PeriodicasSol.ramified\_five}, \LeanInline{PeriodicasSol.split\_eleven},
-\LeanInline{PeriodicasSol.inert\_three}, \LeanInline{PeriodicasSol.five\_tower} \tierP; in (i), that the kernel of an
+\LeanInline{PeriodicasSol.inert\_three}, \LeanInline{PeriodicasSol.five\_tower} \tier{P}; in (i), that the kernel of an
 endomorphism of the torus of nonzero determinant has $|\det|$ points, counted in Lean for $n<20$ and by
 enumeration for $n\le8$; in (ii), the divisibility for every prime, Wall's law, in Lean on eleven primes and
-by \texttt{retro109.py} for the primes below $400$ \tierN; in (iii), the passage from trigonometric polynomials to % pending(D7)
+by \texttt{retro109.py} for the primes below $400$ \tier{N}; in (iii), the passage from trigonometric polynomials to % pending(D7)
 $L^2$, by density\par}
 \end{proposition}
 
@@ -3611,10 +3611,10 @@ $|\Oone|=\operatorname{diag}(m_0\golden^{\sigma})$ and the ordinate operator $\o
 {\raggedright \LeanInline{PCFGranularity.deck\_invariant\_is\_level\_function}, \LeanInline{PCFGranularity.levelHom\_trivial},
 \LeanInline{PCFGranularity.mu6\_is\_not\_absorbable\_into\_the\_level}, \LeanInline{PCFGranularity.H\_not\_complete},
 \LeanInline{PCFGranularity.H\_degeneracy\_six}, \LeanInline{PCFGranularity.joint\_separates},
-\LeanInline{PCFGranularity.ccso\_unconditional} \tierP; \LeanInline{ObservablesDelNivel.commute\_poly},
+\LeanInline{PCFGranularity.ccso\_unconditional} \tier{P}; \LeanInline{ObservablesDelNivel.commute\_poly},
 \LeanInline{ObservablesDelNivel.weyl\_not\_commute}, \LeanInline{ObservablesDelNivel.zeta3\_not\_real},
-\LeanInline{FibraYReloj.deck\_weyl}, \LeanInline{FibraYReloj.yDiag\_injective}, \LeanInline{FibraYReloj.det\_M\_sub\_one} \tierP; (i) for Borel
-functions, the spectral theorem; in (iii), that a unitary character factors through the abelianisation; (iv) also \texttt{retro104.py} \tierN\par} % pending(D7)
+\LeanInline{FibraYReloj.deck\_weyl}, \LeanInline{FibraYReloj.yDiag\_injective}, \LeanInline{FibraYReloj.det\_M\_sub\_one} \tier{P}; (i) for Borel
+functions, the spectral theorem; in (iii), that a unitary character factors through the abelianisation; (iv) also \texttt{retro104.py} \tier{N}\par} % pending(D7)
 \end{proposition}
 
 \begin{proof}
@@ -3660,8 +3660,8 @@ Let $H$ be a self-adjoint operator on a finite-dimensional complex Hilbert space
   \item An operator of the level has every eigenvalue of multiplicity at least six.
 \end{enumerate}
 {\raggedright \LeanInline{EstructuraEnGUE.sector\_invariant}, \LeanInline{EstructuraEnGUE.skew\_quadratic\_zero},
-\LeanInline{EstructuraEnGUE.antiunitary\_sq\_neg\_one\_no\_fixed\_ray} \tierP; the commutants of (i) and the doublets of
-(ii) also \texttt{retro105.py} \tierN; the classes of (ii) are Dyson's \cite{dyson62threefold}\par} % pending(D7)
+\LeanInline{EstructuraEnGUE.antiunitary\_sq\_neg\_one\_no\_fixed\_ray} \tier{P}; the commutants of (i) and the doublets of
+(ii) also \texttt{retro105.py} \tier{N}; the classes of (ii) are Dyson's \cite{dyson62threefold}\par} % pending(D7)
 \end{proposition}
 
 \begin{proof}
@@ -3688,7 +3688,7 @@ $\chiv(pn)=\chiv(p)\chiv(n)$; and for $n$ prime to $5$ the twist is the Frobeniu
 $\Frob_n(\sqrt5)=\chiv(n)\sqrt5$.  The truncated twisted trace
 $\sum_{n<N}\chiv(n)n^{-s}$ is the partial sum of $L(s,\chiv)$.
 \LeanStar{U\_comp}, \LeanStar{U\_commute}, \LeanStar{covariance}, \LeanStar{twist\_is\_frobenius},
-\LeanInline{twistedTrace} \tierP
+\LeanInline{twistedTrace} \tier{P}%
 \end{proposition}
 
 \begin{remark}[What the space gives and what it does not]\label{rmk:space-gives}
@@ -3729,12 +3729,12 @@ last is a theorem; the last, the height of the first zero, is classical.
 
 \begin{longtable}{p{4.6cm}p{6.6cm}l}
 \toprule Input & Lean & Tier\\\midrule
-Functional equation of $\Lambda(s,\chiv)$ & \LeanInline{functionalEquation\_chi5\_discharged} & \tierP\\
-Companion zero (Hecke 1920) & \LeanInline{hecke\_chi5\_derived}, \LeanInline{zeros\_route\_is\_discharged} & \tierP\\
-$\overline{L(\bar s)}=L(s)$ & \LeanStar{hconj\_discharged} & \tierP\\
-Closure under the mate; real coefficients & \LeanStar{closedUnderMate\_chi5}, \LeanStar{realCoefficients\_chi5} & \tierP\\
-$|\gamma|\ge2$ for the zeros used & \LeanInline{discBound\_discharged\_high} & \tierP\\
-\texttt{hmate}: each zero has a zero $\rho'$ with $|1-1/\rho'|=|1-1/\rho|^{-1}$; \texttt{hcoord}: for $\Re\rho>0$, $|1-1/\rho|=1\iff\Re\rho=\tfrac12$ & \LeanInline{mate\_hypothesis\_discharged}, \LeanInline{hcoord\_discharged} & \tierP\\
+Functional equation of $\Lambda(s,\chiv)$ & \LeanInline{functionalEquation\_chi5\_discharged} & \tier{P}\\
+Companion zero (Hecke 1920) & \LeanInline{hecke\_chi5\_derived}, \LeanInline{zeros\_route\_is\_discharged} & \tier{P}\\
+$\overline{L(\bar s)}=L(s)$ & \LeanStar{hconj\_discharged} & \tier{P}\\
+Closure under the mate; real coefficients & \LeanStar{closedUnderMate\_chi5}, \LeanStar{realCoefficients\_chi5} & \tier{P}\\
+$|\gamma|\ge2$ for the zeros used & \LeanInline{discBound\_discharged\_high} & \tier{P}\\
+\texttt{hmate}: each zero has a zero $\rho'$ with $|1-1/\rho'|=|1-1/\rho|^{-1}$; \texttt{hcoord}: for $\Re\rho>0$, $|1-1/\rho|=1\iff\Re\rho=\tfrac12$ & \LeanInline{mate\_hypothesis\_discharged}, \LeanInline{hcoord\_discharged} & \tier{P}\\
 First zero at $\gamma\approx6.6485$ (\LeanInline{NoLowZeros}) & classical; not proved in Lean & classical\\
 \bottomrule\end{longtable}
 The root number of the functional equation is $+1$: the Gauss sum of $\chiv$ is $\tau(\chiv)=+\sqrt5$,
@@ -3753,12 +3753,12 @@ just once, in \cref{thm:reduction}.
 
 Let $\sigma(s)=1-s$ (the functional equation) and $\tau(s)=\bar s$ (conjugation).
 Both are involutions and they commute, so they generate a Klein four-group acting
-on $\C$ (\LeanInline{klein\_group\_relations} \tierP).  The composite
+on $\C$ (\LeanInline{klein\_group\_relations} \tier{P}).  The composite
 $\sigma\tau(s)=1-\bar s$ is the map that matters.
 
 \begin{proposition}[The critical line is a fixed set]\label{prop:stau}
 $1-\bar s=s$ if and only if $\Re s=\tfrac12$.
-\LeanInline{stau\_fixed\_iff\_critical} \tierP
+\LeanInline{stau\_fixed\_iff\_critical} \tier{P}%
 \end{proposition}
 \begin{proof}
 $1-\bar s=(1-\Re s)+i\,\Im s$, whose imaginary part always agrees with that of
@@ -3778,7 +3778,7 @@ it, the orbit is free of size four.  Consequently
   \Ecore\iff\text{the Klein action on the zero set has no free orbit,}
 \]
 \LeanInline{orbit\_on\_line\_degenerate}, \LeanInline{orbit\_off\_line\_free},
-\LeanInline{E\_iff\_no\_free\_orbit} \tierP.
+\LeanInline{E\_iff\_no\_free\_orbit} \tier{P}.
 \end{proposition}
 
 This is the first reformulation: \Ecore\ has become a statement about the absence of a configuration. A second form of the same reformulation removes the group and keeps
@@ -3789,7 +3789,7 @@ For a set $Z\subset\C$ closed under the mate, every point of $Z$ lies on the lin
 if and only if no two distinct points of $Z$ share an ordinate.  For the zeros of
 $L(s,\chiv)$ the hypothesis is discharged
 (\LeanStar{closedUnderMate\_chi5}), so the equivalence is unconditional.
-\LeanInline{E\_iff\_no\_shared\_ordinate}, \LeanInline{E\_iff\_no\_shared\_ordinate\_chi5} \tierP
+\LeanInline{E\_iff\_no\_shared\_ordinate}, \LeanInline{E\_iff\_no\_shared\_ordinate\_chi5} \tier{P}%
 \end{theorem}
 \begin{proof}
 If $\Re\rho\ne\tfrac12$ then the mate $1-\bar\rho$ is in $Z$, is distinct from
@@ -3802,7 +3802,7 @@ would be equal, since their real parts agree.
 An earlier version of the programme used a measured lower bound on the spacing of
 ordinates (\LeanInline{MinSpacing}) as an input.  It is a theorem on finite
 windows and its global form is refuted by the very configuration it was meant to
-exclude (\LeanInline{no\_uniform\_m\_of\_vanishing\_spacing} \tierP), so it is
+exclude (\LeanInline{no\_uniform\_m\_of\_vanishing\_spacing} \tier{P}), so it is
 used nowhere.  \Cref{thm:shared-ordinate} needs no metric bound: only that no two
 zeros coincide in ordinate, which is strictly weaker than repulsion.
 \end{remark}
@@ -3830,7 +3830,7 @@ zeros coincide in ordinate, which is strictly weaker than repulsion.
 \LeanInline{tau\_fixes\_iff\_half}, \LeanInline{closed\_under\_mate\_of\_fe\_rc},
 \LeanInline{chi5\_values\_are\_conj\_invariant}, \LeanInline{the\_series\_terms\_are\_conj\_stable},
 \LeanInline{the\_cardinal\_is\_the\_spectral\_position}, \LeanInline{the\_centre\_is\_the\_same\_for\_all\_zeros},
-\LeanInline{mem\_target\_iff\_spectralPoly\_zero}, \LeanInline{minSpacing\_on\_the\_spectrum} \tierP
+\LeanInline{mem\_target\_iff\_spectralPoly\_zero}, \LeanInline{minSpacing\_on\_the\_spectrum} \tier{P}%
 \end{proposition}
 
 \begin{remark}[The mate does not use the reality of the character]\label{rmk:mate-without-G}
@@ -3838,7 +3838,7 @@ zeros coincide in ordinate, which is strictly weaker than repulsion.
 $\chi$ the functional equation carries the zeros of $L(s,\chi)$ to those of $L(s,\bar\chi)$ by
 $\rho\mapsto1-\rho$, and $L(\bar s,\bar\chi)=\overline{L(s,\chi)}$ carries them back by conjugation; the
 composite is the mate, so the zero set of every $L(s,\chi)$ is closed under $\rho\mapsto1-\bar\rho$
-(\LeanInline{MateSinG.closed\_under\_mate\_of\_fe\_dual} \tierP; the functional equation).  The reality
+(\LeanInline{MateSinG.closed\_under\_mate\_of\_fe\_dual} \tier{P}; the functional equation).  The reality
 of $\chi$ --- modulo $20$, that $\chi$ factors through $G$, whose kernel is the set of squares
 (\cref{prop:G}) --- adds the other two involutions, and by \textup{(ii)} neither of them fixes a zero with
 $\gamma\ne0$ other than through the mate.  So the orbit dichotomy in its mate-only form
@@ -3867,14 +3867,14 @@ line and $4$ off it.
 \LeanInline{both\_actions\_from\_one\_character}, \LeanInline{inversion\_gives\_sigma},
 \LeanInline{negation\_gives\_tau}, \LeanInline{free\_orbit\_is\_inert},
 \LeanInline{klein\_orbits\_on\_Z20\_are\_two\_and\_four},
-\LeanInline{stau\_fixed\_iff\_critical} \tierP
+\LeanInline{stau\_fixed\_iff\_critical} \tier{P}%
 \end{proposition}
 
 \begin{remark}[The information of the chain]\label{rmk:descent-info}
 That the chain from generator to zeros is injective --- distinct generators giving
 distinct zero sets, $\golden\mapsto\gamma_1=6.6484$, $1+\sqrt2\mapsto\gamma_1=4.8999$ ---
-is a numerical observation (\LeanInline{descent\_loses\_nothing} \tierP\ given the
-injectivity as input \tierN), not part of \cref{prop:descent}.
+is a numerical observation (\LeanInline{descent\_loses\_nothing} \tier{P}\ given the
+injectivity as input \tier{N}), not part of \cref{prop:descent}.
 \end{remark}
 
 \subsubsection{The first contact: the orbit centre}\label{ssec:orbit-centre}
@@ -3885,7 +3885,7 @@ The first contact with the zeros is unconditional and costs nothing.
 For every $\rho\in\C$, the centre of the pair $\{\rho,1-\rho\}$ is $\tfrac12$,
 which is the positive eigenvalue of $\OmH$:
 $\Re\,\mathrm{ctr}(\rho,1-\rho)=\Re\OmH_0=\tfrac12$.
-\LeanInline{the\_orbit\_embedding\_is\_unconditional} \tierP
+\LeanInline{the\_orbit\_embedding\_is\_unconditional} \tier{P}%
 \end{proposition}
 
 Every zero therefore sits in the spectrum \emph{through its orbit}: the centre is
@@ -3909,14 +3909,14 @@ as a colimit.
   \item Any datum that every route projects to is the apex.
 \end{enumerate}
 \LeanInline{modulus\_cocone\_six\_routes}, \LeanInline{functional\_equation\_fixed\_line},
-\LeanInline{apex\_colimit\_universal} \tierP
+\LeanInline{apex\_colimit\_universal} \tier{P}%
 \end{proposition}
 
 The route through the reflection says where the apex lives.  In every commutative ring in which
 $2$ is invertible, $x\mapsto1-x$ has exactly one fixed point, $\tfrac12$; on $\mathbb{Z}$ it has
 none, and none on $\Zphi$ either, since $2$ is not a unit there
 (\LeanInline{F1Lawvere.reflection\_fixed\_iff}, \LeanInline{F1Lawvere.reflection\_fixedPointFree\_int},
-\LeanInline{F1Lawvere.reflection\_fixedPointFree\_Z\ensuremath{\omega}} \tierP).  So the apex is
+\LeanInline{F1Lawvere.reflection\_fixedPointFree\_Z\ensuremath{\omega}} \tier{P}).  So the apex is
 not an element of the ring the construction starts from.  It is reached in the golden tower, as
 $\golden^{-\lng}$, through the anchor $\golden^{\lng}=2$ (\cref{sec:mersenne}).
 
@@ -3931,16 +3931,16 @@ Write
 \]
 $r$ is the Apollonius coordinate of the pair $\{0,1\}$: the locus $r=1$ is the
 perpendicular bisector of the segment, that is, the critical line
-(\LeanInline{line\_is\_the\_unit\_circle}, \LeanInline{apollonius\_closes\_in\_lean} \tierP),
+(\LeanInline{line\_is\_the\_unit\_circle}, \LeanInline{apollonius\_closes\_in\_lean} \tier{P}),
 and the deviation $\alpha=(1-2\beta)/(\beta^2+\gamma^2)$ vanishes exactly there
-(\LeanInline{alpha\_zero\_iff\_r\_one} \tierP).  Two facts about $r$ are proved
+(\LeanInline{alpha\_zero\_iff\_r\_one} \tier{P}).  Two facts about $r$ are proved
 without any input beyond the strip.
 
 \begin{proposition}\label{prop:rbound}
 For $0<\beta<1$ and $\gamma\ne0$, $r(\rho)^2\le1+1/\gamma^2$.  With $|\gamma|\ge2$ this
 gives $t(\rho)\le2.0125$; with $|\gamma|\ge6.6485$, the height of the first zero, it
 gives $t(\rho)\le2.00013$.
-\LeanInline{rSq\_le\_in\_strip} \tierP; the height of the first zero is the classical
+\LeanInline{rSq\_le\_in\_strip} \tier{P}; the height of the first zero is the classical
 input \LeanInline{NoLowZeros}
 \end{proposition}
 
@@ -3949,7 +3949,7 @@ For a zero in the strip with $|\gamma|\ge2$,
 \[
   \bigl(\exists n\in\N,\ t(\rho)=n\bigr)\iff\Re\rho=\tfrac12 .
 \]
-\LeanInline{the\_two\_labels\_are\_one\_gap} \tierP
+\LeanInline{the\_two\_labels\_are\_one\_gap} \tier{P}%
 \end{proposition}
 \begin{proof}
 $t=r+1/r\ge2$ with equality exactly at $r=1$, and $r=1$ is the line by the
@@ -3961,7 +3961,7 @@ $[2,2.0125]$, an interval containing no integer other than $2$.
 that \Ecore\ is exactly the \emph{integrality} of one real number attached to
 each zero --- not its size, which the strip already bounds, but its being a whole
 number.  Bounding and quantising are different operations, and the corpus keeps
-them apart explicitly (\LeanInline{bounding\_is\_not\_quantising} \tierP).
+them apart explicitly (\LeanInline{bounding\_is\_not\_quantising} \tier{P}).
 
 \subsubsection{The zero as centre plus radius; its coordinate, discriminant and valuation}\label{ssec:coordinate}
 
@@ -3980,7 +3980,7 @@ it is real exactly on the line.  And the strip itself is the condition $|1-2\bet
 \LeanInline{the\_radius\_carries\_the\_whole\_ordinate}, \LeanInline{radius\_re\_bounded\_by\_the\_apex},
 \LeanInline{orbit\_radius\_vanishes\_iff\_E}, \LeanInline{the\_second\_radius\_does\_not\_fit},
 \LeanInline{e\_two\_from\_the\_centre}, \LeanInline{im\_zero\_iff\_product\_zero},
-\LeanInline{confinement\_is\_the\_strip} \tierP
+\LeanInline{confinement\_is\_the\_strip} \tier{P}%
 \end{proposition}
 
 \begin{proposition}[The Apollonius coordinate]\label{prop:apollonius-coordinate}
@@ -4010,7 +4010,7 @@ $|\rho-1|/|\rho|$, and its level sets are the Apollonius circles of the foci $0$
 \LeanInline{noLowZeros\_forces\_a\_small\_defect}, \LeanInline{height\_bounded\_by\_the\_defect},
 \LeanInline{real\_coord\_closed\_form}, \LeanInline{disc\_square\_196}, \LeanInline{disc\_closed\_form},
 \LeanInline{disc\_decays\_with\_height}, \LeanInline{disc\_zero\_iff\_half},
-\LeanInline{discBound\_of\_high\_gamma} \tierP
+\LeanInline{discBound\_of\_high\_gamma} \tier{P}%
 \end{proposition}
 
 \begin{proposition}[The tower seen by the discriminant and the valuation]\label{prop:tower-disc-val}
@@ -4034,7 +4034,7 @@ Let $v(x)=\log x/\log\golden$ be the golden valuation.
 \LeanInline{disc\_family\_is\_norm\_form}, \LeanInline{lucas\_sq\_sub\_five\_fib\_sq},
 \LeanInline{family\_disc\_ge\_one\_of\_ne\_zero}, \LeanInline{disc\_lt\_one\_iff\_phi\_window},
 \LeanInline{trace\_integral\_iff\_even}, \LeanInline{the\_zero\_pair\_in\_valPhi\_has\_opposite\_signs},
-\LeanInline{unconditional\_valPhi\_bound}, \LeanInline{the\_spectrum\_has\_one\_valuation} \tierP
+\LeanInline{unconditional\_valPhi\_bound}, \LeanInline{the\_spectrum\_has\_one\_valuation} \tier{P}%
 \end{proposition}
 
 \begin{proposition}[The Li map and its fixed point]\label{prop:li-map}
@@ -4052,7 +4052,7 @@ the powers escape: if $r(\rho)>1$, then $|\ell(\rho)^n|$ exceeds every bound.
 \LeanInline{li\_one\_is\_reciprocal\_sum}, \LeanInline{li\_zero\_vanishes},
 \LeanInline{term\_on\_circle}, \LeanInline{two\_minus\_two\_cos\_is\_square},
 \LeanInline{term\_nonneg\_on\_circle}, \LeanInline{liMap\_sq}, \LeanInline{liMap\_pair\_reciprocal},
-\LeanInline{off\_the\_line\_powers\_escape} \tierP
+\LeanInline{off\_the\_line\_powers\_escape} \tier{P}%
 \end{proposition}
 
 The Li map thus carries the three structures of the paper in one object: it has the
@@ -4067,9 +4067,9 @@ valuations of the tower are the integers.  So the coordinate is confined to the 
 stretch where the only level of the tower is $1$.  Membership adds exactly one thing:
 that the valuation is an integer.  Given that, it is $0$, the coordinate is $1$, and the
 zero is on the line (\LeanInline{integrality\_of\_valuation\_is\_E},
-\LeanInline{monomial\_alone\_gives\_E} \tierP).  Confinement alone does not give it: the
+\LeanInline{monomial\_alone\_gives\_E} \tier{P}).  Confinement alone does not give it: the
 number $\tfrac54$ has discriminant $\tfrac{81}{400}<1$, lies in the stretch, and is not a
-power of $\golden$ (\LeanInline{witness\_T3}, \LeanInline{witness\_not\_in\_family} \tierP).
+power of $\golden$ (\LeanInline{witness\_T3}, \LeanInline{witness\_not\_in\_family} \tier{P}).
 \end{remark}
 
 \subsubsection{The trace spectrum is discrete, and the bound selects one value}\label{ssec:trace-spectrum}
@@ -4082,8 +4082,8 @@ For even index the trace of the $k$-th power of the Fibonacci matrix is the Luca
 number $L_k$: the structural spectrum is $\{L_{2m}\}=\{2,3,7,18,47,\dots\}$, the
 first jump is $L_2-L_0=1$, and the only value below $3$ is $L_0=2$.
 \LeanInline{even\_index\_gives\_integer\_trace}, \LeanInline{target\_set\_is\_derived},
-\LeanInline{spectrum\_jumps}, \LeanInline{bound\_selects\_one} \tierP\ for the first five values;
-for every $m$, \LeanInline{F1PaperNew.even\_lucas\_below\_three\_iff} \tierP
+\LeanInline{spectrum\_jumps}, \LeanInline{bound\_selects\_one} \tier{P}\ for the first five values;
+for every $m$, \LeanInline{F1PaperNew.even\_lucas\_below\_three\_iff} \tier{P}%
 \end{proposition}
 
 \begin{corollary}\label{cor:value-is-kernel}
@@ -4091,7 +4091,7 @@ The surviving value $t=2$ is the value at which $r=1$ and $\Re\rho=\tfrac12$, an
 $\tfrac12=1/|\ker G|$: the eight classes of $\Zst$ fall into the four fibres of $G$
 two by two, so every fibre has the size of the kernel and the apex is its inverse
 (\LeanInline{the\_apex\_is\_the\_inverse\_fibre\_size},
-\LeanInline{every\_fibre\_has\_the\_kernel\_size} \tierP).  The chain of operators of
+\LeanInline{every\_fibre\_has\_the\_kernel\_size} \tier{P}).  The chain of operators of
 \cref{ssec:chain} closes at this value, in its seventh link, and it passes through $\tfrac12$, not through the equality of the two numbers
 $L_0=2$ and $|\ker G|=2$, which by itself is only an equality of integers
 (\LeanInline{the\_surviving\_value\_is\_the\_kernel}).
@@ -4104,10 +4104,10 @@ through the Joukowski map it is the focus of the confocal pencil of the line
 So the bound $t<3$ is not an approximate statement about a real number: between
 $2$ and $3$ the structural spectrum is empty, and the earlier reading in which
 the bound was $2.000001$ was an artefact of treating $\beta$ as a free parameter,
-a freedom the operator does not offer (\LeanInline{spectrum\_jumps} \tierP).
+a freedom the operator does not offer (\LeanInline{spectrum\_jumps} \tier{P}).
 With the integrality in hand the closure is exact:
 $t\in\Z$ together with $t<3$ gives $t=2$ and $r=1$
-(\LeanInline{trace\_integer\_plus\_bound} \tierP).
+(\LeanInline{trace\_integer\_plus\_bound} \tier{P}).
 
 \subsubsection{The geometry: Joukowski and the confocal pencil}\label{ssec:joukowski}
 
@@ -4124,7 +4124,7 @@ $w=(\rho-1)/\rho$, $|w|=r(\rho)=1$ is equivalent to $\Re\rho=\tfrac12$: the locu
 the $w$-plane is the unit circle, the circle on which the roots of unity, the
 twentieth among them, lie.
 \LeanInline{jouk\_circle\_to\_segment}, \LeanInline{pentagon\_is\_joukowski},
-\LeanInline{line\_is\_the\_unit\_circle}, \LeanInline{the\_locus\_is\_the\_circle} \tierP
+\LeanInline{line\_is\_the\_unit\_circle}, \LeanInline{the\_locus\_is\_the\_circle} \tier{P}%
 \end{proposition}
 
 \begin{proposition}[The confocal pencil]\label{prop:confocal}
@@ -4132,7 +4132,7 @@ With $a=r+1/r$ and $b=r-1/r$ one has $a^2-b^2=4$ for every $r\ne0$: the images o
 the circles $|z|=r$ form a confocal family with foci $\pm2$, independent of $r$.
 The ellipse degenerates exactly at $r=1$, where $b=0$ and $a=2$; the focus $2$ is
 the trace value $t=2$ of the line.
-\LeanInline{confocal\_always}, \LeanInline{degenerates\_iff\_one} \tierP
+\LeanInline{confocal\_always}, \LeanInline{degenerates\_iff\_one} \tier{P}%
 \end{proposition}
 
 The critical line is therefore the degenerate member of a pencil whose focus is
@@ -4146,29 +4146,29 @@ ellipse; the trace $t$ is its semi-major axis, and \cref{prop:lucas-spectrum} sa
 In the $\rho$-plane, the level sets of $r$ are the Apollonius circles of the pair
 $\{0,1\}$, degenerating to the critical line at $r=1$
 (\LeanInline{apollonius\_circle\_equation},
-\LeanInline{apollonius\_degenerates\_to\_the\_line} \tierP); the level sets of
+\LeanInline{apollonius\_degenerates\_to\_the\_line} \tier{P}); the level sets of
 $\arg w$ are the orthogonal coaxial pencil with the same limit points, and the
 critical line is their radical axis.  Under the Joukowski map the first family
 goes to the confocal ellipses of \cref{prop:confocal} and the second to the
 confocal hyperbolas, with the same foci $\pm2$
 (\LeanInline{orthogonal\_pencil\_maps\_to\_hyperbola},
 \LeanInline{hyperbolas\_share\_the\_foci}, \LeanInline{one\_confocal\_system},
-\LeanInline{two\_pencils\_one\_system} \tierP).  The numerator of $t$ is a circle
+\LeanInline{two\_pencils\_one\_system} \tier{P}).  The numerator of $t$ is a circle
 centred at $\tfrac12$ and its denominator is the Cassini oval with foci $0$ and
 $1$ (\LeanInline{numerator\_is\_a\_circle},
-\LeanInline{denominator\_is\_a\_cassini\_oval} \tierP).
+\LeanInline{denominator\_is\_a\_cassini\_oval} \tier{P}).
 \end{proposition}
 
 \begin{remark}[The nodes are golden, and $\Ecore$ is one-sided]\label{rmk:nodes}
 The images of the roots of unity under the Joukowski map lie in $[-2,2]$, the
 zeroth node being the focus $2$, and the pentagonal nodes are
 $\golden,1/\golden,-1/\golden,-\golden$
-(\LeanInline{nodes\_lie\_between\_the\_foci}, \LeanInline{zeroth\_node\_is\_the\_focus} \tierP;
-\LeanInline{pentagon\_nodes\_are\_golden} \tierP\ given the cosine values, which are
+(\LeanInline{nodes\_lie\_between\_the\_foci}, \LeanInline{zeroth\_node\_is\_the\_focus} \tier{P};
+\LeanInline{pentagon\_nodes\_are\_golden} \tier{P}\ given the cosine values, which are
 proved in \LeanStar{F1v2.pentagonNodes\_holds}, \LeanStar{F1v2.pentagon\_nodes\_unconditional}).  Moreover $t\ge2$ holds with no
 hypothesis --- it is the triangle inequality in the recentred coordinate
-(\LeanInline{trace\_ge\_two\_by\_triangle} \tierP) --- so \Ecore\ is one-sided:
-$t=2$ if and only if $t\le2$ (\LeanInline{E\_is\_one\_sided} \tierP).  The floor is
+(\LeanInline{trace\_ge\_two\_by\_triangle} \tier{P}) --- so \Ecore\ is one-sided:
+$t=2$ if and only if $t\le2$ (\LeanInline{E\_is\_one\_sided} \tier{P}).  The floor is
 geometry; only the ceiling is at stake, and \cref{prop:lucas-spectrum} is what
 would supply it.
 \end{remark}
@@ -4180,13 +4180,13 @@ the conics.  In it the statements of this section read: $e\le1$ for every zero
 (\cref{rmk:nodes}); the pair $\{\rho,1-\bar\rho\}$ shares its conic, since $r\mapsto1/r$ fixes $t$
 (\cref{prop:apollonius-coordinate}); $e>0.99993$ with the height of the first zero (\cref{prop:rbound}); $e=1$ exactly on the degenerate conic, $r=1$, the line (\cref{prop:joukowski}); and the structural values are
 $2/L_{2m}=1,\tfrac23,\tfrac27,\dots$, of which only $1$ lies above $\tfrac23$ (\cref{prop:lucas-spectrum}).
-\LeanInline{F1PaperClosure.eccentricity\_le\_one}, \LeanInline{F1PaperClosure.klein\_pair\_shares\_the\_conic}, \LeanInline{F1PaperClosure.eccentricity\_confined}, \LeanInline{F1PaperClosure.eccentricity\_eq\_one\_iff}, \LeanInline{F1PaperClosure.zero\_conic\_degenerate\_iff\_line}, \LeanInline{F1PaperClosure.integral\_trace\_gives\_degenerate} \tierP; the bound with the first zero
+\LeanInline{F1PaperClosure.eccentricity\_le\_one}, \LeanInline{F1PaperClosure.klein\_pair\_shares\_the\_conic}, \LeanInline{F1PaperClosure.eccentricity\_confined}, \LeanInline{F1PaperClosure.eccentricity\_eq\_one\_iff}, \LeanInline{F1PaperClosure.zero\_conic\_degenerate\_iff\_line}, \LeanInline{F1PaperClosure.integral\_trace\_gives\_degenerate} \tier{P}; the bound with the first zero
 \end{remark}
 
 \begin{remark}[Two integralities]\label{rmk:two-integralities}
 They should not be confused.  The Dirichlet coefficients of $L(s,\chiv)$ are
 integers unconditionally, since $\chiv$ takes values in $\{0,\pm1\}$
-(\LeanInline{chi5\_is\_integral} \tierP); the integrality of $t(\rho)$ is
+(\LeanInline{chi5\_is\_integral} \tier{P}); the integrality of $t(\rho)$ is
 conditional, and is exactly the core (\cref{prop:integrality-is-E}; the distinction is recorded as
 \LeanTally{two\_integralities}).
 \end{remark}
@@ -4201,27 +4201,27 @@ $r(\rho)^2\le1+1/\gamma^2$ of \cref{prop:rbound}.
 
 \begin{longtable}{clp{6.0cm}l}
 \toprule \# & Link & Content & Tier\\\midrule
-1 & \LeanStar{F1CW.tower\_ham\_is\_hermitian} Hermitian & real diagonal $\lambda_i=m_0\golden^i$ (\LeanInline{towerH}) & \tierP\\
-2 & ratios & $\lambda_i/\lambda_j=\golden^{\,i-j}$; $m_0$ cancels & \tierP\\
-3 & $k$ even & $t=L_k$, a Lucas number, hence an integer & \tierP\\
-4 & trace & the matrices $F^{k}$, $k$ even, lie in $SL_2(\Z)$ and are constructed, not posited & \tierP\\
-5 & norm & $N(r)=+1$ forces $k$ even & \tierP\\
-6 & bound & $t\le2.00013$ from the strip and $|\gamma|\ge6.6485$ (\cref{prop:rbound}) & \tierP,\,classical\\
-7 & value & $t=2$ is the value at which $\Re\rho=\tfrac12=1/|\ker G|$, the inverse of the fibre size of $G$ (\cref{cor:value-is-kernel}) & \tierP\\
-8 & closure & $t=2\iff r=1\iff\Re\rho=\tfrac12$ & \tierP\\
+1 & \LeanStar{F1CW.tower\_ham\_is\_hermitian} Hermitian & real diagonal $\lambda_i=m_0\golden^i$ (\LeanInline{towerH}) & \tier{P}\\
+2 & ratios & $\lambda_i/\lambda_j=\golden^{\,i-j}$; $m_0$ cancels & \tier{P}\\
+3 & $k$ even & $t=L_k$, a Lucas number, hence an integer & \tier{P}\\
+4 & trace & the matrices $F^{k}$, $k$ even, lie in $SL_2(\Z)$ and are constructed, not posited & \tier{P}\\
+5 & norm & $N(r)=+1$ forces $k$ even & \tier{P}\\
+6 & bound & $t\le2.00013$ from the strip and $|\gamma|\ge6.6485$ (\cref{prop:rbound}) & \tier{P},\,classical\\
+7 & value & $t=2$ is the value at which $\Re\rho=\tfrac12=1/|\ker G|$, the inverse of the fibre size of $G$ (\cref{cor:value-is-kernel}) & \tier{P}\\
+8 & closure & $t=2\iff r=1\iff\Re\rho=\tfrac12$ & \tier{P}\\
 \bottomrule\end{longtable}
 
 Two of these were weaker in earlier versions and are not now: link~6 was a
 numerical observation and is derived from the strip (\cref{prop:rbound}), and the existential
 ``$r(\rho)$ lies in the set of eigenvalue ratios'' was opaque and is now
 constructed, the witness being explicit
-(\LeanInline{existential\_is\_constructed} \tierP); on the line the exponent is
+(\LeanInline{existential\_is\_constructed} \tier{P}); on the line the exponent is
 $k=0$, again proved rather than measured
-(\LeanInline{k\_zero\_on\_the\_line} \tierP).  The integrality itself comes from
+(\LeanInline{k\_zero\_on\_the\_line} \tier{P}).  The integrality itself comes from
 the golden lattice: the trace of the operator is an algebraic integer of $\Zphi$
 and the traces are those of the Fibonacci matrix powers: $\mathrm{tr}\,F=1$,
 $\mathrm{tr}\,F^2=3$, $\mathrm{tr}\,F^4=7$ with the determinants $-1,1,1$
-(\LeanInline{the\_three\_pieces} \tierP; the assembly is \LeanTally{the\_count\_is\_the\_golden\_lattice}).
+(\LeanInline{the\_three\_pieces} \tier{P}; the assembly is \LeanTally{the\_count\_is\_the\_golden\_lattice}).
 
 The chain therefore produces an integer on the operator side, and
 \cref{prop:integrality-is-E} says that the same number on the zero side would
@@ -4237,16 +4237,16 @@ membership of $r$ in $\golden^{\Z}$ --- are related by two theorems, one of whic
 Let $r>0$ and $t=r+1/r$.
 \begin{enumerate}[label=\textup{(\alph*)}]
   \item If $t\in\Z$ and $t<3$, then $t=2$ and $r=1$.
-    \LeanInline{trace\_integer\_plus\_bound} \tierP
+    \LeanInline{trace\_integer\_plus\_bound} \tier{P}%
   \item If $r\in\Q(\sqrt5)$ and $t\in\Z$, then $r$ is a unit of $\OK=\Zphi$ and
     $r=\golden^{k}$ for some $k\in\Z$; for even $k$, $t=L_k$ is the trace of the
     Fibonacci matrix $F^k$.
-    \LeanInline{F1v2.arrowB\_full}, \LeanInline{F1v2.arrowB\_Q}, \LeanInline{F1v2.arrowB} \tierP\
+    \LeanInline{F1v2.arrowB\_full}, \LeanInline{F1v2.arrowB\_Q}, \LeanInline{F1v2.arrowB} \tier{P}\
     (the step into $\Zphi$ by the rational root theorem and the primality of $5$; the
     descent by \LeanInline{unit\_is\_a\_power\_of\_phi} with its three inputs proved)
   \item The hypothesis $r\in\Q(\sqrt5)$ in \textup{(b)} cannot be removed:
     $r=2+\sqrt3$ has $t=4\in\Z$ and is not a power of $\golden$
-    (\LeanInline{F1v2.arrow\_needs\_the\_field} \tierP).
+    (\LeanInline{F1v2.arrow\_needs\_the\_field} \tier{P}).
 \end{enumerate}
 \end{theorem}
 
@@ -4270,7 +4270,7 @@ What is open is that the number attached to a \emph{zero} has the property the
 operator's numbers have --- integrality of $t(\rho)$, or $r(\rho)\in\Q(\sqrt5)$
 together with it; this is the integrality form of \cref{ssec:core-forms}.  The witness for $r(\rho)$ is constructed whenever $r$ is known
 to be a spectral ratio (\LeanInline{the\_witness\_is\_constructed},
-\LeanInline{is\_a\_spectral\_ratio} \tierP), and knowing that is knowing \Ecore.
+\LeanInline{is\_a\_spectral\_ratio} \tier{P}), and knowing that is knowing \Ecore.
 \end{remark}
 
 \begin{remark}[A correction to the corpus]\label{rmk:unitstructure}
@@ -4305,11 +4305,11 @@ $r(\rho)=|1-1/\rho|$ its coordinate.
     the only integer in that interval is $2$.
   \item $r(\rho)=1$ exactly when $\beta=\tfrac12$.
 \end{enumerate}
-{\raggedright\LeanInline{functionalEquation\_chi5\_discharged} \tierP, \LeanStar{realCoefficients\_chi5},
+{\raggedright\LeanInline{functionalEquation\_chi5\_discharged} \tier{P}, \LeanStar{realCoefficients\_chi5},
 \LeanStar{closedUnderMate\_chi5}, \LeanStar{F1PaperNew.zIsAVSet\_chi5};
 \LeanInline{the\_orbit\_embedding\_is\_unconditional}, \LeanInline{orbit\_card\_upstairs},
 \LeanInline{where\_the\_chain\_breaks}, \LeanInline{rSq\_le\_in\_strip},
-\LeanInline{trace\_ge\_two\_by\_triangle}, \LeanInline{liMap\_on\_unit\_circle\_iff} \tierP;
+\LeanInline{trace\_ge\_two\_by\_triangle}, \LeanInline{liMap\_on\_unit\_circle\_iff} \tier{P};
 the height of the first zero\par}
 \end{proposition}
 
@@ -4333,10 +4333,10 @@ parameter of \cref{ssec:omega}.  \LeanInline{TernaryLZero}
 
 \begin{proposition}\label{prop:squeeze}
 Every ternary $L$-zero has $\beta=\tfrac12$
-(\LeanInline{rh\_squeeze} \tierP), and a $\chiv$-zero becomes one as soon as the
+(\LeanInline{rh\_squeeze} \tier{P}), and a $\chiv$-zero becomes one as soon as the
 upper bound holds for all zeros, the companion bound being then automatic
 (\LeanInline{TernaryLZero.ofChi5Zero}, \LeanInline{rh\_squeeze\_derived},
-\LeanInline{rigidity\_forces\_sign} \tierP).
+\LeanInline{rigidity\_forces\_sign} \tier{P}).
 \end{proposition}
 
 The step from the bound to \Ecore\ is therefore proved; the honest accounting is
@@ -4344,7 +4344,7 @@ what the bound costs.
 
 \begin{proposition}[Premise A is not weaker than the conclusion]\label{prop:premiseA}
 $(\forall z,\ \Re z.\rho\le\mu_3)\iff(\forall z,\ \Re z.\rho=\tfrac12)$.
-\LeanInline{premise\_A\_iff\_GRH\_chi5} \tierP
+\LeanInline{premise\_A\_iff\_GRH\_chi5} \tier{P}%
 \end{proposition}
 \begin{proof}
 One direction is \cref{prop:squeeze}.  The other is immediate.
@@ -4354,7 +4354,7 @@ So the squeeze turns \Ecore\ into an upper bound, $\Re\rho\le\tfrac12$ for every
 condition~(i) of \cref{thm:topological-proof}.  The same must be said of the functional equation by
 itself: invariance of the zero set under $s\mapsto1-s$ does not place any zero,
 since the pair $\{\rho,1-\rho\}$ is invariant for every $\rho$
-(\LeanInline{bound\_alone\_insufficient} \tierP).  What the rest of this section
+(\LeanInline{bound\_alone\_insufficient} \tier{P}).  What the rest of this section
 does is look for the bound elsewhere: in an operator whose spectrum is known
 exactly.
 
@@ -4369,7 +4369,7 @@ not a separate assumption.
 Assume \LeanInline{BridgeAxiom} for $\beta$, the strip, and the companion.  Then
 $\beta=\tfrac12$; equivalently $|\rho-1|=|\rho|$; equivalently
 $r=1=\golden^0$ lies in the golden tower.
-\LeanInline{the\_membership\_derived} \tierP
+\LeanInline{the\_membership\_derived} \tier{P}%
 \end{theorem}
 
 The corpus tallies eight ingredients of the derivation, five proved in Lean and three
@@ -4389,7 +4389,7 @@ Both branches have source $G$: the arithmetic branch through the character
 $\chiv=(-1)^{\pi_2\circ G}$, the Euler factors and $L(1,\chiv)$; the spectral
 branch through $|\ker G|=2$ and the modulus $\mu_3=\tfrac12$.  They meet at
 $\log2=\log|\ker G|$, which is the entropy bridge of \cref{eq:log-two}.
-\LeanInline{branches\_meet\_at\_log\_two}, \LeanInline{G\_kernel}, \LeanInline{G\_pi2\_is\_chi5} \tierP;
+\LeanInline{branches\_meet\_at\_log\_two}, \LeanInline{G\_kernel}, \LeanInline{G\_pi2\_is\_chi5} \tier{P};
 the span as a whole is recorded as \LeanTally{the\_span\_is\_the\_identification}.
 \end{proposition}
 
@@ -4397,9 +4397,9 @@ the span as a whole is recorded as \LeanTally{the\_span\_is\_the\_identification
 The corpus assembles three pieces that the earlier manuscript called on to discharge
 \LeanInline{BridgeAxiom}.  What is proved of them is: the identity
 $\lng\cdot\tfrac{\sqrt5}2\cdot L(1,\chiv)=\log2$ given the value of $L(1,\chiv)$
-(\LeanInline{branches\_meet\_at\_log\_two} \tierP); that $G$ is a homomorphism whose second
+(\LeanInline{branches\_meet\_at\_log\_two} \tier{P}); that $G$ is a homomorphism whose second
 component is $\chiv$, so $\chiv=(-1)^{\pi_2\circ G}$ (\LeanInline{G\_hom},
-\LeanInline{G\_pi2\_is\_chi5} \tierP); that $\ker G=\{1,9\}$ and $\mu_3=1/|\ker G|$; and
+\LeanInline{G\_pi2\_is\_chi5} \tier{P}); that $\ker G=\{1,9\}$ and $\mu_3=1/|\ker G|$; and
 that a third constant of the construction is positive.  The corpus collects these in
 \LeanTally{the\_bridge\_pieces\_formalized}, which also checks the homomorphism on two
 products and the character on two classes.
@@ -4428,7 +4428,7 @@ The bridge of \cite{gonzalez25hp} is a chain whose links are theorems:
 \end{enumerate}
 The last link --- that the real part of each zero is a spectral position --- is the spectral
 identification; given it, every zero lies on the line.
-\LeanInline{bridge\_components}, \LeanInline{bridge\_assembled} \tierP
+\LeanInline{bridge\_components}, \LeanInline{bridge\_assembled} \tier{P}%
 \end{proposition}
 
 The spectral identification is one of the forms of the open statement (\cref{ssec:core-forms}), and the
@@ -4456,8 +4456,8 @@ statement of each stage names the Lean declarations that carry it.
 The only input is the golden ratio as the positive root of $x^2=x+1$, which is also
 the diagonal of the regular pentagon: $\golden=2\cos(\pi/5)=1+\zeta_5+\zeta_5^4$
 (\LeanInline{phi\_sq}, \LeanInline{phi\_eq\_two\_cos\_pi\_fifth},
-\LeanInline{phi\_cyclotomic\_inscription} \tierP).  It is the only positive root of
-$x^2=x+1$ (\LeanInline{golden\_fixed\_point\_unique} \tierP), and it is a fixed point of self-reference in two independent forms, the
+\LeanInline{phi\_cyclotomic\_inscription} \tier{P}).  It is the only positive root of
+$x^2=x+1$ (\LeanInline{golden\_fixed\_point\_unique} \tier{P}), and it is a fixed point of self-reference in two independent forms, the
 continued fraction $\golden=1+1/\golden$ and the nested radical
 $\golden=\sqrt{1+\golden}$ (\cref{lem:phi-cf,lem:phi-nr}).  Everything below is derived from this.
 
@@ -4467,20 +4467,20 @@ The pentagon fixes the factor $5$ and the quarter turn $i^4=1$ fixes the factor 
 (\cref{prop:conductor}), and the recurrence itself returns the conductor: the
 Fibonacci sequence modulo $5$ has period $20$ (\cref{prop:pisano});
 the conductor $20=\operatorname{lcm}(4,5)$ is derived, not chosen
-(\LeanInline{conductor\_is\_derived}, \LeanInline{conductor\_is\_joint\_period} \tierP).
+(\LeanInline{conductor\_is\_derived}, \LeanInline{conductor\_is\_joint\_period} \tier{P}).
 On $\Zst$ the Galois functor $G\colon\Zst\to\Z_2\times\Z_2$ is a surjective
 homomorphism whose components are $\chi_4$ and $\chiv$, with kernel $\{1,9\}$
 (\cref{prop:G}).  The component $\chiv$ is read directly off the pentagon:
 $|2\cos(\pi a/5)|=\golden^{\chiv(a)}$ (\cref{thm:pentagonal-values}).  The two
 factors separate the two characters, each blind to the other
-(\LeanInline{conductor\_attribution} \tierP), and the
+(\LeanInline{conductor\_attribution} \tier{P}), and the
 crystallographic restriction explains why only the $5$-side can carry a tower
 (\cref{prop:crystallographic,prop:unit-ranks}).
 
 The primes enter here, and they enter as \emph{classes}: every prime $p\nmid20$
 falls into one of the eight classes of $\Zst$, and the primes meet all four fibres of
 $G$ (\LeanInline{primes\_hit\_all\_four\_fibres}, \LeanInline{primes\_reach\_the\_tower}
-\tierP).  What a prime \emph{is}, for everything that follows, is its fibre: split or
+\tier{P}).  What a prime \emph{is}, for everything that follows, is its fibre: split or
 inert, decided by the geometry of the pentagon and the turn.  No list of primes and
 no property of their distribution is used.
 
@@ -4514,8 +4514,8 @@ Frobenius of Stage~2: $\det(1-p^{-s}M_p)=(1-p^{-s})(1-\chiv(p)p^{-s})$, with
 $\Frob_p(\sqrt5)=\chiv(p)\sqrt5$ (\cref{thm:frob-eigen,lem:psi-to-euler}).  The local factors, one per
 fibre, are \eqref{eq:local-K}; the Euler product is their colimit over finite sets of
 primes, each coefficient being fixed at a finite stage
-(\LeanStar{F1CW.coeff\_stabilises\_K}, \LeanStar{F1CW.colimit\_exists\_K} \tierP); the Dirichlet series $\sum n^{-s}$ is the Euler product of $\zeta$
-(\LeanInline{F1CW.dirichlet\_is\_euler} \tierP); and the
+(\LeanStar{F1CW.coeff\_stabilises\_K}, \LeanStar{F1CW.colimit\_exists\_K} \tier{P}); the Dirichlet series $\sum n^{-s}$ is the Euler product of $\zeta$
+(\LeanInline{F1CW.dirichlet\_is\_euler} \tier{P}); and the
 Dedekind factorisation $\zeta_K=\zeta\cdot L(\cdot,\chiv)$ holds factor by factor and
 globally, with Mathlib's analytic objects (\cref{eq:dedekind}), as a natural
 isomorphism that is universal among such factorisations
@@ -4534,7 +4534,7 @@ spectra of Stage~2: multiplicatively, the powers compose; additively,
 $\golden^{n+1}=F_{n+1}\golden+F_n$, so multiplication in the tower reads as addition
 of Fibonacci coordinates and adjacent powers carry
 (\cref{ssec:fib-coords}, \cref{prop:binet}, \LeanInline{multiplicative\_reads\_as\_additive},
-\LeanInline{carry\_in\_base\_phi} \tierP).  The logarithm turns the tower into the
+\LeanInline{carry\_in\_base\_phi} \tier{P}).  The logarithm turns the tower into the
 exponent lattice $X_{\PCF}=\log\golden\cdot\Z$, the additive monoid on which the lifts
 act as multiplication by $p$ (\cref{thm:lambda-monoid,cor:frob-as-mul}).  The anchor also measures
 the arithmetic: $\lng\cdot R_K=\lng\cdot\frac{\sqrt5}2L(1,\chiv)=\log2$, the regulator
@@ -4549,7 +4549,7 @@ The function yields operators with exact spectra, built before any zero is menti
 The eigenvalue triad $\OmH=\tfrac12\operatorname{diag}(1,\zeta_3,\zeta_3^2)$ has
 real parts $\tfrac12,-\tfrac14,-\tfrac14$, only $\tfrac12$ positive, and its three
 component norms multiply to $\tfrac12$ (\LeanInline{positive\_spectral\_half},
-\LeanInline{norm\_Omega\_is\_half} \tierP).  The tower Hamiltonian $\mathrm{diag}(m_0\golden^{i})$, with $m_0>0$ a scale, is Hermitian, its eigenvalue ratios are
+\LeanInline{norm\_Omega\_is\_half} \tier{P}).  The tower Hamiltonian $\mathrm{diag}(m_0\golden^{i})$, with $m_0>0$ a scale, is Hermitian, its eigenvalue ratios are
 $\golden^{i-j}$, and for even index the traces of the Fibonacci matrix powers are
 Lucas numbers, integral, with discrete values $2,3,7,18,47,\dots$, the value $2$
 being the one at which $\Re\rho=\tfrac12=1/|\ker G|$ (\cref{thm:one-operator} for the operator and \cref{thm:operator-forms} for its forms, and \cref{cor:no-diagonal-spectral} for the bound $\|\OmH\|=\tfrac12<1$;
@@ -4576,7 +4576,7 @@ $\tfrac12$, the positive eigenvalue of $\OmH$
 (\LeanInline{zeros\_enter\_the\_cocone\_by\_the\_involution},
 \LeanInline{centre\_descends}, \cref{prop:orbit-embedding}); the apex that receives
 the primes, the operator, the monoid and the archimedean place also receives the
-zeros (\LeanInline{the\_apex\_receives\_from\_five\_legs\_including\_the\_zeros} \tierP).
+zeros (\LeanInline{the\_apex\_receives\_from\_five\_legs\_including\_the\_zeros} \tier{P}).
 
 \emph{The line.}  The critical line is the fixed set of $s\mapsto1-\bar s$ in the
 Klein group generated by the functional equation and conjugation
@@ -4601,9 +4601,9 @@ $2$ (\cref{prop:lucas-spectrum}); integrality of the trace with that bound gives
 $t=2$ and $r=1$ directly, and inside $\Q(\sqrt5)$ it is the same as membership in
 the tower (\cref{thm:arrow}).  Position is then interval meets discreteness: an integer power of
 $\golden$ in the window $|\log r|<\log\golden$ is $\golden^0$, so $r=1$ and
-$\Re\rho=\tfrac12$ (\LeanInline{position\_is\_interval\_meets\_discreteness} \tierP).
+$\Re\rho=\tfrac12$ (\LeanInline{position\_is\_interval\_meets\_discreteness} \tier{P}).
 Membership follows from the bridge with its inputs named
-(\cref{thm:membership}), and the multiplicative half of \Ecore, $r\cdot r'=1$, holds on every zero, so that the additive half $r+r'=2$ alone would close it (\LeanInline{coords\_closed\_under\_inversion}, \LeanInline{union\_of\_halves\_is\_E} \tierP).
+(\cref{thm:membership}), and the multiplicative half of \Ecore, $r\cdot r'=1$, holds on every zero, so that the additive half $r+r'=2$ alone would close it (\LeanInline{coords\_closed\_under\_inversion}, \LeanInline{union\_of\_halves\_is\_E} \tier{P}).
 
 \subsubsection{The thread, assembled}\label{ssec:thread}
 
@@ -4629,7 +4629,7 @@ forms of \cref{ssec:core-forms}):
 \end{enumerate}
 \LeanInline{rh\_squeeze\_derived}, \LeanInline{position\_is\_interval\_meets\_discreteness}, \LeanInline{radius\_one\_is\_E},
 \LeanInline{the\_two\_labels\_are\_one\_gap},
-\LeanInline{E\_iff\_no\_shared\_ordinate\_chi5} \tierP/\tierP
+\LeanInline{E\_iff\_no\_shared\_ordinate\_chi5} \tier{P}/\tier{P}%
 (for (i) the bound over all zeros; for (ii) given $r(\rho)=\golden^k$; for (iii)
 given $t(\rho)\in\Z$ and $|\Im\rho|\ge2$).
 \end{theorem}
@@ -4686,7 +4686,7 @@ with its two orbit sizes, induced by $\chiv$.  What remains is the verdict on th
 $L(s,\chiv)$: the descended invariant is the size of the Klein orbit of a zero, two on the line and four off it
 (\cref{prop:orbits,prop:descent}), and the verdict is which of the two values each zero takes; and
 the four links of \cref{thm:topological-proof} are four ways of stating that last
-step (\LeanInline{everything\_descends\_but\_the\_verdict} \tierP).  The corpus has
+step (\LeanInline{everything\_descends\_but\_the\_verdict} \tier{P}).  The corpus has
 the span that would carry it constructed with its two branches (\cref{prop:span}),
 integrality of the trace shown to force $r=1$ and, inside $\Q(\sqrt5)$, to be
 membership in the tower (\cref{thm:arrow}), and the multiplicative half proved on

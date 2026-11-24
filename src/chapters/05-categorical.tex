@@ -57,7 +57,7 @@ achieves is the following.
   \item \emph{What is missing is known exactly.}  The positions are approximated, the primes belong and
     the zeros enter the structure (\cref{prop:positions,prop:membership-proved}); what remains is precision, of the real part --- that each zero is a member, $r=1$, the open
     statement --- and of the height, which makes the operator exact; the exact heights tie the second to the first, since the height fixes the phase and the
-    isometry the modulus (\cref{prop:phase-modulus}).  The fluctuation is a function on the torus of the circles of the primes, read along the line (\cref{prop:torus-line}), and its law is the same along the line, at random points of the torus and on the zeros \tierN\ (\cref{ssec:fluct-geometry});
+    isometry the modulus (\cref{prop:phase-modulus}).  The fluctuation is a function on the torus of the circles of the primes, read along the line (\cref{prop:torus-line}), and its law is the same along the line, at random points of the torus and on the zeros \tier{N}\ (\cref{ssec:fluct-geometry});
     the classes are the part of the law already in hand, and what the law has to predict is
     fixed by the local factors (\cref{prop:what-fluctuation-takes}); the resolution it has to reach is measured, of
     order $1/T$ at height $T$.
@@ -96,7 +96,7 @@ $0.020$ (\cref{ssec:weil-closure}).  That is significant, but it decides nothing
 computation of the kind that located the zeros one by one in Odlyzko's work \cite{odlyzko87}: it
 confirms, and it uses the primes as data, so as a construction it is circular; and it does not
 converge --- with the primes summed up to a fixed $X$, the error has a minimum at a finite $X$ and more primes past it make the
-error larger, not smaller (\cref{ssec:weil-closure}) \tierN.  What closes has
+error larger, not smaller (\cref{ssec:weil-closure}) \tier{N}.  What closes has
 to be a law, and the paper already has the global part of it: the classification of the primes
 by their classes modulo $20$ of Grisales Herrera \cite{grisales25}, which this paper proves carries
 the Frobenius, the Euler factors and the belonging of every prime
@@ -330,7 +330,7 @@ angle: at a split prime $p\nmid n$ the residue of
 $\golden$ has order $n$ exactly when it is a root of
 $\Phi_n$ in $\mathbb{F}_p$
 (\LeanStar{W4Isometria.clock\_iff\_cyclotomic\_root}
-\tierP), while the lift itself stays classical.  The limits are visible too: unbounded
+\tier{P}), while the lift itself stays classical.  The limits are visible too: unbounded
 self-adjointness is not in Mathlib \cite{gonzalez25hp}, and the analytic steps of
 \cref{thm:explicit} are not formalised here.  The first window of Weil positivity is
 formalised in its four steps, with the two inputs the paper declares --- Gauss's
@@ -390,10 +390,10 @@ was written to settle them.  The account, input by input:
 \toprule
 Input of \cite{gonzalez25hp} & Status here & Where \\
 \midrule
-\texttt{hecke\_1920} (Hecke 1920) & discharged \tierP & \LeanInline{hecke\_chi5\_derived}; functional equation, companion zero, conjugation: \cref{sec:analytic-inputs} \\
-Seven geometric axioms ($\golden^2=\golden+1$, $i^2=-1$, $z=\golden y$, basis of $E^3$, continued fraction, nested radical, $\|\Omega\|=\tfrac12$) & theorems \tierP & Block~1 of the unified Lean file, \texttt{F1\_compilado\_sin\_axiomas}, with $0$ axioms (\cref{app:lean}) \\
-Arithmetic--spectral span & constructed \tierP & \cref{prop:span}, with $G$ as common source (\cref{prop:G}) \\
-Membership of the zeros & derived from the bridge \tierP & \cref{thm:membership} \\
+\texttt{hecke\_1920} (Hecke 1920) & discharged \tier{P}& \LeanInline{hecke\_chi5\_derived}; functional equation, companion zero, conjugation: \cref{sec:analytic-inputs} \\
+Seven geometric axioms ($\golden^2=\golden+1$, $i^2=-1$, $z=\golden y$, basis of $E^3$, continued fraction, nested radical, $\|\Omega\|=\tfrac12$) & theorems \tier{P}& Block~1 of the unified Lean file, \texttt{F1\_compilado\_sin\_axiomas}, with $0$ axioms (\cref{app:lean}) \\
+Arithmetic--spectral span & constructed \tier{P}& \cref{prop:span}, with $G$ as common source (\cref{prop:G}) \\
+Membership of the zeros & derived from the bridge \tier{P}& \cref{thm:membership} \\
 $\Lambda$-ring on $\Zphi[\golden^{-1},\tfrac12]$ & corrected & monoid between levels, Artin structure within: \cref{rmk:monoid-not-ring,sec:lambda-ring} \\
 \texttt{bridge\_axiom} & carried to its last link, which the closure conjecture would give & \cref{ssec:core-forms,cor:closure} \\
 The operator's spectrum vs.\ the zeros & located exactly & the envelope places the zeros to a fraction of a spacing; the precision is \cref{conj:closure} \\
@@ -421,7 +421,7 @@ $\{0,1\}$, and on a commutative ring it has a fixed point exactly when $2$ is in
 none on $\Z$ or on $\Zphi$ (the paragraph after \cref{prop:cocone}); the mate $\rho\mapsto\alpha(\bar\rho)$, its continuation
 to $\C$ composed with the conjugation, fixes exactly the line (\cref{prop:klein-detail};
 \LeanInline{EstructuraEnGUE.lawvere\_alpha\_no\_fixed\_point}, \LeanInline{F1Lawvere.reflection\_fixed\_iff}
-\tierP).  The binary problem is a symmetry of order two in a spectrum: an antiunitary symmetry with $T^2=-1$ fixes no
+\tier{P}).  The binary problem is a symmetry of order two in a spectrum: an antiunitary symmetry with $T^2=-1$ fixes no
 ray and forces every level into a doublet, the
 symplectic class; a commuting symmetry of order two splits the spectrum into two sectors with no repulsion between
 them, as the zeros of $\zeta_K$ show.  The dimensional obstruction is not met by a division algebra either: what separates
@@ -429,10 +429,10 @@ the torsion fibre does not commute with the deck step, and with it generates the
 $DY=\zeta_6\,YD$, and not $\mathbb H$ or $\mathbb O$; the colour operator $\hat\Omega$ is normal and not self-adjoint
 (\cref{prop:level-operators}).  A zero off the line would be a doublet of ordinates, two zeros at separation zero
 (\cref{thm:shared-ordinate}; the configuration of arity two of \cite{gonzalez26cw}), the configuration of the symplectic
-class at one level; the zeros computed show none (\cref{ssec:envelope-fluctuation}) \tierN, and that no zero shows it is form~(iv) of \cref{thm:topological-proof}.  In the tower the binary is the orientation, and it
+class at one level; the zeros computed show none (\cref{ssec:envelope-fluctuation}) \tier{N}, and that no zero shows it is form~(iv) of \cref{thm:topological-proof}.  In the tower the binary is the orientation, and it
 enters with the colour in an operator that does not commute with the deck step, which is why no sector and no doublet
 appear.  In the tower the circularity of the diagonal argument and the binary of a spectrum meet at one point, the passage of $\alpha$ from $\{0,1\}$ to
-a ring in which $2$ is invertible, where the missing fixed point appears and, through the mate, becomes the line.  This last reading joins facts that are \tierP\ and \tierN.
+a ring in which $2$ is invertible, where the missing fixed point appears and, through the mate, becomes the line.  This last reading joins facts that are \tier{P}\ and \tier{N}.
 
 \subsubsection{The operator and the envelope}\label{ssec:disc-hp-operator}
 
@@ -560,13 +560,13 @@ heights.
 \toprule
 Clause & Already proved, at the level of $\Zphi$ & Open & Refuted if \\
 \midrule
-Prisms at $p\ne5$ & $\Zphi$ is a $\delta$-ring (\cref{prop:delta-ring}) \tierP; a $p$-complete, $p$-torsion-free $\delta$-ring with $(p)$ is a crystalline prism \cite{bhattscholze22} & the formalisation & --- \\
-(1) local factors & characteristic polynomial (\cref{thm:frob-eigen}) \tierP & that it comes from $H$ & the factor of $H$ differs from Euler's \\
-(2) template at $2$ & $2$-adic polar form, anchor (\cref{prop:omega-two-adic,prop:euler-tower}) \tierP & its prismatic reading & the component at $2$ does not give $\zeta_3$, $|2|_2$ \\
-(3) gluing & product formula at $2$; $\sigma_p=\log_\golden p$ (\cref{prop:euler-tower}) \tierP; exact on each level of the clock (\cref{prop:clock-cyclotomic}), with the clock as cyclotomic polynomials \tierP & from the clock to the size & some exact magnitude is not $\log_\golden p$ \\
-the prime $5$ & the obstruction (\cref{thm:obstruction-five}) \tierP; the prism, distinguished, $\delta(E)\equiv-1$; special fibre $=\delta_5$; defect $\tau(\chiv)^2$ \tierP; conductor $5^7$; Kisin class $h=u$ \tierN\ (\cref{rmk:prism-five}) & the gluing & --- \\
-(4) assembly & the classes and the fluctuation's intake (\cref{prop:what-fluctuation-takes}) \tierP; the layers of the index (\cref{prop:phi-layers}) and the energy of their phases (\cref{prop:sqrt-x}) \tierP & the law at resolution $1/T$; the scale $\tfrac12$ of the power-residue symbols & the assembled correction does not give exact heights \\
-(5) positivity & modulus $1$ $\Leftrightarrow$ the line (\cref{prop:phase-modulus}) \tierP; windows (\cref{thm:first-window}); (W4) certified for $k\le25$ (\cref{ssec:weil-closure}) & the pairing & (W4) fails \\
+Prisms at $p\ne5$ & $\Zphi$ is a $\delta$-ring (\cref{prop:delta-ring}) \tier{P}; a $p$-complete, $p$-torsion-free $\delta$-ring with $(p)$ is a crystalline prism \cite{bhattscholze22} & the formalisation & --- \\
+(1) local factors & characteristic polynomial (\cref{thm:frob-eigen}) \tier{P}& that it comes from $H$ & the factor of $H$ differs from Euler's \\
+(2) template at $2$ & $2$-adic polar form, anchor (\cref{prop:omega-two-adic,prop:euler-tower}) \tier{P}& its prismatic reading & the component at $2$ does not give $\zeta_3$, $|2|_2$ \\
+(3) gluing & product formula at $2$; $\sigma_p=\log_\golden p$ (\cref{prop:euler-tower}) \tier{P}; exact on each level of the clock (\cref{prop:clock-cyclotomic}), with the clock as cyclotomic polynomials \tier{P}& from the clock to the size & some exact magnitude is not $\log_\golden p$ \\
+the prime $5$ & the obstruction (\cref{thm:obstruction-five}) \tier{P}; the prism, distinguished, $\delta(E)\equiv-1$; special fibre $=\delta_5$; defect $\tau(\chiv)^2$ \tier{P}; conductor $5^7$; Kisin class $h=u$ \tier{N}\ (\cref{rmk:prism-five}) & the gluing & --- \\
+(4) assembly & the classes and the fluctuation's intake (\cref{prop:what-fluctuation-takes}) \tier{P}; the layers of the index (\cref{prop:phi-layers}) and the energy of their phases (\cref{prop:sqrt-x}) \tier{P}& the law at resolution $1/T$; the scale $\tfrac12$ of the power-residue symbols & the assembled correction does not give exact heights \\
+(5) positivity & modulus $1$ $\Leftrightarrow$ the line (\cref{prop:phase-modulus}) \tier{P}; windows (\cref{thm:first-window}); (W4) certified for $k\le25$ (\cref{ssec:weil-closure}) & the pairing & (W4) fails \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -592,7 +592,7 @@ characteristic polynomial.  So clauses~(1) and~(5) hold locally away from $5$ an
 for $\Zphi$ (\cref{thm:obstruction-five}).  Their $p$-adic values are given through the Teichm\"uller
 character~\cite{grosskoblitz79}, the object of the angular part (\cref{prop:delta-ring}).  For $p=11,31,41,61,71$ the projective points of $x^5+y^5=z^5$ number exactly
 $p+1+\sum J(\chi^a,\chi^b)$ over the twelve pairs with $a+b\not\equiv0\pmod5$, and all twelve sums have
-modulus $\sqrt p$ \tierN.  The model
+modulus $\sqrt p$ \tier{N}.  The model
 is not $L(s,\chiv)$, and the local isometry does not give the line.
 \end{remark}
 
@@ -632,7 +632,7 @@ $\ker G=\{1,9\}=\{1,3^2\}$; the fibres of $G$ are $\{1,9\}$, $\{3,7\}$, $\{11,19
 that is, when $\chi(3)^2=1$, which with $\chi(11)^2=1$ means that $\chi$ is quadratic; the other four
 have $\chi(3)=\pm i$ and $\chi(9)=-1$.  Reduction modulo $5$ separates the classes of the kernel,
 $1\mapsto1$ and $9\mapsto4$ (\LeanInline{the\_four\_fibres}, \LeanInline{four\_fibres\_four\_characters},
-\LeanInline{carriers\_have\_order\_four}, \LeanInline{Z20star\_pi2\_fiber\_is\_mod5} \tierP).  The descent
+\LeanInline{carriers\_have\_order\_four}, \LeanInline{Z20star\_pi2\_fiber\_is\_mod5} \tier{P}).  The descent
 reads only $\chiv$, a quadratic character (\cref{thm:chi5-from-frobenius}).  Clause~(ii) of
 \cref{conj:closure} bounds the residual of each class separately, and by the orthogonality of characters
 that is a statement about all eight characters modulo $20$, the four of order $4$ included, which do not
@@ -668,7 +668,7 @@ the positivity (\cref{prop:semilocal}).  Like the law of \cref{conj:closure}, it
 
 \emph{Prisms.}  No digit sees the fifth-turns: $11$ and $211$ lie in the same class modulo $20$, and
 $\golden$ is a fifth power at $211$ and not at $11$, for either root of $x^2-x-1$ (\cref{prop:phi-residue};
-\LeanInline{F1PaperNew.phi\_residue\_not\_class\_function} \tierP).  They are read on the $p$-adic circle
+\LeanInline{F1PaperNew.phi\_residue\_not\_class\_function} \tier{P}).  They are read on the $p$-adic circle
 of the prisms $(\Z_p[\golden],(p))$ from which the cohomology of \cref{conj:prismatic-route} is assembled;
 the order of the angle of $\golden$ on that circle is the period of the Fibonacci dynamics on the $p$-torsion of the
 real torus
@@ -698,7 +698,7 @@ the observer in de Sitter space.  This section records where the mathematics of 
 The isometry of \cref{ssec:why-phi,ssec:disc-binary} is the one the Crystalline
 Worldsheet~\cite{gonzalez26cw} uses on the physical side: there it is the bulk--boundary map, with modulus
 $\tfrac12$ at every level, and the unfolded spacings of the zeros favour the Gaussian Unitary Ensemble
-over Poisson by a factor $7.6$ \tierN\ \cite[\S2.13]{gonzalez26cw}.  That paper places a ring inside a torus in order to carry a
+over Poisson by a factor $7.6$ \tier{N}\ \cite[\S2.13]{gonzalez26cw}.  That paper places a ring inside a torus in order to carry a
 worldsheet, and uses it to attempt a bridge --- a hybrid --- between holography and string theory.  This section follows that thread.  Holography lacks an individual
 operator: a Hermitian operator with a ground state from which everything else emerges;
 in its place it writes the Gaussian unitary ensemble, the same statistics that govern
@@ -750,19 +750,19 @@ contradiction.
 Two features of that construction meet objects of \cref{sec:methods}.
 
 \emph{The self-dual point.}  The modular parameter of the torus is $\tau=i$, the
-fixed point of $\tau\mapsto-1/\tau$ (\LeanInline{F1CW.s\_duality\_fixes\_i} \tierP),
+fixed point of $\tau\mapsto-1/\tau$ (\LeanInline{F1CW.s\_duality\_fixes\_i} \tier{P}),
 and the same involution appears in the Schwinger variable as $t\mapsto1/t$, whose
-unique fixed point is $t=1$ (\LeanInline{selfdual\_fixed\_point} \tierP).
+unique fixed point is $t=1$ (\LeanInline{selfdual\_fixed\_point} \tier{P}).
 The period of the torus is $T_K=2\pi\log\golden=2\pi R_K$: the regulator of
 $\Q(\sqrt5)$, which is the invariant that reappears in \eqref{eq:log-two}.
 
 \emph{The fibre.}  The module direction closes, once around the fundamental
 domain, with the half-turn $e^{i\pi}=-1$: an orientation-reversing involution, so
 the worldsheet is one-sided (\LeanCW{PaperMobius.fibre\_monodromy},
-\LeanCW{fibre\_reflection\_order\_two} \tierP; in this paper's corpus the orientation flip
-of the fibre has order exactly two, \LeanInline{orient\_flip\_order} \tierP).  The fibre datum is
+\LeanCW{fibre\_reflection\_order\_two} \tier{P}; in this paper's corpus the orientation flip
+of the fibre has order exactly two, \LeanInline{orient\_flip\_order} \tier{P}).  The fibre datum is
 independent of whether the base torus is commutative or a noncommutative
-$T^2_\theta$ (\LeanCW{fibre\_independent\_of\_base} \tierP).
+$T^2_\theta$ (\LeanCW{fibre\_independent\_of\_base} \tier{P}).
 
 \emph{Where the bridge meets strings and the operator.}  On the side of strings, since
 the fibre does not depend on the base, the construction sits on the noncommutative tori
@@ -799,8 +799,8 @@ does the individual determine, and where does the ensemble still enter?
 \end{enumerate}
 \LeanInline{extreme\_case\_is\_binary}, \LeanInline{E\_iff\_no\_shared\_ordinate},
 \LeanInline{repulsion\_excludes\_zero\_spacing},
-\LeanStar{F1CW.sineKernel\_at\_nonzero\_integer} \tierP; (i) \tierN\ in its measurement,
-\tierP\ in the injectivity of the scale; (ii) the kernel
+\LeanStar{F1CW.sineKernel\_at\_nonzero\_integer} \tier{P}; (i) \tier{N}\ in its measurement,
+\tier{P}\ in the injectivity of the scale; (ii) the kernel
 \end{proposition}
 
 \begin{proof}
@@ -827,27 +827,27 @@ ensemble average, the observer with a single pure state --- is developed in
 The state carried by that ring is a single one, not an ensemble:
 $\Omega(\tau)=\tfrac12e^{i\tau\log\golden}$, of constant modulus
 $|\Omega|=\tfrac12$ (\LeanInline{modulus\_Omega},
-\LeanCW{omega\_flow\_invariant} \tierP).  Three things about the number
+\LeanCW{omega\_flow\_invariant} \tier{P}).  Three things about the number
 $\tfrac12$ are proved rather than posited.
 
 It is the value where the binary entropy is largest, $H(p)\le1$ with equality
 only at $p=\tfrac12$ (\LeanCW{binary\_entropy\_le\_one},
-\LeanCW{binary\_entropy\_half} \tierP), so one bit per cell is a maximum and
+\LeanCW{binary\_entropy\_half} \tier{P}), so one bit per cell is a maximum and
 not a coincidence.  It is reached by eight independent routes that meet at the
 same apex --- among them the half-factorial $\Gamma(3/2)/\sqrt\pi$, the product of
 the three component norms of the eigenvalue triangle, $\cos(\pi/3)$, the inverse
 binary turn $\golden^{-\lng}$, the midpoint of the Galois pair
 $(\golden+\bar\golden)/2$, and the fixed set of $x\mapsto1-x$
-(\LeanInline{modulus\_cocone\_six\_routes} \tierP\ for the six routes of \cref{prop:cocone}; the eight routes are \LeanCW{PaperS2.mu\_diagram\_commutes}).  And it is the value the
+(\LeanInline{modulus\_cocone\_six\_routes} \tier{P}\ for the six routes of \cref{prop:cocone}; the eight routes are \LeanCW{PaperS2.mu\_diagram\_commutes}).  And it is the value the
 functional equation fixes, since $s$ and $1-s$ have the same real part exactly on
-$\Re s=\tfrac12$ (\LeanInline{functional\_equation\_fixed\_line} \tierP; in \cite{gonzalez26cw} \LeanCW{faceLine\_apex}) --- which is the point of contact
+$\Re s=\tfrac12$ (\LeanInline{functional\_equation\_fixed\_line} \tier{P}; in \cite{gonzalez26cw} \LeanCW{faceLine\_apex}) --- which is the point of contact
 between the physical construction and \cref{prop:stau}.
 
 The last two routes deserve a remark, because they are the reason the number is
 the same on both sides.  The midpoint of $\{\golden,\bar\golden\}$ and the fixed
 point of $x\mapsto1-x$ are the same computation: Galois conjugation in
 $\Q(\sqrt5)$ and the apex involution are one map on the orbit
-(\LeanInline{phi\_bar\_eq} \tierP).  The arithmetic $\tfrac12$ of \crefrange{sec:choice}{sec:clock} and the holographic $\tfrac12$ of the construction are therefore not two
+(\LeanInline{phi\_bar\_eq} \tier{P}).  The arithmetic $\tfrac12$ of \crefrange{sec:choice}{sec:clock} and the holographic $\tfrac12$ of the construction are therefore not two
 numbers that agree; they are one number read twice.
 
 \subsubsection{From the vanishing point to the dimensional chain}\label{ssec:one-two-three}
@@ -895,9 +895,9 @@ which the construction meets them, not implications between them:
   \underbrace{S_3}_{\text{symmetry}}\;\to\;
   \underbrace{E^3,\ c=3.}_{\text{geometry}}
 \]
-\LeanInline{F1v2.S3\_E3\_c3\_from\_the\_euler\_product} \tierP, which states the whole display; the three of this
+\LeanInline{F1v2.S3\_E3\_c3\_from\_the\_euler\_product} \tier{P}, which states the whole display; the three of this
 statement are \LeanStar{F1CW.s\_duality\_fixes\_i}, \LeanInline{selfdual\_fixed\_point},
-\LeanStar{F1CW.hinge\_central\_charge} \tierP
+\LeanStar{F1CW.hinge\_central\_charge} \tier{P}%
 \end{proposition}
 
 \begin{proof}
@@ -912,12 +912,12 @@ The binary forms of the three faces have discriminants $-4$ (Gauss, $x^2+y^2$), 
 (Eisenstein) and $5$ (the norm form of $\Zphi$); the two imaginary ones are negative and
 the golden one positive, and $|{-4}|\cdot5=20$ is the conductor
 (\LeanInline{trichotomy\_locates\_reality}, \LeanInline{signs\_separate\_the\_faces},
-\LeanInline{identity\_disc\_is\_positive} \tierP).  The Euler rotor of
+\LeanInline{identity\_disc\_is\_positive} \tier{P}).  The Euler rotor of
 \cite{gonzalez26mersenne}, $s\mapsto e^{i\pi s}$, restricted to the integers is the sign
 character, $k\mapsto(-1)^k$, with imaginary part vanishing on the integers; at
 $s=\tfrac12$ it is $i$, the self-dual point of the torus, where $t\mapsto1/t$ fixes $t=1$
 (\LeanInline{rotor\_on\_integers}, \LeanInline{rotor\_imaginary\_vanishes\_on\_integers},
-\LeanInline{rotor\_at\_half}, \LeanInline{rotor\_half\_is\_the\_selfdual\_point} \tierP).  The
+\LeanInline{rotor\_at\_half}, \LeanInline{rotor\_half\_is\_the\_selfdual\_point} \tier{P}).  The
 vanishing point of that paper sits, in this chain, at the self-dual point.
 \end{remark}
 
@@ -927,9 +927,9 @@ dimension, $T_K=2\pi R_K$; the size of the plane over the line,
 $L(1,\chiv)=2R_K/\sqrt5$; the information of the projection,
 $S_{\mathrm{BH}}/k_{\mathrm B}=\lambda_{\log}R_K=\log2$; and the rapidity of the boost
 in the third dimension, $\golden^2=e^{2R_K}$.
-\LeanInline{F1v2.regulator\_measures\_the\_chain} \tierP; \LeanInline{F1CW.period\_eq\_two\_pi\_regulator},
+\LeanInline{F1v2.regulator\_measures\_the\_chain} \tier{P}; \LeanInline{F1CW.period\_eq\_two\_pi\_regulator},
 \LeanInline{anchor\_is\_a\_crossed\_identity}, \LeanStar{F1CW.lambda\_log\_mul\_regulator}
-\tierP\ given the class-number formula
+\tier{P}\ given the class-number formula
 \end{proposition}
 
 \begin{proof}
@@ -966,9 +966,9 @@ enters inside the logarithm, $\mu n+\sigma=\golden^{-\lng}(n+3)$, and in $\sigma
 the three directions of $E^3$.  The conductor enters in
 $\alpha_0=(dN-1)/(|\ker G|\,N)$ with $N=20$.
 \LeanStar{F1v2.hp\_operator\_in\_phi\_alone},
-\LeanInline{F1v2.hp\_operator\_carries\_three\_dimensions} \tierP;
+\LeanInline{F1v2.hp\_operator\_carries\_three\_dimensions} \tier{P};
 \LeanInline{Tstar\_rewritten\_in\_phi}, \LeanInline{Tstar\_carries\_both\_faces},
-\LeanInline{mu\_n\_plus\_sigma\_factors}, \LeanInline{eleven\_components\_anchored} \tierP
+\LeanInline{mu\_n\_plus\_sigma\_factors}, \LeanInline{eleven\_components\_anchored} \tier{P}%
 \end{proposition}
 
 \begin{proof}
@@ -1023,33 +1023,33 @@ In \cite[\S3.4]{gonzalez26cw} the AdS/CFT correspondence is obtained from that
 single state, level by level rather than on average.  The throat is the $AdS_5$
 geometry whose curvature invariants are fixed by the modulus, the scalar curvature $R=-20$,
 $\Lambda_5=-6$, $G_{AB}=6g_{AB}$ (\LeanCW{R\_scalar\_pcf},
-\LeanCW{lambda5\_pcf}, \LeanCW{G\_AB\_pcf} \tierP); with $\ell=1$ and
+\LeanCW{lambda5\_pcf}, \LeanCW{G\_AB\_pcf} \tier{P}); with $\ell=1$ and
 $\GN=\tfrac12$ the Brown--Henneaux charge is $c=3$
-(\LeanInline{F1CW.hinge\_central\_charge} \tierP), the arity of
+(\LeanInline{F1CW.hinge\_central\_charge} \tier{P}), the arity of
 \cref{sec:ring}.
 
 The per-level statement is the one that matters structurally.  The bulk
 Hamiltonian and the boundary modular generator are exponentials of the same
 dilation generator with the same rate $\log\golden$, so their ratio does not
 depend on the level (\LeanCW{tower\_e\_eq\_exp\_regulator},
-\LeanCW{modular\_bulk\_ratio\_level\_independent} \tierP); an isometry acting
+\LeanCW{modular\_bulk\_ratio\_level\_independent} \tier{P}); an isometry acting
 level by level therefore intertwines them exactly
 (\LeanCW{bulk\_boundary\_intertwine},
-\LeanInline{isometry\_with\_common\_modulus₅} \tierP).  Because no level is privileged,
+\LeanInline{isometry\_with\_common\_modulus₅} \tier{P}).  Because no level is privileged,
 the tower is an index over one flow and not a stack of different structures
-(\LeanCW{no\_privileged\_level} \tierP).
+(\LeanCW{no\_privileged\_level} \tier{P}).
 
 On the de Sitter side the same modulus fixes the Gibbons--Hawking temperature and
 the first law (\LeanCW{ds\_temperature\_pos},
 \LeanCW{GravitySectorPCF.ds\_first\_law}, \LeanCW{komar\_first\_law}
-\tierP), and the modular generator of the static patch is the horizon entropy and
+\tier{P}), and the modular generator of the static patch is the horizon entropy and
 the tower entropy at once (\LeanCW{modular\_generator\_is\_entropy},
-\LeanCW{modular\_generator\_is\_tower} \tierP).  The duality web --- S-duality
+\LeanCW{modular\_generator\_is\_tower} \tier{P}).  The duality web --- S-duality
 as the Galois conjugation $\golden\mapsto-1/\golden$, T-duality as the conjugate
 pair of lengths, the Kaluza--Klein bridge --- is a projection of the same tower,
 and the shared signature of its two corners is the list
 $|\Omega|=\tfrac12$, $\ell=1$, $\GN=\tfrac12$, $c=3$
-(\LeanInline{apex\_colimit\_universal} \tierP).
+(\LeanInline{apex\_colimit\_universal} \tier{P}).
 
 The de Sitter companion develops three points of this holographic reading that this paper uses only through the
 isometry $\mathcal V$.  First, the bulk--boundary map read as a quantum error-correcting code: an isometry $\mathcal V$ with
@@ -1070,18 +1070,18 @@ direction without one.  None of these points is used in the proofs of this paper
 The tower has an information reading that connects it to \crefrange{sec:choice}{sec:clock}.  Saturation
 entropy at level $\sigma$ is $S(\sigma)=\pi\golden^{\sigma}$, the mode count is
 $N(\sigma)=\lfloor\pi\golden^\sigma\rfloor$ --- $3,5,8,13,21,34,56$ for
-$\sigma=0,\dots,6$ (\LeanCW{tower\_start} \tierP) --- and the recurrence is
+$\sigma=0,\dots,6$ (\LeanCW{tower\_start} \tier{P}) --- and the recurrence is
 one multiplication by $\golden$ per level
-(\LeanCW{S\_tower\_recurrence} \tierP).  The energy per bit is constant along
+(\LeanCW{S\_tower\_recurrence} \tier{P}).  The energy per bit is constant along
 the tower, $\varepsilon(\sigma)/S(\sigma)=\epsz/\pi=1/\Mpcf$
-(\LeanCW{tower\_first\_law} \tierP), which is the first law in this setting
+(\LeanCW{tower\_first\_law} \tier{P}), which is the first law in this setting
 and the reason the scale relation $\epsz\Mpcf=\pi$ is called a certainty
-principle (\LeanCW{certainty\_principle} \tierP).
+principle (\LeanCW{certainty\_principle} \tier{P}).
 
 Two lengths run in opposite directions: the throat coordinate
 $z(\sigma)=\golden^{\sigma}$ grows and the weld time
 $\tau(\sigma)=\Mpcf\golden^{-\sigma}$ shrinks, and their product is constant,
-$z(\sigma)\tau(\sigma)=\Mpcf$ (\LeanCW{lattice\_radius\_conjugate} \tierP).
+$z(\sigma)\tau(\sigma)=\Mpcf$ (\LeanCW{lattice\_radius\_conjugate} \tier{P}).
 That is $R\cdot(\alpha'/R)=\alpha'$ with $\alpha'=\Mpcf$: short and long distance
 are one family exchanged by duality, which is the construction's reason for
 having no ultraviolet regime to remove.
@@ -1093,26 +1093,26 @@ Three points of \cite{gonzalez26cw} bear directly on this paper.
 \emph{The entropy bridge.}  With $\lng=\log2/\log\golden$,
 \[
   \frac{S_{\mathrm{BH}}}{k_B}=\lng\,R_K=\lng\cdot\frac{\sqrt5}{2}L(1,\chiv)=\log2
-  \qquad(\LeanInline{branches\_meet\_at\_log\_two}\ \tierP),
+  \qquad(\LeanInline{branches\_meet\_at\_log\_two}\ \tier{P}),
 \]
 so the holographic bit is the regulator of $\Q(\sqrt5)$ measured in the unit
 $\lng$; this is \eqref{eq:log-two} again, and it is the arithmetic branch of the
 span of \cref{prop:span}.  The inputs are $h_K=1$, proved from the Minkowski
 bound $\sqrt5/2<2$ (\LeanStar{F1CW.minkowski\_bound\_lt\_two},
-\LeanInline{F1CW.class\_number\_one\_K} \tierP), and the class-number formula, which
+\LeanInline{F1CW.class\_number\_one\_K} \tier{P}), and the class-number formula, which
 enters as a classical input.
 
 \emph{The Regge tower is the Euler product.}  The poles of the Veneziano
 amplitude sit at the integers, every level is populated and carries spin
 $\le n-1$ (\LeanCW{regge\_residue\_ne\_zero},
-\LeanCW{regge\_residue\_degree} \tierP), and unique factorisation turns the
+\LeanCW{regge\_residue\_degree} \tier{P}), and unique factorisation turns the
 spectral Dirichlet series into the Euler product
-(\LeanInline{F1CW.dirichlet\_is\_euler} \tierP).  The product over all
+(\LeanInline{F1CW.dirichlet\_is\_euler} \tier{P}).  The product over all
 places is the completed zeta (\LeanCW{framework\_partition\_eq\_completed\_zeta},
-\LeanCW{places\_assembly} \tierP), the archimedean place being fixed by the
+\LeanCW{places\_assembly} \tier{P}), the archimedean place being fixed by the
 self-dual Gaussian, which is normalised, equal to its own Fourier transform, and
 of the same width in both --- three independent conditions all giving $a=\pi$
-(\LeanCW{selfdual\_gaussian\_unique} \tierP).  That completed object is the
+(\LeanCW{selfdual\_gaussian\_unique} \tier{P}).  That completed object is the
 one whose archimedean factor supplies the weight $W$ of \cref{thm:explicit}, and its two factors
 are the two sides of \cref{prop:positions,conj:closure}: the archimedean factor, fixed by the
 self-dual Gaussian, carries the envelope, and the Euler product, which is the Regge tower
@@ -1147,18 +1147,18 @@ particle, fluid --- through the positive Grassmannian: a point of
 $\mathrm{Gr}(k,n)$ is a projector, its trace is the rank, its normalisation
 $\rho=P/k$ is a density matrix, and total positivity is a separate condition, not
 implied by $\rho\ge0$ (\LeanCW{four\_faces\_one\_datum},
-\LeanCW{rho\_is\_state}, \LeanCW{two\_positivities\_distinct} \tierP);
+\LeanCW{rho\_is\_state}, \LeanCW{two\_positivities\_distinct} \tier{P});
 none of the four readings depends on the frame chosen to represent the point
-(\LeanCW{projector\_frame\_invariant} \tierP).  The seed of the ladder is the
+(\LeanCW{projector\_frame\_invariant} \tier{P}).  The seed of the ladder is the
 $A_2$ lattice, with exactly six minimal vectors and Gram determinant $3$
 (\LeanCW{a2\_minimal\_vectors\_exactly\_six}, \LeanCW{a2\_gram\_det}
-\tierP), and the Frenkel--Kac--Segal count
+\tier{P}), and the Frenkel--Kac--Segal count
 $\dim\mathfrak g=\text{kissing}+\text{rank}$ holds at every rung
 $A_2\to D_4\to E_6\to E_8$ (\LeanCW{ladder\_dim\_eq\_kissing\_plus\_rank}
-\tierP).  On the particle face the Weinberg angle at unification is a ratio of
-mode counts, $N(0)/N(2)=3/8$ (\LeanCW{weinberg\_angle\_gut} \tierP), and the
+\tier{P}).  On the particle face the Weinberg angle at unification is a ratio of
+mode counts, $N(0)/N(2)=3/8$ (\LeanCW{weinberg\_angle\_gut} \tier{P}), and the
 one-loop coefficients of the assumed content are the MSSM ones
-(\LeanCW{beta\_is\_mssm} \tierP).
+(\LeanCW{beta\_is\_mssm} \tier{P}).
 
 \subsubsection{What the Crystalline Worldsheet defers to this paper, and scope}\label{sec:companions}
 
@@ -1231,7 +1231,7 @@ is proved; the list is derived from \cref{app:ledger}.
   \item \emph{Certificates.}  The window $L\le1$ is certified in interval arithmetic; the operator windows up to $L=1.3$ are validated, with every rounding error bounded and the eigenvalue bound verified by Cholesky (\cref{rmk:rigour}); the windows of the golden field up to length $2.3$ are not yet validated: their
     Lehmann matrices are computed in double precision (\cref{ssec:golden-field}).
   \item \emph{The first window} is formalised with two declared inputs, Gauss's
-    integral\ and the values of the potential \tierN\ (\cref{thm:first-window}).
+    integral\ and the values of the potential \tier{N}\ (\cref{thm:first-window}).
   \item \emph{The counting density.}  The function
     \texttt{kappa\_K} of Block~1 of the unified file is not the archimedean density $\kappa_K$ of \cref{thm:pcf-counting}, and is not used.
   \item \emph{The measurements of the closure.}  The positions from the structure, the

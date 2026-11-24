@@ -598,7 +598,7 @@ Tarski's undefinability of truth are instances of its
 contrapositive~\cite{lawvere69,yanofsky03}.  The theorem and its contrapositive
 are formalised for the category of types, where point-surjectivity is
 surjectivity (\LeanInline{F1Lawvere.lawvere\_fixed\_point},
-\LeanInline{F1Lawvere.no\_surjection\_of\_fixedPointFree} \tierP).  There are
+\LeanInline{F1Lawvere.no\_surjection\_of\_fixedPointFree} \tier{P}).  There are
 settings in which the self-reference the paradoxes rest on cannot be formed.  In a
 stratified type theory, self-application $x(x)$ and self-membership $x\in x$ are
 not well-typed, since an object of a given type does not take arguments of that
@@ -624,7 +624,7 @@ complex class, the Gaussian Unitary Ensemble: an operator reproducing it lies in
 The Primitive Structure and the Crystalline Worldsheet attach to the Euler product, on the other hand, a ternary
 structure~\cite{gonzalez25hp,gonzalez26cw}: the tripartite object $\Omega=P\cdot C\cdot F$, with three eigenvalues
 $\tfrac12\zeta_3^{\,k}$ permuted by $S_3$, whose parameter $\sigma=|\mathrm{rot}(S_3)|^2/|S_3|=\tfrac32$ is the value
-$\zeta(2)/(\pi/3)^2$ of the Euler product at $s=2$ (\LeanInline{zeta\_two\_over\_pi\_third\_sq} \tierP).  An
+$\zeta(2)/(\pi/3)^2$ of the Euler product at $s=2$ (\LeanInline{zeta\_two\_over\_pi\_third\_sq} \tier{P}).  An
 operator with these three eigenvalues acts on three directions, and by the limit just stated three directions
 cannot be the dimensions of a real division algebra: this is the binary against the third dimension.
 
@@ -722,21 +722,21 @@ Weil's Rosetta stone (\cref{sec:weil}) needs an object that is at home in all of
 them, and $\golden$ already is.  It is at once
 \begin{itemize}
   \item a \textbf{magnitude and a ratio}: the positive root of $x^2=x+1$
-    (\LeanInline{phi\_sq} \tierP), and its only positive root
-    (\LeanInline{golden\_fixed\_point\_unique} \tierP);
+    (\LeanInline{phi\_sq} \tier{P}), and its only positive root
+    (\LeanInline{golden\_fixed\_point\_unique} \tier{P});
   \item a \textbf{geometry}: the diagonal of the regular pentagon,
     $\golden=2\cos(\pi/5)=1+\zeta_5+\zeta_5^4$
-    (\LeanInline{phi\_eq\_two\_cos\_pi\_fifth}, \LeanInline{phi\_cyclotomic\_inscription} \tierP);
+    (\LeanInline{phi\_eq\_two\_cos\_pi\_fifth}, \LeanInline{phi\_cyclotomic\_inscription} \tier{P});
   \item a \textbf{line and a function}: $x\mapsto\golden^x$, the golden tower, with the line of its integer
     levels $\golden^n$, which reaches
     the binary scale through $\golden^{\lambda_{\log}}=2$
-    (\LeanInline{mersenne\_bridge} \tierP);
+    (\LeanInline{mersenne\_bridge} \tier{P});
   \item an \textbf{operator}: multiplication by $\golden$ on $\Zphi$, with matrix
     $\left(\begin{smallmatrix}0&1\\1&1\end{smallmatrix}\right)$, and the
     Frobenius lifts of \cref{sec:lambda-monoid,sec:lambda-ring};
   \item a \textbf{recursion}: $\golden^{n+1}=F_{n+1}\golden+F_n$, so the powers of
     $\golden$ are written in Fibonacci numbers (\LeanInline{phi\_pow\_binet\_integral},
-    \LeanInline{fib\_pow\_aux} \tierP).
+    \LeanInline{fib\_pow\_aux} \tier{P}).
 \end{itemize}
 $\golden$ therefore translates between domains by itself: a statement about the
 number is a statement about the pentagon, about the recursion and about the
@@ -753,10 +753,10 @@ classes correspond to the zeros of the cyclotomic polynomial $\Phi_{20}$, and an
 analogous relation holds for the Fibonacci numbers $F_{12(5m+j)}$.  It is the direct
 link between $\golden$, the pentagon and the primes that this paper needs.  What
 of it is proved here: the Galois homomorphism of the classification
-(\LeanInline{G\_hom} \tierP); the pentagonal values themselves,
-$|2\cos(\pi a/5)|=\golden^{\chiv(a)}$ (\LeanInline{F1CW.norm\_cosine\_phi} \tierP); and the
+(\LeanInline{G\_hom} \tier{P}); the pentagonal values themselves,
+$|2\cos(\pi a/5)|=\golden^{\chiv(a)}$ (\LeanInline{F1CW.norm\_cosine\_phi} \tier{P}); and the
 fact that $\chiv$ selects the Fibonacci number $F_p\bmod p$ for every prime
-(\LeanInline{additive\_spectrum\_governed\_by\_chi5} \tierP).  The closed formula for
+(\LeanInline{additive\_spectrum\_governed\_by\_chi5} \tier{P}).  The closed formula for
 the classification is cited, not formalised (\cref{sec:grisales}).
 
 \paragraph{Acevedo Agudelo: primes through rotations and the Mersenne primes.}
@@ -834,7 +834,7 @@ fixed-point-free map that the diagonal argument needs, which on the truth values
 (\cref{ssec:disc-hp-ledger}): every ring endomorphism fixes the image
 of $\mathbb{Z}$, so each lift has fixed points and the whole family has a common one
 (\LeanInline{F1Lawvere.ringHom\_fixes\_intCast}, \LeanInline{F1Lawvere.family\_common\_fixed\_point},
-\LeanInline{F1Lawvere.\ensuremath{\psi}\_fixes\_int} \tierP).  This is the property that
+\LeanInline{F1Lawvere.\ensuremath{\psi}\_fixes\_int} \tier{P}).  This is the property that
 \cref{sec:polya-hist,ssec:four-requirements} require of a non-circular
 construction, and it is the respect in which the descent of this paper answers,
 within the $\Fone$ programme, the proposal of the Primitive Structure.
@@ -849,11 +849,11 @@ $\mu_6=\Z[\zeta_3]^{\times}$: it is torsion, so no level reads it ($\operatornam
 $\tfrac12\operatorname{diag}(1,\zeta_3,\zeta_3^2)$ is normal and not self-adjoint (\cref{prop:level-operators}),
 and the third direction enters through the geometry of $E^3$ (\cref{thm:one-two-three}).
 
-The descent takes neither the distribution of the primes, nor the Euler product, nor the zeros as input, and the information is kept by an isometry: each eigenvalue $\tfrac12\zeta_3^{\,k}$ has modulus $\tfrac12$, so the triad has squared norm $\tfrac34$, and normalised it is a column $\mathcal V\colon\mathbb{C}\to\mathbb{C}^3$ whose three squared moduli are $\tfrac13$, so $\mathcal V^\dagger\mathcal V=1$ (\LeanInline{F1PaperNew.triad\_isometry} \tierP); it reaches dimension $3$ without a product in dimension $3$
+The descent takes neither the distribution of the primes, nor the Euler product, nor the zeros as input, and the information is kept by an isometry: each eigenvalue $\tfrac12\zeta_3^{\,k}$ has modulus $\tfrac12$, so the triad has squared norm $\tfrac34$, and normalised it is a column $\mathcal V\colon\mathbb{C}\to\mathbb{C}^3$ whose three squared moduli are $\tfrac13$, so $\mathcal V^\dagger\mathcal V=1$ (\LeanInline{F1PaperNew.triad\_isometry} \tier{P}); it reaches dimension $3$ without a product in dimension $3$
 \cite[the lemma \emph{Isometric embedding of the triad} and the proposition \emph{Two towers, one microstate}]{gonzalez26cw}
-(\LeanCW{bulkBoundary\_isometry} \tierP).  A name marked $^{\dagger}$ belongs to the Lean
+(\LeanCW{bulkBoundary\_isometry} \tier{P}).  A name marked $^{\dagger}$ belongs to the Lean
 development of that paper.  The modulus $\tfrac12$ is the same at every level of the tower, whose levels are related by the composition law of the descent, $\Frob_p(\golden^n)=(\golden^n)^p$
-(\LeanCW{tower\_frobenius\_common} \tierP).
+(\LeanCW{tower\_frobenius\_common} \tier{P}).
 
 Read as a code, $\mathcal V$ is an encoding whose code subspace, the image
 of $\mathcal V\mathcal V^\dagger$, has dimension one: a state and not a space of logical states~\cite{almheiri15,pastawski15}.  What is
@@ -890,14 +890,14 @@ This paper extends the framework of both.  Relative to~\cite{gonzalez25hp} it
 \begin{itemize}
   \item \emph{discharges Hecke}: the functional equation of $\Lambda(s,\chiv)$ and
     the companion zero are theorems (\LeanInline{functionalEquation\_chi5\_discharged},
-    \LeanInline{hecke\_chi5\_derived} \tierP), together with the conjugation symmetry
-    $\overline{L(\bar s)}=L(s)$ (\LeanInline{hconj\_discharged} \tierP);
+    \LeanInline{hecke\_chi5\_derived} \tier{P}), together with the conjugation symmetry
+    $\overline{L(\bar s)}=L(s)$ (\LeanInline{hconj\_discharged} \tier{P});
   \item \emph{constructs the arithmetic--spectral span} with common source $G$ ---
     its two branches meeting at $\log2$ (\LeanInline{branches\_meet\_at\_log\_two},
     \LeanTally{the\_span\_is\_the\_identification}) --- and proves the pieces of the
     bridge that concern $G$ and $L(1,\chiv)$ (\LeanTally{the\_bridge\_pieces\_formalized});
   \item \emph{derives membership from the bridge}
-    (\LeanInline{the\_membership\_derived} \tierP), leaving the bridge as the only
+    (\LeanInline{the\_membership\_derived} \tier{P}), leaving the bridge as the only
     substantive input (\cref{ssec:core});
   \item \emph{replaces the $\Lambda$-ring claim} by the Artin $\Lambda$-structure on
     $\Zphi$ away from $5$ and the obstruction at $5$ (\cref{sec:lambda-ring}).
