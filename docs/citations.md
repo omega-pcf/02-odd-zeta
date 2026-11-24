@@ -248,8 +248,9 @@ claim keeps its `\cite` next to it, and a tag alone never carries a
 reference number.
 
 There is **no** `\witness{…}` block in this repository's preamble
-(`git grep -F '\witness'` over `main.tex` is empty). Every mark of the manuscript is therefore inline by
-construction — see §8.5 for what the family's own-line criterion means here.
+(`git grep -F '\witness'` over `main.tex` is empty). Every mark of the
+manuscript is therefore inline by construction — see §8.5 for what the
+family's own-line criterion means here.
 
 `\Lean{}` is **defined** in the preamble (a right-aligned tt line) but has
 **0 uses**; it is a definition kept for fidelity with the ported preamble,
