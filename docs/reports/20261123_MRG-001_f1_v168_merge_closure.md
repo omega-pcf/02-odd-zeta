@@ -308,6 +308,29 @@ extracted and nothing was imported into this repository.**
 
 ---
 
+## 13. Reframing of §6 (operator ruling, 2026-11-23): α and β were misconceived
+
+Both §6 recommendations are **superseded by the operator's reframing**; the §6 text is kept as
+the snapshot of what was proposed at closure time.
+
+- **α (`\LeanStar` ×221 → `\LeanInline`)** — rejected as framed. The `*` has **no semantic
+  relation to the inline/own-line axis**: inline vs own-line is a prose-context decision governed
+  by the heuristic/aesthetic criteria recorded in the citations documents (uniform treatment of
+  numbered/unnumbered list elements, etc.). The star (like the witness of `[P*]`) is an
+  **intermediate-process macro**: it denotes *written, still unverified / not yet compiled
+  against the corpus* — exactly the state that large mechanical passes live in. Such a macro is
+  **desirable as a macro, in every intermediate layer**, and **never ships in a release** (no
+  releases contain non-compiling or unverified code). Correct disposition: **tracking item** —
+  the221 starred sites are pending-verification states to be resolved by verification passes;
+  the release gate keeps them at zero. No rendering unification is implied.
+- **β (tally presentation)** — held for **intellectual contrast before any decision**: what the
+  tally (°) denotes, whether expanding our witness set (beyond P/N) is a decision we want for the
+  emerging convention, **what the academic standard is** for marking such claim states, and
+  whether any divergence from academic best practice is justifiable on auditability/correctness
+  grounds (primary objectives). A decision would carry a significant refactor (notably in
+  `01-hilbert-polya`, which currently marks nothing). Research memo to precede the ruling;
+  feeds `WIT-SPEC-001` §8.
+
 ## Related documents
 
 - `docs/reports/README.md` — reports convention and index (this report's row, plus the
