@@ -165,6 +165,9 @@
 \DeclareRobustCommand{\brk@us}{\textunderscore\allowbreak}
 % the test that checks a number, cited by its name in the suite that runs
 \providecommand{\testref}[1]{{\upshape\small\ttfamily\let\_\brk@us #1}}
+% a code mention in prose (contract §6.3, S2): the canonical spelling, the
+% same tt body as \testref at the size of the prose
+\newcommand{\code}[1]{{\upshape\ttfamily\let\_\brk@us #1}}
 % a tag set inside a display must switch to text first: amsart defines
 % \footnotesize as \Small, and a font-size command is invalid in math mode
 % (the build warned "Command \Small invalid in math mode" at every tag of an
