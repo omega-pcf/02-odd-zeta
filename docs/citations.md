@@ -190,6 +190,13 @@ argued in `docs/witness-contract.md`; this section states only the contract.
 The concrete instances of the rules below — site inventories, sentence
 tails, applied states and verdict tables — live in `docs/reports/`.
 
+The **set of evidence marks** is `P` and `N`, with `\testref` as the test
+anchor — nothing else (`docs/witness-contract.md` §6.1); this repository's
+preamble defines neither `\witness{…}` nor `\wtag{…}` (§8.1), so every
+mark of the manuscript is inline by construction. Placement — inline or on
+a line of its own — is a prose decision and never a semantic one (contract
+§6.2), and the alphabet below is frozen at `P` and `N` (contract §6.8).
+
 Measured state of the manuscript (2026-11-23; `git grep` over
 `src/chapters/*.tex`, i.e. the body — the definitions in `main.tex`
 excluded): `\tierP` 740, `\tierN` 123, marks carrying ids
@@ -285,12 +292,14 @@ not a device of the current text (F8-001 §1.3).
    preamble (246 uses before the F11 reconciliation) and is **retired**:
    `git grep -F '\tierPnew'` over the manuscript returns 0 (F11b census
    `P* = 0`). What survives is the **star decoration** `\LeanStar{…}`
-   (221 uses), whose `*` records the pre-compilation provenance of the
-   name — `F9-001` classifies it as a process artefact of the build (the
-   modules compile in the green build), not a tier. Whether the 221
-   `\LeanStar` uses are unified with `\LeanInline` is a presentation
+   (221 uses), whose `*` marks a name written but not yet verified against
+   the corpus — the star's one denotation (contract §6.5): intermediate
+   process state, resolved by the verification passes, and the release gate
+   is zero stars. `F9-001` classifies the mark as a process artefact of the
+   build (the modules compile in the green build), not a tier. Whether the
+   221 `\LeanStar` uses are unified with `\LeanInline` is a presentation
    decision recorded for the author in the MRG-001 closure report; until it
-   is taken, the star keeps its provenance meaning and changes no claim.
+   is taken, the star keeps that denotation and changes no claim.
 8. **No status tags in captions.** A caption may name the test of the
    claim it states (`\testref{…}` of that claim's test); a `\tier{…}`
    inside `\caption{…}` is removed, not kept — tags belong to the body.
@@ -307,10 +316,14 @@ not a device of the current text (F8-001 §1.3).
 | `\tier{N}` | verified numerically |
 | `\tier[\testref{ids}]{N}` | an `N` whose witness is a named test: `ids` is a `\testref` (several, separated by `,`), printed as `N[ids]` in tt by `\tier` itself |
 | `\LeanInline{name}` | the Lean declaration of the claim, printed in tt in the prose beside the tag |
-| `\LeanStar{name}` | same, with a superscript `*`: written for this version, pre-compilation provenance (F9-001: process artefact, not a tier) |
+| `\LeanStar{name}` | same, with a superscript `*`: a name written but not yet verified against the corpus — intermediate process state, resolved by the verification passes, release gate zero stars (contract §6.5) |
 | `\LeanTally{name}` | superscript `°`: a tally — a classification recorded in Lean as an enumerated type whose count is checked by decision; it certifies the count, not the classification |
 | `\LeanCW{name}` | superscript `†`: a declaration of the companion development of `\cite{gonzalez26cw}`, not part of this paper's build |
 | `\leanline{…}` | Lean accounting of a statement, set after it and outside the statement |
+
+- **The decorations `°` and `†` are held** (contract §6.7): `\LeanTally` and
+  `\LeanCW` keep rendering what they render today, but the decorations are
+  not adopted into the evidence-mark set while their use stays marginal.
 
 **Why there is no `L`.** A witness stresses that there *is* a reference, and
 `P` and `N` earn their compactness by referencing by identifier — a theorem
@@ -324,6 +337,12 @@ literature assumption, a computer-assisted check) or named a status the
 sentence states in words. `git grep` over the manuscript returns 0 for all
 of them today (F11b census `C 0 · O 0 · T 0 · R 0 · Nc 0`); the prose
 carries the word instead of the letter.
+
+**The alphabet is frozen at `P` and `N`.** A new class enters only through
+the family gate: measured sites, used *and* documented in all five
+repositories, counted by `counts:check` and lintable, with the cost of
+each new symbol estimated before it is admitted (contract §6.8). Until a
+gate is passed, the alphabet does not grow.
 
 **The hypothesis rule** (relocated here from the retired gloss, per
 `FTI-001` §3.3): a `\tierP` mark certifies exactly the Lean statement it
@@ -346,6 +365,10 @@ class-number row discharges a named hypothesis with its own `\tierP`.
 - **Colour never carries meaning here.** This repository's tags are set in
   black like the surrounding text, so the WCAG 1.4.1 rule holds trivially:
   the letter alone always carries the meaning.
+- **Canonical render parameters:** 13 pt for the witness class, 15 pt for
+  the ids and 16 pt for the prose — the family's measured parameters
+  (contract §6.6). This repository's tags are set in `\footnotesize`; their
+  size is re-measured in the built PDF, never assumed.
 
 ### 8.5 Inline or a line of its own — the criterion
 
@@ -354,6 +377,10 @@ defines no `\witness{…}` block and no `\wtag{…}` label (§8.1), so there is
 no own-line form for a mark to take. The family criterion below is stated
 for completeness and for the sibling repositories that do define the block;
 its own-line outcome has no form here yet.
+
+Placement itself is prose — semantic, heuristic, aesthetic — and never a
+semantic axis (contract §6.2): the criterion below measures cost and
+position for that decision, it does not classify.
 
 What the criterion produced when it was run over this manuscript is
 recorded in `F8-001` §2: **1 100 marks** measured with the five quantities,
