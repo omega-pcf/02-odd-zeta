@@ -200,6 +200,15 @@
 \fi%
 \fi%
 }%
+% a witness with names, on a line of its own, flush right: P[name1, name2]
+% (the sibling manuscripts set their witness blocks with \hfill + \raggedleft;
+% the form ported from 05-kk-golden-throat/main.tex, where the own-line
+% witness block replaces the "Lean:" line of this manuscript).
+\newcommand{\witness}[2]{%
+  \par\noindent\hfill
+  \parbox{\dimexpr\linewidth-1em\relax}{\raggedleft
+    \normalfont\footnotesize\bfseries\tiercol{#1}#1\mdseries{\upshape\small\ttfamily\let\_\brk@us[#2]}}%
+  \par}
 \makeatother
 \newcommand{\PCF}{\mathrm{PCF}}
 \newcommand{\C}{\mathbb{C}}
