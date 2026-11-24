@@ -193,8 +193,8 @@ tails, applied states and verdict tables — live in `docs/reports/`.
 
 The **set of evidence marks** is `P` and `N`, with `\testref` as the test
 anchor — nothing else (`docs/witness-contract.md` §6.1); this repository's
-preamble defines neither `\witness{…}` nor `\wtag{…}` (§8.1), so every
-mark of the manuscript is inline by construction. Placement — inline or on
+preamble defines no `\witness{…}` block (§8.1), so every mark of the
+manuscript is inline by construction. Placement — inline or on
 a line of its own — is a prose decision and never a semantic one (contract
 §6.2), and the alphabet below is frozen at `P` and `N` (contract §6.8).
 
@@ -247,9 +247,8 @@ beside them carries the class. External sources stay outside the tag: the
 claim keeps its `\cite` next to it, and a tag alone never carries a
 reference number.
 
-There is **no** `\witness{…}` block and no `\wtag{…}` label in this
-repository's preamble (both are absent; `git grep -F '\witness'` over
-`main.tex` is empty). Every mark of the manuscript is therefore inline by
+There is **no** `\witness{…}` block in this repository's preamble
+(`git grep -F '\witness'` over `main.tex` is empty). Every mark of the manuscript is therefore inline by
 construction — see §8.5 for what the family's own-line criterion means here.
 
 `\Lean{}` is **defined** in the preamble (a right-aligned tt line) but has
@@ -376,8 +375,8 @@ class-number row discharges a named hypothesis with its own `\tierP`.
 ### 8.5 Inline or a line of its own — the criterion
 
 **In this repository every mark is inline, by construction.** The preamble
-defines no `\witness{…}` block and no `\wtag{…}` label (§8.1), so there is
-no own-line form for a mark to take. The family criterion below is stated
+defines no `\witness{…}` block (§8.1), so there is no own-line form for a
+mark to take. The family criterion below is stated
 for completeness and for the sibling repositories that do define the block;
 its own-line outcome has no form here yet.
 
