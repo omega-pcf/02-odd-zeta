@@ -4,11 +4,11 @@
 
 \section{Status ledger}\label{app:ledger}
 
-The table lists every claim of the corpus that the text relies on, with its tier, the
+The table lists every claim of the corpus that the text relies on, with its evidence tag, the
 declaration that carries it, and what it supersedes.  The declarations are those of
 \texttt{F1\_pentagonal\_descent\_UNIFIED.lean} and of the twenty-seven modules compiled for this version
 (\cref{app:lean}).
-Tiers are those of \cref{ssec:protocol}.  The entries of the compiled modules are \tier{P}; the entries
+Tags are those of \cref{ssec:protocol}.  The entries of the compiled modules are \tier{P}; the entries
 written for this version are compiled in the development as well, and corrected when they are found wrong.
 The first part of the table gives the claims with what they supersede; the second lists, in the order of
 the text, every other statement of the body that cites Lean, labelled or in a paragraph of the text, so that
@@ -133,7 +133,7 @@ Davenport--Heilbronn as a test of routes && \texttt{retro99.py}, \texttt{dh\_log
 What an operator of the level does not separate & \tier{P}; spectral theorem (classical) & \texttt{PCFGranularity}, \texttt{ObservablesDelNivel}, \texttt{FibraYReloj} & New (\cref{prop:level-operators}); brings in the content of the granularity module.\\
 The two faces of the Fibonacci dynamics: periodic on the torsion, mixing on the characters & \tier{P}; the count of fixed points, Wall's law and the density step & \texttt{DosCarasFibonacci}, \texttt{PeriodicasSol} & New (\cref{prop:two-faces}).\\
 What a symmetry shows in a spectrum; the spacings of the zeros & \tier{P}& \texttt{EstructuraEnGUE}, \texttt{retro105.py} & New (\cref{prop:symmetry-spectrum}, \cref{ssec:envelope-fluctuation}).\\ % pending(D7)
-\midrule\multicolumn{4}{l}{\emph{Statements of the body not listed above, with the tiers and the declarations the body gives}}\\\midrule
+\midrule\multicolumn{4}{l}{\emph{Statements of the body not listed above, with the evidence tags and the declarations the body gives}}\\\midrule
 The constraint of the Primitive Structure, $\tfrac12$ the only positive real part of $\OmH$; $G$ a surjective homomorphism & \tier{P}& \texttt{positive\_spectral\_half}, \texttt{G\_surj} & \cref{sec:objective}.\\
 The four requirements of an operator & \tier{P}\ (tally) & \texttt{four\_requirements} & \cref{ssec:four-requirements}.\\
 The requirements that each candidate operator meets & \tier{P}\ (tally) & \texttt{hpps\_meets\_two}, \texttt{omega\_meets\_three} & \cref{ssec:four-requirements}.\\
