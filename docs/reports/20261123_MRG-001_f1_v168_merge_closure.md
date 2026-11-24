@@ -308,28 +308,27 @@ extracted and nothing was imported into this repository.**
 
 ---
 
-## 13. Reframing of §6 (operator ruling, 2026-11-23): α and β were misconceived
+## 13. §6 recommendations superseded (ruling, 2026-11-23)
 
-Both §6 recommendations are **superseded by the operator's reframing**; the §6 text is kept as
-the snapshot of what was proposed at closure time.
+The two recommendations of §6 are **superseded by the following positions**; the §6 text is kept
+as the record of what was proposed at closure time.
 
-- **α (`\LeanStar` ×221 → `\LeanInline`)** — rejected as framed. The `*` has **no semantic
-  relation to the inline/own-line axis**: inline vs own-line is a prose-context decision governed
-  by the heuristic/aesthetic criteria recorded in the citations documents (uniform treatment of
-  numbered/unnumbered list elements, etc.). The star (like the witness of `[P*]`) is an
-  **intermediate-process macro**: it denotes *written, still unverified / not yet compiled
-  against the corpus* — exactly the state that large mechanical passes live in. Such a macro is
-  **desirable as a macro, in every intermediate layer**, and **never ships in a release** (no
-  releases contain non-compiling or unverified code). Correct disposition: **tracking item** —
-  the221 starred sites are pending-verification states to be resolved by verification passes;
-  the release gate keeps them at zero. No rendering unification is implied.
-- **β (tally presentation)** — held for **intellectual contrast before any decision**: what the
-  tally (°) denotes, whether expanding our witness set (beyond P/N) is a decision we want for the
-  emerging convention, **what the academic standard is** for marking such claim states, and
-  whether any divergence from academic best practice is justifiable on auditability/correctness
-  grounds (primary objectives). A decision would carry a significant refactor (notably in
-  `01-hilbert-polya`, which currently marks nothing). Research memo to precede the ruling;
-  feeds `WIT-SPEC-001` §8.
+- **α (unify the221 `\LeanStar` marks with `\LeanInline`)** — not adopted. The `*` is not part of
+  the inline/own-line axis: inline versus own-line placement is determined by prose context under
+  the heuristic and typographic criteria recorded in the citations documents (uniform treatment
+  of numbered and unnumbered list elements, and similar). The star, together with the `[P*]`
+  witness, is an **intermediate-process marker**: it records *written, not yet verified against
+  the corpus* — the state in which large mechanical passes operate. Such a marker is retained as
+  a macro throughout intermediate layers and is **excluded from releases** by gate (a release
+  never contains unverified declarations). Disposition: **tracked, not restyled** — each starred
+  site is a pending-verification item resolved by verification passes, and the release criterion
+  is zero stars. No change to inline rendering follows from this ruling.
+- **β (presentation of the tally)** — deferred pending a focused study on semantics, utility,
+  practicability, and programming-inspired best practice (what the tally denotes in the evidence
+  model, which concrete workflow each marker enables, its maintenance and reading cost, and which
+  analogies from software engineering practice fit). Any decision would carry a significant
+  refactor, notably in `01-hilbert-polya`, which marks nothing today. The study precedes the
+  ruling; its outcome feeds `WIT-SPEC-001` §8.
 
 ## Related documents
 
