@@ -181,8 +181,9 @@ fails the build otherwise.
 ## 8. Witnesses (tiers)
 
 The manuscript marks the status of each claim inline: an unbreakable tag set
-in `\footnotesize` and bold, **without colour** (this repository's `\tier`
-emits `{\footnotesize\textbf{[…]}}`; there is no colour dispatch). This
+in `\footnotesize` and bold, in its own colour — the family palette
+dispatched by `\tiercol`, blue for `P` and green for `N`, an unknown key
+producing no colour and no error (§8.4). This
 section is the contract of that device, written down here for whoever writes
 or edits the text. The justification of the device — why a mark of this kind
 belongs in a paper of pure mathematics, and what it does not claim — is
@@ -362,9 +363,8 @@ class-number row discharges a named hypothesis with its own `\tierP`.
   per statement (`leanblueprint`), status tables and artefact seals
   (argued in `docs/witness-contract.md`). The gloss at the first mark
   therefore states the classes and nothing else.
-- **Colour never carries meaning here.** This repository's tags are set in
-  black like the surrounding text, so the WCAG 1.4.1 rule holds trivially:
-  the letter alone always carries the meaning.
+- **Colour is redundant with the letter** (WCAG 1.4.1): a tag reads the same
+  in greyscale, so the letter alone always carries the meaning.
 - **Canonical render parameters:** 13 pt for the witness class, 15 pt for
   the ids and 16 pt for the prose — the family's measured parameters
   (contract §6.6). This repository's tags are set in `\footnotesize`; their

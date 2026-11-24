@@ -147,7 +147,21 @@
 % bracket full of a key: an external source stays a \cite set next to the tag.
 % Sizes are the 05 rule 13/15 (05 CVR-001 TYP-4: mark 13, ids 15, prose 16):
 % the letter in \footnotesize, the ids in \small tt, upright.
+% The family tag palette (05-kkgt main.tex): colour is redundant with the
+% letter (WCAG 1.4.1), so the letter alone still carries the meaning.
+\definecolor{tierP}{rgb}{0.15,0.35,0.65}   % blue   -- proved in Lean
+\definecolor{tierPs}{rgb}{0.70,0.45,0.05}  % ochre  -- written, not yet
+% verified against the corpus (docs/witness-contract.md §6.5): the star's
+% one denotation, intermediate layers only, zero stars at release
+\definecolor{tierN}{rgb}{0.05,0.40,0.20}   % green  -- verified numerically
+\definecolor{tierW}{rgb}{0.00,0.35,0.45}   % teal   -- witness item
 \makeatletter
+\@namedef{tiercol@P}{\color{tierP}}
+\@namedef{tiercol@P*}{\color{tierPs}}
+\@namedef{tiercol@N}{\color{tierN}}
+\@namedef{tiercol@W}{\color{tierW}}
+% unknown key: no colour, no error (the 05-kkgt form of \tiercol)
+\newcommand{\tiercol}[1]{\expandafter\ifx\csname tiercol@#1\endcsname\relax\else\csname tiercol@#1\endcsname\fi}
 \DeclareRobustCommand{\brk@us}{\textunderscore\allowbreak}
 % the test that checks a number, cited by its name in the suite that runs
 \providecommand{\testref}[1]{{\upshape\small\ttfamily\let\_\brk@us #1}}
@@ -156,12 +170,12 @@
 % (the build warned "Command \Small invalid in math mode" at every tag of an
 % equation).  In prose the wrapper is the identity, so nothing moves there.
 \def\tier@text#1{\ifmmode\text{#1}\else#1\fi}%
-\def\tier@ids#1#2{\tier@text{{\footnotesize\textbf{#2}[{\upshape\small\ttfamily\let\_\brk@us #1}]}}}%
+\def\tier@ids#1#2{\tier@text{{\footnotesize\textbf{\tiercol{#2}#2}[{\upshape\small\ttfamily\let\_\brk@us #1}]}}}%
 % every line of the body ends in a comment char: the tag must emit no space
 % of its own, neither before nor after, or a mark would typeset one.
 \providecommand{\tier}[2][]{%
 \ifx\relax#1\relax%
-\tier@text{{\footnotesize\textbf{[#2]}}}%
+\tier@text{{\footnotesize\textbf{\tiercol{#2}[#2]}}}%
 \else%
 \in@{\cite}{#1}\ifin@
 \PackageError{tier}{the optional argument of \string\tier\space holds internal ids only}%
