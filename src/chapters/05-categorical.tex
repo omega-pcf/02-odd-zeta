@@ -385,17 +385,17 @@ $\tilde H_{\PCF}$ and closed its argument conditionally on named inputs.  This p
 was written to settle them.  The account, input by input:
 
 \begin{center}
-\begin{tabular}{>{\raggedright\arraybackslash}p{4.2cm}>{\raggedright\arraybackslash}p{3.2cm}>{\raggedright\arraybackslash}p{5.2cm}}
+\begin{tabular}{>{\raggedright\arraybackslash}p{4.2cm}>{\raggedright\arraybackslash}p{8.4cm}}
 \toprule
-Input of \cite{gonzalez25hp} & Status here & Where \\
+Input of \cite{gonzalez25hp} & Where \\
 \midrule
-\texttt{hecke\_1920} (Hecke 1920) & discharged \tier{P}& \LeanInline{hecke\_chi5\_derived}; functional equation, companion zero, conjugation: \cref{sec:analytic-inputs} \\
-Seven geometric axioms ($\golden^2=\golden+1$, $i^2=-1$, $z=\golden y$, basis of $E^3$, continued fraction, nested radical, $\|\Omega\|=\tfrac12$) & theorems \tier{P}& Block~1 of the unified Lean file, \texttt{F1\_compilado\_sin\_axiomas}, with $0$ axioms (\cref{app:lean}) \\
-Arithmetic--spectral span & constructed \tier{P}& \cref{prop:span}, with $G$ as common source (\cref{prop:G}) \\
-Membership of the zeros & derived from the bridge \tier{P}& \cref{thm:membership} \\
-$\Lambda$-ring on $\Zphi[\golden^{-1},\tfrac12]$ & corrected & monoid between levels, Artin structure within: \cref{rmk:monoid-not-ring,sec:lambda-ring} \\
-\texttt{bridge\_axiom} & carried to its last link, which the closure conjecture would give & \cref{ssec:core-forms,cor:closure} \\
-The operator's spectrum vs.\ the zeros & located exactly & the envelope places the zeros to a fraction of a spacing; the precision is \cref{conj:closure} \\
+\texttt{hecke\_1920} (Hecke 1920) & discharged: \LeanInline{hecke\_chi5\_derived}; functional equation, companion zero, conjugation: \cref{sec:analytic-inputs}\\
+Seven geometric axioms ($\golden^2=\golden+1$, $i^2=-1$, $z=\golden y$, basis of $E^3$, continued fraction, nested radical, $\|\Omega\|=\tfrac12$) & theorems: Block~1 of the unified Lean file, \texttt{F1\_compilado\_sin\_axiomas}, with $0$ axioms (\cref{app:lean})\\
+Arithmetic--spectral span & constructed: \cref{prop:span}, with $G$ as common source (\cref{prop:G})\\
+Membership of the zeros & derived from the bridge: \cref{thm:membership}\\
+$\Lambda$-ring on $\Zphi[\golden^{-1},\tfrac12]$ & corrected: monoid between levels, Artin structure within: \cref{rmk:monoid-not-ring,sec:lambda-ring}\\
+\texttt{bridge\_axiom} & carried to its last link, which the closure conjecture would give: \cref{ssec:core-forms,cor:closure}\\
+The operator's spectrum vs.\ the zeros & located exactly: the envelope places the zeros to a fraction of a spacing; the precision is \cref{conj:closure}\\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -558,13 +558,13 @@ heights.
 \toprule
 Clause & Already proved, at the level of $\Zphi$ & Open & Refuted if \\
 \midrule
-Prisms at $p\ne5$ & $\Zphi$ is a $\delta$-ring (\cref{prop:delta-ring}) \tier{P}; a $p$-complete, $p$-torsion-free $\delta$-ring with $(p)$ is a crystalline prism \cite{bhattscholze22} & the formalisation & --- \\
-(1) local factors & characteristic polynomial (\cref{thm:frob-eigen}) \tier{P}& that it comes from $H$ & the factor of $H$ differs from Euler's \\
-(2) template at $2$ & $2$-adic polar form, anchor (\cref{prop:omega-two-adic,prop:euler-tower}) \tier{P}& its prismatic reading & the component at $2$ does not give $\zeta_3$, $|2|_2$ \\
-(3) gluing & product formula at $2$; $\sigma_p=\log_\golden p$ (\cref{prop:euler-tower}) \tier{P}; exact on each level of the clock (\cref{prop:clock-cyclotomic}), with the clock as cyclotomic polynomials \tier{P}& from the clock to the size & some exact magnitude is not $\log_\golden p$ \\
-the prime $5$ & the obstruction (\cref{thm:obstruction-five}) \tier{P}; the prism, distinguished, $\delta(E)\equiv-1$; special fibre $=\delta_5$; defect $\tau(\chiv)^2$ \tier{P}; conductor $5^7$; Kisin class $h=u$ \tier{N}\ (\cref{rmk:prism-five}) & the gluing & --- \\
-(4) assembly & the classes and the fluctuation's intake (\cref{prop:what-fluctuation-takes}) \tier{P}; the layers of the index (\cref{prop:phi-layers}) and the energy of their phases (\cref{prop:sqrt-x}) \tier{P}& the law at resolution $1/T$; the scale $\tfrac12$ of the power-residue symbols & the assembled correction does not give exact heights \\
-(5) positivity & modulus $1$ $\Leftrightarrow$ the line (\cref{prop:phase-modulus}) \tier{P}; windows (\cref{thm:first-window}); (W4) certified for $k\le25$ (\cref{ssec:weil-closure}) & the pairing & (W4) fails \\
+Prisms at $p\ne5$ & $\Zphi$ is a $\delta$-ring (\cref{prop:delta-ring}); a $p$-complete, $p$-torsion-free $\delta$-ring with $(p)$ is a crystalline prism \cite{bhattscholze22} & the formalisation & --- \\
+(1) local factors & characteristic polynomial (\cref{thm:frob-eigen}) & that it comes from $H$ & the factor of $H$ differs from Euler's \\
+(2) template at $2$ & $2$-adic polar form, anchor (\cref{prop:omega-two-adic,prop:euler-tower}) & its prismatic reading & the component at $2$ does not give $\zeta_3$, $|2|_2$ \\
+(3) gluing & product formula at $2$; $\sigma_p=\log_\golden p$ (\cref{prop:euler-tower}); exact on each level of the clock (\cref{prop:clock-cyclotomic}), with the clock as cyclotomic polynomials & from the clock to the size & some exact magnitude is not $\log_\golden p$ \\
+the prime $5$ & the obstruction (\cref{thm:obstruction-five}); the prism, distinguished, $\delta(E)\equiv-1$; special fibre $=\delta_5$; defect $\tau(\chiv)^2$; conductor $5^7$; Kisin class $h=u$ (\cref{rmk:prism-five}) & the gluing & --- \\
+(4) assembly & the classes and the fluctuation's intake (\cref{prop:what-fluctuation-takes}); the layers of the index (\cref{prop:phi-layers}) and the energy of their phases (\cref{prop:sqrt-x}) & the law at resolution $1/T$; the scale $\tfrac12$ of the power-residue symbols & the assembled correction does not give exact heights \\
+(5) positivity & modulus $1$ $\Leftrightarrow$ the line (\cref{prop:phase-modulus}); windows (\cref{thm:first-window}); (W4) certified for $k\le25$ (\cref{ssec:weil-closure}) & the pairing & (W4) fails \\
 \bottomrule
 \end{tabular}
 \end{center}

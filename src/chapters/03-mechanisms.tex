@@ -3623,15 +3623,15 @@ write $\beta=\Re\rho$, $\gamma=\Im\rho$, and
 The inputs about $L(s,\chiv)$ used throughout are listed below: every row but the
 last is a theorem; the last, the height of the first zero, is classical.
 
-\begin{longtable}{p{4.6cm}p{6.6cm}l}
-\toprule Input & Lean & Tier\\\midrule
-Functional equation of $\Lambda(s,\chiv)$ & \LeanInline{functionalEquation\_chi5\_discharged} & \tier{P}\\
-Companion zero (Hecke 1920) & \LeanInline{hecke\_chi5\_derived}, \LeanInline{zeros\_route\_is\_discharged} & \tier{P}\\
-$\overline{L(\bar s)}=L(s)$ & \LeanInline{hconj\_discharged} & \tier{P}\\
-Closure under the mate; real coefficients & \LeanInline{closedUnderMate\_chi5}, \LeanInline{realCoefficients\_chi5} & \tier{P}\\
-$|\gamma|\ge2$ for the zeros used & \LeanInline{discBound\_discharged\_high} & \tier{P}\\
-\texttt{hmate}: each zero has a zero $\rho'$ with $|1-1/\rho'|=|1-1/\rho|^{-1}$; \texttt{hcoord}: for $\Re\rho>0$, $|1-1/\rho|=1\iff\Re\rho=\tfrac12$ & \LeanInline{mate\_hypothesis\_discharged}, \LeanInline{hcoord\_discharged} & \tier{P}\\
-First zero at $\gamma\approx6.6485$ (\LeanInline{NoLowZeros}) & classical; not proved in Lean & classical\\
+\begin{longtable}{p{4.6cm}p{6.6cm}}
+\toprule Input & Lean\\\midrule
+Functional equation of $\Lambda(s,\chiv)$ & \LeanInline{functionalEquation\_chi5\_discharged}\\
+Companion zero (Hecke 1920) & \LeanInline{hecke\_chi5\_derived}, \LeanInline{zeros\_route\_is\_discharged}\\
+$\overline{L(\bar s)}=L(s)$ & \LeanInline{hconj\_discharged}\\
+Closure under the mate; real coefficients & \LeanInline{closedUnderMate\_chi5}, \LeanInline{realCoefficients\_chi5}\\
+$|\gamma|\ge2$ for the zeros used & \LeanInline{discBound\_discharged\_high}\\
+\texttt{hmate}: each zero has a zero $\rho'$ with $|1-1/\rho'|=|1-1/\rho|^{-1}$; \texttt{hcoord}: for $\Re\rho>0$, $|1-1/\rho|=1\iff\Re\rho=\tfrac12$ & \LeanInline{mate\_hypothesis\_discharged}, \LeanInline{hcoord\_discharged}\\
+First zero at $\gamma\approx6.6485$ (\LeanInline{NoLowZeros}) & not proved in Lean\\
 \bottomrule\end{longtable}
 The root number of the functional equation is $+1$: the Gauss sum of $\chiv$ is $\tau(\chiv)=+\sqrt5$,
 by Gauss's determination of the sign of the quadratic Gauss sum (\cref{rmk:nature-L}).
@@ -4053,16 +4053,16 @@ a zero or \Ecore\ as input is recorded as a tally (\LeanTally{the\_chain\_is\_no
 \LeanTally{eight\_links\_none\_from\_E}), and link~6 is the inequality
 $r(\rho)^2\le1+1/\gamma^2$ of \cref{prop:rbound}.
 
-\begin{longtable}{clp{6.0cm}l}
-\toprule \# & Link & Content & Tier\\\midrule
-1 & \LeanInline{F1CW.tower\_ham\_is\_hermitian} Hermitian & real diagonal $\lambda_i=m_0\golden^i$ (\LeanInline{towerH}) & \tier{P}\\
-2 & ratios & $\lambda_i/\lambda_j=\golden^{\,i-j}$; $m_0$ cancels & \tier{P}\\
-3 & $k$ even & $t=L_k$, a Lucas number, hence an integer & \tier{P}\\
-4 & trace & the matrices $F^{k}$, $k$ even, lie in $SL_2(\Z)$ and are constructed, not posited & \tier{P}\\
-5 & norm & $N(r)=+1$ forces $k$ even & \tier{P}\\
-6 & bound & $t\le2.00013$ from the strip and $|\gamma|\ge6.6485$ (\cref{prop:rbound}) & \tier{P},\,classical\\
-7 & value & $t=2$ is the value at which $\Re\rho=\tfrac12=1/|\ker G|$, the inverse of the fibre size of $G$ (\cref{cor:value-is-kernel}) & \tier{P}\\
-8 & closure & $t=2\iff r=1\iff\Re\rho=\tfrac12$ & \tier{P}\\
+\begin{longtable}{clp{6.0cm}}
+\toprule \# & Link & Content\\\midrule
+1 & \LeanInline{F1CW.tower\_ham\_is\_hermitian} Hermitian & real diagonal $\lambda_i=m_0\golden^i$ (\LeanInline{towerH})\\
+2 & ratios & $\lambda_i/\lambda_j=\golden^{\,i-j}$; $m_0$ cancels\\
+3 & $k$ even & $t=L_k$, a Lucas number, hence an integer\\
+4 & trace & the matrices $F^{k}$, $k$ even, lie in $SL_2(\Z)$ and are constructed, not posited\\
+5 & norm & $N(r)=+1$ forces $k$ even\\
+6 & bound & $t\le2.00013$ from the strip and $|\gamma|\ge6.6485$ (\cref{prop:rbound})\\
+7 & value & $t=2$ is the value at which $\Re\rho=\tfrac12=1/|\ker G|$, the inverse of the fibre size of $G$ (\cref{cor:value-is-kernel})\\
+8 & closure & $t=2\iff r=1\iff\Re\rho=\tfrac12$\\
 \bottomrule\end{longtable}
 
 Two of these were weaker in earlier versions and are not now: link~6 was a

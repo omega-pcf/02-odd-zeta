@@ -639,18 +639,18 @@ in different languages, not separate open problems.  How the paper proposes to t
 --- Weil's route, and the closure conjecture it leads to --- is the subject of the last subsections,
 ending in \cref{conj:closure,cor:closure}.
 
-\begin{longtable}{p{5.2cm}p{5.6cm}p{2.6cm}l}
-\toprule Form of the step & Equivalence & Condition & Tier\\\midrule\endhead
-The real part of each zero is a spectral position of $\OmH$ (the last link of the bridge) & \LeanInline{GDS\_iff\_E}, \LeanInline{landing\_iff\_E} & none & \tier{P}\\
-The coordinate of each zero is $1$ & \LeanInline{face\_coordinate\_iff\_GRH}, \LeanInline{liMap\_on\_unit\_circle\_iff} & none & \tier{P}\\
-No two zeros share an ordinate & \LeanInline{E\_iff\_no\_shared\_ordinate\_chi5}, \LeanInline{E\_iff\_no\_shared\_ordinate\_of\_fe\_rc} & none & \tier{P}\\
-The symmetric product $\rho(1-\rho)$ of every zero is real & \LeanInline{no\_shared\_ordinate\_iff\_e2\_real} with the previous row & no zero on the real axis & \tier{P}\\
-Premise A: $\Re\rho\le\mu_3$ for all zeros & \LeanInline{premise\_A\_iff\_GRH\_chi5} & none & \tier{P}\\
-The coordinate is a power of $\golden$ (membership in the tower) & \LeanInline{the\_zeros\_must\_sit\_at\_level\_zero}, \LeanInline{descending\_to\_F1\_is\_E} & discriminant bound of the zero & \tier{P}\\
-$r(\rho)\in\golden^{\Z}$ with the strip bound & \LeanInline{position\_is\_interval\_meets\_discreteness}, \LeanInline{radius\_one\_is\_E} & Prop.~\ref{prop:rbound} & \tier{P}\\
-The trace $t(\rho)$ is an integer & \LeanInline{the\_two\_labels\_are\_one\_gap}, \LeanInline{route\_B\_equals\_GRH} & $|\gamma|\ge2$; discriminant bound & \tier{P}\\
-The real degree $\log r/\log\golden$ is an integer & \LeanInline{E\_iff\_realDegree\_integral} & height of the first zero & \tier{P}\\
-The primes act by powers on the zero coordinates & \LeanInline{B\_iff\_E\_one\_hypothesis} & height of the first zero & \tier{P}\\
+\begin{longtable}{p{5.2cm}p{5.6cm}p{2.6cm}}
+\toprule Form of the step & Equivalence & Condition\\\midrule\endhead
+The real part of each zero is a spectral position of $\OmH$ (the last link of the bridge) & \LeanInline{GDS\_iff\_E}, \LeanInline{landing\_iff\_E} & none\\
+The coordinate of each zero is $1$ & \LeanInline{face\_coordinate\_iff\_GRH}, \LeanInline{liMap\_on\_unit\_circle\_iff} & none\\
+No two zeros share an ordinate & \LeanInline{E\_iff\_no\_shared\_ordinate\_chi5}, \LeanInline{E\_iff\_no\_shared\_ordinate\_of\_fe\_rc} & none\\
+The symmetric product $\rho(1-\rho)$ of every zero is real & \LeanInline{no\_shared\_ordinate\_iff\_e2\_real} with the previous row & no zero on the real axis\\
+Premise A: $\Re\rho\le\mu_3$ for all zeros & \LeanInline{premise\_A\_iff\_GRH\_chi5} & none\\
+The coordinate is a power of $\golden$ (membership in the tower) & \LeanInline{the\_zeros\_must\_sit\_at\_level\_zero}, \LeanInline{descending\_to\_F1\_is\_E} & discriminant bound of the zero\\
+$r(\rho)\in\golden^{\Z}$ with the strip bound & \LeanInline{position\_is\_interval\_meets\_discreteness}, \LeanInline{radius\_one\_is\_E} & Prop.~\ref{prop:rbound}\\
+The trace $t(\rho)$ is an integer & \LeanInline{the\_two\_labels\_are\_one\_gap}, \LeanInline{route\_B\_equals\_GRH} & $|\gamma|\ge2$; discriminant bound\\
+The real degree $\log r/\log\golden$ is an integer & \LeanInline{E\_iff\_realDegree\_integral} & height of the first zero\\
+The primes act by powers on the zero coordinates & \LeanInline{B\_iff\_E\_one\_hypothesis} & height of the first zero\\
 \bottomrule\end{longtable}
 
 The conditions are three, and each is settled: the discriminant bound is proved for
@@ -796,19 +796,18 @@ rest definite; (W4) Castelnuovo--Severi bounds the point counts on the Frobenius
 (W5) the bound for every power gives the line.  Transported along the chain:
 
 \begin{center}\small
-\begin{tabular}{@{}lp{7.4cm}p{3.6cm}@{}}
-\toprule step & here & status\\\midrule
-W1 & $\Frob_p$ on $\Zphi$, Euler factor = characteristic polynomial; the eight classes & \tier{P}, \tier{P}\\
-W2 & Weil form; translation by $\log p$ is the Frobenius; the orbit matrix is Toeplitz & \tier{P}\\
+\begin{tabular}{@{}lp{11.0cm}@{}}
+\toprule step & here\\\midrule
+W1 & $\Frob_p$ on $\Zphi$, Euler factor = characteristic polynomial; the eight classes\\
+W2 & Weil form; translation by $\log p$ is the Frobenius; the orbit matrix is Toeplitz\\
 W3 & one negative direction (the pole, the ample
 class); primitive part definite on orbits; on the angles
 of $\golden$, roots of unity, a sum of squares; the
 modulus normalised by the tower; positivity on the
 windows $L\le0.7447$, $1$ and $1.3$
-& \tier{N}; angles and normalisation \tier{P}; windows
-\tier{P} with declared inputs, computer-assisted\\
-W4 & $|t_k|\le t_0$ on the orbit, class by class, with $t_k$ the Weil form between a test function and its translate by $k\log p$, the $k$-th power of the Frobenius at $p$: the Weil face of \cref{conj:closure}; it is \textup{(W3)} on the planes of the orbit (\cref{prop:W4-from-W3}) & on the planes of the windows \tier{P}; certified for $k\le25$ (computer-assisted); open for every $k$\\
-W5 & bounded orbit $\Rightarrow$ no zero off the line & \tier{P}\\
+\\
+W4 & $|t_k|\le t_0$ on the orbit, class by class, with $t_k$ the Weil form between a test function and its translate by $k\log p$, the $k$-th power of the Frobenius at $p$: the Weil face of \cref{conj:closure}; it is \textup{(W3)} on the planes of the orbit (\cref{prop:W4-from-W3})\\
+W5 & bounded orbit $\Rightarrow$ no zero off the line\\
 \bottomrule\end{tabular}
 \end{center}
 
