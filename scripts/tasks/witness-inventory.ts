@@ -72,10 +72,35 @@ function corpus(): Source[] {
   }));
 }
 
-/** `\tier[ids]{X}` / `\tier{X}` — group 1 = the optional argument, group 2 = the class. */
-const TIER = /\\tier\s*(?:\[([^\]]*)\])?\s*\{([^{}]*)\}/g;
-/** `\witness{X}{…}` — group 1 = the class (the ids may contain nested braces). */
-const WITNESS = /\\witness\s*\{([^{}]*)\}/g;
+/**
+ * `\\witness[ids]{X}` — group 1 = the ids (empty for a bare mark), group 2 =
+ * the class.  One name, one optional argument since the F1-A unification: the
+ * position of the call in the source picks the own-line block or the inline
+ * mark (contract §6.12 S7), and this census measures that position, so the
+ * two renderings are counted apart.
+ */
+const WITNESS = /\\witness\s*(?:\[([^\]]*)\])?\s*\{([^{}]*)\}/g;
+
+/**
+ * Is the call at `lines[index]` in vertical mode, i.e. does the source place
+ * it on a line of its own (contract §6.12 S7)?  The corpus has the TeX
+ * comments removed, so a blank line, the end of an environment, a display, a
+ * heading, an `\item` alone on its line or the previous own-line mark all
+ * leave the vertical mode open; anything else keeps the paragraph open and
+ * the mark is inline.
+ */
+function isOwnLine(lines: { no: number; text: string }[], index: number): boolean {
+  if (index === 0) return true;
+  const prev = lines[index - 1].text.trim();
+  if (prev === '') return true;
+  if (prev.includes('\\end{')) return true;
+  if (/^\\item(\[[^\]]*\])?$/.test(prev)) return true;
+  if (/^\\(section|subsection|subsubsection|paragraph|chapter)\b/.test(prev)) return true;
+  if (prev.endsWith('\\par') || prev.endsWith('\\par}')) return true;
+  if (prev.startsWith('\\witness')) return true;
+  if (prev.endsWith('\\]')) return true;
+  return false;
+}
 
 function matches(text: string, re: RegExp): RegExpExecArray[] {
   re.lastIndex = 0;
@@ -131,14 +156,15 @@ function citationKeys(): Set<string> {
 interface Census {
   repo: string;
   files: number;
-  tierIdsP: number;
-  tierIdsN: number;
-  tierBareP: number;
-  tierBareN: number;
-  witnessOwnP: number;
-  witnessOwnN: number;
-  witnessMid: number;
-  tierTestrefN: number;
+  ownIdsP: number;
+  ownIdsN: number;
+  ownBareP: number;
+  ownBareN: number;
+  inlineIdsP: number;
+  inlineIdsN: number;
+  inlineBareP: number;
+  inlineBareN: number;
+  witnessTestrefN: number;
   nTagCitations: number;
   nTagDistinct: number;
   macros: { name: string; count: number }[];
@@ -168,14 +194,15 @@ function census(): Census {
   const sources = corpus();
   const keys = citationKeys();
 
-  let tierIdsP = 0;
-  let tierIdsN = 0;
-  let tierBareP = 0;
-  let tierBareN = 0;
-  let witnessOwnP = 0;
-  let witnessOwnN = 0;
-  let witnessMid = 0;
-  let tierTestrefN = 0;
+  let ownIdsP = 0;
+  let ownIdsN = 0;
+  let ownBareP = 0;
+  let ownBareN = 0;
+  let inlineIdsP = 0;
+  let inlineIdsN = 0;
+  let inlineBareP = 0;
+  let inlineBareN = 0;
+  let witnessTestrefN = 0;
   const nTagIds: string[] = [];
   let keyLintFailures = 0;
   let stars = 0;
@@ -187,64 +214,48 @@ function census(): Census {
 
   for (const src of sources) {
     let fileMarks = 0;
-    for (const line of src.lines) {
+    for (let li = 0; li < src.lines.length; li++) {
+      const line = src.lines[li];
       const text = line.text;
 
-      for (const m of matches(text, TIER)) {
-        const arg = m[1];
+      for (const m of matches(text, WITNESS)) {
+        const arg = m[1] ?? '';
         const cls = m[2].trim();
         fileMarks += 1;
-        if (arg === undefined || arg === '') {
-          if (cls === 'P') tierBareP += 1;
-          else if (cls === 'N') tierBareN += 1;
-        } else {
-          if (cls === 'P') tierIdsP += 1;
-          else if (cls === 'N') tierIdsN += 1;
-          const parts = splitIds(arg);
-          if (cls === 'N') {
-            nTagIds.push(...parts);
-            if (parts.length > 0 && parts.every((p) => p.startsWith('\\testref{'))) tierTestrefN += 1;
+        // the call sits at the head of its source line -> own line in the
+        // source -> the block; a \leavevmode prefix is a mid-line call that
+        // opens the paragraph, so it counts as inline.
+        const ownLine = text.slice(0, m.index ?? 0).trim() === '' && isOwnLine(src.lines, li);
+        if (arg === '') {
+          if (ownLine) {
+            if (cls === 'P') ownBareP += 1;
+            else if (cls === 'N') ownBareN += 1;
+          } else {
+            if (cls === 'P') inlineBareP += 1;
+            else if (cls === 'N') inlineBareN += 1;
           }
-          for (const part of parts) {
-            if (isStandardId(part)) continue;
-            const id = part.replace(/\\_/g, '_');
-            nonStandardCounts.set(id, (nonStandardCounts.get(id) ?? 0) + 1);
-          }
-          if (keys.size > 0) {
-            for (const part of parts) {
-              if (keys.has(part) || part.includes('\\cite')) keyLintFailures += 1;
-            }
-          }
+          continue;
         }
-      }
-
-      for (const m of matches(text, WITNESS)) {
-        const cls = m[1].trim();
-        const ownLine = text.slice(0, m.index ?? 0).trim() === '';
         if (ownLine) {
-          if (cls === 'P') witnessOwnP += 1;
-          else if (cls === 'N') witnessOwnN += 1;
+          if (cls === 'P') ownIdsP += 1;
+          else if (cls === 'N') ownIdsN += 1;
         } else {
-          witnessMid += 1;
+          if (cls === 'P') inlineIdsP += 1;
+          else if (cls === 'N') inlineIdsN += 1;
         }
-        const tail = text.slice((m.index ?? 0) + m[0].length);
-        const open = /^\s*\{/.exec(tail);
-        if (open) {
-          let depth = 0;
-          let end = -1;
-          for (let i = open.index! + open[0].length - 1; i < tail.length; i++) {
-            if (tail[i] === '{') depth += 1;
-            else if (tail[i] === '}') {
-              depth -= 1;
-              if (depth === 0) {
-                end = i;
-                break;
-              }
-            }
-          }
-          if (end > 0) {
-            const parts = splitIds(tail.slice(open.index! + open[0].length, end));
-            if (cls === 'N') nTagIds.push(...parts);
+        const parts = splitIds(arg);
+        if (cls === 'N') {
+          nTagIds.push(...parts);
+          if (parts.length > 0 && parts.every((p) => p.startsWith('\\testref{'))) witnessTestrefN += 1;
+        }
+        for (const part of parts) {
+          if (isStandardId(part)) continue;
+          const id = part.replace(/\\_/g, '_');
+          nonStandardCounts.set(id, (nonStandardCounts.get(id) ?? 0) + 1);
+        }
+        if (keys.size > 0) {
+          for (const part of parts) {
+            if (keys.has(part) || part.includes('\\cite')) keyLintFailures += 1;
           }
         }
       }
@@ -266,14 +277,15 @@ function census(): Census {
   return {
     repo: basename(resolve('.')),
     files: sources.length,
-    tierIdsP,
-    tierIdsN,
-    tierBareP,
-    tierBareN,
-    witnessOwnP,
-    witnessOwnN,
-    witnessMid,
-    tierTestrefN,
+    ownIdsP,
+    ownIdsN,
+    ownBareP,
+    ownBareN,
+    inlineIdsP,
+    inlineIdsN,
+    inlineBareP,
+    inlineBareN,
+    witnessTestrefN,
     nTagCitations: nTagIds.length,
     nTagDistinct: new Set(nTagIds).size,
     macros: macroNames.map((name) => ({ name, count: countMacro(sources, name) })),
@@ -315,14 +327,15 @@ function render(c: Census): string {
   out.push('');
   out.push('| form | count |');
   out.push('|---|--:|');
-  out.push(`| \`\\tier[ids]{P}\` | ${c.tierIdsP} |`);
-  out.push(`| \`\\tier[ids]{N}\` | ${c.tierIdsN} |`);
-  out.push(`| \`\\tier{P}\` (bare) | ${c.tierBareP} |`);
-  out.push(`| \`\\tier{N}\` (bare) | ${c.tierBareN} |`);
-  out.push(`| own-line \`\\witness{P}{…}\` | ${c.witnessOwnP} |`);
-  out.push(`| own-line \`\\witness{N}{…}\` | ${c.witnessOwnN} |`);
-  out.push(`| mid-line \`\\witness{…}\` (no block) | ${c.witnessMid} |`);
-  out.push(`| \`\\tier[\\testref{…}]{N}\` marks | ${c.tierTestrefN} |`);
+  out.push(`| own-line \`\\witness[ids]{P}\` | ${c.ownIdsP} |`);
+  out.push(`| own-line \`\\witness[ids]{N}\` | ${c.ownIdsN} |`);
+  out.push(`| own-line \`\\witness{P}\` (bare) | ${c.ownBareP} |`);
+  out.push(`| own-line \`\\witness{N}\` (bare) | ${c.ownBareN} |`);
+  out.push(`| inline \`\\witness[ids]{P}\` | ${c.inlineIdsP} |`);
+  out.push(`| inline \`\\witness[ids]{N}\` | ${c.inlineIdsN} |`);
+  out.push(`| inline \`\\witness{P}\` (bare) | ${c.inlineBareP} |`);
+  out.push(`| inline \`\\witness{N}\` (bare) | ${c.inlineBareN} |`);
+  out.push(`| \`\\witness[\\testref{…}]{N}\` marks | ${c.witnessTestrefN} |`);
   out.push('');
   out.push(`Ids carried by \`N\` marks: **${c.nTagCitations} ids over ${c.nTagDistinct} distinct**.`);
   out.push('');
@@ -341,7 +354,7 @@ function render(c: Census): string {
   out.push(`| \`Tier\` column in a table | **${c.tierColumns}** |`);
   out.push(`| \`pending(D7)\` markers | **${c.pendingD7.length}** |`);
   out.push(
-    `| \`\\tier[…]\` id parts that are neither a \`\\testref\`, a snake_case id nor a qualified declaration | **${c.nonStandardOccurrences}** |`
+    `| \`\\witness[…]\` id parts that are neither a \`\\testref\`, a snake_case id nor a qualified declaration | **${c.nonStandardOccurrences}** |`
   );
   out.push(`| open sites (\`(open;\`) | **${c.openSites.length}** |`);
   out.push('');
@@ -349,7 +362,7 @@ function render(c: Census): string {
   if (c.nonStandard.length > 0) {
     const shown = c.nonStandard.slice(0, 60);
     out.push(
-      `\`\\tier[…]\` ids that are neither a \`\\testref\`, a snake_case id nor a namespace-qualified declaration ` +
+      `\`\\witness[…]\` ids that are neither a \`\\testref\`, a snake_case id nor a namespace-qualified declaration ` +
         `(${c.nonStandardOccurrences} occurrences, ${c.nonStandard.length} distinct):`
     );
     out.push('');
@@ -376,7 +389,7 @@ function render(c: Census): string {
 
   out.push('## Per-file marks');
   out.push('');
-  out.push('| file | `\\tier[…]` + `\\tier{…}` marks |');
+  out.push('| file | `\\witness` marks |');
   out.push('|---|--:|');
   for (const f of c.perFile) out.push(`| \`${f.file}\` | ${f.count} |`);
   out.push('');

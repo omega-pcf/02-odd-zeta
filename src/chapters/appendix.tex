@@ -20,13 +20,13 @@ no statement the text relies on is left out; the last row is the closing step.
 $\chi_5(p)\equiv F_p\pmod p$, all $p\ne5$ & \texttt{S1Closure.chi5\_fib\_all\_primes}; \texttt{lambda\_structure\_gives\_chi5}; \texttt{FrobeniusUnico.fib\_eq\_sign} & Supersedes the tabulation over six primes (\texttt{fib\_split\_criterion}).\\
 $F_{p-1}\bmod p$ & \texttt{F1Pendientes.fib\_pred\_from\_mod5} & New.\\
 Pisano period $\pi(5)=20$ & \texttt{pisano\_five\_is\_twenty} & Closes a gap of the compiled file (modular step).\\
-$\zeta(2k+1)=\zeta_K(2k+1)/L(2k+1,\chi_5)$, every $k\ge1$ & \texttt{F1PaperNew.zeta\_odd\_pentagonal\_determination\_unconditional} & Discharges the hypothesis $L(2k+1,\chi_5)\ne0$ of \texttt{zeta\_odd\_pentagonal\_determination} \tier{P}\ from Mathlib's non-vanishing on $\Re s\ge1$.\\
+$\zeta(2k+1)=\zeta_K(2k+1)/L(2k+1,\chi_5)$, every $k\ge1$ & \texttt{F1PaperNew.zeta\_odd\_pentagonal\_determination\_unconditional} & Discharges the hypothesis $L(2k+1,\chi_5)\ne0$ of \texttt{zeta\_odd\_pentagonal\_determination} \witness{P}\ from Mathlib's non-vanishing on $\Re s\ge1$.\\
 $L_{2m}<3\iff m=0$, every $m$ & \texttt{F1PaperNew.even\_lucas\_below\_three\_iff} & Extends \texttt{bound\_selects\_one}, which checks the first five values.\\
 Closure conjecture with clause (iii) formalised
 & \texttt{F1PaperClosure.ExactClosureAssembledLim},
   \texttt{CorrectionIsLimit}
 & Implies \texttt{ExactClosure}
-  (\texttt{exactClosure\_of\_assembledLim} \tier{P});
+  (\texttt{exactClosure\_of\_assembledLim} \witness{P});
   the first form, with \texttt{assembledCorrection},
   is vacuous in (iii); the derivation from the
   structure is not formalised
@@ -38,7 +38,7 @@ The prism at $5$ & \texttt{F1PaperSixty.bk\_delta\_E}, \texttt{bk\_special\_fibe
 $\sqrt X$ as the root of the energy & \texttt{W4Isometria.symEnergy\_le}, \texttt{sqrt\_law\_of\_pythagoras}; \texttt{PythagorasLaw} (open) & New (\cref{prop:sqrt-x}).\\
 Energy at every scale & \texttt{W4Isometria.LandauPlancherel.cramer\_uniform}, \texttt{CramerConteo.cramer\_K\_bounded}, \texttt{FormulaExplicita.energy\_bounded\_of\_explicit\_formula} & New (\cref{prop:energy-scale}); counting law and truncated explicit formula.\\
 Amplitude of clause (ii) & \texttt{W4Isometria.pair\_defect}, \texttt{amplitude\_eq\_iff\_line} & New (\cref{prop:closure-amplitude}).\\
-Second step of the closure, in the form of the clock & \texttt{F1PaperClosureClock.ClockLayerEnergyBounded}; \texttt{family\_energy\_of\_clock\_layers} \tier{P}& New (\cref{conj:closure,rmk:closure-status}).\\
+Second step of the closure, in the form of the clock & \texttt{F1PaperClosureClock.ClockLayerEnergyBounded}; \texttt{family\_energy\_of\_clock\_layers} \witness{P}& New (\cref{conj:closure,rmk:closure-status}).\\
 W3 on the angles of $\golden$ & \texttt{F1PaperClosureClock.clock\_angles\_W3\_W4} & New (\cref{ssec:bridge-boosts}).\\
 
 Window $L\le1$, $Q\ge0.0445\|f\|^2$ & \texttt{weil\_certificates/verify\_iv.py} & Interval arithmetic; supersedes the double-precision $0.0431$.\\
@@ -67,7 +67,7 @@ Traces of the Fibonacci powers & \texttt{the\_three\_pieces}; \texttt{the\_count
 Orbit centre & \texttt{the\_orbit\_embedding\_is\_unconditional} & \\
 Integrality of $t(\rho)$ $\Leftrightarrow$ \Ecore & \texttt{the\_two\_labels\_are\_one\_gap} & For $|\gamma|\ge2$.\\
 Membership, given the bridge & \texttt{the\_membership\_derived}; \texttt{five\_proved\_three\_classical}$^\circ$; \texttt{BridgeAxiom} & Supersedes \texttt{MembershipStillOpen}.\\
-Identification of the two branches of the span & \texttt{TheSpanIdentifiesThem} (marker) & The branches meet at $\log2$ (\texttt{branches\_meet\_at\_log\_two}, \tier{P}).\\
+Identification of the two branches of the span & \texttt{TheSpanIdentifiesThem} (marker) & The branches meet at $\log2$ (\texttt{branches\_meet\_at\_log\_two}, \witness{P}).\\
 Pieces of the bridge & \texttt{branches\_meet\_at\_log\_two}, \texttt{G\_hom}, \texttt{G\_pi2\_is\_chi5}; \texttt{the\_bridge\_pieces\_formalized}$^\circ$ & None speaks of a zero; \texttt{BridgeIsCToP} is a marker.\\
 Premise A $\Leftrightarrow$ \Ecore & \texttt{premise\_A\_iff\_GRH\_chi5} & \\
 \texttt{GDS}/\texttt{bridge\_axiom} $\Leftrightarrow$ \Ecore & \texttt{GDS\_iff\_E} & The only substantive input.\\
@@ -92,7 +92,7 @@ Logarithmic signature of the pentagon & \texttt{F1v2.pentagon\_log\_signature\_f
 Crystallographic restriction, pentagonal nodes & \texttt{trZeta\_*}, \texttt{pentagon\_nodes\_are\_golden}; \texttt{F1v2.cosineWindow\_holds}, \texttt{F1v2.pentagon\_nodes\_unconditional} & The hypotheses are proved in \texttt{F1\_v2}, \S O.\\
 Units of $\mathbb Z[\varphi]$ are $\pm\varphi^k$ & \texttt{unit\_is\_a\_power\_of\_phi}; \texttt{F1v2.arrowB} & Without Dirichlet.\\
 Frobenius eigenvalue on $\sqrt5$ & \texttt{F1FrobeniusEigen.frobenius\_eigenvalue\_on\_sqrt5}, \texttt{euler\_factor\_is\_char\_poly} & The Euler factor is $\det(1-tM_p)$.\\
-Explicit formula for $L(s,\chi_5)$ & \texttt{F1WeilFunctional.ExplicitFormulaChi5}, \texttt{prime\_side\_is\_frobenius\_trace} & Checked numerically to $10^{-18}$ with 40 zeros \tier{N}.\\
+Explicit formula for $L(s,\chi_5)$ & \texttt{F1WeilFunctional.ExplicitFormulaChi5}, \texttt{prime\_side\_is\_frobenius\_trace} & Checked numerically to $10^{-18}$ with 40 zeros \witness{N}.\\
 Weil positivity (full) & \texttt{positivity\_is\_a\_prime\_side\_bound} & A bound on the Frobenius-trace side by the archimedean one.\\
 Semilocal positivity & \texttt{weil\_window\_chi5.py} & Archimedean alone up to $L=0.9251$; with $\chi_5(2)=+1$ it fails from $L\approx0.9$.\\
 First window, $L\le0.7447$ & \texttt{F1v2.first\_window\_integral} and its steps & $m(\log2)=0.0841$.\\
@@ -101,7 +101,7 @@ Envelope and fluctuation & \texttt{envelope.py}, \texttt{tstar.py} & $\gamma_n=E
 Integrality of the trace with $t<3$ & \texttt{trace\_integer\_plus\_bound} & Closes link (iii) without the tower.\\
 $r\in\mathbb Q(\sqrt5)$, $t\in\mathbb Z\Rightarrow r=\varphi^k$ & \texttt{F1v2.arrowB\_full} & The hypothesis on the field is needed: $2+\sqrt3$ has trace $4$.\\
 \texttt{UnitStructure} (M12) & \texttt{F1v2.arrowB\_full} & It omitted $r\in\mathbb Q(\sqrt5)$.\\
-Klein action induced by $\chi_5$ & \texttt{both\_actions\_from\_one\_character}, \texttt{free\_orbit\_is\_inert} & The injectivity of the chain is \tier{N}.\\
+Klein action induced by $\chi_5$ & \texttt{both\_actions\_from\_one\_character}, \texttt{free\_orbit\_is\_inert} & The injectivity of the chain is \witness{N}.\\
 Link 7: the value $2$ & \texttt{the\_apex\_is\_the\_inverse\_fibre\_size} & Through $\tfrac12=1/|\ker G|$.\\
 Diagonal contraction & \texttt{diagonal\_blocked}; \texttt{F1v2.sq\_lt\_self\_on\_unit\_interval} & The categorical reading is a remark.\\
 Local factorisation, four characters & \texttt{F1v2.factorisation\_natural} & \\
@@ -361,10 +361,10 @@ three kinds.
     \texttt{F1\_weil\_functional}, \texttt{F1\_primon\_space}, \texttt{D16\_hconj},
     \texttt{F1\_cw\_equivalents} (the facts of \cite{gonzalez26cw} that \cref{sec:background,sec:methods,sec:results} use;
     its \S4 is taken verbatim from that paper's compiled development, and its declarations are
-    cited \tier{P}),
+    cited \witness{P}),
     \texttt{F1\_v2\_formalizations}, and the modules of the paper \texttt{F1PaperNew},
     \texttt{F1PaperHyp}, \texttt{F1PaperTorus}, \texttt{F1PaperPending}, \texttt{F1PaperClosure} and \texttt{F1PaperPadic}; and, for the clock, the index, the energy and the prism at $5$, \texttt{F1PaperSixty}, \texttt{F1PaperSixtyWeil}, \texttt{M12F1Circle}, \texttt{PhiCelda}, \texttt{W4Isometria} and \texttt{F1PaperClosureClock}.  Their declarations are compiled in the development; cited inside a
-    group of \tier{P}\ names they carry the mark $^{*}$.
+    group of \witness{P}\ names they carry the mark $^{*}$.
   \item[Compiled for this version] with Lean~4.36.0-rc2 and Mathlib at commit \texttt{a8754b18}, each with the
     imports it needs and with no \texttt{sorry}, \texttt{axiom} or \texttt{native\_decide}: for the window of the closure and
     the index as a degeneracy, \texttt{CierrePorAltura}, \texttt{IndiceComoDegeneracion}, \texttt{MasaDelReloj} and
@@ -372,7 +372,7 @@ three kinds.
     \texttt{OrbitaLibreEIndice}, \texttt{ParidadesJuntas}, \texttt{MedioPeriodo}, \texttt{W4DeW3} and \texttt{MateSinG}; for
     the operators of the level and the symmetries of a spectrum, \texttt{ObservablesDelNivel}, \texttt{FibraYReloj}
     and \texttt{EstructuraEnGUE}; for the two faces of the Fibonacci dynamics, \texttt{DosCarasFibonacci} and
-    \texttt{PeriodicasSol}; the steps that earlier versions proved only in the text, \texttt{PasosDelTexto}; for the diagonal argument and the reflection $x\mapsto1-x$, \texttt{F1Lawvere}; for the Frobenius lift defined by its congruence, \texttt{FrobeniusUnico}; for the one operator $\Oone=HY$, \texttt{UnOperador}; for the clock with a factor $3$, \texttt{RelojTres}; for the Euler product as a colimit, \texttt{LadoAnalitico}; for $\zeta$ at the points $a/5$, \texttt{ZetaPentagonal}; for the scope to $\zeta$, \texttt{AlcanceZeta}; for the steps of the text on the operator, \texttt{TodoEnLean}; for the results carried from the predecessor version, \texttt{OZTraidos}, and for the even values, \texttt{OZCierres} (both in the namespace \texttt{F1OZ}); and, for the components of the colour operator as the involutions of the Klein group, \texttt{ComponentesInvoluciones}.  These twenty-six modules follow the paper's block in the file, as its blocks S1--S27.  Their declarations are cited \tier{P}.  Six of them did not compile as first written and
+    \texttt{PeriodicasSol}; the steps that earlier versions proved only in the text, \texttt{PasosDelTexto}; for the diagonal argument and the reflection $x\mapsto1-x$, \texttt{F1Lawvere}; for the Frobenius lift defined by its congruence, \texttt{FrobeniusUnico}; for the one operator $\Oone=HY$, \texttt{UnOperador}; for the clock with a factor $3$, \texttt{RelojTres}; for the Euler product as a colimit, \texttt{LadoAnalitico}; for $\zeta$ at the points $a/5$, \texttt{ZetaPentagonal}; for the scope to $\zeta$, \texttt{AlcanceZeta}; for the steps of the text on the operator, \texttt{TodoEnLean}; for the results carried from the predecessor version, \texttt{OZTraidos}, and for the even values, \texttt{OZCierres} (both in the namespace \texttt{F1OZ}); and, for the components of the colour operator as the involutions of the Klein group, \texttt{ComponentesInvoluciones}.  These twenty-six modules follow the paper's block in the file, as its blocks S1--S27.  Their declarations are cited \witness{P}.  Six of them did not compile as first written and
     were corrected; the corrections changed proofs and no statement, except that
     \texttt{DosCarasFibonacci.periodic\_is\_torsion} is stated on the entries of the matrix.
 \end{description}
@@ -402,7 +402,7 @@ more, the pentagonal cosines, Binet's $\golden^{2k}-\golden^{-2k}=\sqrt5F_{2k}$,
 cardinals of $G$ computed from $G$, $\chi_4$ as Gauss's sequence, $\|\OmH\|=\tfrac12$
 under two names, the positive spectral position under three, and the closure of the
 zero set under $\rho\mapsto1-\rho$ and conjugation
-\tier[F1PaperNew.pentagonBridge\_holds, F1PaperNew.clauseFour\_holds, F1PaperNew.apexIsPhiPow\_holds,
+\witness[F1PaperNew.pentagonBridge\_holds, F1PaperNew.clauseFour\_holds, F1PaperNew.apexIsPhiPow\_holds,
 F1PaperNew.liActsOnZeros\_holds, F1PaperNew.modulusOnLine\_holds, F1PaperNew.pentagonCosines\_holds,
 F1PaperNew.binetDifference\_holds, F1PaperNew.gCardinals\_of\_G, F1PaperNew.gaussSplit\_holds,
 F1PaperNew.operatorNormIsApex\_holds, F1PaperNew.positiveSpectralPosition\_holds,
@@ -413,7 +413,7 @@ the objects built from $\golden$.  Each relation is now stated: the $\chiv$ of t
 machinery is the $\chiv$ of the structural chain; on $\Zst$ the characters of conductor
 $20$ are the two components of $G$; the norm form of $\Zphi$ factors as
 $(x+\golden y)(x+\bar\golden y)$ with discriminant $5$; and the two definitions of the
-eigenvalue triad coincide \tier[F1PaperNew.chi5\_ideals\_is\_chi5\_structural,
+eigenvalue triad coincide \witness[F1PaperNew.chi5\_ideals\_is\_chi5\_structural,
 F1PaperNew.conductor20\_characters\_are\_G, F1PaperNew.norm\_form\_factors\_through\_phi,
 F1PaperNew.omega\_eigenvalues\_are\_omega\_hat]{P}.  After them every central
 object of the construction is linked to $\golden$ by a chain of at most two theorems.
@@ -423,7 +423,7 @@ definitions, $277$ definitions in all, are the same object under different names
 mate $\rho\mapsto1-\bar\rho$ under seven, the predicate ``$r$ is a power of $\golden$''
 under fifteen, the trace $r+1/r$ under nine, the tower eigenvalues $m_0\golden^i$ under
 seven, and the golden ratio itself under five).  Each group is now linked by
-definitional equalities \tier[F1PaperNew.same\_def\_1]{P} and the $196$ that follow, and
+definitional equalities \witness[F1PaperNew.same\_def\_1]{P} and the $196$ that follow, and
 the paper uses one name per object.  In the same way $294$ groups of theorems state the
 same thing under different names; the paper cites one name per group.  Besides these,
 $99$ definitions are markers defined as \texttt{True}; none is cited as evidence.

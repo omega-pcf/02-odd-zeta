@@ -1,8 +1,11 @@
 """Contract between the manuscript's witness tags and the suite.
 
 The manuscript marks a numerically verified claim with
-``\\tier[\\testref{<id>}]{N}``, where ``<id>`` is a test of THIS suite: the
-claim and its evidence are then the same string.  This module parses every
+``\\witness[\\testref{<id>}]{N}``, where ``<id>`` is a test of THIS suite: the
+claim and its evidence are then the same string.  ``\\witness`` is the single
+name of the mark since the F1-A unification: one macro, one optional argument,
+and the placement of the call in the source -- not the class -- picks the
+inline or the own-line rendering (contract §6.12 S7).  This module parses every
 ``\\testref{...}`` of main.tex and of the chapters it inputs, and pins the
 contract:
 
@@ -18,8 +21,8 @@ they are split here into the two citations they name.
 
 A second rule of the same contract (docs/witness-contract.md §6.5) is
 measured here too, because it needs data that lives outside TeX: no part
-of a ``\\tier[...]`` or ``\\witness{...}{...}`` bracket may equal the id of a
-record of ``citation.csl.json``, nor carry a ``\\cite`` token.  The tag
+of a ``\\witness[...]`` bracket may equal the id of a record of
+``citation.csl.json``, nor carry a ``\\cite`` token.  The tag
 macros read the bracket as an arbitrary string -- a character-shape test
 rejects valid internal ids and cannot recognise a key -- so this suite is
 the only place where the citation-key rule is measured.
@@ -187,7 +190,7 @@ def test_cited_ids_are_snake_case() -> None:
 # suite (a check that needs external data runs outside the typesetting).
 # --------------------------------------------------------------------------
 
-_TAG_SITE = re.compile(r"\\tier\[|\\witness\{")
+_TAG_SITE = re.compile(r"\\witness\s*\[")
 _TESTREF_WRAPPED = re.compile(r"^\\testref\{(.*)\}$", re.DOTALL)
 _KEYS: set[str] | None = None
 
@@ -232,10 +235,12 @@ def _read_optional(text: str, start: int) -> tuple[str, int] | None:
 
 
 def tag_arguments(text: str) -> list[tuple[int, str, str]]:
-    """``(line, macro, argument)`` for every ``\\tier[...]`` and ``\\witness{...}{...}``.
+    """``(line, macro, argument)`` for every ``\\witness[...]`` of the manuscript.
 
     A ``%`` before the site on its line comments it out in TeX, so such a
-    site is not part of the manuscript and is not read as one here.
+    site is not part of the manuscript and is not read as one here.  The mark
+    has one name and one optional argument since F1-A: the ids sit in the
+    brackets, the class in the braces, and no second body form exists.
     """
     sites: list[tuple[int, str, str]] = []
     for match in _TAG_SITE.finditer(text):
@@ -243,19 +248,10 @@ def tag_arguments(text: str) -> list[tuple[int, str, str]]:
         if "%" in text[line_start : match.start()]:
             continue
         line = text.count("\n", 0, match.start()) + 1
-        if match.group(0) == "\\tier[":
-            parsed = _read_optional(text, match.end() - 1)
-            if parsed is None:
-                continue
-            sites.append((line, "tier", parsed[0]))
-        else:
-            first = _read_group(text, match.end() - 1)
-            if first is None:
-                continue
-            second = _read_group(text, first[1])
-            if second is None:
-                continue
-            sites.append((line, "witness", second[0]))
+        parsed = _read_optional(text, match.end() - 1)
+        if parsed is None:
+            continue
+        sites.append((line, "witness", parsed[0]))
     return sites
 
 
@@ -314,8 +310,7 @@ def citation_offenders(text: str, keys: set[str], label: str) -> list[str]:
 def test_no_citation_key_sits_inside_a_tag() -> None:
     """No part of any tag bracket equals a citation key or carries ``\\cite``.
 
-    The corpus is every ``\\tier[...]`` and ``\\witness{...}{...}`` of the
-    manuscript, split on the commas that sit outside ``\\testref{...}``;
+    The corpus is every ``\\witness[...]`` of the manuscript, split on the commas that sit outside ``\\testref{...}``;
     the keys are the ids of ``citation.csl.json``.  The tag macro accepts an
     arbitrary string now, so this test -- not the macro -- is the whole of
     the citation-key rule (contract §6.5).
@@ -340,21 +335,21 @@ def test_no_citation_key_sits_inside_a_tag() -> None:
 def test_the_tag_lint_catches_a_synthetic_insertion() -> None:
     """The rule is not vacuous: a key inserted into a bracket fails the check.
 
-    The prototype that motivated the lint caught three rows against this
-    repository's key set -- a bare key in a ``\\tier``, the same key in a
-    ``\\witness`` after a comma, and the ``\\cite`` token the macro still
-    rejects at run time -- and none over the real manuscript.  The catching
+    the prototype that motivated the lint caught three rows against this
+    repository's key set -- a bare key in a mark, the same key in a second
+    mark after a comma, and the ``\\cite`` token the macro still rejects at
+    run time -- and none over the real manuscript.
     half is pinned here on a synthetic manuscript, so a weakened extractor
     is loud instead of silently green.
     """
     keys = citation_keys()
     assert {"riemann1859", "montgomery73"} <= keys, "the fixture keys left citation.csl.json"
     synthetic = (
-        "\\tier[riemann1859]{P}\n"
-        "\\witness{P}{montgomery73, a_valid_internal_id}\n"
-        "\\tier[\\cite{riemann1859}]{N}\n"
-        "\\tier[\\testref{a_valid_id, other_valid_id}]{N}\n"
-        "\\tier[a_valid_id]{N}\n"
+        "\\witness[riemann1859]{P}\n"
+        "\\witness[montgomery73, a_valid_internal_id]{P}\n"
+        "\\witness[\\cite{riemann1859}]{N}\n"
+        "\\witness[\\testref{a_valid_id, other_valid_id}]{N}\n"
+        "\\witness[a_valid_id]{N}\n"
     )
     offenders = citation_offenders(synthetic, keys, "synthetic.tex")
     assert len(offenders) == 3, offenders

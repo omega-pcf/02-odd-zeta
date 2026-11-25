@@ -100,8 +100,8 @@ distribution, nor the zeros, nor the Euler product is an input.  \emph{PCF} stan
 Precedent--Current--Forthcoming, the three consecutive terms that the Fibonacci recurrence binds
 (\cref{ssec:tripartite}).
 
-\tier{P}\ marks a statement proved in Lean~4~\cite{demoura21} with Mathlib~\cite{mathlib20};
-\tier{N}\ marks a statement verified numerically, with the test named in the mark.  The protocol
+\leavevmode\witness{P}\ marks a statement proved in Lean~4~\cite{demoura21} with Mathlib~\cite{mathlib20};
+\witness{N}\ marks a statement verified numerically, with the test named in the mark.  The protocol
 they follow is \cref{ssec:protocol}.
 
 The Primitive Structure formalises the forgetful functor chain
@@ -113,7 +113,7 @@ the real part of each zero with a spectral position of $\OmH$ (\cref{sec:context
 common source for the Euler product and for the spectrum, and the span of the diagram is that source: in it
 (\cref{prop:span}), $G$ produces $\zeta(s)$ through the Euler product~\cite{euler1737} and analytic
 continuation~\cite{riemann1859}, and the spectral number $\mu_3=\tfrac12$ through $|\ker G|=2$
-(\tier[G\_hom, G\_surj, G\_kernel]{P}).  The span does not by itself
+(\witness[G\_hom, G\_surj, G\_kernel]{P}).  The span does not by itself
 discharge the axiom: none of its pieces speaks of a zero (\cref{rmk:markers}).  The bridge is
 carried to its last link, which is equivalent to the statement \Ecore\ that every zero of $L(s,\chiv)$ in the
 critical strip has real part $\tfrac12$ (\cref{ssec:core-forms}), and which a conjectured law of the primes by
@@ -125,7 +125,7 @@ about those of $L(s,\chiv)$, and the reason is the descent.  On $\Z$ every Frobe
 descent carries no datum there; on $\Zphi$ the lift at each prime is the identity or the conjugation, its sign is $\chiv$ (\cref{thm:sign-is-chi5}), and $\chiv$ is the character that splits the zeta function of the field,
 $\zeta_{\Q(\sqrt5)}=\zeta\cdot L(\cdot,\chiv)$.  The factor that the pentagon contributes, and that the
 construction of this paper reaches, is $L(s,\chiv)$: for its zeros the first bound of the Primitive Structure,
-$\mathrm{Re}(\rho)\le\mu_3$, is equivalent to GRH for $L(s,\chiv)$ (\tier[premise\_A\_iff\_GRH\_chi5]{P},
+$\mathrm{Re}(\rho)\le\mu_3$, is equivalent to GRH for $L(s,\chiv)$ (\witness[premise\_A\_iff\_GRH\_chi5]{P},
 \cref{ssec:core-forms}).  For $\zeta$ itself the paper determines the Euler product and the odd values (\cref{thm:odd-zeta}); its
 statements about the position of zeros are about those of $L(s,\chiv)$.
 
@@ -251,8 +251,8 @@ one-dimensional code subspace and the closed string as the cut of a tensor netwo
 
 \subsection{Protocol}\label{ssec:protocol}
 
-Two evidence classes are marked where a statement is stated: \tier{P}\ for a statement proved in
-Lean~4 with Mathlib, \tier{N}\ for a statement verified numerically, with the test named in the
+Two evidence classes are marked where a statement is stated: \witness{P}\ for a statement proved in
+Lean~4 with Mathlib, \witness{N}\ for a statement verified numerically, with the test named in the
 mark; a statement with no mark is standard, and carries its citation where it enters.
 
 \emph{Notation.}  Several symbols are overloaded --- $\psi$, $\Lambda$, $\sigma$, $\tau$, $\ell$, $L$, $S$, $N$, $R$, $T$ and $\mu$ ---

@@ -137,25 +137,11 @@
 %%%  definitions of \golden \Rpcf \OmH \Set \Hilb \Met \norm
 %%%  \Ztwenty and \pcfrepo (D1: omega-pcf/02-odd-zeta) are kept as-is.
 %%% ====================================================================
-% One macro, one optional argument: [X] bare, or X[ids] when the tag carries
-% the INTERNAL ids of the claim (grammar ported from 05-kkgt
-% docs/witness-contract.md §6.5; the zip's \tier took one argument only, so the
-% N[ids] device is the piece of the family apparatus this port adds).  The
-% optional argument is read as an ARBITRARY STRING (contract §6.5): a
-% \testref, or the raw names of our own file, several of them separated by
-% ','.  The macro does not judge the shape of what it holds -- a character
-% test (\_, ',' or \testref present, otherwise an error) rejects valid
-% internal ids such as F1PaperTorus.chi5WeilOrbit and cannot recognise a
-% citation key, whose characters are the characters of an identifier -- so
-% the only error it raises at run time is a literal \cite token inside the
-% bracket: an external source stays a \cite set next to the tag, never
-% fused into the mark.  Whether the bracket holds a citation key is measured
-% where the key set exists, by tests/test_witness_census.py against
-% citation.csl.json.
-% Sizes are the 05 rule 13/15 (05 CVR-001 TYP-4: mark 13, ids 15, prose 16):
-% the letter in \footnotesize, the ids in \small tt, upright.
-% The family tag palette (05-kkgt main.tex): colour is redundant with the
-% letter (WCAG 1.4.1), so the letter alone still carries the meaning.
+% The mark of this manuscript is \witness[ids]{X}, defined below with its
+% grammar (docs/witness-contract.md §6.5), its sizes (the 05 rule 13/15, CVR-001
+% TYP-4: mark 13, ids 15, prose 16) and its one colour branch.  The class
+% palette follows; colour is redundant with the letter (WCAG 1.4.1), so the
+% letter alone still carries the meaning.
 \definecolor{tierP}{rgb}{0.15,0.35,0.65}   % blue   -- proved in Lean
 \definecolor{tierPs}{rgb}{0.70,0.45,0.05}  % ochre  -- written, not yet
 % verified against the corpus (docs/witness-contract.md §6.6): the star's
@@ -171,8 +157,19 @@
 \newcommand{\tiercol}[1]{\expandafter\ifx\csname tiercol@#1\endcsname\relax\else\csname tiercol@#1\endcsname\fi}
 % the family's breakable typewriter underscore (H2/H3: the break is a
 % property of the character, and in T1 the three forms of the underscore
-% measure the same, so \_ and a raw _ both print through this one constant)
-\DeclareRobustCommand{\brk@us}{\textunderscore\allowbreak}
+% measure the same, so \_ and a raw _ both print through this one constant).
+% Line breaking of an id list is comma-first (contract §6.12 S8): the break
+% after ", " is the natural interword break (penalty 0) and the break inside an
+% identifier is DISCOURAGED (penalty 500), so a list splits at its commas and
+% only an identifier longer than the remaining measure is split at all --
+% never \allowbreak (= penalty 0), which made the mid-identifier break equally
+% attractive and produced twenty_divisor_ / lattice_splits in the PDF.
+% The trailing \relax is load-bearing: after a <dimen> TeX scans the keywords
+% `plus' and `minus' of \hskip, and an identifier that begins -- right after
+% the underscore -- with the letters `minus' or `plus' would be eaten as that
+% keyword ("Missing number ... Illegal unit of measure").  \relax is not a
+% letter, so both keyword scans push it back and the id prints whole.
+\DeclareRobustCommand{\brk@us}{\textunderscore\penalty500\hskip0pt\relax}
 \ExplSyntaxOn
 \tl_new:N \l__tier_src_tl
 \tl_new:N \l__tier_us_tl   \tl_set:Nx \l__tier_us_tl  { \char_generate:nn { 95 } { 8  } }
@@ -216,30 +213,54 @@
 % (the build warned "Command \Small invalid in math mode" at every tag of an
 % equation).  In prose the wrapper is the identity, so nothing moves there.
 \def\tier@text#1{\ifmmode\text{#1}\else#1\fi}
-\def\tier@ids#1#2{\tier@text{{\footnotesize\textbf{\tiercol{#2}#2}[{\upshape\small\ttfamily\tierids{#1}}]}}}
-% every line of the body ends in a comment char: the tag must emit no space
-% of its own, neither before nor after, or a mark would typeset one.
-\providecommand{\tier}[2][]{%
-\ifx\relax#1\relax%
-\tier@text{{\footnotesize\textbf{\tiercol{#2}[#2]}}}%
-\else%
-\in@{\cite}{#1}\ifin@
-\PackageError{tier}{the optional argument of \string\tier\space holds internal ids only}%
-{An external source is a \string\cite\space set next to the tag, never its key;}%
-\else%
-\tier@ids{#1}{#2}%
-\fi%
-\fi%
-}
-% a witness with names, on a line of its own, flush right: P[name1, name2]
-% (the sibling manuscripts set their witness blocks with \hfill + \raggedleft;
-% the form ported from 05-kk-golden-throat/main.tex, where the own-line
-% witness block replaces the "Lean:" line of this manuscript).
-\newcommand{\witness}[2]{%
-  \par\noindent\hfill
-  \parbox{\dimexpr\linewidth-1em\relax}{\raggedleft
-    \normalfont\footnotesize\bfseries\tiercol{#1}#1\mdseries{\upshape\small\ttfamily[\tierids{#2}]}}%
-  \par}
+% One colour branch for the whole mark (contract §6.12 S6): the letter AND the
+% ids print in the class colour, so the block and the inline mark read as one
+% object -- the inline ids used to print black (#2659a5 against #000000).
+\def\tier@ids#1#2{\tier@text{{\normalfont\footnotesize\bfseries\tiercol{#2}#2[{\mdseries\upshape\small\ttfamily\tierids{#1}}]}}}
+% ---------------------------------------------------------------------------
+% THE MARK -- one name, one optional argument, placement-driven (§6.12 S7).
+%
+%   \witness[ids]{X}     X[ids]  -- the tag first, its ids in the brackets
+%
+% The shape follows the position of the call in the source, never the class:
+% own line in the source (\ifvmode)  -> the block, flush right, \medskip above
+% and below, indent 0, no terminal punctuation (S2-S5);
+% mid-line in the source (\ifhmode) -> the mark inside the sentence, the
+% paragraph does not break and no space is eaten.
+% The optional argument is read as an ARBITRARY STRING (§6.5): a \testref, or
+% the raw names of our own files, several of them separated by ','.  The macro
+% does not judge the shape of what it holds -- a character test (\_, ',' or
+% \testref present, otherwise an error) rejects valid internal ids such as
+% F1PaperTorus.chi5WeilOrbit and cannot recognise a citation key -- so the only
+% error it raises at run time is a literal \cite token inside the bracket: an
+% external source stays a \cite set next to the tag, never fused into the mark.
+% Whether the bracket holds a citation key is measured where the key set
+% exists, by tests/test_witness_census.py against citation.csl.json.
+% Sizes are the 05 rule 13/15 (05 CVR-001 TYP-4): the letter in \footnotesize,
+% the ids in \small tt, upright.  Colour is redundant with the letter (WCAG
+% 1.4.1), so the letter alone still carries the meaning.
+% A mark at the head of a paragraph stays inline when the criterion keeps it
+% there (§6.10): \leavevmode opens the paragraph, keeps its \parindent and
+% leaves the mode \hmode, which is the branch this macro then takes.
+\newcommand{\witness}[2][]{%
+  \ifvmode
+    \par\medskip\noindent\hfill
+    \parbox{\dimexpr\linewidth-1em\relax}{\raggedleft
+      \normalfont\footnotesize\bfseries\tiercol{#2}#2%
+      \ifx\relax#1\relax\else\mdseries{\upshape\small\ttfamily[\tierids{#1}]}\fi}%
+    \par\medskip
+  \else
+    \ifx\relax#1\relax
+      \tier@text{{\normalfont\footnotesize\bfseries\tiercol{#2}[#2]}}%
+    \else
+      \in@{\cite}{#1}\ifin@
+        \PackageError{witness}{the optional argument of \string\witness\space holds internal ids only}
+        {An external source is a \string\cite\space set next to the tag, never its key;}%
+      \else
+        \tier@ids{#1}{#2}%
+      \fi
+    \fi
+  \fi}
 \makeatother
 \newcommand{\PCF}{\mathrm{PCF}}
 \newcommand{\C}{\mathbb{C}}
