@@ -149,7 +149,7 @@ Let $f_\golden=X^2-X-1$ and
 \]
 with the real embedding $\iota\colon\Zphi\to\R$, $\omega\mapsto\golden$, which
 carries the abstract tower onto the real one, $\iota(\omega^n)=\golden^n$
-(\witness[Z\ensuremath{\varphi}, \ensuremath{\omega}\_sq, \ensuremath{\iota}\_pow]{P}).  Writing $\omega$ rather than
+(\witness[Zφ, ω\_sq, ι\_pow]{P}).  Writing $\omega$ rather than
 $\golden$ inside the ring is not pedantry: the statements of
 \cref{sec:lambda-ring} are about the ring and hold in every quotient
 $\Zphi/(p)$, where no real number is available.
@@ -157,7 +157,7 @@ $\Zphi/(p)$, where no real number is available.
 \begin{proposition}\label{prop:domain}
 $\Zphi$ is an integral domain.
 \end{proposition}
-\witness[f\ensuremath{\varphi}\_map\_two\_irreducible, f\ensuremath{\varphi}\_prime]{P}
+\witness[fφ\_map\_two\_irreducible, fφ\_prime]{P}
 \begin{proof}
 Modulo $2$, $f_\golden=X^2+X+1$ has no root in $\F_2$ ($0\mapsto1$,
 $1\mapsto1$), so it is irreducible there; a monic quadratic that is irreducible
@@ -170,7 +170,7 @@ and the quotient is a domain.
 Every ring endomorphism $f$ of $\Zphi$ satisfies $f(\omega)=\omega$ or
 $f(\omega)=1-\omega$.
 \end{proposition}
-\witness[FrobeniusUnico.endo\_dichotomy, FrobeniusUnico.hom\_ext, endo\_on\_\ensuremath{\omega}]{P}
+\witness[FrobeniusUnico.endo\_dichotomy, FrobeniusUnico.hom\_ext, endo\_on\_ω]{P}
 \begin{proof}
 $f(\omega)^2=f(\omega^2)=f(\omega)+1$, so
 $(f(\omega)-\omega)\bigl(f(\omega)-(1-\omega)\bigr)=f(\omega)^2-f(\omega)-1=0$,
@@ -423,7 +423,7 @@ which is also the common modulus $|\lambda_k|=|2|_2$ of the triad.
 \end{proposition}
 \witness[norm\_Omega\_is\_half]{P}
 \LeanCW{normP\_eq\_tan}, \LeanCW{normF\_eq\_cos},
-\LeanCW{Omega\_eigenvalues} \witness{P}\cite{gonzalez26cw}.
+\LeanCW{Omega\_eigenvalues} \witness[F1PCFUnified.Omega\_eigenvalues]{P} in~\cite{gonzalez26cw}.
 
 \begin{proof}
 $\norm{C}=|\lambda_0|/R=1$.  $\norm{F}=\tfrac12|\zeta_3-1|=\sin(\pi/3)=\tfrac{\sqrt3}2$.  The apothem is
@@ -859,7 +859,7 @@ Let $\sigma\colon\Zphi\to\Zphi$ be the ring homomorphism with
 $\sigma(\omega)=1-\omega$; it exists because $1-\omega$ is a root of
 $f_\golden$, and $\sigma\circ\sigma=\mathrm{id}$ since $\sigma^2(\omega)=1-(1-\omega)=\omega$.
 \end{definition}
-\witness[FrobeniusUnico.Q.σ, FrobeniusUnico.Q.σ\_ω, \ensuremath{\sigma}\_comp\_\ensuremath{\sigma}]{P}
+\witness[FrobeniusUnico.Q.σ, FrobeniusUnico.Q.σ\_ω, σ\_comp\_σ]{P}
 
 By \cref{prop:endo}, $\mathrm{id}$ and $\sigma$ are the only ring endomorphisms of $\Zphi$.  The
 lift at $p$ is not chosen between them: the congruence chooses.
@@ -908,7 +908,7 @@ construction --- which is exactly what \cref{rmk:monoid-not-ring} says the monoi
 $\Frob_m\circ\Frob_n=\Frob_{mn}$ and $\varepsilon(mn)=\varepsilon(m)\varepsilon(n)$ for $m,n$
 prime to $5$; in particular the $\Frob_p$ commute.
 \end{proposition}
-\witness[\ensuremath{\psi}\_comp, \ensuremath{\psi}\_commute]{P}
+\witness[ψ\_comp, ψ\_commute]{P}
 stated with
 $\chiv$ in place of $\varepsilon$ (\cref{thm:sign-is-chi5}).
 \begin{proof}
@@ -1102,7 +1102,7 @@ the reciprocity step by Mathlib's
 \texttt{ZMod.exists\_sq\_eq\_prime\_iff\_of\_mod\_four\_eq\_one};
 
 \witness[chi5\_is\_the\_mod5\_component, five\_sq\_iff\_mod5, root\_x2mx1\_iff\_five\_sq]{P}
-\witness[\ensuremath{\psi}\_of\_split, \ensuremath{\psi}\_of\_inert]{P}
+\witness[ψ\_of\_split, ψ\_of\_inert]{P}
 \begin{proof}
 For $p=2$: $x^2+x+1$ has no root in $\F_2$, so $\varepsilon(2)=-1=\chiv(2)$.  Let $p$ be odd.  The map
 $\alpha\mapsto2\alpha-1$ turns a root of $x^2-x-1$ in $\F_p$ into a square root of the discriminant $5$,
@@ -1257,7 +1257,7 @@ characters of $\Zst$ that factor through $G$ are the quadratic ones
 For a prime $p\ne5$ the component $\chiv$ of $G$ is exactly the sign of
 \cref{def:artin-frob} (\cref{thm:sign-is-chi5}): $p\equiv\pm1\pmod5$ gives $\Frob_p=\mathrm{id}$, and
 $p\equiv\pm2\pmod5$ gives $\Frob_p=\sigma$
-(\witness[\ensuremath{\psi}\_of\_split, \ensuremath{\psi}\_of\_inert]{P}).  The
+(\witness[ψ\_of\_split, ψ\_of\_inert]{P}).  The
 component $\chi_4$ lives in $\Q(i)$ and does not act on $\Zphi$ at all: it is the
 part of the classification that the ring does not see, which is why
 \cref{prop:two-registers-G} can separate the two registers by the two factors.
@@ -1398,9 +1398,9 @@ $2n$ of a split prime), \LeanInline{W4Isometria.totient\_is\_primitive\_roots},
 (iv) and (v); (vii) from (vi) and $\sum_{n\leq N}\phi(n)=3N^2/\pi^2+O(N\log N)$;
 (ii) for $n\leq600$ and $p\leq20000$, $p\nmid n$ ($1\,355\,192$ pairs,
 $752$ of the $2260$ primes with two clocks), (vi) up to $N=10^6$ to $3.6\cdot10^{-12}$
-(\texttt{v27\_reloj\_ciclotomico.py}), and (vii), whose ratio to the main term is
+(\code{v27\_reloj\_ciclotomico.py}), and (vii), whose ratio to the main term is
 $1.0038$, $1.0018$, $1.0008$ and $1.0006$ at $N=100$, $500$, $1000$ and $2000$
-(\texttt{retro69.py}).}
+(\code{retro69.py}).}
 
 \begin{proof}
 (i) Evaluate $X^n-1=\prod_{d\mid n}\Phi_d(X)$ at $\golden$.
@@ -1485,7 +1485,7 @@ on the primes listed; (i)--(ii) for every prime,
 over the
 primes $7\le p<6000$, (i)--(ii) hold in every case, (iv) holds at every prime, and of the primes that meet the
 condition of (iv) $185$ split and $197$ inert, $42$ and $52$ of them have $e_p$ prime to $3$
-(\texttt{retro119.py}); the first two, $47$ inert and $139$ split, are
+(\code{retro119.py}); the first two, $47$ inert and $139$ split, are
 
 \witness[TodoEnLean.witness\_47, TodoEnLean.witness\_139]{P}
 \begin{proof}[Proof of \textup{(iv)}]
@@ -1523,7 +1523,7 @@ Let $n\geq3$ and let $\mathfrak p$ be a prime of $\Zphi$ of clock $n$ over $p\ne
 (ii), the first statement, \witness[PasosDelTexto.palindromic\_norm, PasosDelTexto.norm\_odd\_level\_doubled]{P}\ given that $\Phi_m$ is palindromic and $\Phi_{2m}(x)=\Phi_m(-x)$ for odd $m\ge3$, the second, proved in the text; (iii) from $\sum_{m\leq x,\ m\ \mathrm{odd}}\phi(m)=2x^2/\pi^2+O(x\log x)$;
 (i)--(iii) on every prime of every level $n\leq420$; there the inert primes carry between $0.066$ and
 $0.084$ of the mass and the kernel between $0.47$ and $0.56$, with no stable value
-(\texttt{retro94.py}).
+(\code{retro94.py}).
 
 \begin{proof}
 (i) If $p$ splits, $n\mid p-1$; if $p$ is inert, $\golden^{p+1}=N(\golden)=-1$ in the residue field, so
@@ -1622,7 +1622,7 @@ Let $p\equiv1\pmod5$ and let $\mathfrak p=(p,\golden-r)$ be a prime of $\Zphi$ a
 (ii) Chebotarev in the layer of group $F_{20}$
 (\cref{prop:phi-layers}); over the $39\,234$ prime ideals of norm $p\equiv1\pmod5$ below $10^6$
 the classes have frequencies $0.2003$, $0.3999$, $0.3999$, the identification is unambiguous at every one,
-and the two exchanged parts of the prime side coincide (\texttt{retro78.py}).
+and the two exchanged parts of the prime side coincide (\code{retro78.py}).
 
 This is where the two faces of $\golden$ meet at the primes: $\golden=2\cos(\pi/5)$ names the angle, and
 with it the root of unity in which the symbol of $\golden$ is read.  Two involutions act here, and they are
@@ -1663,7 +1663,7 @@ the consequence
 in (ii) from the two statements, \witness[PasosDelTexto.hyperbola, PasosDelTexto.hyperbola\_sqrt]{P}.  Over the $78\,495$ primes $7\leq p\leq10^6$, $N_p\leq2(p+1)$
 in all, and the primes of index above $X^{3/4}$ have mass $0$ at $X=10^6$, against the
 bound $1.00\sqrt X$ that the tower gives
-(\texttt{v28\_hiperbola\_reloj\_tamano.py}).
+(\code{v28\_hiperbola\_reloj\_tamano.py}).
 
 \begin{remark}[The layers of the index as $L$-functions]\label{rmk:layers-L}
 The three power-residue symbols of \cref{prop:phi-layers} reach
@@ -2127,7 +2127,7 @@ the Eisenstein polynomial $E(u)=u^2-5$, generating the ideal $I=(E)$.
 the prism, the
 breaks, the Kisin classes and Leopoldt's formula; the cokernel of (v) computed up to degree
 $33$, and $L_5(1,\chiv)$ and $2\log_5\golden/\sqrt5$ both $\equiv557\pmod{5^4}$ against the
-Kubota--Leopoldt interpolation (\texttt{kisin.py}) \witness[\testref{test\_kisin\_interpolation\_is\_pinned}]{N}.
+Kubota--Leopoldt interpolation (\code{kisin.py}) \witness[\testref{test\_kisin\_interpolation\_is\_pinned}]{N}.
 
 % ---------------------------------------------------------------------
 \subsection{The factorisation and the odd zeta values}\label{sec:factorisation}
@@ -2197,7 +2197,7 @@ formula expressing $L(2k,\chiv)$ through them is classical\ \cite[Ch.~4]{washing
 \]
 with $B_{2,\chiv}=\tfrac45$, $B_{4,\chiv}=-8$, $B_{6,\chiv}=\tfrac{804}5$, $B_{8,\chiv}=-5776$ in exact rational
 arithmetic, and the formula agreeing with the Hurwitz sums at the points $a/5$ to $40$ digits
-(\texttt{oz\_carried.py});
+(\code{oz\_carried.py});
 at $s=1$, $L(1,\chiv)=2\log\golden/\sqrt5$ (\cref{sec:mersenne}).
 
 \begin{remark}[What is known of the arithmetic nature of $L(s,\chiv)$]\label{rmk:nature-L}
@@ -2221,7 +2221,7 @@ and $\sum_{a=1}^{4}\chiv(a)\,\zeta(s,a/5)\in5^{s}\,\overline{\Q}$.  Indeed, for 
 \]
 because $\sum_{a=1}^{4}\chiv(a)\zeta_5^{\,an}=2\bigl(\cos\tfrac{2\pi n}5-\cos\tfrac{4\pi n}5\bigr)=\sqrt5\,\chiv(n)$
 (\witness[F1OZ.fourier\_projection]{P}; the two forms agree with the Hurwitz sums at $s=1,3,5$ to
-$40$ digits, \texttt{oz\_carried.py}); and $L(s,\chiv)$ is the Hurwitz sum divided by $5^{s}$.  Both
+$40$ digits, \code{oz\_carried.py}); and $L(s,\chiv)$ is the Hurwitz sum divided by $5^{s}$.  Both
 factors, $\sqrt5$ and $5^{s}$, are algebraic and nonzero (\witness[PasosDelTexto.algebraic\_scale]{P}),
 which gives the equivalence; so the determination of \cref{thm:odd-zeta} does not decide whether
 $\zeta(2k+1)$ is irrational.  $\mathrm{Li}_s(\zeta_5^{\,a})=\sum_n\zeta_5^{\,an}n^{-s}$ is the discrete Fourier
@@ -2254,7 +2254,7 @@ $w=2$ and discriminant $-20$.  So the period is the product over the $\chiv$-fib
 (\witness[F1OZ.period\_from\_the\_chi5\_fibre]{P}\ given the two values).  At $s=2k+1$ the parity
 decides.  An odd character has its odd values in $\Q\,\pi^{2k+1}$ times the square root of its conductor
 \ \cite[Ch.~4]{washington97}, as $L(3,\chi_4)=\pi^3/32$ and $L(3,\chi_4\chiv)=3\pi^3/(40\sqrt5)$
-(\texttt{oz\_carried.py}), and with $\pi=5\arccos(\golden/2)$ and $\sqrt5=2\golden-1$
+(\code{oz\_carried.py}), and with $\pi=5\arccos(\golden/2)$ and $\sqrt5=2\golden-1$
 (\eqref{eq:pentagon-id}) these are written in $\golden$; while $\zeta_K(2k+1)=\zeta(2k+1)\,L(2k+1,\chiv)$ is the
 product over the two even characters, the part without such a form.  The circle factor of $T_K$ continues at
 odd $s$ on the odd side of $G$, outside $\zeta_K$:
@@ -2484,7 +2484,7 @@ At $s=3$ the local factors of $\zeta_K$ are fixed by $\chiv(p)$, which is read o
 $f_K(3,3)=\tfrac{729}{728}$; at the ramified prime, $f_K(5,3)=(1-5^{-3})^{-1}=\tfrac{125}{124}$; at the split
 prime $11$, $f_K(11,3)=\bigl(\tfrac{1331}{1330}\bigr)^2$ (\witness[F1OZ.local\_factors\_at\_three]{P}).  No parameter is chosen at any prime.  The two products give $\zeta_K(3)=1.027548\ldots$ and
 $L(3,\chiv)=0.85482\ldots$, and their ratio is $\zeta(3)=1.2020569\ldots$ (\cref{tab:zeta-values};
-\texttt{oz\_carried.py}).
+\code{oz\_carried.py}).
 \end{example}
 
 \begin{remark}[Structural versus closed-form determination]
@@ -3480,7 +3480,7 @@ Let $M$ act on the torus $\mathbb T=\R^2/\Z^2$.
 in (i), that the kernel of an
 endomorphism of the torus of nonzero determinant has $|\det|$ points, counted in Lean for $n<20$ and by
 enumeration for $n\le8$; in (ii), the divisibility for every prime, Wall's law, in Lean on eleven primes and
-by \texttt{retro109.py} for the primes below $400$; in (iii), the passage from trigonometric polynomials to
+by \code{retro109.py} for the primes below $400$; in (iii), the passage from trigonometric polynomials to
 $L^2$, by density
 \end{proposition}
 
@@ -3535,7 +3535,7 @@ $|\Oone|=\operatorname{diag}(m_0\golden^{\sigma})$ and the ordinate operator $\o
 \witness[PCFGranularity.deck\_invariant\_is\_level\_function, PCFGranularity.levelHom\_trivial, PCFGranularity.mu6\_is\_not\_absorbable\_into\_the\_level, PCFGranularity.H\_not\_complete, PCFGranularity.H\_degeneracy\_six, PCFGranularity.joint\_separates, PCFGranularity.ccso\_unconditional, ObservablesDelNivel.commute\_poly, ObservablesDelNivel.weyl\_not\_commute, ObservablesDelNivel.zeta3\_not\_real, FibraYReloj.deck\_weyl, FibraYReloj.yDiag\_injective, FibraYReloj.det\_M\_sub\_one]{P}
 
 (i) for Borel
-functions, the spectral theorem; in (iii), that a unitary character factors through the abelianisation; (iv) also \texttt{retro104.py}
+functions, the spectral theorem; in (iii), that a unitary character factors through the abelianisation; (iv) also \code{retro104.py}
 \end{proposition}
 
 \begin{proof}
@@ -3584,7 +3584,7 @@ Let $H$ be a self-adjoint operator on a finite-dimensional complex Hilbert space
 \witness[EstructuraEnGUE.sector\_invariant, EstructuraEnGUE.skew\_quadratic\_zero, EstructuraEnGUE.antiunitary\_sq\_neg\_one\_no\_fixed\_ray]{P}
 
 the commutants of (i) and the doublets of
-(ii) also \texttt{retro105.py}; the classes of (ii) are Dyson's \cite{dyson62threefold}
+(ii) also \code{retro105.py}; the classes of (ii) are Dyson's \cite{dyson62threefold}
 \end{proposition}
 
 \begin{proof}
@@ -3826,7 +3826,7 @@ as a colimit.
 The route through the reflection says where the apex lives.  In every commutative ring in which
 $2$ is invertible, $x\mapsto1-x$ has exactly one fixed point, $\tfrac12$; on $\mathbb{Z}$ it has
 none, and none on $\Zphi$ either, since $2$ is not a unit there
-(\witness[F1Lawvere.reflection\_fixed\_iff, F1Lawvere.reflection\_fixedPointFree\_int, F1Lawvere.reflection\_fixedPointFree\_Z\ensuremath{\omega}]{P}).  So the apex is
+(\witness[F1Lawvere.reflection\_fixed\_iff, F1Lawvere.reflection\_fixedPointFree\_int, F1Lawvere.reflection\_fixedPointFree\_Zω]{P}).  So the apex is
 not an element of the ring the construction starts from.  It is reached in the golden tower, as
 $\golden^{-\lng}$, through the anchor $\golden^{\lng}=2$ (\cref{sec:mersenne}).
 

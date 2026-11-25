@@ -14,9 +14,9 @@ Measured over the tracked manuscript sources (`main.tex` and `src/**/*.tex`) —
 | own-line `\witness[ids]{N}` | 0 |
 | own-line `\witness{P}` (bare) | 0 |
 | own-line `\witness{N}` (bare) | 0 |
-| inline `\witness[ids]{P}` | 232 |
+| inline `\witness[ids]{P}` | 233 |
 | inline `\witness[ids]{N}` | 40 |
-| inline `\witness{P}` (bare) | 61 |
+| inline `\witness{P}` (bare) | 60 |
 | inline `\witness{N}` (bare) | 26 |
 | `\witness[\testref{…}]{N}` marks | 40 |
 
@@ -31,7 +31,7 @@ Ids carried by `N` marks: **40 ids over 27 distinct**.
 | `\LeanTally` | 21 |
 | `\LeanCW` | 44 |
 | `\leanline` | 2 |
-| `\code` | 39 |
+| `\code` | 183 |
 | `\testref` | 40 |
 | `\witness` | 482 |
 
@@ -59,20 +59,20 @@ Ids carried by `N` marks: **40 ids over 27 distinct**.
 - `E\_iff\_no\_shared\_ordinate\_chi5` ×2
 - `F1\_monoidal\_descent\_data` ×2
 - `Tstar\_carries\_both\_faces` ×2
-- `\ensuremath{\psi}\_of\_inert` ×2
-- `\ensuremath{\psi}\_of\_split` ×2
 - `isometry\_with\_common\_modulus₅` ×2
 - `premise\_A\_iff\_GRH\_chi5` ×2
 - `rSq\_le\_in\_strip` ×2
 - `radius\_one\_is\_E` ×2
 - `toMu6\_bijective` ×2
+- `ψ\_of\_inert` ×2
+- `ψ\_of\_split` ×2
 - `B\_iff\_E\_one\_hypothesis` ×1
 - `Chi5Zero` ×1
 - `E\_iff\_no\_free\_orbit` ×1
 - `E\_iff\_no\_shared\_ordinate` ×1
 - `E\_is\_one\_sided` ×1
-- `F1Lawvere.\ensuremath{\psi}\_fixes\_int` ×1
-- `F1Lawvere.reflection\_fixedPointFree\_Z\ensuremath{\omega}` ×1
+- `F1Lawvere.reflection\_fixedPointFree\_Zω` ×1
+- `F1Lawvere.ψ\_fixes\_int` ×1
 - `F1\_descends\_to\_Galois` ×1
 - `F1\_spectra\_anchor\_G\_bridge` ×1
 - `FrobeniusUnico.Q.σ` ×1
@@ -90,12 +90,7 @@ Ids carried by `N` marks: **40 ids over 27 distinct**.
 - `U\_comp` ×1
 - `X\_PCF` ×1
 - `Z20star\_pi2\_fiber\_is\_mod5` ×1
-- `Z\ensuremath{\varphi}` ×1
-- `\ensuremath{\iota}\_pow` ×1
-- `\ensuremath{\omega}\_sq` ×1
-- `\ensuremath{\psi}\_commute` ×1
-- `\ensuremath{\psi}\_comp` ×1
-- `\ensuremath{\sigma}\_comp\_\ensuremath{\sigma}` ×1
+- `Zφ` ×1
 - `chi5\_Z\_mul` ×1
 - `closedUnderMate\_chi5` ×1
 - `convergents\_are\_the\_entries\_of\_M\_pow` ×1
@@ -105,9 +100,14 @@ Ids carried by `N` marks: **40 ids over 27 distinct**.
 - `discBound\_discharged\_high` ×1
 - `discBound\_of\_high\_gamma` ×1
 - `disc\_K\_is\_conductor\_squared` ×1
-- `endo\_on\_\ensuremath{\omega}` ×1
+- `endo\_on\_ω` ×1
 - `eps\_ne\_zero'` ×1
-- `f\ensuremath{\varphi}\_map\_two\_irreducible` ×1
+- `fiftynine\_is\_M2\_times\_conductor\_minus\_one` ×1
+- `fφ\_map\_two\_irreducible` ×1
+- `fφ\_prime` ×1
+- `hasDegree\_gives\_monomial` ×1
+- `integer\_trace\_gives\_SL2\_eigenvalue` ×1
+- `integrality\_iff\_E` ×1
 - … 57 further distinct ids
 
 `pending(D7)` markers:
