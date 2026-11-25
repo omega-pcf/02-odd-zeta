@@ -1072,6 +1072,3 @@ def test_fermat_quintic_point_counts_are_pinned() -> None:
     assert "exactamente p + 1 + sum J" in recorded, (
         "fermat_quintic_points.txt lost its point-count record"
     )
-
-
-# <<<APPEND>>>
