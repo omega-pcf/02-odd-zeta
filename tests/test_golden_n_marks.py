@@ -196,4 +196,339 @@ def test_fluctuation_law_is_the_same_everywhere() -> None:
     assert_close(_first_float(b1b, r"desviacion de F:\s*([\d.]+)", "testB1b deviation"), 0.621, GOLDEN_TOL, "testB1b deviation of F")
 
 
+def assert_rounded_to(value: float, printed: str, note: str) -> None:
+    """``value`` must be the manuscript's ``printed`` at the printed precision.
+
+    The margin is half of the last digit the sentence prints — the precision
+    the claim itself asserts (tests/README.md).
+    """
+    decimals = len(printed.split(".", 1)[1]) if "." in printed else 0
+    margin = 0.5 * 10 ** (-decimals) + GOLDEN_TOL
+    assert abs(value - float(printed)) <= margin, (
+        f"{note}: artifact {value} is not the manuscript's {printed} "
+        f"at that precision (margin {margin})"
+    )
+
+
+def _articulo_numbers(text: str, note: str) -> list[str]:
+    """The numbers of the artifact's ``articulo:`` line (its reconciliation)."""
+    line = next((ln for ln in text.splitlines() if "articulo" in ln), None)
+    assert line is not None, f"{note}: the artifact has no articulo line"
+    return re.findall(r"-?\d+\.?\d*(?:e[-+]?\d+)?", line, flags=re.I)
+
+
+# ---------------------------------------------------------------------------
+# Family: the positivity arc of 04-bridges — INV-WIT-001 §B sites
+#   04-bridges:886 (dh.py), 04-bridges:891 (mertens341.py),
+#   04-bridges:894 (mobius.py), 04-bridges:918 (blocks.py),
+#   04-bridges:922 (fejer_check.py), 04-bridges:942 (balance.py),
+#   04-bridges:947 (fibres.py), 04-bridges:950 (dedekind.py),
+#   04-bridges:956 (offline.py).
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.golden
+def test_additive_side_statistics_are_pinned() -> None:
+    """dh.py, mertens341.py and mobius.py pin the additive side's numbers.
+
+    INV-WIT-001 §B sites covered: ``04-bridges:886`` (partial sums of the
+    inverse grow like y^0.788, those of mu*chi5 like y^0.443),
+    ``04-bridges:891`` (the product stays >=1 only down to sigma ≈0.9) and
+    ``04-bridges:894`` (measured <=1.23*sqrt(y) up to 3e7).
+    """
+    tex = read_tex(_BRIDGES)
+
+    dh = read_salidas("dh.txt")
+    assert_close(_first_float(dh, r"kappa_DH = ([\d.]+)", "dh kappa"), 0.2840790438, GOLDEN_TOL, "kappa_DH")
+    exponents = {
+        "inverse": _first_float(dh, r"inversa de DH:.*?~ y\^([\d.]+)", "dh inverse exponent"),
+        "mu_chi5": _first_float(dh, r"mu\*chi_5:.*?~ y\^([\d.]+)", "dh mu*chi5 exponent"),
+    }
+    assert_close(exponents["inverse"], 0.786, GOLDEN_TOL, "dh inverse exponent")
+    assert_close(exponents["mu_chi5"], 0.442, GOLDEN_TOL, "dh mu*chi5 exponent")
+    maxima = {
+        "inverse": _first_float(dh, r"inversa de DH:.*?max hasta \d+: (\d+)", "dh inverse max"),
+        "mu_chi5": _first_float(dh, r"mu\*chi_5:.*?max hasta \d+: (\d+)", "dh mu*chi5 max"),
+    }
+    assert maxima == {"inverse": 7683.0, "mu_chi5": 516.0}, maxima
+    claim = re.search(
+        r"its inverse grow like \$y\^\{([\d.]+)\}\$, those of \$\\mu\\chiv\$ like \$y\^\{([\d.]+)\}\$",
+        tex,
+    )
+    assert claim is not None, "the dh.py exponents of 04-bridges.tex not found"
+    recorded = _articulo_numbers(dh, "dh.txt")
+    assert [float(v) for v in claim.groups()] == [float(v) for v in recorded[:2]], (
+        f"04-bridges.tex says {claim.groups()}, dh.txt records {recorded[:2]}"
+    )
+    # the run's fitted exponents (0.786 / 0.442) sit within the sentence's
+    # own precision of the figures it prints (0.788 / 0.443)
+    for key, printed in zip(exponents, claim.groups(), strict=True):
+        assert_printed_as_in_manuscript(exponents[key], float(printed), f"dh {key} exponent")
+
+    mertens = read_salidas("mertens341.txt")
+    rows = {
+        float(sigma): float(p)
+        for sigma, p in re.findall(
+            r"sigma = ([\d.]+): min_\(0<t<=120\) P = ([\d.]+)", mertens
+        )
+    }
+    assert sorted(rows) == [0.6, 0.7, 0.8, 0.85, 0.9, 0.95], sorted(rows)
+    for sigma, want in {0.95: 61.75, 0.9: 4.386, 0.85: 0.6892, 0.8: 0.1426, 0.7: 0.007946, 0.6: 0.0002834}.items():
+        assert_close(rows[sigma], want, GOLDEN_TOL, f"mertens341 min P at sigma = {sigma}")
+    # the threshold the manuscript prints is where P stops being >= 1
+    threshold = _first_float(mertens, r"P >= 1 en 0 < t <= 120 hasta sigma = ([\d.]+)", "mertens threshold")
+    assert_close(threshold, 0.8609, GOLDEN_TOL, "mertens341 threshold")
+    assert rows[0.9] >= 1 > rows[0.85], "P is not >= 1 exactly across sigma = 0.9"
+    claim = re.search(r"the product stays \$\\ge1\$ only down to\s+\$\\sigma\\approx([\d.]+)\$", tex)
+    assert claim is not None, "the mertens341 figure of 04-bridges.tex not found"
+    assert_rounded_to(threshold, claim.group(1), "mertens341 threshold")
+    assert float(claim.group(1)) in [float(v) for v in _articulo_numbers(mertens, "mertens341.txt")], (
+        "04-bridges.tex's sigma is not the figure mertens341.txt records"
+    )
+
+    mobius = read_salidas("mobius.txt")
+    bound = _first_float(mobius, r"M\(30000000\) = (\d+)", "mobius M(3e7)")
+    assert bound == 1619.0, bound
+    claim = re.search(
+        r"measured \$\\le([\d.]+)\\sqrt y\$ up to \$([\d.]+)\\cdot10\^(\d+)\$", tex
+    )
+    assert claim is not None, "the mobius.py bound of 04-bridges.tex not found"
+    coefficient, mantissa, exponent = claim.groups()
+    recorded = re.search(
+        r"articulo: <= ([\d.]+) sqrt\(y\) hasta ([\d.]+)\*10\^(\d+)", mobius
+    )
+    assert recorded is not None, "mobius.txt lost its articulo line"
+    assert (coefficient, mantissa, exponent) == recorded.groups(), (
+        f"04-bridges.tex says {claim.groups()}, mobius.txt records {recorded.groups()}"
+    )
+    # the measured M(3e7) really sits under the bound the sentence prints
+    limit = float(mantissa) * 10 ** int(exponent)
+    assert bound <= float(coefficient) * limit**0.5, (
+        f"M({limit:g}) = {bound} exceeds {coefficient}*sqrt({limit:g})"
+    )
+    assert_close(_first_float(mobius, r"y >=\s+1000000: max \|M\(y\)\|/sqrt\(y\) = ([\d.]+)", "mobius ratio"), 0.5843, GOLDEN_TOL, "mobius max ratio")
+
+
+@pytest.mark.golden
+def test_fejer_window_is_pinned() -> None:
+    """blocks.py and fejer_check.py pin the forced limit and the checked sum.
+
+    INV-WIT-001 §B sites covered: ``04-bridges:918`` (the limit is forced,
+    -kappa-c_2-c_3 = -0.0802) and ``04-bridges:922`` (checked against the 397
+    zeros to 3e-4).
+    """
+    tex = read_tex(_BRIDGES)
+
+    blocks = read_salidas("blocks.txt")
+    minus_kappa = _first_float(blocks, r"-kappa = ([\d.]+)", "blocks -kappa")
+    c2 = _first_float(blocks, r"c_2 = -2\(B - log5/5\) = ([\d.]+)", "blocks c_2")
+    c3 = _first_float(blocks, r"c_3 = ([\d.]+)", "blocks c_3")
+    assert_close(minus_kappa, 3.762746, GOLDEN_TOL, "blocks -kappa")
+    assert_close(c2, 3.3089, GOLDEN_TOL, "blocks c_2")
+    assert_close(c3, 0.534, GOLDEN_TOL, "blocks c_3")
+    forced = _first_float(blocks, r"limite forzado -kappa - c_2 - c_3 = (-?[\d.]+)", "blocks forced limit")
+    assert_close(forced, -0.0802, GOLDEN_TOL, "blocks forced limit")
+    # the identity the sentence is built on, recomputed from the artifact
+    assert_close(minus_kappa - c2 - c3, forced, 1e-4, "blocks -kappa - c_2 - c_3")
+    claim = re.search(r"its limit\s+is forced, \$-\\kappa-c_2-c_3=(-?[\d.]+)\$", tex)
+    assert claim is not None, "the blocks.py limit of 04-bridges.tex not found"
+    assert claim.group(1) == f"{forced:g}" or float(claim.group(1)) == forced, (
+        f"04-bridges.tex says {claim.group(1)}, blocks.txt records {forced}"
+    )
+    assert claim.group(1) in [f"{float(v):g}" for v in _articulo_numbers(blocks, "blocks.txt")], (
+        "04-bridges.tex's limit is not the figure blocks.txt records"
+    )
+    rows = re.findall(
+        r"^\s+(\d+)\s+(-?[\d.]+)\s+(-?[\d.]+)\s+(-?[\d.]+)\s+(-?[\d.]+)\s+(-?[\d.]+)\s*$",
+        blocks,
+        re.M,
+    )
+    assert [int(r[0]) for r in rows] == [6, 8, 10, 12, 14, 16, 18], rows
+    last = rows[-1]
+    assert_close(float(last[5]), 0.0113, GOLDEN_TOL, "blocks Z(2L = 18)")
+
+    fejer = read_salidas("fejer_check.txt")
+    zeros = _first_float(fejer, r"^(\d+) ceros de L\(s,chi_5\) bajo 500", "fejer zeros")
+    assert zeros == 397.0, zeros
+    differences = [
+        float(v)
+        for v in re.findall(r"\s([+-]?\d\.\d+e[+-]\d+)\s+\(\+[\d.]+e[+-]\d+\)\s*$", fejer, re.M)
+    ]
+    assert len(differences) == 11, differences
+    max_difference = _first_float(fejer, r"maxima diferencia con la cola: ([\d.]+e[+-]\d+)", "fejer max difference")
+    assert_close(max_difference, 2.6e-5, GOLDEN_TOL, "fejer max difference")
+    claim = re.search(r"checked against the \$397\$ zeros to\s+\$3\\cdot10\^\{-4\}\$", tex)
+    assert claim is not None, "the fejer_check.py figure of 04-bridges.tex not found"
+    tolerance = _first_float(fejer, r"maxima diferencia con la cola: [\d.]+e[+-]\d+\s+\(articulo: a ([\d.]+e-\d+)\)", "fejer articulo")
+    assert_close(tolerance, 3e-4, GOLDEN_TOL, "fejer articulo tolerance")
+    assert max_difference <= tolerance, (
+        f"the primes/zeros difference {max_difference} exceeds the {tolerance} the manuscript claims"
+    )
+    z_values = [float(v) for v in re.findall(r"^\s+\d+\s+([\d.]+)\s", fejer, re.M)]
+    assert z_values and all(z > 0 for z in z_values), (
+        f"Z(L) is not positive on every window: {z_values}"
+    )
+    assert "Z(L) > 0 en todos los L" in fejer, "fejer_check.txt lost its positivity record"
+
+
+@pytest.mark.golden
+def test_orbit_balance_is_pinned() -> None:
+    """balance.py, fibres.py and dedekind.py pin the orbit race and the sum.
+
+    INV-WIT-001 §B sites covered: ``04-bridges:942`` (the two orbit types
+    cancel to 0.5%, leaving Z = 0.0113), ``04-bridges:947`` (the four fibres'
+    measured and predicted sums) and ``04-bridges:950`` (the Fejer sum falls
+    from 0.398 to 0.118 with every part positive).
+    """
+    tex = read_tex(_BRIDGES)
+
+    balance = read_salidas("balance.txt")
+    terms = {
+        name: _first_float(balance, pattern, f"balance {name}")
+        for name, pattern in (
+            ("split", r"primos partidos \(orbitas degeneradas\):\s+(-?[\d.]+)"),
+            ("inert", r"primos inertes \(orbita libre\):\s+\+?(-?[\d.]+)"),
+            ("archimedean", r"termino arquimediano:\s+(-?[\d.]+)"),
+            ("higher", r"potencias k >= 2:\s+(-?[\d.]+)"),
+            ("Z", r"  Z = ([\d.]+)"),
+        )
+    }
+    for name, want in {"split": -1787.59, "inert": 1796.72, "archimedean": -3.29, "higher": -5.83, "Z": 0.0113}.items():
+        assert_close(terms[name], want, GOLDEN_TOL, f"balance {name}")
+    cancellation = _first_float(balance, r"se cancelan al ([\d.]+)%", "balance cancellation")
+    assert_close(cancellation, 0.51, GOLDEN_TOL, "balance cancellation")
+    # the four printed terms really add up to the printed Z (at their precision)
+    assert abs(terms["split"] + terms["inert"] + terms["archimedean"] + terms["higher"] - terms["Z"]) < 0.01, (
+        f"the balance terms do not add to Z: {terms}"
+    )
+    claim = re.search(
+        r"contribute \$(-?[\d.]+)\$, the inert primes, the\s+free orbit, \$\+?(-?[\d.]+)\$, "
+        r"the archimedean term \$(-?[\d.]+)\$ and the higher powers \$(-?[\d.]+)\$, "
+        r"leaving\s+\$Z=([\d.]+)\$: the two orbit types cancel to \$([\d.]+)\\%\$",
+        tex,
+    )
+    assert claim is not None, "the balance.py figures of 04-bridges.tex not found"
+    for got, printed in zip(
+        (terms["split"], terms["inert"], terms["archimedean"], terms["higher"], terms["Z"], cancellation),
+        claim.groups(),
+        strict=True,
+    ):
+        assert_rounded_to(got, printed.replace("+", ""), "balance figure")
+
+    fibres = read_salidas("fibres.txt")
+    z_row = re.search(r"Z_4 = ([\d.]+), Z_5 = ([\d.]+), Z_20 = ([\d.]+)", fibres)
+    assert z_row is not None, "fibres.txt lost its Z row"
+    zs = dict(zip(("Z_4", "Z_5", "Z_20"), z_row.groups(), strict=True))
+    for key, want in {"Z_4": 0.0191, "Z_5": 0.0113, "Z_20": 0.0814}.items():
+        assert_close(float(zs[key]), want, GOLDEN_TOL, f"fibres {key}")
+    table = re.findall(
+        r"^\s*\((\d), (\d)\)\s+\((\d+), (\d+)\)\s+"
+        r"([+-][\d.]+|[\d.]+)\s+([+-][\d.]+|[\d.]+)\s+([+-][\d.]+|[\d.]+)\s+([+-][\d.]+|[\d.]+)\s*$",
+        fibres,
+        re.M,
+    )
+    assert len(table) == 4, table
+    measured = tuple(float(row[4]) for row in table)
+    predicted = tuple(float(row[5]) for row in table)
+    for got, want in zip(measured, (-2.79541, 0.69626, 0.74878, 1.35037), strict=True):
+        assert_close(got, want, GOLDEN_TOL, "fibres measured")
+    for got, want in zip(predicted, (-2.78143, 0.68705, 0.73763, 1.35675), strict=True):
+        assert_close(got, want, GOLDEN_TOL, "fibres predicted")
+    # the remainder column of the artifact IS measured - predicted, and the
+    # predicted remainder -(1/8) sum psi(g) Z_psi reproduces it digit for digit
+    # the columns print five decimals, so the identity holds to 1e-5
+    _PRINTED = 2e-5
+    for index, (row, got, target) in enumerate(zip(table, measured, predicted, strict=True)):
+        assert_close(got - target, float(row[6]), _PRINTED, f"fibres row {index} measured-predicted")
+        assert_close(float(row[6]), float(row[7]), GOLDEN_TOL, f"fibres row {index} remainder identity")
+    claim = re.search(
+        r"measured \$(-?[\d.]+),(-?[\d.]+),(-?[\d.]+),(-?[\d.]+)\$, "
+        r"predicted \$(-?[\d.]+),(-?[\d.]+),(-?[\d.]+),(-?[\d.]+)\$",
+        tex,
+        re.S,
+    )
+    assert claim is not None, "the fibres.py figures of 04-bridges.tex not found"
+    recorded = re.search(r"articulo: medido ([-\d., ]+); predicho ([-\d., ]+)", fibres)
+    assert recorded is not None, "fibres.txt lost its articulo line"
+    figures = tuple(v.strip() for v in (recorded.group(1) + "," + recorded.group(2)).split(","))
+    assert claim.groups() == figures, (
+        f"04-bridges.tex says {claim.groups()}, fibres.txt records {figures}"
+    )
+    for got, printed in zip(measured + predicted, claim.groups(), strict=True):
+        assert_printed_as_in_manuscript(got, float(printed), "fibres figure")
+    zs_claim = re.search(r"Z_4=([\d.]+)\$,\s*\$Z_5=([\d.]+)\$,\s*\$Z_\{20\}=([\d.]+)", tex)
+    assert zs_claim is not None, "the fibre Z values of 04-bridges.tex not found"
+    for key, printed in zip(("Z_4", "Z_5", "Z_20"), zs_claim.groups(), strict=True):
+        assert_rounded_to(float(zs[key]), printed, f"fibres {key}")
+
+    dedekind = read_salidas("dedekind.txt")
+    sums = [
+        (int(two_l), float(total))
+        for two_l, total in re.findall(r"^\s+(\d+)\s+[\d.]+\s+[\d.]+\s+[\d.]+\s+[\d.]+\s+([\d.]+)\s", dedekind, re.M)
+    ]
+    assert [t for t, _ in sums] == [6, 8, 10, 12, 14, 16, 18], sums
+    assert_close(dict(sums)[6], 0.39864, GOLDEN_TOL, "dedekind sum at 2L = 6")
+    assert_close(dict(sums)[18], 0.11831, GOLDEN_TOL, "dedekind sum at 2L = 18")
+    assert "cada parte positiva: True" in dedekind, "dedekind.txt lost its positivity record"
+    claim = re.search(
+        r"falls from \$([\d.]+)\$ \(\$2L=6\$\) to \$([\d.]+)\$ \(\$2L=18\$\), "
+        r"with every part\s+positive",
+        tex,
+    )
+    assert claim is not None, "the dedekind.py figures of 04-bridges.tex not found"
+    recorded = re.search(r"articulo: de ([\d.]+) \(2L=6\) a ([\d.]+) \(2L=18\)", dedekind)
+    assert recorded is not None, "dedekind.txt lost its articulo line"
+    assert list(claim.groups()) == list(recorded.groups()), (
+        f"04-bridges.tex says {claim.groups()}, dedekind.txt records {recorded.groups()}"
+    )
+    assert dict(sums)[6] > dict(sums)[18], "the Fejer sum does not fall from 2L = 6 to 2L = 18"
+
+
+@pytest.mark.golden
+def test_offline_minimum_stays_positive() -> None:
+    """offline.py pins the minimum of Z and the two induced crossings.
+
+    INV-WIT-001 §B site covered: ``04-bridges:956`` (without the quadruple
+    the minimum over 2L in [2,240] is +6.3e-4; with it Z < 0 at 2L ≈63 for
+    delta = 0.1 and at 2L ≈127 for delta = 0.05).
+    """
+    tex = read_tex(_BRIDGES)
+    offline = read_salidas("offline.txt")
+
+    minimum = _first_float(offline, r"sin cuadruple: min_\(2L en \[2,240\]\) Z = \+([\d.]+e-\d+)", "offline minimum")
+    without_tail = _first_float(offline, r"sin la cola: \+([\d.]+e-\d+)\)", "offline minimum without tail")
+    assert_close(minimum, 6.49e-4, GOLDEN_TOL, "offline minimum")
+    assert_close(without_tail, 6.09e-4, GOLDEN_TOL, "offline minimum without tail")
+    crossings = {
+        delta: float(value)
+        for delta, value in re.findall(
+            r"cuadruple en gamma = 100, delta = ([\d.]+), malla de 2L con paso 0\.1: "
+            r"primer Z < 0 en 2L = ([\d.]+)",
+            offline,
+        )
+    }
+    assert crossings == {"0.1": 63.4, "0.05": 126.6}, crossings
+    claim = re.search(
+        r"at \$2L\\approx(\d+)\$ for \$\\delta=0\.1\$ and at \$2L\\approx(\d+)\$ for \$\\delta=0\.05\$",
+        tex,
+    )
+    assert claim is not None, "the offline.py crossings of 04-bridges.tex not found"
+    assert_rounded_to(crossings["0.1"], claim.group(1), "offline crossing at delta = 0.1")
+    assert_rounded_to(crossings["0.05"], claim.group(2), "offline crossing at delta = 0.05")
+
+    printed = re.search(
+        r"minimum over \$2L\\in\[2,240\]\$ is \$\+([\d.]+)\\cdot10\^\{-4\}\$", tex
+    )
+    assert printed is not None, "the offline.py minimum of 04-bridges.tex not found"
+    figure = float(printed.group(1)) * 1e-4
+    # the printed figure sits between the artifact's two readings (with and
+    # without the tail), which is the reconciliation the artifact records
+    assert min(without_tail, minimum) <= figure <= max(without_tail, minimum), (
+        f"the manuscript's {figure} is outside the artifact's [{without_tail}, {minimum}]"
+    )
+    assert f"+{printed.group(1)}e-4" in offline or "articulo: +6.3e-4" in offline, (
+        "offline.txt does not record the manuscript's figure"
+    )
+
+
 # <<<APPEND>>>
