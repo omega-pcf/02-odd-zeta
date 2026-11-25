@@ -19,8 +19,8 @@ exist, and no module of `tests/` or `scripts/` may import it (AST sweep).
 
 ```bash
 # counts:begin id="commands"
-uv run pytest tests/ -q                 # whole suite   (112 tests)
-uv run pytest tests/ -q -m 'not slow'   # without >10 s (112 tests)
+uv run pytest tests/ -q                 # whole suite   (113 tests)
+uv run pytest tests/ -q -m 'not slow'   # without >10 s (113 tests)
 # counts:end id="commands"
 pnpm run verify:py                      # the same gate through package.json
 ```
@@ -28,9 +28,9 @@ pnpm run verify:py                      # the same gate through package.json
 The pytest configuration lives in `pyproject.toml` under
 `[tool.pytest.ini_options]` (`testpaths`, `pythonpath`, `markers`,
 `addopts`), so a bare `uv run pytest` collects the same
-<!-- counts:begin id="suite-total" -->112<!-- counts:end id="suite-total" -->
+<!-- counts:begin id="suite-total" -->113<!-- counts:end id="suite-total" -->
 tests as `uv run pytest tests/ -q`, and
-<!-- counts:begin id="suite-not-slow" -->112<!-- counts:end id="suite-not-slow" -->
+<!-- counts:begin id="suite-not-slow" -->113<!-- counts:end id="suite-not-slow" -->
 of them carry no `slow` mark. The numbers in those two spans are generated
 from a real run by `pnpm run counts`; `pnpm run counts:check` (inside
 `validate`) fails when they drift.
@@ -59,6 +59,7 @@ tests/
 ├── test_polylog_circuit.py         # section 5.9
 ├── test_golden_observations.py     # the four committed observation outputs
 ├── test_golden_n_marks.py          # the INV-WIT-001 §B N marks: their outputs
+├── test_arch_window.py             # arch_window.py: the archimedean crossings
 └── test_witness_census.py          # \testref <-> suite contract, port guard
 ```
 
@@ -101,3 +102,10 @@ family per commit, each test naming in its docstring the `file:line` sites
 it covers and reconciling the printed figures against the artifact's own
 `articulo:` line. The sites with no backing stay untouched and are recorded
 as `no-test:<reason>` in INV-WIT-001 §B.
+
+`tests/test_arch_window.py` does the same for `arch_window.py`, the
+archimedean form of `ζ_K`: the two crossings of the paragraph of
+04-bridges (without the pole the form is negative from support length
+`0.453`, the criterion `λ₂(D) > |C₀|` holds up to `1.647`, beyond the
+prime-free range `[0, log 4]`), the basis the sentence declares for them,
+and the row at `S = log 4` that carries the two window statements.
