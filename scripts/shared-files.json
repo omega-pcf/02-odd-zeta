@@ -10,7 +10,7 @@
     "LICENSE": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94",
     "docs/BRIEF-TEMPLATE.md": "08feb99c9bc52e20a6190cf82e13b6c0fca7ab44f21b6a57ffa151e220ffc944",
     "docs/witness-contract.md": "c076034147eea58f98195cf4b5752d31a8ec2f5ec207a619821b465fd8d52fdd",
-    "docs/witness-decisions.md": "7c0ef9bfb272fc16f8c48cac223bb9dbc38bd5211cb6ed694d9ef30c843eed66",
+    "docs/witness-decisions.md": "84a09ba4717b286ad4e3a1010a0c00394b416e638944068a7bc06f1ad98a62fc",
     "docs/witness-standard.md": "285de2019903600d3dd098a1e6e9fd6218a3b89d9aac650d4065e5e194a23b4b",
     "scripts/build.ts": "cb9c3b669058478ae5bb435259b873d0681c2a7c5df313e213557e34ec0a0659",
     "scripts/generate_types.ts": "25a337d8256b6653ffffb47ca13bac9385b62e3ef6be7fcfcf2852af0c1844cf",
