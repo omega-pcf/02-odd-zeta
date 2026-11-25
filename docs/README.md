@@ -14,8 +14,14 @@ docs/
 ├── usage.md           # Build and release commands
 ├── witness-contract.md # The single living norm: rationale, standard (§6) and wave-brief shape (§10)
 ├── witness-decisions.md # The family ledger: one row per question, open and ruled
-└── witness-inventory.md # This repository's census of marks, generated from a measurement
+├── witness-inventory.md # This repository's census of marks, generated from a measurement
+└── reports/           # Specific, repository-tied reports (dated, id'd)
+    └── README.md      # Reports convention (template) + index of this repository's reports
 ```
+
+`docs/` itself stays generic (rules and rationale, portable across the
+sibling repositories); anything tied to one repository state — per-site
+inventories, decision logs, verdict tables — goes to `docs/reports/`.
 
 ## Contents
 
@@ -39,8 +45,13 @@ docs/
   rules, the star, typography, gates, alphabet, the quantified inline / own-line criterion §6.10,
   the own-line rendering form §6.12, the ledger segmentation §6.13) and the required shape of a
   wave brief (§10). Portable across the family: byte-identical and manifest-pinned.
-  **witness-decisions.md** is the decision ledger, one row per question (a count is never a
-  row); **witness-inventory.md** is this repository's generated census of marks.
+  - **witness-decisions.md** is the decision ledger, one row per question (a count is never a
+    row); **witness-inventory.md** is this repository's generated census of marks.
+  - **reports/**: Specific reports — the witness reconciliation (F8-001), the tier-use migration
+    map (FTI-001), the author text changes (F12-001), the provenance inventory (F9-001), the
+    pytest suite port (F10-001), the citation verification (CIT-003) and the merge closure
+    (MRG-001). The convention (naming, ISO header, index format) and the index of this
+    repository's reports are in `reports/README.md`.
 
 ## Conventions
 
