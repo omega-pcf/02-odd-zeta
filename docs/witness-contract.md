@@ -4,29 +4,52 @@
 |---|---|
 | **Document** | `docs/witness-contract.md` |
 | **Status** | In force as the standard — §6 states what it does and does not claim about a manuscript's body |
-| **Version** | 1.1 (portable rationale plus the derived standard; generic across the family) |
-| **Date** | 2026-11-23 |
+| **Version** | 2.0 (rationale, derived standard and wave-brief shape in one file; generic across the family) |
+| **Date** | 2026-11-25 |
 | **Language** | English; identifiers, macros and file names in English and monospace |
-| **Scope** | Why the marks of evidence of the manuscript (`\tier`, `\witness` where the manuscript has one, with `\testref`) exist and what they do not assert — the argument behind the contract of `docs/citations.md` §8, free of anything tied to one repository state; §6 states the standard itself, derived from the positions already settled |
+| **Scope** | Why the marks of evidence of the manuscript (`\tier`, `\witness` where the manuscript has one, with `\testref`) exist and what they do not assert — the rationale (§1–§5, §7), the standard itself (§6), the quantified inline / own-line criterion (§6.10), the own-line rendering form (§6.12) and the shape of a wave brief (§10); free of anything tied to one repository state |
+| **Index** | §0 where things live · §1–§5 the argument · §6 the standard (§6.0–§6.13) · §7 honesty · §9 limits · §10 wave brief shape |
 
-**Document:** justification of the witness convention (`\tier`, `\witness`) of the manuscript, written so that the convention has a place in a
-paper of pure mathematics.
-
-**Relation to the rest of the documentation.** This document **argues**; the
-**operational** rule lives in `docs/citations.md` §8 (grammar, writing
-rules, alphabet, conventions and, in §8.5, the quantified criterion for
-inline versus a line of its own). The per-site decisions — which witness
-supports each claim, what is rewritten and what is removed — and the
-measured state of one manuscript live in `docs/reports/`. Nothing asserted
-here changes the contract of `docs/citations.md`: if the two documents ever
-disagree, `docs/citations.md` governs, because it is the one the build and
-the text review use.
+**Relation to the rest of the documentation.** This document is the
+**single living norm** of the witness device: §6 states the rules, §1–§5
+and §7 argue them, and §10 fixes the shape of a wave brief.
+`docs/citations.md` ends with an **index** — a pointer to §6 of this
+document — and states no rule of its own. `docs/witness-decisions.md`
+holds one row per question, `docs/witness-inventory.md` holds this
+repository's generated census, and the per-site decisions — which
+witness supports each claim, what is rewritten and what is removed —
+plus every measured state of one manuscript live in `docs/reports/`.
+Nothing asserted here is contradicted elsewhere, because there is no
+other document that states a rule.
 
 **Status and method.** In force with the manuscript. The concrete state of
 a manuscript — counters, site tables, verdicts — is measured with `grep` on
 `main.tex` and recorded in `docs/reports/`; a site is identified by the
 tail of the sentence, not only by the line number, because the manuscript
 is edited concurrently.
+
+---
+
+## 0. Where things live
+
+| File | What it provides |
+|---|---|
+| this document §6 | the standard itself: precedence (§6.0), syntax (§6.1), what each mark asserts (§6.2), placement (§6.3), naming (§6.4), grammar and the writing rules (§6.5), the star (§6.6), typography and the family's deliberate divergences (§6.7), the witness gates (§6.8), the alphabet and decorations (§6.9), the inline / own-line criterion (§6.10), standard versus applied state (§6.11), the own-line form (§6.12) and the ledger segmentation (§6.13) |
+| this document §10 | the required shape of a wave brief (five blocks) |
+| `docs/witness-decisions.md` | one row per question; a count is never a row |
+| `docs/witness-inventory.md` | the census of *this* repository, generated from a measurement, never hand-written; per repository by design, therefore not a family file and not manifest-pinned |
+| `docs/citations.md` §8 | an index only: a pointer to §6 of this document; it states no rule |
+| `docs/reports/` (index: `docs/reports/README.md`) | per-site decisions, counters, criterion sites, `u`/`p` verdicts, applied states and the author's pending-work list — the applied state of this argument in one repository; a superseded one carries `superseded-by:` |
+| `docs/README.md` | the directory index of `docs/` |
+| `docs/style-guide.md` | the family style guide as this repository applies it |
+| `README.md` | link to the witness section of the documentation; `docs/README.md` is the directory index |
+| `main.tex` — preamble (witness system, `\tier` dispatch, definition of `\witness`) and the *Evidence tags* gloss | the implementation and what the reader sees at the first mark of the body |
+| the repository's Lean file (`lean/`) | the `P` identifiers the mark can print |
+| `tests/` and the census test of the repository | the numerical suite and the census that fixes the test identifiers the manuscript cites |
+| `citation.csl.json`, `CITATION.cff` | the bibliographic layer the mark does **not** mix with: the external source is a `\cite`, never a mark identifier |
+| `scripts/shared-files.json` | the family manifest: this document and `docs/witness-decisions.md` are pinned and byte-identical in the five repositories; the census is excluded because its counts differ by design |
+| `omega-pcf-paper-repos` → `references/decision-gates.md` | the method of the convention research pass (separate discipline standard, device proper, real precedent) and the rule of not writing CI tests for editorial conventions |
+| `omega-pcf-paper-repos` → `references/witness-system.md` | the grammar of the family-level witness system, its known defects (italic inheritance in theorem environments, inline marks inside alignments) and the state of propagation to the sibling repositories |
 
 ---
 
@@ -51,9 +74,9 @@ solve), **coherent** with contemporary verification practice, **usable**
 declared** (it is not presented as an AMS or Chicago norm, and it warns of
 its novelty).
 
-What this document does **not** do: it does not set editing rules. The
-rules live in `docs/citations.md`; here the reason for being of each of
-them is given.
+What this document does **not** do: it does not set editing rules that
+belong to the manuscript's prose. The rules of the device live in §6;
+here the reason for being of each of them is given.
 
 ---
 
@@ -157,7 +180,7 @@ discipline. That does not turn the mark into a scholarly-society norm; see
 
 The usability criterion and the *compactness* one — what the mark costs in
 space and in attention — are gathered here, together with the in-prose
-syntactic factor behind §8.5 of `docs/citations.md`.
+syntactic factor behind §6.10 of this document.
 
 ### 4.1 Inheritance from the secondary notation of software engineering
 
@@ -185,18 +208,17 @@ described in the family *skill* `omega-pcf-paper-repos`, file
 `references/decision-gates.md`, section *"When the convention itself is
 questioned"* — went through that literature with a declared purpose: to
 separate what is standard in the discipline, what is device proper to the
-project, and what the real nearest precedent is. The distilled result sat
-in `docs/citations.md` §8.4: the real precedents are the per-statement
-status of `leanblueprint`, status tables and artefact seals; the rest —
-the inline mark, the one-macro grammar, the colour rule — is device proper
-to the project and is declared as such.
+project, and what the real nearest precedent is. The distilled result is
+stated in §7: the real precedents are the per-statement status of
+`leanblueprint`, status tables and artefact seals; the rest — the inline
+mark, the one-macro grammar, the colour rule — is device proper to the
+project and is declared as such.
 
 ### 4.2 The WCAG 1.4.1 rule: colour never carries meaning alone
 
-`docs/citations.md` §8.4 already fixes this rule: **colour is redundant
-with the letter (WCAG 1.4.1)**; the mark reads the same in greyscale and
-the letter suffices to carry the meaning. The rule is upheld here for
-three reasons:
+§6.7 fixes this rule: **colour is redundant with the letter (WCAG 1.4.1)**;
+the mark reads the same in greyscale and the letter suffices to carry the
+meaning. The rule is upheld here for three reasons:
 
 1. **Print.** The paper is read on paper and in reduced-colour PDF; the
    PDF is archived and cited in formats that lose colour.
@@ -242,10 +264,10 @@ references by author; the mark does not enter that layer.
 The shape of each mark is decided with five quantities read directly from
 `main.tex`, with no judgement of taste. The definitions of the five
 quantities, the four thresholds and the rule in one sentence have a single
-home in `docs/citations.md` §8.5 and are not restated here; the site table
-— every flagged site with the tail of the sentence it closes — is the
-criterion-sites report in `docs/reports/`. What this section adds is the
-*why*: the four conditions answer four usability demands —
+home in §6.10 of this document; the site table — every flagged site with
+the tail of the sentence it closes — is the criterion-sites report in
+`docs/reports/`. What this section adds is the *why*: the four conditions
+answer four usability demands —
 
 - `k` and `L` address **cost**: the block pays a paragraph break, so it is
   only asked of lists that truly need the line.
@@ -269,8 +291,7 @@ the counters of the last pass are in `docs/reports/`.
 
 **Review.** The review method — the reading pass over that site table, its
 one question per row, and why no CI test is written for it — is stated
-once, in `docs/citations.md` §8.5; this document follows that method, it
-does not restate it.
+once, in §6.10, and applied there.
 
 ### 4.5 Compactness: the measured cost of the device
 
@@ -280,7 +301,7 @@ does not restate it.
 own, witness-list labels, and occurrences of `\testref`. The measurement
 is a census of the manuscript, so it belongs to `docs/reports/` of the
 repository that measures it; the method is stated here because the
-thresholds of `docs/citations.md` §8.5 are argued against it. From that
+thresholds of §6.10 are argued against it. From that
 census follow two consequences:
 
 1. **The block is expensive, so it is asked to pay in return.** It costs a
@@ -290,7 +311,7 @@ census follow two consequences:
    criterion-sites report in `docs/reports/`). Without a threshold, a
    twenty-nine-character list would earn a whole line and the cost would
    have no counterpart; the paragraph-close heuristic `p` is what lifts
-   gate 2 for such a site (`docs/citations.md` §8.5).
+   gate 2 for such a site (§6.10).
 2. **The inline bracket is cheap but not free.** The optional argument of
    `\tier` prints names, never numbers: the cost of the bracket does not
    grow with the numbering of references, and the identifiers break in
@@ -328,13 +349,13 @@ that is already there.
 
 **One claim, one mark.** There are no two adjacent marks, nor a mark and a
 `\cite` saying the same thing, nor marks in figure captions (rule 8 of
-`docs/citations.md` §8.2). The gloss is exempt from the mandatory-witness
+§6.5). The gloss is exempt from the mandatory-witness
 rule because it defines, it does not assert.
 
 **`P*` is internal.** The class exists and works in the preamble (dispatch
 `\@namedef{tiercol@P*}`, ochre colour) to mark between compilations a
 statement written but not yet verified against the corpus —
-the star's one denotation (§6.5) —; the printed text never invokes it,
+the star's one denotation (§6.6) —; the printed text never invokes it,
 the gloss does not mention it and the prose does not speak of it. It is a
 work tool, not a class of the published alphabet.
 
@@ -355,12 +376,12 @@ paper already gave:
   result about them`), and sites added in one round contradicted the
   "proved here" section they were in.
 
-Both eliminations are documented in `docs/citations.md` §8.3 and applied
+Both eliminations are documented here (§5 and §6.9) and applied
 in the manuscript: the published alphabet of evidence is `P` and `N`.
 
 ---
 
-## 6. The standard, as derived
+## 6. The standard
 
 The rules below are this contract's own standard. None of them is a new
 decision: each restates a position already settled in the family's
@@ -369,36 +390,55 @@ argument and the rule together. Where a rule defers, it defers in the
 open; nothing in this section decides a question the family documents
 leave undecided.
 
-**Standard, not applied state.** This section states the standard; it
-does not assert that a manuscript's body already satisfies it. What each
-repository's text does today — which sites follow a rule and which do
-not — is measured and recorded in that repository's `docs/reports/`,
-never here. The shape of a call site is outside it as well: whether the
-ids of an own-line accounting line such as `Lean: …` sit in a block of
-their own or inside the tag as `P[ids]`, and every other body-form
-question, belongs to the convergence that is still pending — W2
-(mechanical renames) and W3 (semantic pass) — and is neither decided,
-nor changed, nor implied by anything below.
+### 6.0 Precedence
 
-### 6.1 The set of evidence marks
+**The manuscript is king.** A mark never overrides what the text states:
+where the text and a mark disagree, the text is read first and the mark is
+corrected to it. A mark is a pointer to evidence, never a verdict — it
+tells a reader where the check lives, not that the claim is true. A count
+in a document is a measurement with a date, not an argument.
+
+### 6.1 The set and its syntax
+
+| role | source | prints |
+|---|---|---|
+| inline | `\tier[ids]{X}` | `X[ids]` — the tag first, its ids inside the brackets |
+| own-line | `\witness{X}{ids}` | `X[ids]` on a line of its own, flush right |
+
+`X` is `P` or `N` (§6.9). The body form is `P[id1, id2]`: **one tag, its
+ids inside the same brackets, separated by `, `** — the bracket belongs to
+the tag itself and never follows it as a second group. No third body form
+exists; an accounting line (`\leanline`, a `Lean:` line) is not a form of
+the mark (§6.4 S4).
 
 The set of evidence marks is **`P` and `N`, with `\testref` as the test
 anchor — nothing else**. No decoration, no accounting line and no label
 enters the set. The internal `P*` dispatch of the preamble (§5) is a work
 tool, not a class of the printed alphabet.
 
-### 6.2 Placement is prose, never semantics
+### 6.2 What each mark asserts
+
+- **`P`** — an artefact of the named formalization, checked by that
+  formalization's own machine. The correspondence between that artefact
+  and the statement of the paper is a human reading of both, and is not
+  asserted by the mark.
+- **`N`** — an executable numerical test with a stated tolerance and
+  condition. The test is evidence; it is not a proof.
+- **`tier`** is never an alias for *proved*, and no mark carries a degree
+  of confidence, a provenance grade or a citation.
+
+### 6.3 Placement is prose, never semantics
 
 Whether a mark sits inside the sentence or on a line of its own is a
 **prose criterion** — semantic, heuristic, aesthetic — and no rule of this
 contract decides it. Placement never changes what a mark asserts: the
 shape of a mark tells a reader how many witnesses a claim carries and
 where they sit, never which kind of evidence it is. The quantified
-criterion of `docs/citations.md` §8.5 stays what it has always been — a
+criterion of §6.10 stays what it has always been — a
 readability aid for that prose decision (cost, rhythm, position) — and it
 is not a classifier. The standard governs content and naming only.
 
-### 6.3 Naming (S1–S5)
+### 6.4 Naming (S1–S5)
 
 A name is routed by the job it does in its sentence; the pass that moves
 names reads each site, classifies it and restates the classification
@@ -408,62 +448,170 @@ before editing:
 |---|---|
 | **S1** witness id | stays inside the mark — `\tier[ids]{X}`, `\witness{X}{ids}`, `\testref{…}` — written raw, never beside the tag |
 | **S2** code mention | `\code` |
-| **S3** decorated name (`*`, `°`, `†`) | `*` under §6.5; `°` and `†` under §6.7 |
+| **S3** decorated name (`*`, `°`, `†`) | `*` under §6.6; `°` and `†` under §6.9 |
 | **S4** `Lean:` accounting line | no canonical form yet: the sites stay where they are and are not migrated in bulk |
-| **S5** unclassifiable | recorded in `docs/reports/` as an open site, never guessed |
+| **S5** unclassifiable | recorded as an open site in `docs/witness-inventory.md`, never guessed |
 
-### 6.4 Grammar
+Names follow the repository's naming standard (snake_case, English); an id
+that does not is a work item, not an exception.
 
-The optional argument of a tag holds **internal ids only** — a `\testref`, or the raw names of
-declarations of the repository's own Lean file, several of them separated by `,` — and a
-citation key is never written inside a tag; an external source stays an adjacent `\cite`,
-printed beside the mark, never fused into it.
+### 6.5 Grammar of the tag argument
 
-The macro does not enforce this by the shape of its argument. A character-shape test
-(`\_`, `,` or `\testref` present, otherwise an error) rejects valid internal ids — a Lean name
-such as `F1PaperTorus.chi5WeilOrbit` carries none of those markers — and it cannot recognise a
-citation key, whose characters are the characters of an identifier. The argument is therefore
-read as an arbitrary string: an escaped `\_` and a raw `_` both print as the breakable
-typewriter underscore, every other token passes through unchanged, and the only error the macro
-raises at run time is a literal `\cite` token inside the argument, which is never an id.
+The optional argument of a tag holds **internal ids only** — a
+`\testref{…}` or the raw names of the repository's own declarations,
+several of them separated by `,` — and a citation key is never written
+inside a tag; an external source stays an adjacent `\cite`, printed beside
+the mark, never fused into it.
 
-The rule that the bracket holds no external source is enforced where the key set exists: a test
-reads every `\tier[…]` and `\witness{…}{…}` argument of the manuscript, splits it on the commas
-that sit outside `\testref{…}`, and fails when a part equals the id of a record of
-`citation.csl.json` or contains a `\cite` token, reporting `file:line` and the key. The check
-runs with the suite and is the only place where the citation-key rule is measured.
+The macro does not enforce this by the shape of its argument. A
+character-shape test (`\_`, `,` or `\testref` present, otherwise an error)
+rejects valid internal ids — a Lean name such as
+`F1PaperTorus.chi5WeilOrbit` carries none of those markers — and it cannot
+recognise a citation key, whose characters are the characters of an
+identifier. The argument is therefore read as an arbitrary string: an
+escaped `\_` and a raw `_` both print as the breakable typewriter
+underscore, every other token passes through unchanged, and the only error
+the macro raises at run time is a literal `\cite` token inside the
+argument, which is never an id.
 
-Repositories whose tags today accept a wider or a narrower set converge on this grammar by work,
-not by relaxation of the rule: the identifiers the previous wording rejected are a measured set,
-never a design constraint. Counted in one manuscript (`03-crystalline-worldsheet`, over
-`src/chapters/*.tex`, 2026-11-25) **18 of the 100 sites** of `\tier[…]` fail the repository's
-naming standard — **12 Lean declaration names** (10 distinct, at 9 sites), declarations of
-`lean/CW6_complete_v2.lean`, none a `\label`, protected by the statement guard (every Lean id
-cited must exist in the Lean file), and the **6 ellipsis placeholders** of the gloss sentences —
-while `:`-style label keys remain **0**. They remain work items and are rewritten to snake_case
-ids; the business rule itself is unchanged, only the layer that enforces it moves.
+The rule that the bracket holds no external source is enforced where the
+key set exists: a test reads every `\tier[…]` and `\witness{…}{…}`
+argument of the manuscript, splits it on the commas that sit outside
+`\testref{…}`, and fails when a part equals the id of a record of
+`citation.csl.json` or contains a `\cite` token, reporting `file:line` and
+the key. The check runs with the suite and is the only place where the
+citation-key rule is measured.
 
-### 6.5 The star
+Repositories whose tags today accept a wider or a narrower set converge on
+this grammar by work, not by relaxation of the rule: the identifiers the
+previous wording rejected are a measured set, never a design constraint.
+They remain work items and are rewritten to snake_case ids; the business
+rule itself is unchanged, only the layer that enforces it moves.
+
+The render of a legal tag is always the same shape: **the tag first, its
+ids inside the brackets** — `P[name1, name2]`, `N[test_x]`. The ids never
+precede the tag either, so a test witnessed in prose appears as
+`\tier{N} (\testref{test_x})`, never as `(\testref{test_x}) \tier{N}`.
+External sources stay outside the tag: the claim keeps its `\cite` next to
+it, in the standard form `[P] in~\cite{key}` for a result proved in a
+source and `[N]~\cite{key}` for a value quoted from one. Two bracket
+groups in a row (`[P] in [12]`) are then the tag's own bracket plus the
+citation's, each printed by its own macro — and a tag alone never carries
+a number.
+
+**There is no `\Lean{}` (nor any per-repository variant of it) any more.**
+They were the artefact of the previous convention: a name printed in tt
+brackets of its own, standing next to the tag of the same claim (`P[…]`
+beside `N[test_x]`), which is the duplication this standard replaced. Every
+internal name now lives **inside** the tag — `\tier[name1, name2]{P}` — or
+inside a `\witness{}` block, and an external name (a theorem of a sibling
+repository) is never printed at all: the claim keeps its citation,
+`in~\cite{key}`.
+
+#### The writing rules
+
+1. **One claim, one tag.** No two tags are ever adjacent — `\tier{P}
+   \tier{N}` is a bug, not a summary.
+2. **An external source is the citation, not a tag — and never the key of
+   one.** The source of a claim is its `\cite`, set immediately after the
+   claim it supports: no tag says "this is cited", because the bracket of
+   the citation already says it, and in numeric style a repeat carries its
+   number like any other reference. What a tag carries is an *internal*
+   witness, by identifier: a Lean name inside its brackets,
+   `\witness{}` or `\testref{}`. `\tier[key]{X}` does not exist — the
+   optional argument of `\tier` holds internal ids only and the preamble
+   errors on anything else.
+3. **A bare tag needs a witness in its sentence.** If the sentence has
+   none, add the most honest one (the `\testref{}` of the test that checks
+   the number, the Lean declaration that proves it — written inside the
+   tag, so the tag is bare no longer — or an `\eqref`/`\ref`); never
+   invent a citation.
+4. **Every `\tier{N}` carries a `\testref{}`** when a test verifies it —
+   either folded into the tag, `\tier[\testref{test_x}]{N}`, or, when the
+   sentence already carries other witnesses, as `\testref{}` in the prose
+   of that same sentence, after the tag. The set of cited tests is pinned
+   by the census test of the repository, so a new witness is added there
+   too, after checking the test really recomputes the number next to it.
+5. **`\tier{P}` without a bracket** means proved here, with no theorem
+   name quoted at that point; the name, when it is quoted, goes into the
+   tag itself (`\tier[name]{P}`) or, when the claim carries two ids or
+   more and closes its sentence, into a `\witness{}` block — the criterion
+   of §6.10 (four gates and two labelled heuristics) decides which of the
+   two. Proved in an external source is not "here": that is
+   `[P] in~\cite{key}`, one bracket for the tag and one for the citation,
+   each printed by its own macro.
+6. **The gloss** (the *Evidence tags* paragraph, before the first mark of
+   the body) defines the classes and nothing else — one sentence each. It
+   is exempt from rule 3 — it defines, it does not claim — and it never
+   mentions `P*`.
+7. **`P*` is available; the released text uses `P`.** The class is fully
+   functional in the preamble — the dispatch `\@namedef{tiercol@P*}` and
+   the ochre `tierPs` colour — so `\tier{P*}` renders `[P*]` exactly like
+   any other class, and it is there for intermediate commits between
+   builds (an agent without Lean, in draft) that need to tag a claim as
+   written but not yet verified against the corpus — the star's one
+   denotation (§6.6), which lives only in intermediate layers, the
+   release gate being zero stars. The printed text never invokes it: the
+   body marks those claims `P`, the gloss does not mention it and the
+   prose no longer speaks of it.
+8. **No status tags in captions.** A caption already names the test that
+   generates the figure (`\testref{…}` of that test, and the test of the
+   claim itself), which carries the status; a `\tier{…}` inside
+   `\caption{…}` is removed, not kept. Tags belong to the body.
+
+### 6.6 The star
 
 `*` has **one denotation**: a name *written, not yet verified against the
-corpus*. It marks intermediate process state, it lives only in
-intermediate layers, and the passes that verify the corpus resolve it;
-the release gate is **zero stars**, so a released text carries none. The
-star is not a class of evidence, not a degree of confidence and not a
-citation. Any other reading of it — in a comment, in a colour note or in
-a rule of the writing guide — is a defect and is corrected where it is
+corpus*. It denotes written, not yet verified; it lives only in
+intermediate layers, and the passes that verify the corpus resolve it; the
+release gate is **zero stars**, so a released text carries none. The star
+is not a class of evidence, not a degree of confidence and not a
+citation. Any other reading of it — in a comment, in a colour note or in a
+rule of the writing guide — is a defect and is corrected where it is
 found.
 
-### 6.6 Typography
+### 6.7 Typography, and the family's deliberate divergences
 
-The canonical render parameters, measured in the built PDF, are
-**13 pt for the witness class, 15 pt for the ids and 16 pt for the
-prose**, identical for `P` and `N`; only colour differs, and colour is
-redundant with the letter (§4.2). Rendering is re-checked by measurement
+The canonical render parameters, measured in the built PDF, are **13 pt
+for the witness class, 15 pt for the ids and 16 pt for the prose**,
+identical for `P` and `N`; only colour differs, and colour is redundant
+with the letter (§4.2, WCAG 1.4.1). Rendering is re-checked by measurement
 at each wave, never by eye; reopening these parameters requires a new
 measurement.
 
-### 6.7 Open tier, table labels and decorations
+The underscore inside an id prints through the repository's `\brk@us`, and
+the family does **not** unify it — the break-per-character decision is
+typography:
+
+| repository | encoding | `\brk@us` |
+|---|---|---|
+| 01, 04 | OT1 | `{{\ttfamily\char95\relax}\allowbreak}` |
+| 02, 05 | T1 | `\textunderscore\allowbreak` |
+| 03 | T1 | `\textunderscore` — **no** `\allowbreak` |
+
+03 keeps the form without the breakpoint because adding the family's
+`\allowbreak` would open a break after every underscore of a witness list,
+reflow the manuscript and break the family's byte-identical `pdftotext`
+gate (`03/main.tex` comment at the definition; commit `b1fec34`,
+2026-11-24).
+
+### 6.8 Gates
+
+1. **Citation-key lint** — no part of a `\tier[…]` or `\witness{…}{…}`
+   argument may equal an id of `citation.csl.json` or contain a `\cite`
+   token; it runs with the suite and reports `file:line`.
+2. **Zero stars** at release (§6.6).
+3. **No `Tier` column** in a ledger table; a table carries no tier label.
+4. **Render** — tag before ids, `P`/`N` only, colour redundant with the
+   letter.
+
+### 6.9 The alphabet, open statements and decorations
+
+The published alphabet is frozen at **`P` and `N`** (§5): an expansion
+enters only through the family's gate — measured sites, used *and*
+documented in all five repositories, counted by `counts:check` and
+lintable, with the cost of each new symbol estimated before it is
+admitted. Until a gate is passed, the alphabet does not grow.
 
 - **Open statements are prose by default.** No `[o]` label is adopted.
 - A `conjecture` environment is used only where **both** conditions hold:
@@ -478,13 +626,371 @@ measurement.
   stays marginal, and nothing in this contract certifies them.
 - **No shorthand** is adopted now.
 
-### 6.8 The alphabet is frozen at `P` and `N`
+### 6.10 Inline or a line of its own — the criterion
 
-The published alphabet is `P` and `N` (§5). Any expansion enters only
-through the family's gate: measured sites, used *and* documented in all
-five repositories, counted by `counts:check` and lintable, with the cost
-of each new symbol estimated before it is admitted. Until a gate is
-passed, the alphabet does not grow.
+The **shape** of a mark is decided by its ids, never by its class. `P` and
+`N` both appear inline and on a line of its own, so the shape tells a
+reader how many witnesses a claim carries and where they sit, not what
+kind of evidence it is; reading the shape as "the proof is a block, the
+test is inline" was the drift this rule closes. Placement itself is prose
+— semantic, heuristic, aesthetic — and never a semantic axis (§6.3): the
+criterion below measures cost and position for that decision, it does not
+classify.
+
+The criterion is **quantitative**: five quantities read off `main.tex`
+with no judgement call, four gates, two labelled heuristics, one reading
+pass to review it.
+
+**The rule in one sentence.** A claim whose id list carries **two ids or
+more and 35 characters or more** goes on a line of its own
+`\witness{X}{ids}` **only if the mark closes its sentence, does not close
+a list item, and stands at least 75 words from the nearest block of its
+paragraph**; every other site stays inline `\tier[ids]{X}`. Two labelled
+**heuristics** amend the cost and position conditions (gates 2 and 4): `u`
+takes the verdict from the list the mark sits in, `p` prefers a line of
+its own at a paragraph close — both stated below. Gates 1 and 3 (`k ≥ 2`,
+`r = 0`) are absolute: no heuristic lifts them.
+
+#### The quantities
+
+| Symbol | Quantity | How to measure |
+|---|---|---|
+| `k` | ids of the claim | count of `,` + 1 in the optional argument of `\tier`, resp. in the second argument of `\witness` |
+| `L` | length of the id list, in characters | that argument with `\_` unescaped to `_`, `\testref{…}` reduced to its name, braces dropped |
+| `r` | **sentence residual** — words of the *same sentence* that follow the mark | words between the mark and the next `.`, `!` or `?`, math and macros not counted; `r = 0` means the mark is the last element of its sentence |
+| `d` | distance in words to the nearest `\witness` block of the same paragraph | paragraphs are blank-line separated; `—` when the paragraph has no block |
+| `i` | 1 if the mark closes a `\item` of an enumeration, 0 otherwise | the last `\item`/`\item[` before the mark opens the item the mark ends |
+
+#### The four gates
+
+A claim with `k ≥ 2` is set as a block **iff all four hold**, unless one of
+the heuristics below decides otherwise:
+
+1. **`k ≥ 2`.** One id never earns a line of its own: a single identifier
+   fits in the bracket of the sentence it marks (calibration: the
+   criterion-sites report in `docs/reports/`).
+2. **`L ≥ 35`.** Below 35 characters the flush-right line costs a
+   paragraph break and buys no room: the bracket fits in the sentence
+   (calibration: the criterion-sites report in `docs/reports/`).
+3. **`r = 0`.** `\witness` issues `\par … \par` (preamble), so it always
+   ends the paragraph where it sits and the text after it opens a new one.
+   Any residual — a trailing clause (`; …`, `, so …`, `which …`), a
+   parenthetical (`(Figure~\ref{fig:background}(a))`), a closing
+   `\testref` — would be stranded at the head of a new paragraph, and the
+   sentence it belongs to would be torn in two. **`r ≥ 1` ⇒ inline, no
+   exception.** The residual is counted, not estimated: a residual of a
+   few words is a reference parenthetical or a closing `\testref` — a part
+   of the sentence it follows, not a sentence of its own.
+4. **`i = 0` and `d ≥ 75`.** A block inside an enumeration would close
+   the item's paragraph and set the mark off from the rest of the list;
+   no block of the manuscript sits inside one. And a second block a few
+   lines below the first is monotone prose: 75 words is the tightest
+   block-to-block distance the manuscript already accepts (calibration:
+   the criterion-sites report in `docs/reports/`), so `d < 75` keeps the
+   claim inline.
+
+The four gates read as a paragraph, but they are each a number: the
+criterion is reproducible by anyone who opens `main.tex`, and the applied
+inventory it reproduces — every block, every flagged site, every counter —
+is recorded in `docs/reports/` (the criterion-sites report of this
+repository).
+
+#### The two heuristics — `u` and `p`
+
+Both are **heuristics**, labelled as such wherever they are applied: they
+act only on the cost and position conditions of gates 2 and 4, never on
+gates 1 and 3. Each is a measurable positional signal, not a quantity of
+the criterion.
+
+**`u` — uniformity of a newline-separated list (HEURISTIC).** In a list
+whose elements already sit on their own lines — an `enumerate`, `itemize`
+or `description` whose `\item`s each begin a line, and the numbered
+sequence of `imported` statements — every mark of the run takes the same
+form: all inline or all on a line of its own, never mixed. The verdict is
+therefore taken **from the run, not from the item**: census the other
+marks of the run (inline `\tier` vs `\witness` block), then
+
+- run all inline → the mark stays inline, whatever gates 2 and 4 would say;
+- run all own-line → the mark goes on a line of its own, whatever gate 4's
+  `i` would say;
+- run mixed → `u` gives no verdict (it abstains), the run is recorded as a
+  uniformity defect for a later harmonising pass, and the site falls
+  through to `p` and to the four gates;
+- run with no other mark → `u` abstains for lack of a census.
+
+Measurable: the run is delimited by `\begin{…}`/`\end{…}`; the census
+counts `\tier` and `\witness` occurrences inside it, excluding the mark
+under review.
+
+Best practice: visual rhythm — a list whose marks change shape from item
+to item forces the eye to re-acquire the pattern, while a consistent form
+keeps the list scannable
+([How Users Read on the Web](https://www.nngroup.com/articles/how-users-read-on-the-web/)).
+
+**`p` — paragraph close (HEURISTIC).** A mark that is the last element of
+its paragraph — only punctuation and commands follow it before the break —
+adds a preference for a line of its own: the paragraph break the block
+would cost is already there, and no residual can be stranded. The
+condition is positional: it is read without reference to `k` or `L`, and
+it acts on whichever of gates 2 and 4 would keep the mark inline. Among
+candidates (`k ≥ 2`, `r = 0`), `p = 1` therefore sets the mark on a line of
+its own; `p = 0` leaves the four gates to decide. Gate 1 stays absolute:
+a single id never earns a line of its own, at a paragraph close or
+anywhere else.
+
+Measurable: from the mark to the end of its paragraph (blank line, the
+close of the enclosing environment) there is no word — only punctuation
+and commands.
+
+Best practice: do not split what the reader is following — a sentence
+closed at its paragraph close keeps its parts together, which is the
+reading side of the same rule that `r = 0` enforces
+([PlainLanguage.gov — Sentences](https://www.plainlanguage.gov/guidelines/sentences/)).
+
+**Order of decision.** 1. gate 1 (`k ≥ 2`), 2. gate 3 (`r = 0`) — both
+absolute; 3. `u`, when it gives a verdict; 4. `p`; 5. gates 2 and 4
+(`L ≥ 35`, `i = 0`, `d ≥ 75`). A mark goes on a line of its own only when
+one of steps 3–5 sets it there; otherwise it stays inline. The verdicts
+for the current manuscript — every candidate site by the tail of its
+sentence, with its `u`/`p` values and the counter delta — are recorded in
+`docs/reports/` (the `u`/`p` verdicts report of this repository).
+
+#### How the criterion is reviewed
+
+One reading pass over the site table of the criterion-sites report in
+`docs/reports/` — it prints, for every flagged site, the tail of the
+sentence the mark closes, so the whole check is one question per row: *does
+any word of that sentence follow the mark?* The same pass is what confirms
+gates 4 (`i`, `d`) and the census of `u` for a new site, since all three
+are read from the lines around it. No style test is written for this: a CI
+check that re-derives what this section already guarantees would test the
+document against itself; the census test guards what the build depends on
+— the test references the manuscript cites — and nothing here does.
+
+#### Concrete material of this rule
+
+The site table with the sentence tails, the calibration facts behind the
+thresholds, the applied state of the last harmonising pass, and the
+pending `u`/`p` verdict table all live in `docs/reports/` of the
+repository that applies the rule — indexed by its
+[`README.md`](reports/README.md). A report is a snapshot of one
+repository state; the rule itself is this section.
+
+### 6.11 Standard, not applied state
+
+This section states the standard; it does not assert that a manuscript's
+body already satisfies it. What each repository's text does today — which
+sites follow a rule and which do not — is measured and recorded in that
+repository's `docs/reports/` and in its generated
+`docs/witness-inventory.md`, never here. The shape of a call site is
+outside it as well: whether the ids of an own-line accounting line such as
+`Lean: …` sit in a block of their own or inside the tag as `P[ids]`, and
+every other body-form question, belongs to the convergence that is still
+pending — W2 (mechanical renames) and W3 (semantic pass) — and is neither
+decided, nor changed, nor implied by anything below.
+
+### 6.12 The own-line form
+
+> **Own-line mark — rendering spec.** Applies to `\witness{X}{ids}` in all
+> five repositories; the inline form `\tier[ids]{X}` keeps its current
+> contract (§6.5). Every number below was measured, not chosen by eye: the
+> probe and its artefacts are listed under *Sources* at the end of this
+> section.
+
+**S1. One shape, one macro.** The block form is exactly one macro,
+`\witness{X}{ids}`, defined once per repository with the *same body*
+(byte-level identical, as the family files are). No hand-written
+`{\raggedright \tier[…] …\par}` paragraph survives: those sites become
+`\witness{P}{ids}` where the criterion of §6.10 holds, otherwise inline
+`\tier[ids]{P}` in the prose. `\leanline` is retired as a *rendering form
+of the mark* (it is already "not a body form"); the `Lean:` accounting
+line itself remains class S4 (§6.4): its sites stay where they are and are
+not migrated in bulk.
+
+**S2. Vertical spacing — one number, and it is `\medskip` above and below.**
+
+```latex
+\newcommand{\witness}[2]{%
+  \par\medskip\noindent\hfill
+  \parbox{\dimexpr\linewidth-1em\relax}{\raggedleft …}%   % body as below
+  \par\medskip}
+```
+
+*Chosen with reason.* The block used to sit at 13.000 pt on both sides —
+the same as an ordinary line wrap — which is why a block read as a broken
+line instead of as a mark (valley), while the `\medskip`/`\smallskip`
+heads around it read at 17.550/15.275 (crest). One symmetric,
+class-defined quantity removes the spread: `\medskip` = 4.55 pt in amsart
+11pt, it is the same amount the manuscript already uses for its own
+paragraph heads, and it is a *documented* skip (amsart redefines it as
+`.35\baselineskip`), not a magic number. Do **not** use `\parskip` (it is
+0 here and would be invisible) and do **not** use `\bigskip` (9.1 pt,
+twice the head spacing). Because `\witness` issues `\par` on both sides,
+the two `\medskip`s never stack with `\parskip`.
+
+**S3. Indentation: 0, always.** `\par\medskip\noindent` before the box
+(no `\indent`), and the paragraph *after* the block is a normal new
+paragraph → it takes the document `\parindent` (11.95 pt). Never
+`\noindent` after the block, never a run-in head. Edge cases:
+
+- macro invoked mid-line (`\ifhmode`): see S7 — it does not create a
+  block, so the question does not arise;
+- after `\noindent` (a head or a `\smallskip\noindent…`): the preceding
+  paragraph is already flush left; the block still emits its own `\par`,
+  so spacing stays S2;
+- inside `enumerate`/`itemize`: forbidden by gate `i = 0` (§6.10) — the
+  block would close the item's paragraph; keep inline;
+- inside a theorem/proof environment: allowed, same S2 (amsthm
+  environments are `\trivlist`-based and the following line is indented
+  anyway — see S9);
+- at the very top/bottom of a page: `\par\medskip` at the start of a page
+  is absorbed by `\topskip`; acceptable, no special case.
+
+**S4. Width: full measure, right edge on the margin.**
+`\parbox{\dimexpr\linewidth-1em\relax}` after `\hfill` — the box's right
+edge lands exactly on the right margin (measured 540.00 pt, gap 0.01 pt)
+and its left edge is free to stop up to `1em` short of the left margin. Do
+not switch to `\hfill` + `\raggedleft` without a box (that is what the
+hand-written blocks do: their right edge is ragged, 16–29 pt short) and do
+not use `\begin{flushright}` (adds `\topsep`/`\partopsep`).
+
+**S5. Punctuation.** The mark never carries terminal punctuation: **no
+`.`, no `,` after the closing `}` and none inside the bracket**; the
+sentence closes before the block (gate `r = 0`, already true at 100% of
+sites: 0/86, 0/124, 0/43). A `,` or `;` may only appear *between ids*, and
+only as the separator `", "`. A hand-written block that carries prose
+inside the block violates this by construction — that is one more reason
+they are retired.
+
+**S6. Colour by class, on the whole mark or on none.** One palette for the
+family: `tierP = (0.15,0.35,0.65)`, `tierN = (0.05,0.40,0.20)`,
+`tierPs = (0.70,0.45,0.05)`, `tierW = (0.00,0.35,0.45)` — i.e. the 02/05
+values, which are the ones the family colour redundancy rule (WCAG 1.4.1,
+§4.2) was calibrated against; 03's `tagN` (0.15,0.55,0.25) and `tagH` are
+dropped (or `tagH` is registered as a published class with a cost
+estimate first, §6.9). Colour scope: **the whole mark — the letter *and*
+the ids in the class colour**, which is what `\witness` already does in
+3/3 repositories that render marks and it makes the block read as one
+object; the inline `\tier` must be changed the same way (its ids print
+black today, measured #000000 against #2659a5 in the block). Colour is
+redundant with the letter either way.
+
+**S7. Placement rule (`\ifvmode` / `\ifhmode`) and its edge cases.**
+
+```latex
+\newcommand{\witness}[2]{%
+  \ifvmode                      % own line in the source -> block (S2–S6)
+    \par\medskip\noindent\hfill
+    \parbox{\dimexpr\linewidth-1em\relax}{\raggedleft <body>}\par\medskip
+  \else                         % mid-line in the source -> inline, no break
+    {\normalfont\footnotesize\bfseries\tiercol{#1}#1%
+     \mdseries{\upshape\small\tttfamily[\tierids{#2}]}}%
+  \fi}
+```
+
+- `\ifvmode` after a blank line or at the start of a line → block, as
+  today.
+- `\ifhmode` (the 37 mid-line sites of 03, the 1 of 05) → the mark stays
+  inside the sentence: **no `\par`, no indent, no space is eaten** — the
+  paragraph does not break. This removes the current behaviour where a
+  mid-line call silently ends the paragraph and strands the rest of the
+  sentence.
+- After `\noindent` or after a head the mode is `\hmode` → inline:
+  correct, the text there is one paragraph.
+- Inside a group started with `{\itshape …}`: the body must begin with
+  `\normalfont` and reset with `\mdseries` — otherwise the letter prints
+  bold-italic (measured: SFBI0900 against SFBX0900).
+- The argument is still read as an arbitrary string (§6.5); the `\cite`
+  guard stays.
+
+**S8. Line breaking of long id lists.** Break priority: **`, ` first, `_`
+only as a fallback.** Concretely:
+
+```latex
+% \brk@us = \textunderscore\penalty500\hskip0pt   % discouraged, still legal
+% after every ", " keep the natural interword break (penalty 0)
+```
+
+- TeX prefers the lower-penalty break, so a list splits at commas whenever
+  it can and only splits inside an identifier when the id itself is longer
+  than the remaining measure — which is the case where breaking is
+  unavoidable anyway.
+- The previous `\allowbreak` (= `\penalty0`) after every `_` made the
+  mid-identifier break *equally* attractive, hence `twenty_divisor_` /
+  `lattice_splits` in the 02/05 PDF; the 03 form (no break at all) is the
+  opposite extreme and is the one that can go overfull. The
+  penalty-tuned form sits between them.
+- Do **not** adopt `\seqsplit`/`xurl`-style break-everywhere for witness
+  ids: that maximises raggedness. `\seqsplit`/`xurl` remain the right tool
+  for URLs and for *single* identifiers longer than the measure, not for a
+  list.
+- Acceptance: compile the family, assert **0 Overfull/Underfull `\hbox`**
+  in the blocks and re-check the byte-identical `pdftotext` gate (the
+  family's own rule; a break change reflows text, so it must be measured,
+  not assumed).
+
+**S9. Measurement, not eyeballing.** Keep the family rule of §6.7
+("rendering is re-checked by measurement") and pin the numbers above as
+the measurable targets: 13/15/16 px sizes, right edge on the margin,
+`\medskip` both sides, indent 11.95 after the block, 0 overfull, letter
+colour on ids.
+
+#### Sources
+
+1. **amsthm manual (AMS, v2.20.3, 2017)** — theorem-like blocks declare
+   their spacing explicitly: `\newtheoremstyle{…}{<space above>}{<space
+   below>}{<body font>}{<indent amount>}{<head font>}{<punctuation>}{<space
+   after head>}{<head spec>}`; and *"after the end of a theorem or proof,
+   the following line of text is assumed to start a new paragraph, and
+   will always be indented, whether or not a blank line or `\par` is
+   present."* → supports S2 (declare the space, one named quantity), S3
+   (indent 0 for the block, normal paragraph after) and the
+   `\ifvmode`→block / paragraph-after reading of S7.
+   <https://texdoc.org/serve/amsthm/0>
+2. **tex.stackexchange 37472, "Spacing before and after with
+   `\newtheoremstyle`"** — the accepted answer documents the same three
+   knobs (Space above / Space below / Indent amount), notes the default
+   above/below is `\topsep` (`8.0pt plus 2.0pt minus 4.0pt`), and that
+   `\theoremstyle{remark}` is *"the same as `definition` except that it
+   doesn't add extra space above and below"* — i.e. the spacing difference
+   between styles is a *declared parameter*, not a side effect. → the
+   direct precedent for choosing one skip and writing it in the macro
+   instead of letting it fall out of font size and `\lineskip`.
+   <https://tex.stackexchange.com/questions/37472/spacing-before-and-after-with-newtheoremstyle>
+3. **The TeX FAQ, "(La)TeX makes overfull lines"** — line breaking is
+   governed by `\pretolerance`/`\tolerance`/`\emergencystretch` plus
+   hyphenation/break points; an overfull box means *"TeX has given up"*,
+   and `\emergencystretch` is a further pass that must be "treated with a
+   degree of caution". → supports S8: fix the *break points and their
+   penalties* (the ids' `_`/`, `), don't patch the symptom with a global
+   tolerance; also explains why 05's `\emergencystretch=2em` hides some
+   raggedness that 03 does not have.
+   <https://texfaq.org/FAQ-overfull>
+4. **CTAN: `xurl`** — *"loads `url` by default and defines possible URL
+   breaks for all alphanumerical characters"*, i.e. break-anywhere is a
+   deliberately documented, opt-in policy for unbreakable strings. → the
+   contrast that fixes S8: witness ids are *meant* to stay legible, so the
+   family adopts comma-first breaking instead of break-everywhere, and
+   reserves `xurl`/`\seqsplit` for URLs and single oversized identifiers.
+   <https://ctan.org/pkg/xurl>
+5. **CTAN: `parskip`** — *"Simply changing `\parskip` and `\parindent`
+   leaves a layout that is untidy; this package … helps alleviate this
+   untidiness."* → the standing caution behind S2/S3: paragraph-level
+   spacing and block-level spacing are separate knobs; the family must not
+   try to express the mark's spacing through `\parskip` (which is 0 in
+   amsart here) but must put it in the macro, and must keep the indent
+   rule coherent with the rest of the layout.
+   <https://ctan.org/pkg/parskip>
+
+### 6.13 Status ledgers segment by purpose
+
+A status ledger is segmented in three lists, each with a use of its own:
+a **`Proved claims registry`** (only claims with an explicit id), an
+**`Open problems`** list (the format of open problems) and a
+**`Classical inputs`** table (a compact claim + source table). A single
+list that mixes them and is not segmented does not satisfy the criterion.
+
+---
 
 ## 7. Honesty: the declared novelty
 
@@ -493,16 +999,16 @@ The verifiable claim is the reverse: **no previous publication marks
 verification claim by claim inline, at the exact point where it asserts
 it**, and the project says so as much.
 
-- `docs/citations.md` §8.4 states without detour that the inline status is
-  "a convention of this project and not one of AMS or Chicago", and points
-  to the real precedents — `leanblueprint` with status per statement,
-  status tables, artefact seals — as the closest thing that exists.
+- This document states without detour (§4.1, §6.9) that the inline status
+  is a convention of this project and not one of AMS or Chicago, and
+  points to the real precedents — `leanblueprint` with status per
+  statement, status tables, artefact seals — as the closest thing that
+  exists.
 - The omega-pcf family is, in that sense, **pioneering**: it adopts the
   principle of those precedents and lowers it to the claim, which is a
   level of granularity the precedents do not cover. Being pioneering has a
   declared cost: there is no external norm to appeal to if someone asks
-  "where is this specified?", and the answer is this file and
-  `docs/citations.md` §8.
+  "where is this specified?", and the answer is this file (§6).
 - The research pass on the convention committed to reporting the split
   honestly — which part is discipline standard, which part is device
   proper to the project, and what the nearest precedent is — and so it was
@@ -517,38 +1023,66 @@ silencing it, and doing so with a quantified and reproducible criterion
 
 ---
 
-## 8. Internal references
-
-The sources of this document are the family's documents and the
-repository's own files; no external URL is invoked beyond the cited style
-authorities.
-
-| File | What it provides |
-|---|---|
-| `docs/citations.md` §8 (§8.1 grammar, §8.2 writing rules, §8.3 alphabet and why there is no `L` or `R`, §8.4 convention and the WCAG 1.4.1 rule, §8.5 the quantified inline / line-of-its-own criterion) | the contract of the device; the operational rule this document justifies |
-| `docs/citations.md` §5, §6, §7 | data hygiene, documentation convention and settled style decisions (AMS alphabetical bibliography, initials) |
-| `docs/reports/` (index: `docs/reports/README.md`) | per-site decisions, counters of the harmonisation pass, criterion sites, `u`/`p` verdicts and the author's pending-work list — the applied state of this argument in one repository |
-| `README.md` | link to the witness section of `docs/citations.md`; `docs/README.md` is the directory index |
-| `main.tex` — preamble (witness system, `\tier` dispatch, definition of `\witness`) and the *Evidence tags* gloss | the implementation and what the reader sees at the first mark of the body |
-| the repository's Lean file (`lean/`) | the `P` identifiers the mark can print |
-| `tests/` and the census test of the repository | the numerical suite and the census that fixes the test identifiers the manuscript cites |
-| `citation.csl.json`, `CITATION.cff` | the bibliographic layer the mark does **not** mix with: the external source is a `\cite`, never a mark identifier |
-| `omega-pcf-paper-repos` → `references/decision-gates.md` | the method of the convention research pass (separate discipline standard, device proper, real precedent) and the rule of not writing CI tests for editorial conventions |
-| `omega-pcf-paper-repos` → `references/witness-system.md` | the grammar of the family-level witness system, its known defects (italic inheritance in theorem environments, inline marks inside alignments) and the state of propagation to the sibling repositories |
-
----
-
 ## 9. Limits of this document
 
 1. **This document argues, it does not apply.** The applied state of the
    convention in a given repository — counters, verdicts, pending rows —
-   is recorded in `docs/reports/` and nowhere else; nothing here asserts
+   is recorded in `docs/reports/` and in that repository's generated
+   `docs/witness-inventory.md`, and nowhere else; nothing here asserts
    that a manuscript has already satisfied a rule it states.
 2. **Propagation to the family is an editorial decision.** Whether a
    repository renders marks at all, and whether it adopts the criterion of
-   `docs/citations.md` §8.5, is decided by the author of that repository,
-   never mechanically by this document.
+   §6.10, is decided by the author of that repository, never mechanically
+   by this document.
 3. **No external guarantee.** While there is no published norm that
    describes the claim-by-claim mark, the convention rests on this
    documentation and on its review; that is declared in §7 and must not be
    presented otherwise.
+
+---
+
+## 10. Wave brief shape
+
+Every wave brief carries these five blocks, in this order. A brief that
+omits one is not dispatched. The blocks are headings, not prose — fill
+them, do not introduce new rules.
+
+### 1. Standard
+
+The literal citation the brief relies on:
+
+> `docs/witness-contract.md` §6.… — *<the rule, quoted or paraphrased in one line>*
+
+No rule may appear in a brief that is not in §6 of this document. If a
+rule has to be re-framed to do the work, that is a row in
+`docs/witness-decisions.md`, not an edit of the standard.
+
+### 2. Rows in scope
+
+> `docs/witness-decisions.md` WD-…, WD-… — *<state each row's current resolution>*
+
+Only rows in this list may be acted on. A row not listed stays untouched,
+and no other row may be surfaced in the same brief.
+
+### 3. Layer, and what this wave does not cover
+
+> Layer: *preamble | body | docs | tests* — `<the files this wave may edit>`
+> Not covered: *<what is out of scope, and who or which wave covers it>*
+
+### 4. Ruling cited
+
+> `<msg id>` — *<the operator's ruling, verbatim, ≤ 5 lines>*
+
+A brief quotes at most one ruling, and only when the standard alone does
+not settle the case. A decision already recorded in
+`docs/witness-decisions.md` is cited by its row id instead of being
+re-quoted.
+
+### 5. Gates expected
+
+> `validate` exit 0 · `build` with 0 undefined · clean tree ·
+> `origin/main..HEAD` = 0 after push
+
+`validate` already runs `manifest:check` (with `counts:check` and
+`inventory:check`), so it is never listed a second time. Add the wave's
+own gate (a lint, a count, a render check) as a sixth line.

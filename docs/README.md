@@ -7,14 +7,12 @@ This directory contains technical documentation for the shared build and release
 ```
 docs/
 ├── README.md          # This file
-├── BRIEF-TEMPLATE.md  # The required shape of a wave brief (family file)
 ├── architecture.md    # Release system architecture
-├── citations.md       # CSL single-source citation pipeline + witness (tier) contract (§1–§8)
+├── citations.md       # CSL single-source citation pipeline (§1–§7) + witness index (§8)
 ├── counts.md          # Generated counts ledger (pnpm run counts; never edited by hand)
 ├── installation.md    # Prerequisites and setup
 ├── usage.md           # Build and release commands
-├── witness-contract.md # Why the marks exist (portable rationale of the witness device, EN)
-├── witness-standard.md  # The canonical rules of the marks (family file, byte-identical)
+├── witness-contract.md # The single living norm: rationale, standard (§6) and wave-brief shape (§10)
 ├── witness-decisions.md # The family ledger: one row per question, open and ruled
 └── witness-inventory.md # This repository's census of marks, generated from a measurement
 ```
@@ -23,9 +21,8 @@ docs/
 
 - **architecture.md**: Tech stack, execution flow, reproducibility measures, scripts structure.
 - **citations.md**: How `citation.csl.json` (179 records) drives the bibliography,
-  CITATION.cff and .zenodo.json (§1–§7); §8 is the witness (tier) contract of this
-  repository — grammar, writing rules, alphabet (P and N), the hypothesis rule and the
-  retired `P*` history, with the measured state of the manuscript.
+  CITATION.cff and .zenodo.json (§1–§7); §8 is an index: it points to the family standard in
+  `witness-contract.md` §6 and to this repository's measured state in `docs/reports/`.
 - **counts.md**: The measured counts of this repository — the pytest suite
   totals (`pytest.collected`, `pytest.not_slow`), the Lean source statistics of
   `lean/F1_pentagonal_descent_UNIFIED.lean` and the `images/` inventory — with the command that measures each.
@@ -37,14 +34,13 @@ docs/
   outside the mechanism, which measures only the ledger's counters.
 - **installation.md**: Prerequisites and setup instructions.
 - **usage.md**: Daily workflow, conventional commits, build and release commands.
-- **witness-standard.md**: The canonical rules of the evidence marks — syntax, semantics,
-  gates and typography; the family's byte-identical, manifest-pinned page.
+- **witness-contract.md**: The single living norm of the witness marks — the rationale (§1–§5,
+  §7), the standard itself (§6: precedence, syntax, placement, naming, grammar and the writing
+  rules, the star, typography, gates, alphabet, the quantified inline / own-line criterion §6.10,
+  the own-line rendering form §6.12, the ledger segmentation §6.13) and the required shape of a
+  wave brief (§10). Portable across the family: byte-identical and manifest-pinned.
   **witness-decisions.md** is the decision ledger, one row per question (a count is never a
-  row); **witness-inventory.md** is this repository's generated census of marks;
-  **BRIEF-TEMPLATE.md** is the required shape of a wave brief.
-- **witness-contract.md**: The rationale of the witness marks — why they exist, what they
-  do not assert, the compactness method and the honesty declaration. Portable across the
-  family; the applied state of this repository lives in its `docs/reports/`.
+  row); **witness-inventory.md** is this repository's generated census of marks.
 
 ## Conventions
 
