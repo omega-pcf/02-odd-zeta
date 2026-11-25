@@ -51,6 +51,53 @@
 \DeclareUnicodeCharacter{2082}{\ensuremath{_2}}
 \DeclareUnicodeCharacter{2083}{\ensuremath{_3}}
 \DeclareUnicodeCharacter{2085}{\ensuremath{_5}}
+% The corpus's own symbols in the status ledger: the open statements and the
+% classical inputs are transcribed from the declarations' doc comments, so the
+% text carries the mathematics they are written in.  Each maps to the LaTeX
+% it denotes; \ensuremath keeps it valid both in prose and inside a formula.
+\DeclareUnicodeCharacter{039E}{\ensuremath{\Xi}}
+\DeclareUnicodeCharacter{03A3}{\ensuremath{\Sigma}}
+\DeclareUnicodeCharacter{03B2}{\ensuremath{\beta}}
+\DeclareUnicodeCharacter{03B3}{\ensuremath{\gamma}}
+\DeclareUnicodeCharacter{03B6}{\ensuremath{\zeta}}
+\DeclareUnicodeCharacter{03B7}{\ensuremath{\eta}}
+\DeclareUnicodeCharacter{03B8}{\ensuremath{\theta}}
+\DeclareUnicodeCharacter{03C0}{\ensuremath{\pi}}
+\DeclareUnicodeCharacter{03C1}{\ensuremath{\rho}}
+\DeclareUnicodeCharacter{2074}{\ensuremath{^4}}
+\DeclareUnicodeCharacter{2075}{\ensuremath{^5}}
+\DeclareUnicodeCharacter{2077}{\ensuremath{^7}}
+\DeclareUnicodeCharacter{207A}{\ensuremath{^+}}
+\DeclareUnicodeCharacter{207B}{\ensuremath{^-}}
+\DeclareUnicodeCharacter{2080}{\ensuremath{_0}}
+\DeclareUnicodeCharacter{211A}{\ensuremath{\Q}}
+\DeclareUnicodeCharacter{211D}{\ensuremath{\R}}
+\DeclareUnicodeCharacter{2194}{\ensuremath{\leftrightarrow}}
+\DeclareUnicodeCharacter{21D2}{\ensuremath{\Rightarrow}}
+\DeclareUnicodeCharacter{2200}{\ensuremath{\forall}}
+\DeclareUnicodeCharacter{2203}{\ensuremath{\exists}}
+\DeclareUnicodeCharacter{2208}{\ensuremath{\in}}
+\DeclareUnicodeCharacter{2212}{\ensuremath{-}}
+\DeclareUnicodeCharacter{2218}{\ensuremath{\circ}}
+\DeclareUnicodeCharacter{221A}{\ensuremath{\sqrt{\ }}}
+\DeclareUnicodeCharacter{2248}{\ensuremath{\approx}}
+\DeclareUnicodeCharacter{2260}{\ensuremath{\ne}}
+\DeclareUnicodeCharacter{2264}{\ensuremath{\le}}
+\DeclareUnicodeCharacter{2265}{\ensuremath{\ge}}
+\DeclareUnicodeCharacter{27EA}{\ensuremath{\langle\langle}}
+\DeclareUnicodeCharacter{27EB}{\ensuremath{\rangle\rangle}}
+\DeclareUnicodeCharacter{27FA}{\ensuremath{\iff}}
+% Transcribed ledger prose also mixes text symbols into formulas: these fall
+% back to their TS1 text glyphs (\textonehalf & co.), which are undefined in
+% math mode and drop the character.  The conditional keeps the text glyph in
+% prose and the math symbol inside $...$.
+\DeclareUnicodeCharacter{00B2}{\ifmmode^2\else\texttwosuperior\fi}
+\DeclareUnicodeCharacter{00B3}{\ifmmode^3\else\textthreesuperior\fi}
+\DeclareUnicodeCharacter{00B7}{\ifmmode\cdot\else\textperiodcentered\fi}
+\DeclareUnicodeCharacter{00B9}{\ifmmode^1\else\textonesuperior\fi}
+\DeclareUnicodeCharacter{00BD}{\ifmmode\frac12\else\textonehalf\fi}
+\DeclareUnicodeCharacter{2016}{\ifmmode\Vert\else\textbardbl\fi}
+\DeclareUnicodeCharacter{2192}{\ifmmode\to\else\textrightarrow\fi}
 \hyphenation{gen-er-al-ised Gel-fond Schnei-der}
 \raggedbottom
 % Table of contents to sub-subsections; run-in paragraph headings stay out of it

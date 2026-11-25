@@ -31,7 +31,7 @@ Ids carried by `N` marks: **40 ids over 27 distinct**.
 | `\LeanTally` | 21 |
 | `\LeanCW` | 44 |
 | `\leanline` | 2 |
-| `\code` | 183 |
+| `\code` | 193 |
 | `\testref` | 40 |
 | `\witness` | 482 |
 
@@ -113,8 +113,8 @@ Ids carried by `N` marks: **40 ids over 27 distinct**.
 `pending(D7)` markers:
 
 - `src/chapters/04-bridges.tex:107`
-- `src/chapters/appendix.tex:385`
-- `src/chapters/appendix.tex:654`
+- `src/chapters/appendix.tex:461`
+- `src/chapters/appendix.tex:730`
 
 Open sites:
 

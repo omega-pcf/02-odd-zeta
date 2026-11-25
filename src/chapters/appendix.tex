@@ -4,15 +4,20 @@
 
 \section{Status ledger}\label{app:ledger}
 
-The table lists every claim of the corpus that the text relies on, with the
-declaration that carries it, and what it supersedes.  The declarations are those of
+The ledger is segmented by purpose: a registry of the claims the text relies on, with the
+declaration that carries each of them, the open statements of the corpus, and the classical
+inputs it takes as given.  The declarations are those of
 \texttt{F1\_pentagonal\_descent\_UNIFIED.lean} and of the twenty-seven modules compiled for this version
 (\cref{app:lean}).
 The entries written for this version are compiled in the development as well, and corrected
 when they are found wrong.
-The first part of the table gives the claims with what they supersede; the second lists, in the order of
-the text, every other statement of the body that cites Lean, labelled or in a paragraph of the text, so that
-no statement the text relies on is left out; the last row is the closing step.
+The registry keeps, in the order of the text, every statement of the body that cites Lean,
+labelled or in a paragraph of the text, so that no statement the text relies on is left out;
+its last row is the closing step.  The two lists that follow name what is not proved, each
+with the block and line of the unified file that declares it.  A ledger row that none of
+that evidence settles is kept apart at the end, unclassified rather than given a class.
+
+\subsection{Proved claims registry}
 
 {\scriptsize\setlength{\tabcolsep}{3pt}
 \begin{longtable}{>{\raggedright\arraybackslash}p{0.21\textwidth}>{\raggedright\arraybackslash}p{0.44\textwidth}>{\raggedright\arraybackslash}p{0.29\textwidth}}
@@ -22,15 +27,6 @@ $F_{p-1}\bmod p$ & \texttt{F1Pendientes.fib\_pred\_from\_mod5} & New.\\
 Pisano period $\pi(5)=20$ & \texttt{pisano\_five\_is\_twenty} & Closes a gap of the compiled file (modular step).\\
 $\zeta(2k+1)=\zeta_K(2k+1)/L(2k+1,\chi_5)$, every $k\ge1$ & \texttt{F1PaperNew.zeta\_odd\_pentagonal\_determination\_unconditional} & Discharges the hypothesis $L(2k+1,\chi_5)\ne0$ of \texttt{zeta\_odd\_pentagonal\_determination} \witness{P}\ from Mathlib's non-vanishing on $\Re s\ge1$.\\
 $L_{2m}<3\iff m=0$, every $m$ & \texttt{F1PaperNew.even\_lucas\_below\_three\_iff} & Extends \texttt{bound\_selects\_one}, which checks the first five values.\\
-Closure conjecture with clause (iii) formalised
-& \texttt{F1PaperClosure.ExactClosureAssembledLim},
-  \texttt{CorrectionIsLimit}
-& Implies \texttt{ExactClosure}
-  (\texttt{exactClosure\_of\_assembledLim} \witness{P});
-  the first form, with \texttt{assembledCorrection},
-  is vacuous in (iii); the derivation from the
-  structure is not formalised
-  (\cref{rmk:closure-status}).\\
 The clock as cyclotomic polynomials & \texttt{W4Isometria.RelojCiclotomico.clock\_iff\_cyclotomic\_root}, \texttt{prod\_Ncyc}, \texttt{log\_Ncyc\_bound}, \texttt{clock\_sum\_mertens} & New (\cref{prop:clock-cyclotomic}); product formula.\\
 The index by layers & \texttt{W4Isometria.split\_layer\_law}, \texttt{even\_index\_indicator} & New (\cref{prop:phi-layers}); \texttt{KernelLaw} (open).\\
 The index on the $n$-gon & \texttt{PasosDelTexto.hyperbola}, \texttt{hyperbola\_sqrt}, \texttt{W4Isometria.HiperbolaRelojTamano.large\_index\_clock}, \texttt{GeometriaDelPoligono.card\_large\_index}, \texttt{ReduccionAlReloj.level80\_coeff\_in} & New (\cref{prop:index-ngon}).\\
@@ -40,10 +36,8 @@ Energy at every scale & \texttt{W4Isometria.LandauPlancherel.cramer\_uniform}, \
 Amplitude of clause (ii) & \texttt{W4Isometria.pair\_defect}, \texttt{amplitude\_eq\_iff\_line} & New (\cref{prop:closure-amplitude}).\\
 Second step of the closure, in the form of the clock & \texttt{F1PaperClosureClock.ClockLayerEnergyBounded}; \texttt{family\_energy\_of\_clock\_layers} \witness{P}& New (\cref{conj:closure,rmk:closure-status}).\\
 W3 on the angles of $\golden$ & \texttt{F1PaperClosureClock.clock\_angles\_W3\_W4} & New (\cref{ssec:bridge-boosts}).\\
-
 Window $L\le1$, $Q\ge0.0445\|f\|^2$ & \code{weil\_certificates/verify\_iv.py} & Interval arithmetic; supersedes the double-precision $0.0431$.\\
 Windows $L\le1.1,1.2,1.3$ & \code{weil\_certificates/op\_rig\_validated.py} & Validated numerics, eigenvalue verified by Cholesky; margins $0.0261$, $0.0077$, $0.0027$.\\
-Prismatic route to the closure & --- & \cref{conj:prismatic-route}; its clauses' proved parts are listed with it.\\
 $G$ is the quotient of $\Zst$ by its squares: $\ker G=\{1,9\}$ & \texttt{F1PaperNew.G\_kernel\_eq\_squares}, \texttt{squares\_of\_units\_twenty} & \cref{prop:G}\\
 The $n$-th power residue symbol of $\golden$ at a split $p$ is the image of its angular part in $\mu_n$ & \texttt{F1PaperNew.units\_pow\_iff}, \texttt{phi\_residue\_symbol} & \cref{prop:phi-residue}\\
 The fifth-power residue symbol of $\golden$ is not a function of the class mod $20$ ($p=11$, $211$) & \texttt{F1PaperNew.phi\_residue\_not\_class\_function} & \cref{ssec:disc-binary}\\
@@ -109,21 +103,17 @@ Failure of Soul\'e's condition & \texttt{F1v2.not\_soule} & No $N\in\mathbb Z[x]
 Counting function: weights, local assembly & \texttt{F1v2.pcf\_counting\_weights}, \texttt{local\_log\_deriv} & Global identity: Connes--Consani integral formula.\\
 Residue of $\zeta_K$ at $s=1$ & \texttt{L1\_from\_class\_number\_formula}, \texttt{class\_number\_one\_K} & Given the class-number formula.\\
 $\kappa_K$ & \texttt{F1CW.kappaK} & $\kappa_K=2u^2/(u^2-1)$; the \texttt{kappa\_K} of the first block is a different function and is not used.\\
-Each zero, unconditionally: closure under the symmetries, orbit centred at $\tfrac12$, $r(1-\rho)=r(\rho)^{-1}$, confinement of $r$ and $t$ & \cref{prop:each-zero} & None uses that the zero is on the line.\\
 Cocone and colimit of the apex & \texttt{modulus\_cocone\_six\_routes}, \texttt{apex\_colimit\_universal} & \\
 The bridge, link by link & \texttt{bridge\_components}, \texttt{bridge\_assembled} & The last link is open; the closure conjecture would give it.\\
-Forms of the closing step & \cref{ssec:core-forms} & One step in several forms; conditions settled or classical.\\
 Reconnections of compiled lemmas & \texttt{F1PaperNew.*\_holds}, \texttt{F1v2} \S O & 21 hypotheses on abstract objects proved for the actual ones.\\
 Connections of separately defined objects & \texttt{chi5\_ideals\_is\_chi5\_structural}, \texttt{conductor20\_characters\_are\_G}, \texttt{norm\_form\_factors\_through\_phi} & Every central object linked to $\varphi$.\\
 Partition of an operator's error; only the parametrisation is removable & \texttt{error\_decomposition}, \texttt{no\_index\_operator\_fits\_both} & \cref{prop:error-partition}.\\
 Fluctuation as a function of the torus; independence of the $\log p$; law of the fluctuation & \texttt{torusFactor\_on\_line}, \texttt{log\_primes\_independent} & \cref{prop:torus-line}.\\
 Additive side bounded; multiplicativity and the inverse of the structure & \texttt{abel\_bound}, \texttt{chi5\_mul}, \texttt{inverse\_of\_the\_structure} & Davenport--Heilbronn shows the additive side alone is not enough.\\
 Four fibres of $G$; squares in the kernel; field squeeze & \texttt{four\_fibre\_indicators}, \texttt{squares\_in\_kernel\_fibre} & \cref{prop:four-fibres}.\\
-Positivity for the field of the four fibres & \texttt{FieldFejerPositivity} & The four Fej\'er sums of $\Q(i,\sqrt5)$ are $\ge0$ for every $L$; stronger than the line of $\chiv$, which needs only its own sum.\\
 Finite-dimensional intersection form; Hodge index, primitive direction & \texttt{gram\_form\_nonneg}, \texttt{primitive\_positivity} & \cref{prop:intersection-form}; one negative direction (the pole) for $\zeta$.\\
 Frobenius translation: rotation on the line, boost off it; the golden boost & \texttt{translation\_is\_boost\_off\_the\_line}, \texttt{golden\_boost} & \cref{prop:bridge-boosts}; an off-line quadruple is a hyperbolic plane.\\
 Golden field: place weights, rank-one pole, total $=K-R$; first windows up to length $2.3$ & \texttt{place\_weights}, \texttt{pole\_form\_rank\_one}, \texttt{total\_is\_structural\_minus\_remainder} & \cref{ssec:golden-field}; $\rho\le\lambda_{N+1}$ proved, matrices in double precision.\\
-The closure: positions from the structure, belonging of the primes and entry of the zeros, the conjecture of the two precisions & \texttt{F1PaperClosure.ExactClosure}, \texttt{the\_line\_from\_W4}, \texttt{eight\_classes\_orthogonality} & \cref{thm:weil-closure}; (W4) measured in all eight classes.\\
 The fibres of $G$ on the levels of the clock & \texttt{FibrasPorNivel}, \texttt{PasosDelTexto.palindromic\_norm} & New (\cref{prop:fibres-levels}).\\
 Free Klein orbits and the inertia index & \texttt{OrbitaLibre.quadruple\_form}, \texttt{even\_part}, \texttt{odd\_part} & New (\cref{prop:free-orbit-index}); completes \cref{prop:bridge-boosts}(ii).\\
 (W4) is (W3) on the planes of the orbit; half period & \texttt{W4DeW3}, \texttt{ParidadesJuntas}, \texttt{MedioPeriodo} & New (\cref{prop:W4-from-W3}); (W4) for every $k$ remains open.\\
@@ -132,7 +122,8 @@ Davenport--Heilbronn as a test of routes & \code{retro99.py}, \code{dh\_logderiv
 What an operator of the level does not separate & \texttt{PCFGranularity}, \texttt{ObservablesDelNivel}, \texttt{FibraYReloj} & New (\cref{prop:level-operators}); brings in the content of the granularity module.\\
 The two faces of the Fibonacci dynamics: periodic on the torsion, mixing on the characters & \texttt{DosCarasFibonacci}, \texttt{PeriodicasSol} & New (\cref{prop:two-faces}).\\
 What a symmetry shows in a spectrum; the spacings of the zeros & \texttt{EstructuraEnGUE}, \code{retro105.py} & New (\cref{prop:symmetry-spectrum}, \cref{ssec:envelope-fluctuation}).\\
-\midrule\multicolumn{3}{l}{\emph{Statements of the body not listed above, with the declarations the body gives}}\\\midrule
+\midrule\multicolumn{3}{l}{\emph{Statements of the body not listed above, with the declarations the body gives}}\\
+\midrule
 The constraint of the Primitive Structure, $\tfrac12$ the only positive real part of $\OmH$; $G$ a surjective homomorphism & \texttt{positive\_spectral\_half}, \texttt{G\_surj} & \cref{sec:objective}.\\
 The four requirements of an operator & \texttt{four\_requirements} & \cref{ssec:four-requirements}.\\
 The requirements that each candidate operator meets & \texttt{hpps\_meets\_two}, \texttt{omega\_meets\_three} & \cref{ssec:four-requirements}.\\
@@ -199,7 +190,6 @@ The right-hand side of the determination built from the pentagon; the even value
 Polylogarithmic form; distances on the circle; the conditional on algebraicity & \texttt{F1OZ.fourier\_projection}, \texttt{F1OZ.normSq\_one\_sub\_zeta5}, \texttt{F1OZ.normSq\_one\_sub\_zeta5\_sq}, \texttt{F1OZ.baker\_ratio}, \texttt{PasosDelTexto.algebraic\_scale}, \code{oz\_carried.py} & \cref{rmk:nature-L}.\\
 $L(2k,\chiv)$ and $\sum\chiv(a)\mathrm{Li}_{2k}(\zeta_5^a)$ transcendental & \texttt{F1OZ.even\_value\_transcendental} & \cref{rmk:nature-L}; Lindemann for $\pi$ as input.\\
 $T_K=5L(1,\chiv)L(1,\chi_4\chiv)$; $T_K$ and $\zeta_K(2k+1)$ & \texttt{F1OZ.period\_from\_the\_chi5\_fibre}, \texttt{degenerate\_orbits\_are\_transversals}, \code{oz\_carried.py} & \cref{rmk:TK-odd}.\\
-$G$ and the motivic Galois group & --- & \cref{rmk:G-motivic}.\\
 Hurwitz representation of $L(s,\chi_5)$ & \texttt{hurwitz\_representation\_L\_chi5} & \cref{thm:hurwitz}.\\
 $\sum\chiv(a)\psi(a/5)=-2\sqrt5\log\golden$ & \texttt{F1OZ.digamma\_sum} & \cref{thm:hurwitz}.\\
 Local factors at $s=3$; $\zeta_K(3)$ and $L(3,\chiv)$ & \texttt{F1OZ.local\_factors\_at\_three}, \code{oz\_carried.py} & \cref{ex:zeta3}.\\
@@ -263,14 +253,9 @@ The step as a statement about the coordinate alone & \texttt{degenerate\_iff\_va
 The $\golden$ side of the step: from an integral trace to the line & \texttt{trace\_of\_integer\_matrix}, \texttt{integer\_trace\_gives\_SL2\_eigenvalue}, \texttt{the\_quadratic\_form\_condition\_gives\_the\_trace}, \dots & \cref{prop:phi-side}.\\
 The zero descends: $r=\golden^k$ with $k=0$ by discreteness & \texttt{k\_zero\_by\_discreteness} & After \cref{prop:phi-side}.\\
 The two halves & \texttt{coordinate\_is\_equivariant}, \texttt{coords\_closed\_under\_inversion}, \texttt{the\_companion\_plays\_the\_conjugate}, \dots & \cref{prop:two-halves}.\\
-Neither side of the structure is enough alone & \texttt{F1PaperTorus.mertens\_positivity\_mathlib}, \texttt{F1PaperTorus.nonvanishing\_from\_one}, \texttt{F1PaperTorus.InverseStructureBound} & After \cref{prop:multiplicative-side}.\\
 The line from the convergence of the character block of the Fej\'er sum & \texttt{CharacterBlockConverges}, \texttt{F1PaperTorus.forcedLimit}, \texttt{F1PaperTorus.character\_block\_gives\_the\_line}, \texttt{F1PaperTorus.fejerKernel\_nonneg}, \dots & \cref{ssec:field-positivity}.\\
-The intersection form computed from the primes; the Hodge index for $\chiv$ & \texttt{F1PaperTorus.ArithmeticHodgeIndex} & After \cref{prop:intersection-form}.\\
-Frobenius translations as rotations on the line and boosts off it & \texttt{W4Isometria.golden\_torus\_fails\_W4}, \texttt{W4Isometria.normalized\_M\_satisfies\_W4}, \texttt{W4Isometria.line\_from\_bounded\_pair}, \texttt{F1PaperTorus.FrobeniusActsByRotations} & After \cref{prop:free-orbit-index}.\\
 The places of $\Q(\sqrt5)$: none of norm $2$ or $3$ & \texttt{F1PaperTorus.no\_places\_of\_norm\_two\_or\_three} & \cref{ssec:golden-field}.\\
-The pole as the ample direction; the Hodge index of the golden field & \texttt{F1PaperTorus.GoldenFieldHodgeIndex}, \texttt{F1PaperTorus.RemainderDominated} & \cref{ssec:golden-field}.\\
 The archimedean form of $\zeta_K$, explicitly; $D\ge0$ & \texttt{F1PaperTorus.autocorrelation\_le\_energy} & \cref{ssec:golden-field}.\\
-The first windows over the whole function space: the low-frequency fraction and Lehmann's bounds & \texttt{F1PaperTorus.lowFrequencyFraction\_nonneg}, \texttt{F1PaperTorus.LehmannBounds} & \cref{ssec:golden-field}.\\
 The positions, from the structure & \texttt{F1PaperClosure.heights\_from\_structure}, \texttt{F1PaperClosure.the\_height\_is\_the\_structure\_up\_to\_the\_correction}, \texttt{envelope\_splits}, \dots & \cref{prop:positions}.\\
 Membership of the primes, entry of the zeros, proved & \texttt{F1PaperClosure.the\_primes\_belong}, \texttt{F1PaperClosure.the\_zeros\_belong}, \texttt{F1PaperClosure.what\_is\_discharged}, \dots & \cref{prop:membership-proved}.\\
 The prime side in a window, given by the clock & \texttt{CierrePorAltura.closure\_support}, \texttt{PasosDelTexto.window\_split}, \texttt{PasosDelTexto.window\_inert}, \code{retro66.py}, \code{retro67.py} & \cref{rmk:closure-window}.\\
@@ -295,6 +280,97 @@ An isometry with a common modulus intertwines bulk and boundary level by level &
 $h_K=1$ from the Minkowski bound & \texttt{F1CW.minkowski\_bound\_lt\_two} & \cref{sec:primon}.\\
 \midrule
 The closing step: each zero is a member of the structure (\Ecore) & \texttt{ConjectureE} & Implied by the closure conjecture (\cref{cor:closure}), which is stronger; every form of it is listed in \cref{ssec:core-forms}.\\
+\bottomrule\end{longtable}}
+
+\subsection{Open problems}
+
+The corpus carries $26$ open statements with a name, among them the closure
+conjecture (\cref{conj:closure}) and its face on Weil's side, (W4).  The statements the
+ledger already carries keep their row; the rest are named here.
+
+{\scriptsize\setlength{\tabcolsep}{3pt}
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.21\textwidth}>{\raggedright\arraybackslash}p{0.44\textwidth}>{\raggedright\arraybackslash}p{0.29\textwidth}}
+\toprule Statement & Declaration & Note\\\midrule\endhead
+Closure conjecture with clause (iii) formalised
+& \texttt{F1PaperClosure.ExactClosureAssembledLim},
+  \texttt{CorrectionIsLimit}
+& Implies \texttt{ExactClosure}
+  (\texttt{exactClosure\_of\_assembledLim} \witness{P});
+  the first form, with \texttt{assembledCorrection},
+  is vacuous in (iii); the derivation from the
+  structure is not formalised
+  (\cref{rmk:closure-status}).\\
+Positivity for the field of the four fibres & \texttt{FieldFejerPositivity} & The four Fej\'er sums of $\Q(i,\sqrt5)$ are $\ge0$ for every $L$; stronger than the line of $\chiv$, which needs only its own sum.\\
+The closure: positions from the structure, belonging of the primes and entry of the zeros, the conjecture of the two precisions & \texttt{F1PaperClosure.ExactClosure}, \texttt{the\_line\_from\_W4}, \texttt{eight\_classes\_orthogonality} & \cref{thm:weil-closure}; (W4) measured in all eight classes.\\
+Neither side of the structure is enough alone & \texttt{F1PaperTorus.mertens\_positivity\_mathlib}, \texttt{F1PaperTorus.nonvanishing\_from\_one}, \texttt{F1PaperTorus.InverseStructureBound} & After \cref{prop:multiplicative-side}.\\
+The intersection form computed from the primes; the Hodge index for $\chiv$ & \texttt{F1PaperTorus.ArithmeticHodgeIndex} & After \cref{prop:intersection-form}.\\
+Frobenius translations as rotations on the line and boosts off it & \texttt{W4Isometria.golden\_torus\_fails\_W4}, \texttt{W4Isometria.normalized\_M\_satisfies\_W4}, \texttt{W4Isometria.line\_from\_bounded\_pair}, \texttt{F1PaperTorus.FrobeniusActsByRotations} & After \cref{prop:free-orbit-index}.\\
+The pole as the ample direction; the Hodge index of the golden field & \texttt{F1PaperTorus.GoldenFieldHodgeIndex}, \texttt{F1PaperTorus.RemainderDominated} & \cref{ssec:golden-field}.\\
+Given encodings \code{lev n}, \code{fib n} of each zero, the fluctuation \code{S n} depends on (level, fibre), not level alone. & \texttt{FluctuationIsFibreData} (Hyp \textbullet{} 69862) & \\
+$Re ρ$ of each zero is a function of structural data σ. & \texttt{RealPartIsStructural} (Hyp \textbullet{} 69871) & \\
+$∀s, ½<Re s<1 → L(s,χ₅)≠0$ — no zeros strictly right of ½ in the strip (= RH-content for χ₅) & \texttt{LineIsTypical} (Torus \textbullet{} 70056) & \\
+$L(s,χ₅)=exp z$ in $½<Re<1$ — log exists ⟺ nonvanishing in the strip; Euler-product error 2.7 \%→0.2 \% & \texttt{LogTransport} (Torus \textbullet{} 70127) & \\
+$k₁L − L − forcedLimit → 0$; *"Lo que falta, en una de sus formas"* & \texttt{CharacterBlockToForcedLimit} (Torus \textbullet{} 70189) & \\
+Fejér sums of the zeros \code{Tendsto 0}; *" … es lo mismo que \code{CharacterBlockToForcedLimit}"* & \texttt{FejerDecay} (Torus \textbullet{} 70254) & \\
+$Z(L)=arq+pot−2·descomp+2·inertes ≥0$ and $→0⁺$; Z=0.0113 at 2L=18 & \texttt{KleinOrbitBalance} (Torus \textbullet{} 70467) & \\
+each fibre's Fejér deviation ≥0 and →0 (contains \code{FejerDecay}×3) & \texttt{FourFibreBalance} (Torus \textbullet{} 70535) & \\
+the 4 Dedekind-zeta Fejér sums →0, each part ≥0; Z\_K 0.398→0.118 & \texttt{FieldFejerDecay} (Torus \textbullet{} 70577) & \\
+for every finite family: one negative direction (arch−split) = one positive (inert), same direction, sum ≥0; cosine 1.0 & \texttt{MirrorSignatures} (Torus \textbullet{} 70771) & \\
+the 8×8 \code{M(s)} is Hermitian positive-definite for all $Re s>½$ (Lagarias for the 8 characters at once); min Re Λ'/Λ >0 at σ=0.55 & \texttt{EightClassGlobalCriterion} (Torus \textbullet{} 71154) & \\
+$∀k, |t_k| ≤ t_0$ on a place's orbit (Weil face; dual-tagged \code{} by EF) & \texttt{OrbitCastelnuovoSeveri} (Torus \textbullet{} 71390) & \\
+$∀a∈family ∀k, |O.t a k| ≤ O.t a 0$ — W4 in the χ₅ block; max 0.803 & \texttt{W4Chi5} (Torus \textbullet{} 71538) & \\
+∃ inner-product E, isometry V, vectors g\_a with $t_k(a)=⟪g_a,V^k g_a⟫$, $t_0(a)=‖g_a‖²$ & \texttt{IsometricRealization} (Torus \textbullet{} 71771) & \\
+the same realization *via the exact Hilbert–Pólya operator* (E⁻¹ on the π side + S self-adjoint); "caso de \code{IsometricRealization}" & \texttt{OperatorRealization} (Torus \textbullet{} 71828) & \\
+clause (iii): the correction is the assembly of the class residuals; *"derivation of the law … not formalised"* & \texttt{ExactClosureAssembled} (Closure \textbullet{} 72356) & \\
+$∀S∈(0,log4)$, the archimedean form is ≥0 (primes-free window). Doc's own "falta" list: *"la aritmética de intervalos de las cuadraturas y del residuo, y una cota inferior rigurosa de λ₂ (basta λ₂ ≥ 0.05)"* & \texttt{GoldenArchimedeanWindow} (Torus \textbullet{} 70871 `[O→N]`) & \\
+same window with S ≤ log 4: λ₂(D)=9.509 > |C₀|=9.135 ⇒ min Q/‖g‖² = +0.0071; without the pole Q<0 already at S≈0.45 & \texttt{GoldenArchimedeanHodge} (Torus \textbullet{} 70899 `[N→O]`) & \\
+\bottomrule\end{longtable}}
+
+\subsection{Classical inputs}
+
+The corpus carries $21$ classical inputs with a name, of which three --- Kronecker's
+density for two primes, the non-vanishing on $\Re s\ge1$ and Mertens' positivity --- are now
+proved in the file itself.  Each is named below with the block and line that declares it.
+
+{\scriptsize\setlength{\tabcolsep}{3pt}
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.21\textwidth}>{\raggedright\arraybackslash}p{0.44\textwidth}>{\raggedright\arraybackslash}p{0.29\textwidth}}
+\toprule Claim & Declaration & Source\\\midrule\endhead
+The first windows over the whole function space: the low-frequency fraction and Lehmann's bounds & \texttt{F1PaperTorus.lowFrequencyFraction\_nonneg}, \texttt{F1PaperTorus.LehmannBounds} & \cref{ssec:golden-field}.\\
+$log p/log q$ irrational ⇒ ${a·log p/log q+b}$ dense in ℝ & \texttt{KroneckerTwoPrimes} (Torus \textbullet{} 70025) & \\
+equidistribution: line average of $F(flucTorus∘line)$ = torus average; KS p=0.14 & \texttt{WeylLaw} (Torus \textbullet{} 70033) & \\
+Bohr–Jessen/Kolmogorov: torus product ≠0 for σ>½ at typical points & \texttt{TorusNonvanishing} (Torus \textbullet{} 70042) & \\
+RH for L(s,χ₅) ⟺ strong recurrence along the line & \texttt{BagchiEquivalence} (Torus \textbullet{} 70047) & \\
+Dirichlet criterion ⇒ $Σχ₅(n)n^{−s} → L(s)$ for all $Re s>0$. & \texttt{AdditiveSeriesConverges} (Torus \textbullet{} 70108) & \\
+$∀s, Re s≥1 → L(s,χ₅)≠0$ (Mathlib) & \texttt{NonvanishingFromOne} (Torus \textbullet{} 70115) & \\
+$LogTransport ↔ CharacterBlockConverges k₁$ (EF with the Fejér family) & \texttt{TransportIsTheCharacterBlock} (Torus \textbullet{} 70162) & \\
+from the inverse bound: Dirichlet series of μχ₅ converges for $Re>½$ and equals $1/L$. & \texttt{InverseRepresentation} (Torus \textbullet{} 70324) & \\
+Davenport–Heilbronn 1936: an explicit period-5 sequence, bounded partial sums, conductor-5 functional equation, with a zero at ≈$0.8085+85.699i$ & \texttt{PeriodicBoundedIsNotEnough} (Torus \textbullet{} 70390) & \\
+$|ζ₅(σ)³·L(σ+it,χ₅)⁴·L(σ+2it)| ≥ 1$ for σ>1 → nonvanishing at Re=1 & \texttt{MertensPositivity} (Torus \textbullet{} 70439) & \\
+Weil criterion: $(∀L≥0: 0≤Z L) → FejerDecay Z$ — Fejér positivity detects any off-line zero; +6.3·10⁻⁴ clean / negative with a quartet & \texttt{PositivityDetectsOffLineZeros} (Torus \textbullet{} 70596) & \\
+$η<ρ → η−ε²/(ρ−η) ≤ λ₁$ (self-adjoint operator inequality) & \texttt{KatoTemple} (Torus \textbullet{} 70918) & \\
+(a) orthogonality identity + (b) Taylor remainder $|e^{iθ}−Σ_{m<N}|≤|θ|^N/N!$ ⇒ pointwise bound (c) & \texttt{PointwiseLowFrequencyBound} (Torus \textbullet{} 71103) & \\
+RH ⟺ $Re Λ'/Λ(s)>0$ for all $Re s>½$ (Hadamard) & \texttt{LagariasCriterion} (Torus \textbullet{} 71144) & \\
+Pólya–Jensen: Ξ zeros real ⟺ Jensen polynomials hyperbolic ∀d,n & \texttt{JensenHyperbolic} (Torus \textbullet{} 71162) & \\
+Griffin–Ono–Rolen–Zagier PNAS 2019 Thm 3: asymptotic ⇒ Jensen hyperbolic for large n & \texttt{GORZTheorem} (Torus \textbullet{} 71179) & \\
+explicit formula on the orbit + phase separation: a zero with $Re≠½$ dominates the orbit at infinitely many k; tag *"presupone que el módulo máximo … se alcanza"* & \texttt{OrbitDetectsOffLine} (Torus \textbullet{} 71551) & \\
+$:= OrbitDetectsOffLine$ (the classical entry of the Weil face, with the tail) & \texttt{ExplicitFormulaOnTheOrbit} (Pending \textbullet{} 71886) & \\
+half-scale residues ⇒ all zeros in the band on the line ("sexta forma del corpus, que allí sólo está como marcador") & \texttt{ClassicalHalfScale} (Closure \textbullet{} 72089) & \\
+the closed form $(2/π)(RL)^{2N+1}/((2N+1)²(N!)²)$; doc: *"el enunciado analítico … es clásico y queda con nombre"*; nonneg already proved (\code{lowFrequencyFraction\_nonneg}, 70980) & \texttt{LowFrequencyFraction} (Torus \textbullet{} 70977) & \\
+\bottomrule\end{longtable}}
+
+\subsection{Ledger rows whose class is not settled}
+
+These rows of the ledger carry no declaration of their own, and none of the evidence
+above settles whether the statement they record is proved, open or classical; they are
+recorded here rather than given a class.
+
+{\scriptsize\setlength{\tabcolsep}{3pt}
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.21\textwidth}>{\raggedright\arraybackslash}p{0.44\textwidth}>{\raggedright\arraybackslash}p{0.29\textwidth}}
+\toprule Claim & Declaration & Note\\\midrule\endhead
+Prismatic route to the closure & --- & \cref{conj:prismatic-route}; its clauses' proved parts are listed with it.\\
+Each zero, unconditionally: closure under the symmetries, orbit centred at $\tfrac12$, $r(1-\rho)=r(\rho)^{-1}$, confinement of $r$ and $t$ & \cref{prop:each-zero} & None uses that the zero is on the line.\\
+Forms of the closing step & \cref{ssec:core-forms} & One step in several forms; conditions settled or classical.\\
+$G$ and the motivic Galois group & --- & \cref{rmk:G-motivic}.\\
 \bottomrule\end{longtable}}
 
 \section{Superseded statements and corrections to earlier versions}\label{app:superseded}\label{app:corrections}
