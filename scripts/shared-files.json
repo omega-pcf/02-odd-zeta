@@ -8,7 +8,7 @@
     ".python-version": "7b55f8e67b5623c4bef3fa691288da9437d79d3aba156de48d481db32ac7d16d",
     ".release-it.ts": "335299d8c9b687327ba645e05cd70d498fc6f93215fd58d863053e649e31338e",
     "LICENSE": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94",
-    "docs/witness-contract.md": "6fa1792a4deb441ad81e9016d195fe5db8fa69b3ea12be6022857d062e668cbf",
+    "docs/witness-contract.md": "70eee8fddfd1fbd58c4d2cb8fdb0c641ca63de934fc45ce18a809b660faefd63",
     "scripts/build.ts": "cb9c3b669058478ae5bb435259b873d0681c2a7c5df313e213557e34ec0a0659",
     "scripts/generate_types.ts": "25a337d8256b6653ffffb47ca13bac9385b62e3ef6be7fcfcf2852af0c1844cf",
     "scripts/schemas/cff-schema.json": "a66c5cb15a5a8c3149debdc834442d9e8a26f988524753122c5390a9dc42b57e",
