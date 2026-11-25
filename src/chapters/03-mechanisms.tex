@@ -1799,7 +1799,7 @@ For $0<t\le\mu_3=\tfrac12$ the inequality $t\le t^2$ fails.
 
 \begin{proof}
 $t\le t^2$ with $t>0$ gives $1\le t$, against $t\le\tfrac12$.  (The same argument
-gives $t^2<t$ on all of $(0,1)$, which is \LeanInline{F1v2.sq\_lt\_self\_on\_unit\_interval}.)
+gives $t^2<t$ on all of $(0,1)$, which is \tier[F1v2.sq\_lt\_self\_on\_unit\_interval]{P}.)
 \end{proof}
 
 \begin{definition}[Normed monoidal category; contractive morphism]\label{def:normed-monoidal}
@@ -2407,7 +2407,7 @@ $\mathbb{Q}(\sqrt{5})$ is required.
 
 \begin{proof}
 Items~(1)--(3) are \cref{eq:pentagon-id}, the logarithmic signature
-(\LeanInline{F1v2.pentagon\_log\_signature\_full}), and \cref{thm:chi5-from-frobenius}
+(\tier[F1v2.pentagon\_log\_signature\_full]{P}), and \cref{thm:chi5-from-frobenius}
 respectively.  The factorisation is
 \cref{thm:dedekind-natural}.  The Hurwitz representation is
 \cref{thm:hurwitz}.  The $k=0$ closed form is
@@ -3631,7 +3631,7 @@ $\overline{L(\bar s)}=L(s)$ & \LeanInline{hconj\_discharged}\\
 Closure under the mate; real coefficients & \LeanInline{closedUnderMate\_chi5}, \LeanInline{realCoefficients\_chi5}\\
 $|\gamma|\ge2$ for the zeros used & \LeanInline{discBound\_discharged\_high}\\
 \texttt{hmate}: each zero has a zero $\rho'$ with $|1-1/\rho'|=|1-1/\rho|^{-1}$; \texttt{hcoord}: for $\Re\rho>0$, $|1-1/\rho|=1\iff\Re\rho=\tfrac12$ & \LeanInline{mate\_hypothesis\_discharged}, \LeanInline{hcoord\_discharged}\\
-First zero at $\gamma\approx6.6485$ (\LeanInline{NoLowZeros}) & not proved in Lean\\
+First zero at $\gamma\approx6.6485$ (\code{NoLowZeros}) & not proved in Lean\\
 \bottomrule\end{longtable}
 The root number of the functional equation is $+1$: the Gauss sum of $\chiv$ is $\tau(\chiv)=+\sqrt5$,
 by Gauss's determination of the sign of the quadratic Gauss sum (\cref{rmk:nature-L}).
@@ -4134,6 +4134,7 @@ and it is then no longer a classical input: \LeanInline{F1v2.arrowB} proves it,
 instantiating the corpus's descent \code{unit\_is\_a\_power\_of\_phi} with the units
 of $\Zphi$ and proving its three structural inputs --- the floor of the logarithm, the
 group law, and the absence of units in $(1,\golden)$ --- rather than assuming them.
+\witness{P}{F1v2.arrowB}
 \end{remark}
 
 \subsubsection{What is proved of each zero}\label{ssec:each-zero}
@@ -4223,7 +4224,7 @@ $r=1=\golden^0$ lies in the golden tower.
 The corpus tallies eight ingredients of the derivation, five proved in Lean and three
 not: the bridge, Hecke's companion and the strip
 (\LeanTally{five\_proved\_three\_classical}).  The last two have since been proved
-(\LeanInline{hecke\_chi5\_derived}, \LeanInline{Chi5Zero}), so the bridge is the only one
+(\tier[hecke\_chi5\_derived, Chi5Zero]{P}), so the bridge is the only one
 left.  The earlier statement \code{MembershipStillOpen} is therefore superseded:
 membership is neither open nor unconditional; it is derivable from the bridge.
 
