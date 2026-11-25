@@ -1148,9 +1148,11 @@ integral for $\psi$ gives the prime-free part $Q_\infty$ of the Weil form of $\z
 with $w(u)=e^{-u/2}/(1-e^{-2u})$ and $C_0=\log5-2\log\pi-2\gamma_E+4\int_0^\infty\frac{e^{-2u}-e^{-u/2}}{1-e^{-2u}}\,du=-9.13493$,
 where $D\ge0$ because $h(0)-h(u)=\frac12\int(g(x)-g(x+u))^2\,dx$ (\tier[F1PaperTorus.autocorrelation\_le\_energy]{P}).  The
 conductor enters as $\log5$ in $C_0$; the pole is the ample term.  Without the pole the form is
-negative from support length $\approx0.45$; with it, the pole removes the ground mode of $D$, and
+negative from support length $0.453$; with it, the pole removes the ground mode of $D$, and
 positivity asks that the second eigenvalue of $D$ exceed $|C_0|$, which holds up to support length
-$\approx1.65$, beyond the prime-free range $[0,\log4]$ (\texttt{arch\_window.py}).
+$1.647$, beyond the prime-free range $[0,\log4]$; both crossings are measured on a Galerkin basis
+of $30$ Legendre polynomials in double precision, unchanged to three digits on bases of $24$ to $80$
+(\texttt{arch\_window.py}).
 
 \paragraph{The first windows, over the whole function space.}  For $g$ supported in an interval
 of length $S$ (the convention of \cref{thm:first-window}), the Weil form is
