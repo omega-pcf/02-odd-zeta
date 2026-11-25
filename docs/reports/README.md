@@ -91,7 +91,7 @@ evidence and the method.>
 
 ## Related documents
 
-- `docs/citations.md` §8 — the generic rule this report instantiates.
+- `docs/witness-contract.md` §6 — the generic rule this report instantiates (`docs/citations.md` §8 is only its index).
 - `docs/witness-contract.md` — why the device exists.
 ```
 
