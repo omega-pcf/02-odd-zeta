@@ -848,9 +848,9 @@ The law of the fluctuation is geometric.  Along the true line, at random points 
 torus, along a line with surrogate primes of the same classes, and on the zero side (the
 $397$ zeros below height $500$), the smoothed fluctuation has the same distribution:
 standard deviation $\approx0.62$, skewness $\approx-0.33$, kurtosis $\approx-0.55$, with
-Kolmogorov--Smirnov $p$-values between $0.14$ and $0.69$ (\texttt{testGeom.py} \tier{N}).  Its
+Kolmogorov--Smirnov $p$-values between $0.14$ and $0.69$ (\texttt{testGeom.py} \tier[\testref{test\_fluctuation\_law\_is\_the\_same\_everywhere}]{N}).  Its
 individual values depend on the point of the line, and to reproduce them at height $T$
-requires $\log p$ to precision $\approx1/T$ (\texttt{testB1b.py} \tier{N}); its law is fixed by the
+requires $\log p$ to precision $\approx1/T$ (\texttt{testB1b.py} \tier[\testref{test\_fluctuation\_law\_is\_the\_same\_everywhere}]{N}); its law is fixed by the
 Frobenius signs, the modulus $\tfrac12$ and the independence of the $\log p$.  This does not mean the operator's error grows with height: by
 \cref{rmk:two-errors} its relative error stays bounded, and the real part
 is read with no loss of resolution in the Fej\'er coordinate (\cref{prop:envelope-edge}).
@@ -883,15 +883,15 @@ Neither side is enough alone.  The additive side is not: the Davenport--Heilbron
 sequence, periodic modulo $5$ with values $1,\kappa_{\mathrm{DH}},-\kappa_{\mathrm{DH}},-1,0$
 ($\kappa_{\mathrm{DH}}=(\sqrt{10-2\sqrt5}-2)/(\sqrt5-1)$), has bounded partial sums and the functional
 equation of conductor $5$, and its series has zeros off the line; the partial sums of
-its inverse grow like $y^{0.788}$, those of $\mu\chiv$ like $y^{0.443}$ (\texttt{dh.py} \tier{N}).
+its inverse grow like $y^{0.788}$, those of $\mu\chiv$ like $y^{0.443}$ (\texttt{dh.py} \tier[\testref{test\_additive\_side\_statistics\_are\_pinned}]{N}).
 The multiplicative side is not: summing the positivity of all circles requires absolute
 convergence --- for $\sigma>1$ it gives $\|L(\chi^0,\sigma)^3L(\chiv,\sigma+it)^4L(\chiv^2,\sigma+2it)\|\ge1$
 (\tier[F1PaperTorus.mertens\_positivity\_mathlib]{P}, through Mathlib), and hence no zero on
 $\Re s\ge1$ (\tier[F1PaperTorus.nonvanishing\_from\_one]{P}) --- and the product stays $\ge1$ only down to
-$\sigma\approx0.9$ (\texttt{mertens341.py} \tier{N}).  What would join them is the bound
+$\sigma\approx0.9$ (\texttt{mertens341.py} \tier[\testref{test\_additive\_side\_statistics\_are\_pinned}]{N}).  What would join them is the bound
 $\sum_{n\le y}\mu(n)\chiv(n)=O(y^{1/2+\varepsilon})$ on the inverse of the structure
 (\LeanInline{F1PaperTorus.InverseStructureBound}, open; measured $\le1.23\sqrt y$ up to $3\cdot10^7$,
-\texttt{mobius.py} \tier{N}), while the direct side is bounded by a constant.
+\texttt{mobius.py} \tier[\testref{test\_additive\_side\_statistics\_are\_pinned}]{N}), while the direct side is bounded by a constant.
 
 The same sequence separates the equivalent forms of the open statement from the routes to it.  It has
 the functional equation, real coefficients and bounded partial sums, so its zero set is closed under the
@@ -915,11 +915,11 @@ carries no character because $\chiv(p^2)=1$, and the higher powers.  The corpus 
 is forced, $-\kappa-c_2-c_3=-0.0802$, from the conductor in the archimedean kernel
 ($-\kappa=\gamma_E+\log8+\pi/2+\log\pi-\log5$, with $\kappa$ the constant of \cref{thm:first-window}), the
 contribution $c_2$ of the block of squares, which carries Mertens' constant, and the contribution $c_3$ of the higher powers
-(\LeanInline{F1PaperTorus.forcedLimit}, \LeanInline{F1PaperTorus.character\_block\_gives\_the\_line} \tier{P}; \texttt{blocks.py} \tier{N}).  Equivalently, the Fej\'er sum over the
+(\LeanInline{F1PaperTorus.forcedLimit}, \LeanInline{F1PaperTorus.character\_block\_gives\_the\_line} \tier{P}; \texttt{blocks.py} \tier[\testref{test\_fejer\_window\_is\_pinned}]{N}).  Equivalently, the Fej\'er sum over the
 zeros $Z(L)=\sum_\rho h_L(\gamma_\rho)$, with $h_L(r)=2L(\sin Lr/Lr)^2\ge0$, computed from primes
 alone as prime side plus archimedean term, must be $\ge0$ and tend to $0$
 (\tier[F1PaperTorus.fejerKernel\_nonneg, F1PaperTorus.fejer\_sum\_nonneg]{P}; checked against the $397$ zeros to
-$3\cdot10^{-4}$, \texttt{fejer\_check.py} \tier{N}).
+$3\cdot10^{-4}$, \texttt{fejer\_check.py} \tier[\testref{test\_fejer\_window\_is\_pinned}]{N}).
 
 \begin{proposition}[The Klein orbits and the four fibres of $G$]\label{prop:four-fibres}
 \begin{enumerate}[label=\textup{(\roman*)}]
@@ -939,21 +939,21 @@ The positivity is a balance between the two kinds of Klein orbit.  At $2L=18$ (p
 $e^{18}$) the split primes, the degenerate orbits, contribute $-1787.59$, the inert primes, the
 free orbit, $+1796.72$, the archimedean term $-3.29$ and the higher powers $-5.83$, leaving
 $Z=0.0113$: the two orbit types cancel to $0.5\%$, and what remains of their race is the
-conductor plus the squares (\texttt{balance.py} \tier{N}).  For the four fibres, the deviation
+conductor plus the squares (\texttt{balance.py} \tier[\testref{test\_orbit\_balance\_is\_pinned}]{N}).  For the four fibres, the deviation
 of each fibre's Fej\'er sum from a quarter of the total is predicted by the three conductors,
 the squares and the primes $2$ and $5$ alone, up to exactly $-\frac18\sum_\psi\psi(g)Z_\psi$:
 measured $-2.7954,0.6963,0.7488,1.3504$, predicted $-2.7815,0.6871,0.7376,1.3568$, remainders
 equal to $-\frac18\sum_\psi\psi(g)Z_\psi$ with $Z_4=0.019$, $Z_5=0.0113$, $Z_{20}=0.0814$
-(\texttt{fibres.py} \tier{N}).  The four characters are those of $\Q(i,\sqrt5)$, the field of
+(\texttt{fibres.py} \tier[\testref{test\_orbit\_balance\_is\_pinned}]{N}).  The four characters are those of $\Q(i,\sqrt5)$, the field of
 conductor $20$ with Galois group $\Z_2\times\Z_2$, whose Artin map is $G$.  Its Fej\'er
 sum, the sum of the four, falls from $0.398$ ($2L=6$) to $0.118$ ($2L=18$), with every part
-positive (\texttt{dedekind.py} \tier{N}).
+positive (\texttt{dedekind.py} \tier[\testref{test\_orbit\_balance\_is\_pinned}]{N}).
 
 Positivity alone suffices.  A zero off the line, $\rho=\tfrac12+\delta+i\gamma$, enters $Z(L)$ with
 a term of size $\approx e^{2L\delta}/(2L\gamma^2)$ whose sign oscillates, and it makes $Z$
 negative once $L$ is of order $\log\gamma/\delta$: adding such a quadruple at $\gamma=100$ to the
 $397$ zeros makes $Z<0$ at $2L\approx63$ for $\delta=0.1$ and at $2L\approx127$ for $\delta=0.05$, while
-without it the minimum over $2L\in[2,240]$ is $+6.3\cdot10^{-4}$ (\texttt{offline.py} \tier{N}).
+without it the minimum over $2L\in[2,240]$ is $+6.3\cdot10^{-4}$ (\texttt{offline.py} \tier[\testref{test\_offline\_minimum\_stays\_positive}]{N}).
 Read as positivity, the open statement is one inequality, and three objects carry it, in
 increasing strength.  For the line of $\chiv$ alone it is enough that the Fej\'er sum of
 $\chiv$ be $\ge0$ for every $L$ --- one of the four.  The golden field $\Q(\sqrt5)$, whose zeta is
@@ -1003,7 +1003,7 @@ and primes below $e^{16.2}$: for $\chiv$ the form computed from the primes equal
 matrix of the $397$ zeros (entries agree to $3.5\cdot10^{-6}$) and its eight eigenvalues are
 positive, from $3\cdot10^{-5}$ to $0.048$; for $\zeta$ the local part has exactly one negative
 eigenvalue, $-3646$, in the direction of the pole, and seven positive ones, and the total form
-is nonnegative (\texttt{gram.py} \tier{N}).  That is the signature of the Hodge index, in
+is nonnegative (\texttt{gram.py} \tier[\testref{test\_intersection\_form\_signature\_is\_pinned}]{N}).  That is the signature of the Hodge index, in
 dimension eight.  What remains, in the language of the surface, is that this holds in every
 finite dimension for each character of $\Q(i,\sqrt5)$
 (open; recorded in Lean only schematically, as \LeanInline{F1PaperTorus.ArithmeticHodgeIndex}; the statement Weil's route needs at this point is (W4) of \cref{thm:weil-closure}, the Weil face of
@@ -1130,11 +1130,11 @@ rank one, $2vv^{\mathsf T}$ with $v_j=\hat g_j(i/2)$, and each orbit type carrie
 (ratio $0.4994$).  Pole and main term cancel exactly, and the total form is
 $\mathsf K-\mathsf R$, with $\mathsf K$ the archimedean term plus a bounded explicit part (no primes) and $\mathsf R$ the
 remainder $\psi_K(x)-x$ of the primes
-(\LeanInline{F1PaperTorus.pole\_form\_rank\_one}, \LeanInline{F1PaperTorus.total\_is\_structural\_minus\_remainder} \tier{P}; the measurements \tier{N}).  For
+(\LeanInline{F1PaperTorus.pole\_form\_rank\_one}, \LeanInline{F1PaperTorus.total\_is\_structural\_minus\_remainder} \tier{P}; the measurements \tier[\testref{test\_field\_signature\_is\_pinned}]{N}).  For
 $\zeta_K$ the local part (archimedean minus places) has exactly one negative eigenvalue, in the
 direction of the pole, and the total is nonnegative, with $8$, $12$, $16$, $20$ and $24$ test
 functions: the signature of the Hodge index, with the pole as the ample class
-(\texttt{field\_signature.py} \tier{N}).  The open statement, in this language, is that the
+(\texttt{field\_signature.py} \tier[\testref{test\_field\_signature\_is\_pinned}]{N}).  The open statement, in this language, is that the
 signature persists in every finite dimension, equivalently $\mathsf R\le\mathsf K$ as quadratic forms
 (open; recorded in Lean only schematically, as \LeanInline{F1PaperTorus.GoldenFieldHodgeIndex} and
 \LeanInline{F1PaperTorus.RemainderDominated}; the statement Weil's route needs at this point is (W4) of \cref{thm:weil-closure}, the Weil face of
@@ -1285,7 +1285,7 @@ $\Sigma(X)^2<\mathcal E(X)$ at every scale measured (\texttt{v12\_pitagoras\_rai
 exponent $\nu$ that best fits $\Sigma(X)\approx X^\nu R(X)$, with $R$ written with the computed
 zeros of the forms of levels $80$ and $135$, is $0.500$ and $0.5065$, within $\pm0.01$; the first
 zero alone, with its term multiplied by $X^{\delta}$, gives $\delta=0.004\pm0.03$; that zero carries
-$31\%$ and $48\%$ of $\sum_\rho1/|\rho|^2$ (\texttt{escala\_ceros\_bajos.py}) \tier{N}\par}
+$31\%$ and $48\%$ of $\sum_\rho1/|\rho|^2$ (\texttt{escala\_ceros\_bajos.py}) \tier[\testref{test\_residual\_scales\_are\_pinned}]{N}\par}
 \end{proposition}
 
 So the scale $\tfrac12$ has two readings that meet: from the primes, the square root of an
@@ -1532,7 +1532,7 @@ centred values).  Over the primes up to $10^8$, with $\theta$, the logarithmic m
 and $-0.500$ in the classes $1$ and $9$ and below $0.04$ in absolute value in the others, and the
 mean of the eight variances is $0.0379$ on $[10^4,10^8]$, within $3.5\%$ of $0.0376$ on five other
 ranges, while single classes deviate by $-54\%$ to $+68\%$ (\texttt{amplitud\_clausula\_ii.py})
-\tier{N}\par}
+\tier[\testref{test\_residual\_scales\_are\_pinned}]{N}\par}
 \end{proposition}
 
 So the true residual of clause~(i), at the scale of
@@ -1648,7 +1648,7 @@ index it is the route by which \cref{conj:closure}
 proposes to obtain the law.  The index is $1$ for $66.5\%$ of the primes below $2\cdot10^5$ and at most $6$ for
 $90.3\%$, so the angular order carries the position of the prime; and once the position is
 accounted for, it does not explain the use of any prime in the correction
-(\texttt{t1\_index.py}, \texttt{t2\_loo.py} \tier{N}).
+(\texttt{t1\_index.py}, \texttt{t2\_loo.py} \tier[\testref{test\_angular\_index\_statistics\_are\_pinned}]{N}).
 
 \begin{proposition}[The index as a degeneracy]\label{prop:index-degeneracy}
 Let $M=\bigl(\begin{smallmatrix}0&1\\1&1\end{smallmatrix}\bigr)$ be multiplication by $\golden$ on $\Zphi$, let
@@ -1760,7 +1760,7 @@ the multiplicative side --- in the terms of the Primitive Structure, the Dirichl
 level and the Euler product through the ternary one \cite{gonzalez25hp} --- and with it the primes as
 independent generators, their classes and their modulus $\tfrac12$.  What the additive side supplied
 and the descent does not keep is their sizes, $\log p=\sigma_p\log\golden$.  The structure gives the coordinate of $2$, the binary anchor $\lambda_{\log}$ (\cref{prop:two-coords}), and that of the Mersenne numbers, $e\,\lambda_{\log}+\log_\golden(1-2^{-e})$, a closed form in the binary anchor and the exponent alone
-(the second term is $-2.5\cdot10^{-4}$ at $e=13$ and $-9.7\cdot10^{-10}$ at $e=31$, \texttt{euler\_link.py} \tier{N}); of the other primes it gives none one by one; on each
+(the second term is $-2.5\cdot10^{-4}$ at $e=13$ and $-9.7\cdot10^{-10}$ at $e=31$, \texttt{euler\_link.py} \tier[\testref{test\_euler\_link\_second\_term\_is\_pinned}]{N}); of the other primes it gives none one by one; on each
 level $n$ of the clock it gives their sum,
 $\sum v_p\,\sigma_p=\phi(n)+\sum_{d\mid n}
 \mu(n/d)\,\eta_d/\log\golden$ over the primes of
@@ -1822,7 +1822,7 @@ sequence: the Weil form of two translates depends only on the difference of the 
 orbit computed from the primes and computed from the $397$ zeros below height $500$ agree to
 $10^{-8}$ for $k=0,\dots,12$; the zeros above $500$ can contribute at most $9.6\cdot10^{-7}$.  The
 orbit is computed with the autocorrelation of the triangles in closed form and the
-archimedean side in the variable $u$, so no interpolation enters (\texttt{zeroside.py} \tier{N}).
+archimedean side in the variable $u$, so no interpolation enters (\texttt{zeroside.py} \tier[\testref{test\_zeroside\_orbit\_agrees\_with\_the\_zeros}]{N}).
 
 \emph{The bound, swept.}  For the eight blocks, the widths $a\in\{0.1,0.2,0.3,0.5,0.8,1.2\}$, the
 primes $p\in\{2,3,7,11,13\}$ and every $k$ with $k\log p+2a\le14.2$ --- $2208$ orbit values --- the

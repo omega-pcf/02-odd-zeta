@@ -40,11 +40,15 @@ from oddzeta.harness import REPO_ROOT, TEX_SOURCES
 _TESTREF = re.compile(r"\\testref\{([^}]*)\}")
 _SNAKE_CASE = re.compile(r"^[a-z][a-z0-9_]*$")
 
-# The witness ids the manuscript cites today: fifteen marks, nineteen
-# citations, eighteen distinct ids -- test_mersenne_bridge_phi_lambda_log_two
+# The witness ids the manuscript cites today: forty marks, fifty-two
+# citations, thirty-four distinct ids -- test_mersenne_bridge_phi_lambda_log_two
 # is cited by two of them.  W5a added the eleven ids of the nine N claims
-# whose script has a test in this suite (INV-WIT-001 B2).
+# whose script has a test in this suite (INV-WIT-001 B2); W6 Fase A converted
+# the twenty-five tested bare N marks of INV-WIT-001 B8 and added their
+# sixteen ids here, in the same commit that cites them.
 PINNED_CITED_IDS = (
+    "test_additive_side_statistics_are_pinned",
+    "test_angular_index_statistics_are_pinned",
     "test_castelnuovo_golden_values",
     "test_castelnuovo_matches_manuscript_claim",
     "test_castelnuovo_window_maxima",
@@ -52,16 +56,30 @@ PINNED_CITED_IDS = (
     "test_circle_and_detect_matches_manuscript_claim",
     "test_corrected_operator_golden_values",
     "test_corrected_operator_matches_manuscript_claim",
+    "test_delta_p_tower_ratios_are_pinned",
+    "test_euler_link_second_term_is_pinned",
+    "test_even_l_values_match_bernoulli_formula",
+    "test_fejer_window_is_pinned",
+    "test_fermat_quintic_point_counts_are_pinned",
+    "test_field_signature_is_pinned",
+    "test_fluctuation_law_is_the_same_everywhere",
+    "test_intersection_form_signature_is_pinned",
+    "test_kisin_interpolation_is_pinned",
+    "test_l_one_chi5_digamma_value",
     "test_law_resolution_golden_values",
     "test_law_resolution_matches_manuscript_claim",
-    "test_l_one_chi5_digamma_value",
     "test_mersenne_bridge_phi_lambda_log_two",
     "test_mersenne_bridge_s_bh_is_log_two",
+    "test_offline_minimum_stays_positive",
+    "test_orbit_balance_is_pinned",
     "test_phi_unit_norm_negative_one",
     "test_regulator_form_of_bridge_equals_l_one_form",
+    "test_residual_scales_are_pinned",
     "test_sigma_mu_polynomial_root_one_half",
     "test_sigma_mu_polynomial_root_three_halves",
     "test_two_cos_pi_over_five_equals_phi",
+    "test_zero_side_correction_matches_the_manuscript",
+    "test_zeroside_orbit_agrees_with_the_zeros",
     "test_zeta_two_pi_squared_over_six",
 )
 
