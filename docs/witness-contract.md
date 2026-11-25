@@ -437,10 +437,11 @@ Repositories whose tags today accept a wider or a narrower set converge on this 
 not by relaxation of the rule: the identifiers the previous wording rejected are a measured set,
 never a design constraint. Counted in one manuscript (`03-crystalline-worldsheet`, over
 `src/chapters/*.tex`, 2026-11-25) **18 of the 100 id parts** of `\tier[…]` fail the repository's
-naming standard — **12 label-style identifiers** (10 distinct, at 9 sites) and the **6 ellipsis
-placeholders** of the gloss sentences — while `:`-style label keys remain **0**. They remain work
-items and are rewritten to snake_case ids; the business rule itself is unchanged, only the layer
-that enforces it moves.
+naming standard — **12 Lean declaration names** (10 distinct, at 9 sites), declarations of
+`lean/CW6_complete_v2.lean`, none a `\label`, protected by the statement guard (every Lean id
+cited must exist in the Lean file), and the **6 ellipsis placeholders** of the gloss sentences —
+while `:`-style label keys remain **0**. They remain work items and are rewritten to snake_case
+ids; the business rule itself is unchanged, only the layer that enforces it moves.
 
 ### 6.5 The star
 
