@@ -7,8 +7,8 @@
 
 | counter | value | measured from | quoted in |
 |---|---:|---|---|
-| `pytest.collected` | 98 | `uv run pytest tests/ -q --collect-only` | `tests/README.md` (`commands`), `tests/README.md` (`suite-total`) |
-| `pytest.not_slow` | 98 | `uv run pytest tests/ -q -m 'not slow' --collect-only` | `tests/README.md` (`commands`), `tests/README.md` (`suite-not-slow`) |
+| `pytest.collected` | 97 | `uv run pytest tests/ -q --collect-only` | `tests/README.md` (`commands`), `tests/README.md` (`suite-total`) |
+| `pytest.not_slow` | 97 | `uv run pytest tests/ -q -m 'not slow' --collect-only` | `tests/README.md` (`commands`), `tests/README.md` (`suite-not-slow`) |
 | `lean.theorems` | 5712 | declarations in `lean/F1_pentagonal_descent_UNIFIED.lean` (comments stripped) | — |
 | `lean.axioms` | 0 | axioms in `lean/F1_pentagonal_descent_UNIFIED.lean` (comments stripped) | — |
 | `lean.sorry` | 0 | `sorry` in `lean/F1_pentagonal_descent_UNIFIED.lean` (comments stripped) | — |
