@@ -59,7 +59,7 @@ tests/
 ├── test_categorical_formalism.py   # section 5 (+ F1-descent functoriality)
 ├── test_polylog_circuit.py         # section 5.9
 ├── test_golden_observations.py     # the four committed observation outputs
-├── test_golden_n_marks.py          # the INV-WIT-001 §B N marks: their outputs
+├── test_golden_n_marks.py          # the bare `N` marks whose backing is a committed output
 ├── test_arch_window.py             # arch_window.py: the archimedean crossings
 └── test_witness_census.py          # \testref <-> suite contract, port guard
 ```
@@ -97,12 +97,13 @@ re-run: the committed output is the record of the run, so a regenerated or
 edited artifact fails the gate instead of drifting the paper.
 
 `tests/test_golden_n_marks.py` does the same for the rest of the corpus
-behind the manuscript's bare `N` marks (INV-WIT-001 §B, W6 Fase2): fifteen
+behind the manuscript's bare `N` marks (W6 Fase2): fifteen
 tests over the twenty-four sites whose backing is a committed output, one
 family per commit, each test naming in its docstring the `file:line` sites
 it covers and reconciling the printed figures against the artifact's own
-`articulo:` line. The sites with no backing stay untouched and are recorded
-as `no-test:<reason>` in INV-WIT-001 §B.
+`articulo:` line. The sites with no backing stay untouched: each test's
+docstring names the `file:line` sites it covers, so a site absent from
+every docstring is a site with no committed backing.
 
 `tests/test_arch_window.py` does the same for `arch_window.py`, the
 archimedean form of `ζ_K`: the two crossings of the paragraph of

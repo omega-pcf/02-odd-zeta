@@ -16,7 +16,7 @@ contract:
 The sixth mark carries two ids separated by `,` inside one bracket;
 they are split here into the two citations they name.
 
-A second rule of the same contract (docs/witness-contract.md §6.4) is
+A second rule of the same contract (docs/witness-contract.md §6.5) is
 measured here too, because it needs data that lives outside TeX: no part
 of a ``\\tier[...]`` or ``\\witness{...}{...}`` bracket may equal the id of a
 record of ``citation.csl.json``, nor carry a ``\\cite`` token.  The tag
@@ -179,7 +179,7 @@ def test_cited_ids_are_snake_case() -> None:
 
 
 # --------------------------------------------------------------------------
-# The citation-key rule of the tag grammar (docs/witness-contract.md §6.4).
+# The citation-key rule of the tag grammar (docs/witness-contract.md §6.5).
 #
 # The macro reads a bracket as an arbitrary string, so it cannot know
 # whether a part is one of OUR ids or one of the BIBLIOGRAPHY's keys; the
@@ -318,7 +318,7 @@ def test_no_citation_key_sits_inside_a_tag() -> None:
     manuscript, split on the commas that sit outside ``\\testref{...}``;
     the keys are the ids of ``citation.csl.json``.  The tag macro accepts an
     arbitrary string now, so this test -- not the macro -- is the whole of
-    the citation-key rule (contract §6.4).
+    the citation-key rule (contract §6.5).
     """
     keys = citation_keys()
     assert keys, "citation.csl.json declares no id: the key set is empty"
