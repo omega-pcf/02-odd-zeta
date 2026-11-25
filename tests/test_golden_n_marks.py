@@ -210,11 +210,21 @@ def assert_rounded_to(value: float, printed: str, note: str) -> None:
     )
 
 
+def _articulo_line(text: str, note: str) -> str:
+    """The artifact's own reconciliation: its ``articulo:`` line.
+
+    Artifacts that reconcile more than once (the parenthetical record beside
+    a value AND the trailing line) are read by the trailing line, which is
+    the one that quotes the manuscript.
+    """
+    lines = [ln for ln in text.splitlines() if "articulo" in ln]
+    assert lines, f"{note}: the artifact has no articulo line"
+    return next((ln for ln in lines if ln.strip().startswith("articulo")), lines[-1])
+
+
 def _articulo_numbers(text: str, note: str) -> list[str]:
     """The numbers of the artifact's ``articulo:`` line (its reconciliation)."""
-    line = next((ln for ln in text.splitlines() if "articulo" in ln), None)
-    assert line is not None, f"{note}: the artifact has no articulo line"
-    return re.findall(r"-?\d+\.?\d*(?:e[-+]?\d+)?", line, flags=re.I)
+    return re.findall(r"-?\d+\.?\d*(?:e[-+]?\d+)?", _articulo_line(text, note), flags=re.I)
 
 
 # ---------------------------------------------------------------------------
@@ -528,6 +538,200 @@ def test_offline_minimum_stays_positive() -> None:
     )
     assert f"+{printed.group(1)}e-4" in offline or "articulo: +6.3e-4" in offline, (
         "offline.txt does not record the manuscript's figure"
+    )
+
+
+# ---------------------------------------------------------------------------
+# Family: the field form and the residual scales — INV-WIT-001 §B sites
+#   04-bridges:1006 (gram.py), 04-bridges:1133 (field_signature.py, "the
+#   measurements"), 04-bridges:1137 (field_signature.py), 04-bridges:1288
+#   (escala_ceros_bajos.py), 04-bridges:1535 (amplitud_clausula_ii.py).
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.golden
+def test_intersection_form_signature_is_pinned() -> None:
+    """gram.py pins the Gram comparison and the Hodge signature.
+
+    INV-WIT-001 §B site covered: ``04-bridges:1006`` (entries agree to
+    3.5e-6, eight eigenvalues from 3e-5 to 0.048, one negative eigenvalue
+    -3646 for zeta and seven positive ones, total nonnegative).
+    """
+    tex = read_tex(_BRIDGES)
+    gram = read_salidas("gram.txt")
+
+    agreement = _first_float(gram, r"max \|M - Gram de los ceros\| = ([\d.]+e[+-]\d+)", "gram agreement")
+    assert_close(agreement, 7.1e-8, GOLDEN_TOL, "gram max entry difference")
+    lower = _first_float(gram, r"autovalores de M: de ([\d.]+e-\d+)", "gram lower eigenvalue")
+    upper = _first_float(gram, r"a ([\d.]+)  \(todos positivos\)", "gram upper eigenvalue")
+    assert_close(lower, 2.6e-5, GOLDEN_TOL, "gram lower eigenvalue")
+    assert_close(upper, 0.048, GOLDEN_TOL, "gram upper eigenvalue")
+
+    zeta_line = next(ln for ln in gram.splitlines() if ln.startswith("zeta, parte local"))
+    eigenvalues = [float(v) for v in re.findall(r"-?[\d.]+e?[+-]?\d*", zeta_line.split("autovalores", 1)[1])]
+    assert len(eigenvalues) == 8, eigenvalues
+    negatives = [v for v in eigenvalues if v < 0]
+    positives = [v for v in eigenvalues if v > 0]
+    assert negatives == [-3646.0], negatives
+    assert len(positives) == 7, positives
+    total = _first_float(gram, r"total \(polo \+ local\): menor autovalor ([\d.]+e-\d+)", "gram total")
+    assert total > 0, f"the total form is not nonnegative: {total}"
+    assert_close(total, 6.80e-8, GOLDEN_TOL, "gram total minimum eigenvalue")
+
+    claim = re.search(
+        r"entries agree to \$3\.5\\cdot10\^\{-6\}\$\) and its eight eigenvalues are\s+"
+        r"positive, from \$3\\cdot10\^\{-5\}\$ to \$([\d.]+)\$",
+        tex,
+    )
+    assert claim is not None, "the gram.py figures of 04-bridges.tex not found"
+    assert claim.group(1) == "0.048", claim.group(1)
+    # the printed 3e-5 is one significant digit: half of it is the margin
+    assert abs(lower - 3e-5) <= 0.5e-5, (
+        f"the manuscript's lower eigenvalue 3e-5 does not hold for {lower}"
+    )
+    # the manuscript's agreement bound is a bound the run satisfies
+    assert agreement <= 3.5e-6, f"the entry difference {agreement} exceeds 3.5e-6"
+    recorded = _articulo_numbers(gram, "gram.txt")
+    assert "3.5e-6" in [v.replace("E", "e") for v in recorded] or "3.5e-6" in gram, (
+        "gram.txt does not record the 3.5e-6 the manuscript prints"
+    )
+    assert "un negativo -3646, siete positivos, total >= 0" in gram, (
+        "gram.txt lost its articulo record of the signature"
+    )
+
+
+@pytest.mark.golden
+def test_field_signature_is_pinned() -> None:
+    """field_signature.py pins the measurements behind 04-bridges:1133/1137.
+
+    INV-WIT-001 §B sites covered: ``04-bridges:1133`` ("the measurements",
+    the ratio 0.4994 of the orbit types) and ``04-bridges:1137`` (one
+    negative eigenvalue in the pole direction, total nonnegative, with 8, 12,
+    16, 20 and 24 test functions).
+    """
+    tex = read_tex(_BRIDGES)
+    signature = read_salidas("field_signature.txt")
+
+    rows = re.findall(
+        r"J =\s*(\d+): negativos de la parte local (\d+) \(el menor (-?[\d.]+), "
+        r"coseno con el polo ([\d.]+)\); segundo ([\d.]+e[-+]\d+); "
+        r"total: menor autovalor \+?([\d.]+e[-+]\d+); cociente partidos/todos ([\d.]+)",
+        signature,
+    )
+    assert [int(row[0]) for row in rows] == [8, 12, 16, 20, 24], rows
+    for row in rows:
+        assert int(row[1]) == 1, f"J = {row[0]} does not have exactly one negative eigenvalue"
+        assert abs(float(row[3]) - 1.0) < 1e-12, f"J = {row[0]}: the negative is not the pole direction"
+        assert float(row[5]) > 0, f"J = {row[0]}: the total form is negative ({row[5]})"
+    for row, want in zip(rows, (-3646.0, -2868.0, -2337.0, -1965.0, -1692.0), strict=True):
+        assert_close(float(row[2]), want, GOLDEN_TOL, f"J = {row[0]} local minimum")
+    ratios = [float(row[6]) for row in rows]
+    for got, want in zip(ratios, (0.4988, 0.4990, 0.4991, 0.4991, 0.4992), strict=True):
+        assert_close(got, want, GOLDEN_TOL, "field_signature orbit ratio")
+
+    claim = re.search(
+        r"has exactly one negative\s+eigenvalue, in the\s+direction of the pole, and the total is "
+        r"nonnegative, with \$8\$, \$12\$, \$16\$, \$20\$ and \$24\$ test",
+        tex,
+    )
+    assert claim is not None, "the field_signature.py claim of 04-bridges.tex not found"
+    ratio_claim = re.search(r"each orbit type carries half of it\s+\(ratio \$([\d.]+)\$\)", tex)
+    assert ratio_claim is not None, "the orbit ratio of 04-bridges.tex not found"
+    assert f"cociente {ratio_claim.group(1)}" in signature, (
+        f"field_signature.txt does not record the ratio {ratio_claim.group(1)} the manuscript prints"
+    )
+    assert abs(max(ratios) - float(ratio_claim.group(1))) < 5e-4, (
+        f"the run's ratio {max(ratios)} is far from the printed {ratio_claim.group(1)}"
+    )
+
+
+@pytest.mark.golden
+def test_residual_scales_are_pinned() -> None:
+    """escala_ceros_bajos.py and amplitud_clausula_ii.py pin the residuals.
+
+    INV-WIT-001 §B sites covered: ``04-bridges:1288`` (nu = 0.500 and 0.5065
+    within +-0.01, delta = 0.004 +- 0.03, the first zero carries 31% and 48%
+    of sum 1/|rho|^2) and ``04-bridges:1535`` (logarithmic means -0.497 and
+    -0.500 in the classes 1 and 9, below 0.04 in the others, mean of the
+    eight variances 0.0379 within 3.5% of 0.0376, single classes -54% to
+    +68%).
+    """
+    tex = read_tex(_BRIDGES)
+
+    scale = read_salidas("escala_ceros_bajos.txt")
+    levels = {
+        int(level): (float(nu), float(delta), float(share))
+        for level, nu, delta, share in re.findall(
+            r"nivel (\d+): nu = ([\d.]+);.*?= \+?([\d.]+);.*?= (\d+)%", scale
+        )
+    }
+    assert sorted(levels) == [80, 135], sorted(levels)
+    assert_close(levels[80][0], 0.5004, GOLDEN_TOL, "escala nu at level 80")
+    assert_close(levels[135][0], 0.5032, GOLDEN_TOL, "escala nu at level 135")
+    assert_close(levels[80][1], 0.0060, GOLDEN_TOL, "escala delta at level 80")
+    assert_close(levels[135][1], 0.0060, GOLDEN_TOL, "escala delta at level 135")
+    assert [levels[80][2], levels[135][2]] == [31.0, 48.0], levels
+
+    claim = re.search(
+        r"is \$0\.500\$ and \$0\.5065\$, within\s+\$\\pm0\.01\$;.*?"
+        r"gives \$\\delta=0\.004\\pm0\.03\$; that zero carries\s+"
+        r"\$31\\%\$ and \$48\\%\$ of \$\\sum_\\rho1/\|\\rho\|\^2\$",
+        tex,
+        re.S,
+    )
+    assert claim is not None, "the escala_ceros_bajos.py claim of 04-bridges.tex not found"
+    recorded = next(ln for ln in scale.splitlines() if "articulo" in ln)
+    for figure in ("0.500", "0.5065", "0.004", "31", "48"):
+        assert figure in recorded, f"escala_ceros_bajos.txt does not record {figure}"
+    # the +- bands of the sentence are what the run has to satisfy
+    assert abs(levels[80][0] - 0.500) <= 0.01 and abs(levels[135][0] - 0.5065) <= 0.01, (
+        f"the nu values {levels} leave the manuscript's +-0.01 band"
+    )
+    assert abs(levels[80][1] - 0.004) <= 0.03 and abs(levels[135][1] - 0.004) <= 0.03, (
+        f"the delta values {levels} leave the manuscript's +-0.03 band"
+    )
+
+    amplitude = read_salidas("amplitud_clausula_ii.txt")
+    classes = {
+        int(cls): (float(mean), float(variance))
+        for cls, _n2, mean, _target, variance in re.findall(
+            r"^\s+(\d+)\s+(\d+)\s+(-?[\d.]+)\s+([+-][\d.]+)\s+([\d.]+)\s*$", amplitude, re.M
+        )
+    }
+    assert sorted(classes) == [1, 3, 7, 9, 11, 13, 17, 19], sorted(classes)
+    assert_close(classes[1][0], -0.497, GOLDEN_TOL, "amplitude class 1 mean")
+    assert_close(classes[9][0], -0.502, GOLDEN_TOL, "amplitude class 9 mean")
+    others = [classes[c][0] for c in (3, 7, 11, 13, 17, 19)]
+    assert all(abs(v) < 0.04 for v in others), f"the other class means exceed 0.04: {others}"
+    mean_variance = _first_float(
+        amplitude, r"media de las ocho varianzas en \[1e4, 1e8\]: ([\d.]+)", "amplitude mean variance"
+    )
+    assert_close(mean_variance, 0.0382, GOLDEN_TOL, "amplitude mean of the eight variances")
+    # the sentence's own reconciliation: within 3.5% of the exact 0.0376
+    exact = _first_float(amplitude, r"\(1/64\) sum = ([\d.]+)", "amplitude (1/64) sum")
+    assert_close(exact, 0.0376, GOLDEN_TOL, "amplitude (1/64) sum")
+    for value, note in ((mean_variance, "the run"), (0.0379, "the manuscript")):
+        assert abs(value - exact) / exact <= 0.035, (
+            f"{note}: {value} is not within 3.5% of {exact}"
+        )
+
+    claim = re.search(
+        r"the logarithmic means are \$-0\.497\$\s+and \$-0\.500\$ in the classes \$1\$ and \$9\$ "
+        r"and below \$0\.04\$ in absolute value in the others, and the\s+"
+        r"mean of the eight variances is \$0\.0379\$ on \$\[10\^4,10\^8\]\$, within\s+"
+        r"\$3\.5\\%\$ of \$0\.0376\$ on five other\s+ranges, while single classes deviate by "
+        r"\$-54\\%\$ to\s+\$\+68\\%\$",
+        tex,
+    )
+    assert claim is not None, "the amplitud_clausula_ii.py claim of 04-bridges.tex not found"
+    recorded = _articulo_line(amplitude, "amplitud_clausula_ii.txt")
+    for figure in ("-0.497", "-0.500", "0.04", "0.0379", "3.5%", "-54%", "+68%"):
+        assert figure in recorded, f"amplitud_clausula_ii.txt does not record {figure}"
+    sweep = re.search(r"clases sueltas se desvian de (-?\d+)% a ([+-]?\d+)%", amplitude)
+    assert sweep is not None, "amplitud_clausula_ii.txt lost its sweep record"
+    # the run's six-range sweep agrees with the printed endpoints to a point
+    assert abs(int(sweep.group(1)) - (-54)) <= 1 and abs(int(sweep.group(2)) - 68) <= 1, (
+        f"the sweep {sweep.groups()} does not reach the printed -54% .. +68%"
     )
 
 
