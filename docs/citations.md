@@ -227,12 +227,20 @@ before quoting these figures.
 ```
 
 The optional argument means **internal ids and nothing else**, and in this
-repository it is read by the strict family grammar (contract §6.4): the
-preamble tests the argument for `\cite` first (an external key raises
-`\PackageError`), then for `\testref`, then for the two markers only a raw
-name list carries — `\_` or `,` — which it renders inside the tag; anything
-else (a bare token, a name written without `\_` or `,`) raises
-`\PackageError` with the message *Wrap the id in \testref*. The render of a
+repository it is read as an arbitrary string (contract §6.4): the
+preamble normalises it at the macro's boundary — an escaped `\_` and a
+raw `_` both print as the breakable typewriter underscore, every other
+token passes through — and the only thing it rejects at run time is a
+literal `\cite` token (an external key raises `\PackageError`, so a
+bracket full of a key is never rendered). A character-shape test is not
+used: it would reject a valid internal id such as
+`F1PaperTorus.chi5WeilOrbit`, which carries none of the markers it looks
+for, and it cannot recognise a citation key, whose characters are the
+characters of an identifier. Whether a bracket holds a citation key is
+measured where the key set exists: `tests/test_witness_census.py` reads
+every tag argument of the manuscript, splits it on the commas outside
+`\testref{…}` and fails when a part equals an id of `citation.csl.json`
+or contains a `\cite` token, reporting `file:line`. The render of a
 legal tag is therefore always the same shape: **the tag first, its ids
 inside the brackets** — `N[test_x, test_y]`. The ids never precede the tag,
 so a test witnessed in prose appears as `\tier[\testref{test\_x}]{N}`, never

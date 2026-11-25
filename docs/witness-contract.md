@@ -414,16 +414,30 @@ before editing:
 
 ### 6.4 Grammar
 
-The grammar of the tag is the strict one: the optional argument holds
-**internal ids only** — a `\testref`, or the raw names of declarations of
-the repository's own Lean file, several of them separated by `,` — and a
-citation key is never written inside a tag. Anything else raises
-`\PackageError` before printing; there is no permissive fallback.
-Repositories whose tags today accept a wider or a narrower set converge
-on this grammar by work, not by relaxation: the label-style identifiers
-the strict grammar rejects (23 of them, counted in one manuscript) are
-work items, not a constraint on the design — they are rewritten, the
-grammar is not relaxed to fit them.
+The optional argument of a tag holds **internal ids only** — a `\testref`, or the raw names of
+declarations of the repository's own Lean file, several of them separated by `,` — and a
+citation key is never written inside a tag; an external source stays an adjacent `\cite`,
+printed beside the mark, never fused into it.
+
+The macro does not enforce this by the shape of its argument. A character-shape test
+(`\_`, `,` or `\testref` present, otherwise an error) rejects valid internal ids — a Lean name
+such as `F1PaperTorus.chi5WeilOrbit` carries none of those markers — and it cannot recognise a
+citation key, whose characters are the characters of an identifier. The argument is therefore
+read as an arbitrary string: an escaped `\_` and a raw `_` both print as the breakable
+typewriter underscore, every other token passes through unchanged, and the only error the macro
+raises at run time is a literal `\cite` token inside the argument, which is never an id.
+
+The rule that the bracket holds no external source is enforced where the key set exists: a test
+reads every `\tier[…]` and `\witness{…}{…}` argument of the manuscript, splits it on the commas
+that sit outside `\testref{…}`, and fails when a part equals the id of a record of
+`citation.csl.json` or contains a `\cite` token, reporting `file:line` and the key. The check
+runs with the suite and is the only place where the citation-key rule is measured.
+
+Repositories whose tags today accept a wider or a narrower set converge on this grammar by work,
+not by relaxation of the rule: the label-style identifiers the previous wording rejected
+(23 sites, counted in one manuscript — 17 label-style ids and 6 ellipsis placeholders in gloss
+sentences) remain work items and are rewritten to snake_case ids; the business rule itself is
+unchanged, only the layer that enforces it moves.
 
 ### 6.5 The star
 
