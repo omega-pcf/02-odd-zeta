@@ -10,7 +10,8 @@ computation module: each claim test owns the code that produces its numbers
 and asserts them directly — values, never printed stdout.
 
 `main.tex` and the chapters it inputs cite the tests that check their
-numbers with `\testref{...}` (six `N` marks, seven ids), which
+numbers with `\testref{...}` (forty `N` marks, fifty-two citations over
+thirty-four ids), which
 `tests/test_witness_census.py` parses to prove that every reference the
 manuscript makes exists in the suite, that the cited set equals the pinned
 set, and that every id is snake_case. The same file holds the guard that

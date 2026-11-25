@@ -434,10 +434,13 @@ that sit outside `\testref{…}`, and fails when a part equals the id of a recor
 runs with the suite and is the only place where the citation-key rule is measured.
 
 Repositories whose tags today accept a wider or a narrower set converge on this grammar by work,
-not by relaxation of the rule: the label-style identifiers the previous wording rejected
-(23 sites, counted in one manuscript — 17 label-style ids and 6 ellipsis placeholders in gloss
-sentences) remain work items and are rewritten to snake_case ids; the business rule itself is
-unchanged, only the layer that enforces it moves.
+not by relaxation of the rule: the identifiers the previous wording rejected are a measured set,
+never a design constraint. Counted in one manuscript (`03-crystalline-worldsheet`, over
+`src/chapters/*.tex`, 2026-11-25) **18 of the 100 id parts** of `\tier[…]` fail the repository's
+naming standard — **12 label-style identifiers** (10 distinct, at 9 sites) and the **6 ellipsis
+placeholders** of the gloss sentences — while `:`-style label keys remain **0**. They remain work
+items and are rewritten to snake_case ids; the business rule itself is unchanged, only the layer
+that enforces it moves.
 
 ### 6.5 The star
 

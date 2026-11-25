@@ -193,21 +193,23 @@ tails, applied states and verdict tables — live in `docs/reports/`.
 
 The **set of evidence marks** is `P` and `N`, with `\testref` as the test
 anchor — nothing else (`docs/witness-contract.md` §6.1); this repository's
-preamble defines no `\witness{…}` block (§8.1), so every mark of the
-manuscript is inline by construction. Placement — inline or on
+preamble defines `\witness{…}` (§8.1) and the body sets 86 own-line blocks
+beside its inline tags, so both forms are live here. Placement — inline or on
 a line of its own — is a prose decision and never a semantic one (contract
 §6.2), and the alphabet below is frozen at `P` and `N` (contract §6.8).
 
-Measured state of the manuscript (2026-11-23; `git grep` over
+Measured state of the manuscript (2026-11-25; `git grep` over
 `src/chapters/*.tex`, i.e. the body — the definitions in `main.tex`
-excluded): `\tierP` 740, `\tierN` 123, marks carrying ids
-`\tier[\testref{…}]{N}` **6** (over **7** ids), `\LeanInline` 992,
-`\LeanStar` 221, `\LeanTally` 21, `\LeanCW` 44, `\leanline` 67; the retired
-classes `\tierPnew`, `\tierC`, `\tierO`, `\tierT`, `\tierNc`, `\tier{R}`
-appear **0** times. The seven cited test ids are pinned by
+excluded): `\tier[ids]{P}` 272, `\tier[ids]{N}` 40, bare `\tier{P}` 61,
+bare `\tier{N}` 26, own-line `\witness{P}{…}` 86 (and `\witness{N}{…}` 0),
+`\LeanInline` 173, `\LeanStar` 0, `\LeanTally` 21, `\LeanCW` 44, `\leanline`
+2; the retired classes `\tierPnew`, `\tierC`, `\tierO`, `\tierT`, `\tierNc`,
+`\tier{R}` appear **0** times. The marks carrying ids are **40**
+`\tier[\testref{…}]{N}` over **52 citations and 34 distinct ids**; the cited
+set is pinned by
 `tests/test_witness_census.py`, which fails when the manuscript's cited set
-and the suite's node ids drift apart. The full per-file census of the closing
-wave is in the MRG-001 closure report; re-measure with the same command
+and the suite's node ids drift apart. The full per-file census is the
+generated `docs/witness-inventory.md`; re-measure with the same command
 before quoting these figures.
 
 ### 8.1 Grammar — one macro, one optional argument
@@ -255,10 +257,15 @@ beside them carries the class. External sources stay outside the tag: the
 claim keeps its `\cite` next to it, and a tag alone never carries a
 reference number.
 
-There is **no** `\witness{…}` block in this repository's preamble
-(`git grep -F '\witness'` over `main.tex` is empty). Every mark of the
-manuscript is therefore inline by construction — see §8.5 for what the
-family's own-line criterion means here.
+The preamble defines `\witness{…}` — an own-line accounting line, flush right,
+printing `X[ids]` — and the body sets **86** of them, all with class `P`
+(measured 2026-11-25 over `src/chapters/*.tex`; `git grep -F '\witness'` over
+`main.tex` returns the definition and its comment, not an empty result). The
+inline tags and the own-line blocks are both live here; which mark takes which
+shape is the prose decision of §8.5. An external source never enters either
+tag: the claim keeps its `\cite` next to it (§8.2 rule 2), and
+`tests/test_witness_census.py` fails on a key or a `\cite` token found inside
+a bracket.
 
 `\Lean{}` is **defined** in the preamble (a right-aligned tt line) but has
 **0 uses**; it is a definition kept for fidelity with the ported preamble,
@@ -383,11 +390,11 @@ class-number row discharges a named hypothesis with its own `\tierP`.
 
 ### 8.5 Inline or a line of its own — the criterion
 
-**In this repository every mark is inline, by construction.** The preamble
-defines no `\witness{…}` block (§8.1), so there is no own-line form for a
-mark to take. The family criterion below is stated
-for completeness and for the sibling repositories that do define the block;
-its own-line outcome has no form here yet.
+**Both forms are live in this repository.** The preamble defines the
+own-line `\witness{…}` block (§8.1) and the body sets **86** of them, all
+with class `P`; the remaining marks are inline. The family criterion below
+therefore applies here as well as in the siblings, and its outcome is a prose
+decision for each site, never a semantic one.
 
 Placement itself is prose — semantic, heuristic, aesthetic — and never a
 semantic axis (contract §6.2): the criterion below measures cost and

@@ -7,12 +7,16 @@ This directory contains technical documentation for the shared build and release
 ```
 docs/
 ├── README.md          # This file
+├── BRIEF-TEMPLATE.md  # The required shape of a wave brief (family file)
 ├── architecture.md    # Release system architecture
 ├── citations.md       # CSL single-source citation pipeline + witness (tier) contract (§1–§8)
 ├── counts.md          # Generated counts ledger (pnpm run counts; never edited by hand)
 ├── installation.md    # Prerequisites and setup
 ├── usage.md           # Build and release commands
-└── witness-contract.md # Why the marks exist (portable rationale of the witness device, EN)
+├── witness-contract.md # Why the marks exist (portable rationale of the witness device, EN)
+├── witness-standard.md  # The canonical rules of the marks (family file, byte-identical)
+├── witness-decisions.md # The family ledger: one row per question, open and ruled
+└── witness-inventory.md # This repository's census of marks, generated from a measurement
 ```
 
 ## Contents
@@ -29,10 +33,15 @@ docs/
   The marked regions live in `tests/README.md` (`commands`, `suite-total`,
   `suite-not-slow`); the manuscript itself does state counts in prose — the
   appendix's corpus counts (proved, open and classical statements) and the
-  six `\tier[\testref{…}]{N}` anchors that cite test ids — but those live
+  forty `\tier[\testref{…}]{N}` anchors that cite test ids — but those live
   outside the mechanism, which measures only the ledger's counters.
 - **installation.md**: Prerequisites and setup instructions.
 - **usage.md**: Daily workflow, conventional commits, build and release commands.
+- **witness-standard.md**: The canonical rules of the evidence marks — syntax, semantics,
+  gates and typography; the family's byte-identical, manifest-pinned page.
+  **witness-decisions.md** is the decision ledger, one row per question (a count is never a
+  row); **witness-inventory.md** is this repository's generated census of marks;
+  **BRIEF-TEMPLATE.md** is the required shape of a wave brief.
 - **witness-contract.md**: The rationale of the witness marks — why they exist, what they
   do not assert, the compactness method and the honesty declaration. Portable across the
   family; the applied state of this repository lives in its `docs/reports/`.
