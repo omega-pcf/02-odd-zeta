@@ -436,7 +436,7 @@ runs with the suite and is the only place where the citation-key rule is measure
 Repositories whose tags today accept a wider or a narrower set converge on this grammar by work,
 not by relaxation of the rule: the identifiers the previous wording rejected are a measured set,
 never a design constraint. Counted in one manuscript (`03-crystalline-worldsheet`, over
-`src/chapters/*.tex`, 2026-11-25) **18 of the 100 id parts** of `\tier[…]` fail the repository's
+`src/chapters/*.tex`, 2026-11-25) **18 of the 100 sites** of `\tier[…]` fail the repository's
 naming standard — **12 Lean declaration names** (10 distinct, at 9 sites), declarations of
 `lean/CW6_complete_v2.lean`, none a `\label`, protected by the statement guard (every Lean id
 cited must exist in the Lean file), and the **6 ellipsis placeholders** of the gloss sentences —
