@@ -893,4 +893,185 @@ def test_zeroside_orbit_agrees_with_the_zeros() -> None:
     assert "articulo: 1e-8" in zeroside, "zeroside.txt lost its articulo record"
 
 
+# ---------------------------------------------------------------------------
+# Family: mechanisms and chapter five — INV-WIT-001 §B sites
+#   03-mechanisms:2117 (kisin.py), 03-mechanisms:1051 (teich.py),
+#   05-categorical:99 (law_resolution.py), 05-categorical:593
+#   (fermat_quintic_points.py).
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.golden
+def test_kisin_interpolation_is_pinned() -> None:
+    """kisin.py pins the 5-adic check against the Kubota--Leopoldt values.
+
+    INV-WIT-001 §B site covered: ``03-mechanisms:2117`` (the cokernel of (v)
+    computed up to degree 33, and L_5(1, chi5) and 2*log_5(phi)/sqrt5 both
+    = 557 mod 5^4).
+    """
+    tex = read_tex(_MECHANISMS)
+    kisin = read_salidas("kisin.txt")
+
+    assert "D mod 5 = -1 (-1: unidad)" in kisin, "kisin.txt lost its D row"
+    assert "A/(5,E) = F_5[u]/(u^2): True" in kisin, "kisin.txt lost its A/(5,E) row"
+    assert_close(_first_float(kisin, r"phi_A\(E\)\(sqrt5\) = (\d+) = 5 \* 624", "kisin phi_A(E)"), 3120, GOLDEN_TOL, "kisin phi_A(E)")
+    assert "v_5 = 1/2" in kisin, "kisin.txt lost its v_5 row"
+    # the cokernel the sentence counts: F_5[u]/(u^34) is degree <= 33
+    rank = re.search(r"en F_5\[u\]/\(u\^(\d+)\), g de grado < (\d+): rango de la imagen (\d+)", kisin)
+    assert rank is not None, "kisin.txt lost its cokernel row"
+    assert int(rank.group(1)) == 34 and int(rank.group(2)) == 32 and int(rank.group(3)) == 32, rank.groups()
+    residues = {
+        int(n): value
+        for n, value in re.findall(
+            r"con n = 4\*5\^\d+ = (\d+): (\d+) \(mod 5\^4\)", kisin
+        )
+    }
+    assert residues == {20: "532", 100: "432", 500: "557"}, residues
+    assert "2 log_5(phi)/sqrt5 = 557 (mod 5^4)" in kisin, (
+        "kisin.txt lost the 2 log_5(phi)/sqrt5 value"
+    )
+
+    claim = re.search(
+        r"the cokernel of \(v\) computed up to degree\s+\$33\$, and \$L_5\(1,\\chiv\)\$ "
+        r"and \$2\\log_5\\golden/\\sqrt5\$ both \$\\equiv557\\pmod\{5\^4\}\$",
+        tex,
+    )
+    assert claim is not None, "the kisin.py claim of 03-mechanisms.tex not found"
+    # degree 33 is the artifact's u^34 quotient, and 557 is what both
+    # quantities give — the artifact's own articulo line says the same
+    assert int(rank.group(1)) == 33 + 1, "the artifact's quotient is not degree 33 + 1"
+    assert "articulo: ambos = 557 (mod 5^4)" in kisin, (
+        "kisin.txt does not record the 557 the manuscript prints"
+    )
+
+
+@pytest.mark.golden
+def test_delta_p_tower_ratios_are_pinned() -> None:
+    """teich.py pins the ratios |delta_p(phi)|/(phi^p/p) of the tower.
+
+    INV-WIT-001 §B site covered: ``03-mechanisms:1051`` (1.236, 1.146, 0.992,
+    ..., 0.999999 at p = 2, 3, 11, ..., 31).
+    """
+    tex = read_tex(_MECHANISMS)
+    teich = read_salidas("teich.txt")
+
+    rows = {
+        int(p): (delta, float(ratio))
+        for p, delta, ratio in re.findall(
+            r"p =\s*(\d+) \(\w+\): delta = (-?\d+ \+ -?\d+ phi);\s+"
+            r"\|delta\|/\(phi\^p/p\) = ([\d.]+)",
+            teich,
+        )
+    }
+    assert sorted(rows) == [2, 3, 7, 11, 13, 17, 19, 23, 29, 31], sorted(rows)
+    for p, want in {2: 1.236068, 3: 1.145898, 7: 1.021286, 11: 0.991869, 31: 0.999999}.items():
+        assert_close(rows[p][1], want, GOLDEN_TOL, f"delta_p ratio at p = {p}")
+    # the sentence's sequence, at the digits it prints
+    assert round(rows[2][1], 3) == 1.236, rows[2]
+    assert round(rows[3][1], 3) == 1.146, rows[3]
+    assert round(rows[11][1], 3) == 0.992, rows[11]
+    assert round(rows[31][1], 6) == 0.999999, rows[31]
+    # and it is the tower's size: the ratio tends to 1 as p grows
+    tail = [rows[p][1] for p in (17, 19, 23, 29, 31)]
+    assert all(abs(v - 1) < 1e-3 for v in tail), f"the tower ratios do not settle at 1: {tail}"
+
+    claim = re.search(
+        r"\|\\delta_p\(\\golden\)\|/\(\\golden\^p/p\)=1\.236,\\ 1\.146,\\ 0\.992,\\ "
+        r"\\ldots,\\ 0\.999999\$ at \$p=2,3,11,\\ldots,31\$",
+        tex,
+    )
+    assert claim is not None, "the teich.py sequence of 03-mechanisms.tex not found"
+    recorded = _articulo_line(teich, "teich.txt")
+    assert "1.236, 1.146, 0.992, ..., 0.999999" in recorded, (
+        f"teich.txt does not record the sequence the manuscript prints: {recorded}"
+    )
+
+
+@pytest.mark.golden
+def test_zero_side_correction_matches_the_manuscript() -> None:
+    """law_resolution.py pins the correction of the zero-side sum.
+
+    INV-WIT-001 §B site covered: ``05-categorical:99`` (summing the explicit
+    formula over the primes up to X takes the operator from 0.20 spacings to
+    0.020).  ``test_law_resolution_*`` reconciles the same artifact with the
+    figures of 04-bridges; this test is the chapter-five sentence.
+    """
+    tex = read_tex(_CATEGORICAL)
+    law = read_salidas("law_resolution.txt")
+
+    reference = re.search(
+        r"^X = 500: sin correccion mediana ([\d.]+) \(media ([\d.]+)\);\s+"
+        r"primo por primo mediana ([\d.]+) \(media ([\d.]+)\)",
+        law,
+        re.M,
+    )
+    assert reference is not None, "law_resolution.txt lost its X = 500 row"
+    uncorrected, corrected = float(reference.group(1)), float(reference.group(3))
+    assert_close(uncorrected, 0.195, GOLDEN_TOL, "law_resolution uncorrected median")
+    assert_close(corrected, 0.021, GOLDEN_TOL, "law_resolution prime-by-prime median")
+    assert corrected < uncorrected / 5, (
+        f"the correction does not reduce the error by the order of magnitude "
+        f"05-categorical:99 claims: {uncorrected} -> {corrected}"
+    )
+
+    claim = re.search(
+        r"takes the operator from \$0\.20\$ spacings to\s+\$0\.020\$",
+        tex,
+    )
+    assert claim is not None, "the law_resolution claim of 05-categorical.tex not found"
+    recorded = _articulo_line(law, "law_resolution.txt")
+    assert "sin correccion 0.20; primo por primo 0.020" in recorded, (
+        f"law_resolution.txt does not record the manuscript's figures: {recorded}"
+    )
+    # the printed figures are the artifact's own reconciliation (its
+    # articulo line), and the run rounds to them at the sentence's precision
+    assert_printed_as_in_manuscript(uncorrected, 0.20, "law_resolution uncorrected")
+    assert_printed_as_in_manuscript(corrected, 0.020, "law_resolution prime by prime")
+
+
+@pytest.mark.golden
+def test_fermat_quintic_point_counts_are_pinned() -> None:
+    """fermat_quintic_points.py pins the point counts and the |J| = sqrt p.
+
+    INV-WIT-001 §B site covered: ``05-categorical:593`` (the eigenvalues of
+    Frobenius are Jacobi sums of order 5, of modulus sqrt p; normalised by
+    p^{-1/2} Frobenius is an isometry).
+    """
+    tex = read_tex(_CATEGORICAL)
+    fermat = read_salidas("fermat_quintic_points.txt")
+
+    rows = {}
+    for match in re.finditer(
+        r"p = (\d+): N = (\d+);  p \+ 1 \+ sum J = ([\d.]+) \(imag [\d.]+e[+-]\d+\);  "
+        r"\|J\| / sqrt p de ([\d.]+) a ([\d.]+)",
+        fermat,
+    ):
+        p, count, total, low, high = match.groups()
+        rows[int(p)] = (int(count), float(total), float(low), float(high))
+    assert sorted(rows) == [11, 31, 41, 61, 71], sorted(rows)
+    for p, (count, total, low, high) in rows.items():
+        # every one of these primes is 1 mod 5, so the order-5 Jacobi sums exist
+        assert p % 5 == 1, f"p = {p} does not split the order-5 sums"
+        # the point count IS p + 1 + sum J, and |J| = sqrt p (isometry)
+        assert abs(count - total) < 1e-6, f"p = {p}: N = {count} != p + 1 + sum J = {total}"
+        assert_close(low, 1.0, 1e-12, f"p = {p} lower |J|/sqrt(p)")
+        assert_close(high, 1.0, 1e-12, f"p = {p} upper |J|/sqrt(p)")
+    for p, want in {11: 15, 31: 65, 41: 15, 61: 65, 71: 15}.items():
+        assert rows[p][0] == want, (p, rows[p][0])
+
+    claim = re.search(
+        r"the eigenvalues of Frobenius on \$H\^1\$ are Jacobi\s+sums of order \$5\$"
+        r"[^,]*,\s+of\s+modulus \$\\sqrt p\$",
+        tex,
+    )
+    assert claim is not None, "the fermat_quintic_points.py claim of 05-categorical.tex not found"
+    recorded = _articulo_line(fermat, "fermat_quintic_points.txt")
+    assert "|J| = sqrt p" in recorded, (
+        f"fermat_quintic_points.txt does not record the modulus the manuscript prints: {recorded}"
+    )
+    assert "exactamente p + 1 + sum J" in recorded, (
+        "fermat_quintic_points.txt lost its point-count record"
+    )
+
+
 # <<<APPEND>>>
