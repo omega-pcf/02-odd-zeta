@@ -11,7 +11,7 @@ Measured figures are dated and re-measured before reuse. Standard: see
 
 | id | question | resolution | ref |
 |---|---|---|---|
-| WD-01 | Which body forms of a mark exist? | **Ruled:** one inline form `\tier[ids]{X}` printing `X[ids]`, one own-line form `\witness{X}{ids}`; no third form | 2026-11-25 · standard §2 |
+| WD-01 | Which body forms of a mark exist? | **Ruled:** one inline form `\tier[ids]{X}` printing `X[ids]`, one own-line form `\witness{X}{ids}`; no third form. A mark whose site has no ids keeps the bracket class-pure (`[X]`) — no id is invented for it | 2026-11-25 · standard §2 · 03 applied 2026-11-25 |
 | WD-02 | What does `*` denote, and may a release carry it? | **Ruled:** written, not yet verified; intermediate layers only; release gate = **0 stars**; never a tier, a grade or a citation | contract §6.5 · `c7cbd92` retired the 221 family uses |
 | WD-03 | May a ledger table carry a `Tier` column? | **Ruled:** no `Tier` column and no tier label in a table; a redesign of what tables carry is a change candidate, decided elsewhere | contract §6.7 · standard §8 |
 | WD-04 | Is the tag argument shape-checked or read as a string? | **Ruled:** read as an arbitrary string; the only run-time rejection is a literal `\cite`; the no-keys rule is measured by the lint, not by shape | contract §6.4 · 2026-11-25 |
