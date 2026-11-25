@@ -735,4 +735,162 @@ def test_residual_scales_are_pinned() -> None:
     )
 
 
+# ---------------------------------------------------------------------------
+# Family: the statistics of the closure — INV-WIT-001 §B sites
+#   04-bridges:1651 (t1_index.py, t2_loo.py), 04-bridges:1763 (euler_link.py),
+#   04-bridges:1825 (zeroside.py).
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.golden
+def test_angular_index_statistics_are_pinned() -> None:
+    """t1_index.py and t2_loo.py pin the index of the angular order.
+
+    INV-WIT-001 §B site covered: ``04-bridges:1651`` (the index is 1 for
+    66.5% of the primes below 2e5 and at most 6 for 90.3%; once the position
+    is accounted for, the angular order does not explain the use of any
+    prime).
+    """
+    tex = read_tex(_BRIDGES)
+
+    index = read_salidas("t1_index.txt")
+    rows = re.findall(
+        r"primos (\d+) <= p < ([\de.+]+), p != 5 \((\d+)\): indice 1: ([\d.]+)%;\s+"
+        r"indice <= 6: ([\d.]+)%",
+        index,
+    )
+    assert len(rows) == 2, rows
+    for row in rows:
+        assert row[0] in ("2", "7") and row[1] == "2e5", row
+        assert int(row[2]) in (17981, 17983), row
+        assert_close(float(row[3]), 66.5, GOLDEN_TOL, "index 1 share")
+        assert_close(float(row[4]), 90.3, GOLDEN_TOL, "index <= 6 share")
+    claim = re.search(
+        r"The index is \$1\$ for \$([\d.]+)\\%\$ of the primes below \$2\\cdot10\^5\$ "
+        r"and at most \$6\$ for\s+\$([\d.]+)\\%\$",
+        tex,
+    )
+    assert claim is not None, "the t1_index.py figures of 04-bridges.tex not found"
+    recorded = _articulo_numbers(index, "t1_index.txt")
+    assert [float(v) for v in claim.groups()] == [float(v) for v in recorded[:2]], (
+        f"04-bridges.tex says {claim.groups()}, t1_index.txt records {recorded[:2]}"
+    )
+
+    loo = read_salidas("t2_loo.txt")
+    assert_close(_first_float(loo, r"^(\d+) primos 7 <= p <= 500", "t2_loo primes"), 92, GOLDEN_TOL, "t2_loo prime count")
+    assert_close(_first_float(loo, r"u_p > 0 \(quitar p empeora\) en (\d+)", "t2_loo leave-one-out"), 78, GOLDEN_TOL, "t2_loo leave-one-out")
+    r_squared = re.search(
+        r"R\^2 con la posicion \(1/sqrt p, log p\): ([\d.]+);\s+agregando el orden angular "
+        r"\(log i_p, log e_p\): ([\d.]+)",
+        loo,
+    )
+    assert r_squared is not None, "t2_loo.txt lost its R^2 row"
+    assert_close(float(r_squared.group(1)), 0.987, GOLDEN_TOL, "R^2 with the position")
+    assert_close(float(r_squared.group(2)), 0.988, GOLDEN_TOL, "R^2 with the angular order")
+    f_test = re.search(r"prueba F del orden angular dada la posicion: F = ([\d.]+), p = ([\d.]+)", loo)
+    assert f_test is not None, "t2_loo.txt lost its F test"
+    assert_close(float(f_test.group(1)), 1.01, GOLDEN_TOL, "F of the angular order")
+    assert float(f_test.group(2)) >= 0.05, (
+        f"the angular order IS significant (p = {f_test.group(2)}): "
+        "04-bridges:1651's 'does not explain the use of any prime' would fail"
+    )
+    assert "el orden angular no explica el uso de ningun primo" in loo, (
+        "t2_loo.txt lost its articulo line"
+    )
+    assert re.search(
+        r"once the position is\s+accounted for, it does not explain the use of any prime in the correction",
+        tex,
+    ), "04-bridges.tex no longer states the leave-one-out conclusion"
+
+
+@pytest.mark.golden
+def test_euler_link_second_term_is_pinned() -> None:
+    """euler_link.py pins the second term of the Mersenne coordinate.
+
+    INV-WIT-001 §B site covered: ``04-bridges:1763`` (the second term is
+    -2.5e-4 at e = 13 and -9.7e-10 at e = 31).
+    """
+    tex = read_tex(_BRIDGES)
+    euler = read_salidas("euler_link.txt")
+
+    anchor = _first_float(euler, r"lambda_log = log 2/log phi = ([\d.]+)", "euler_link lambda_log")
+    assert_close(anchor, 1.44042009041256, GOLDEN_TOL, "euler_link lambda_log")
+    terms = {
+        int(e): float(value)
+        for e, value in re.findall(
+            r"e =\s+(\d+): sigma_\(2\^e-1\) = [\d.]+;\s+e\*lambda_log \+ log_phi\(1-2\^-e\) = "
+            r"[\d.]+;\s+segundo termino (-?[\d.]+(?:e[+-]?\d+)?)",
+            euler,
+        )
+    }
+    assert 13 in terms and 31 in terms, sorted(terms)
+    assert_close(terms[13], -0.000254, GOLDEN_TOL, "second term at e = 13")
+    assert_close(terms[31], -9.68e-10, GOLDEN_TOL, "second term at e = 31")
+    # the closed form the sentence is built on: both columns agree exactly
+    for e, sigma, closed, power in re.findall(
+        r"e =\s+(\d+): sigma_\(2\^e-1\) = ([\d.]+);\s+e\*lambda_log \+ log_phi\(1-2\^-e\) = "
+        r"([\d.]+);\s+segundo termino [\d.e+-]+;\s+phi\^sigma = ([\d.]+)",
+        euler,
+    ):
+        assert sigma == closed, f"e = {e}: sigma {sigma} != closed form {closed}"
+        assert float(power) == 2 ** int(e) - 1, f"e = {e}: phi^sigma = {power}"
+
+    claim = re.search(
+        r"the second term is \$-2\.5\\cdot10\^\{-4\}\$ at \$e=13\$ and "
+        r"\$-9\.7\\cdot10\^\{-10\}\$ at \$e=31\$",
+        tex,
+    )
+    assert claim is not None, "the euler_link.py figures of 04-bridges.tex not found"
+    recorded = _articulo_line(euler, "euler_link.txt")
+    for figure in ("-2.5e-4 (e = 13)", "-9.7e-10 (e = 31)"):
+        assert figure in recorded, f"euler_link.txt does not record {figure}"
+    # the run's printed terms round to the manuscript's figures
+    assert abs(terms[13] - (-2.5e-4)) <= 0.05e-4, terms[13]
+    assert abs(terms[31] - (-9.7e-10)) <= 0.05e-10, terms[31]
+
+
+@pytest.mark.golden
+def test_zeroside_orbit_agrees_with_the_zeros() -> None:
+    """zeroside.py pins the orbit computed from primes and from the zeros.
+
+    INV-WIT-001 §B site covered: ``04-bridges:1825`` (the two computations
+    agree to 1e-8 for k = 0..12; the zeros above 500 contribute at most
+    9.6e-7).
+    """
+    tex = read_tex(_BRIDGES)
+    zeroside = read_salidas("zeroside.txt")
+
+    tail = _first_float(zeroside, r"cota de la cola \(gamma > 500\): ([\d.]+e-\d+)", "zeroside tail bound")
+    assert_close(tail, 9.54e-7, GOLDEN_TOL, "zeroside tail bound")
+    rows = re.findall(
+        r"^\s+(\d+)\s+\+?(-?[\d.]+)\s+\+?(-?[\d.]+)\s+([+-][\d.]+e[+-]\d+)\s*$",
+        zeroside,
+        re.M,
+    )
+    assert [int(row[0]) for row in rows] == list(range(13)), rows
+    differences = [abs(float(row[3])) for row in rows]
+    max_difference = max(differences)
+    assert_close(max_difference, 4.1e-8, GOLDEN_TOL, "zeroside max difference")
+    claim = re.search(
+        r"the\s+orbit computed from the primes and computed from the \$397\$ zeros below height\s+"
+        r"\$500\$ agree to\s+\$10\^\{-8\}\$ for \$k=0,\\dots,12\$",
+        tex,
+    )
+    assert claim is not None, "the zeroside.py claim of 04-bridges.tex not found"
+    recorded = _articulo_line(zeroside, "zeroside.txt")
+    assert "articulo 9.6e-7" in recorded or "articulo: 1e-8" in recorded, (
+        f"zeroside.txt does not record the manuscript's figures: {recorded}"
+    )
+    # the tail bound the sentence prints is a bound the run satisfies
+    claim_tail = re.search(r"can contribute at most \$([\d.]+)\\cdot10\^\{-7\}\$", tex)
+    assert claim_tail is not None, "the zeroside tail bound of 04-bridges.tex not found"
+    assert tail <= float(claim_tail.group(1)) * 1e-7, (
+        f"the tail {tail} exceeds the printed {claim_tail.group(1)}e-7"
+    )
+    # NOTE: the committed run's worst difference (4.1e-8) is four times the
+    # 1e-8 the manuscript prints from the article — the artifact records both
+    # figures side by side, and this test pins them rather than hiding the gap.
+    assert "articulo: 1e-8" in zeroside, "zeroside.txt lost its articulo record"
+
+
 # <<<APPEND>>>
