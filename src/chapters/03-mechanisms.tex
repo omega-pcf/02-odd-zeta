@@ -421,8 +421,9 @@ half-side; and $\norm{\Omega}=\norm{P}\cdot\norm{C}\cdot\norm{F}$.
 \end{equation}
 which is also the common modulus $|\lambda_k|=|2|_2$ of the triad.
 \end{proposition}
-\leanline{\tier[norm\_Omega\_is\_half]{P}; \LeanCW{normP\_eq\_tan}, \LeanCW{normF\_eq\_cos},
-\LeanCW{Omega\_eigenvalues} \tier{P}\cite{gonzalez26cw}.}
+\witness{P}{norm\_Omega\_is\_half}
+\LeanCW{normP\_eq\_tan}, \LeanCW{normF\_eq\_cos},
+\LeanCW{Omega\_eigenvalues} \tier{P}\cite{gonzalez26cw}.
 
 \begin{proof}
 $\norm{C}=|\lambda_0|/R=1$.  $\norm{F}=\tfrac12|\zeta_3-1|=\sin(\pi/3)=\tfrac{\sqrt3}2$.  The apothem is
@@ -1509,13 +1510,12 @@ Let $n\geq3$ and let $\mathfrak p$ be a prime of $\Zphi$ of clock $n$ over $p\ne
     most $\tfrac16$, and the fibre $\{11,19\}$ at most $\tfrac56$.
 \end{enumerate}
 \end{proposition}
-\leanline{\LeanInline{FibrasPorNivel.split\_level\_four},
-\LeanInline{FibrasPorNivel.split\_level\_twenty}, \LeanInline{FibrasPorNivel.inert\_level\_four},
-\LeanInline{FibrasPorNivel.inert\_one\_mod\_four}, \LeanInline{FibrasPorNivel.inert\_not\_at\_five} (i)
-\tier{P}; (ii), the first statement, \tier[PasosDelTexto.palindromic\_norm, PasosDelTexto.norm\_odd\_level\_doubled]{P}\ given that $\Phi_m$ is palindromic and $\Phi_{2m}(x)=\Phi_m(-x)$ for odd $m\ge3$, the second, proved in the text; (iii) from $\sum_{m\leq x,\ m\ \mathrm{odd}}\phi(m)=2x^2/\pi^2+O(x\log x)$;
+(i)
+\witness{P}{FibrasPorNivel.split\_level\_four, FibrasPorNivel.split\_level\_twenty, FibrasPorNivel.inert\_level\_four, FibrasPorNivel.inert\_one\_mod\_four, FibrasPorNivel.inert\_not\_at\_five}
+(ii), the first statement, \tier[PasosDelTexto.palindromic\_norm, PasosDelTexto.norm\_odd\_level\_doubled]{P}\ given that $\Phi_m$ is palindromic and $\Phi_{2m}(x)=\Phi_m(-x)$ for odd $m\ge3$, the second, proved in the text; (iii) from $\sum_{m\leq x,\ m\ \mathrm{odd}}\phi(m)=2x^2/\pi^2+O(x\log x)$;
 (i)--(iii) on every prime of every level $n\leq420$; there the inert primes carry between $0.066$ and
 $0.084$ of the mass and the kernel between $0.47$ and $0.56$, with no stable value
-(\texttt{retro94.py}).} % pending(D7)
+(\texttt{retro94.py}). % pending(D7)
 
 \begin{proof}
 (i) If $p$ splits, $n\mid p-1$; if $p$ is inert, $\golden^{p+1}=N(\golden)=-1$ in the residue field, so
@@ -1584,13 +1584,13 @@ So each layer of the index is read by a
 power-residue symbol of $\golden$: the quadratic for
 $d=2$, the cubic for $d=3$, the quintic for $d=5$.
 \end{proposition}
-\leanline{\tier[W4Isometria.split\_layer\_law, W4Isometria.inert\_layer\_law, W4Isometria.even\_index\_iff\_squares, W4Isometria.even\_index\_indicator]{P};
+\witness{P}{W4Isometria.split\_layer\_law, W4Isometria.inert\_layer\_law, W4Isometria.even\_index\_iff\_squares, W4Isometria.even\_index\_indicator}
 (iii), stated as \LeanInline{W4Isometria.KernelLaw}, open, follows from (ii) since $p\equiv1\pmod4$ there: $x^4-x^2-1$ generates the ring class field of
 $\Z[\sqrt{-20}]$, and $p=a^2+20b^2$ exactly when
 $p$ splits completely in it
 \cite[Thm.~9.2, Thm.~9.4]{cox13}; checked on
 the $555$ primes below $20000$ in those classes
-\tier{N}.}
+\tier{N}.
 
 \begin{proposition}[The golden ratio names the fifth roots of unity]\label{prop:phi-names-mu5}
 Let $p\equiv1\pmod5$ and let $\mathfrak p=(p,\golden-r)$ be a prime of $\Zphi$ above $p$.
@@ -1648,20 +1648,13 @@ Let $p\neq2,3,5$.
     $a_p=(\tfrac rp)+(\tfrac{1-r}p)$ is $2$ if $2\mid i_p$ and $-2$ otherwise: $a_p=4\bigl([2\mid i_p]-\tfrac12\bigr)$.
 \end{enumerate}
 \end{proposition}
-\leanline{\LeanInline{W4Isometria.HiperbolaRelojTamano.sum\_log\_le\_log\_phi},
-\LeanInline{W4Isometria.HiperbolaRelojTamano.tail\_bound\_phi\_explicit} (i);
-\LeanInline{W4Isometria.HiperbolaRelojTamano.large\_index\_clock} (ii);
-\LeanInline{W4Isometria.GeometriaDelPoligono.card\_large\_index},
-\LeanInline{W4Isometria.GeometriaDelPoligono.card\_large\_index\_le},
-\LeanInline{W4Isometria.CapasDelPoligono.card\_layer},
-\LeanInline{W4Isometria.CapasDelPoligono.layer\_iff} (iii);
-\LeanInline{W4Isometria.ReduccionAlReloj.phi\_pow\_one\_split},
-\LeanInline{W4Isometria.ReduccionAlReloj.level80\_coeff\_in},
-\LeanInline{W4Isometria.ReduccionAlReloj.level80\_coeff\_out} (iv) \tier{P}; the consequence
+(i), (ii), (iii), (iv)
+\witness{P}{W4Isometria.HiperbolaRelojTamano.sum\_log\_le\_log\_phi, W4Isometria.HiperbolaRelojTamano.tail\_bound\_phi\_explicit, W4Isometria.HiperbolaRelojTamano.large\_index\_clock, W4Isometria.GeometriaDelPoligono.card\_large\_index, W4Isometria.GeometriaDelPoligono.card\_large\_index\_le, W4Isometria.CapasDelPoligono.card\_layer, W4Isometria.CapasDelPoligono.layer\_iff, W4Isometria.ReduccionAlReloj.phi\_pow\_one\_split, W4Isometria.ReduccionAlReloj.level80\_coeff\_in, W4Isometria.ReduccionAlReloj.level80\_coeff\_out}
+the consequence
 in (ii) from the two statements, \tier[PasosDelTexto.hyperbola, PasosDelTexto.hyperbola\_sqrt]{P}.  Over the $78\,495$ primes $7\leq p\leq10^6$, $N_p\leq2(p+1)$
 in all, and the primes of index above $X^{3/4}$ have mass $0$ at $X=10^6$, against the
 bound $1.00\sqrt X$ that the tower gives
-(\texttt{v28\_hiperbola\_reloj\_tamano.py}).} % pending(D7)
+(\texttt{v28\_hiperbola\_reloj\_tamano.py}). % pending(D7)
 
 \begin{remark}[The layers of the index as $L$-functions]\label{rmk:layers-L}
 The three power-residue symbols of \cref{prop:phi-layers} reach
@@ -2116,15 +2109,12 @@ the Eisenstein polynomial $E(u)=u^2-5$, generating the ideal $I=(E)$.
     $L(1,\chiv)=2\log\golden/\sqrt5$ \tier[\testref{test\_l\_one\_chi5\_digamma\_value}]{N} (\cref{thm:L1}): the two regulators of $\Q(\sqrt5)$ at $s=1$.
 \end{enumerate}
 \end{remark}
-\leanline{\LeanInline{F1PaperSixty.bk\_delta\_E}, \LeanInline{F1PaperSixty.bk\_E\_distinguished}
-(i), \LeanInline{F1PaperSixty.bk\_special\_fiber\_is\_delta5} (ii),
-\LeanInline{F1PaperSixty.bk\_frobenius\_defect\_is\_tau\_sq} (iii),
-\LeanInline{F1PaperSixty.fontaine\_bound\_saturated} (iv, the arithmetic),
-\LeanInline{F1PaperSixty.phi\_four\_kisin\_class}, \LeanInline{F1PaperSixty.kisin\_classes\_breaks}
-(v, the arithmetic), \LeanInline{F1PaperSixty.leopoldt\_unit} (vi) \tier{P}; the prism, the
+(i), (ii), (iii), (iv, the arithmetic), (v, the arithmetic), (vi)
+\witness{P}{F1PaperSixty.bk\_delta\_E, F1PaperSixty.bk\_E\_distinguished, F1PaperSixty.bk\_special\_fiber\_is\_delta5, F1PaperSixty.bk\_frobenius\_defect\_is\_tau\_sq, F1PaperSixty.fontaine\_bound\_saturated, F1PaperSixty.phi\_four\_kisin\_class, F1PaperSixty.kisin\_classes\_breaks, F1PaperSixty.leopoldt\_unit}
+the prism, the
 breaks, the Kisin classes and Leopoldt's formula; the cokernel of (v) computed up to degree
 $33$, and $L_5(1,\chiv)$ and $2\log_5\golden/\sqrt5$ both $\equiv557\pmod{5^4}$ against the
-Kubota--Leopoldt interpolation (\texttt{kisin.py}) \tier{N}.}
+Kubota--Leopoldt interpolation (\texttt{kisin.py}) \tier{N}.
 
 % ---------------------------------------------------------------------
 \subsection{The factorisation and the odd zeta values}\label{sec:factorisation}
@@ -2979,11 +2969,13 @@ Let $\Lambda(s,\chiv)=(5/\pi)^{s/2}\,\Gamma(s/2)\,L(s,\chiv)$ be the completed $
     pentagonal points $a/5$, where $|2\cos(\pi a/5)|$ is $\golden$ or $\golden^{-1}$.
 \end{enumerate}
 \end{proposition}
-\leanline{\tier[F1v2.zeta\_values\_in\_base\_phi, F1v2.anchor\_in\_phi, F1v2.sqrt5\_in\_phi, F1v2.pi\_and\_two\_in\_phi, F1v2.zeta\_zero\_in\_phi, F1v2.even\_zeta\_in\_phi, F1v2.even\_L\_in\_phi, F1v2.L2\_L4\_in\_phi]{P}; the
+\witness{P}{F1v2.zeta\_values\_in\_base\_phi, F1v2.anchor\_in\_phi, F1v2.sqrt5\_in\_phi, F1v2.pi\_and\_two\_in\_phi, F1v2.zeta\_zero\_in\_phi, F1v2.even\_zeta\_in\_phi, F1v2.even\_L\_in\_phi, F1v2.L2\_L4\_in\_phi}
+the
 anchor \LeanInline{anchor\_is\_a\_crossed\_identity} (given the values of the anchor,
 stated as \LeanInline{LOneIsTheAnchor}),
-\tier[sqrt\_five\_from\_phi, F1CW.pi\_eq\_five\_arccos, mersenne\_bridge, F1CW.even\_zeta\_bernoulli, F1CW.norm\_cosine\_phi]{P}; the class-number formula and the closed forms of
-$L(2,\chiv)$, $L(4,\chiv)$ \tier{N}.}
+\witness{P}{sqrt\_five\_from\_phi, F1CW.pi\_eq\_five\_arccos, mersenne\_bridge, F1CW.even\_zeta\_bernoulli, F1CW.norm\_cosine\_phi}
+the class-number formula and the closed forms of
+$L(2,\chiv)$, $L(4,\chiv)$ \tier{N}.
 
 \begin{proof}
 (i) $2\log\golden=\log\golden^2=\log(\golden+1)$; $\Lambda(1,\chiv)=(5/\pi)^{1/2}\Gamma(\tfrac12)L(1,\chiv)=\sqrt5\,L(1,\chiv)$,
