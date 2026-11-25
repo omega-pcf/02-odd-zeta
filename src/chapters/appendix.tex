@@ -41,8 +41,8 @@ Amplitude of clause (ii) & \texttt{W4Isometria.pair\_defect}, \texttt{amplitude\
 Second step of the closure, in the form of the clock & \texttt{F1PaperClosureClock.ClockLayerEnergyBounded}; \texttt{family\_energy\_of\_clock\_layers} \tier{P}& New (\cref{conj:closure,rmk:closure-status}).\\
 W3 on the angles of $\golden$ & \texttt{F1PaperClosureClock.clock\_angles\_W3\_W4} & New (\cref{ssec:bridge-boosts}).\\
 
-Window $L\le1$, $Q\ge0.0445\|f\|^2$ & \texttt{weil\_certificates/verify\_iv.py} & Interval arithmetic; supersedes the double-precision $0.0431$.\\ % pending(D7)
-Windows $L\le1.1,1.2,1.3$ & \texttt{weil\_certificates/op\_rig\_validated.py} & Validated numerics, eigenvalue verified by Cholesky; margins $0.0261$, $0.0077$, $0.0027$.\\ % pending(D7)
+Window $L\le1$, $Q\ge0.0445\|f\|^2$ & \texttt{weil\_certificates/verify\_iv.py} & Interval arithmetic; supersedes the double-precision $0.0431$.\\
+Windows $L\le1.1,1.2,1.3$ & \texttt{weil\_certificates/op\_rig\_validated.py} & Validated numerics, eigenvalue verified by Cholesky; margins $0.0261$, $0.0077$, $0.0027$.\\
 Prismatic route to the closure & --- & \cref{conj:prismatic-route}; its clauses' proved parts are listed with it.\\
 $G$ is the quotient of $\Zst$ by its squares: $\ker G=\{1,9\}$ & \texttt{F1PaperNew.G\_kernel\_eq\_squares}, \texttt{squares\_of\_units\_twenty} & \cref{prop:G}\\
 The $n$-th power residue symbol of $\golden$ at a split $p$ is the image of its angular part in $\mu_n$ & \texttt{F1PaperNew.units\_pow\_iff}, \texttt{phi\_residue\_symbol} & \cref{prop:phi-residue}\\
@@ -94,10 +94,10 @@ Units of $\mathbb Z[\varphi]$ are $\pm\varphi^k$ & \texttt{unit\_is\_a\_power\_o
 Frobenius eigenvalue on $\sqrt5$ & \texttt{F1FrobeniusEigen.frobenius\_eigenvalue\_on\_sqrt5}, \texttt{euler\_factor\_is\_char\_poly} & The Euler factor is $\det(1-tM_p)$.\\
 Explicit formula for $L(s,\chi_5)$ & \texttt{F1WeilFunctional.ExplicitFormulaChi5}, \texttt{prime\_side\_is\_frobenius\_trace} & Checked numerically to $10^{-18}$ with 40 zeros \tier{N}.\\
 Weil positivity (full) & \texttt{positivity\_is\_a\_prime\_side\_bound} & A bound on the Frobenius-trace side by the archimedean one.\\
-Semilocal positivity & \texttt{weil\_window\_chi5.py} & Archimedean alone up to $L=0.9251$; with $\chi_5(2)=+1$ it fails from $L\approx0.9$.\\ % pending(D7)
+Semilocal positivity & \texttt{weil\_window\_chi5.py} & Archimedean alone up to $L=0.9251$; with $\chi_5(2)=+1$ it fails from $L\approx0.9$.\\
 First window, $L\le0.7447$ & \texttt{F1v2.first\_window\_integral} and its steps & $m(\log2)=0.0841$.\\
-Windows $L\le1$ and $L\le1.3$ & \texttt{weil\_certificates/} & Margins $0.0445$ (interval arithmetic) and $0.0027$ (validated numerics, verified Cholesky).\\ % pending(D7)
-Envelope and fluctuation & \texttt{envelope.py}, \texttt{tstar.py} & $\gamma_n=E^{-1}(n-S(\gamma_n))$, 40 zeros.\\ % pending(D7)
+Windows $L\le1$ and $L\le1.3$ & \texttt{weil\_certificates/} & Margins $0.0445$ (interval arithmetic) and $0.0027$ (validated numerics, verified Cholesky).\\
+Envelope and fluctuation & \texttt{envelope.py}, \texttt{tstar.py} & $\gamma_n=E^{-1}(n-S(\gamma_n))$, 40 zeros.\\
 Integrality of the trace with $t<3$ & \texttt{trace\_integer\_plus\_bound} & Closes link (iii) without the tower.\\
 $r\in\mathbb Q(\sqrt5)$, $t\in\mathbb Z\Rightarrow r=\varphi^k$ & \texttt{F1v2.arrowB\_full} & The hypothesis on the field is needed: $2+\sqrt3$ has trace $4$.\\
 \texttt{UnitStructure} (M12) & \texttt{F1v2.arrowB\_full} & It omitted $r\in\mathbb Q(\sqrt5)$.\\
@@ -128,10 +128,10 @@ The fibres of $G$ on the levels of the clock & \texttt{FibrasPorNivel}, \texttt{
 Free Klein orbits and the inertia index & \texttt{OrbitaLibre.quadruple\_form}, \texttt{even\_part}, \texttt{odd\_part} & New (\cref{prop:free-orbit-index}); completes \cref{prop:bridge-boosts}(ii).\\
 (W4) is (W3) on the planes of the orbit; half period & \texttt{W4DeW3}, \texttt{ParidadesJuntas}, \texttt{MedioPeriodo} & New (\cref{prop:W4-from-W3}); (W4) for every $k$ remains open.\\
 The mate without the reality of the character & \texttt{MateSinG.closed\_under\_mate\_of\_fe\_dual} & New (\cref{rmk:mate-without-G}).\\
-Davenport--Heilbronn as a test of routes & \texttt{retro99.py}, \texttt{dh\_logderiv.py} & New (\cref{ssec:two-sides}).\\ % pending(D7)
+Davenport--Heilbronn as a test of routes & \texttt{retro99.py}, \texttt{dh\_logderiv.py} & New (\cref{ssec:two-sides}).\\
 What an operator of the level does not separate & \texttt{PCFGranularity}, \texttt{ObservablesDelNivel}, \texttt{FibraYReloj} & New (\cref{prop:level-operators}); brings in the content of the granularity module.\\
 The two faces of the Fibonacci dynamics: periodic on the torsion, mixing on the characters & \texttt{DosCarasFibonacci}, \texttt{PeriodicasSol} & New (\cref{prop:two-faces}).\\
-What a symmetry shows in a spectrum; the spacings of the zeros & \texttt{EstructuraEnGUE}, \texttt{retro105.py} & New (\cref{prop:symmetry-spectrum}, \cref{ssec:envelope-fluctuation}).\\ % pending(D7)
+What a symmetry shows in a spectrum; the spacings of the zeros & \texttt{EstructuraEnGUE}, \texttt{retro105.py} & New (\cref{prop:symmetry-spectrum}, \cref{ssec:envelope-fluctuation}).\\
 \midrule\multicolumn{3}{l}{\emph{Statements of the body not listed above, with the declarations the body gives}}\\\midrule
 The constraint of the Primitive Structure, $\tfrac12$ the only positive real part of $\OmH$; $G$ a surjective homomorphism & \texttt{positive\_spectral\_half}, \texttt{G\_surj} & \cref{sec:objective}.\\
 The four requirements of an operator & \texttt{four\_requirements} & \cref{ssec:four-requirements}.\\
@@ -179,7 +179,7 @@ $\Frob_p$ is the identity at split primes and $\sigma$ at inert ones & \texttt{\
 The classification needs base $20$ & \texttt{base20\_bijection}, \texttt{decoration\_matches\_G}, \texttt{off\_diagonal\_inaccessible}, \dots & \cref{prop:base-twenty}.\\
 The angles as cyclotomic norms & \texttt{W4Isometria.conductor\_cyclotomic\_norms}, \texttt{F1PaperSixty.phi\_clock\_identity}, \texttt{F1PaperSixty.phi\_clock\_exact}, \dots & \cref{rmk:angles-cyclotomic}.\\
 The kernel of $G$ leaves the $2$-adic angular part free; its order is the contraction factor & \texttt{F1PCFUnified.contraction\_is\_kernel} & After \cref{prop:class-angular}.\\
-The golden ratio names the fifth roots of unity & \texttt{PasosDelTexto.fifth\_root\_trace}, \texttt{PasosDelTexto.second\_trace}, \texttt{PasosDelTexto.pair\_from\_trace}, \dots, \texttt{retro78.py} & \cref{prop:phi-names-mu5}.\\ % pending(D7)
+The golden ratio names the fifth roots of unity & \texttt{PasosDelTexto.fifth\_root\_trace}, \texttt{PasosDelTexto.second\_trace}, \texttt{PasosDelTexto.pair\_from\_trace}, \dots, \texttt{retro78.py} & \cref{prop:phi-names-mu5}.\\
 The two involutions at the primes: the class $9$ and the conjugation by the classes with $\chiv=-1$ & \texttt{RelojTres.class\_nine}, \texttt{RelojTres.classes\_that\_conjugate}, \texttt{TodoEnLean.class\_nine\_fixes\_phi} & After \cref{prop:phi-names-mu5}.\\
 Ideals of norm $n$; split primes of density $\tfrac12$ & \texttt{G\_pi2\_is\_chi5} & \cref{sec:dedekind}.\\
 The degree formula and the norms of the prime ideals of $\OK$ & \texttt{F1CW.degree\_formula\_K}, \texttt{F1CW.ideal\_norm\_values\_K}, \texttt{F1CW.euler\_from\_ideals\_K} & \cref{sec:dedekind}.\\
@@ -194,15 +194,15 @@ Dedekind factorisation as natural isomorphism & \texttt{dedekind\_factorisation}
 Fundamental formula & \texttt{anchor\_is\_a\_crossed\_identity} & \cref{thm:L1}.\\
 $L(1,\chiv)$ by Gauss--Lerch & \texttt{F1OZ.lerch\_arith} & After \cref{thm:L1}.\\
 The local Dedekind factorisation at the three kinds of prime & \texttt{F1CW.local\_dedekind\_ramified\_K}, \texttt{F1CW.local\_dedekind\_split\_K}, \texttt{F1CW.local\_dedekind\_inert\_K} & \cref{sec:factorisation}.\\
-Generalised Bernoulli values $B_{2k,\chiv}$, $k\le4$ & \texttt{oz\_carried.py} & \cref{ssec:odd-zeta}.\\ % pending(D7)
+Generalised Bernoulli values $B_{2k,\chiv}$, $k\le4$ & \texttt{oz\_carried.py} & \cref{ssec:odd-zeta}.\\
 The right-hand side of the determination built from the pentagon; the even values in $\Q\,\pi^{2k}$ & \texttt{F1CW.even\_zeta\_bernoulli}, \texttt{F1CW.bernoulli\_eval\_rational} & After \cref{thm:odd-zeta}.\\
-Polylogarithmic form; distances on the circle; the conditional on algebraicity & \texttt{F1OZ.fourier\_projection}, \texttt{F1OZ.normSq\_one\_sub\_zeta5}, \texttt{F1OZ.normSq\_one\_sub\_zeta5\_sq}, \texttt{F1OZ.baker\_ratio}, \texttt{PasosDelTexto.algebraic\_scale}, \texttt{oz\_carried.py} & \cref{rmk:nature-L}.\\ % pending(D7)
+Polylogarithmic form; distances on the circle; the conditional on algebraicity & \texttt{F1OZ.fourier\_projection}, \texttt{F1OZ.normSq\_one\_sub\_zeta5}, \texttt{F1OZ.normSq\_one\_sub\_zeta5\_sq}, \texttt{F1OZ.baker\_ratio}, \texttt{PasosDelTexto.algebraic\_scale}, \texttt{oz\_carried.py} & \cref{rmk:nature-L}.\\
 $L(2k,\chiv)$ and $\sum\chiv(a)\mathrm{Li}_{2k}(\zeta_5^a)$ transcendental & \texttt{F1OZ.even\_value\_transcendental} & \cref{rmk:nature-L}; Lindemann for $\pi$ as input.\\
-$T_K=5L(1,\chiv)L(1,\chi_4\chiv)$; $T_K$ and $\zeta_K(2k+1)$ & \texttt{F1OZ.period\_from\_the\_chi5\_fibre}, \texttt{degenerate\_orbits\_are\_transversals}, \texttt{oz\_carried.py} & \cref{rmk:TK-odd}.\\ % pending(D7)
+$T_K=5L(1,\chiv)L(1,\chi_4\chiv)$; $T_K$ and $\zeta_K(2k+1)$ & \texttt{F1OZ.period\_from\_the\_chi5\_fibre}, \texttt{degenerate\_orbits\_are\_transversals}, \texttt{oz\_carried.py} & \cref{rmk:TK-odd}.\\
 $G$ and the motivic Galois group & --- & \cref{rmk:G-motivic}.\\
 Hurwitz representation of $L(s,\chi_5)$ & \texttt{hurwitz\_representation\_L\_chi5} & \cref{thm:hurwitz}.\\
 $\sum\chiv(a)\psi(a/5)=-2\sqrt5\log\golden$ & \texttt{F1OZ.digamma\_sum} & \cref{thm:hurwitz}.\\
-Local factors at $s=3$; $\zeta_K(3)$ and $L(3,\chiv)$ & \texttt{F1OZ.local\_factors\_at\_three}, \texttt{oz\_carried.py} & \cref{ex:zeta3}.\\ % pending(D7)
+Local factors at $s=3$; $\zeta_K(3)$ and $L(3,\chiv)$ & \texttt{F1OZ.local\_factors\_at\_three}, \texttt{oz\_carried.py} & \cref{ex:zeta3}.\\
 The binary tower inside the golden one; $2$ is not a power of $\golden$ & \texttt{mersenne\_bridge}, \texttt{binary\_tower\_inside\_golden}, \texttt{lambda\_is\_not\_an\_integer} & \cref{prop:mersenne-bridge}.\\
 $\log2=\log|\ker G|$, the kernel exactly $\{1,9\}$ & \texttt{kernel\_is\_exactly\_one\_nine} & After \cref{prop:mersenne-bridge}.\\
 The anchor is not special to $\golden$; counting in base $\golden$ is counting in base $2$ rescaled & \texttt{modulus\_transports}, \texttt{half\_three\_roles}, \texttt{density\_exact} & After \cref{prop:mersenne-bridge}.\\
@@ -256,7 +256,7 @@ The envelope on and off the line; the two separations & \texttt{off\_line\_L\_en
 Three proved facts aligned with Weil's proof & \texttt{weil\_analogy}, \texttt{golden\_group\_exponent\_two}, \texttt{G\_genus\_zero} & \cref{ssec:weil-analogy}.\\
 Split and inert as orbits of the Klein action on $\Zst$ & \texttt{klein\_acts\_on\_Z20\_by\_two\_involutions}, \texttt{fixed\_points\_are\_two\_torsion}, \texttt{free\_orbit\_eq\_order\_four}, \dots & \cref{prop:split-inert-orbits}.\\
 The only operation on the coordinates of the zeros is the inversion & \texttt{the\_available\_mechanisms\_are\_of\_order\_two} & \cref{ssec:weil-route}.\\
-The prime side split by the Frobenius, and the numerics of the bound & \texttt{prime\_side\_splits\_by\_frobenius}, \texttt{weil\_window\_chi5.py} & \cref{rmk:saturation}.\\ % pending(D7)
+The prime side split by the Frobenius, and the numerics of the bound & \texttt{prime\_side\_splits\_by\_frobenius}, \texttt{weil\_window\_chi5.py} & \cref{rmk:saturation}.\\
 The forms of the open statement (table) & \texttt{landing\_iff\_E}, \texttt{face\_coordinate\_iff\_GRH}, \texttt{liMap\_on\_unit\_circle\_iff}, \texttt{E\_iff\_no\_shared\_ordinate\_of\_fe\_rc}, \dots & \cref{ssec:core-forms}.\\
 The forms linked without passing through \Ecore & \texttt{hasDegree\_gives\_monomial}, \texttt{GDS\_gives\_routeB} & \cref{ssec:core-forms}.\\
 The step as a statement about the coordinate alone & \texttt{degenerate\_iff\_valuation\_zero}, \texttt{monomial\_iff\_one\_under\_confinement}, \texttt{step\_six\_membership\_would\_give\_the\_power}, \dots & \cref{prop:step-coordinate}.\\
@@ -273,7 +273,7 @@ The archimedean form of $\zeta_K$, explicitly; $D\ge0$ & \texttt{F1PaperTorus.au
 The first windows over the whole function space: the low-frequency fraction and Lehmann's bounds & \texttt{F1PaperTorus.lowFrequencyFraction\_nonneg}, \texttt{F1PaperTorus.LehmannBounds} & \cref{ssec:golden-field}.\\
 The positions, from the structure & \texttt{F1PaperClosure.heights\_from\_structure}, \texttt{F1PaperClosure.the\_height\_is\_the\_structure\_up\_to\_the\_correction}, \texttt{envelope\_splits}, \dots & \cref{prop:positions}.\\
 Membership of the primes, entry of the zeros, proved & \texttt{F1PaperClosure.the\_primes\_belong}, \texttt{F1PaperClosure.the\_zeros\_belong}, \texttt{F1PaperClosure.what\_is\_discharged}, \dots & \cref{prop:membership-proved}.\\
-The prime side in a window, given by the clock & \texttt{CierrePorAltura.closure\_support}, \texttt{PasosDelTexto.window\_split}, \texttt{PasosDelTexto.window\_inert}, \texttt{retro66.py}, \texttt{retro67.py} & \cref{rmk:closure-window}.\\ % pending(D7)
+The prime side in a window, given by the clock & \texttt{CierrePorAltura.closure\_support}, \texttt{PasosDelTexto.window\_split}, \texttt{PasosDelTexto.window\_inert}, \texttt{retro66.py}, \texttt{retro67.py} & \cref{rmk:closure-window}.\\
 The height fixes the phase, the isometry the modulus & \texttt{F1PaperClosure.no\_shared\_ordinate\_of\_injective\_heights}, \texttt{F1PaperClosure.the\_line\_from\_injective\_heights}, \texttt{F1PaperClosure.eigenvalue\_of\_isometry\_norm\_one}, \dots & \cref{prop:phase-modulus}.\\
 The index as a degeneracy & \texttt{IndiceComoDegeneracion.count\_residue}, \texttt{IndiceComoDegeneracion.sigma\_phase}, \texttt{PasosDelTexto.fib\_five\_mul} & \cref{prop:index-degeneracy}.\\
 (W4) follows from the line, given the expansion of the orbit & \texttt{W4Isometria.orbits\_match\_of\_line}, \texttt{W4Isometria.W4\_of\_orbits\_match} & After \cref{prop:euler-tower}.\\
@@ -489,20 +489,20 @@ against the Mathlib version of the build: \texttt{add\_pow\_prime\_eq},
 \texttt{mul\_right\_cancel}$_0$, \texttt{norm\_ne\_zero\_iff}, \texttt{DirichletCharacter.LFunction\_eq\_LSeries}, \texttt{DirichletCharacter.LFunction\_ne\_zero\_of\_one\_le\_re}, \texttt{Complex.natCast\_re}, \texttt{AdjoinRoot.mk\_surjective}, \texttt{AdjoinRoot.mk\_eq\_zero}, \texttt{AdjoinRoot.ringHom\_ext}, \texttt{Polynomial.map\_ofNat}, \texttt{Polynomial.Monic.natDegree\_map}, \texttt{Polynomial.natDegree\_eq\_zero\_of\_isUnit}, \texttt{CharTwo.two\_eq\_zero}, the tactics \texttt{monicity!} and \texttt{compute\_degree!}, and the elaborator \texttt{type\_of\%}.
 
 \subsection{Numerical scripts}
-\texttt{verify\_weil\_chi5.py} (explicit formula, $10^{-18}$), % pending(D7)
-\texttt{weil\_window\_chi5.py} (semilocal eigenvalues), % pending(D7)
-\texttt{weil\_window\_rigorous\_check.py} (constants of % pending(D7)
-\cref{thm:first-window}), \texttt{weil\_certificates/} (certificates of % pending(D7)
-\cref{thm:second-window,thm:third-window}: \texttt{cert.py}, \texttt{rigW.py}, % pending(D7)
-\texttt{opcert\_rig.py}; the rigorous replays \texttt{verify\_iv.py}, in interval arithmetic, and \texttt{op\_rig\_validated.py}, validated with a verified eigenvalue bound), \texttt{zeroside\_check.py} (the minimum of the $L=1$ window % pending(D7)
-from the zero side), \texttt{envelope.py} and \texttt{tstar.py} % pending(D7)
+\texttt{verify\_weil\_chi5.py} (explicit formula, $10^{-18}$),
+\texttt{weil\_window\_chi5.py} (semilocal eigenvalues),
+\texttt{weil\_window\_rigorous\_check.py} (constants of
+\cref{thm:first-window}), \texttt{weil\_certificates/} (certificates of
+\cref{thm:second-window,thm:third-window}: \texttt{cert.py}, \texttt{rigW.py},
+\texttt{opcert\_rig.py}; the rigorous replays \texttt{verify\_iv.py}, in interval arithmetic, and \texttt{op\_rig\_validated.py}, validated with a verified eigenvalue bound), \texttt{zeroside\_check.py} (the minimum of the $L=1$ window
+from the zero side), \texttt{envelope.py} and \texttt{tstar.py}
 (\cref{prop:envelope-exact}); and, in \texttt{hipotesis/pruebas/}, the scripts of \cref{sec:results-verdict}:
 \texttt{testGeom.py}, \texttt{testB1b.py}, \texttt{fejer\_check.py}, \texttt{balance.py},
 \texttt{fibres.py}, \texttt{castelnuovo.py}, \texttt{gram.py}, \texttt{bridge.py}, \texttt{offline.py},
 \texttt{dh.py}, \texttt{mertens341.py}, \texttt{mobius.py}, \texttt{rigorous\_chain.py},
 \texttt{rho\_interval.py}, \texttt{field\_signature.py}, \texttt{arch\_window.py},
 \texttt{w4exact.py}, \texttt{zeroside.py}, \texttt{sweep.py}, \texttt{circle\_and\_detect.py},
-\texttt{corrected\_operator.py}, \texttt{classes\_test.py}, \texttt{law\_resolution.py}, \texttt{x\_sweep.py}, \texttt{oz\_carried.py}, \texttt{teich.py}, \texttt{t1\_index.py}, \texttt{t2\_loo.py}, \texttt{euler\_link.py}, \texttt{retro93.py}, \texttt{retro94.py}, \texttt{retro99.py}, \texttt{dh\_logderiv.py}, \texttt{dh\_zeros.py}, \texttt{retro101.py}, \texttt{retro102.py}, \texttt{retro104.py}, \texttt{chi5\_zeros.py}, \texttt{retro105.py} and \texttt{retro119.py}. % pending(D7)
+\texttt{corrected\_operator.py}, \texttt{classes\_test.py}, \texttt{law\_resolution.py}, \texttt{x\_sweep.py}, \texttt{oz\_carried.py}, \texttt{teich.py}, \texttt{t1\_index.py}, \texttt{t2\_loo.py}, \texttt{euler\_link.py}, \texttt{retro93.py}, \texttt{retro94.py}, \texttt{retro99.py}, \texttt{dh\_logderiv.py}, \texttt{dh\_zeros.py}, \texttt{retro101.py}, \texttt{retro102.py}, \texttt{retro104.py}, \texttt{chi5\_zeros.py}, \texttt{retro105.py} and \texttt{retro119.py}.
 
 \section{Comparative landscape of $\mathbb{F}_1$-approaches}
 \label{app:comparison}
@@ -644,7 +644,7 @@ names.  The line-by-line correspondence of every cited name is the paper block o
 \S\ref{sec:machinery} The structure that places the zeros & Primitive Structure; new; \cref{rmk:pappus} from Primitive Structure \S2.1 and CR \cite{gonzalez26mersenne} & \texttt{PCF\_sesion\_completa}, \texttt{PCF\_unificado}, M12\\
 \S\ref{sec:topological-proof} The thread & Primitive Structure \S squeeze (restructured); new & \texttt{PCF\_unificado}, \texttt{PCF\_sesion\_completa}\\
 \S\ref{sec:results-zeros} The zero set & new & \texttt{PCF\_sesion\_completa}, M12, scripts\\
-\S\S\ref{sec:results-weil}--\ref{sec:results-verdict} Weil analogy, windows, verdict & OZ (Weil analogy); Primitive Structure (the operator); CR \cite{gonzalez26mersenne} and \cite{bhattscholze22} (\cref{prop:what-fluctuation-takes,prop:euler-tower}); new ; $\sqrt X$, the energy at every scale, the amplitude and the certified orbit from the session \texttt{W4Isometria} (\S\S55--67) and \texttt{orbita\_cert.py} & \texttt{F1\_weil\_functional}, \texttt{F1\_v2}, certificates, \texttt{F1PaperHyp}, \texttt{F1PaperTorus}, \texttt{F1PaperPending}, \texttt{F1PaperClosure}, \texttt{F1PaperPadic}, \texttt{hipotesis/pruebas}\\ % pending(D7)
+\S\S\ref{sec:results-weil}--\ref{sec:results-verdict} Weil analogy, windows, verdict & OZ (Weil analogy); Primitive Structure (the operator); CR \cite{gonzalez26mersenne} and \cite{bhattscholze22} (\cref{prop:what-fluctuation-takes,prop:euler-tower}); new ; $\sqrt X$, the energy at every scale, the amplitude and the certified orbit from the session \texttt{W4Isometria} (\S\S55--67) and \texttt{orbita\_cert.py} & \texttt{F1\_weil\_functional}, \texttt{F1\_v2}, certificates, \texttt{F1PaperHyp}, \texttt{F1PaperTorus}, \texttt{F1PaperPending}, \texttt{F1PaperClosure}, \texttt{F1PaperPadic}, \texttt{hipotesis/pruebas}\\
 \S\ref{sec:discussion} What has been demonstrated & new & ---\\
 \S\ref{sec:disc-cr} Connection with CR & CR \cite{gonzalez26mersenne}; the genealogy of the module, Primitive Structure \S2.1, CW; OZ \S6 (the genealogy of the plane) & ---\\
 \S\ref{sec:disc-hp} Connection with Primitive Structure & Primitive Structure; the way to the closure with \cite{bhattscholze22,scholze12,connesconsani26}; \S\ref{ssec:disc-binary} new & corpus (the fibres and characters of $G$)\\

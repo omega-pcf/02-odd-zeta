@@ -169,8 +169,8 @@ $233$ spacings of $L(s,\chiv)$.  The zeros of $\zeta_K=\zeta\cdot L(s,\chiv)$, t
 spacings below $0.1$ out of $388$, the smallest $0.017$, and no ordinate is shared by the two factors in this range.  So
 the Galois symmetry of order two that splits $\zeta_K$ into its two factors (\cref{eq:dedekind}) shows in its zeros as
 two sectors, as \cref{prop:symmetry-spectrum}\textup{(i)} says a commuting symmetry does; and neither $L(s,\chiv)$ nor
-$\zeta$ shows a sector, a doublet, or the multiplicity six of an operator of the level (\texttt{chi5\_zeros.py}, % pending(D7)
-\texttt{retro105.py}).  If the zeros of $L(s,\chiv)$ are the spectrum of a self-adjoint operator, the data % pending(D7)
+$\zeta$ shows a sector, a doublet, or the multiplicity six of an operator of the level (\texttt{chi5\_zeros.py},
+\texttt{retro105.py}).  If the zeros of $L(s,\chiv)$ are the spectrum of a self-adjoint operator, the data
 then make it neither an operator of the level nor an operator with a commuting symmetry of order two or six whose
 sectors are independent: the fibre, if it acts on it, acts through an operator that does not commute with its symmetry, as in
 \cref{prop:level-operators}\textup{(iv)}.
@@ -375,7 +375,7 @@ that its prime coefficients are Frobenius traces is \tier{P}%
 (\LeanInline{prime\_side\_is\_frobenius\_trace}).  $\Lambda(s,\chiv)$ is entire, so
 there are no pole terms.  The normalisation is checked numerically: with the
 $40$ zeros of height $\le80$ (first $\gamma=6.6484533447$) and Gaussian $g$,
-both sides agree to $10^{-18}$ (\texttt{verify\_weil\_chi5.py}). % pending(D7)
+both sides agree to $10^{-18}$ (\texttt{verify\_weil\_chi5.py}).
 \end{theorem}
 
 \begin{theorem}[The core as a prime-side bound]\label{thm:core-positivity}
@@ -419,13 +419,13 @@ That space is the open part of the route.
 \begin{proposition}[Semilocal positivity and the Frobenius at $2$, numerical]\label{prop:semilocal}
 Restrict the Weil form of \cref{thm:core-positivity} to test functions
 supported in $[-L/2,L/2]$ and let $\lambda_{\min}(L)$ be its smallest
-eigenvalue.  Then (\texttt{weil\_window\_chi5.py}): % pending(D7)
+eigenvalue.  Then (\texttt{weil\_window\_chi5.py}):
 \begin{enumerate}
   \item for $L<\log2$ no prime enters and the form is the archimedean one;
     archimedean positivity alone holds up to $L_c=0.9251$ and fails beyond;
   \item with the primes, $\lambda_{\min}(L)>0$ on every window computed, but it
     decays super-exponentially ($0.097$ at $L=1$, $5.3\cdot10^{-3}$ at $1.4$,
-    $\sim10^{-6}$ at $2$; \texttt{weil\_window\_chi5.py}); % pending(D7)
+    $\sim10^{-6}$ at $2$; \texttt{weil\_window\_chi5.py});
   \item if the Frobenius at $2$ is replaced by the identity ($\chiv(2)=+1$),
     positivity fails from $L\approx0.9$.
 \end{enumerate}
@@ -447,7 +447,7 @@ form of $L(s,\chiv)$ satisfies
 the second term only when $L>\log2$.  At $L=\log2$, $m=0.0841$.
 \tier[F1v2.first\_window\_integral, F1v2.dirichlet\_localisation, F1v2.midpoint\_bound, F1v2.potential\_integral\_bound, F1v2.absorption]{P}, given the explicit formula with Gauss's integral
 for the digamma function and the numerical values of the potential
-(\texttt{weil\_window\_rigorous\_check.py}); the value $\psi(\tfrac12)=-\gamma_E-2\log2$ it % pending(D7)
+(\texttt{weil\_window\_rigorous\_check.py}); the value $\psi(\tfrac12)=-\gamma_E-2\log2$ it
 uses is proved (\tier[digamma\_half\_is\_negative]{P})
 \end{theorem}
 
@@ -487,7 +487,7 @@ $Q\ge\int_{I\setminus S}f^2V+\int_S f^2\bigl(V-\frac{\log2}{\sqrt2}\bigr)\ge m(L
 
 \begin{theorem}[Positivity up to $L=1$, through the Frobenius at $2$]\label{thm:second-window}
 For every $f\in L^2(\mathbb{R})$ supported in an interval of length $L\le1$,
-the Weil form of $L(s,\chiv)$ satisfies $Q(f)\ge0.0445\,\|f\|^2$.  Computer-assisted in interval arithmetic, with outward rounding (\cref{rmk:rigour}); certificate \texttt{weil\_certificates/cert\_L1.0.json}, replay \texttt{verify\_iv.py}. % pending(D7)
+the Weil form of $L(s,\chiv)$ satisfies $Q(f)\ge0.0445\,\|f\|^2$.  Computer-assisted in interval arithmetic, with outward rounding (\cref{rmk:rigour}); certificate \texttt{weil\_certificates/cert\_L1.0.json}, replay \texttt{verify\_iv.py}.
 \end{theorem}
 
 \begin{proof}
@@ -511,13 +511,13 @@ $\psi(\tfrac14)=-\gamma_E-\frac\pi2-3\log2$ (Gauss's digamma theorem~\cite{dlmf}
 $|T''|\le M_2=\sum|a_n|\log^2n+\sum|b_i|\lambda_i^2$; with $M=M_W+M_2=67.92$, on each cell of a grid of step
 $h=\tfrac1{100}$ over $[0,600]$, $\Phi(r)\ge\min(\Phi(r_k),\Phi(r_{k+1}))-Mh^2/8$.  Evaluated in interval arithmetic with
 outward rounding, the minimum is $\ge0.04458$, and for $r\ge600$, $\Phi(r)\ge W(600)-\sum|a_n|-\sum|b_i|\ge0.04999$.
-The earlier double-precision replay (\texttt{verify\_rig.py}, Lipschitz cells) gave $0.0431$. % pending(D7)
+The earlier double-precision replay (\texttt{verify\_rig.py}, Lipschitz cells) gave $0.0431$.
 \end{proof}
 
 \begin{theorem}[Positivity up to $L=1.3$, operator form]\label{thm:third-window}
 For every $f\in L^2(\mathbb{R})$ supported in an interval of length $L\le1.3$,
 $Q(f)\ge0.0027\,\|f\|^2$; at $L\le1.2$ the margin is $0.0077$ and at $L\le1.1$,
-$0.0261$.  Computer-assisted with validated numerics: every rounding error bounded explicitly and the top eigenvalue bounded by a verified Cholesky factorisation (\cref{rmk:rigour}); \texttt{weil\_certificates/op\_rig\_validated.py}. % pending(D7)
+$0.0261$.  Computer-assisted with validated numerics: every rounding error bounded explicitly and the top eigenvalue bounded by a verified Cholesky factorisation (\cref{rmk:rigour}); \texttt{weil\_certificates/op\_rig\_validated.py}.
 \end{theorem}
 
 \begin{proof}
@@ -546,10 +546,10 @@ Three sources of error are controlled explicitly.  \emph{The archimedean weight}
 from $\Re\psi(x+iy)=\psi(x)+\sum_{k\ge0}\frac{y^2}{(k+x)((k+x)^2+y^2)}$, all of whose
 terms are positive, every partial sum is a lower bound for $W$, with
 $\psi(\tfrac14)=-\gamma_E-\frac\pi2-3\log2$; so $W$ is never evaluated by a
-library routine, only bounded below (\texttt{rigW.py}), and its monotonicity lets % pending(D7)
+library routine, only bounded below (\texttt{rigW.py}), and its monotonicity lets
 a coarse grid of such bounds serve every fine cell.  \emph{Discretisation}: the
 trigonometric part enters through its Lipschitz constant, and the midpoint quadrature of $G$ and $\eta_J$ through the bound $L^3$ on the second derivatives of $\hat\varphi_j\overline{\hat\varphi_k}$ and $|\hat\varphi_j|^2$ --- each is $\iint\varphi_j(x)\varphi_k(y)e^{-ir(x-y)}$, with $|x-y|\le L$ and $\|\varphi_j\|_1^2\le L$ --- which give errors below $4\cdot10^{-5}$.  \emph{Floating point}: an explicit margin of $10^{-9}$ per
-evaluated quantity is subtracted.  The pointwise certificate at $L=1$ is replayed in interval arithmetic with outward rounding (\texttt{verify\_iv.py}), which gives $0.0445$; no floating-point step remains in it.  The operator certificates are replayed with validated numerics (\texttt{op\_rig\_validated.py}): the accumulation of $G$, the evaluation of the $\hat\varphi_j$ (relative error below $10^{-9}$, the grid staying at least $2.8\cdot10^{-6}$ from every $k_j$) and the symmetrisation are bounded explicitly, and the top eigenvalue by a verified Cholesky factorisation; the margins are $0.0261$, $0.0077$, $0.0027$ at $L=1.1,1.2,1.3$, all positive, and no step depends on unbounded rounding. % pending(D7)
+evaluated quantity is subtracted.  The pointwise certificate at $L=1$ is replayed in interval arithmetic with outward rounding (\texttt{verify\_iv.py}), which gives $0.0445$; no floating-point step remains in it.  The operator certificates are replayed with validated numerics (\texttt{op\_rig\_validated.py}): the accumulation of $G$, the evaluation of the $\hat\varphi_j$ (relative error below $10^{-9}$, the grid staying at least $2.8\cdot10^{-6}$ from every $k_j$) and the symmetrisation are bounded explicitly, and the top eigenvalue by a verified Cholesky factorisation; the margins are $0.0261$, $0.0077$, $0.0027$ at $L=1.1,1.2,1.3$, all positive, and no step depends on unbounded rounding.
 \end{remark}
 
 \begin{remark}[What the window contains]
@@ -567,11 +567,11 @@ The window $L\le1$ passes the archimedean threshold $L_c=0.925$
 $a_2=-2\log2\cdot\chiv(2)/\sqrt2=+0.980$.  Its sign is $-\chiv(2)$, and $\chiv(2)$
 is the eigenvalue of $\Frob_2$ on $\sqrt5$ (\cref{thm:frob-eigen}): the statement is
 that $2$ is inert.  Replacing that sign, the same linear programme has optimum
-$-0.573$ (\texttt{cert.py}).  The replaced sequence is not the character of any $L$-function, so this % pending(D7)
+$-0.573$ (\texttt{cert.py}).  The replaced sequence is not the character of any $L$-function, so this
 is a statement about the certificate, not about another $L$-function: it shows
 which term of the prime side carries the positivity past $L_c$.  \Cref{thm:second-window} is the
 first statement in which the Frobenius of $\Zphi$ does work inside Weil
-positivity.  The certificate method reaches $L=1.08$ (margin $0.013$, \texttt{cert.py}); beyond, % pending(D7)
+positivity.  The certificate method reaches $L=1.08$ (margin $0.013$, \texttt{cert.py}); beyond,
 the pointwise criterion is too lossy and the operator form of the next step is
 needed.
 \end{remark}
@@ -595,7 +595,7 @@ length $L$, autocorrelation in $[-L,L]$) that range is $L\le\log2$.  Zhu has rec
 $L(s,\chiv)$ case, and two differences with $\zeta$ are visible in the numbers.  The
 floor for $\chiv$ is far larger at the same window ($\lambda_{\min}\approx0.097$ at
 $L=1$, stable under basis refinement and confirmed from the zero side,
-\texttt{weil\_window\_chi5.py}, \texttt{zeroside\_check.py}), because the % pending(D7)
+\texttt{weil\_window\_chi5.py}, \texttt{zeroside\_check.py}), because the
 first zero sits at $6.65$ rather than $14.13$ and a band-limited function cannot
 avoid it; and $\Lambda(s,\chiv)$ has no pole term.  The first window,
 $L\le0.7447$, already passes the classical range, and the certificates reach
@@ -897,9 +897,9 @@ The same sequence separates the equivalent forms of the open statement from the 
 the functional equation, real coefficients and bounded partial sums, so its zero set is closed under the
 Klein group, and \cref{prop:orbits}, \cref{thm:shared-ordinate} and \cref{prop:additive-side} hold for
 it word for word; its zeros off the line, at $0.8085+85.699i$ and $0.6508+114.163i$, are free orbits
-(\texttt{retro99.py}).  What it lacks is on the prime side: the coefficients of $-L'/L$ of an Euler % pending(D7)
+(\texttt{retro99.py}).  What it lacks is on the prime side: the coefficients of $-L'/L$ of an Euler
 product are supported on prime powers, and for this series $130$ of the coefficients with $n\le400$ fall
-outside them, the first at $n=6$ (\texttt{dh\_logderiv.py}).  An argument that reaches the line must % pending(D7)
+outside them, the first at $n=6$ (\texttt{dh\_logderiv.py}).  An argument that reaches the line must
 therefore use the support on prime powers, as the windows of \cref{ssec:weil-route} and the orbit of
 \cref{thm:weil-closure} do; a statement that holds equally for this sequence is a form of the open
 statement, not a step towards it.  The exponent $0.788$ measured for its inverse is close to the real part
@@ -1065,7 +1065,7 @@ odd ones, and $4\Re(A^2)=4(\Re A)^2-4(\Im A)^2$.
 On the zeros of the Davenport--Heilbronn sequence of \cref{ssec:two-sides} below height $100$, which carry one
 free orbit at $\gamma=85.70$, $\delta=0.3085$, the truncated zero side has index $0$ up to window $2$ and one even and
 one odd negative direction from window $3$, against $1/\delta=3.24$; with the second orbit, at height $114.16$,
-two of each (\texttt{retro101.py}).  In the form of $L(s,\chiv)$ with two zeros replaced by a quadruple, the index is $0$ or $2$ on every window tried, never $1$ (\texttt{retro93.py}). % pending(D7)
+two of each (\texttt{retro101.py}).  In the form of $L(s,\chiv)$ with two zeros replaced by a quadruple, the index is $0$ or $2$ on every window tried, never $1$ (\texttt{retro93.py}).
 
 So the dictionary is exact.  A zero off the line would turn every Frobenius translation into
 a boost on a hyperbolic plane of the Weil form, of the same kind as the golden boost of the
@@ -1281,7 +1281,7 @@ $\mathcal E(X)=\sum_{p\leq X}a_p^2\log^2p$.
 \LeanInline{W4Isometria.specLam\_on\_circle\_iff} (iv) \tier{P}; the hypothesis of (iii),
 \LeanInline{W4Isometria.PythagorasLaw}, open; the limit in (ii) by Schur orthogonality in the
 Galois group and Chebotarev, measured $0.993$, $0.998$ and $1.000$ up to $10^6$, and
-$\Sigma(X)^2<\mathcal E(X)$ at every scale measured (\texttt{v12\_pitagoras\_raiz\_X.py}) \tier{N}.  From the primes up to $10^6$, the % pending(D7)
+$\Sigma(X)^2<\mathcal E(X)$ at every scale measured (\texttt{v12\_pitagoras\_raiz\_X.py}) \tier{N}.  From the primes up to $10^6$, the
 exponent $\nu$ that best fits $\Sigma(X)\approx X^\nu R(X)$, with $R$ written with the computed
 zeros of the forms of levels $80$ and $135$, is $0.500$ and $0.5065$, within $\pm0.01$; the first
 zero alone, with its term multiplied by $X^{\delta}$, gives $\delta=0.004\pm0.03$; that zero carries
@@ -1301,8 +1301,8 @@ hypothesis.  The model in which $\golden$ falls on a uniform vertex of the $n$-g
 gives the measured mass of index above $j$ to within $8\%$ for $3\leq j\leq1000$, and the layer
 densities $0.1237$ and $0.1666$ against $0.1243$ and $0.1667$; the forms of level $135$ and of the
 quintic layer are $3([3\mid i_p]-\tfrac13)$ and $5([5\mid i_p]-\tfrac15)$ in the sums up to $10^9$,
-to $2\cdot10^{-10}$ and $6\cdot10^{-12}$ (\texttt{v30\_vertice\_al\_azar.py}, % pending(D7)
-\texttt{v33\_capas\_1e9.py}).  What the geometry does not give is that $\golden$ spreads over % pending(D7)
+to $2\cdot10^{-10}$ and $6\cdot10^{-12}$ (\texttt{v30\_vertice\_al\_azar.py},
+\texttt{v33\_capas\_1e9.py}).  What the geometry does not give is that $\golden$ spreads over
 the vertices uniformly as $p$ varies, with an error of size $\sqrt X$: that is the
 equidistribution of Chebotarev in the Kummer fields $\Q(\zeta_i,\golden^{1/i})$, the piece that
 Hooley obtains from the generalised Riemann hypothesis~\cite{hooley67}.
@@ -1465,7 +1465,7 @@ layer (\cref{prop:index-ngon}(iv) for level $80$;
 numerically for $135$ and the quintic layer), and up to $10^9$ the
 twenty layers $2\leq i\leq60$ measured show no systematic
 term and a fluctuation of mean exponent $0.520$
-(range $0.42$--$0.59$) (\texttt{v33\_capas\_1e9.py}).  With the family taken to % pending(D7)
+(range $0.42$--$0.59$) (\texttt{v33\_capas\_1e9.py}).  With the family taken to
 be the characters modulo $20$ and the power-residue
 symbols of $\golden$, the hypothesis is clause~(ii) and
 GRH for the $L$-functions of the forms of levels $80$ and
@@ -1480,14 +1480,14 @@ ideal of level $n$ has norm $n\,i+1$ if it lies over a split prime and $(n\,i/2-
 over an inert one, with $i$ its index; norm at most $e^L$ forces $i\le 2(e^L+1)/n$, and the sieve of
 level $n$ with that bound returns all of them and nothing else
 (\LeanInline{CierrePorAltura.closure\_support}; at $e^L=10^6$ the sieve returns the $78\,508$ prime
-ideals and the prime side summed level by level equals the direct sum, \texttt{retro66.py}). % pending(D7)
+ideals and the prime side summed level by level equals the direct sum, \texttt{retro66.py}).
 So clause~(iii), in this form, asks of the primes nothing that the clock does not compute.
 What \cref{conj:closure} asserts beyond it is the source of the law in (i)--(ii), and, for the
 line, the positivity of the window functional.  That positivity is a global cancellation: the
 archimedean and polar part alone is indefinite, its negative direction being that of the pole,
 and in the window $e^L=10^3$ removing any one of $108$ of the $127$ levels breaks it; along the
 direction of the pole a single prime ideal contributes with the sign of its size, negative below
-$\log N\approx0.38\,L$ and positive above, whatever its level (\texttt{retro67.py}). % pending(D7)
+$\log N\approx0.38\,L$ and positive above, whatever its level (\texttt{retro67.py}).
 The norms and the bound on the index, \tier[PasosDelTexto.window\_split, PasosDelTexto.window\_inert]{P}.
 \end{remark}
 
@@ -1613,7 +1613,7 @@ correction does not converge: for $n=100$ to $3000$ the mean error has a minimum
 $0.069$ at $X=20$ and $0.23$ at $X=10^6$ for the plain sum, $0.037$ at $X\approx500$ and $0.12$ at $X=10^6$ with the
 weight $1-\log n/\log X$ on each prime power $n$ (\code{x\_sweep.py} \tier[\testref{test\_law\_resolution\_golden\_values, test\_law\_resolution\_matches\_manuscript\_claim}]{N}).  The error falls between
 $\delta=10^{-3}$ and $3\cdot10^{-4}$, the scale $1/T$ of the heights measured ($T\approx240$ to
-$3700$): at % pending(D7)
+$3700$): at
 height $T$ the law has to resolve a scale of order $1/T$.  Taking the primes one by one is not
 the law: it is the explicit formula, and as a construction it is circular; the classes are the part of the law that is not, and they are needed --- removing any one of the eight worsens the error (\code{classes\_test.py} \tier[\testref{test\_law\_resolution\_golden\_values, test\_law\_resolution\_matches\_manuscript\_claim}]{N}).
 What the law has to predict, and nothing else, is fixed by the local factors.
@@ -1696,7 +1696,7 @@ The Fibonacci steps, $t-2=L_n^2$ or $5F_n^2$, $F_{5n}/5F_n\equiv1$ and $F_{4m'}\
 step of the chain for $k\le7$, and the traces themselves exactly for $k\le9$.  Their modulus is
 $|\ker(M^{2n}-1)|^{1/2}$, as \cite{thomas08} predicts.  The restriction count for the $301$ primes $7\le p<2000$;
 the Fourier step for $k\le7$; the whole statement against the diagonalisation
-(\texttt{retro81.py}--\texttt{retro87.py}).  The systematic degeneracies of the quantised map are those of % pending(D7)
+(\texttt{retro81.py}--\texttt{retro87.py}).  The systematic degeneracies of the quantised map are those of
 \cite{kurlbergrudnick00}.\par}
 \end{proof}
 
@@ -1717,12 +1717,12 @@ On $\operatorname{Reg}(T_p)$, the functions on a finite circle of $p-\chiv(p)$ p
 $\varpi$ of $T_p$ is an isometry with $\varpi\,U\,\varpi^{-1}=\varpi(\golden^2)^{\pm1}U$: it permutes the eigenspaces of $U$
 cyclically, and they are equal.  If $p$ splits, in the basis of the torus $U$ is the scaling
 $f(x)\mapsto(\tfrac{a}{p})f(x/a)$ of $\mathbb F_p$ by $a=\golden^2$, $\varpi$ is a Dirichlet character modulo $p$, and the
-extra state is the delta at the fixed point $0$ (\texttt{retro88.py}).  At $5^k$ the same holds layer by layer: % pending(D7)
+extra state is the delta at the fixed point $0$ (\texttt{retro88.py}).  At $5^k$ the same holds layer by layer:
 the shift of the phases by $5^{v+1}$ preserves the layer $v_5(j)=v$ and its occupation, and one state is left over.
 The local models glue by the Chinese remainder theorem: for odd $N$, $W_N=\bigotimes_{p^k\,\|\,N}W_{p^k}$, the trace of
 $U_N^{\,n}$ is the product of the local traces --- at $5^k$ twisted by $(\tfrac{c}{5})$, $c=(N/5^k)^{-1}$ --- and
 $|\operatorname{tr}U_N^{\,n}|^2$ is the number of fixed points of $M^{2n}$ on $(\Z/N)^2$, the part of the count of
-\cref{prop:clock-cyclotomic} at the primes of $N$ whose clock divides $n$ (\texttt{retro89.py}). % pending(D7)
+\cref{prop:clock-cyclotomic} at the primes of $N$ whose clock divides $n$ (\texttt{retro89.py}).
 \end{remark}
 
 \begin{remark}[Where the open step lies]\label{rmk:open-step}
@@ -1838,7 +1838,7 @@ positive definite with smallest eigenvalue at least $0.248\,t_0$; for the repres
 quintic layer, of conductor $5^7$, with $a=0.1$, the same holds with $0.158\,t_0$ and $0.506\,t_0$
 (\texttt{orbita\_cert.py}).  The orbit of $\chiv$ computed from the primes alone is fitted by
 a single oscillation of frequency $6.649$, the height $6.6485$ of the first zero of $L(s,\chiv)$
-(\texttt{W3\_orbita\_lado\_primos.py} \tier{N}).  The three power-residue symbols of \cref{prop:phi-layers} have $L$-functions with % pending(D7)
+(\texttt{W3\_orbita\_lado\_primos.py} \tier{N}).  The three power-residue symbols of \cref{prop:phi-layers} have $L$-functions with
 functional equations of conductor $80$, $135$ and $5^7$; their zeros up to $t=60$, $50$ and $6.5$
 ($66$, $56$ and $8$ of them) lie on the line, and the explicit formula with those zeros
 reproduces the sums of the symbols (\texttt{v09}--\texttt{v11} \tier{N}).
@@ -1890,7 +1890,7 @@ what separates what is proved and certified from \textup{(W5)} is that the orbit
 the Davenport--Heilbronn zeros below height $130$, with the triangles $g_a$ and $p=7$, $|t_k|/t_0$ grows like
 $7^{0.326k}$, against the real part $0.8085$ of its first zero off the line, the growth that
 \cref{thm:weil-closure} assumes; without the two free orbits, $|t_k|\le t_0$ for every $k\le60$
-(\texttt{retro102.py}). % pending(D7)
+(\texttt{retro102.py}).
 
 \begin{theorem}[The closing theorem]\label{thm:weil-closure}
 Fix one prime $p$.  For the triangles $g_a(x)=(1-|x|/a)^+$ of every width $a>0$, let
