@@ -141,9 +141,17 @@
 % the INTERNAL ids of the claim (grammar ported from 05-kkgt
 % docs/citations.md §8.1; the zip's \tier took one argument only, so the
 % N[ids] device is the piece of the family apparatus this port adds).  The
-% optional argument holds a \testref, or raw names of our own file with \_ or
-% ','; anything else — above all a \cite key — is a \PackageError, never a
-% bracket full of a key: an external source stays a \cite set next to the tag.
+% optional argument is read as an ARBITRARY STRING (contract §6.4): a
+% \testref, or the raw names of our own file, several of them separated by
+% ','.  The macro does not judge the shape of what it holds -- a character
+% test (\_, ',' or \testref present, otherwise an error) rejects valid
+% internal ids such as F1PaperTorus.chi5WeilOrbit and cannot recognise a
+% citation key, whose characters are the characters of an identifier -- so
+% the only error it raises at run time is a literal \cite token inside the
+% bracket: an external source stays a \cite set next to the tag, never
+% fused into the mark.  Whether the bracket holds a citation key is measured
+% where the key set exists, by tests/test_witness_census.py against
+% citation.csl.json.
 % Sizes are the 05 rule 13/15 (05 CVR-001 TYP-4: mark 13, ids 15, prose 16):
 % the letter in \footnotesize, the ids in \small tt, upright.
 % The family tag palette (05-kkgt main.tex): colour is redundant with the
@@ -161,18 +169,54 @@
 \@namedef{tiercol@W}{\color{tierW}}
 % unknown key: no colour, no error (the 05-kkgt form of \tiercol)
 \newcommand{\tiercol}[1]{\expandafter\ifx\csname tiercol@#1\endcsname\relax\else\csname tiercol@#1\endcsname\fi}
+% the family's breakable typewriter underscore (H2/H3: the break is a
+% property of the character, and in T1 the three forms of the underscore
+% measure the same, so \_ and a raw _ both print through this one constant)
 \DeclareRobustCommand{\brk@us}{\textunderscore\allowbreak}
+\ExplSyntaxOn
+\tl_new:N \l__tier_src_tl
+\tl_new:N \l__tier_us_tl   \tl_set:Nx \l__tier_us_tl  { \char_generate:nn { 95 } { 8  } }
+\tl_new:N \l__tier_usx_tl  \tl_set:Nx \l__tier_usx_tl { \char_generate:nn { 95 } { 11 } }
+\tl_new:N \l__tier_uso_tl  \tl_set:Nx \l__tier_uso_tl { \char_generate:nn { 95 } { 12 } }
+% \tierids{<arbitrary string>}: \_ and a raw _ (any category code) both
+% become the family's breakable typewriter underscore; every other token of
+% the argument passes through unchanged.  \tl_replace_all does not descend
+% into brace groups, so every wrapper applies the normalisation to its own
+% argument -- a group nested two levels deep is out of its reach (the only
+% groups inside a bracket today are those of \testref, which normalises at
+% its own level).
+\cs_new_protected:Npn \tierids #1
+  {
+    \tl_set:Nn \l__tier_src_tl {#1}
+    \tl_replace_all:Nnn \l__tier_src_tl { \_ } { \brk@us }
+    \exp_args:NNV \tl_replace_all:Nnn \l__tier_src_tl \l__tier_us_tl  { \brk@us }
+    \exp_args:NNV \tl_replace_all:Nnn \l__tier_src_tl \l__tier_usx_tl { \brk@us }
+    \exp_args:NNV \tl_replace_all:Nnn \l__tier_src_tl \l__tier_uso_tl { \brk@us }
+    \tl_use:N \l__tier_src_tl
+  }
+% the same, for the identifiers that may also break after a dot
+\cs_new_protected:Npn \tieridsdot #1
+  {
+    \tl_set:Nn \l__tier_src_tl {#1}
+    \tl_replace_all:Nnn \l__tier_src_tl { \_ } { \brk@us }
+    \exp_args:NNV \tl_replace_all:Nnn \l__tier_src_tl \l__tier_us_tl  { \brk@us }
+    \exp_args:NNV \tl_replace_all:Nnn \l__tier_src_tl \l__tier_usx_tl { \brk@us }
+    \exp_args:NNV \tl_replace_all:Nnn \l__tier_src_tl \l__tier_uso_tl { \brk@us }
+    \tl_replace_all:Nnn \l__tier_src_tl { . } { . \allowbreak }
+    \tl_use:N \l__tier_src_tl
+  }
+\ExplSyntaxOff
 % the test that checks a number, cited by its name in the suite that runs
-\providecommand{\testref}[1]{{\upshape\small\ttfamily\let\_\brk@us #1}}
+\providecommand{\testref}[1]{{\upshape\small\ttfamily\tierids{#1}}}
 % a code mention in prose (contract §6.3, S2): the canonical spelling, the
 % same tt body as \testref at the size of the prose
-\newcommand{\code}[1]{{\upshape\ttfamily\let\_\brk@us #1}}
+\newcommand{\code}[1]{{\upshape\ttfamily\tierids{#1}}}
 % a tag set inside a display must switch to text first: amsart defines
 % \footnotesize as \Small, and a font-size command is invalid in math mode
 % (the build warned "Command \Small invalid in math mode" at every tag of an
 % equation).  In prose the wrapper is the identity, so nothing moves there.
-\def\tier@text#1{\ifmmode\text{#1}\else#1\fi}%
-\def\tier@ids#1#2{\tier@text{{\footnotesize\textbf{\tiercol{#2}#2}[{\upshape\small\ttfamily\let\_\brk@us #1}]}}}%
+\def\tier@text#1{\ifmmode\text{#1}\else#1\fi}
+\def\tier@ids#1#2{\tier@text{{\footnotesize\textbf{\tiercol{#2}#2}[{\upshape\small\ttfamily\tierids{#1}}]}}}
 % every line of the body ends in a comment char: the tag must emit no space
 % of its own, neither before nor after, or a mark would typeset one.
 \providecommand{\tier}[2][]{%
@@ -181,25 +225,12 @@
 \else%
 \in@{\cite}{#1}\ifin@
 \PackageError{tier}{the optional argument of \string\tier\space holds internal ids only}%
-{An external source is a \string\cite\space set next to the tag, never its key; an id of our own suite is written inside \string\testref.}%
+{An external source is a \string\cite\space set next to the tag, never its key;}%
 \else%
-\in@{\testref}{#1}\ifin@
 \tier@ids{#1}{#2}%
-\else%
-\in@{\_}{#1}\ifin@
-\tier@ids{#1}{#2}%
-\else%
-\in@{,}{#1}\ifin@
-\tier@ids{#1}{#2}%
-\else%
-\PackageError{tier}{the optional argument of \string\tier\space holds internal ids only}%
-{Wrap the id in \string\testref: a raw name of our own file is written with \string\_, several of them separated by ','.}%
 \fi%
 \fi%
-\fi%
-\fi%
-\fi%
-}%
+}
 % a witness with names, on a line of its own, flush right: P[name1, name2]
 % (the sibling manuscripts set their witness blocks with \hfill + \raggedleft;
 % the form ported from 05-kk-golden-throat/main.tex, where the own-line
@@ -207,7 +238,7 @@
 \newcommand{\witness}[2]{%
   \par\noindent\hfill
   \parbox{\dimexpr\linewidth-1em\relax}{\raggedleft
-    \normalfont\footnotesize\bfseries\tiercol{#1}#1\mdseries{\upshape\small\ttfamily\let\_\brk@us[#2]}}%
+    \normalfont\footnotesize\bfseries\tiercol{#1}#1\mdseries{\upshape\small\ttfamily[\tierids{#2}]}}%
   \par}
 \makeatother
 \newcommand{\PCF}{\mathrm{PCF}}
@@ -236,13 +267,9 @@
   }
 \ExplSyntaxOff
 \ExplSyntaxOn
-\tl_new:N \l__lean_name_tl
+% the same boundary normalisation as \tierids, plus the break after a dot
 \DeclareRobustCommand{\LeanInline}[1]
-  {
-    \tl_set:Nn \l__lean_name_tl {#1}
-    \tl_replace_all:Nnn \l__lean_name_tl { . } { . \allowbreak }
-    \textnormal { \small \ttfamily \def\_{\textunderscore\allowbreak} [ \tl_use:N \l__lean_name_tl ] }
-  }
+  { \textnormal { \small \ttfamily [ \tieridsdot {#1} ] } }
 \ExplSyntaxOff
 % an underscore may break a line anywhere in running text
 \AtBeginDocument{\DeclareRobustCommand{\_}{\ifmmode\mathunderscore\else\textunderscore\allowbreak\fi}}

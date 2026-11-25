@@ -13,13 +13,22 @@ contract:
 * every cited id is snake_case in English (the repository's naming
   standard), so a formula-style id cannot return.
 
-The sixth mark carries two ids separated by ``, `` inside one bracket;
+The sixth mark carries two ids separated by `,` inside one bracket;
 they are split here into the two citations they name.
+
+A second rule of the same contract (docs/witness-contract.md §6.4) is
+measured here too, because it needs data that lives outside TeX: no part
+of a ``\\tier[...]`` or ``\\witness{...}{...}`` bracket may equal the id of a
+record of ``citation.csl.json``, nor carry a ``\\cite`` token.  The tag
+macros read the bracket as an arbitrary string -- a character-shape test
+rejects valid internal ids and cannot recognise a key -- so this suite is
+the only place where the citation-key rule is measured.
 """
 
 from __future__ import annotations
 
 import ast
+import json
 import re
 import subprocess
 import sys
@@ -175,3 +184,190 @@ def test_no_lean_star_is_used() -> None:
         "the retired star mark is invoked again; it was replaced by \\LeanInline "
         "because the star carried no evidence class: " + ", ".join(offenders)
     )
+
+
+# --------------------------------------------------------------------------
+# The citation-key rule of the tag grammar (docs/witness-contract.md §6.4).
+#
+# The macro reads a bracket as an arbitrary string, so it cannot know
+# whether a part is one of OUR ids or one of the BIBLIOGRAPHY's keys; the
+# key set exists only outside TeX, so the rule is measured here, in the
+# suite (a check that needs external data runs outside the typesetting).
+# --------------------------------------------------------------------------
+
+_TAG_SITE = re.compile(r"\\tier\[|\\witness\{")
+_TESTREF_WRAPPED = re.compile(r"^\\testref\{(.*)\}$", re.DOTALL)
+_KEYS: set[str] | None = None
+
+
+def citation_keys() -> set[str]:
+    """The documented citation keys of this repository (the CSL ``id`` field)."""
+    global _KEYS
+    if _KEYS is None:
+        records = json.loads((REPO_ROOT / "citation.csl.json").read_text(encoding="utf-8"))
+        _KEYS = {record["id"] for record in records}
+    return _KEYS
+
+
+def _read_group(text: str, start: int) -> tuple[str, int] | None:
+    """The balanced ``{...}`` group that opens at ``start``; else ``None``."""
+    if start >= len(text) or text[start] != "{":
+        return None
+    depth = 0
+    for index in range(start, len(text)):
+        if text[index] == "{":
+            depth += 1
+        elif text[index] == "}":
+            depth -= 1
+            if depth == 0:
+                return text[start + 1 : index], index + 1
+    return None
+
+
+def _read_optional(text: str, start: int) -> tuple[str, int] | None:
+    """The ``[...]`` optional argument that opens at ``start``, braces aware."""
+    if start >= len(text) or text[start] != "[":
+        return None
+    depth = 0
+    for index in range(start, len(text)):
+        if text[index] == "{":
+            depth += 1
+        elif text[index] == "}":
+            depth -= 1
+        elif text[index] == "]" and depth == 0:
+            return text[start + 1 : index], index + 1
+    return None
+
+
+def tag_arguments(text: str) -> list[tuple[int, str, str]]:
+    """``(line, macro, argument)`` for every ``\\tier[...]`` and ``\\witness{...}{...}``.
+
+    A ``%`` before the site on its line comments it out in TeX, so such a
+    site is not part of the manuscript and is not read as one here.
+    """
+    sites: list[tuple[int, str, str]] = []
+    for match in _TAG_SITE.finditer(text):
+        line_start = text.rfind("\n", 0, match.start()) + 1
+        if "%" in text[line_start : match.start()]:
+            continue
+        line = text.count("\n", 0, match.start()) + 1
+        if match.group(0) == "\\tier[":
+            parsed = _read_optional(text, match.end() - 1)
+            if parsed is None:
+                continue
+            sites.append((line, "tier", parsed[0]))
+        else:
+            first = _read_group(text, match.end() - 1)
+            if first is None:
+                continue
+            second = _read_group(text, first[1])
+            if second is None:
+                continue
+            sites.append((line, "witness", second[0]))
+    return sites
+
+
+def split_on_top_level_commas(argument: str) -> list[str]:
+    """Split on the commas that sit OUTSIDE ``\\testref{...}`` (brace count)."""
+    parts: list[str] = []
+    depth, current = 0, []
+    for char in argument:
+        if char == "," and depth == 0:
+            parts.append("".join(current))
+            current = []
+            continue
+        if char == "{":
+            depth += 1
+        elif char == "}":
+            depth -= 1
+        current.append(char)
+    parts.append("".join(current))
+    return parts
+
+
+def without_testref(part: str) -> str:
+    """Drop an outer ``\\testref{...}`` wrapper and the surrounding spaces."""
+    stripped = part.strip()
+    wrapped = _TESTREF_WRAPPED.match(stripped)
+    return (wrapped.group(1) if wrapped else stripped).strip()
+
+
+def citation_offenders(text: str, keys: set[str], label: str) -> list[str]:
+    """One ``file:line`` row per part of a bracket that holds a citation key.
+
+    Equality against the loaded key set decides -- never a character
+    heuristic: a part equal to the id of a record of ``citation.csl.json``,
+    or one carrying the ``\\cite`` token, is a violation.
+    """
+    offenders: list[str] = []
+    for line, macro, argument in tag_arguments(text):
+        for part in split_on_top_level_commas(argument):
+            part = without_testref(part)
+            if part in keys:
+                offenders.append(
+                    f"{label}:{line} \\{macro}: the part {part!r} is the id of a "
+                    f"record of citation.csl.json"
+                )
+            elif "\\cite" in part:
+                # the report stops at the token, so the message stays readable
+                clipped = part[: part.index("\\cite") + len("\\cite")]
+                offenders.append(
+                    f"{label}:{line} \\{macro}: the part {clipped!r} carries the "
+                    f"\\cite token (an external source is an adjacent \\cite)"
+                )
+    return offenders
+
+
+@pytest.mark.witness
+def test_no_citation_key_sits_inside_a_tag() -> None:
+    """No part of any tag bracket equals a citation key or carries ``\\cite``.
+
+    The corpus is every ``\\tier[...]`` and ``\\witness{...}{...}`` of the
+    manuscript, split on the commas that sit outside ``\\testref{...}``;
+    the keys are the ids of ``citation.csl.json``.  The tag macro accepts an
+    arbitrary string now, so this test -- not the macro -- is the whole of
+    the citation-key rule (contract §6.4).
+    """
+    keys = citation_keys()
+    assert keys, "citation.csl.json declares no id: the key set is empty"
+    offenders: list[str] = []
+    sites = 0
+    for source in TEX_SOURCES:
+        text = source.read_text(encoding="utf-8")
+        sites += len(tag_arguments(text))
+        offenders.extend(citation_offenders(text, keys, source.name))
+    assert sites > 0, "the extractor found no tag argument: the pattern or the corpus broke"
+    assert not offenders, (
+        "a citation key (or a \\cite token) sits inside a tag: an external "
+        "source stays an adjacent \\cite, never fused into the mark: "
+        + "; ".join(offenders)
+    )
+
+
+@pytest.mark.witness
+def test_the_tag_lint_catches_a_synthetic_insertion() -> None:
+    """The rule is not vacuous: a key inserted into a bracket fails the check.
+
+    The prototype that motivated the lint caught three rows against this
+    repository's key set -- a bare key in a ``\\tier``, the same key in a
+    ``\\witness`` after a comma, and the ``\\cite`` token the macro still
+    rejects at run time -- and none over the real manuscript.  The catching
+    half is pinned here on a synthetic manuscript, so a weakened extractor
+    is loud instead of silently green.
+    """
+    keys = citation_keys()
+    assert {"riemann1859", "montgomery73"} <= keys, "the fixture keys left citation.csl.json"
+    synthetic = (
+        "\\tier[riemann1859]{P}\n"
+        "\\witness{P}{montgomery73, a_valid_internal_id}\n"
+        "\\tier[\\cite{riemann1859}]{N}\n"
+        "\\tier[\\testref{a_valid_id, other_valid_id}]{N}\n"
+        "\\tier[a_valid_id]{N}\n"
+    )
+    offenders = citation_offenders(synthetic, keys, "synthetic.tex")
+    assert len(offenders) == 3, offenders
+    assert offenders[0].startswith("synthetic.tex:1"), offenders[0]
+    assert any("montgomery73" in row for row in offenders), offenders
+    assert any("\\cite" in row for row in offenders), offenders
+    # the ids the character-shape grammar used to reject are not violations
+    assert all("a_valid_id" not in row and "other_valid_id" not in row for row in offenders)
