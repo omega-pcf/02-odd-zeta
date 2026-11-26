@@ -196,12 +196,12 @@
 \definecolor{tierN}{rgb}{0.05,0.40,0.20}   % green  -- verified numerically
 \definecolor{tierW}{rgb}{0.00,0.35,0.45}   % teal   -- witness item
 \makeatletter
-\@namedef{tiercol@P}{\color{tierP}}
-\@namedef{tiercol@P*}{\color{tierPs}}
-\@namedef{tiercol@N}{\color{tierN}}
-\@namedef{tiercol@W}{\color{tierW}}
-% unknown key: no colour, no error (the 05-kkgt form of \tiercol)
-\newcommand{\tiercol}[1]{\expandafter\ifx\csname tiercol@#1\endcsname\relax\else\csname tiercol@#1\endcsname\fi}
+\@namedef{markcol@P}{\color{tierP}}
+\@namedef{markcol@P*}{\color{tierPs}}
+\@namedef{markcol@N}{\color{tierN}}
+\@namedef{markcol@W}{\color{tierW}}
+% unknown key: no colour, no error (the 05-kkgt form of \markcol)
+\newcommand{\markcol}[1]{\expandafter\ifx\csname markcol@#1\endcsname\relax\else\csname markcol@#1\endcsname\fi}
 % the family's breakable typewriter underscore (H2/H3: the break is a
 % property of the character, and in T1 the three forms of the underscore
 % measure the same, so \_ and a raw _ both print through this one constant).
@@ -259,11 +259,11 @@
 % \footnotesize as \Small, and a font-size command is invalid in math mode
 % (the build warned "Command \Small invalid in math mode" at every tag of an
 % equation).  In prose the wrapper is the identity, so nothing moves there.
-\def\tier@text#1{\ifmmode\text{#1}\else#1\fi}
+\def\witness@text#1{\ifmmode\text{#1}\else#1\fi}
 % One colour branch for the whole mark (contract §6.12 S6): the letter AND the
 % ids print in the class colour, so the block and the inline mark read as one
 % object -- the inline ids used to print black (#2659a5 against #000000).
-\def\tier@ids#1#2{\tier@text{{\normalfont\footnotesize\bfseries\tiercol{#2}#2[{\mdseries\upshape\small\ttfamily\tierids{#1}}]}}}
+\def\witness@ids#1#2{\witness@text{{\normalfont\footnotesize\bfseries\markcol{#2}#2[{\mdseries\upshape\small\ttfamily\tierids{#1}}]}}}
 % ---------------------------------------------------------------------------
 % THE MARK -- one name, one optional argument, placement-driven (§6.12 S7).
 %
@@ -293,18 +293,18 @@
   \ifvmode
     \par\medskip\noindent\hfill
     \parbox{\dimexpr\linewidth-1em\relax}{\raggedleft
-      \normalfont\footnotesize\bfseries\tiercol{#2}#2%
+      \normalfont\footnotesize\bfseries\markcol{#2}#2%
       \ifx\relax#1\relax\else\mdseries{\upshape\small\ttfamily[\tierids{#1}]}\fi}%
     \par\medskip
   \else
     \ifx\relax#1\relax
-      \tier@text{{\normalfont\footnotesize\bfseries\tiercol{#2}[#2]}}%
+      \witness@text{{\normalfont\footnotesize\bfseries\markcol{#2}[#2]}}%
     \else
       \in@{\cite}{#1}\ifin@
         \PackageError{witness}{the optional argument of \string\witness\space holds internal ids only}
         {An external source is a \string\cite\space set next to the tag, never its key;}%
       \else
-        \tier@ids{#1}{#2}%
+        \witness@ids{#1}{#2}%
       \fi
     \fi
   \fi}
