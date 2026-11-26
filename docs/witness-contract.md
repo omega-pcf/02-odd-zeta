@@ -608,8 +608,8 @@ made the mid-identifier break equally attractive and printed
 `twenty_divisor_` / `lattice_splits` in the 02/05 PDF, and 03's bare
 `\textunderscore` with no breakpoint, which is the form that can go
 overfull (`03/main.tex` comment at the definition, commit `b1fec34`,
-2026-11-24; the unification commits are `4edc048` in 03 and `a82bd8d` in
-05, 2026-11-26). 01 and 04 keep the OT1 form of their preamble: their
+2026-11-24; the unification commits are `2fb29c6` in 02, `4edc048` in 03
+and `a82bd8d` in 05, all 2026-11-25). 01 and 04 keep the OT1 form of their preamble: their
 `\brk@us` serves `\code` and `\tierids` only, and no mark is printed
 there, so nothing of theirs was reflowed. Re-opening any of these numbers
 requires a new measurement.
@@ -830,7 +830,7 @@ not migrated in bulk.
 **S2. Vertical spacing — one number, and it is `\medskip` above and below.**
 
 ```latex
-\newcommand{\witness}[2]{%
+\newcommand{\witness}[2][]{%          % #1 = ids (optional), #2 = class
   \par\medskip\noindent\hfill
   \parbox{\dimexpr\linewidth-1em\relax}{\raggedleft …}%   % body as below
   \par\medskip}
@@ -910,12 +910,12 @@ redundant with the letter either way.
 
 - `\ifvmode` after a blank line or at the start of a line → block, as
   today.
-- `\ifhmode` (a mark written where a paragraph is already open — the 37
-  mid-line sites of 03, the 1 of 05) → the mark stays inside the
-  sentence: **no `\par`, no indent, no space is eaten** — the paragraph
-  does not break. This removes the behaviour the inline macro had, where a
-  mid-line call silently ended the paragraph and stranded the rest of the
-  sentence.
+- `\ifhmode` (a mark written where a paragraph is already open: inside a
+  sentence, mid-paragraph, after a display, after `\noindent`) → the mark
+  stays there: **no `\par`, no indent, no space is eaten** — the paragraph
+  does not break. This is the edge case S7 exists for: the earlier
+  own-line-only form, called mid-line, silently ended the paragraph and
+  stranded the rest of the sentence.
 - After `\noindent` or after a head the mode is `\hmode` → inline:
   correct, the text there is one paragraph.
 - Inside a group started with `{\itshape …}`: the body must begin with
