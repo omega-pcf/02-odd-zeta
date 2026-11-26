@@ -87,10 +87,10 @@ $\Q(\zeta_{12})$.
 \witness[trZeta\_crystallographic\_values, trZeta\_not\_integer\_of\_ge\_seven, twenty\_divisor\_lattice\_splits, three\_conductors\_are\_the\_minimal\_failure]{P}
 each taking the
 relevant cosine values as hypotheses; the hypotheses are proved and the lemmas
-instantiated in \LeanInline{F1v2.cosineWindow\_holds},
-\LeanInline{F1v2.trZeta\_not\_integer\_unconditional},
-\LeanInline{F1v2.trZeta\_crystallographic\_unconditional},
-\LeanInline{F1v2.three\_conductors\_unconditional}.
+instantiated in \code{F1v2.cosineWindow\_holds},
+\code{F1v2.trZeta\_not\_integer\_unconditional},
+\code{F1v2.trZeta\_crystallographic\_unconditional},
+\code{F1v2.three\_conductors\_unconditional}.
 \begin{proof}
 For $n\ge3$, $2\cos(2\pi/n)=\zeta_n+\zeta_n^{-1}$ generates the real subfield of $\Q(\zeta_n)$, of degree
 $\phi(n)/2$ over $\Q$; it is an algebraic integer, so it lies in $\Z$ exactly when that degree is $1$,
@@ -504,6 +504,8 @@ and each factor governs one of them and is blind to the other.
 \begin{enumerate}
   \item \emph{Multiplicative register.}  The binary register $2^m\bmod20$ is
     periodic of period $4$ from $m=2$ on.
+
+\witness[binary\_register\_has\_period\_four]{P}
   \item \emph{Additive register.}  For a prime $p\ne5$ let $\varepsilon_p=+1$ if $x^2-x-1$ has a
     root modulo $p$ and $\varepsilon_p=-1$ if it has none.  Then
     \[
@@ -512,15 +514,10 @@ and each factor governs one of them and is blind to the other.
     \]
     and, equivalently, $\omega^p\equiv\omega\pmod{p\Zphi}$ if $\varepsilon_p=+1$ and
     $\omega^p\equiv1-\omega\pmod{p\Zphi}$ if $\varepsilon_p=-1$.
+
+\witness[fib\_split\_case, fib\_inert\_case, FrobeniusUnico.omega\_pow\_mod, FrobeniusUnico.fib\_eq\_sign, FrobeniusUnico.fib\_pred\_eq\_sign]{P}
 \end{enumerate}
 \end{theorem}
-(1)
-
-\witness[binary\_register\_has\_period\_four]{P}
-(2)
-
-\witness[fib\_split\_case, fib\_inert\_case]{P}
-\witness[FrobeniusUnico.omega\_pow\_mod, FrobeniusUnico.fib\_eq\_sign, FrobeniusUnico.fib\_pred\_eq\_sign]{P}
 No statement in (2) uses a character.
 
 The word \emph{spectrum} is not used for these registers: in this paper it is kept for the
@@ -957,8 +954,9 @@ condition at $5$ is part of the definition and fails.  Inverting $5$ instead
 makes the condition at $5$ vacuous, and \cref{thm:frobenius-congruence} gives the
 structure on $\Rloc$.
 \end{corollary}
-\leanline{The congruence at each $p\ne5$ is \witness{P}\ (\cref{thm:frobenius-congruence}); the
-localisation itself is not formalised and remains open.}
+
+The congruence at each $p\ne5$ is \witness[FrobeniusUnico.frob\_congruence]{P} (\cref{thm:frobenius-congruence}); the
+localisation itself is not formalised and remains open.
 \begin{proof}
 The nilpotent argument of \cref{thm:obstruction-five} applies to $\Z[\golden,\golden^{-1},\tfrac12]$,
 since $\delta_5$ extends to it ($2$ and $3+\varepsilon$ are units of $\mathbb F_5[\varepsilon]$).
@@ -973,8 +971,7 @@ according to the roots of $x^2-x-1$ modulo $p$.  It carries no $\Lambda$-structu
 \cref{def:lambda-ring}, the obstruction being the prime $5$ alone, and the $\Lambda_{\Z,E}$-structure
 extends to $\Rloc$, on which the condition at $5$ is empty.
 \end{theorem}
-\witness[FrobeniusUnico.lambda\_structure\_away\_from\_five, FrobeniusUnico.frob\_commute, FrobeniusUnico.frobenius\_exists\_unique]{P}
-\witness[no\_frobenius\_lift\_at\_five]{P}
+\witness[FrobeniusUnico.lambda\_structure\_away\_from\_five, FrobeniusUnico.frob\_commute, FrobeniusUnico.frobenius\_exists\_unique, no\_frobenius\_lift\_at\_five]{P}
 the localisation remains open.
 \begin{proof}
 $\Zphi$ is torsion-free, and for a torsion-free ring a $\Lambda_{\Z,E}$-structure is a family of commuting
@@ -1384,23 +1381,28 @@ Let $n\geq1$, and let $\Phi_n$ be the $n$-th cyclotomic polynomial.
     \]
 \end{enumerate}
 \end{proposition}
-\leanline{\LeanInline{W4Isometria.clock\_cyclotomic\_split} (i),
-\LeanInline{W4Isometria.RelojCiclotomico.clock\_iff\_cyclotomic\_root} (ii) in every
-residue field, \LeanInline{W4Isometria.RelojCiclotomico.mate\_pow} (the two clocks $n$ and
-$2n$ of a split prime), \LeanInline{W4Isometria.totient\_is\_primitive\_roots},
-\LeanInline{W4Isometria.tower\_weight\_splits\_by\_clock},
-\LeanInline{W4Isometria.RelojCiclotomico.prod\_Ncyc},
-\LeanInline{W4Isometria.RelojCiclotomico.err\_moebius},
-\LeanInline{W4Isometria.RelojCiclotomico.log\_Npow\_bound},
-\LeanInline{W4Isometria.RelojCiclotomico.log\_Ncyc\_bound} (iii),
-\LeanInline{W4Isometria.RelojCiclotomico.clock\_sum\_mertens},
-\LeanInline{W4Isometria.RelojCiclotomico.clock\_sum\_le\_of\_mertens} (vi) \witness{P};
+
+{\raggedright
+The Lean declarations \code{W4Isometria.clock\_cyclotomic\_split} (i),
+\code{W4Isometria.RelojCiclotomico.clock\_iff\_cyclotomic\_root} (ii) in every
+residue field, \code{W4Isometria.RelojCiclotomico.mate\_pow} (the two clocks $n$ and
+$2n$ of a split prime), \code{W4Isometria.totient\_is\_primitive\_roots},
+\code{W4Isometria.tower\_weight\_splits\_by\_clock},
+\code{W4Isometria.RelojCiclotomico.prod\_Ncyc},
+\code{W4Isometria.RelojCiclotomico.err\_moebius},
+\code{W4Isometria.RelojCiclotomico.log\_Npow\_bound},
+\code{W4Isometria.RelojCiclotomico.log\_Ncyc\_bound} (iii),
+\code{W4Isometria.RelojCiclotomico.clock\_sum\_mertens},
+\code{W4Isometria.RelojCiclotomico.clock\_sum\_le\_of\_mertens} (vi);
 (iv) and (v); (vii) from (vi) and $\sum_{n\leq N}\phi(n)=3N^2/\pi^2+O(N\log N)$;
 (ii) for $n\leq600$ and $p\leq20000$, $p\nmid n$ ($1\,355\,192$ pairs,
 $752$ of the $2260$ primes with two clocks), (vi) up to $N=10^6$ to $3.6\cdot10^{-12}$
 (\code{v27\_reloj\_ciclotomico.py}), and (vii), whose ratio to the main term is
 $1.0038$, $1.0018$, $1.0008$ and $1.0006$ at $N=100$, $500$, $1000$ and $2000$
-(\code{retro69.py}).}
+(\code{retro69.py}).
+\par}
+
+\witness[W4Isometria.clock\_cyclotomic\_split, W4Isometria.RelojCiclotomico.clock\_iff\_cyclotomic\_root, W4Isometria.RelojCiclotomico.mate\_pow, W4Isometria.totient\_is\_primitive\_roots, W4Isometria.tower\_weight\_splits\_by\_clock, W4Isometria.RelojCiclotomico.prod\_Ncyc, W4Isometria.RelojCiclotomico.err\_moebius, W4Isometria.RelojCiclotomico.log\_Npow\_bound, W4Isometria.RelojCiclotomico.log\_Ncyc\_bound, W4Isometria.RelojCiclotomico.clock\_sum\_mertens, W4Isometria.RelojCiclotomico.clock\_sum\_le\_of\_mertens]{P}
 
 \begin{proof}
 (i) Evaluate $X^n-1=\prod_{d\mid n}\Phi_d(X)$ at $\golden$.
@@ -1448,7 +1450,7 @@ At $5$ the levels $4\cdot5^k$ carry the ramified prime: by
 \cref{prop:clock-cyclotomic}(i), $\golden^{4\cdot5^k}-1$ is the product of the $\Phi_d(\golden)$
 with $d\mid4\cdot5^k$, and $\sqrt5$ divides it exactly $2k+1$ times
 (\witness[F1PaperSixty.phi\_clock\_identity, F1PaperSixty.phi\_clock\_exact]{P}), so $v_5(\golden^{4\cdot5^k}-1)=k+\tfrac12$; level by level, $v_5$ of
-$N(\Phi_{4\cdot5^k}(\golden))$ is $1,2,2,2$ for $k=0,1,2,3$ (\witness{N}).  A root of unity has
+$N(\Phi_{4\cdot5^k}(\golden))$ is $1,2,2,2$ for $k=0,1,2,3$ (\code{v27\_reloj\_ciclotomico.py} \witness{N}).  A root of unity has
 absolute value $1$ in every normed field
 (\witness[M12F1Circle.root\_of\_unity\_norm\_one]{P}), so at each prime the angular part
 carries the clock and the principal unit $\langle\golden\rangle$ carries the size.
@@ -1645,20 +1647,26 @@ Let $p\neq2,3,5$.
   \item \emph{The columns.}  For $m\geq1$ the primes $p$ with $\golden^{m+1}\equiv1\pmod p$
     satisfy $\sum\log p\leq(m+1)\log\golden+4\golden^{-(m+1)}$; so the primes $p\leq X$ with
     $e_p\leq y+1$ weigh at most $\tfrac{y(y+3)}2\log\golden+4\golden^2$.
+
+\witness[W4Isometria.HiperbolaRelojTamano.sum\_log\_le\_log\_phi, W4Isometria.HiperbolaRelojTamano.tail\_bound\_phi\_explicit]{P}
   \item \emph{The hyperbola.}  If $p\leq X$ and $i_p>j$, then $e_p\,j<2(X+1)$: a large index
     forces a small clock (with $N_p\leq2(p+1)$).  With $j=X^{3/4}$ and \textup{(i)}, the primes $p\leq X$ of index
     above $X^{3/4}$ weigh $O(\sqrt X)$, with no hypothesis.
+
+\witness[W4Isometria.HiperbolaRelojTamano.large\_index\_clock]{P}
   \item \emph{The $n$-gon.}  In a cyclic group of order $N$ the elements of index above $j$
     number $\sum_{c\mid N,\ jc<N}\phi(c)$, a fraction at most $\tau(N)/j$, with $\tau(N)$ the
     number of divisors of $N$; and for $i\mid N$ the elements whose index is a multiple of $i$
     are those with $x^{N/i}=1$, exactly $N/i$ of them, the fraction $1/i$.
+
+\witness[W4Isometria.GeometriaDelPoligono.card\_large\_index, W4Isometria.GeometriaDelPoligono.card\_large\_index\_le, W4Isometria.CapasDelPoligono.card\_layer, W4Isometria.CapasDelPoligono.layer\_iff]{P}
   \item \emph{The quadratic layer as a sum.}  At a split prime $p\equiv1\pmod4$, the sum
     $a_p=(\tfrac rp)+(\tfrac{1-r}p)$ is $2$ if $2\mid i_p$ and $-2$ otherwise: $a_p=4\bigl([2\mid i_p]-\tfrac12\bigr)$.
+
+\witness[W4Isometria.ReduccionAlReloj.phi\_pow\_one\_split, W4Isometria.ReduccionAlReloj.level80\_coeff\_in, W4Isometria.ReduccionAlReloj.level80\_coeff\_out]{P}
 \end{enumerate}
 \end{proposition}
-(i), (ii), (iii), (iv)
 
-\witness[W4Isometria.HiperbolaRelojTamano.sum\_log\_le\_log\_phi, W4Isometria.HiperbolaRelojTamano.tail\_bound\_phi\_explicit, W4Isometria.HiperbolaRelojTamano.large\_index\_clock, W4Isometria.GeometriaDelPoligono.card\_large\_index, W4Isometria.GeometriaDelPoligono.card\_large\_index\_le, W4Isometria.CapasDelPoligono.card\_layer, W4Isometria.CapasDelPoligono.layer\_iff, W4Isometria.ReduccionAlReloj.phi\_pow\_one\_split, W4Isometria.ReduccionAlReloj.level80\_coeff\_in, W4Isometria.ReduccionAlReloj.level80\_coeff\_out]{P}
 the consequence
 in (ii) from the two statements, \witness[PasosDelTexto.hyperbola, PasosDelTexto.hyperbola\_sqrt]{P}.  Over the $78\,495$ primes $7\leq p\leq10^6$, $N_p\leq2(p+1)$
 in all, and the primes of index above $X^{3/4}$ have mass $0$ at $X=10^6$, against the
@@ -3366,20 +3374,20 @@ Let $\Oone=HY$ be the operator of \cref{def:operators-J}.
 \end{enumerate}
 Of the faces that give a value --- tower, $T^*$ in its two writings, and $\OmH$ ---
 all land on the value $2$ of the trace $t=r+1/r$ of a ratio $r>0$, the only value at which $r=1$ (it is the focus of the
-confocal pencil of \cref{ssec:joukowski}); the fifth face counted in the tally \LeanTally{five\_faces\_four\_land} gives no value.
+confocal pencil of \cref{ssec:joukowski}); the fifth face counted in the tally \code{five\_faces\_four\_land} gives no value.
 \witness[eigenvalue\_half, F1PCFUnified.spectrum\_is\_anchor\_times\_orbit, F1PCFUnified.operator\_is\_tied\_to\_the\_cocone, F1PCFUnified.operator\_is\_made\_of\_the\_group, F1PCFUnified.V\_unitary, F1PaperNew.triad\_isometry, PCFGranularity.chaotic\_to\_fourier\_periodic\_in\_arithmetic, PCFGranularity.blindness\_is\_irrationality, PCFGranularity.the\_deck\_group\_is\_the\_eisenstein\_unit\_group, PCFGranularity.H\_not\_complete, PCFGranularity.deck\_invariant\_is\_level\_function, PCFGranularity.dual\_and\_fibre\_have\_the\_same\_size, F1CW.tower\_ham\_is\_hermitian, diagonal\_gives\_one, hpps\_parameters\_are\_the\_cocone, four\_parameters\_in\_phi, Tstar\_rewritten\_in\_phi, eleven\_components\_anchored, Tstar\_carries\_both\_faces, Tstar\_in\_connector\_clauses, Tstar\_rewritten\_in\_phi]{P}; the comparison of the faces is recorded as
-\LeanTally{tstarPhi\_is\_the\_bridge}, \LeanTally{five\_faces\_four\_land};
+\code{tstarPhi\_is\_the\_bridge}, \code{five\_faces\_four\_land};
 the identification of the components with the involutions in (iii), which the corpus takes as the hypothesis
-of \LeanInline{F1PCFUnified.operator\_is\_made\_of\_the\_group}, is proved in
+of \code{F1PCFUnified.operator\_is\_made\_of\_the\_group}, is proved in
 \witness[ComponentesInvoluciones.components\_are\_the\_involutions]{P}, and the
-descent of the involutions from $\chiv$ is \witness{P}; the third writing of (vii) is proved
-given the Mersenne clause as hypothesis (\LeanInline{Tstar\_in\_connector\_clauses});
-the agreement of $T^*(n)$ with $\gamma_n$ \witness{N}%
+descent of the involutions from $\chiv$ is \witness[inversion\_gives\_sigma, negation\_gives\_tau]{P}; the third writing of (vii) is proved
+given the Mersenne clause as hypothesis (\code{Tstar\_in\_connector\_clauses});
+the agreement of $T^*(n)$ with $\gamma_n$ (\code{tstar.py}) \witness{N}%
 \end{theorem}
 
 \begin{remark}[Why the ordinate form is the bridge]\label{rmk:tstar-bridge}
 Among the forms, only $T^*$ written in $\golden$ carries both the exponent $\lambda$ of the
-anchor and the ordinates of the zeros (recorded as \LeanTally{tstarPhi\_is\_the\_bridge}; the
+anchor and the ordinates of the zeros (recorded as \code{tstarPhi\_is\_the\_bridge}; the
 rewriting itself is \witness[Tstar\_rewritten\_in\_phi]{P}): the
 tower has the exponent but not the ordinates, the numerical form of
 \cite{gonzalez25hp} the ordinates but not the exponent.  Rewriting the operator of the Primitive Structure in base $\golden$ is therefore not a change of notation: it is what connects

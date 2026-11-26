@@ -10,13 +10,13 @@ Measured over the tracked manuscript sources (`main.tex` and `src/**/*.tex`) —
 
 | form | count |
 |---|--:|
-| own-line `\witness[ids]{P}` | 120 |
+| own-line `\witness[ids]{P}` | 122 |
 | own-line `\witness[ids]{N}` | 0 |
 | own-line `\witness{P}` (bare) | 0 |
 | own-line `\witness{N}` (bare) | 0 |
-| inline `\witness[ids]{P}` | 233 |
+| inline `\witness[ids]{P}` | 236 |
 | inline `\witness[ids]{N}` | 40 |
-| inline `\witness{P}` (bare) | 60 |
+| inline `\witness{P}` (bare) | 56 |
 | inline `\witness{N}` (bare) | 26 |
 | `\witness[\testref{…}]{N}` marks | 40 |
 
@@ -26,14 +26,14 @@ Ids carried by `N` marks: **40 ids over 27 distinct**.
 
 | macro | occurrences in the manuscript |
 |---|--:|
-| `\LeanInline` | 176 |
+| `\LeanInline` | 159 |
 | `\LeanStar` | 0 |
-| `\LeanTally` | 21 |
+| `\LeanTally` | 17 |
 | `\LeanCW` | 44 |
-| `\leanline` | 2 |
-| `\code` | 193 |
+| `\leanline` | 0 |
+| `\code` | 214 |
 | `\testref` | 40 |
-| `\witness` | 482 |
+| `\witness` | 483 |
 
 ## Gates measured here
 
@@ -43,10 +43,10 @@ Ids carried by `N` marks: **40 ids over 27 distinct**.
 | stars (`\LeanStar` body uses) | **0** |
 | `Tier` column in a table | **0** |
 | `pending(D7)` markers | **3** |
-| `\witness[…]` id parts that are neither a `\testref`, a snake_case id nor a qualified declaration | **149** |
+| `\witness[…]` id parts that are neither a `\testref`, a snake_case id nor a qualified declaration | **151** |
 | open sites (`(open;`) | **2** |
 
-`\witness[…]` ids that are neither a `\testref`, a snake_case id nor a namespace-qualified declaration (149 occurrences, 117 distinct):
+`\witness[…]` ids that are neither a `\testref`, a snake_case id nor a namespace-qualified declaration (151 occurrences, 119 distinct):
 
 - `G\_hom` ×5
 - `G\_kernel` ×5
@@ -80,6 +80,8 @@ Ids carried by `N` marks: **40 ids over 27 distinct**.
 - `G` ×1
 - `GDS\_gives\_premiseA` ×1
 - `GDS\_gives\_routeB` ×1
+- `G\_diagonal\_characterisation` ×1
+- `G\_diagonal\_unique` ×1
 - `G\_pi1\_is\_chi4` ×1
 - `G\_psi\_equivariant` ×1
 - `M\_cube\_sub\_one` ×1
@@ -106,9 +108,7 @@ Ids carried by `N` marks: **40 ids over 27 distinct**.
 - `fφ\_map\_two\_irreducible` ×1
 - `fφ\_prime` ×1
 - `hasDegree\_gives\_monomial` ×1
-- `integer\_trace\_gives\_SL2\_eigenvalue` ×1
-- `integrality\_iff\_E` ×1
-- … 57 further distinct ids
+- … 59 further distinct ids
 
 `pending(D7)` markers:
 
@@ -127,7 +127,7 @@ Open sites:
 |---|--:|
 | `src/chapters/01-introduction.tex` | 6 |
 | `src/chapters/02-foundations.tex` | 20 |
-| `src/chapters/03-mechanisms.tex` | 263 |
+| `src/chapters/03-mechanisms.tex` | 264 |
 | `src/chapters/04-bridges.tex` | 122 |
 | `src/chapters/05-categorical.tex` | 58 |
 | `src/chapters/appendix.tex` | 10 |
