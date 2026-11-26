@@ -36,7 +36,7 @@ inventories, decision logs, verdict tables — goes to `docs/reports/`.
   The marked regions live in `tests/README.md` (`commands`, `suite-total`,
   `suite-not-slow`); the manuscript itself does state counts in prose — the
   appendix's corpus counts (proved, open and classical statements) and the
-  forty `\tier[\testref{…}]{N}` anchors that cite test ids — but those live
+  forty `\witness[\testref{…}]{N}` anchors that cite test ids — but those live
   outside the mechanism, which measures only the ledger's counters.
 - **installation.md**: Prerequisites and setup instructions.
 - **usage.md**: Daily workflow, conventional commits, build and release commands.

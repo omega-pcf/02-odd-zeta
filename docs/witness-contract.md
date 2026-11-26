@@ -7,7 +7,7 @@
 | **Version** | 2.0 (rationale, derived standard and wave-brief shape in one file; generic across the family) |
 | **Date** | 2026-11-25 |
 | **Language** | English; identifiers, macros and file names in English and monospace |
-| **Scope** | Why the marks of evidence of the manuscript (`\tier`, `\witness` where the manuscript has one, with `\testref`) exist and what they do not assert — the rationale (§1–§5, §7), the standard itself (§6), the quantified inline / own-line criterion (§6.10), the own-line rendering form (§6.12) and the shape of a wave brief (§10); free of anything tied to one repository state |
+| **Scope** | Why the marks of evidence of the manuscript (`\witness`, with `\testref`) exist and what they do not assert — the rationale (§1–§5, §7), the standard itself (§6), the quantified inline / own-line criterion (§6.10), the own-line rendering form (§6.12) and the shape of a wave brief (§10); free of anything tied to one repository state |
 | **Index** | §0 where things live · §1–§5 the argument · §6 the standard (§6.0–§6.13) · §7 honesty · §9 limits · §10 wave brief shape |
 
 **Relation to the rest of the documentation.** This document is the
@@ -43,7 +43,7 @@ is edited concurrently.
 | `docs/README.md` | the directory index of `docs/` |
 | `docs/style-guide.md` | the family style guide as this repository applies it |
 | `README.md` | link to the witness section of the documentation; `docs/README.md` is the directory index |
-| `main.tex` — preamble (witness system, `\tier` dispatch, definition of `\witness`) and the *Evidence tags* gloss | the implementation and what the reader sees at the first mark of the body |
+| `main.tex` — preamble (witness system: the one placement-driven `\witness`) and the *Evidence tags* gloss | the implementation and what the reader sees at the first mark of the body |
 | the repository's Lean file (`lean/`) | the `P` identifiers the mark can print |
 | `tests/` and the census test of the repository | the numerical suite and the census that fixes the test identifiers the manuscript cites |
 | `citation.csl.json`, `CITATION.cff` | the bibliographic layer the mark does **not** mix with: the external source is a `\cite`, never a mark identifier |
@@ -58,9 +58,10 @@ is edited concurrently.
 The manuscript marks, beside each claim, how it was established: `P` when
 the statement is proved and machine-checked in Lean, `N` when it is
 verified numerically with the name of the test that checks it. The mark is a small, immutable
-bracket in its own colour (`\tier{P}`, `\tier{N}`,
-`\tier[ids]{X}`), or a right-aligned line of its own when the claim carries
-several witnesses (`\witness{X}{ids}`). The two classes are introduced
+bracket in its own colour (`\witness{P}`, `\witness{N}`,
+`\witness[ids]{X}`), or a right-aligned line of its own when the claim
+carries several witnesses — the same macro, `\witness[ids]{X}`, written
+on a line of its own (§6.12). The two classes are introduced
 by an in-text gloss — *Evidence tags* — that sits before the first mark of
 the body and defines the classes and nothing else.
 
@@ -313,7 +314,7 @@ census follow two consequences:
    have no counterpart; the paragraph-close heuristic `p` is what lifts
    gate 2 for such a site (§6.10).
 2. **The inline bracket is cheap but not free.** The optional argument of
-   `\tier` prints names, never numbers: the cost of the bracket does not
+   `\witness` prints names, never numbers: the cost of the bracket does not
    grow with the numbering of references, and the identifiers break in
    line thanks to the permitted underscores (`\brk@us`). The real limit is
    not the width, it is the sentence: hence `r` rules, not `L`.
@@ -340,7 +341,7 @@ lives in this documentation, not in that gloss.
 
 **It does not replace the citation.** The external source is and remains
 the `\cite`, in its own form beside the claim: `[N]~\cite{key}` and
-`[P] in~\cite{key}`. The optional argument of `\tier` admits **only**
+`[P] in~\cite{key}`. The optional argument of `\witness` admits **only**
 internal identifiers — a `\testref` or the raw name of a declaration of
 the repository's Lean file — and the preamble raises a `\PackageError`
 before anything else, so a mark bracket never prints a reference number.
@@ -353,7 +354,7 @@ that is already there.
 rule because it defines, it does not assert.
 
 **`P*` is internal.** The class exists and works in the preamble (dispatch
-`\@namedef{tiercol@P*}`, ochre colour) to mark between compilations a
+`\@namedef{markcol@P*}`, ochre colour) to mark between compilations a
 statement written but not yet verified against the corpus —
 the star's one denotation (§6.6) —; the printed text never invokes it,
 the gloss does not mention it and the prose does not speak of it. It is a
@@ -400,16 +401,26 @@ in a document is a measurement with a date, not an argument.
 
 ### 6.1 The set and its syntax
 
+There is **one body form**, `\witness[ids]{X}`, and it is
+**placement-driven**: the position of the call in the source picks the
+rendering (§6.12 S7), never the class of the mark.
+
 | role | source | prints |
 |---|---|---|
-| inline | `\tier[ids]{X}` | `X[ids]` — the tag first, its ids inside the brackets |
-| own-line | `\witness{X}{ids}` | `X[ids]` on a line of its own, flush right |
+| own line | `\witness[ids]{X}` written where the mode is vertical (`\ifvmode`: a blank line, a heading, the end of an environment) | `X[ids]` on a line of its own, flush right (§6.12) |
+| inline | `\witness[ids]{X}` written where a paragraph is already open (`\ifhmode`, mid-sentence or mid-paragraph) | `X[ids]` where the sentence put it, no break, no indent, no space eaten |
+
+The source is identical in both roles — one macro, one argument order,
+one name; only the position in the manuscript differs, and §6.10 decides
+that position as prose. The former second form, an inline macro of its
+own, is abolished: every site of the five repositories is `\witness`.
 
 `X` is `P` or `N` (§6.9). The body form is `P[id1, id2]`: **one tag, its
 ids inside the same brackets, separated by `, `** — the bracket belongs to
-the tag itself and never follows it as a second group. No third body form
-exists; an accounting line (`\leanline`, a `Lean:` line) is not a form of
-the mark (§6.4 S4).
+the tag itself and never follows it as a second group. A mark with no id
+keeps the bracket class-pure (`[P]`); no id is invented for it. No third
+body form exists; an accounting line (`\leanline`, a `Lean:` line) is not
+a form of the mark (§6.4 S4).
 
 The set of evidence marks is **`P` and `N`, with `\testref` as the test
 anchor — nothing else**. No decoration, no accounting line and no label
@@ -424,7 +435,7 @@ tool, not a class of the printed alphabet.
   asserted by the mark.
 - **`N`** — an executable numerical test with a stated tolerance and
   condition. The test is evidence; it is not a proof.
-- **`tier`** is never an alias for *proved*, and no mark carries a degree
+- **A mark** is never an alias for *proved*, and no mark carries a degree
   of confidence, a provenance grade or a citation.
 
 ### 6.3 Placement is prose, never semantics
@@ -446,7 +457,7 @@ before editing:
 
 | Class | Route |
 |---|---|
-| **S1** witness id | stays inside the mark — `\tier[ids]{X}`, `\witness{X}{ids}`, `\testref{…}` — written raw, never beside the tag |
+| **S1** witness id | stays inside the mark — `\witness[ids]{X}`, `\testref{…}` — written raw, never beside the tag |
 | **S2** code mention | `\code` |
 | **S3** decorated name (`*`, `°`, `†`) | `*` under §6.6; `°` and `†` under §6.9 |
 | **S4** `Lean:` accounting line | no canonical form yet: the sites stay where they are and are not migrated in bulk |
@@ -475,7 +486,7 @@ the macro raises at run time is a literal `\cite` token inside the
 argument, which is never an id.
 
 The rule that the bracket holds no external source is enforced where the
-key set exists: a test reads every `\tier[…]` and `\witness{…}{…}`
+key set exists: a test reads every `\witness[…]` argument of the
 argument of the manuscript, splits it on the commas that sit outside
 `\testref{…}`, and fails when a part equals the id of a record of
 `citation.csl.json` or contains a `\cite` token, reporting `file:line` and
@@ -491,7 +502,7 @@ rule itself is unchanged, only the layer that enforces it moves.
 The render of a legal tag is always the same shape: **the tag first, its
 ids inside the brackets** — `P[name1, name2]`, `N[test_x]`. The ids never
 precede the tag either, so a test witnessed in prose appears as
-`\tier{N} (\testref{test_x})`, never as `(\testref{test_x}) \tier{N}`.
+`\witness{N} (\testref{test_x})`, never as `(\testref{test_x}) \witness{N}`.
 External sources stay outside the tag: the claim keeps its `\cite` next to
 it, in the standard form `[P] in~\cite{key}` for a result proved in a
 source and `[N]~\cite{key}` for a value quoted from one. Two bracket
@@ -503,38 +514,38 @@ a number.
 They were the artefact of the previous convention: a name printed in tt
 brackets of its own, standing next to the tag of the same claim (`P[…]`
 beside `N[test_x]`), which is the duplication this standard replaced. Every
-internal name now lives **inside** the tag — `\tier[name1, name2]{P}` — or
+internal name now lives **inside** the tag — `\witness[name1, name2]{P}` — or
 inside a `\witness{}` block, and an external name (a theorem of a sibling
 repository) is never printed at all: the claim keeps its citation,
 `in~\cite{key}`.
 
 #### The writing rules
 
-1. **One claim, one tag.** No two tags are ever adjacent — `\tier{P}
-   \tier{N}` is a bug, not a summary.
+1. **One claim, one tag.** No two tags are ever adjacent — `\witness{P}
+   \witness{N}` is a bug, not a summary.
 2. **An external source is the citation, not a tag — and never the key of
    one.** The source of a claim is its `\cite`, set immediately after the
    claim it supports: no tag says "this is cited", because the bracket of
    the citation already says it, and in numeric style a repeat carries its
    number like any other reference. What a tag carries is an *internal*
    witness, by identifier: a Lean name inside its brackets,
-   `\witness{}` or `\testref{}`. `\tier[key]{X}` does not exist — the
-   optional argument of `\tier` holds internal ids only and the preamble
+   `\witness{}` or `\testref{}`. `\witness[key]{X}` does not exist — the
+   optional argument of `\witness` holds internal ids only and the preamble
    errors on anything else.
 3. **A bare tag needs a witness in its sentence.** If the sentence has
    none, add the most honest one (the `\testref{}` of the test that checks
    the number, the Lean declaration that proves it — written inside the
    tag, so the tag is bare no longer — or an `\eqref`/`\ref`); never
    invent a citation.
-4. **Every `\tier{N}` carries a `\testref{}`** when a test verifies it —
-   either folded into the tag, `\tier[\testref{test_x}]{N}`, or, when the
+4. **Every `\witness{N}` carries a `\testref{}`** when a test verifies it —
+   either folded into the tag, `\witness[\testref{test_x}]{N}`, or, when the
    sentence already carries other witnesses, as `\testref{}` in the prose
    of that same sentence, after the tag. The set of cited tests is pinned
    by the census test of the repository, so a new witness is added there
    too, after checking the test really recomputes the number next to it.
-5. **`\tier{P}` without a bracket** means proved here, with no theorem
+5. **`\witness{P}` without a bracket** means proved here, with no theorem
    name quoted at that point; the name, when it is quoted, goes into the
-   tag itself (`\tier[name]{P}`) or, when the claim carries two ids or
+   tag itself (`\witness[name]{P}`) or, when the claim carries two ids or
    more and closes its sentence, into a `\witness{}` block — the criterion
    of §6.10 (four gates and two labelled heuristics) decides which of the
    two. Proved in an external source is not "here": that is
@@ -545,8 +556,8 @@ repository) is never printed at all: the claim keeps its citation,
    is exempt from rule 3 — it defines, it does not claim — and it never
    mentions `P*`.
 7. **`P*` is available; the released text uses `P`.** The class is fully
-   functional in the preamble — the dispatch `\@namedef{tiercol@P*}` and
-   the ochre `tierPs` colour — so `\tier{P*}` renders `[P*]` exactly like
+   functional in the preamble — the dispatch `\@namedef{markcol@P*}` and
+   the ochre `tierPs` colour — so `\witness{P*}` renders `[P*]` exactly like
    any other class, and it is there for intermediate commits between
    builds (an agent without Lean, in draft) that need to tag a claim as
    written but not yet verified against the corpus — the star's one
@@ -556,7 +567,7 @@ repository) is never printed at all: the claim keeps its citation,
    prose no longer speaks of it.
 8. **No status tags in captions.** A caption already names the test that
    generates the figure (`\testref{…}` of that test, and the test of the
-   claim itself), which carries the status; a `\tier{…}` inside
+   claim itself), which carries the status; a `\witness` inside
    `\caption{…}` is removed, not kept. Tags belong to the body.
 
 ### 6.6 The star
@@ -579,25 +590,33 @@ with the letter (§4.2, WCAG 1.4.1). Rendering is re-checked by measurement
 at each wave, never by eye; reopening these parameters requires a new
 measurement.
 
-The underscore inside an id prints through the repository's `\brk@us`, and
-the family does **not** unify it — the break-per-character decision is
-typography:
+The underscore inside an id prints through the repository's `\brk@us`.
+The break-per-character decision is typography, so the family states it
+once and S8 (§6.12) has unified it where marks are printed:
 
 | repository | encoding | `\brk@us` |
 |---|---|---|
-| 01, 04 | OT1 | `{{\ttfamily\char95\relax}\allowbreak}` |
-| 02, 05 | T1 | `\textunderscore\allowbreak` |
-| 03 | T1 | `\textunderscore` — **no** `\allowbreak` |
+| 01, 04 | OT1 (no `fontenc`; the tt glyph, OT1 has no extractable `\textunderscore`) | `{{\ttfamily\char95\relax}\allowbreak}` |
+| 02, 03, 05 | T1 | `\textunderscore\penalty500\hskip0pt\relax` |
 
-03 keeps the form without the breakpoint because adding the family's
-`\allowbreak` would open a break after every underscore of a witness list,
-reflow the manuscript and break the family's byte-identical `pdftotext`
-gate (`03/main.tex` comment at the definition; commit `b1fec34`,
-2026-11-24).
+The row of 02/03/05 **is** the S8 form: one penalty per underscore, 500
+(discouraged, still legal), after which the natural break at penalty 0
+keeps following `, ` — a list splits at its commas and only an identifier
+longer than the remaining measure splits at all. The two extremes it
+replaced are retired: `\allowbreak` (= penalty 0) after every `_`, which
+made the mid-identifier break equally attractive and printed
+`twenty_divisor_` / `lattice_splits` in the 02/05 PDF, and 03's bare
+`\textunderscore` with no breakpoint, which is the form that can go
+overfull (`03/main.tex` comment at the definition, commit `b1fec34`,
+2026-11-24; the unification commits are `4edc048` in 03 and `a82bd8d` in
+05, 2026-11-26). 01 and 04 keep the OT1 form of their preamble: their
+`\brk@us` serves `\code` and `\tierids` only, and no mark is printed
+there, so nothing of theirs was reflowed. Re-opening any of these numbers
+requires a new measurement.
 
 ### 6.8 Gates
 
-1. **Citation-key lint** — no part of a `\tier[…]` or `\witness{…}{…}`
+1. **Citation-key lint** — no part of a `\witness[…]`
    argument may equal an id of `citation.csl.json` or contain a `\cite`
    token; it runs with the suite and reports `file:line`.
 2. **Zero stars** at release (§6.6).
@@ -643,9 +662,9 @@ pass to review it.
 
 **The rule in one sentence.** A claim whose id list carries **two ids or
 more and 35 characters or more** goes on a line of its own
-`\witness{X}{ids}` **only if the mark closes its sentence, does not close
+`\witness[ids]{X}` **only if the mark closes its sentence, does not close
 a list item, and stands at least 75 words from the nearest block of its
-paragraph**; every other site stays inline `\tier[ids]{X}`. Two labelled
+paragraph**; every other site stays inline `\witness[ids]{X}`. Two labelled
 **heuristics** amend the cost and position conditions (gates 2 and 4): `u`
 takes the verdict from the list the mark sits in, `p` prefers a line of
 its own at a paragraph close — both stated below. Gates 1 and 3 (`k ≥ 2`,
@@ -655,7 +674,7 @@ its own at a paragraph close — both stated below. Gates 1 and 3 (`k ≥ 2`,
 
 | Symbol | Quantity | How to measure |
 |---|---|---|
-| `k` | ids of the claim | count of `,` + 1 in the optional argument of `\tier`, resp. in the second argument of `\witness` |
+| `k` | ids of the claim | count of `,` + 1 in the optional argument of `\witness` |
 | `L` | length of the id list, in characters | that argument with `\_` unescaped to `_`, `\testref{…}` reduced to its name, braces dropped |
 | `r` | **sentence residual** — words of the *same sentence* that follow the mark | words between the mark and the next `.`, `!` or `?`, math and macros not counted; `r = 0` means the mark is the last element of its sentence |
 | `d` | distance in words to the nearest `\witness` block of the same paragraph | paragraphs are blank-line separated; `—` when the paragraph has no block |
@@ -708,7 +727,7 @@ or `description` whose `\item`s each begin a line, and the numbered
 sequence of `imported` statements — every mark of the run takes the same
 form: all inline or all on a line of its own, never mixed. The verdict is
 therefore taken **from the run, not from the item**: census the other
-marks of the run (inline `\tier` vs `\witness` block), then
+marks of the run (the inline mark vs the `\witness` block), then
 
 - run all inline → the mark stays inline, whatever gates 2 and 4 would say;
 - run all own-line → the mark goes on a line of its own, whatever gate 4's
@@ -719,7 +738,7 @@ marks of the run (inline `\tier` vs `\witness` block), then
 - run with no other mark → `u` abstains for lack of a census.
 
 Measurable: the run is delimited by `\begin{…}`/`\end{…}`; the census
-counts `\tier` and `\witness` occurrences inside it, excluding the mark
+counts `\witness` occurrences inside it, excluding the mark
 under review.
 
 Best practice: visual rhythm — a list whose marks change shape from item
@@ -791,18 +810,19 @@ decided, nor changed, nor implied by anything below.
 
 ### 6.12 The own-line form
 
-> **Own-line mark — rendering spec.** Applies to `\witness{X}{ids}` in all
-> five repositories; the inline form `\tier[ids]{X}` keeps its current
-> contract (§6.5). Every number below was measured, not chosen by eye: the
-> probe and its artefacts are listed under *Sources* at the end of this
-> section.
+> **Own-line mark — rendering spec.** Applies to `\witness[ids]{X}` in
+> all five repositories, in the branch its position selects (`\ifvmode`,
+> S7); the inline branch of the same macro keeps the contract of §6.5.
+> Every number below was measured, not chosen by eye: the probe and its
+> artefacts are listed under *Sources* at the end of this section.
 
-**S1. One shape, one macro.** The block form is exactly one macro,
-`\witness{X}{ids}`, defined once per repository with the *same body*
-(byte-level identical, as the family files are). No hand-written
-`{\raggedright \tier[…] …\par}` paragraph survives: those sites become
-`\witness{P}{ids}` where the criterion of §6.10 holds, otherwise inline
-`\tier[ids]{P}` in the prose. `\leanline` is retired as a *rendering form
+**S1. One shape, one macro.** The mark is exactly one macro,
+`\witness[ids]{X}`, defined once per repository with the *same body*
+(byte-level identical, as the family files are), and the position of the
+call in the source picks the branch (S7). No hand-written
+`{\raggedright \witness[…] …\par}` paragraph survives: those sites become
+an own-line `\witness[ids]{P}` where the criterion of §6.10 holds,
+otherwise the same macro inline in the prose. `\leanline` is retired as a *rendering form
 of the mark* (it is already "not a body form"); the `Lean:` accounting
 line itself remains class S4 (§6.4): its sites stay where they are and are
 not migrated in bulk.
@@ -871,29 +891,30 @@ dropped (or `tagH` is registered as a published class with a cost
 estimate first, §6.9). Colour scope: **the whole mark — the letter *and*
 the ids in the class colour**, which is what `\witness` already does in
 3/3 repositories that render marks and it makes the block read as one
-object; the inline `\tier` must be changed the same way (its ids print
+object; the inline branch must be changed the same way (its ids print
 black today, measured #000000 against #2659a5 in the block). Colour is
 redundant with the letter either way.
 
 **S7. Placement rule (`\ifvmode` / `\ifhmode`) and its edge cases.**
 
 ```latex
-\newcommand{\witness}[2]{%
+\newcommand{\witness}[2][]{%          % #1 = ids (optional), #2 = class
   \ifvmode                      % own line in the source -> block (S2–S6)
     \par\medskip\noindent\hfill
     \parbox{\dimexpr\linewidth-1em\relax}{\raggedleft <body>}\par\medskip
   \else                         % mid-line in the source -> inline, no break
-    {\normalfont\footnotesize\bfseries\tiercol{#1}#1%
-     \mdseries{\upshape\small\tttfamily[\tierids{#2}]}}%
+    {\normalfont\footnotesize\bfseries\markcol{#2}#2%
+     \mdseries{\upshape\small\tttfamily[\tierids{#1}]}}%
   \fi}
 ```
 
 - `\ifvmode` after a blank line or at the start of a line → block, as
   today.
-- `\ifhmode` (the 37 mid-line sites of 03, the 1 of 05) → the mark stays
-  inside the sentence: **no `\par`, no indent, no space is eaten** — the
-  paragraph does not break. This removes the current behaviour where a
-  mid-line call silently ends the paragraph and strands the rest of the
+- `\ifhmode` (a mark written where a paragraph is already open — the 37
+  mid-line sites of 03, the 1 of 05) → the mark stays inside the
+  sentence: **no `\par`, no indent, no space is eaten** — the paragraph
+  does not break. This removes the behaviour the inline macro had, where a
+  mid-line call silently ended the paragraph and stranded the rest of the
   sentence.
 - After `\noindent` or after a head the mode is `\hmode` → inline:
   correct, the text there is one paragraph.
@@ -902,6 +923,8 @@ redundant with the letter either way.
   bold-italic (measured: SFBI0900 against SFBX0900).
 - The argument is still read as an arbitrary string (§6.5); the `\cite`
   guard stays.
+- **No id (`\witness{X}`)**: both branches print the class-pure bracket
+  `[X]` (§6.1) — never `X[]`, and no id is invented for the site.
 
 **S8. Line breaking of long id lists.** Break priority: **`, ` first, `_`
 only as a fallback.** Concretely:

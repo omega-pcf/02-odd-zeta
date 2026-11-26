@@ -16,7 +16,7 @@ pnpm run build
 The numbers the documentation states about the repository are **measured,
 never typed** (family mechanism ported from `05-kkgt`, whose `CVR-001` §5
 named the stale counts): this repository does state counts in its prose — the
-manuscript carries `\tier[\testref{…}]{N}` anchors over ids of its own suite
+manuscript carries `\witness[\testref{…}]{N}` anchors over ids of its own suite
 and the appendix states counts of the Lean corpus — so its ledger measures
 them where it can: the pytest suite totals (`pytest.collected`,
 `pytest.not_slow`), the Lean source statistics of the one library
