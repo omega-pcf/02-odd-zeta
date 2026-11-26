@@ -42,7 +42,7 @@ Ids carried by `N` marks: **40 ids over 27 distinct**.
 | citation-key lint (no key, no `\cite` inside a tag) | **0 failures** |
 | stars (`\LeanStar` body uses) | **0** |
 | `Tier` column in a table | **0** |
-| `pending(D7)` markers | **3** |
+| `pending(D7)` markers | **1** |
 | `\witness[…]` id parts that are neither a `\testref`, a snake_case id nor a qualified declaration | **151** |
 | open sites (`(open;`) | **2** |
 
@@ -113,8 +113,6 @@ Ids carried by `N` marks: **40 ids over 27 distinct**.
 `pending(D7)` markers:
 
 - `src/chapters/04-bridges.tex:107`
-- `src/chapters/appendix.tex:461`
-- `src/chapters/appendix.tex:730`
 
 Open sites:
 
