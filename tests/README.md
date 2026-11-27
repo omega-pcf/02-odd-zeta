@@ -20,8 +20,8 @@ exist, and no module of `tests/` or `scripts/` may import it (AST sweep).
 
 ```bash
 # counts:begin id="commands"
-uv run pytest tests/ -q                 # whole suite   (202 tests)
-uv run pytest tests/ -q -m 'not slow'   # without >10 s (192 tests)
+uv run pytest tests/ -q                 # whole suite   (224 tests)
+uv run pytest tests/ -q -m 'not slow'   # without >10 s (211 tests)
 # counts:end id="commands"
 pnpm run verify:py                      # the same gate through package.json
 ```
@@ -29,9 +29,9 @@ pnpm run verify:py                      # the same gate through package.json
 The pytest configuration lives in `pyproject.toml` under
 `[tool.pytest.ini_options]` (`testpaths`, `pythonpath`, `markers`,
 `addopts`), so a bare `uv run pytest` collects the same
-<!-- counts:begin id="suite-total" -->202<!-- counts:end id="suite-total" -->
+<!-- counts:begin id="suite-total" -->224<!-- counts:end id="suite-total" -->
 tests as `uv run pytest tests/ -q`, and
-<!-- counts:begin id="suite-not-slow" -->192<!-- counts:end id="suite-not-slow" -->
+<!-- counts:begin id="suite-not-slow" -->211<!-- counts:end id="suite-not-slow" -->
 of them carry no `slow` mark. The numbers in those two spans are generated
 from a real run by `pnpm run counts`; `pnpm run counts:check` (inside
 `validate`) fails when they drift.
@@ -66,7 +66,11 @@ tests/
 ├── test_v_layer_claims.py          # the five v-layer scripts: their claim tests
 ├── test_retro_sprints.py           # the sixteen retro sprint scripts: their claim tests
 ├── test_weil_certificates.py       # the weil_certificates family: LP certificates,
-│                                   # rigorous W bounds, and the three replays
+│                                   # rigorous W bounds, the three replays, and the
+│                                   # window scripts (semilocal form, first-window constants)
+├── test_closures_and_sweeps.py     # classes_test, dh_logderiv, orbita_cert, oz_carried,
+│                                   # rho_interval, rigorous_chain, sweep,
+│                                   # W3_orbita_lado_primos, w4exact: their claim tests
 └── test_witness_census.py          # \testref <-> suite contract, port guard
 ```
 
@@ -94,7 +98,11 @@ half of their last printed digit, one unit of it for a certified bound the
 manuscript prints truncated (`assert_lower_bound_figure`) or rounded up
 (`assert_upper_bound_figure`), and one unit in either direction where two
 methods bound the same figure with different error terms
-(`assert_within_last_digit`).
+(`assert_within_last_digit`). Two figures of the closure/sweep family take
+the rules their sentences declare: `$\sim10^{-6}$` is an order of magnitude,
+asserted within half a decade, and a certified bound the manuscript prints
+*below* the computation (the `0.248`/`0.506` eigenvalues of
+`orbita_cert.py`) is asserted as `value >= figure`.
 
 ## The golden artifacts
 
@@ -131,3 +139,25 @@ chol_bound` — and `verify_iv_L1.0_output.txt` — the six chunk minima, `M`,
 `loss` and the `K=6000` tail against 04-bridges:514-516. The claim tests
 beside them recompute each number from the committed certificates
 (`cert_L1.0.json`, which the same module pins against 04-bridges:506-511).
+
+Its window section covers the three remaining scripts of the family:
+`verify_weil_chi5.py` (the explicit formula against the 40 committed zeros
+of `zeros.txt`, both sides below `1e-18`), `weil_window_chi5.py` (the
+archimedean threshold `L_c`, the three floors of the semilocal form and the
+counterfactual with `chi_5(2)=+1`) and `weil_window_rigorous_check.py`
+(`kappa`, `L*`, the margin at `log 2` and the integral identity behind
+`kappa`).
+
+`tests/test_closures_and_sweeps.py` does the same for the six committed
+outputs of the closure and sweep family — `classes_test.txt`,
+`orbita_cert.txt`, `rho_interval.txt`, `rigorous_chain.txt`, `sweep.txt`
+and `w4exact.txt` — each pinned at `1e-12` beside the claim test that
+recomputes it: the eight leave-one-out errors of the classes, the certified
+orbit bounds of chi_5 and of the quintic layer, the five maxima of
+`rho(R)`, the Ritz and Lehmann columns of the golden-field table, the
+sweep's 2208 orbit values and its smallest Toeplitz eigenvalue, and the
+twelve orbit planes of prop:W4-from-W3 (i). The other three scripts of the
+family (`dh_logderiv.py`, `oz_carried.py`, `W3_orbita_lado_primos.py`) have
+no committed output and are recomputed outright; the Bernoulli, Gauss--Lerch
+and digamma claims of `oz_carried.py` stay with
+`test_l_function_values.py`, which already asserts them.

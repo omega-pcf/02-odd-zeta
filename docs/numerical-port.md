@@ -10,7 +10,7 @@
 
 **Scope.** This is the working base of the port campaign: one row per
 numerical script of `hipotesis/pruebas/` (83 `.py`, measured today),
-reconciled against the suite that already exists in `tests/` (202 tests,
+reconciled against the suite that already exists in `tests/` (224 tests,
 `uv run pytest tests/`). Sources: `docs/reports/20261126_SCRIPTS-RECON-003_scripts_reconciliation.md`
 (promoted from the scratch inventory), the manuscript
 (`main.tex` + `src/chapters/*.tex`, line hits measured with `git grep`
@@ -72,14 +72,14 @@ Columns: `script` · `qué hace` (one line, from its docstring) ·
 | `weil_certificates/cert.py` | Programa lineal que da el certificado de la ventana de Weil (cert_L*.json). | `04-bridges:573`, `04-bridges:577`, `appendix:577` | — | `test_weil_certificates.py` | `ported:test_weil_certificates · verified-against-corpus` |
 | `chi5_zeros.py` | chi5_zeros.py — ceros de L(s, chi_5) en la recta, 0 < t < T, por cambios de signo de la funcion Z real. | `04-bridges:175`, `appendix:586` | — · dato de entrada, no un claim | `generator:<chi5_zeros.json + chi5_zeros_T80.txt kept as fixture>` | `pending` |
 | `circle_and_detect.py` | circle_and_detect.py — W4–W5, ssec:weil-closure: la densidad de Fejer en el circulo de p = 3, y lo que el | `04-bridges:1862`, `04-bridges:1880`, `appendix:585` | `test_circle_and_detect_golden_values`, `test_circle_and_detect_matches_manuscript_claim` | `absorbed` | `verified-against-corpus` |
-| `classes_test.py` | classes_test.py — W4–W5, ssec:weil-closure: las ocho clases modulo 20 hacen falta en la correccion. | `04-bridges:1641`, `appendix:586` | — | `test_closures_and_sweeps.py` | `pending` |
+| `classes_test.py` | classes_test.py — W4–W5, ssec:weil-closure: las ocho clases modulo 20 hacen falta en la correccion. | `04-bridges:1641`, `appendix:586` | — | `tests/test_closures_and_sweeps.py` | `ported:test_closures_and_sweeps` |
 | `comun.py` | Utilidades comunes de las verificaciones (§33–§54 del Lean unificado). | — | — · andamiaje de 8 scripts; sus consumidores escala_ceros_bajos/t1_index/t2_loo están fijados en `test_golden_n_marks.py` | `absorbed` | `verified-against-corpus` |
 | `comun_pruebas.py` | comun_pruebas.py — utilidades comunes de hipotesis/pruebas/: criba, potencias de primo con Lambda, | — | — · lo importan 22 scripts; sin claim propio ni salida | `orphan-no-cited` | `pending` |
 | `corrected_operator.py` | corrected_operator.py — W4–W5, ssec:weil-closure y prop:positions: las posiciones, desde la estructura. | `04-bridges:1238`, `appendix:586` | `test_corrected_operator_golden_values`, `test_corrected_operator_matches_manuscript_claim` | `absorbed` | `verified-against-corpus` |
 | `cuintica.py` | cuintica.py — la representacion de la capa quintica (prop:sqrt-x, prop:phi-layers): a(n) para la formula explicita. | — | — · lo importa `orbita_cert.py` (`from cuintica import a_pk`) | `orphan-no-cited` | `pending` |
 | `dedekind.py` | dedekind.py — W3, ssec:field-positivity: la suma de Fejer de Q(i,sqrt5), el campo de las cuatro fibras de G. | `04-bridges:958` | `test_orbit_balance_is_pinned` | `absorbed` | `verified-against-corpus` |
 | `dh.py` | dh.py — W1–W2, ssec:two-sides: las sumas parciales de la inversa de Davenport–Heilbronn y de mu·chi_5. | `04-bridges:893`, `appendix:583` | `test_additive_side_statistics_are_pinned` | `absorbed` | `verified-against-corpus` |
-| `dh_logderiv.py` | Coeficientes de −L′/L de Davenport–Heilbronn frente a L(s,χ₅): soporte y tamaño. | `04-bridges:909`, `appendix:123`, `appendix:586` | — | `test_closures_and_sweeps.py` | `pending` |
+| `dh_logderiv.py` | Coeficientes de −L′/L de Davenport–Heilbronn frente a L(s,χ₅): soporte y tamaño. | `04-bridges:909`, `appendix:123`, `appendix:586` | — | `tests/test_closures_and_sweeps.py` | `ported:test_closures_and_sweeps · verified-against-corpus` |
 | `dh_zeros.py` | dh_zeros.py — ceros de Davenport-Heilbronn hasta T=130 (para retro101.py). Uso: python3 -I dh_zeros.py | `appendix:586` | — · dato de entrada, no un claim | `generator:<dh_zeros.json kept as fixture>` | `pending` |
 | `envelope.py` | Envoltura exacta de S(t) con los ceros de L(s,χ₅) (prop:envelope-exact); abre `zeros.txt`. | `appendix:96`, `appendix:579` | `tests/test_envelope_bounds.py` (2 tests, recomputan desde la caché commiteada) | `test_envelope_bounds` | `ported:test_envelope_bounds · verified-against-corpus` |
 | `escala_ceros_bajos.py` | escala_ceros_bajos.py — W4–W5, prop:sqrt-x: la escala 1/2 desde los ceros bajos de las formas de niveles 80 y 135. | `04-bridges:1307` | `test_residual_scales_are_pinned` | `absorbed` | `verified-against-corpus` |
@@ -98,8 +98,8 @@ Columns: `script` · `qué hace` (one line, from its docstring) ·
 | `weil_certificates/op_rig_validated.py` | Validated replay of the operator-form Weil window (Thm 23.8), in chunks with checkpoints. | `04-bridges:523`, `04-bridges:555`, `appendix:42` (+1) | — | `test_weil_certificates.py` | `ported:test_weil_certificates · verified-against-corpus` |
 | `weil_certificates/opcert.py` | Óptimo primal del programa lineal de la ventana (reutiliza lp.py). | — | — · andamiaje: lo importa `zeroside_check.py` (su `phihat`); el propio no se importa | `absorbed` | `absorbed` |
 | `weil_certificates/opcert_rig.py` | Óptimo primal riguroso con W_lower (versión con intervalos). | `appendix:578` | — | `test_weil_certificates.py` | `ported:test_weil_certificates` |
-| `orbita_cert.py` | orbita_cert.py — W4–W5, ssec:weil-closure: la orbita certificada, y la familia de la capa quintica. | `04-bridges:1868`, `appendix:728` | — | `test_closures_and_sweeps.py` | `pending` |
-| `oz_carried.py` | oz_carried.py -- numerical checks for the results carried from the predecessor version (F1 v157). | `03-mechanisms:2208`, `03-mechanisms:2232`, `03-mechanisms:2265` (+6) | — | `test_closures_and_sweeps.py` | `pending` |
+| `orbita_cert.py` | orbita_cert.py — W4–W5, ssec:weil-closure: la orbita certificada, y la familia de la capa quintica. | `04-bridges:1868`, `appendix:728` | — | `tests/test_closures_and_sweeps.py` | `ported:test_closures_and_sweeps · verified-against-corpus` |
+| `oz_carried.py` | oz_carried.py -- numerical checks for the results carried from the predecessor version (F1 v157). | `03-mechanisms:2208`, `03-mechanisms:2232`, `03-mechanisms:2265` (+6) | `test_l_function_values.py` (el bloque Bernoulli/Gauss–Lerch/digamma) · `tests/test_closures_and_sweeps.py` (el resto) | `test_closures_and_sweeps.py` | `ported:test_closures_and_sweeps · verified-against-corpus` |
 | `retro101.py` | retro101.py — Sprint 101. La linea del indice (sprints 93n-96n) sobre una orbita libre REAL: | `04-bridges:1079`, `appendix:586` | — | `test_retro_sprints.py` | `ported:test_retro_sprints · verified-against-corpus` |
 | `retro102.py` | retro102.py — Sprint 102. La flecha W3 => W4 del diccionario, y las dos mitades de W4 como las dos paridades. | `04-bridges:1925`, `appendix:586` | — | `test_retro_sprints.py` | `ported:test_retro_sprints · verified-against-corpus` |
 | `retro104.py` | retro104.py — Sprint 104. Lo que un operador del nivel no separa, y el par que si separa. | `03-mechanisms:3546`, `appendix:586` | — | `test_retro_sprints.py` | `ported:test_retro_sprints · verified-against-corpus` |
@@ -119,16 +119,16 @@ Columns: `script` · `qué hace` (one line, from its docstring) ·
 | `retro93.py` | retro93.py — Sprint 93: una orbita libre de Klein y el indice de inercia de la forma de Weil. | `04-bridges:1079`, `appendix:586` | — | `test_retro_sprints.py` | `ported:test_retro_sprints · verified-against-corpus` |
 | `retro94.py` | retro94.py — sprint 94: la masa del reloj separada por las fibras de G. | `03-mechanisms:1528`, `appendix:586` | — | `test_retro_sprints.py` | `ported:test_retro_sprints · verified-against-corpus` |
 | `retro99.py` | retro99.py — sprint 99: que selecciona el estabilizador {id, mate}. La funcion de Davenport-Heilbronn | `04-bridges:907`, `appendix:123`, `appendix:586` | — | `test_retro_sprints.py` | `ported:test_retro_sprints · verified-against-corpus` |
-| `rho_interval.py` | rho_interval.py — W3, ssec:golden-field: la cota inferior rho <= lambda_{N+1} de la forma de Weil de Q(sqrt5). | `04-bridges:1191`, `appendix:584` | — | `test_closures_and_sweeps.py` | `pending` |
-| `rigorous_chain.py` | rigorous_chain.py — W3, ssec:golden-field: las primeras ventanas del campo dorado sobre todo el espacio. | `04-bridges:1191`, `appendix:583` | — | `test_closures_and_sweeps.py` | `pending` |
+| `rho_interval.py` | rho_interval.py — W3, ssec:golden-field: la cota inferior rho <= lambda_{N+1} de la forma de Weil de Q(sqrt5). | `04-bridges:1191`, `appendix:584` | — | `tests/test_closures_and_sweeps.py` | `ported:test_closures_and_sweeps · verified-against-corpus` |
+| `rigorous_chain.py` | rigorous_chain.py — W3, ssec:golden-field: las primeras ventanas del campo dorado sobre todo el espacio. | `04-bridges:1191`, `appendix:583` | — | `tests/test_closures_and_sweeps.py` | `ported:test_closures_and_sweeps · verified-against-corpus` |
 | `weil_certificates/rigW.py` | Rigorous lower bound for W(r)=log(5/pi)+Re psi(1/4+ir/2). | `04-bridges:552`, `appendix:577` | — | `test_weil_certificates.py` | `ported:test_weil_certificates · verified-against-corpus` |
-| `sweep.py` | sweep.py — W4–W5, ssec:weil-closure y prop:eight-classes: la cota (W4) en las ocho clases, barrida. | `04-bridges:1860`, `appendix:585` | — | `test_closures_and_sweeps.py` | `pending` |
+| `sweep.py` | sweep.py — W4–W5, ssec:weil-closure y prop:eight-classes: la cota (W4) en las ocho clases, barrida. | `04-bridges:1860`, `appendix:585` | — | `tests/test_closures_and_sweeps.py` | `ported:test_closures_and_sweeps · verified-against-corpus` |
 | `t1_index.py` | t1_index.py — W4–W5, prop:what-fluctuation-takes (iv): el orden angular de phi carga la posicion del primo. | `04-bridges:1677`, `appendix:586` | `test_angular_index_statistics_are_pinned` | `absorbed` | `verified-against-corpus` |
 | `t2_loo.py` | t2_loo.py — W4–W5, prop:what-fluctuation-takes: dejar un primo fuera de la correccion. | `04-bridges:1677`, `appendix:586` | `test_angular_index_statistics_are_pinned` | `absorbed` | `verified-against-corpus` |
 | `teich.py` | teich.py — ssec:delta-polar: la p-derivacion de Z[phi], la forma polar de phi en 2 y 3 y el grupo de color. | `appendix:586` | `test_delta_p_tower_ratios_are_pinned` | `absorbed` | `verified-against-corpus` |
 | `testB1b.py` | testB1b.py — W1–W2, ssec:fluct-geometry: los valores individuales piden log p con precision ~1/T. | `04-bridges:856`, `appendix:581` | `test_fluctuation_law_is_the_same_everywhere` | `absorbed` | `verified-against-corpus` |
 | `testGeom.py` | testGeom.py — W1–W2, ssec:fluct-geometry: la ley de la fluctuacion es geometrica. | `04-bridges:854`, `appendix:581` | `test_fluctuation_law_is_the_same_everywhere` | `absorbed` | `verified-against-corpus` |
-| `tstar.py` | La constante T*(n)=c(n)·πn/log(μn+σ) y su envoltura (prop:envelope-exact). | `03-mechanisms:3385`, `appendix:96`, `appendix:579` | — · el módulo ya existe pero en la ola P1 cubre a envelope/zeroside, no a tstar | `test_envelope_bounds.py` | `pending` |
+| `tstar.py` | La constante T*(n)=c(n)·πn/log(μn+σ) y su envoltura (prop:envelope-exact). | `03-mechanisms:3385`, `appendix:96`, `appendix:579` | — · el módulo ya existe pero en la ola P1 cubre a envelope/zeroside, no a tstar; la ola P4 lo difiere a P5 (su fila debe al módulo de envelope, no a esta familia) | `test_envelope_bounds.py` | `pending` |
 | `v12_pitagoras_raiz_X.py` | √X como Pitágoras: energía E(X) = Σ_{p≤X} \|a_p\|² log² p frente a \|S(X)\|², S(X) = Σ a_p log p, | `04-bridges:1303` | `tests/test_v_layer_claims.py` (14 tests de claim) | `test_v_layer_claims` | `ported:test_v_layer_claims · verified-against-corpus` |
 | `v27_reloj_ciclotomico.py` | §68: el reloj ciclotómico.  N(Φ_n(φ)) = Φ_n(φ)·Φ_n(ψ), exacto como entero por Möbius sobre | `03-mechanisms:1400`, `03-mechanisms:1453` | `tests/test_v_layer_claims.py` (14 tests de claim) | `test_v_layer_claims` | `ported:test_v_layer_claims · verified-against-corpus` |
 | `v28_hiperbola_reloj_tamano.py` | §69: del reloj al tamaño, la hipérbola c·i = N_p. | `03-mechanisms:1674` | `tests/test_v_layer_claims.py` (14 tests de claim) | `test_v_layer_claims` | `ported:test_v_layer_claims · verified-against-corpus` |
@@ -137,24 +137,24 @@ Columns: `script` · `qué hace` (one line, from its docstring) ·
 | `weil_certificates/verify_cert.py` | Verifica un certificado JSON contra la cota que declara. | — | — · 0 importadores y 0 citas; andamiaje declarado en el MANIFEST del zip1, sin claim propio (reclasificado en la ola P1) | `orphan-no-cited` | `pending` |
 | `weil_certificates/verify_iv.py` | Rigorous replay in interval arithmetic (mpmath.iv, outward rounding) of a Weil-window certificate. | `04-bridges:493`, `04-bridges:555`, `appendix:41` (+1) | — | `test_weil_certificates.py` | `ported:test_weil_certificates · verified-against-corpus` |
 | `weil_certificates/verify_rig.py` | Replay riguroso de un certificado en aritmética de fracciones. | `04-bridges:517` | — | `test_weil_certificates.py` | `ported:test_weil_certificates · verified-against-corpus` |
-| `verify_weil_chi5.py` | verify_weil_chi5.py  — [N] numerical checks for the Weil route (F1 manuscript). | `04-bridges:381`, `appendix:573` | — | `test_weil_certificates.py` | `pending` |
-| `W3_orbita_lado_primos.py` | Criba hasta e^14.5 y mide la órbita del lado de los primos (W3). | `04-bridges:1870` | — | `test_closures_and_sweeps.py` | `pending` |
-| `w4exact.py` | w4exact.py — W4–W5, prop:W4-from-W3 (i): (W4) es (W3) en los planos de la orbita, exactamente. | `appendix:585` | — | `test_closures_and_sweeps.py` | `pending` |
-| `weil_window_chi5.py` | Autovalores semilocales de la ventana de Weil para L(s,χ₅). | `04-bridges:425`, `04-bridges:431`, `04-bridges:601` (+3) | — | `test_weil_certificates.py` | `pending` |
-| `weil_window_rigorous_check.py` | Constantes de thm:first-window (κ, W(0)) con aritmética rigurosa. | `04-bridges:453`, `appendix:575` | — | `test_weil_certificates.py` | `pending` |
-| `x_sweep.py` | As x_sweep.py, with the prime sum smoothed: weight w(log n/log X) on each prime power n, | `04-bridges:1637`, `appendix:586` | — · el módulo ya existe pero en la ola P1 cubre a envelope/zeroside, no a x_sweep | `test_envelope_bounds.py` | `pending` |
+| `verify_weil_chi5.py` | verify_weil_chi5.py  — [N] numerical checks for the Weil route (F1 manuscript). | `04-bridges:381`, `appendix:573` | — | `tests/test_weil_certificates.py` | `ported:test_weil_certificates · verified-against-corpus` |
+| `W3_orbita_lado_primos.py` | Criba hasta e^14.5 y mide la órbita del lado de los primos (W3). | `04-bridges:1870` | — | `tests/test_closures_and_sweeps.py` | `ported:test_closures_and_sweeps · verified-against-corpus` |
+| `w4exact.py` | w4exact.py — W4–W5, prop:W4-from-W3 (i): (W4) es (W3) en los planos de la orbita, exactamente. | `appendix:585` | — | `tests/test_closures_and_sweeps.py` | `ported:test_closures_and_sweeps` |
+| `weil_window_chi5.py` | Autovalores semilocales de la ventana de Weil para L(s,χ₅). | `04-bridges:425`, `04-bridges:431`, `04-bridges:601` (+3) | — | `tests/test_weil_certificates.py` | `ported:test_weil_certificates · verified-against-corpus` |
+| `weil_window_rigorous_check.py` | Constantes de thm:first-window (κ, W(0)) con aritmética rigurosa. | `04-bridges:453`, `appendix:575` | — | `tests/test_weil_certificates.py` | `ported:test_weil_certificates · verified-against-corpus` |
+| `x_sweep.py` | As x_sweep.py, with the prime sum smoothed: weight w(log n/log X) on each prime power n, | `04-bridges:1637`, `appendix:586` | — · el módulo ya existe pero en la ola P1 cubre a envelope/zeroside, no a x_sweep; la ola P4 lo difiere a P5 (su fila debe al módulo de envelope, no a esta familia) | `test_envelope_bounds.py` | `pending` |
 | `zeroside.py` | zeroside.py — W4–W5, ssec:weil-closure: la formula explicita sobre la orbita de Frobenius, comprobada. | `04-bridges:1854`, `appendix:585` | `test_zeroside_orbit_agrees_with_the_zeros` | `absorbed` | `verified-against-corpus` |
 | `weil_certificates/zeroside_check.py` | Suelo de la ventana por el lado de los ceros: Q(f)=Σ\|f̂(γ)\|²; abre `zeros.txt`. | `04-bridges:601`, `appendix:578` | `tests/test_envelope_bounds.py` (2 tests, recomputan desde la caché commiteada) | `test_envelope_bounds` | `ported:test_envelope_bounds · verified-against-corpus` |
 
-**Counts by destino:** `<test-name>` **44** (30 `ported`, 14 still owed) ·
+**Counts by destino:** `<test-name>` **44** (42 `ported`, 2 still owed) ·
 `absorbed` **32** · `generator` **2** ·
 `orphan-no-cited` **4** · `blocked` **1** — total
 **83**. **Counts by status:**
-`ported:<test> · verified-against-corpus` **29** ·
-`ported:<test>` **1** ·
+`ported:<test> · verified-against-corpus` **39** ·
+`ported:<test>` **3** ·
 `verified-against-corpus` **28** ·
 `absorbed` **4** ·
-`pending` **21** · `in-progress` **0**.
+`pending` **9** · `in-progress` **0**.
 
 **Deletion pass (wave P1):** none of the 8 scripts this wave ports was
 removed from `hipotesis/pruebas/`. Measured first: no `.py` of the
@@ -211,24 +211,66 @@ would falsify the census of `appendix:571` ("the full census lives in
 `orphan-no-cited` P1 recorded. No member of the family appears in
 `correr_todo.sh` (measured), and the manuscript is out of scope.
 
+**Deletion pass (wave P4):** none of the twelve scripts this wave ports was
+removed from `hipotesis/pruebas/`, and neither of the two it defers.
+Measured first: `git grep` finds no `import <name>` / `from <name>` of any
+of the fourteen (zero hits), so nothing outside them would break — but the
+test does not replace them as evidence either. All twelve are
+`census-cited`: `classes_test.py` (`04-bridges:1641`, `appendix:586`),
+`dh_logderiv.py` (`04-bridges:909`, `appendix:123`, `appendix:586`),
+`orbita_cert.py` (`04-bridges:1868`, `appendix:728`), `oz_carried.py`
+(`03-mechanisms:2208`, `03-mechanisms:2232`, `03-mechanisms:2265` (+6)),
+`rho_interval.py` and `rigorous_chain.py` (`04-bridges:1191`,
+`appendix:584` / `appendix:583`), `sweep.py` (`04-bridges:1860`,
+`appendix:585`), `W3_orbita_lado_primos.py` (`04-bridges:1870`),
+`w4exact.py` (`appendix:585`), `verify_weil_chi5.py` (`04-bridges:381`,
+`appendix:573`), `weil_window_chi5.py` (`04-bridges:425`, `04-bridges:431`,
+`04-bridges:601`, `appendix:93`) and `weil_window_rigorous_check.py`
+(`04-bridges:453`, `appendix:575`) — so all twelve stay: deleting any of
+them would falsify the census of `appendix:571` ("the full census lives in
+`hipotesis/pruebas/` ($83$ scripts)"), and the manuscript is out of scope.
+Six of the twelve are also in `correr_todo.sh`
+(`dependency:correr_todo.sh`): `classes_test.py`, `orbita_cert.py`,
+`rho_interval.py`, `rigorous_chain.py`, `sweep.py` and `w4exact.py` — the
+runner that regenerates the six `salidas/*.txt` this wave pins.
+
+`tstar.py` and `x_sweep.py` are **deferred to wave P5**: both rows owe to
+`test_envelope_bounds.py` (the envelope family of P1), not to this one, and
+P1's note already records that the module exists but covers
+envelope/zeroside rather than these two — porting them here would place
+the tests in the wrong module. Their rows stay `pending` and are the two
+still owed by the `<test-name>` destino.
+
+No row of this family is `absorbed-into:<test>`: the only overlap measured
+is `oz_carried.py`'s first block — the exact Bernoulli rationals, the
+$L(2k,\chiv)$ formula against the Hurwitz sums, the Gauss–Lerch and
+digamma identities — which `test_l_function_values.py` already asserts
+(`test_generalized_bernoulli_numbers_equal_rationals`,
+`test_even_l_values_match_bernoulli_formula`,
+`test_gauss_lerch_reproduces_l_one`,
+`test_digamma_character_sum_equals_two_sqrt_five_log_phi`); those claims
+are reconciled there and not duplicated in the new module.
+
 **Reconciliation against the suite (measured today, not assumed):**
 
-* **62 of 83** scripts are covered — **32 rows `absorbed`**, of which
+* **74 of 83** scripts are covered — **32 rows `absorbed`**, of which
   **28** are `verified-against-corpus`: an existing test reads the
   script's committed output (**27** of them the `salidas/<name>.txt` of
   the sub-table below; `comun.py` through the pins its consumers have in
   `test_golden_n_marks.py`) — the other **4** are scaffolding absorbed
   into the corpus they feed (`retro83.py`, `retro86.py`,
   `weil_certificates/lp.py`, `weil_certificates/opcert.py`) — plus the
-  **30 rows ported by waves P1–P3**: the 8 of `test_envelope_bounds`,
+  **42 rows ported by waves P1–P4**: the 8 of `test_envelope_bounds`,
   `test_bridge_boosts` and `test_v_layer_claims`, the 16 of
-  `test_retro_sprints`, and the 6 of `test_weil_certificates`, whose
-  tests recompute the number from the committed inputs and assert the
-  figure the `.tex` statement prints.
-* The 202 tests live in 20 modules; the covering ones are
+  `test_retro_sprints`, the 9 of `test_weil_certificates` and the 9 of
+  `test_closures_and_sweeps`, whose tests recompute the number from the
+  committed inputs and assert the figure the `.tex` statement prints
+  (`classes_test.py` and `w4exact.py` carry no figure of their own, so
+  their rows are `ported` without the second half).
+* The 224 tests live in 21 modules; the covering ones are
   `test_golden_observations.py` (4 observation outputs),
   `test_golden_n_marks.py` (23 outputs behind the bare `N` marks) and
-  `test_arch_window.py`, plus the five modules waves P1–P3 added.
+  `test_arch_window.py`, plus the six modules waves P1–P4 added.
 * **74 of 83** scripts are cited in the manuscript (line hits measured);
   **9 are not**: the 4 true orphans plus 5 scaffolding modules.
   `SCRIPTS-RECON-003.md` counted 75 cited / 8 uncited — the difference
@@ -238,10 +280,11 @@ would falsify the census of `appendix:571` ("the full census lives in
 
 ## Sub-table: `salidas/` (35)
 
-What each committed output feeds. Six committed outputs still have
-no test: the script's claim is in the text and its output is already in
-the tree, so the port is a reader, not a rerun (`_registro.txt` is the
-index of the set, not a script's output).
+What each committed output feeds. No committed output is left without a
+test: the six that had none (`classes_test`, `orbita_cert`, `rho_interval`,
+`rigorous_chain`, `sweep`, `w4exact`) are pinned by the golden tests of
+`tests/test_closures_and_sweeps.py` (`_registro.txt` is the index of the
+set, not a script's output).
 
 | salida | productor | alimenta | status |
 |---|---|---|---|
@@ -253,7 +296,7 @@ index of the set, not a script's output).
 | `bridge.txt` | `bridge.py` | `test_bridge_boosts_golden_values` | `verified-against-corpus` |
 | `castelnuovo.txt` | `castelnuovo.py` | `test_castelnuovo_golden_values`, `test_castelnuovo_matches_manuscript_claim` | `verified-against-corpus` |
 | `circle_and_detect.txt` | `circle_and_detect.py` | `test_circle_and_detect_golden_values`, `test_circle_and_detect_matches_manuscript_claim` | `verified-against-corpus` |
-| `classes_test.txt` | `classes_test.py` | golden candidato de `test_closures_and_sweeps.py` | `pending` |
+| `classes_test.txt` | `classes_test.py` | `test_classes_test_golden_values` | `verified-against-corpus` |
 | `corrected_operator.txt` | `corrected_operator.py` | `test_corrected_operator_golden_values`, `test_corrected_operator_matches_manuscript_claim` | `verified-against-corpus` |
 | `dedekind.txt` | `dedekind.py` | `test_orbit_balance_is_pinned` | `verified-against-corpus` |
 | `dh.txt` | `dh.py` | `test_additive_side_statistics_are_pinned` | `verified-against-corpus` |
@@ -269,16 +312,16 @@ index of the set, not a script's output).
 | `mertens341.txt` | `mertens341.py` | `test_additive_side_statistics_are_pinned` | `verified-against-corpus` |
 | `mobius.txt` | `mobius.py` | `test_additive_side_statistics_are_pinned` | `verified-against-corpus` |
 | `offline.txt` | `offline.py` | `test_offline_minimum_stays_positive` | `verified-against-corpus` |
-| `orbita_cert.txt` | `orbita_cert.py` | golden candidato de `test_closures_and_sweeps.py` | `pending` |
-| `rho_interval.txt` | `rho_interval.py` | golden candidato de `test_closures_and_sweeps.py` | `pending` |
-| `rigorous_chain.txt` | `rigorous_chain.py` | golden candidato de `test_closures_and_sweeps.py` | `pending` |
-| `sweep.txt` | `sweep.py` | golden candidato de `test_closures_and_sweeps.py` | `pending` |
+| `orbita_cert.txt` | `orbita_cert.py` | `test_orbita_cert_golden_values` | `verified-against-corpus` |
+| `rho_interval.txt` | `rho_interval.py` | `test_rho_interval_golden_values` | `verified-against-corpus` |
+| `rigorous_chain.txt` | `rigorous_chain.py` | `test_rigorous_chain_golden_values` | `verified-against-corpus` |
+| `sweep.txt` | `sweep.py` | `test_sweep_golden_values` | `verified-against-corpus` |
 | `t1_index.txt` | `t1_index.py` | `test_angular_index_statistics_are_pinned` | `verified-against-corpus` |
 | `t2_loo.txt` | `t2_loo.py` | `test_angular_index_statistics_are_pinned` | `verified-against-corpus` |
 | `teich.txt` | `teich.py` | `test_delta_p_tower_ratios_are_pinned` | `verified-against-corpus` |
 | `testB1b.txt` | `testB1b.py` | `test_fluctuation_law_is_the_same_everywhere` | `verified-against-corpus` |
 | `testGeom.txt` | `testGeom.py` | `test_fluctuation_law_is_the_same_everywhere` | `verified-against-corpus` |
-| `w4exact.txt` | `w4exact.py` | golden candidato de `test_closures_and_sweeps.py` | `pending` |
+| `w4exact.txt` | `w4exact.py` | `test_w4exact_golden_values` | `verified-against-corpus` |
 | `zeroside.txt` | `zeroside.py` | `test_zeroside_orbit_agrees_with_the_zeros` | `verified-against-corpus` |
 
 ## Sub-table: `datos/` (12)

@@ -32,6 +32,17 @@ of ``docs/numerical-port.md``):
   reaching $L=1.08$ with margin $0.013$ (``cert.py``).
 * ``appendix:41-42, 577-578`` — the census rows naming ``verify_iv.py``,
   ``op_rig_validated.py``, ``cert.py``, ``rigW.py``, ``opcert_rig.py``.
+* ``04-bridges:379-381`` — the normalisation of the explicit formula: the
+  $40$ zeros of height $\\le80$ (first $\\gamma=6.6484533447$) and Gaussian
+  $g$ make both sides agree to $10^{-18}$ (``verify_weil_chi5.py``).
+* ``04-bridges:426-433`` with ``appendix:93`` — prop:semilocal: the
+  archimedean threshold $L_c=0.9251$, the floor $0.097$ at $L=1$,
+  $5.3\\cdot10^{-3}$ at $1.4$, $\\sim10^{-6}$ at $2$, and the counterfactual
+  $\\chi_5(2)=+1$ failing from $L\\approx0.9$ (``weil_window_chi5.py``).
+* ``04-bridges:439-454`` with ``appendix:575`` — thm:first-window: the
+  constants $\\kappa=-3.76274\\ldots$, $L^*=0.744725\\ldots$, the margin
+  $m=0.0841$ at $L=\\log2$, the integral identity behind $\\kappa$ and
+  $\\psi(\\tfrac12)=-\\gamma_E-2\\log2$ (``weil_window_rigorous_check.py``).
 
 Conditions declared by the corpus:
 
@@ -952,3 +963,323 @@ def test_verify_rig_certifies_the_pointwise_window_in_double_precision() -> None
         worst = min(worst, float(val.min()))
         r0 = rk[-1] + h
     assert_lower_bound_figure(worst, fig, "the rigorous minimum (04-bridges:517)")
+
+# --------------------------------------------------------------------------------------
+# verify_weil_chi5.py, weil_window_chi5.py, weil_window_rigorous_check.py — the
+# normalisation of the explicit formula, the semilocal window, the first-window constants.
+# --------------------------------------------------------------------------------------
+
+#: The committed cache of the 40 zeros of L(s, chi_5) below T = 80 (byte-identical
+#: to chi5_zeros_T80.txt, committed in 7b0c68f) — the input ``verify_weil_chi5.py``
+#: recomputes by sign changes; the suite reads it instead of re-running the scan.
+CHI5_ZEROS_T80 = REPO_ROOT / "hipotesis" / "pruebas" / "zeros.txt"
+
+#: The sine basis and the grid ``weil_window_chi5.py`` declares (its ``J=24, M=3000``).
+WINDOW_J = 24
+WINDOW_M = 3000
+
+
+def _window_coefficients() -> dict[int, float]:
+    r"""$\Lambda(n)\chi_5(n)/\sqrt n$ for the prime powers $n < 200$ (the script's ``cn``)."""
+    coefficients = {}
+    for n in range(2, 200):
+        x, p = n, None
+        for candidate in range(2, n + 1):
+            if x % candidate == 0:
+                p = candidate
+                while x % candidate == 0:
+                    x //= candidate
+                break
+        if x != 1 or p is None:
+            continue
+        chi = [0, 1, -1, -1, 1][n % 5]
+        if chi:
+            coefficients[n] = np.log(p) * chi / np.sqrt(n)
+    return coefficients
+
+
+def _window_lambda(L: float, with_primes: bool = True, flip_two: bool = False) -> float:
+    """Smallest eigenvalue of the Weil form on $[-L/2,L/2]$ (``weil_window_chi5.py``).
+
+    The orthonormal sine basis of ``WINDOW_J`` modes on a uniform grid of
+    ``WINDOW_M`` points, the archimedean term in the variable $u$ with its
+    singular pieces combined, and the prime side interpolated on the same
+    grid. ``flip_two`` replaces the Frobenius at 2 by the identity, the
+    counterfactual of 04-bridges:432.
+    """
+    coefficients = _window_coefficients()
+    x = np.linspace(-L / 2, L / 2, WINDOW_M)
+    dx = x[1] - x[0]
+    basis = np.array([np.sin(j * np.pi * (x + L / 2) / L) for j in range(1, WINDOW_J + 1)])
+    basis /= np.sqrt((basis**2).sum(1) * dx)[:, None]
+    u = np.arange(0, WINDOW_M) * dx
+    uu = u[1:]
+    wg = -2 * np.exp(-uu / 2) / (1 - np.exp(-2 * uu))
+    w0 = 2 * np.exp(-2 * uu) / (1 - np.exp(-2 * uu))
+    form = np.zeros((WINDOW_J, WINDOW_J))
+    for a in range(WINDOW_J):
+        for b in range(a, WINDOW_J):
+            full = np.correlate(basis[a], basis[b], "full") * dx
+            g = (full[WINDOW_M - 1 :] + full[:WINDOW_M][::-1]) / 2
+            g0 = g[0]
+            integrand = np.empty_like(u)
+            integrand[0] = -1.5 * g0
+            integrand[1:] = w0 * g0 + wg * g[1:]
+            arch = np.trapezoid(integrand, u) - np.log(1 - np.exp(-2 * L)) * g0
+            arch = g0 * (np.log(5 / np.pi) - 0.5772156649015329) + arch
+            prime = 0.0
+            if with_primes:
+                for n, c in coefficients.items():
+                    log_n = np.log(n)
+                    if log_n < L:
+                        if flip_two and n == 2:
+                            c = abs(c)
+                        prime += c * np.interp(log_n, u, g)
+            form[a, b] = form[b, a] = arch - 2 * prime
+    return float(np.linalg.eigvalsh(form)[0])
+
+
+def _archimedean_threshold() -> float:
+    """The $L$ where the archimedean-only form changes sign, by bisection."""
+    lo, hi = 0.5, 1.2  # positive at 0.5, negative at 1.2 (the script's finding)
+    for _ in range(18):
+        mid = (lo + hi) / 2
+        if _window_lambda(mid, with_primes=False) > 0:
+            lo = mid
+        else:
+            hi = mid
+    return (lo + hi) / 2
+
+
+def test_verify_weil_chi5_normalisation_agrees_to_ten_minus_18() -> None:
+    r"""``04-bridges:379-381`` — the $40$ zeros (first $\gamma=6.6484533447$) and Gaussian $g$ give $10^{-18}$.
+
+    Condition: ``verify_weil_chi5.py``'s own — ``mp.dps = 25``, the
+    completed $\Lambda$ split at $\sigma=0.30,0.35,0.45$ (the widths its
+    docstring declares), the prime side over the prime powers below $6000$
+    split by $\chi_5$. The zeros are the committed cache the script's sign
+    scan reproduces (count, height and first ordinate asserted below), so
+    the scan's 138 s stay out of the suite.
+    """
+    count, height, first, exponent = _claim(
+        "04-bridges.tex",
+        r"with the\s+\$(\d+)\$ zeros of height \$\\le(\d+)\$ \(first \$\\gamma=([\d.]+)\$\)"
+        r"[\s\S]*?both sides agree to \$10\^\{(-?\d+)\}\$",
+        "the normalisation figures (04-bridges:380-381)",
+    )
+    tokens = CHI5_ZEROS_T80.read_text().split()
+    assert len(tokens) == int(count), f"the cache holds {len(tokens)} zeros, the manuscript says {count}"
+    assert max(float(t) for t in tokens) < int(height), f"a zero sits above T={height}"
+    assert_half_last_digit(float(tokens[0]), first, "the first zero (04-bridges:380)")
+
+    tolerance = mp.mpf(10) ** int(exponent)
+    for sigma in ("0.30", "0.35", "0.45"):
+        residual = _explicit_formula_residual(mp.mpf(sigma))
+        assert residual < tolerance, (
+            f"the explicit formula misses at sigma={sigma} by {mp.nstr(residual, 4)}, "
+            f"the manuscript claims {tolerance}"
+        )
+
+
+def _explicit_formula_residual(sigma: mp.mpf) -> mp.mpf:
+    """``|Z - (A - 2P)|`` of ``verify_weil_chi5.py`` for a Gaussian of width ``sigma``."""
+    with mp.workdps(25):
+        zeros = [mp.mpf(t) for t in CHI5_ZEROS_T80.read_text().split()]
+        g = lambda u: mp.e ** (-u ** 2 / (2 * sigma ** 2))
+        h = lambda r: sigma * mp.sqrt(2 * mp.pi) * mp.e ** (-sigma ** 2 * r ** 2 / 2)
+        zero_side = 2 * sum(h(gamma) for gamma in zeros)
+        arch = (
+            mp.quad(
+                lambda r: h(r) * (mp.log(5 / mp.pi) + mp.re(mp.digamma(mp.mpf(1) / 4 + 1j * r / 2))),
+                [-mp.inf, 0, mp.inf],
+            )
+            / (2 * mp.pi)
+        )
+        split = mp.mpf(0)
+        inert = mp.mpf(0)
+        for n in range(2, 6000):
+            x, p = n, None
+            for candidate in range(2, n + 1):
+                if x % candidate == 0:
+                    p = candidate
+                    while x % candidate == 0:
+                        x //= candidate
+                    break
+            if x != 1 or p is None:  # the prime powers only (the script's factorint)
+                continue
+            chi = [0, 1, -1, -1, 1][n % 5]
+            if chi == 0:
+                continue
+            term = mp.log(p) / mp.sqrt(n) * g(mp.log(n))
+            if chi == 1:
+                split += term
+            else:
+                inert += term
+        return abs(zero_side - (arch - 2 * (split - inert)))
+
+
+def test_weil_window_chi5_threshold_and_floor() -> None:
+    r"""``04-bridges:426-431`` with ``appendix:93`` — $L_c=0.9251$, $0.097$ at $1$, $5.3\cdot10^{-3}$ at $1.4$, $\sim10^{-6}$ at $2$.
+
+    Condition: ``weil_window_chi5.py``'s own — ``J=24`` sine modes,
+    ``M=3000`` points, the archimedean term with its singular pieces
+    combined. The threshold is where the archimedean-only form changes
+    sign (bisected to $3\cdot10^{-6}$), reconciled with the printed
+    $L_c$ at half of its last digit; the three floors are the form with
+    the primes. $\sim10^{-6}$ is an order-of-magnitude claim, asserted
+    within half a decade (the computed value is $2.5\cdot10^{-6}$).
+    """
+    (l_c,) = _claim(
+        "04-bridges.tex",
+        r"archimedean positivity alone holds up to \$L_c=([\d.]+)\$ and fails beyond",
+        "the archimedean threshold (04-bridges:428)",
+    )
+    floor, decay_mantissa, decay_exponent, tail_exponent = _claim(
+        "04-bridges.tex",
+        r"decays super-exponentially \(\$([\d.]+)\$ at \$L=1\$, \$([\d.]+)\\cdot10\^\{(-?\d+)\}\$"
+        r" at \$1\.4\$,\s+\$\\sim10\^\{(-?\d+)\}\$ at \$2\$",
+        "the floor figures (04-bridges:430)",
+    )
+    (l_c_appendix,) = _claim(
+        "appendix.tex",
+        r"Archimedean alone up to \$L=([\d.]+)\$",
+        "the appendix row for the threshold (appendix:93)",
+    )
+    assert l_c == l_c_appendix, f"04-bridges:428 and appendix:93 disagree: {l_c} vs {l_c_appendix}"
+
+    threshold = _archimedean_threshold()
+    assert_half_last_digit(threshold, l_c, "the archimedean threshold (04-bridges:428)")
+
+    at_one = _window_lambda(1.0)
+    at_one_four = _window_lambda(1.4)
+    at_two = _window_lambda(2.0)
+    assert at_one > 0 and at_one_four > 0 and at_two > 0, (
+        "the form with the primes must stay positive on every window the manuscript computes"
+    )
+    assert_half_last_digit(at_one, floor, "the L=1 floor (04-bridges:430)")
+    assert_half_last_digit(
+        at_one_four, f"{decay_mantissa}e{decay_exponent}", "the L=1.4 floor (04-bridges:430)"
+    )
+    decade = mp.mpf(10) ** int(tail_exponent)
+    assert abs(mp.log10(at_two) - int(tail_exponent)) <= mp.mpf("0.5"), (
+        f"the L=2 floor {at_two} is not of order {mp.nstr(decade, 3)} (half a decade)"
+    )
+
+
+def test_weil_window_chi5_counterfactual_fails_from_the_printed_threshold() -> None:
+    r"""``04-bridges:432-433`` with ``appendix:93`` — with $\chi_5(2)=+1$ positivity fails from $L\approx0.9$.
+
+    Condition: the same ``J=24``/``M=3000`` window with the Frobenius at 2
+    replaced by the identity. ``weil_window_chi5.py`` scans
+    $L=0.6,0.7,0.8,0.9,\ldots$ and reports the first failure, so the
+    figure is the grid point where the sign flips: positive one step
+    below it, negative at it (the bisection puts the crossing at
+    $0.840$).
+    """
+    (figure,) = _claim(
+        "04-bridges.tex",
+        r"positivity fails from \$L\\approx([\d.]+)\$",
+        "the counterfactual threshold (04-bridges:433)",
+    )
+    (figure_appendix,) = _claim(
+        "appendix.tex",
+        r"it fails from \$L\\approx([\d.]+)\$",
+        "the appendix row for the counterfactual (appendix:93)",
+    )
+    assert figure == figure_appendix, f"04-bridges:433 and appendix:93 disagree: {figure} vs {figure_appendix}"
+
+    at_figure = _window_lambda(float(figure), flip_two=True)
+    below = _window_lambda(float(figure) - 0.1, flip_two=True)
+    assert at_figure < 0, f"the counterfactual form is still positive at L={figure}: {at_figure}"
+    assert below > 0, f"the counterfactual form is already negative at L={float(figure) - 0.1}: {below}"
+
+
+def test_weil_window_rigorous_check_constants() -> None:
+    r"""``04-bridges:440,443,450,466`` — $\kappa=-3.76274\ldots$, $L^*=0.744725\ldots$, $m=0.0841$ at $\log2$.
+
+    Condition: ``weil_window_rigorous_check.py``'s own — ``mp.dps = 30``,
+    $\kappa$ in its two writings ($\log5-\log\pi-\gamma_E-\pi/2-3\log2$
+    and $\log(5/\pi)+\psi(1/4)$), $L^*$ as the root of $\kappa+K(L/2)=0$,
+    the margin at $L=\log2$, and the integral identity behind $\kappa$.
+    The printed $\kappa$ is truncated (``\ldots``), reconciled at one unit
+    of its last digit.
+    """
+    (kappa_figure,) = _claim(
+        "04-bridges.tex",
+        r"\\kappa=[^=]*=(-?[\d.]+)\\ldots",
+        "kappa (04-bridges:440)",
+    )
+    (l_star_figure,) = _claim(
+        "04-bridges.tex",
+        r"L\^\*=([\d.]+)\\ldots",
+        "L* (04-bridges:443)",
+    )
+    (margin_figure,) = _claim(
+        "04-bridges.tex",
+        r"At \$L=\\log2\$, \$m=([\d.]+)\$",
+        "the margin at L = log2 (04-bridges:450)",
+    )
+    _claim(
+        "04-bridges.tex",
+        r"\\psi\(1\)-\\psi\(\\frac14\)=\\frac\\pi2\+3\\log2",
+        "the integral identity behind kappa (04-bridges:466)",
+    )
+    _claim(
+        "04-bridges.tex",
+        r"\\psi\(\\tfrac12\)=-\\gamma_E-2\\log2",
+        "the digamma value at 1/2 (04-bridges:453)",
+    )
+
+    with mp.workdps(30):
+        kappa = mp.log(5) - mp.log(mp.pi) - mp.euler - mp.pi / 2 - 3 * mp.log(2)
+        assert_close(kappa, mp.log(5 / mp.pi) + mp.digamma(mp.mpf(1) / 4), mp.mpf("1e-28"), "kappa, two writings")
+        assert_within_last_digit(float(kappa), kappa_figure, "kappa (04-bridges:440)")
+
+        k = lambda d: 2 * (mp.atanh(mp.e ** (-d / 2)) + mp.atan(mp.e ** (-d / 2)))
+        bound = lambda L: kappa + k(L / 2)
+        l_star = mp.findroot(bound, 0.75)
+        assert_half_last_digit(float(l_star), l_star_figure, "L* (04-bridges:443)")
+        assert_close(bound(l_star), 0, mp.mpf("1e-28"), "kappa + K(L*/2) = 0")
+
+        margin = bound(mp.log(2))
+        assert_half_last_digit(float(margin), margin_figure, "the margin at L = log2 (04-bridges:450)")
+
+        identity = mp.quad(
+            lambda u: 2 * (mp.e ** (-u / 2) - mp.e ** (-2 * u)) / (1 - mp.e ** (-2 * u)), [0, 1, mp.inf]
+        )
+        assert_close(identity, mp.pi / 2 + 3 * mp.log(2), mp.mpf("1e-25"), "the integral identity (04-bridges:466)")
+        assert_close(mp.digamma(mp.mpf(1) / 2), -mp.euler - 2 * mp.log(2), mp.mpf("1e-29"), "psi(1/2)")
+
+
+def test_first_window_margin_stays_nonnegative_up_to_l_star() -> None:
+    r"""``04-bridges:446-450`` — $m(L)\ge0$ for every $L\le L^*$, the claim of thm:first-window.
+
+    Condition: the theorem's own definition —
+    $m(L)=\min(\kappa+K(L/2),\ \kappa+\tfrac12(K(L-\log2)+K(L))-\tfrac{\log2}{\sqrt2})$,
+    the second term only for $L>\log2$, evaluated on a grid up to the
+    root $L^*$ the check above reproduces.
+    """
+    (l_star_figure,) = _claim(
+        "04-bridges.tex",
+        r"L\^\*=([\d.]+)\\ldots",
+        "L* (04-bridges:443)",
+    )
+    with mp.workdps(30):
+        kappa = mp.log(5) - mp.log(mp.pi) - mp.euler - mp.pi / 2 - 3 * mp.log(2)
+        k = lambda d: 2 * (mp.atanh(mp.e ** (-d / 2)) + mp.atan(mp.e ** (-d / 2)))
+        l_star = mp.findroot(lambda L: kappa + k(L / 2), 0.75)
+        log_two = mp.log(2)
+        margins = []
+        for i in range(41):
+            L = l_star * i / 40
+            if L == 0:
+                continue
+            first = kappa + k(L / 2)
+            second = kappa + (k(L - log_two) + k(L)) / 2 - log_two / mp.sqrt(2)
+            margins.append(min(first, second) if L > log_two else first)
+        worst = min(margins)
+        assert worst >= 0, f"the margin turns negative below L*: {mp.nstr(worst, 6)}"
+        assert abs(float(l_star) - float(l_star_figure)) < 1e-5, (
+            "the grid must reach the printed L* for the claim to be tested there"
+        )
+
