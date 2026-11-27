@@ -20,8 +20,8 @@ exist, and no module of `tests/` or `scripts/` may import it (AST sweep).
 
 ```bash
 # counts:begin id="commands"
-uv run pytest tests/ -q                 # whole suite   (191 tests)
-uv run pytest tests/ -q -m 'not slow'   # without >10 s (183 tests)
+uv run pytest tests/ -q                 # whole suite   (202 tests)
+uv run pytest tests/ -q -m 'not slow'   # without >10 s (192 tests)
 # counts:end id="commands"
 pnpm run verify:py                      # the same gate through package.json
 ```
@@ -29,9 +29,9 @@ pnpm run verify:py                      # the same gate through package.json
 The pytest configuration lives in `pyproject.toml` under
 `[tool.pytest.ini_options]` (`testpaths`, `pythonpath`, `markers`,
 `addopts`), so a bare `uv run pytest` collects the same
-<!-- counts:begin id="suite-total" -->191<!-- counts:end id="suite-total" -->
+<!-- counts:begin id="suite-total" -->202<!-- counts:end id="suite-total" -->
 tests as `uv run pytest tests/ -q`, and
-<!-- counts:begin id="suite-not-slow" -->183<!-- counts:end id="suite-not-slow" -->
+<!-- counts:begin id="suite-not-slow" -->192<!-- counts:end id="suite-not-slow" -->
 of them carry no `slow` mark. The numbers in those two spans are generated
 from a real run by `pnpm run counts`; `pnpm run counts:check` (inside
 `validate`) fails when they drift.
@@ -65,6 +65,8 @@ tests/
 ├── test_bridge_boosts.py           # bridge.py: the boost figures + its committed output
 ├── test_v_layer_claims.py          # the five v-layer scripts: their claim tests
 ├── test_retro_sprints.py           # the sixteen retro sprint scripts: their claim tests
+├── test_weil_certificates.py       # the weil_certificates family: LP certificates,
+│                                   # rigorous W bounds, and the three replays
 └── test_witness_census.py          # \testref <-> suite contract, port guard
 ```
 
@@ -73,7 +75,7 @@ tests/
 | marker | meaning |
 |---|---|
 | `slow` | takes more than ~10 s; `verify:py` runs `-m 'not slow'`, the full run is `uv run pytest tests/ -q` |
-| `golden` | compares a committed output under `hipotesis/pruebas/salidas` (pinned artifact, nothing recomputed) |
+| `golden` | compares a committed output of `hipotesis/pruebas/` (`salidas/` or the script's own directory) against the manuscript figures (pinned artifact, nothing recomputed) |
 | `witness` | contract test between the manuscript's `\testref` tags and the suite |
 
 ## Tolerances
@@ -87,8 +89,12 @@ series, the per-`s` Euler tolerances `5e-4 … 1e-12`, and `1e-5` for the
 Euler quotients. A number that fails is reported with its gap; a tolerance
 is never loosened to make it pass. The golden artifacts pin their committed
 digits at `1e-12` (far below the four decimals the files print), and the
-manuscript figures are reconciled at the precision those sentences claim
-(half of their last printed digit).
+manuscript figures are reconciled at the precision those sentences claim:
+half of their last printed digit, one unit of it for a certified bound the
+manuscript prints truncated (`assert_lower_bound_figure`) or rounded up
+(`assert_upper_bound_figure`), and one unit in either direction where two
+methods bound the same figure with different error terms
+(`assert_within_last_digit`).
 
 ## The golden artifacts
 
@@ -115,3 +121,13 @@ archimedean form of `ζ_K`: the two crossings of the paragraph of
 `0.453`, the criterion `λ₂(D) > |C₀|` holds up to `1.647`, beyond the
 prime-free range `[0, log 4]`), the basis the sentence declares for them,
 and the row at `S = log 4` that carries the two window statements.
+
+`tests/test_weil_certificates.py` does the same for the two committed
+replays under `hipotesis/pruebas/weil_certificates/` (the outputs live
+with the script, not in `salidas/`): `op_rig_validated_output.json` — the
+three validated margins against the figures of 04-bridges:541-543 and 555
+plus the artefact's exact `lambda_upper = lambda_float + 1e-8 +
+chol_bound` — and `verify_iv_L1.0_output.txt` — the six chunk minima, `M`,
+`loss` and the `K=6000` tail against 04-bridges:514-516. The claim tests
+beside them recompute each number from the committed certificates
+(`cert_L1.0.json`, which the same module pins against 04-bridges:506-511).

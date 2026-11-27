@@ -13,6 +13,10 @@ Contents
   reconciliation margins for a figure read out of the manuscript text (5% of
   the value for a figure marked ``\approx``; half of the last digit printed
   otherwise);
+* ``assert_lower_bound_figure``, ``assert_upper_bound_figure`` and
+  ``assert_within_last_digit`` — the bound rules for the same text: a
+  certified bound printed truncated (or rounded up), and a second
+  computation of one figure, reconciled at one unit of the last digit;
 * readers for the repository's committed text artifacts (the manuscript
   sources and the observation outputs under ``hipotesis/pruebas/salidas``).
 
@@ -189,6 +193,72 @@ def assert_half_last_digit(value: float, printed: str, note: str) -> None:
     assert abs(value - float(printed)) <= tol, (
         f"{note}: |{value} - {float(printed)}| = {abs(value - float(printed))} exceeds "
         f"{tol} (half the last digit of the manuscript figure {printed})"
+    )
+
+
+def last_digit_unit(printed: str) -> float:
+    """The value of one unit of the last digit the manuscript printed.
+
+    ``printed`` is the figure exactly as it appears in the ``.tex`` — a
+    decimal (``"0.04458"``) or a scientific literal (``"2.8e-6"``, the
+    mantissa and exponent of ``$2.8\\cdot10^{-6}$`` joined by the caller).
+    """
+    mantissa, _, exponent = printed.partition("e")
+    decimals = len(mantissa.split(".")[1]) if "." in mantissa else 0
+    return 10.0 ** (int(exponent or 0) - decimals)
+
+
+def assert_lower_bound_figure(value: float, printed: str, note: str) -> None:
+    """Assert a certified lower bound lies where the manuscript prints it.
+
+    The manuscript prints a certified bound (a margin, a minimum, a tail)
+    truncated to the precision of the sentence — ``0.0027`` for the margin
+    0.0027748… — because a bound may never be printed larger than it is.
+    The computed value must therefore lie in
+    ``[printed, printed + one unit of its last digit)``: below the figure
+    the sentence would be false, a whole unit above it would have been
+    printed with one more digit. ``printed`` is the figure exactly as it
+    appears in the ``.tex``, never a re-typed float.
+    """
+    expected = float(printed)
+    step = last_digit_unit(printed)
+    assert expected <= value < expected + step, (
+        f"{note}: computed {value} is outside [{printed}, {expected + step}) "
+        f"(the manuscript's {printed} printed truncated to its last digit)"
+    )
+
+
+def assert_upper_bound_figure(value: float, printed: str, note: str) -> None:
+    """Assert a certified upper bound lies where the manuscript prints it.
+
+    The mirror rule for a quantity the manuscript prints rounded up — a
+    Lipschitz constant subtracted as a loss, a verified eigenvalue bound:
+    the computed value must lie in
+    ``(printed - one unit of its last digit, printed]``. ``printed`` is the
+    figure exactly as it appears in the ``.tex``, never a re-typed float.
+    """
+    expected = float(printed)
+    step = last_digit_unit(printed)
+    assert expected - step < value <= expected, (
+        f"{note}: computed {value} is outside ({expected - step}, {printed}] "
+        f"(the manuscript's {printed} printed rounded up to its last digit)"
+    )
+
+
+def assert_within_last_digit(value: float, printed: str, note: str) -> None:
+    """Assert a second computation of one figure agrees with the manuscript.
+
+    For a quantity two methods bound with different error terms (a
+    rigorous primal and a validated replay of the same margin), the
+    agreement scale is one unit of the last digit the manuscript printed —
+    in either direction. ``printed`` is the figure exactly as it appears in
+    the ``.tex``, never a re-typed float.
+    """
+    expected = float(printed)
+    step = last_digit_unit(printed)
+    assert abs(value - expected) <= step, (
+        f"{note}: |{value} - {expected}| = {abs(value - expected)} exceeds "
+        f"{step} (one unit of the last digit of the manuscript figure {printed})"
     )
 
 
