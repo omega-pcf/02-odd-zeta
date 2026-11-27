@@ -10,7 +10,7 @@
 
 **Scope.** This is the working base of the port campaign: one row per
 numerical script of `hipotesis/pruebas/` (83 `.py`, measured today),
-reconciled against the suite that already exists in `tests/` (115 tests,
+reconciled against the suite that already exists in `tests/` (118 tests,
 `uv run pytest tests/`). Sources: `docs/reports/20261126_SCRIPTS-RECON-003_scripts_reconciliation.md`
 (promoted from the scratch inventory), the manuscript
 (`main.tex` + `src/chapters/*.tex`, line hits measured with `git grep`
@@ -56,7 +56,7 @@ test. Line numbers are snapshots and move with the manuscript.
 
 Columns: `script` · `qué hace` (one line, from its docstring) ·
 `statements que respalda` (its citations in the manuscript) ·
-`test existente que ya lo cubre` (reconciled against the 115 tests) ·
+`test existente que ya lo cubre` (reconciled against the 118 tests) ·
 `destino propuesto` · `status`.
 
 | script | qué hace | statements que respalda | test existente | destino propuesto | status |
@@ -65,7 +65,7 @@ Columns: `script` · `qué hace` (one line, from its docstring) ·
 | `arch_window.py` | arch_window.py — W3, ssec:golden-field: la forma arquimediana de zeta_K, K = Q(sqrt5), explicitamente. | `04-bridges:1166`, `appendix:584` | `test_arch_window_crossings_are_pinned` | `absorbed` | `verified-against-corpus` |
 | `balance.py` | balance.py — W3, ssec:field-positivity: la positividad como balance entre los dos tipos de orbita de Klein. | `04-bridges:950`, `appendix:581` | `test_orbit_balance_is_pinned` | `absorbed` | `verified-against-corpus` |
 | `blocks.py` | blocks.py — W3, ssec:field-positivity: los tres bloques del lado de los primos y el limite forzado. | `04-bridges:925` | `test_fejer_window_is_pinned` | `absorbed` | `verified-against-corpus` |
-| `bridge.py` | bridge.py — W3, prop:bridge-boosts: rotaciones sobre la linea, boosts fuera de ella. | `04-bridges:1050`, `appendix:582` | — | `test_bridge_boosts.py` | `pending` |
+| `bridge.py` | bridge.py — W3, prop:bridge-boosts: rotaciones sobre la linea, boosts fuera de ella. | `04-bridges:1050`, `appendix:582` | `tests/test_bridge_boosts.py` (golden de `salidas/bridge.txt` + 2 tests de claim) | `test_bridge_boosts` | `ported:test_bridge_boosts · verified-against-corpus` |
 | `castelnuovo.py` | castelnuovo.py — W3, ssec:product-surface: el analogo de los conteos de puntos de Weil. | `04-bridges:993`, `appendix:582` | `test_castelnuovo_golden_values`, `test_castelnuovo_matches_manuscript_claim`, `test_castelnuovo_window_maxima` | `absorbed` | `verified-against-corpus` |
 | `ceros_chi5_500.py` | ceros_chi5_500.py — los ceros de L(s,chi_5) en 0 < t < 500 (dato común de hipotesis/pruebas/). | — | — · su salida `chi5_zeros_500.json` sí la leen `circle_and_detect.py` y `comun_pruebas.py` | `orphan-no-cited` | `pending` |
 | `weil_certificates/cert.py` | Programa lineal que da el certificado de la ventana de Weil (cert_L*.json). | `04-bridges:573`, `04-bridges:577`, `appendix:577` | — | `test_weil_certificates.py` | `pending` |
@@ -145,13 +145,13 @@ Columns: `script` · `qué hace` (one line, from its docstring) ·
 | `zeroside.py` | zeroside.py — W4–W5, ssec:weil-closure: la formula explicita sobre la orbita de Frobenius, comprobada. | `04-bridges:1854`, `appendix:585` | `test_zeroside_orbit_agrees_with_the_zeros` | `absorbed` | `verified-against-corpus` |
 | `weil_certificates/zeroside_check.py` | Suelo de la ventana por el lado de los ceros: Q(f)=Σ\|f̂(γ)\|²; abre `zeros.txt`. | `04-bridges:601`, `appendix:578` | `tests/test_envelope_bounds.py` (2 tests, recomputan desde la caché commiteada) | `test_envelope_bounds` | `ported:test_envelope_bounds · verified-against-corpus` |
 
-**Counts by destino:** `<test-name>` **44** (2 `ported`, 42 still owed) ·
+**Counts by destino:** `<test-name>` **44** (3 `ported`, 41 still owed) ·
 `absorbed` **33** · `generator` **2** ·
 `orphan-no-cited` **3** · `blocked` **1** — total
 **83**. **Counts by status:**
-`ported:<test> · verified-against-corpus` **2** ·
+`ported:<test> · verified-against-corpus` **3** ·
 `verified-against-corpus` **28** ·
-`pending` **53** · `in-progress` **0**.
+`pending` **52** · `in-progress` **0**.
 
 **Reconciliation against the suite (measured today, not assumed):**
 
@@ -159,7 +159,7 @@ Columns: `script` · `qué hace` (one line, from its docstring) ·
   of which **27** are golden: an existing test reads the script's
   committed `salidas/<name>.txt`. The other 6 are scaffolding absorbed
   into the corpus they feed.
-* The 115 tests live in 16 modules; the covering ones are
+* The 118 tests live in 17 modules; the covering ones are
   `test_golden_observations.py` (4 observation outputs),
   `test_golden_n_marks.py` (23 outputs behind the bare `N` marks) and
   `test_arch_window.py`.
@@ -172,7 +172,7 @@ Columns: `script` · `qué hace` (one line, from its docstring) ·
 
 ## Sub-table: `salidas/` (35)
 
-What each committed output feeds. Seven committed outputs still have
+What each committed output feeds. Six committed outputs still have
 no test: the script's claim is in the text and its output is already in
 the tree, so the port is a reader, not a rerun (`_registro.txt` is the
 index of the set, not a script's output).
@@ -184,7 +184,7 @@ index of the set, not a script's output).
 | `arch_window.txt` | `arch_window.py` | `test_arch_window_crossings_are_pinned` | `verified-against-corpus` |
 | `balance.txt` | `balance.py` | `test_orbit_balance_is_pinned` | `verified-against-corpus` |
 | `blocks.txt` | `blocks.py` | `test_fejer_window_is_pinned` | `verified-against-corpus` |
-| `bridge.txt` | `bridge.py` | golden candidato de `test_bridge_boosts.py` | `pending` |
+| `bridge.txt` | `bridge.py` | `test_bridge_boosts_golden_values` | `verified-against-corpus` |
 | `castelnuovo.txt` | `castelnuovo.py` | `test_castelnuovo_golden_values`, `test_castelnuovo_matches_manuscript_claim` | `verified-against-corpus` |
 | `circle_and_detect.txt` | `circle_and_detect.py` | `test_circle_and_detect_golden_values`, `test_circle_and_detect_matches_manuscript_claim` | `verified-against-corpus` |
 | `classes_test.txt` | `classes_test.py` | golden candidato de `test_closures_and_sweeps.py` | `pending` |
