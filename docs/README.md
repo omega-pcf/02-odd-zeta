@@ -11,6 +11,7 @@ docs/
 ├── citations.md       # CSL single-source citation pipeline (§1–§7) + witness index (§8)
 ├── counts.md          # Generated counts ledger (pnpm run counts; never edited by hand)
 ├── installation.md    # Prerequisites and setup
+├── numerical-port.md  # NUMPORT-001: living coverage tracker of the hipotesis/pruebas → tests port campaign
 ├── usage.md           # Build and release commands
 ├── witness-contract.md # The single living norm: rationale, standard (§6) and wave-brief shape (§10)
 ├── witness-decisions.md # The family ledger: one row per question, open and ruled
@@ -39,6 +40,11 @@ inventories, decision logs, verdict tables — goes to `docs/reports/`.
   forty `\witness[\testref{…}]{N}` anchors that cite test ids — but those live
   outside the mechanism, which measures only the ledger's counters.
 - **installation.md**: Prerequisites and setup instructions.
+- **numerical-port.md**: `NUMPORT-001`, the living tracker of the port campaign that moves the
+  numerical evidence of `hipotesis/pruebas/` into `tests/` — the destination convention (F10 pattern,
+  one entrypoint `uv run pytest tests/`), the master table of the 83 scripts reconciled against the
+  suite's 113 tests, and the sub-tables of `salidas/`, `datos/`, the orphans and the blockers.
+  It records state only: neither `hipotesis/pruebas/` nor `tests/` is edited from it.
 - **usage.md**: Daily workflow, conventional commits, build and release commands.
 - **witness-contract.md**: The single living norm of the witness marks — the rationale (§1–§5,
   §7), the standard itself (§6: precedence, syntax, placement, naming, grammar and the writing
@@ -50,7 +56,10 @@ inventories, decision logs, verdict tables — goes to `docs/reports/`.
   - **reports/**: Specific reports — the witness reconciliation (F8-001), the tier-use migration
     map (FTI-001), the author text changes (F12-001), the provenance inventory (F9-001), the
     pytest suite port (F10-001), the citation verification (CIT-003) and the merge closure
-    (MRG-001). The convention (naming, ISO header, index format) and the index of this
+    (MRG-001), plus the working papers promoted from scratch — the witness
+    specification (`WIT-SPEC-002`), the witness inventory the suite cites
+    (`INV-WIT-001`), the own-line rendering probe (`PROBE-001`) and the
+    numerical-scripts reconciliation (`SCRIPTS-RECON-003`). The convention (naming, ISO header, index format) and the index of this
     repository's reports are in `reports/README.md`.
 
 ## Conventions
