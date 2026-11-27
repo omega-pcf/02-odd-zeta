@@ -10,7 +10,7 @@
 
 **Scope.** This is the working base of the port campaign: one row per
 numerical script of `hipotesis/pruebas/` (83 `.py`, measured today),
-reconciled against the suite that already exists in `tests/` (118 tests,
+reconciled against the suite that already exists in `tests/` (132 tests,
 `uv run pytest tests/`). Sources: `docs/reports/20261126_SCRIPTS-RECON-003_scripts_reconciliation.md`
 (promoted from the scratch inventory), the manuscript
 (`main.tex` + `src/chapters/*.tex`, line hits measured with `git grep`
@@ -56,7 +56,7 @@ test. Line numbers are snapshots and move with the manuscript.
 
 Columns: `script` · `qué hace` (one line, from its docstring) ·
 `statements que respalda` (its citations in the manuscript) ·
-`test existente que ya lo cubre` (reconciled against the 118 tests) ·
+`test existente que ya lo cubre` (reconciled against the 132 tests) ·
 `destino propuesto` · `status`.
 
 | script | qué hace | statements que respalda | test existente | destino propuesto | status |
@@ -128,11 +128,11 @@ Columns: `script` · `qué hace` (one line, from its docstring) ·
 | `testB1b.py` | testB1b.py — W1–W2, ssec:fluct-geometry: los valores individuales piden log p con precision ~1/T. | `04-bridges:856`, `appendix:581` | `test_fluctuation_law_is_the_same_everywhere` | `absorbed` | `verified-against-corpus` |
 | `testGeom.py` | testGeom.py — W1–W2, ssec:fluct-geometry: la ley de la fluctuacion es geometrica. | `04-bridges:854`, `appendix:581` | `test_fluctuation_law_is_the_same_everywhere` | `absorbed` | `verified-against-corpus` |
 | `tstar.py` | La constante T*(n)=c(n)·πn/log(μn+σ) y su envoltura (prop:envelope-exact). | `03-mechanisms:3385`, `appendix:96`, `appendix:579` | — · el módulo ya existe pero en la ola P1 cubre a envelope/zeroside, no a tstar | `test_envelope_bounds.py` | `pending` |
-| `v12_pitagoras_raiz_X.py` | √X como Pitágoras: energía E(X) = Σ_{p≤X} \|a_p\|² log² p frente a \|S(X)\|², S(X) = Σ a_p log p, | `04-bridges:1303` | — | `test_v_layer_claims.py` | `pending` |
-| `v27_reloj_ciclotomico.py` | §68: el reloj ciclotómico.  N(Φ_n(φ)) = Φ_n(φ)·Φ_n(ψ), exacto como entero por Möbius sobre | `03-mechanisms:1400`, `03-mechanisms:1453` | — | `test_v_layer_claims.py` | `pending` |
-| `v28_hiperbola_reloj_tamano.py` | §69: del reloj al tamaño, la hipérbola c·i = N_p. | `03-mechanisms:1674` | — | `test_v_layer_claims.py` | `pending` |
-| `v30_vertice_al_azar.py` | §71: la geometría del n-gono y el modelo de vértice al azar. | `04-bridges:1323` | — | `test_v_layer_claims.py` | `pending` |
-| `v33_capas_1e9.py` | §73: las 20 capas del vértice al azar con primos hasta 10⁹ (datos de v32_capas_hasta_1e9.py). | `04-bridges:1324`, `04-bridges:1487` | — | `test_v_layer_claims.py` | `pending` |
+| `v12_pitagoras_raiz_X.py` | √X como Pitágoras: energía E(X) = Σ_{p≤X} \|a_p\|² log² p frente a \|S(X)\|², S(X) = Σ a_p log p, | `04-bridges:1303` | `tests/test_v_layer_claims.py` (14 tests de claim) | `test_v_layer_claims` | `ported:test_v_layer_claims · verified-against-corpus` |
+| `v27_reloj_ciclotomico.py` | §68: el reloj ciclotómico.  N(Φ_n(φ)) = Φ_n(φ)·Φ_n(ψ), exacto como entero por Möbius sobre | `03-mechanisms:1400`, `03-mechanisms:1453` | `tests/test_v_layer_claims.py` (14 tests de claim) | `test_v_layer_claims` | `ported:test_v_layer_claims · verified-against-corpus` |
+| `v28_hiperbola_reloj_tamano.py` | §69: del reloj al tamaño, la hipérbola c·i = N_p. | `03-mechanisms:1674` | `tests/test_v_layer_claims.py` (14 tests de claim) | `test_v_layer_claims` | `ported:test_v_layer_claims · verified-against-corpus` |
+| `v30_vertice_al_azar.py` | §71: la geometría del n-gono y el modelo de vértice al azar. | `04-bridges:1323` | `tests/test_v_layer_claims.py` (14 tests de claim) | `test_v_layer_claims` | `ported:test_v_layer_claims · verified-against-corpus` |
+| `v33_capas_1e9.py` | §73: las 20 capas del vértice al azar con primos hasta 10⁹ (datos de v32_capas_hasta_1e9.py). | `04-bridges:1324`, `04-bridges:1487` | `tests/test_v_layer_claims.py` (14 tests de claim) | `test_v_layer_claims` | `ported:test_v_layer_claims · verified-against-corpus` |
 | `weil_certificates/verify_cert.py` | Verifica un certificado JSON contra la cota que declara. | — | — · 0 importadores y 0 citas; declarado andamiaje en el MANIFEST del zip1 — candidato a `orphan-no-cited` si el autor lo confirma | `absorbed` | `pending` |
 | `weil_certificates/verify_iv.py` | Rigorous replay in interval arithmetic (mpmath.iv, outward rounding) of a Weil-window certificate. | `04-bridges:493`, `04-bridges:555`, `appendix:41` (+1) | — | `test_weil_certificates.py` | `pending` |
 | `weil_certificates/verify_rig.py` | Replay riguroso de un certificado en aritmética de fracciones. | `04-bridges:517` | — | `test_weil_certificates.py` | `pending` |
@@ -145,24 +145,40 @@ Columns: `script` · `qué hace` (one line, from its docstring) ·
 | `zeroside.py` | zeroside.py — W4–W5, ssec:weil-closure: la formula explicita sobre la orbita de Frobenius, comprobada. | `04-bridges:1854`, `appendix:585` | `test_zeroside_orbit_agrees_with_the_zeros` | `absorbed` | `verified-against-corpus` |
 | `weil_certificates/zeroside_check.py` | Suelo de la ventana por el lado de los ceros: Q(f)=Σ\|f̂(γ)\|²; abre `zeros.txt`. | `04-bridges:601`, `appendix:578` | `tests/test_envelope_bounds.py` (2 tests, recomputan desde la caché commiteada) | `test_envelope_bounds` | `ported:test_envelope_bounds · verified-against-corpus` |
 
-**Counts by destino:** `<test-name>` **44** (3 `ported`, 41 still owed) ·
+**Counts by destino:** `<test-name>` **44** (8 `ported`, 36 still owed) ·
 `absorbed` **33** · `generator` **2** ·
 `orphan-no-cited` **3** · `blocked` **1** — total
 **83**. **Counts by status:**
-`ported:<test> · verified-against-corpus` **3** ·
+`ported:<test> · verified-against-corpus` **8** ·
 `verified-against-corpus` **28** ·
-`pending` **52** · `in-progress` **0**.
+`pending` **47** · `in-progress` **0**.
+
+**Deletion pass (wave P1):** none of the 8 scripts this wave ports was
+removed from `hipotesis/pruebas/`. Measured first: no `.py` of the
+repository imports any of them (zero `import <name>` / `from <name>`
+hits), so nothing would break — but the test does **not** replace them as
+evidence either. The manuscript names each one (`\code{envelope.py}`,
+`\code{zeroside_check.py}`, `\code{bridge.py}` and the five `v*.py`) and
+`appendix:571` asserts the census "the full census lives in
+`hipotesis/pruebas/` ($83$ scripts)", which deleting eight rows would
+falsify — and the manuscript is out of scope for this campaign.
+`bridge.py` additionally has a runner, `correr_todo.sh`, which
+regenerates its committed `salidas/bridge.txt`: `dependency:correr_todo.sh`.
+So all 8 stay; whether the folder goes is the last wave's call.
 
 **Reconciliation against the suite (measured today, not assumed):**
 
-* **33 of 83** scripts are already covered — **33 rows `absorbed`**,
-  of which **27** are golden: an existing test reads the script's
-  committed `salidas/<name>.txt`. The other 6 are scaffolding absorbed
-  into the corpus they feed.
-* The 118 tests live in 17 modules; the covering ones are
+* **41 of 83** scripts are covered — **33 rows `absorbed`**, of which
+  **27** are golden: an existing test reads the script's committed
+  `salidas/<name>.txt` (the other 6 are scaffolding absorbed into the
+  corpus they feed) — plus the **8 rows ported by wave P1**
+  (`test_envelope_bounds`, `test_bridge_boosts`, `test_v_layer_claims`),
+  whose tests recompute the number from the committed inputs and assert
+  the figure the `.tex` statement prints.
+* The 132 tests live in 18 modules; the covering ones are
   `test_golden_observations.py` (4 observation outputs),
   `test_golden_n_marks.py` (23 outputs behind the bare `N` marks) and
-  `test_arch_window.py`.
+  `test_arch_window.py`, plus the three modules wave P1 added.
 * **74 of 83** scripts are cited in the manuscript (line hits measured);
   **9 are not**: the 3 true orphans plus 6 scaffolding modules.
   `SCRIPTS-RECON-003.md` counted 75 cited / 8 uncited — the difference
