@@ -523,7 +523,7 @@ statements with a name\ (among them the closure conjecture, \cref{conj:closure},
 density for two primes, the non-vanishing on $\Re s\ge1$ and Mertens' positivity --- are now proved; none duplicates a
 statement of the corpus, and where the corpus has the piece (the counting law, the power
 action, the functional equation, the block with character, the local factor) it is used, not
-redefined.  The numerical tests are the scripts of \texttt{hipotesis/pruebas/}.
+redefined.  The numerical tests are the scripts ported into \texttt{tests/}.
 
 \subsection{Build order}
 Each source file is wrapped in its own \texttt{section}, so that its \texttt{open} and
@@ -541,8 +541,8 @@ declarations written for this version is produced after their compilation.
 
 \subsection{Numerical scripts}
 This subsection is selective: it lists the scripts that back a statement of the
-text, while the full census lives in \texttt{hipotesis/pruebas/} ($83$ scripts)
-with its outputs in \texttt{hipotesis/pruebas/salidas/} ($35$ files).
+text, while the full census lives in \texttt{tests/} ($83$ scripts, ported into the
+suite) with their committed outputs in \texttt{tests/fixtures/salidas/} ($35$ files).
 \code{verify\_weil\_chi5.py} (explicit formula, $10^{-18}$),
 \code{weil\_window\_chi5.py} (semilocal eigenvalues),
 \code{weil\_window\_rigorous\_check.py} (constants of
@@ -550,7 +550,7 @@ with its outputs in \texttt{hipotesis/pruebas/salidas/} ($35$ files).
 \cref{thm:second-window,thm:third-window}: \code{cert.py}, \code{rigW.py},
 \code{opcert\_rig.py}; the rigorous replays \code{verify\_iv.py}, in interval arithmetic, and \code{op\_rig\_validated.py}, validated with a verified eigenvalue bound), \code{zeroside\_check.py} (the minimum of the $L=1$ window
 from the zero side), \code{envelope.py} and \code{tstar.py}
-(\cref{prop:envelope-exact}); and, in \texttt{hipotesis/pruebas/}, the scripts of \cref{sec:results-verdict}:
+(\cref{prop:envelope-exact}); and the scripts of \cref{sec:results-verdict}, ported into \texttt{tests/}:
 \code{testGeom.py}, \code{testB1b.py}, \code{fejer\_check.py}, \code{balance.py},
 \code{fibres.py}, \code{castelnuovo.py}, \code{gram.py}, \code{bridge.py}, \code{offline.py},
 \code{dh.py}, \code{mertens341.py}, \code{mobius.py}, \code{rigorous\_chain.py},

@@ -3,7 +3,7 @@
 INV-WIT-001 lists 69 sites that carry ``\\tier{N}`` without naming a test.
 Re-audited against the tree of ``cfae72c``: 49 of them still carry the mark
 (20 were retired when the tables lost their Tier column), and 25 of those 49
-have backing — a committed output under ``hipotesis/pruebas/salidas`` (24) or
+have backing — a committed output under ``tests/fixtures/salidas`` (24) or
 a test that already pins the numbers (1: ``03-mechanisms:2978`` cites
 ``test_even_l_values_match_bernoulli_formula``, which checks ``L(2k, chi5)``
 for k = 1..4).  This file writes the tests for the 24 artifact-backed sites,

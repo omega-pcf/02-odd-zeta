@@ -1,8 +1,9 @@
 """arch_window.py behind the archimedean-window crossings of 04-bridges.
 
 D7-446 (``appendix:446``) trivial fills ``GoldenArchimedeanWindow`` and
-``GoldenArchimedeanHodge``: the committed run of
-``hipotesis/pruebas/arch_window.py`` is the record of the computation, and
+``GoldenArchimedeanHodge``: the committed run of ``arch_window.py``
+(kept at ``tests/fixtures/salidas/arch_window.txt``) is the record of the
+computation, and
 F10's rule holds throughout — nothing is recomputed, so a regenerated or
 edited artifact fails the gate instead of drifting the paper.  The test
 pins the artifact's digits and reconciles the figures 04-bridges prints

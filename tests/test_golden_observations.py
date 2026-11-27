@@ -1,6 +1,6 @@
 """Golden values of the four observations the manuscript cites by script name.
 
-Each observation has a committed output under ``hipotesis/pruebas/salidas``
+Each observation has a committed output under ``tests/fixtures/salidas``
 (the corpus the author's pass shipped); the tests here PIN those artifacts
 against the golden numbers and reconcile them with the figures the
 manuscript prints for the same script.  Nothing is recomputed: the heavy

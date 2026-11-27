@@ -26,7 +26,7 @@ of `docs/numerical-port.md`):
 
 None of the five scripts is imported by another script and none writes a
 committed ``salidas/*.txt``, so every test owns its computation. The inputs are
-the committed caches of ``hipotesis/pruebas/datos/`` — ``ordenes_1000000.pkl``
+the committed caches of ``tests/fixtures/datos/`` — ``ordenes_1000000.pkl``
 (v28, v30), ``capas_hasta_1000000000.json`` and ``familias_hasta_1000000000.json``
 (v33) — the same files the scripts read, and the arithmetic of ``comun.py`` is
 ported here (prime sieve, $\mathbb{Z}[\golden]$ classes, quadratic-form
@@ -53,7 +53,7 @@ import numpy as np
 
 from oddzeta.harness import REPO_ROOT, assert_half_last_digit, read_tex
 
-DATOS = REPO_ROOT / "hipotesis" / "pruebas" / "datos"
+DATOS = REPO_ROOT / "tests" / "fixtures" / "datos"
 
 #: v12's symbols in the script's order — the manuscript lists their figures in
 #: the same order ("0.993, 0.998 and 1.000").
@@ -71,7 +71,7 @@ def _claim(chapter: str, pattern: str, note: str) -> re.Match[str]:
 
 
 # ---------------------------------------------------------------------------
-# Ports of hipotesis/pruebas/comun.py — no script may be imported by a test.
+# Ports of the removed hipotesis/pruebas/comun.py — no script may be imported by a test.
 # ---------------------------------------------------------------------------
 def _criba(L: int) -> bytearray:
     sv = bytearray([1]) * (L + 1)

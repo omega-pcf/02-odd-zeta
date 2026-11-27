@@ -61,11 +61,11 @@ of ``docs/numerical-port.md``):
 * ``04-bridges:907`` — ``retro99.py``: the Davenport--Heilbronn zeros off the
   line at $0.8085+85.699i$ and $0.6508+114.163i$ are free orbits.
 
-None of the sixteen is imported by a script of ``hipotesis/pruebas/`` (four
+None of the sixteen was imported by a script of the removed ``hipotesis/pruebas/`` (four
 of them ``exec`` another's source by path, which a test may not do), none
 writes a committed ``salidas/*.txt``, and no script may be imported from here:
 every test owns the code that produces its numbers. The inputs are the
-committed ``hipotesis/pruebas/dh_zeros.json`` and ``chi5_zeros.json``; the
+committed ``tests/fixtures/dh_zeros.json`` and ``chi5_zeros.json``; the
 window quadratic form of ``retro67.py`` (which retro69/78/93 ``exec``) and the
 Weil representation of ``retro81/83/86`` (which retro87/88/89 ``exec``) are
 ported below. ``retro94.py`` imports ``flint`` and its level factorisations
@@ -105,7 +105,7 @@ from sympy import divisors, isprime, legendre_symbol, mobius, n_order, nthroot_m
 from oddzeta.harness import REPO_ROOT, assert_half_last_digit, assert_printed_as_in_manuscript, read_tex
 
 #: Where the numerical scripts and their committed inputs live.
-PRUEBAS = REPO_ROOT / "hipotesis" / "pruebas"
+PRUEBAS = REPO_ROOT / "tests" / "fixtures"
 
 #: The manuscript figures spelled out rather than written as digits.
 NUMBER_WORDS = {

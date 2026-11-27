@@ -30,7 +30,7 @@ of `docs/numerical-port.md`):
 
 Neither script is imported by another script and neither writes a committed
 ``salidas/*.txt``, so each test owns its computation. Both read the committed
-input cache ``hipotesis/pruebas/zeros.txt`` — the 40 zeros of $L(s,\\chi_5)$
+input cache ``tests/fixtures/zeros.txt`` — the 40 zeros of $L(s,\\chi_5)$
 below $T=80$, byte-identical to ``chi5_zeros_T80.txt`` and committed in
 ``7b0c68f`` — which is the input both scripts declare. ``tstar.py`` and
 ``x_sweep.py`` read the committed ``zeta_zeros_3000.npy`` instead (the cache
@@ -82,11 +82,11 @@ from oddzeta.harness import (
 )
 
 #: The committed cache both scripts read (40 zeros of L(s, chi_5), T < 80).
-ZEROS_CACHE = REPO_ROOT / "hipotesis" / "pruebas" / "zeros.txt"
+ZEROS_CACHE = REPO_ROOT / "tests" / "fixtures" / "zeros.txt"
 
 #: The committed cache of the first 3000 zeros of zeta (x_sweep.py's
 #: ``zeta_zeros_3000.npy``, also the input corrected_operator.py loads).
-ZETA_ZEROS = REPO_ROOT / "hipotesis" / "pruebas" / "zeta_zeros_3000.npy"
+ZETA_ZEROS = REPO_ROOT / "tests" / "fixtures" / "zeta_zeros_3000.npy"
 
 
 def _claim(chapter: str, pattern: str, note: str) -> re.Match[str]:

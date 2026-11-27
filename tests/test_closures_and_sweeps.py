@@ -120,7 +120,7 @@ from oddzeta.harness import (
     read_tex,
 )
 
-PRUEBAS = REPO_ROOT / "hipotesis" / "pruebas"
+PRUEBAS = REPO_ROOT / "tests" / "fixtures"
 ZETA_ZEROS = PRUEBAS / "zeta_zeros_3000.npy"
 CHI5_ZEROS_500 = PRUEBAS / "chi5_zeros_500.json"
 ZEROS_CACHE = PRUEBAS / "zeros.txt"

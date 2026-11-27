@@ -44,7 +44,7 @@ _TESTREF = re.compile(r"\\testref\{([^}]*)\}")
 _SNAKE_CASE = re.compile(r"^[a-z][a-z0-9_]*$")
 
 # The witness ids the manuscript cites today: forty marks, fifty-two
-# citations, thirty-four distinct ids -- test_mersenne_bridge_phi_lambda_log_two
+# citations, thirty-six distinct ids -- test_mersenne_bridge_phi_lambda_log_two
 # is cited by two of them.  W5a added the eleven ids of the nine N claims
 # whose script has a test in this suite (INV-WIT-001 B2); W6 Fase A converted
 # the twenty-five tested bare N marks of INV-WIT-001 B8 and added their
@@ -81,6 +81,8 @@ PINNED_CITED_IDS = (
     "test_sigma_mu_polynomial_root_one_half",
     "test_sigma_mu_polynomial_root_three_halves",
     "test_two_cos_pi_over_five_equals_phi",
+    "test_x_sweep_fejer_weight_is_minimal_at_the_printed_cutoff",
+    "test_x_sweep_plain_sum_error_grows_past_the_smallest_cutoff",
     "test_zero_side_correction_matches_the_manuscript",
     "test_zeroside_orbit_agrees_with_the_zeros",
     "test_zeta_two_pi_squared_over_six",

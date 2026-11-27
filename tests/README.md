@@ -11,7 +11,7 @@ and asserts them directly — values, never printed stdout.
 
 `main.tex` and the chapters it inputs cite the tests that check their
 numbers with `\testref{...}` (forty `N` marks, fifty-two citations over
-thirty-four ids), which
+thirty-six ids), which
 `tests/test_witness_census.py` parses to prove that every reference the
 manuscript makes exists in the suite, that the cited set equals the pinned
 set, and that every id is snake_case. The same file holds the guard that
@@ -47,6 +47,10 @@ tests/
 │   │                               # M_PCF, L_ONE_CHI5, R_REGULATOR, DEFAULT_TOL
 │   └── harness.py                  # chi5/chi4/fib, L-values, Euler products,
 │                                   # assert_close, figure asserts, readers, REPO_ROOT
+├── fixtures/                       # the committed artifacts the suite pins
+│   ├── salidas/                    # the 35 committed outputs (F10 golden corpus)
+│   ├── datos/                      # the input caches of the v-layer claims
+│   └── weil_certificates/          # certificates and replay outputs of the family
 ├── test_pcf_ring_definitions.py    # sections 2, 2.1, 3.6.1
 ├── test_frobenius_lifts.py         # section 2.2 (+ Lambda-ring, Borger criterion 3)
 ├── test_mersenne_bridge.py         # sections 2.3, 3.6
@@ -80,7 +84,7 @@ tests/
 | marker | meaning |
 |---|---|
 | `slow` | takes more than ~10 s; `verify:py` runs `-m 'not slow'`, the full run is `uv run pytest tests/ -q` |
-| `golden` | compares a committed output of `hipotesis/pruebas/` (`salidas/` or the script's own directory) against the manuscript figures (pinned artifact, nothing recomputed) |
+| `golden` | compares a committed output of `tests/fixtures/` (`salidas/`, `datos/` or the script's own directory) against the manuscript figures (pinned artifact, nothing recomputed) |
 | `witness` | contract test between the manuscript's `\testref` tags and the suite |
 
 ## Tolerances
@@ -132,8 +136,8 @@ prime-free range `[0, log 4]`), the basis the sentence declares for them,
 and the row at `S = log 4` that carries the two window statements.
 
 `tests/test_weil_certificates.py` does the same for the two committed
-replays under `hipotesis/pruebas/weil_certificates/` (the outputs live
-with the script, not in `salidas/`): `op_rig_validated_output.json` — the
+replays under `tests/fixtures/weil_certificates/` (the outputs lived
+beside the script, not in `salidas/`): `op_rig_validated_output.json` — the
 three validated margins against the figures of 04-bridges:541-543 and 555
 plus the artefact's exact `lambda_upper = lambda_float + 1e-8 +
 chol_bound` — and `verify_iv_L1.0_output.txt` — the six chunk minima, `M`,

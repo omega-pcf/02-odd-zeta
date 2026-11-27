@@ -11,7 +11,7 @@ docs/
 ├── citations.md       # CSL single-source citation pipeline (§1–§7) + witness index (§8)
 ├── counts.md          # Generated counts ledger (pnpm run counts; never edited by hand)
 ├── installation.md    # Prerequisites and setup
-├── numerical-port.md  # NUMPORT-001: living coverage tracker of the hipotesis/pruebas → tests port campaign
+├── numerical-port.md  # NUMPORT-001: reconciliation of the ported hipotesis/pruebas campaign
 ├── usage.md           # Build and release commands
 ├── witness-contract.md # The single living norm: rationale, standard (§6) and wave-brief shape (§10)
 ├── witness-decisions.md # The family ledger: one row per question, open and ruled
@@ -40,11 +40,11 @@ inventories, decision logs, verdict tables — goes to `docs/reports/`.
   forty `\witness[\testref{…}]{N}` anchors that cite test ids — but those live
   outside the mechanism, which measures only the ledger's counters.
 - **installation.md**: Prerequisites and setup instructions.
-- **numerical-port.md**: `NUMPORT-001`, the living tracker of the port campaign that moves the
-  numerical evidence of `hipotesis/pruebas/` into `tests/` — the destination convention (F10 pattern,
-  one entrypoint `uv run pytest tests/`), the master table of the 83 scripts reconciled against the
-  suite's 228 tests, and the sub-tables of `salidas/`, `datos/`, the orphans and the blockers.
-  It records state only: neither `hipotesis/pruebas/` nor `tests/` is edited from it.
+- **numerical-port.md**: `NUMPORT-001`, the reconciliation of the port campaign that moved the
+  numerical evidence of `hipotesis/pruebas/` into `tests/` — the final counts of the 83 scripts
+  against the suite's 228 tests, the closing note, the `git rm` that removed the fully ported
+  folder and the rows still open with the author. It records state only: `tests/` is not edited
+  from it.
 - **usage.md**: Daily workflow, conventional commits, build and release commands.
 - **witness-contract.md**: The single living norm of the witness marks — the rationale (§1–§5,
   §7), the standard itself (§6: precedence, syntax, placement, naming, grammar and the writing

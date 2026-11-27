@@ -24,6 +24,6 @@ pythonpath = ["tests/src"]
 addopts = "--tb=short -p no:cacheprovider"
 markers = [
     "slow: marks tests that take >10 s (deselect with '-m \"not slow\"')",
-    "golden: compares a committed output of hipotesis/pruebas/ (salidas/ or the script's own directory) against the manuscript figures",
+    "golden: compares a committed output of tests/fixtures/ (salidas/, datos/ or the script's own directory) against the manuscript figures",
     "witness: contract between the manuscript's \\testref tags and the suite",
 ]

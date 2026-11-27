@@ -18,7 +18,7 @@ Contents
   certified bound printed truncated (or rounded up), and a second
   computation of one figure, reconciled at one unit of the last digit;
 * readers for the repository's committed text artifacts (the manuscript
-  sources and the observation outputs under ``hipotesis/pruebas/salidas``).
+  sources and the observation outputs under ``tests/fixtures/salidas``).
 
 No helper here asserts or prints: assertions live in the tests, and the
 suite's contract is values, not stdout.
@@ -33,7 +33,7 @@ import sympy
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
 
-SALIDAS_DIR = REPO_ROOT / "hipotesis" / "pruebas" / "salidas"
+SALIDAS_DIR = REPO_ROOT / "tests" / "fixtures" / "salidas"
 
 # The golden pinning tolerance (the golden test modules define the same
 # value locally; the manuscript-figure assert below needs it here too).

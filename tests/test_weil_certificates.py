@@ -106,7 +106,7 @@ from oddzeta.harness import (
     read_tex,
 )
 
-FAMILY_DIR = REPO_ROOT / "hipotesis" / "pruebas" / "weil_certificates"
+FAMILY_DIR = REPO_ROOT / "tests" / "fixtures" / "weil_certificates"
 CERT_PATH = FAMILY_DIR / "cert_L1.0.json"
 OP_RIG_OUTPUT = FAMILY_DIR / "op_rig_validated_output.json"
 VERIFY_IV_OUTPUT = FAMILY_DIR / "verify_iv_L1.0_output.txt"
@@ -972,7 +972,7 @@ def test_verify_rig_certifies_the_pointwise_window_in_double_precision() -> None
 #: The committed cache of the 40 zeros of L(s, chi_5) below T = 80 (byte-identical
 #: to chi5_zeros_T80.txt, committed in 7b0c68f) — the input ``verify_weil_chi5.py``
 #: recomputes by sign changes; the suite reads it instead of re-running the scan.
-CHI5_ZEROS_T80 = REPO_ROOT / "hipotesis" / "pruebas" / "zeros.txt"
+CHI5_ZEROS_T80 = REPO_ROOT / "tests" / "fixtures" / "zeros.txt"
 
 #: The sine basis and the grid ``weil_window_chi5.py`` declares (its ``J=24, M=3000``).
 WINDOW_J = 24
