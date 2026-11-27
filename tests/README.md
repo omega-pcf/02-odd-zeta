@@ -20,8 +20,8 @@ exist, and no module of `tests/` or `scripts/` may import it (AST sweep).
 
 ```bash
 # counts:begin id="commands"
-uv run pytest tests/ -q                 # whole suite   (113 tests)
-uv run pytest tests/ -q -m 'not slow'   # without >10 s (113 tests)
+uv run pytest tests/ -q                 # whole suite   (115 tests)
+uv run pytest tests/ -q -m 'not slow'   # without >10 s (115 tests)
 # counts:end id="commands"
 pnpm run verify:py                      # the same gate through package.json
 ```
@@ -29,9 +29,9 @@ pnpm run verify:py                      # the same gate through package.json
 The pytest configuration lives in `pyproject.toml` under
 `[tool.pytest.ini_options]` (`testpaths`, `pythonpath`, `markers`,
 `addopts`), so a bare `uv run pytest` collects the same
-<!-- counts:begin id="suite-total" -->113<!-- counts:end id="suite-total" -->
+<!-- counts:begin id="suite-total" -->115<!-- counts:end id="suite-total" -->
 tests as `uv run pytest tests/ -q`, and
-<!-- counts:begin id="suite-not-slow" -->113<!-- counts:end id="suite-not-slow" -->
+<!-- counts:begin id="suite-not-slow" -->115<!-- counts:end id="suite-not-slow" -->
 of them carry no `slow` mark. The numbers in those two spans are generated
 from a real run by `pnpm run counts`; `pnpm run counts:check` (inside
 `validate`) fails when they drift.
@@ -46,7 +46,7 @@ tests/
 │   ├── constants.py                # PHI, PHI_BAR, LOG_PHI, T, LAMBDA_LOG,
 │   │                               # M_PCF, L_ONE_CHI5, R_REGULATOR, DEFAULT_TOL
 │   └── harness.py                  # chi5/chi4/fib, L-values, Euler products,
-│                                   # assert_close, artifact readers, REPO_ROOT
+│                                   # assert_close, figure asserts, readers, REPO_ROOT
 ├── test_pcf_ring_definitions.py    # sections 2, 2.1, 3.6.1
 ├── test_frobenius_lifts.py         # section 2.2 (+ Lambda-ring, Borger criterion 3)
 ├── test_mersenne_bridge.py         # sections 2.3, 3.6
@@ -61,6 +61,7 @@ tests/
 ├── test_golden_observations.py     # the four committed observation outputs
 ├── test_golden_n_marks.py          # the bare `N` marks whose backing is a committed output
 ├── test_arch_window.py             # arch_window.py: the archimedean crossings
+├── test_envelope_bounds.py         # envelope.py, zeroside_check.py: the envelope claims
 └── test_witness_census.py          # \testref <-> suite contract, port guard
 ```
 

@@ -10,7 +10,7 @@
 
 **Scope.** This is the working base of the port campaign: one row per
 numerical script of `hipotesis/pruebas/` (83 `.py`, measured today),
-reconciled against the suite that already exists in `tests/` (113 tests,
+reconciled against the suite that already exists in `tests/` (115 tests,
 `uv run pytest tests/`). Sources: `docs/reports/20261126_SCRIPTS-RECON-003_scripts_reconciliation.md`
 (promoted from the scratch inventory), the manuscript
 (`main.tex` + `src/chapters/*.tex`, line hits measured with `git grep`
@@ -50,12 +50,13 @@ test. Line numbers are snapshots and move with the manuscript.
 | `in-progress` | port under way (no row is in this state today) |
 | `ported:<test-name>` | the test exists and covers the claim by recomputation |
 | `verified-against-corpus` | the test reads and pins the script's committed output |
+| `ported:<test-name> · verified-against-corpus` | the test exists, covers the claim by recomputation, and its assert reproduces the figure the `.tex` statement prints for it (for `bridge.py` it also pins the committed `salidas/bridge.txt`) |
 
 ## Master table — the 83 scripts
 
 Columns: `script` · `qué hace` (one line, from its docstring) ·
 `statements que respalda` (its citations in the manuscript) ·
-`test existente que ya lo cubre` (reconciled against the 113 tests) ·
+`test existente que ya lo cubre` (reconciled against the 115 tests) ·
 `destino propuesto` · `status`.
 
 | script | qué hace | statements que respalda | test existente | destino propuesto | status |
@@ -79,7 +80,7 @@ Columns: `script` · `qué hace` (one line, from its docstring) ·
 | `dh.py` | dh.py — W1–W2, ssec:two-sides: las sumas parciales de la inversa de Davenport–Heilbronn y de mu·chi_5. | `04-bridges:893`, `appendix:583` | `test_additive_side_statistics_are_pinned` | `absorbed` | `verified-against-corpus` |
 | `dh_logderiv.py` | Coeficientes de −L′/L de Davenport–Heilbronn frente a L(s,χ₅): soporte y tamaño. | `04-bridges:909`, `appendix:123`, `appendix:586` | — | `test_closures_and_sweeps.py` | `pending` |
 | `dh_zeros.py` | dh_zeros.py — ceros de Davenport-Heilbronn hasta T=130 (para retro101.py). Uso: python3 -I dh_zeros.py | `appendix:586` | — · dato de entrada, no un claim | `generator:<dh_zeros.json kept as fixture>` | `pending` |
-| `envelope.py` | Envoltura exacta de S(t) con los ceros de L(s,χ₅) (prop:envelope-exact); abre `zeros.txt`. | `appendix:96`, `appendix:579` | — | `blocked:zeros.txt no existe (linkear/renombrar chi5_zeros_T80.txt: decisión del autor)` | `pending` |
+| `envelope.py` | Envoltura exacta de S(t) con los ceros de L(s,χ₅) (prop:envelope-exact); abre `zeros.txt`. | `appendix:96`, `appendix:579` | `tests/test_envelope_bounds.py` (2 tests, recomputan desde la caché commiteada) | `test_envelope_bounds` | `ported:test_envelope_bounds · verified-against-corpus` |
 | `escala_ceros_bajos.py` | escala_ceros_bajos.py — W4–W5, prop:sqrt-x: la escala 1/2 desde los ceros bajos de las formas de niveles 80 y 135. | `04-bridges:1307` | `test_residual_scales_are_pinned` | `absorbed` | `verified-against-corpus` |
 | `euler_link.py` | euler_link.py — W4–W5, prop:euler-tower: el producto de Euler, la torre de phi y las posiciones. | `04-bridges:1791`, `appendix:586` | `test_euler_link_second_term_is_pinned` | `absorbed` | `verified-against-corpus` |
 | `fejer_check.py` | fejer_check.py — W3, ssec:field-positivity: la suma de Fejer de L(s,chi_5) desde los primos y desde los ceros. | `04-bridges:929`, `appendix:581` | `test_fejer_window_is_pinned` | `absorbed` | `verified-against-corpus` |
@@ -94,7 +95,7 @@ Columns: `script` · `qué hace` (one line, from its docstring) ·
 | `mobius.py` | mobius.py — W1–W2, ssec:two-sides: la inversa de la estructura, sum_{n<=y} mu(n) chi_5(n). | `04-bridges:901`, `appendix:583` | `test_additive_side_statistics_are_pinned` | `absorbed` | `verified-against-corpus` |
 | `offline.py` | offline.py — W3, ssec:field-positivity: un cero fuera de la linea vuelve negativa la suma de Fejer. | `04-bridges:964`, `appendix:582` | `test_offline_minimum_stays_positive` | `absorbed` | `verified-against-corpus` |
 | `weil_certificates/op_rig_validated.py` | Validated replay of the operator-form Weil window (Thm 23.8), in chunks with checkpoints. | `04-bridges:523`, `04-bridges:555`, `appendix:42` (+1) | — | `test_weil_certificates.py` | `pending` |
-| `weil_certificates/opcert.py` | Óptimo primal del programa lineal de la ventana (reutiliza lp.py). | — | — · andamiaje: lo importa zeroside_check (bloqueado) | `absorbed` | `pending` |
+| `weil_certificates/opcert.py` | Óptimo primal del programa lineal de la ventana (reutiliza lp.py). | — | — · andamiaje: lo importa `zeroside_check.py` (su `phihat`); el propio no se importa | `absorbed` | `pending` |
 | `weil_certificates/opcert_rig.py` | Óptimo primal riguroso con W_lower (versión con intervalos). | `appendix:578` | — | `test_weil_certificates.py` | `pending` |
 | `orbita_cert.py` | orbita_cert.py — W4–W5, ssec:weil-closure: la orbita certificada, y la familia de la capa quintica. | `04-bridges:1868`, `appendix:728` | — | `test_closures_and_sweeps.py` | `pending` |
 | `oz_carried.py` | oz_carried.py -- numerical checks for the results carried from the predecessor version (F1 v157). | `03-mechanisms:2208`, `03-mechanisms:2232`, `03-mechanisms:2265` (+6) | — | `test_closures_and_sweeps.py` | `pending` |
@@ -126,7 +127,7 @@ Columns: `script` · `qué hace` (one line, from its docstring) ·
 | `teich.py` | teich.py — ssec:delta-polar: la p-derivacion de Z[phi], la forma polar de phi en 2 y 3 y el grupo de color. | `appendix:586` | `test_delta_p_tower_ratios_are_pinned` | `absorbed` | `verified-against-corpus` |
 | `testB1b.py` | testB1b.py — W1–W2, ssec:fluct-geometry: los valores individuales piden log p con precision ~1/T. | `04-bridges:856`, `appendix:581` | `test_fluctuation_law_is_the_same_everywhere` | `absorbed` | `verified-against-corpus` |
 | `testGeom.py` | testGeom.py — W1–W2, ssec:fluct-geometry: la ley de la fluctuacion es geometrica. | `04-bridges:854`, `appendix:581` | `test_fluctuation_law_is_the_same_everywhere` | `absorbed` | `verified-against-corpus` |
-| `tstar.py` | La constante T*(n)=c(n)·πn/log(μn+σ) y su envoltura (prop:envelope-exact). | `03-mechanisms:3385`, `appendix:96`, `appendix:579` | — | `test_envelope_bounds.py` | `pending` |
+| `tstar.py` | La constante T*(n)=c(n)·πn/log(μn+σ) y su envoltura (prop:envelope-exact). | `03-mechanisms:3385`, `appendix:96`, `appendix:579` | — · el módulo ya existe pero en la ola P1 cubre a envelope/zeroside, no a tstar | `test_envelope_bounds.py` | `pending` |
 | `v12_pitagoras_raiz_X.py` | √X como Pitágoras: energía E(X) = Σ_{p≤X} \|a_p\|² log² p frente a \|S(X)\|², S(X) = Σ a_p log p, | `04-bridges:1303` | — | `test_v_layer_claims.py` | `pending` |
 | `v27_reloj_ciclotomico.py` | §68: el reloj ciclotómico.  N(Φ_n(φ)) = Φ_n(φ)·Φ_n(ψ), exacto como entero por Möbius sobre | `03-mechanisms:1400`, `03-mechanisms:1453` | — | `test_v_layer_claims.py` | `pending` |
 | `v28_hiperbola_reloj_tamano.py` | §69: del reloj al tamaño, la hipérbola c·i = N_p. | `03-mechanisms:1674` | — | `test_v_layer_claims.py` | `pending` |
@@ -140,17 +141,17 @@ Columns: `script` · `qué hace` (one line, from its docstring) ·
 | `w4exact.py` | w4exact.py — W4–W5, prop:W4-from-W3 (i): (W4) es (W3) en los planos de la orbita, exactamente. | `appendix:585` | — | `test_closures_and_sweeps.py` | `pending` |
 | `weil_window_chi5.py` | Autovalores semilocales de la ventana de Weil para L(s,χ₅). | `04-bridges:425`, `04-bridges:431`, `04-bridges:601` (+3) | — | `test_weil_certificates.py` | `pending` |
 | `weil_window_rigorous_check.py` | Constantes de thm:first-window (κ, W(0)) con aritmética rigurosa. | `04-bridges:453`, `appendix:575` | — | `test_weil_certificates.py` | `pending` |
-| `x_sweep.py` | As x_sweep.py, with the prime sum smoothed: weight w(log n/log X) on each prime power n, | `04-bridges:1637`, `appendix:586` | — | `test_envelope_bounds.py` | `pending` |
+| `x_sweep.py` | As x_sweep.py, with the prime sum smoothed: weight w(log n/log X) on each prime power n, | `04-bridges:1637`, `appendix:586` | — · el módulo ya existe pero en la ola P1 cubre a envelope/zeroside, no a x_sweep | `test_envelope_bounds.py` | `pending` |
 | `zeroside.py` | zeroside.py — W4–W5, ssec:weil-closure: la formula explicita sobre la orbita de Frobenius, comprobada. | `04-bridges:1854`, `appendix:585` | `test_zeroside_orbit_agrees_with_the_zeros` | `absorbed` | `verified-against-corpus` |
-| `weil_certificates/zeroside_check.py` | Suelo de la ventana por el lado de los ceros: Q(f)=Σ\|f̂(γ)\|²; abre `zeros.txt`. | `04-bridges:601`, `appendix:578` | — | `blocked:zeros.txt no existe (linkear/renombrar chi5_zeros_T80.txt: decisión del autor)` | `pending` |
+| `weil_certificates/zeroside_check.py` | Suelo de la ventana por el lado de los ceros: Q(f)=Σ\|f̂(γ)\|²; abre `zeros.txt`. | `04-bridges:601`, `appendix:578` | `tests/test_envelope_bounds.py` (2 tests, recomputan desde la caché commiteada) | `test_envelope_bounds` | `ported:test_envelope_bounds · verified-against-corpus` |
 
-**Counts by destino:** `pending` (new test owed) **42** ·
+**Counts by destino:** `<test-name>` **44** (2 `ported`, 42 still owed) ·
 `absorbed` **33** · `generator` **2** ·
-`orphan-no-cited` **3** · `blocked` **3** — total
+`orphan-no-cited` **3** · `blocked` **1** — total
 **83**. **Counts by status:**
+`ported:<test> · verified-against-corpus` **2** ·
 `verified-against-corpus` **28** ·
-`ported:<test>` **0** ·
-`pending` **55** · `in-progress` **0**.
+`pending` **53** · `in-progress` **0**.
 
 **Reconciliation against the suite (measured today, not assumed):**
 
@@ -158,7 +159,7 @@ Columns: `script` · `qué hace` (one line, from its docstring) ·
   of which **27** are golden: an existing test reads the script's
   committed `salidas/<name>.txt`. The other 6 are scaffolding absorbed
   into the corpus they feed.
-* The 113 tests live in 15 modules; the covering ones are
+* The 115 tests live in 16 modules; the covering ones are
   `test_golden_observations.py` (4 observation outputs),
   `test_golden_n_marks.py` (23 outputs behind the bare `N` marks) and
   `test_arch_window.py`.
@@ -283,19 +284,21 @@ It is the third of the three `pending(D7)` markers of
 `docs/witness-inventory.md:45` — the only one still open after
 `1d7f376` ported the other two. Status: `blocked:no entregado por el autor`.
 
-## Sub-table: `zeros.txt` / `chi5_zeros_T80.txt` — name mismatch, justified cache
+## Sub-table: `zeros.txt` / `chi5_zeros_T80.txt` — settled: the copy is committed
 
 `envelope.py:3` and `weil_certificates/zeroside_check.py:5` open
-`'zeros.txt'`; that file exists in no tree. The zip1 MANIFEST says it
-explicitly: *"`envelope.py` reads `zeros.txt`; the zeros of
-$L(s,\chi_5)$ up to $T=80$ are in `chi5_zeros_T80.txt`"*. So this is
-**the cache of the zeros of L(s,χ₅) to T = 80**, committed as
-`hipotesis/pruebas/chi5_zeros_T80.txt` — a legitimate fixture: the zeros
-are input to the envelope and zero-side checks, not a claim of the
-paper, and recomputing them per test would only add runtime. What is
-missing is the link/renaming, and that is the author's call (no `.py` of
-the repo names `chi5_zeros_T80.txt`, so nothing else breaks either way).
-Both readers keep status `blocked` until the name is settled.
+`'zeros.txt'`. The zip1 MANIFEST says it explicitly: *"`envelope.py`
+reads `zeros.txt`; the zeros of $L(s,\chi_5)$ up to $T=80$ are in
+`chi5_zeros_T80.txt`"*, and the copy is now in the tree: commit
+`7b0c68f` added `hipotesis/pruebas/zeros.txt`, byte-identical to
+`chi5_zeros_T80.txt` (both tracked). Both readers run `exit 0` —
+`envelope.py` from `hipotesis/pruebas/`, `zeroside_check.py` from the
+same directory with `weil_certificates/` on the path (it imports
+`opcert`). The earlier `blocked:zeros.txt no existe` was recon data
+predating `7b0c68f`; both rows now carry their test,
+`tests/test_envelope_bounds.py`, which reads the committed copy. The
+zeros stay input to the envelope and zero-side checks, not a claim of
+the paper — recomputing them per test would only add runtime.
 
 ## Sub-table: `__pycache__/`
 

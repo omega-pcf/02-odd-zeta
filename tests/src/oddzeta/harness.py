@@ -9,6 +9,10 @@ Contents
   colimit check);
 * ``assert_close`` — the ONE tolerance assertion of the suite: a comparison
   inherits the script's tolerance and reports the difference on failure;
+* ``assert_printed_as_in_manuscript`` and ``assert_half_last_digit`` — the two
+  reconciliation margins for a figure read out of the manuscript text (5% of
+  the value for a figure marked ``\approx``; half of the last digit printed
+  otherwise);
 * readers for the repository's committed text artifacts (the manuscript
   sources and the observation outputs under ``hipotesis/pruebas/salidas``).
 
@@ -26,6 +30,10 @@ import sympy
 REPO_ROOT = Path(__file__).resolve().parents[3]
 
 SALIDAS_DIR = REPO_ROOT / "hipotesis" / "pruebas" / "salidas"
+
+# The golden pinning tolerance (the golden test modules define the same
+# value locally; the manuscript-figure assert below needs it here too).
+GOLDEN_TOL = 1e-12
 
 # The units of (Z/20)*: the domain of the character map G = (chi4, chi5).
 UNITS_MOD_20 = (1, 3, 7, 9, 11, 13, 17, 19)
@@ -145,6 +153,42 @@ def assert_close(computed, expected, tol, note: str = "") -> None:
     assert diff < tol, (
         f"{note or 'value mismatch'}: |{computed} - {expected}| = {diff} "
         f"is not below the tolerance {tol}"
+    )
+
+
+def assert_printed_as_in_manuscript(value: float, printed: str, note: str) -> None:
+    """Assert a computed figure matches the figure the manuscript prints.
+
+    The manuscript figures are reconciled at the precision those sentences
+    claim: half of its last significant digit (5% of the value, the margin the
+    golden tests use for a ``\\pm`` range). The caller passes the figure as the
+    manuscript prints it (``"0.520"``, ``"1.1503"``), never a re-typed float.
+    """
+    expected = float(printed)
+    tol = 0.05 * abs(expected) + GOLDEN_TOL
+    assert abs(value - expected) <= tol, (
+        f"{note}: |{value} - {expected}| = {abs(value - expected)} exceeds "
+        f"{tol} (5% of the manuscript figure {printed})"
+    )
+
+
+def assert_half_last_digit(value: float, printed: str, note: str) -> None:
+    """Assert a computed figure matches the figure the manuscript prints, at the
+    precision the sentence claims: half of the last digit it printed.
+
+    ``printed`` is the figure exactly as it appears in the ``.tex`` — a decimal
+    (``"0.520"``) or a scientific literal (``"2e-10"``, the mantissa and
+    exponent of ``$2\\cdot10^{-10}$`` joined by the caller). A figure the
+    manuscript marks approximate (``$\\approx0.097$``) is reconciled with
+    ``assert_printed_as_in_manuscript`` instead: there the last digit is not a
+    claim and the suite allows 5% of the value.
+    """
+    mantissa, _, exponent = printed.partition("e")
+    decimals = len(mantissa.split(".")[1]) if "." in mantissa else 0
+    tol = 0.5 * 10.0 ** (int(exponent or 0) - decimals) + GOLDEN_TOL
+    assert abs(value - float(printed)) <= tol, (
+        f"{note}: |{value} - {float(printed)}| = {abs(value - float(printed))} exceeds "
+        f"{tol} (half the last digit of the manuscript figure {printed})"
     )
 
 
