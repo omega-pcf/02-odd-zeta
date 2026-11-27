@@ -20,7 +20,7 @@ Measured over the tracked manuscript sources (`main.tex` and `src/**/*.tex`) —
 | inline `\witness{N}` (bare) | 26 |
 | `\witness[\testref{…}]{N}` marks | 40 |
 
-Ids carried by `N` marks: **40 ids over 27 distinct**.
+Ids carried by `N` marks: **40 ids over 28 distinct**.
 
 ## Decoration and accounting macros
 

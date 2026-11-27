@@ -186,7 +186,7 @@ writing rules (§6.5), the quantified inline / own-line criterion
 the witness gates (§6.8) — and this repository states no rule of its
 own. The applied state of this repository lives in
 [`docs/reports/`](reports/README.md), the census of its marks in
-[`docs/witness-inventory.md`](witness-inventory.md), and one row per
+[`docs/generated/witness-inventory.md`](generated/witness-inventory.md), and one row per
 open question in [`docs/witness-decisions.md`](witness-decisions.md).
 
 ---

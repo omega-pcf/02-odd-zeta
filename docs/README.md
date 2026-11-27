@@ -15,7 +15,8 @@ docs/
 ├── usage.md           # Build and release commands
 ├── witness-contract.md # The single living norm: rationale, standard (§6) and wave-brief shape (§10)
 ├── witness-decisions.md # The family ledger: one row per question, open and ruled
-├── witness-inventory.md # This repository's census of marks, generated from a measurement
+├── generated/         # Machine-owned output (never edited by hand)
+│   └── witness-inventory.md # This repository's census of marks, generated from a measurement
 └── reports/           # Specific, repository-tied reports (dated, id'd)
     └── README.md      # Reports convention (template) + index of this repository's reports
 ```
@@ -52,7 +53,7 @@ inventories, decision logs, verdict tables — goes to `docs/reports/`.
   the own-line rendering form §6.12, the ledger segmentation §6.13) and the required shape of a
   wave brief (§10). Portable across the family: byte-identical and manifest-pinned.
   - **witness-decisions.md** is the decision ledger, one row per question (a count is never a
-    row); **witness-inventory.md** is this repository's generated census of marks.
+    row); **witness-inventory.md** (in `generated/`) is this repository's generated census of marks.
   - **reports/**: Specific reports — the witness reconciliation (F8-001), the tier-use migration
     map (FTI-001), the author text changes (F12-001), the provenance inventory (F9-001), the
     pytest suite port (F10-001), the citation verification (CIT-003) and the merge closure

@@ -15,8 +15,8 @@
 and §7 argue them, and §10 fixes the shape of a wave brief.
 `docs/citations.md` ends with an **index** — a pointer to §6 of this
 document — and states no rule of its own. `docs/witness-decisions.md`
-holds one row per question, `docs/witness-inventory.md` holds this
-repository's generated census, and the per-site decisions — which
+holds one row per question, the repository's generated census holds its
+measured marks, and the per-site decisions — which
 witness supports each claim, what is rewritten and what is removed —
 plus every measured state of one manuscript live in `docs/reports/`.
 Nothing asserted here is contradicted elsewhere, because there is no
@@ -37,7 +37,7 @@ is edited concurrently.
 | this document §6 | the standard itself: precedence (§6.0), syntax (§6.1), what each mark asserts (§6.2), placement (§6.3), naming (§6.4), grammar and the writing rules (§6.5), the star (§6.6), typography and the family's deliberate divergences (§6.7), the witness gates (§6.8), the alphabet and decorations (§6.9), the inline / own-line criterion (§6.10), standard versus applied state (§6.11), the own-line form (§6.12) and the ledger segmentation (§6.13) |
 | this document §10 | the required shape of a wave brief (five blocks) |
 | `docs/witness-decisions.md` | one row per question; a count is never a row |
-| `docs/witness-inventory.md` | the census of *this* repository, generated from a measurement, never hand-written; per repository by design, therefore not a family file and not manifest-pinned |
+| the generated census (`scripts/tasks/witness-inventory.ts`) | the census of *this* repository, generated from a measurement, never hand-written; per repository by design (02 writes it to `docs/generated/witness-inventory.md`), therefore not a family file and not manifest-pinned |
 | `docs/citations.md` §8 | an index only: a pointer to §6 of this document; it states no rule |
 | `docs/reports/` (index: `docs/reports/README.md`) | per-site decisions, counters, criterion sites, `u`/`p` verdicts, applied states and the author's pending-work list — the applied state of this argument in one repository; a superseded one carries `superseded-by:` |
 | `docs/README.md` | the directory index of `docs/` |
@@ -461,7 +461,7 @@ before editing:
 | **S2** code mention | `\code` |
 | **S3** decorated name (`*`, `°`, `†`) | `*` under §6.6; `°` and `†` under §6.9 |
 | **S4** `Lean:` accounting line | no canonical form yet: the sites stay where they are and are not migrated in bulk |
-| **S5** unclassifiable | recorded as an open site in `docs/witness-inventory.md`, never guessed |
+| **S5** unclassifiable | recorded as an open site in the generated census, never guessed |
 
 Names follow the repository's naming standard (snake_case, English); an id
 that does not is a work item, not an exception.
@@ -607,9 +607,9 @@ replaced are retired: `\allowbreak` (= penalty 0) after every `_`, which
 made the mid-identifier break equally attractive and printed
 `twenty_divisor_` / `lattice_splits` in the 02/05 PDF, and 03's bare
 `\textunderscore` with no breakpoint, which is the form that can go
-overfull (`03/main.tex` comment at the definition, commit `b1fec34`,
-2026-11-24; the unification commits are `2fb29c6` in 02, `4edc048` in 03
-and `a82bd8d` in 05, all 2026-11-25). 01 and 04 keep the OT1 form of their preamble: their
+overfull (the commit record of that fix and of the unification lives in
+`02-odd-zeta/docs/reports/20261127_WIT-001_witness_docs_state_fragments.md` §1).
+01 and 04 keep the OT1 form of their preamble: their
 `\brk@us` serves `\code` and `\tierids` only, and no mark is printed
 there, so nothing of theirs was reflowed. Re-opening any of these numbers
 requires a new measurement.
@@ -801,7 +801,7 @@ This section states the standard; it does not assert that a manuscript's
 body already satisfies it. What each repository's text does today — which
 sites follow a rule and which do not — is measured and recorded in that
 repository's `docs/reports/` and in its generated
-`docs/witness-inventory.md`, never here. The shape of a call site is
+census, never here. The shape of a call site is
 outside it as well: whether the ids of an own-line accounting line such as
 `Lean: …` sit in a block of their own or inside the tag as `P[ids]`, and
 every other body-form question, belongs to the convergence that is still
@@ -876,8 +876,8 @@ not use `\begin{flushright}` (adds `\topsep`/`\partopsep`).
 
 **S5. Punctuation.** The mark never carries terminal punctuation: **no
 `.`, no `,` after the closing `}` and none inside the bracket**; the
-sentence closes before the block (gate `r = 0`, already true at 100% of
-sites: 0/86, 0/124, 0/43). A `,` or `;` may only appear *between ids*, and
+sentence closes before the block (gate `r = 0`; the site census behind it
+is in `02-odd-zeta/docs/reports/20261127_WIT-001_witness_docs_state_fragments.md` §2). A `,` or `;` may only appear *between ids*, and
 only as the separator `", "`. A hand-written block that carries prose
 inside the block violates this by construction — that is one more reason
 they are retired.
@@ -889,10 +889,11 @@ values, which are the ones the family colour redundancy rule (WCAG 1.4.1,
 §4.2) was calibrated against; 03's `tagN` (0.15,0.55,0.25) and `tagH` are
 dropped (or `tagH` is registered as a published class with a cost
 estimate first, §6.9). Colour scope: **the whole mark — the letter *and*
-the ids in the class colour**, which is what `\witness` already does in
-3/3 repositories that render marks and it makes the block read as one
-object; the inline branch must be changed the same way (its ids print
-black today, measured #000000 against #2659a5 in the block). Colour is
+the ids in the class colour**, which is what `\witness` does in the
+repositories that render marks and it makes the block read as one
+object; the inline branch must be changed the same way (its ids still
+print black rather than the class colour; the snapshot is in
+`02-odd-zeta/docs/reports/20261127_WIT-001_witness_docs_state_fragments.md` §3). Colour is
 redundant with the letter either way.
 
 **S7. Placement rule (`\ifvmode` / `\ifhmode`) and its edge cases.**
@@ -1051,7 +1052,7 @@ silencing it, and doing so with a quantified and reproducible criterion
 1. **This document argues, it does not apply.** The applied state of the
    convention in a given repository — counters, verdicts, pending rows —
    is recorded in `docs/reports/` and in that repository's generated
-   `docs/witness-inventory.md`, and nowhere else; nothing here asserts
+   census, and nowhere else; nothing here asserts
    that a manuscript has already satisfied a rule it states.
 2. **Propagation to the family is an editorial decision.** Whether a
    repository renders marks at all, and whether it adopts the criterion of

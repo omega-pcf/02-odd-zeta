@@ -1,12 +1,14 @@
 #!/usr/bin/env tsx
 /**
- * Generated witness inventory — `docs/witness-inventory.md` (DOCS-CONSOLIDATION-001 Fase 4).
+ * Generated witness inventory — `docs/generated/witness-inventory.md` (DOCS-CONSOLIDATION-001 Fase 4;
+ * moved out of `docs/` in 02 on 2026-11-27: the census is machine-owned output, so it sits in an
+ * unambiguous generated path instead of the hand-indexed, dated snapshots of `docs/reports/`).
  *
  * The census of this repository's marks — how many inline and own-line marks
  * there are, which decoration and accounting macros are used, which of the
  * family's gates hold here, which id parts fail the naming standard and which
  * file carries which marks — is MEASURED, never typed.  `pnpm run
- * witness:inventory` rewrites `docs/witness-inventory.md` from the working
+ * witness:inventory` rewrites `docs/generated/witness-inventory.md` from the working
  * tree; `pnpm run inventory:check` (wired into `validate`, right after
  * `counts:check`) fails with a unified diff when it has drifted, so a stale
  * census is loud instead of a report's footnote.
@@ -23,14 +25,14 @@
  * of a moment and stay outside this mechanism.
  *
  * Modes:
- *   (default)  rewrite docs/witness-inventory.md
+ *   (default)  rewrite docs/generated/witness-inventory.md
  *   --check    compare, print the diff, exit 1 on any drift
  */
 import { execSync } from 'child_process';
 import { existsSync, readFileSync, writeFileSync } from 'fs';
 import { basename, resolve } from 'path';
 
-const OUT = 'docs/witness-inventory.md';
+const OUT = 'docs/generated/witness-inventory.md';
 
 /* ------------------------------------------------------------- measurement */
 
