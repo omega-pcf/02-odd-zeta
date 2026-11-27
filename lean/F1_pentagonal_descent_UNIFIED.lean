@@ -104,6 +104,9 @@
 
 import Mathlib
 
+set_option linter.style.whitespace false
+set_option linter.style.longLine false
+
 
 -- ════════════════════════════════════════════════════════════════════════════
 -- BLOCK 1. F1_compilado_sin_axiomas.lean
@@ -202,30 +205,8 @@ section Block01
 -/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 open Real Complex Filter Topology
 open scoped Real LSeries.notation
-
-set_option linter.style.whitespace false
-set_option linter.style.longLine false
 
 namespace F1PCFUnified
 
@@ -1272,14 +1253,14 @@ theorem local_factor_identity (p : ℕ) (hp : p.Prime) {s : ℂ} (_hs : 1 < s.re
     simp [show chi5_C (0 : ZMod 5) = 0 from by simp [chi5_C, chi5_Z]]
   · rcases chi5_C_prime_values p hp h_ram with h_split | h_inert
     · -- Split: χ₅(p) = 1, f_L = f_zeta, f_K = (f_zeta)²
-      simp only [if_neg h_ram, h_split, if_true]
+      simp only [ite_eq_right h_ram, h_split, ite_true]
       rw [show (1 : ℂ) - 1 * (p : ℂ) ^ (-s) = 1 - (p : ℂ) ^ (-s) by ring,
           show (1 - (p : ℂ) ^ (-s))⁻¹ * (1 - (p : ℂ) ^ (-s))⁻¹ =
                ((1 - (p : ℂ) ^ (-s)) * (1 - (p : ℂ) ^ (-s)))⁻¹ from
              (mul_inv_rev _ _).symm, ← sq]
     · -- Inert: χ₅(p) = -1, (1-x)(1+x) = 1-x²
-      simp only [if_neg h_ram, h_inert,
-                 if_neg (show (-1 : ℂ) ≠ 1 from by norm_num)]
+      simp only [ite_eq_right h_ram, h_inert,
+                 ite_eq_right (show (-1 : ℂ) ≠ 1 from by norm_num)]
       rw [show (1 : ℂ) - (-1) * (p : ℂ) ^ (-s) = 1 + (p : ℂ) ^ (-s) by ring]
       have key : (1 + (p : ℂ) ^ (-s)) * (1 - (p : ℂ) ^ (-s)) = 1 - (p : ℂ) ^ (-(2 * s)) := by
         rw [show (-(2 * s) : ℂ) = (-s) + (-s) by ring,
@@ -1662,7 +1643,7 @@ def kappa_K (u : ℝ) : ℝ :=
 theorem kappa_K_pos (u : ℝ) (hu : 1 < u) : 0 < kappa_K u := by
   unfold kappa_K
   have hne : u ≠ 1 := ne_of_gt hu
-  rw [if_neg hne]
+  rw [ite_eq_right hne]
   have h_u2 : 0 < u^2 := by positivity
   have h_log_u : 0 < Real.log u := Real.log_pos hu
   have h_log_5 : 0 < Real.log 5 := Real.log_pos (by norm_num : (1 : ℝ) < 5)
@@ -3311,8 +3292,8 @@ theorem fib_inert_case {p : ℕ} (hp : p.Prime) (_hp2 : p ≠ 2) (_hp5 : p ≠ 5
         have hcs := coeff_sub (X ^ p : (ZMod p)[X]) (X : (ZMod p)[X]) p
         have hcp := coeff_X_pow (R := ZMod p) p p
         have hcx := coeff_X (R := ZMod p) (n := p)
-        rw [hcs, hcp, hcx, if_pos (rfl : p = p),
-            if_neg (Nat.ne_of_lt hp.one_lt), sub_zero]
+        rw [hcs, hcp, hcx, ite_eq_left (rfl : p = p),
+            ite_eq_right (Nat.ne_of_lt hp.one_lt), sub_zero]
       have hroots : roots (X ^ p - X : (ZMod p)[X]) = (Finset.univ : Finset (ZMod p)).val := by
         have h := FiniteField.roots_X_pow_card_sub_X (ZMod p)
         simpa [ZMod.card] using h
@@ -4098,7 +4079,7 @@ theorem fib_pred_split {p : ℕ} (hp : p.Prime) (hp2 : p ≠ 2) (hp5 : p ≠ 5)
   rw [hF, hfix] at hpow
   linear_combination -hpow
 
-set_option maxHeartbeats 1000000 in
+set_option maxHeartbeats 1000000 in -- the Frobenius over GF(p²) trips the default limit
 /-- **[A2, inert]** X² − X − 1 irreducible en ZMod p ⟹ F_{p−1} ≡ 1 (mod p).
     Cuerpo tomado de `F1SpectraAnchorG.fib_inert_case` (ya compilado), que
     obtiene α^p = 1 − α en GF(p²); aquí se lee además el coeficiente F_{p−1}. -/
@@ -4161,8 +4142,8 @@ theorem fib_pred_inert {p : ℕ} (hp : p.Prime) (_hp2 : p ≠ 2) (_hp5 : p ≠ 5
         have hcs := coeff_sub (X ^ p : (ZMod p)[X]) (X : (ZMod p)[X]) p
         have hcp := coeff_X_pow (R := ZMod p) p p
         have hcx := coeff_X (R := ZMod p) (n := p)
-        rw [hcs, hcp, hcx, if_pos (rfl : p = p),
-            if_neg (Nat.ne_of_lt hp.one_lt), sub_zero]
+        rw [hcs, hcp, hcx, ite_eq_left (rfl : p = p),
+            ite_eq_right (Nat.ne_of_lt hp.one_lt), sub_zero]
       have hroots : roots (X ^ p - X : (ZMod p)[X]) = (Finset.univ : Finset (ZMod p)).val := by
         have h := FiniteField.roots_X_pow_card_sub_X (ZMod p)
         simpa [ZMod.card] using h
@@ -4370,7 +4351,7 @@ theorem mk_natCast_eq {p : ℕ} [NeZero p] (n : ℕ) (c : ℤ)
 theorem mk_intCast_pow {p : ℕ} (hp : p.Prime) (z : ℤ) :
     (Ideal.Quotient.mk (Ip p)) (z : Zφ) ^ p = (Ideal.Quotient.mk (Ip p)) (z : Zφ) := by
   have : Fact p.Prime := ⟨hp⟩
-  haveI : NeZero p := ⟨hp.ne_zero⟩
+  have : NeZero p := ⟨hp.ne_zero⟩
   have h0 : ((z ^ p - z : ℤ) : ZMod p) = 0 := by
     push_cast; rw [ZMod.pow_card]; ring
   have := mk_intCast_eq_zero (p := p) _ h0
@@ -4389,7 +4370,7 @@ theorem mk_add_pow {p : ℕ} (hp : p.Prime) (x y : Zφ) :
 theorem frobenius_on_ω {p : ℕ} (hp : p.Prime) (hp5 : p ≠ 5) :
     (Ideal.Quotient.mk (Ip p)) (ψ p ω) = (Ideal.Quotient.mk (Ip p)) ω ^ p := by
   have : Fact p.Prime := ⟨hp⟩
-  haveI : NeZero p := ⟨hp.ne_zero⟩
+  have : NeZero p := ⟨hp.ne_zero⟩
   by_cases hp2 : p = 2
   · subst hp2
     have hψ : ψ 2 = σ := ψ_of_inert (Or.inl (by decide))
@@ -4629,7 +4610,7 @@ theorem coeffs_mod_p {p : ℕ} (hp : p.Prime) (a b : ℤ)
   set g : (ZMod p)[X] := C (a : ZMod p) * X + C (b : ZMod p) with hg
   have hmk : AdjoinRoot.mk (X ^ 2 - X - 1 : (ZMod p)[X]) g = 0 := by
     rw [← hr]
-    simp [g, redp, map_add, map_mul, AdjoinRoot.mk_C, AdjoinRoot.mk_X]
+    simp [g, redp, map_add, map_mul, AdjoinRoot.mk_X]
   rw [AdjoinRoot.mk_eq_zero] at hmk
   have hg0 : g = 0 := by
     by_contra hne
@@ -4789,7 +4770,7 @@ theorem trace_minus_one_is_chi5 (χ : ℤ) :
 theorem euler_factor_is_char_poly {R : Type*} [CommRing R] (t χ : R) :
     Matrix.det ((1 : Matrix (Fin 2) (Fin 2) R) - t • !![1, 0; 0, χ])
       = (1 - t) * (1 - χ * t) := by
-  simp [Matrix.det_fin_two, Matrix.one_apply]
+  simp [Matrix.det_fin_two]
   ring
 
 /-- **[P*]** Casos: descompuesto (1 − t)², inerte 1 − t². -/
@@ -4936,7 +4917,7 @@ theorem eigen_of_power (p k : ℕ) (hp : ((p : ℕ) : ZMod 5) ≠ 0) :
 theorem zero_side_nonneg_of_real_ordinates
     (F : ℝ → ℂ) (Γ : Finset ℝ) :
     0 ≤ ∑ γ ∈ Γ, Complex.normSq (F γ) :=
-  Finset.sum_nonneg (fun γ _ => Complex.normSq_nonneg _)
+  Finset.sum_nonneg (fun _γ _ => Complex.normSq_nonneg _)
 
 /-! ## (C) La fórmula explícita, como hipótesis con nombre -/
 
@@ -5202,9 +5183,6 @@ set_option linter.style.longLine false
     (ix)  |ℤ₂₀*| = 8        ✅ `ZtwentyStar`
     (i)(ii)(vii)(x)         ❌ añadidas aquí
 -/
-
-
-
 
 
 /-! ### Cláusulas que faltaban en F₁ -/
@@ -8155,7 +8133,7 @@ theorem V_unitary : V.conjTranspose * V = 1 := by
           Complex.conj_I, ← Complex.exp_conj, map_ofNat];
           ring_nf;
           simp only [← Complex.exp_add, Complex.exp_eq_one_iff];
-    (try exact ⟨0, by ring⟩)
+    (exact ⟨0, by ring⟩)
 
 /-- **[P] Y PRESERVA NORMAS.**  Los dos generadores tienen módulo
     uno, luego la aplicación es una isometría de los retículos: es lo
@@ -11636,7 +11614,7 @@ theorem degree_two_is_the_additive :
     · E es el CASO DE IGUALDAD de la desigualdad aritmético-geométrica
       correspondiente:
 
-          Σ_ρ ( |z_ρ| - 1 ) = 0 ,
+          Σ_ρ ( |z_ρ| - 1) = 0 ,
 
       donde cada par `{ρ, 1-ρ}` aporta
 
@@ -25319,7 +25297,7 @@ theorem orbit_card_jumps (ε : ℝ) (hε : 0 < ε) :
   · rw [show (1 : ℝ) + ε / 2 - 1 = ε / 2 by ring, abs_of_pos (by linarith)]
     linarith
   · unfold orbitCard
-    rw [if_neg (by intro h; linarith [h])]
+    rw [ite_eq_right (by intro h; linarith [h])]
 
 /-! ## §90.2  El discriminante es continuo, y está acotado por la desviación -/
 
@@ -26445,9 +26423,9 @@ theorem orbit_card_is_height_independent : HeightIndependent orbitCardOf := by
 theorem orbit_card_separates :
     (∀ ρ : ℂ, ρ.re = 1 / 2 → orbitCardOf ρ = 2) ∧
     (∃ ρ : ℂ, orbitCardOf ρ = 4) := by
-  refine ⟨fun ρ h => by unfold orbitCardOf; rw [if_pos h], ⟨⟨1, 0⟩, ?_⟩⟩
+  refine ⟨fun ρ h => by unfold orbitCardOf; rw [ite_eq_left h], ⟨⟨1, 0⟩, ?_⟩⟩
   unfold orbitCardOf
-  rw [if_neg (by norm_num)]
+  rw [ite_eq_right (by norm_num)]
 
 /-! ## §95.3  La celda que falta -/
 
@@ -26560,7 +26538,7 @@ theorem the_balance_of_section_95 {ι : Type*} (S : Finset ι) (f : ι → ℝ)
   luego
 
       ┌──────────────────────────────────────────────────┐
-      │   contrib = (r−1)²/r = 4δ² / ( D² · r · (r+1)² ) │   EXACTO
+      │   contrib = (r−1)²/r = 4δ² / ( D² · r · (r+1)²) │   EXACTO
       └──────────────────────────────────────────────────┘
 
   Verificado a `45` dígitos en `(δ,γ) = (0.25,20), (0.25,40),
@@ -26648,7 +26626,7 @@ theorem modulus_squared (δ γ : ℝ) (hD : (1 / 2 + δ) ^ 2 + γ ^ 2 ≠ 0) :
 /-- **[P] LA CONTRIBUCIÓN, EXACTA.**  Para `r > 0` con
     `r² = 1 − 2δ/D`:
 
-        (r−1)²/r  =  4δ² / ( D² · r · (r+1)² )
+        (r−1)²/r  =  4δ² / ( D² · r · (r+1)²)
 
     Es identidad algebraica: `(r−1)² = (r²−1)²/(r+1)²` y
     `r²−1 = −2δ/D`. -/
@@ -31888,7 +31866,7 @@ theorem the_balance_of_section_120 (spec Z : Set ℂ)
                    ‾‾‾‾‾‾   ‾‾‾‾‾‾‾‾‾‾‾
                    cara φ     cara π
 
-      k=0   `(1/2)·( 1  ) =  1/2`
+      k=0   `(1/2)·( 1) =  1/2`
       k=1   `(1/2)·(−1/2) = −1/4`
       k=2   `(1/2)·(−1/2) = −1/4`
 
@@ -32209,7 +32187,7 @@ theorem operator_lives_in_the_isometry (n : ℝ)
 /-- **[P] SÓLO LA PATA 2 FACTORIZA POR AUTOVALOR.**  Cada `spec_k` es
     `cara φ × cara π`, con `cara φ = 1/2`:
 
-        `spec₀ = (1/2)·( 1  ) =  1/2`
+        `spec₀ = (1/2)·( 1) =  1/2`
         `spec₁ = (1/2)·(−1/2) = −1/4`
         `spec₂ = (1/2)·(−1/2) = −1/4`
 
@@ -34699,7 +34677,7 @@ theorem disc_family_is_norm_form (k : ℕ) :
     field_simp; ring
   rw [hd]
   by_cases hk : k % 2 = 0
-  · simp only [hk, if_true]
+  · simp only [hk, ite_true]
     have hb := binet_diff k
     have hx : (φ : ℝ) ^ k + (1 - (φ : ℝ)) ^ k = (lucasN k : ℝ) := binet_sum k
     have hinv : ((φ : ℝ) ^ k)⁻¹ = (-1 : ℝ) ^ k * (1 - (φ:ℝ)) ^ k := phi_inv_pow k
@@ -34713,7 +34691,7 @@ theorem disc_family_is_norm_form (k : ℕ) :
     rw [zpow_natCast]
     rw [hb, mul_pow, Real.sq_sqrt (show (0 : ℝ) ≤ 5 from by norm_num)]
     ring
-  · simp only [hk, if_false]
+  · simp only [hk, ite_false]
     have hx : (φ : ℝ) ^ k + (1 - (φ : ℝ)) ^ k = (lucasN k : ℝ) := binet_sum k
     have hb := binet_diff k
     have hinv : ((φ : ℝ) ^ k)⁻¹ = (-1 : ℝ) ^ k * (1 - (φ:ℝ)) ^ k := phi_inv_pow k
@@ -35291,7 +35269,7 @@ theorem confinement_forces_one (r : ℝ) (hr : 0 < r)
   · exfalso
     have hinv : 1 < r⁻¹ := by
       rw [lt_inv_comm₀ (by norm_num : (0:ℝ) < 1) hr]
-      simp only [inv_one] at *
+      simp only [inv_one] at h ⊢
       exact h
     exact confinement_kills_r_gt_one r⁻¹ hinv (fun p => (hdisc p).2)
   · exact h
@@ -39598,8 +39576,8 @@ theorem descent_is_what_makes_it_automatic (L : ℂ → ℂ) (h : GDS L) (ρ : �
 theorem orbit_card_upstairs (ρ : ℂ) :
     (ρ.re = 1/2 → orbitCardOf ρ = 2) ∧ (ρ.re ≠ 1/2 → orbitCardOf ρ = 4) := by
   constructor
-  · intro h; unfold orbitCardOf; rw [if_pos h]
-  · intro h; unfold orbitCardOf; rw [if_neg h]
+  · intro h; unfold orbitCardOf; rw [ite_eq_left h]
+  · intro h; unfold orbitCardOf; rw [ite_eq_right h]
 
 theorem orbit_card_downstairs :
     (∀ a : ZMod 20, (a = 3 ∨ a = 7 ∨ a = 13 ∨ a = 17) ↔
@@ -39633,8 +39611,8 @@ theorem orbitCardOf_is_defined_by_the_conclusion (ρ : ℂ) :
     orbitCardOf ρ = 2 ↔ ρ.re = 1/2 := by
   unfold orbitCardOf
   by_cases h : ρ.re = 1/2
-  · rw [if_pos h]; exact ⟨fun _ => h, fun _ => rfl⟩
-  · rw [if_neg h]
+  · rw [ite_eq_left h]; exact ⟨fun _ => h, fun _ => rfl⟩
+  · rw [ite_eq_right h]
     exact ⟨fun hc => by norm_num at hc, fun hh => absurd hh h⟩
 
 theorem the_real_orbit_dichotomy (ρ : ℂ) (hγ : ρ.im ≠ 0) :
@@ -44851,7 +44829,7 @@ theorem diag_comm [Mul R]
     (f g ψ : JointIdx → R) :
     diag f (diag g ψ) = diag g (diag f ψ) := by
   funext i
-  show f i * (g i * ψ i) = g i * (f i * ψ i)
+  change f i * (g i * ψ i) = g i * (f i * ψ i)
   rw [hassoc, hassoc, hcomm (f i) (g i)]
 
 /-- Symbol of the scale operator `H`: a function of the level alone. -/
@@ -44902,7 +44880,7 @@ theorem H_degeneracy_six (E : Nat → R) (σ : Nat) :
   refine ⟨rfl, ?_⟩
   intro i hi
   have h : i.1 = σ := fibre_sound σ i hi
-  show E i.1 = E σ
+  change E i.1 = E σ
   rw [h]
 
 /-- **The triple (H, Ω̂, W) IS complete.**  If the three spectra are injective on
@@ -44994,7 +44972,7 @@ theorem deck_invariant_is_level_function {A : Type} (f : JointIdx → A)
     (i j : JointIdx) (hij : i.1 = j.1) : f i = f j := by
   obtain ⟨n, _, hxy⟩ := deck_transitive i.2 j.2
   have hstep : deckIter n i = j := by
-    show (i.1, stepIter n i.2) = j
+    change (i.1, stepIter n i.2) = j
     rw [hxy, hij]
   rw [← hstep, deck_invariant_iter f hf]
 
@@ -45061,7 +45039,7 @@ def zPhi : Zphi := (0, 1)
 def mulPhi (x : Zphi) : Zphi := (x.2, x.1 + x.2)
 
 theorem zmul_phi (x : Zphi) : zmul zPhi x = mulPhi x := by
-  show ((0:Int) * x.1 + 1 * x.2, (0:Int) * x.2 + 1 * x.1 + 1 * x.2) = (x.2, x.1 + x.2)
+  change ((0:Int) * x.1 + 1 * x.2, (0:Int) * x.2 + 1 * x.1 + 1 * x.2) = (x.2, x.1 + x.2)
   simp
 
 /-- **`M` is multiplication by φ.**  Applying the matrix `M` to the coordinate
@@ -45069,7 +45047,7 @@ theorem zmul_phi (x : Zphi) : zmul zPhi x = mulPhi x := by
     makes every statement of this file a statement about the ring ℤ[φ]. -/
 theorem M_is_mul_by_phi (x : Zphi) :
     (M.a * x.1 + M.b * x.2, M.c * x.1 + M.d * x.2) = mulPhi x := by
-  show ((0:Int) * x.1 + 1 * x.2, (1:Int) * x.1 + 1 * x.2) = (x.2, x.1 + x.2)
+  change ((0:Int) * x.1 + 1 * x.2, (1:Int) * x.1 + 1 * x.2) = (x.2, x.1 + x.2)
   simp
 
 /-- The field norm of `ℚ(√5)` restricted to `ℤ[φ]`:
@@ -45474,7 +45452,7 @@ theorem npow_eq_lin : ∀ n : Nat, Mat2.npow M n = lin (coef n).1 (coef n).2
       have ih := npow_eq_lin n
       have hstep : Mat2.npow M (n + 1) = Mat2.mul (Mat2.npow M n) M := rfl
       rw [hstep, ih]
-      show Mat2.mul (lin (coef n).1 (coef n).2) M
+      change Mat2.mul (lin (coef n).1 (coef n).2) M
          = lin ((coef n).1 + (coef n).2) (coef n).1
       unfold lin Mat2.mul M
       simp only [Mat2.mk.injEq]
@@ -45489,7 +45467,7 @@ theorem coef_pos_succ : ∀ n : Nat, 1 ≤ (coef (n + 1)).1 ∧ 0 ≤ (coef (n +
   | 0 => by decide
   | n + 1 => by
       have ih := coef_pos_succ n
-      show 1 ≤ (coef (n + 1)).1 + (coef (n + 1)).2 ∧ 0 ≤ (coef (n + 1)).1
+      change 1 ≤ (coef (n + 1)).1 + (coef (n + 1)).2 ∧ 0 ≤ (coef (n + 1)).1
       refine ⟨?_, ?_⟩ <;> omega
 
 theorem coef_pos (n : Nat) (hn : 0 < n) : 1 ≤ (coef n).1 ∧ 0 ≤ (coef n).2 := by
@@ -45569,24 +45547,27 @@ theorem det_smul_of_act_zero (X : Mat2) (v : Zphi) (h : act X v = (0, 0)) :
   obtain ⟨x, y⟩ := v
   simp [act, Prod.mk.injEq] at h
   obtain ⟨h1, h2⟩ := h
+  have e1 : X.d * (X.a * x + X.b * y) = 0 := by rw [h1]; exact Int.mul_zero _
+  have e2 : X.b * (X.c * x + X.d * y) = 0 := by rw [h2]; exact Int.mul_zero _
+  have e3 : X.c * (X.a * x + X.b * y) = 0 := by rw [h1]; exact Int.mul_zero _
+  have e4 : X.a * (X.c * x + X.d * y) = 0 := by rw [h2]; exact Int.mul_zero _
+  -- Expand the products once, up front: `omega` then sees each monomial as an
+  -- atom, so no blanket `simp ... at *` is needed below.
+  rw [Int.mul_add] at e1 e2 e3 e4
   constructor
-  · have e1 : X.d * (X.a * x + X.b * y) = 0 := by rw [h1]; exact Int.mul_zero _
-    have e2 : X.b * (X.c * x + X.d * y) = 0 := by rw [h2]; exact Int.mul_zero _
-    simp [Mat2.det, Int.mul_add, Int.sub_mul] at *
-    have q1 : X.d * (X.a * x) = X.a * X.d * x := by
+  · have q1 : X.d * (X.a * x) = X.a * X.d * x := by
       rw [← Int.mul_assoc, Int.mul_comm X.d X.a]
     have q2 : X.b * (X.c * x) = X.b * X.c * x := by rw [← Int.mul_assoc]
     have q3 : X.d * (X.b * y) = X.b * (X.d * y) := by
       rw [← Int.mul_assoc, ← Int.mul_assoc, Int.mul_comm X.d X.b]
+    simp only [Mat2.det, Int.sub_mul]
     omega
-  · have e1 : X.c * (X.a * x + X.b * y) = 0 := by rw [h1]; exact Int.mul_zero _
-    have e2 : X.a * (X.c * x + X.d * y) = 0 := by rw [h2]; exact Int.mul_zero _
-    simp [Mat2.det, Int.mul_add, Int.sub_mul] at *
-    have q1 : X.c * (X.a * x) = X.a * (X.c * x) := by
+  · have q1 : X.c * (X.a * x) = X.a * (X.c * x) := by
       rw [← Int.mul_assoc, ← Int.mul_assoc, Int.mul_comm X.c X.a]
     have q2 : X.c * (X.b * y) = X.b * X.c * y := by
       rw [← Int.mul_assoc, Int.mul_comm X.c X.b]
     have q3 : X.a * (X.d * y) = X.a * X.d * y := by rw [← Int.mul_assoc]
+    simp only [Mat2.det, Int.sub_mul]
     omega
 
 /-- `Mⁿ − I = lin pₙ (qₙ − 1)`, so its determinant is `N(qₙ−1, pₙ)`. -/
@@ -45597,7 +45578,7 @@ theorem det_npow_sub_one (n : Nat) :
   have key : ∀ p q : Int,
       Mat2.det (Mat2.sub (lin p q) Mat2.one) = normFormMul (q - 1) p := by
     intro p q
-    show (q - 1) * (p + q - 1) - (p - 0) * (p - 0)
+    change (q - 1) * (p + q - 1) - (p - 0) * (p - 0)
        = (q - 1) * (q - 1) + (q - 1) * p - p * p
     have h1 : p - 0 = p := Int.sub_zero p
     have h2 : p + q - 1 = p + (q - 1) := by omega
@@ -46116,7 +46097,7 @@ theorem raiseIter_deck_commute :
       raiseIter n (deckStep i) = deckStep (raiseIter n i)
   | 0,     _ => rfl
   | n + 1, i => by
-      show raise (raiseIter n (deckStep i)) = deckStep (raise (raiseIter n i))
+      change raise (raiseIter n (deckStep i)) = deckStep (raise (raiseIter n i))
       rw [raiseIter_deck_commute n i, raise_deck_commute]
 
 /-! ## 2.  Los seis tipos, y que la dinámica los preserva -/
@@ -46147,7 +46128,7 @@ theorem isotypic_type_is_unique (k k' : Nat) (hk : k < 6) (hk' : k' < 6)
 theorem isotypic_invariant_under_dynamics (k : Nat) (f : JointIdx → Nat)
     (hf : IsIsotypic k f) : IsIsotypic k (fun i => f (raise i)) := by
   intro i
-  show f (raise (deckStep i)) = (f (raise i) + k) % 6
+  change f (raise (deckStep i)) = (f (raise i) + k) % 6
   rw [raise_deck_commute]
   exact hf (raise i)
 
@@ -46156,7 +46137,7 @@ theorem isotypic_invariant_under_iterated_dynamics
     (k n : Nat) (f : JointIdx → Nat) (hf : IsIsotypic k f) :
     IsIsotypic k (fun i => f (raiseIter n i)) := by
   intro i
-  show f (raiseIter n (deckStep i)) = (f (raiseIter n i) + k) % 6
+  change f (raiseIter n (deckStep i)) = (f (raiseIter n i) + k) % 6
   rw [raiseIter_deck_commute]
   exact hf (raiseIter n i)
 
@@ -49115,7 +49096,7 @@ noncomputable def kappaK (u : ℝ) : ℝ := 2 * kappaQ u
 /-- **[P*]** κ per real place: u²/(u²−1) = 1 + 1/(u²−1) (CW `kappa_per_real_place`). -/
 theorem kappa_per_real_place (u : ℝ) (hu : u ^ 2 ≠ 1) : kappaQ u = 1 + 1 / (u ^ 2 - 1) := by
   have h : u ^ 2 - 1 ≠ 0 := sub_ne_zero.mpr hu
-  unfold kappaQ; field_simp <;> ring
+  unfold kappaQ; field_simp ; ring
 
 /-- **[P*]** κ_K is the sum over the two real places (CW `kappa_k_two_real_places`). -/
 theorem kappa_k_two_real_places (u : ℝ) : kappaK u = kappaQ u + kappaQ u := by
@@ -49132,7 +49113,7 @@ theorem kappa_k_simple_pole (u : ℝ) (h1 : u ≠ 1) (h2 : u ≠ -1) :
     rw [this]; exact mul_ne_zero ha hb
   unfold kappaK kappaQ
   rw [show u ^ 2 - 1 = (u - 1) * (u + 1) by ring]
-  field_simp <;> ring
+  field_simp
 
 /-! ## 9.  The tower Hamiltonian, the class number, the sine signature -/
 
@@ -49171,7 +49152,7 @@ theorem pentagon_log_signature :
     · positivity
     · linarith [Real.pi_pos]
   rw [Real.sin_two_mul, cos_pi_div_five_eq]
-  field_simp <;> ring
+  field_simp
 
 /-- **[P*]** The Bernoulli polynomials take rational values at the pentagonal points a/5
     (CW `bernoulli_eval_rational`). -/
@@ -49824,7 +49805,7 @@ theorem denominator_is_a_cassini_oval (ρ : ℂ) :
 
 /-- **[P] ★★ LA TRAZA RECENTRADA.**  Componiendo las dos:
 
-        t  =  ( 2|z|² + 1/2 ) / |z² − 1/4|,      z = ρ − 1/2
+        t  =  ( 2|z|² + 1/2) / |z² − 1/4|,      z = ρ − 1/2
 
     Numerador: círculos centrados en la línea.  Denominador: Cassini
     con focos `0` y `1`.  Y la línea crítica es donde el círculo de
@@ -51186,7 +51167,7 @@ theorem alphaW_zero_iff (x : ℝ) : alphaW x = 0 ↔ x = 1/2 := by
 
 /-- **[P] ★★★ LA IDENTIDAD.**
 
-        |ρ−1|² + |ρ|²  =  ( α(β) + 4γ² + 1 ) / 2
+        |ρ−1|² + |ρ|²  =  ( α(β) + 4γ² + 1) / 2
 
     El corpus tiene el lado izquierdo como `1 − 2β + 2β² + 2γ²`
     (`the_numerator_is_rational_in_beta_and_gamma`).  Ésta es la misma
@@ -68199,7 +68180,7 @@ theorem not_soule :
       Polynomial.eval_ofNat, hv]
     rcases hc with h | h <;> rw [h] <;> norm_num
   have hprimes : Set.Infinite {p : ℕ | p.Prime ∧ p ≠ 5} := by
-    refine (Nat.infinite_setOf_prime.diff (Set.finite_singleton 5)).mono ?_
+    refine (Nat.infinite_setOfPred_prime.sdiff (Set.finite_singleton 5)).mono ?_
     rintro p ⟨hp, h5⟩
     exact ⟨hp, by simpa using h5⟩
   have himg : Set.Infinite ((fun n : ℕ => (n : ℤ)) '' {p : ℕ | p.Prime ∧ p ≠ 5}) :=
@@ -68449,8 +68430,8 @@ theorem potential_integral_bound (f V : ℝ → ℝ) (I S : Set ℝ) (hI : Measu
     intro x hx
     apply mul_le_mul_of_nonneg_left _ (sq_nonneg _)
     by_cases hxS : x ∈ S
-    · simp only [Set.indicator, hxS, if_true]; linarith [hVS x hxS]
-    · simp only [Set.indicator, hxS, if_false]; linarith [hVI x hx]
+    · simp only [Set.indicator, hxS, ite_true]; linarith [hVS x hxS]
+    · simp only [Set.indicator, hxS, ite_false]; linarith [hVI x hx]
   have hcalc : ∫ x in I, f x ^ 2 * (m + c2 * S.indicator (fun _ => (1:ℝ)) x)
       = m * (∫ x in I, f x ^ 2) + c2 * (∫ x in S, f x ^ 2) := by
     rw [e, MeasureTheory.integral_add (hint2.const_mul m) ((hint2.indicator hS).const_mul c2),
@@ -68575,7 +68556,7 @@ theorem ratio_folds_back (k : ℕ) (y : ℝ) :
 theorem E3_closed_under_ratios (k : ℕ) (v : ℝ × ℝ × ℝ) (hv : v ∈ E3) :
     (v.1, φ0 ^ k * v.2.1, φ0 ^ k * v.2.2) ∈ E3 := by
   have h : v.2.2 = φ0 * v.2.1 := hv
-  show φ0 ^ k * v.2.2 = φ0 * (φ0 ^ k * v.2.1)
+  change φ0 ^ k * v.2.2 = φ0 * (φ0 ^ k * v.2.1)
   rw [h]; ring
 
 /-- The Galois conjugate φ̄ = (1 − √5)/2. -/
@@ -69263,7 +69244,7 @@ theorem chi5_ideals_is_chi5_structural (n : ℕ) :
   unfold F1CW.chi5
   generalize hm : n % 5 = m
   have hlt : m < 5 := hm ▸ Nat.mod_lt n (by norm_num)
-  interval_cases m <;> first | decide | rfl | simp [F1PCFUnified.chi5_Z]
+  interval_cases m <;> first | decide
 
 /-- **[P*]** The characters of conductor 20 are the two components of G: on the eight
     classes of (ℤ/20)^×, χ₄ is trivial exactly where the first component of G is 0,
@@ -69310,7 +69291,6 @@ theorem binetDifference_holds : BinetDifference F1PCFUnified.φ := by
   rw [hφ, one_div]
   first
     | rw [Real.inv_goldenRatio]
-    | rw [Real.inv_gold]
   rw [Even.neg_pow hev, Real.coe_fib_eq]
   field_simp
 
@@ -69603,7 +69583,7 @@ theorem lucasS_ge_three_from_two : ∀ n : ℕ, 3 ≤ _root_.lucasS (n + 2) ∧ 
       obtain ⟨h1, h2⟩ := lucasS_ge_three_from_two n
       refine ⟨h2, ?_⟩
       have e : _root_.lucasS (n + 1 + 3) = _root_.lucasS (n + 3) + _root_.lucasS (n + 2) := by
-        show _root_.lucasS ((n + 2) + 2) = _root_.lucasS ((n + 2) + 1) + _root_.lucasS (n + 2)
+        change _root_.lucasS ((n + 2) + 2) = _root_.lucasS ((n + 2) + 1) + _root_.lucasS (n + 2)
         rfl
       rw [e]; omega
 
@@ -69988,7 +69968,7 @@ theorem log_primes_independent (p q : ℕ) (hp : p.Prime) (hq : q.Prime) (hpq : 
     rw [Nat.factorization_pow, Finsupp.smul_apply, hp.factorization_self, smul_eq_mul, mul_one]
   have hvb : (q ^ b).factorization p = 0 := by
     rw [Nat.factorization_pow, Finsupp.smul_apply, hq.factorization, Finsupp.single_apply,
-      if_neg (Ne.symm hpq), smul_zero]
+      ite_eq_right (Ne.symm hpq), smul_zero]
   have ha : a = 0 := by rw [← hva, hnat, hvb]
   refine ⟨ha, ?_⟩
   rw [ha, pow_zero] at hnat
@@ -70304,7 +70284,7 @@ theorem integer_block_bounded (f : ℕ → ℝ) (hf : Antitone f) (hf0 : ∀ n, 
   intro M
   have h := partialChi_bounded M
   unfold partialChi at h
-  show |∑ n ∈ Finset.range M, ((F1CW.chi5 n : ℤ) : ℝ)| ≤ 1
+  change |∑ n ∈ Finset.range M, ((F1CW.chi5 n : ℤ) : ℝ)| ≤ 1
   exact_mod_cast h
 
 /-- **[O] Lo abierto, en su forma última: el inverso de la estructura.**
@@ -70520,7 +70500,7 @@ theorem squares_in_kernel_fibre (n : ℕ) (h2 : n % 2 = 1) (h5 : n % 5 ≠ 0) :
   have hlt : n % 20 < 20 := Nat.mod_lt _ (by norm_num)
   rw [Nat.mul_mod]
   generalize n % 20 = r at hr2 hr5 hlt ⊢
-  interval_cases r <;> first | omega | simp
+  interval_cases r <;> first | omega
 
 /-- **[O] El balance de las cuatro fibras.**  Para cada fibra g, la desviación de
     su suma de Fejér respecto de la cuarta parte del total es
@@ -70556,15 +70536,15 @@ theorem each_decays_of_field_decays (Z1 Z4 Z5 Z20 : ℝ → ℝ)
   · refine tendsto_of_tendsto_of_tendsto_of_le_of_le tendsto_const_nhds hK
       (fun L => h4 L) (fun L => ?_)
     have := h1 L; have := h5 L; have := h20 L
-    show Z4 L ≤ Z1 L + Z4 L + Z5 L + Z20 L; linarith
+    change Z4 L ≤ Z1 L + Z4 L + Z5 L + Z20 L; linarith
   · refine tendsto_of_tendsto_of_tendsto_of_le_of_le tendsto_const_nhds hK
       (fun L => h5 L) (fun L => ?_)
     have := h1 L; have := h4 L; have := h20 L
-    show Z5 L ≤ Z1 L + Z4 L + Z5 L + Z20 L; linarith
+    change Z5 L ≤ Z1 L + Z4 L + Z5 L + Z20 L; linarith
   · refine tendsto_of_tendsto_of_tendsto_of_le_of_le tendsto_const_nhds hK
       (fun L => h20 L) (fun L => ?_)
     have := h1 L; have := h4 L; have := h5 L
-    show Z20 L ≤ Z1 L + Z4 L + Z5 L + Z20 L; linarith
+    change Z20 L ≤ Z1 L + Z4 L + Z5 L + Z20 L; linarith
 
 /-- **[O] Una forma, en un solo objeto (más fuerte que la línea de χ₅).**  La suma de Fejér de la zeta de
     Dedekind de ℚ(i, √5) —calculable solo con primos, el término arquimediano de
@@ -70785,7 +70765,7 @@ def MirrorSignatures (Forms : ℕ → Prop) : Prop := ∀ n, Forms n
 /-- **[P*] Los lugares de ℚ(√5), leídos en el peso `1 + χ₅(pᵏ)`:** un primo
     descompuesto pesa 2 en toda potencia (dos lugares de norma p); un primo
     inerte pesa 0 en las potencias impares y 2 en las pares (un lugar de norma p²). -/
-theorem place_weights (p k : ℕ) (hp : p % 5 ≠ 0) :
+theorem place_weights (p k : ℕ) (_hp : p % 5 ≠ 0) :
     (F1CW.chi5 p = 1 → (1 : ℤ) + F1CW.chi5 p ^ k = 2)
     ∧ (F1CW.chi5 p = -1 → Odd k → (1 : ℤ) + F1CW.chi5 p ^ k = 0)
     ∧ (F1CW.chi5 p = -1 → Even k → (1 : ℤ) + F1CW.chi5 p ^ k = 2) := by
@@ -70958,7 +70938,7 @@ def KatoTempleWindows : Prop := True
     prueba uᵢ y ρ ≤ λ_{m+1}, con A₀ = ⟨uᵢ, uⱼ⟩, A₁ = ⟨uᵢ, Tuⱼ⟩, A₂ = ⟨Tuᵢ, Tuⱼ⟩ y τ
     los autovalores negativos de (A₁ − ρA₀)x = τ(A₂ − 2ρA₁ + ρ²A₀)x, los números
     ρ + 1/τ son cotas inferiores de λ₁, …, λ_m. -/
-def LehmannBounds (m : ℕ) (rho : ℝ) (lams bounds : Fin m → ℝ) : Prop :=
+def LehmannBounds (m : ℕ) (_rho : ℝ) (lams bounds : Fin m → ℝ) : Prop :=
   ∀ i, bounds i ≤ lams i
 
 /-- **[N] Cotas inferiores con el operador EXACTO** (40 dígitos; la integral en x
@@ -71159,7 +71139,7 @@ def EightClassGlobalCriterion (reDlog : Fin 2 → Fin 4 → ℂ → ℝ) : Prop 
     polinomios de Jensen Σⱼ C(d, j) δ_{n+j} Xʲ, con δ_k = (−1)^k γ_k k!/(2k)!, son
     hiperbólicos para todo d y todo n.  Los γ_k son integrales de la theta: lado
     aditivo, sin primos. -/
-def JensenHyperbolic (delta : ℕ → ℝ) (hyperbolic : ℕ → ℕ → Prop) : Prop :=
+def JensenHyperbolic (_delta : ℕ → ℝ) (hyperbolic : ℕ → ℕ → Prop) : Prop :=
   ∀ d n : ℕ, hyperbolic d n
 
 
@@ -71364,7 +71344,7 @@ theorem integral_forms_stable (v : ℝ × ℝ × ℝ) (hv : IsIntegralForm v) :
     IsIntegralForm (F1v2.symF v) ∧ IsIntegralForm (symS v) ∧ IsIntegralForm (symU v) := by
   obtain ⟨a, b, c, rfl⟩ := hv
   refine ⟨⟨c, b + 2 * c, a + b + c, ?_⟩, ⟨c, -b, a, ?_⟩, ⟨c, 2 * c - b, a - b + c, ?_⟩⟩ <;>
-    simp [F1v2.symF, symS, symU] <;> push_cast <;> ring_nf <;> simp
+    simp [F1v2.symF, symS, symU]
 
 /-- **[P*] Una sucesión de Toeplitz semidefinida está acotada por su diagonal:**
     si c₀ ± cₖ ≥ 0 (los menores 2 × 2 con los vectores (1, ±1)), entonces |cₖ| ≤ c₀.
@@ -71423,7 +71403,7 @@ theorem bounded_positive_sum_forces_le_one {ι : Type*} (s : Finset ι) (c lam :
     (hM : ∀ k : ℕ, ∑ j ∈ s, c j * lam j ^ k ≤ M) : ∀ j ∈ s, lam j ≤ 1 := by
   intro j hj
   by_contra h
-  push_neg at h
+  push Not at h
   have hcj := hc j hj
   obtain ⟨k, hk⟩ := pow_unbounded_of_one_lt (M / c j) h
   have hterm : c j * lam j ^ k ≤ ∑ i ∈ s, c i * lam i ^ k :=
@@ -71445,7 +71425,7 @@ theorem bounded_both_ways_forces_one {ι : Type*} (s : Finset ι) (c lam : ι �
     (fun i hi => inv_pos.mpr (hl i hi)) M hM' j hj
   have hpos := hl j hj
   have : 1 ≤ lam j := by
-    by_contra hlt; push_neg at hlt
+    by_contra hlt; push Not at hlt
     have : 1 < (lam j)⁻¹ := (one_lt_inv₀ hpos).mpr hlt
     linarith
   linarith
@@ -72634,7 +72614,7 @@ theorem kernel_classes_do_not_fix_it :
 theorem half_is_two_adic_norm_of_two :
     padicNorm 2 2 = 1 / 2 ∧ (2 : ℚ) * padicNorm 2 2 = 1 := by
   have h : padicNorm 2 2 = (2 : ℚ)⁻¹ := by
-    haveI : Fact (Nat.Prime 2) := ⟨Nat.prime_two⟩
+    have : Fact (Nat.Prime 2) := ⟨Nat.prime_two⟩
     exact_mod_cast padicNorm.padicNorm_p_of_prime (p := 2)
   rw [h]; norm_num
 
@@ -72686,7 +72666,7 @@ theorem mersenne_mod_twenty (n : ℕ) :
 theorem fib_succ_zero_iff_inert {q : ℕ} (hq : q.Prime) (hq2 : q ≠ 2) (hq5 : q ≠ 5) :
     ((Nat.fib (q + 1) : ZMod q) = 0) ↔
       (((q : ℕ) : ZMod 5) = 2 ∨ ((q : ℕ) : ZMod 5) = 3) := by
-  haveI : Fact q.Prime := ⟨hq⟩
+  have : Fact q.Prime := ⟨hq⟩
   have hq1 : 1 ≤ q := hq.one_lt.le
   have hsum : Nat.fib (q + 1) = Nat.fib (q - 1) + Nat.fib q := by
     have h := Nat.fib_add_two (n := q - 1)
@@ -73212,10 +73192,10 @@ theorem two_pow_mod_five_cycle (n : ℕ) :
   | succ k ih =>
     obtain ⟨h0, h1, h2, h3⟩ := ih
     refine ⟨?_, ?_, ?_, ?_⟩
-    · rw [show 4 * (k + 1) = 4 * k + 4 by ring, pow_add, Nat.mul_mod, h0] <;> norm_num
-    · rw [show 4 * (k + 1) + 1 = (4 * k + 1) + 4 by ring, pow_add, Nat.mul_mod, h1] <;> norm_num
-    · rw [show 4 * (k + 1) + 2 = (4 * k + 2) + 4 by ring, pow_add, Nat.mul_mod, h2] <;> norm_num
-    · rw [show 4 * (k + 1) + 3 = (4 * k + 3) + 4 by ring, pow_add, Nat.mul_mod, h3] <;> norm_num
+    · rw [show 4 * (k + 1) = 4 * k + 4 by ring, pow_add, Nat.mul_mod, h0] ; norm_num
+    · rw [show 4 * (k + 1) + 1 = (4 * k + 1) + 4 by ring, pow_add, Nat.mul_mod, h1] ; norm_num
+    · rw [show 4 * (k + 1) + 2 = (4 * k + 2) + 4 by ring, pow_add, Nat.mul_mod, h2] ; norm_num
+    · rw [show 4 * (k + 1) + 3 = (4 * k + 3) + 4 by ring, pow_add, Nat.mul_mod, h3] ; norm_num
 
 /-- **[P*] N60-E1.**  dlog₅ de 1, 2, 4, 3 es 0, 1, 2, 3. -/
 theorem dlog5_cycle : dlog5 1 = 0 ∧ dlog5 2 = 1 ∧ dlog5 4 = 2 ∧ dlog5 3 = 3 := by decide
@@ -73227,8 +73207,8 @@ theorem M2_is_the_eisenstein_prime (n : ℕ) :
     Nat.gcd 60 (2 ^ (4 * n + 3) - 1) = 1 ∧ Nat.gcd 60 (2 ^ (4 * n + 5) - 1) = 1 := by
   obtain ⟨h7, h31⟩ := F1PaperPadic.mersenne_mod_sixty n
   refine ⟨by decide, by decide, ?_, ?_⟩
-  · rw [Nat.gcd_rec, h7] <;> decide
-  · rw [Nat.gcd_rec, h31] <;> decide
+  · rw [Nat.gcd_rec, h7] ; decide
+  · rw [Nat.gcd_rec, h31] ; decide
 
 /-- **[P*] N60-E3.  M_p mód 360 depende de p mód 12:** 31, 127, 247, 271 para p ≡ 5, 7, 11, 1
     (exponentes 12n+5, 12n+7, 12n+11, 12n+13).  El periodo 12 = mcm(4, 6). -/
@@ -73240,10 +73220,10 @@ theorem two_pow_mod_360 (n : ℕ) :
   | succ k ih =>
     obtain ⟨h5, h7, h11, h13⟩ := ih
     refine ⟨?_, ?_, ?_, ?_⟩
-    · rw [show 12 * (k + 1) + 5 = (12 * k + 5) + 12 by ring, pow_add, Nat.mul_mod, h5] <;> norm_num
-    · rw [show 12 * (k + 1) + 7 = (12 * k + 7) + 12 by ring, pow_add, Nat.mul_mod, h7] <;> norm_num
-    · rw [show 12 * (k + 1) + 11 = (12 * k + 11) + 12 by ring, pow_add, Nat.mul_mod, h11] <;> norm_num
-    · rw [show 12 * (k + 1) + 13 = (12 * k + 13) + 12 by ring, pow_add, Nat.mul_mod, h13] <;> norm_num
+    · rw [show 12 * (k + 1) + 5 = (12 * k + 5) + 12 by ring, pow_add, Nat.mul_mod, h5] ; norm_num
+    · rw [show 12 * (k + 1) + 7 = (12 * k + 7) + 12 by ring, pow_add, Nat.mul_mod, h7] ; norm_num
+    · rw [show 12 * (k + 1) + 11 = (12 * k + 11) + 12 by ring, pow_add, Nat.mul_mod, h11] ; norm_num
+    · rw [show 12 * (k + 1) + 13 = (12 * k + 13) + 12 by ring, pow_add, Nat.mul_mod, h13] ; norm_num
 
 /-- **[P*] N60-E3.** -/
 theorem mersenne_mod_360 (n : ℕ) :
@@ -73260,7 +73240,7 @@ theorem mersenne_mod_360 (n : ℕ) :
     anillo con −1 ≠ 1, si x^(2^n) = −1 entonces orderOf x = 2^(n+1). -/
 theorem order_of_half_turn {R : Type*} [Ring R] (x : R) (n : ℕ) (hx : x ^ 2 ^ n = -1)
     (h2 : (-1 : R) ≠ 1) : orderOf x = 2 ^ (n + 1) := by
-  haveI : Fact (Nat.Prime 2) := ⟨Nat.prime_two⟩
+  have : Fact (Nat.Prime 2) := ⟨Nat.prime_two⟩
   apply orderOf_eq_prime_pow
   · rw [hx]; exact h2
   · rw [pow_succ, pow_mul, hx]; norm_num
@@ -73371,8 +73351,8 @@ theorem radii_at_neg_one :
 
 /-- **[P*, riesgo de nombres] Z5.  El radio 2-ádico de L(−1, χ₅) es ½ = |2|₂.** -/
 theorem two_adic_radius_L : padicNorm 2 ((2 : ℚ) / 5) = 1 / 2 := by
-  haveI : Fact (Nat.Prime 2) := ⟨Nat.prime_two⟩
-  haveI : Fact (Nat.Prime 5) := ⟨by norm_num⟩
+  have : Fact (Nat.Prime 2) := ⟨Nat.prime_two⟩
+  have : Fact (Nat.Prime 5) := ⟨by norm_num⟩
   rw [padicNorm.div, F1PaperPadic.half_is_two_adic_norm_of_two.1]
   have h5 : padicNorm 2 ((5 : ℕ) : ℚ) = 1 :=
     padicNorm.padicNorm_of_prime_of_ne (p := 2) (q := 5) (by decide)
@@ -73696,7 +73676,7 @@ theorem phi_clock_identity {R : Type*} [CommRing R] (φ : R) (hφ : φ ^ 2 = φ 
   induction k with
   | zero =>
     refine ⟨0, ?_⟩
-    simp only [pow_zero, mul_one, Nat.mul_zero, zero_add, pow_one, mul_zero, add_zero]
+    simp only [pow_zero, mul_one,  zero_add, pow_one, mul_zero, add_zero]
     exact phi_four_sub_one φ hφ
   | succ k ih =>
     obtain ⟨w, hw⟩ := ih
@@ -74061,7 +74041,7 @@ theorem bernoulli_pair_radii (k : ℕ) (hk : 1 ≤ k) :
   refine ⟨?_, ?_, ?_, ?_, ?_⟩
   · rw [h1, h2, abs_neg, abs_neg, abs_of_pos (by linarith), abs_of_pos (by linarith)]
   · rw [abs_of_pos (by linarith), abs_of_pos (by linarith)]
-  · first | (field_simp; done) | (field_simp; ring)
+  · field_simp
   · rw [show ((1 : ℚ) - 2) - 1 = -2 by norm_num, show (1 : ℚ) - 2 = -1 by norm_num, abs_neg, abs_neg,
       abs_two, abs_one]; norm_num
   · rw [show (2 : ℚ) - 1 = 1 by norm_num, abs_one, abs_two]
@@ -76240,7 +76220,6 @@ theorem sin_ne_zero_off_real (z : ℂ) (hz : z.im ≠ 0) : Complex.sin z ≠ 0 :
   obtain ⟨k, hk⟩ := Complex.sin_eq_zero_iff.mp h
   first
     | exact hz (by simpa using congrArg Complex.im hk)
-    | exact hz (by simpa using (congrArg Complex.im hk).symm)
 
 /-- **[P*] La transformada del triángulo de anchura a > 0,
     ĝ_a(z) = a·(sen(az/2)/(az/2))², no se anula en ningún z con Im z ≠ 0.**  Un cero ρ fuera de
@@ -76261,7 +76240,7 @@ theorem triangle_transform_ne_zero (a : ℝ) (ha : 0 < a) (z : ℂ) (hz : z.im �
     cero fuera de la recta no es real:**
     γ_c = (ρ − ½)/i tiene Im γ_c = ½ − Re ρ. -/
 theorem complex_ordinate_im (ρ : ℂ) : ((ρ - 1 / 2) / Complex.I).im = 1 / 2 - ρ.re := by
-  rw [Complex.div_I]; simp [Complex.mul_im]; try ring
+  rw [Complex.div_I]; simp [Complex.mul_im]
 
 /-! ## 2. El teorema de cierre con una sola anchura -/
 
@@ -76366,7 +76345,7 @@ theorem dirichlet_simultaneous (N Q : ℕ) (hQ : 0 < Q) (α : Fin N → ℝ) :
     omega
   let f : ℕ → (Fin N → Fin Q) := fun k j => ⟨_, hcell k j⟩
   have hcard : (Finset.univ : Finset (Fin N → Fin Q)).card < (Finset.range (Q ^ N + 1)).card := by
-    simp [Finset.card_univ, Fintype.card_fun, Fintype.card_fin]
+    simp [Finset.card_univ,  Fintype.card_fin]
   obtain ⟨x, hx, y, hy, hxy, hfxy⟩ :=
     Finset.exists_ne_map_eq_of_card_lt_of_maps_to hcard (fun a _ => Finset.mem_univ (f a))
   -- sin pérdida de generalidad x < y
@@ -76427,7 +76406,6 @@ theorem no_uniform_slack (N : ℕ) (w θ : Fin N → ℝ) (hw : ∀ j, 0 ≤ w j
     have hpi : Real.pi ≠ 0 := Real.pi_ne_zero
     have h1 : 2 * Real.pi * ((k : ℝ) * (θ j / (2 * Real.pi))) = k * θ j := by
       field_simp
-      try ring
     have hθ : (k : ℝ) * θ j = 2 * Real.pi * δ + (m : ℝ) * (2 * Real.pi) := by
       rw [hδ]; linear_combination (-1 : ℝ) * h1
     rw [hθ, Real.cos_add_int_mul_two_pi]
@@ -76637,11 +76615,11 @@ theorem residue_vanishes_of_bounded {t : ℕ → ℂ} (E : OrbitExpansion t) (M 
       (nhds (if E.lam i = lam0 then E.c i else 0)) := by
     intro i
     by_cases h : E.lam i = lam0
-    · rw [if_pos h]
+    · rw [ite_eq_left h]
       have : E.lam i / lam0 = 1 := by rw [h]; exact div_self h0
       rw [this]
       simpa using (cesaro_one_tendsto.const_mul (E.c i))
-    · rw [if_neg h]
+    · rw [ite_eq_right h]
       have hne : E.lam i / lam0 ≠ 1 := by
         intro h'; apply h; rw [div_eq_one_iff_eq h0] at h'; exact h'
       simpa using ((cesaro_tendsto_zero _ (hratio i) hne).const_mul (E.c i))
@@ -77051,7 +77029,7 @@ theorem phi_rpow_lam : phi ^ lam = 2 := by
   unfold lam
   rw [Real.rpow_def_of_pos phi_pos]
   have hmul : Real.log phi * (Real.log 2 / Real.log phi) = Real.log 2 := by
-    (field_simp [log_phi_ne_zero]; try exact div_self log_phi_ne_zero)
+    (field_simp [log_phi_ne_zero]; exact div_self log_phi_ne_zero)
   rw [hmul, Real.exp_log (by norm_num)]
 
 /-- **La vuelta recíproca de CR:** φ^{−λ} = ½. -/
@@ -77070,7 +77048,7 @@ theorem two_pow_is_phi_pow (p : ℕ) : phi ^ ((p : ℝ) * lam) = 2 ^ p := by
 theorem phi_rpow_log3 : phi ^ (Real.log 3 / Real.log phi) = 3 := by
   rw [Real.rpow_def_of_pos phi_pos]
   have hmul : Real.log phi * (Real.log 3 / Real.log phi) = Real.log 3 := by
-    (field_simp [log_phi_ne_zero]; try exact div_self log_phi_ne_zero)
+    (field_simp [log_phi_ne_zero]; exact div_self log_phi_ne_zero)
   rw [hmul, Real.exp_log (by norm_num)]
 
 /-- El índice áureo de CR. -/
@@ -77356,7 +77334,7 @@ theorem eulerMap_period (N : ℕ) (hN : N ≠ 0) (k : ℤ) :
       = 2 * (Real.pi : ℂ) * Complex.I * (k : ℂ) / (N : ℂ)
         + 2 * (Real.pi : ℂ) * Complex.I := by
     push_cast
-    first | (field_simp; ring) | field_simp
+    field_simp
   rw [h, Complex.exp_add, Complex.exp_two_pi_mul_I, mul_one]
 
 /-- **La media vuelta es e^{iπ} = −1.** -/
@@ -77367,7 +77345,7 @@ theorem eulerMap_half_turn (M : ℕ) (hM : M ≠ 0) :
   have h : 2 * (Real.pi : ℂ) * Complex.I * ((M : ℤ) : ℂ) / ((2 * M : ℕ) : ℂ)
       = (Real.pi : ℂ) * Complex.I := by
     push_cast
-    first | (field_simp; ring) | field_simp
+    field_simp
   rw [h, Complex.exp_pi_mul_I]
 
 /- ═══════════════════════════════════════════════════════════════════════════
@@ -77407,7 +77385,7 @@ theorem psi_comp_mod (N p q : ℕ) (k : ZMod N) :
     la reflexión. -/
 theorem units_isometric_iff (N : ℕ) [NeZero N] (hN : 3 ≤ N) (u : ZMod N) :
     (∀ j k : ZMod N, dIdx (u * j) (u * k) = dIdx j k) ↔ (u = 1 ∨ u = -1) := by
-  haveI : Fact (1 < N) := ⟨by omega⟩
+  have : Fact (1 < N) := ⟨by omega⟩
   constructor
   · intro h
     have h1 := h 1 0
@@ -77719,7 +77697,7 @@ theorem fourier_mass_twelve (h : FourierB2Input) :
           exact_mod_cast (Finset.mem_range.mp hk).le))
   convert hs using 1
   rw [← Finset.mul_sum]
-  norm_num [Finset.sum_range_succ, B2r] <;> ring
+  norm_num [Finset.sum_range_succ, B2r] ; ring
 
 /- ═══════════════════════════════════════════════════════════════════════════
    §15  −1/12 ES LA CARACTERÍSTICA DE EULER DEL CUADRADO DE M12           (D3 §4)
@@ -77769,27 +77747,27 @@ theorem euler_char_pairs (x y : ℤ) (hx : 2 ≤ x) (hxy : x ≤ y) :
 
 /-- **Inclusión–exclusión de B₂ sobre el cuadrado de M12.** -/
 theorem B2_sum_C4 : ∑ x ∈ C4frac, B2 x = 1 / 24 := by
-  have h1 : (0:ℚ) ∉ ({1/4, 1/2, 3/4} : Finset ℚ) := by simp <;> norm_num
-  have h2 : (1/4:ℚ) ∉ ({1/2, 3/4} : Finset ℚ) := by simp <;> norm_num
-  have h3 : (1/2:ℚ) ∉ ({3/4} : Finset ℚ) := by simp <;> norm_num
+  have h1 : (0:ℚ) ∉ ({1/4, 1/2, 3/4} : Finset ℚ) := by simp ; norm_num
+  have h2 : (1/4:ℚ) ∉ ({1/2, 3/4} : Finset ℚ) := by simp ; norm_num
+  have h3 : (1/2:ℚ) ∉ ({3/4} : Finset ℚ) := by simp ; norm_num
   simp only [C4frac]
   rw [Finset.sum_insert h1, Finset.sum_insert h2, Finset.sum_insert h3,
     Finset.sum_singleton]
   norm_num [B2]
 
 theorem B2_sum_C6 : ∑ x ∈ C6frac, B2 x = 1 / 36 := by
-  have h1 : (0:ℚ) ∉ ({1/6, 1/3, 1/2, 2/3, 5/6} : Finset ℚ) := by simp <;> norm_num
-  have h2 : (1/6:ℚ) ∉ ({1/3, 1/2, 2/3, 5/6} : Finset ℚ) := by simp <;> norm_num
-  have h3 : (1/3:ℚ) ∉ ({1/2, 2/3, 5/6} : Finset ℚ) := by simp <;> norm_num
-  have h4 : (1/2:ℚ) ∉ ({2/3, 5/6} : Finset ℚ) := by simp <;> norm_num
-  have h5 : (2/3:ℚ) ∉ ({5/6} : Finset ℚ) := by simp <;> norm_num
+  have h1 : (0:ℚ) ∉ ({1/6, 1/3, 1/2, 2/3, 5/6} : Finset ℚ) := by simp ; norm_num
+  have h2 : (1/6:ℚ) ∉ ({1/3, 1/2, 2/3, 5/6} : Finset ℚ) := by simp ; norm_num
+  have h3 : (1/3:ℚ) ∉ ({1/2, 2/3, 5/6} : Finset ℚ) := by simp ; norm_num
+  have h4 : (1/2:ℚ) ∉ ({2/3, 5/6} : Finset ℚ) := by simp ; norm_num
+  have h5 : (2/3:ℚ) ∉ ({5/6} : Finset ℚ) := by simp ; norm_num
   simp only [C6frac]
   rw [Finset.sum_insert h1, Finset.sum_insert h2, Finset.sum_insert h3,
     Finset.sum_insert h4, Finset.sum_insert h5, Finset.sum_singleton]
   norm_num [B2]
 
 theorem B2_sum_C2 : ∑ x ∈ ({0, 1 / 2} : Finset ℚ), B2 x = 1 / 12 := by
-  have h1 : (0:ℚ) ∉ ({1/2} : Finset ℚ) := by simp <;> norm_num
+  have h1 : (0:ℚ) ∉ ({1/2} : Finset ℚ) := by simp
   rw [Finset.sum_insert h1, Finset.sum_singleton]
   norm_num [B2]
 
@@ -78325,7 +78303,7 @@ theorem bridge_half_equivariant (ω z : ℂ) :
     ∧ (1 / 2 : ℂ) * (starRingEnd ℂ) z = (starRingEnd ℂ) ((1 / 2 : ℂ) * z)
     ∧ (1 / 2 : ℂ) * (-z) = -((1 / 2 : ℂ) * z) := by
   refine ⟨by ring, ?_, by ring⟩
-  simp [map_mul, map_div₀, map_one, map_ofNat]
+  simp [map_mul,   map_ofNat]
 
 /-- **El Frobenius sobre la tríada:** fija si p ≡ 1 (mód 3), y si p ≡ 2 da
     ω², que es el conjugado de ω: el espejo de la celda (χ₋₃(p) = −1). -/
@@ -78452,7 +78430,7 @@ theorem dilate_respects_fourier (ω : ℂ) (a b c : ℝ) :
   · unfold zc; push_cast; ring
   · unfold axisCoord; ring
 
-/-- **E³ es la gráfica del paso:** (x, y, φy) es (x, y, (δ v).y) con v = (x, y, 0)… 
+/-- **E³ es la gráfica del paso:** (x, y, φy) es (x, y, (δ v).y) con v = (x, y, 0)…
     dicho sin vectores: la coordenada acoplada es la coordenada dilatada. -/
 theorem E3_is_graph_of_step (x y : ℝ) :
     inE3 (x, y, (dilate (0, y, 0)).2.1) := by
@@ -78751,7 +78729,7 @@ theorem phi_pow_fib (n : ℕ) :
   | zero => simp
   | succ k ih =>
     have hf : (Nat.fib (k + 2) : ℝ) = (Nat.fib k : ℝ) + (Nat.fib (k + 1) : ℝ) := by
-      first | (rw [Nat.fib_add_two]; push_cast; ring) | (rw [Nat.fib_add_two]; push_cast)
+      first | (rw [Nat.fib_add_two]; push_cast; ring)
     calc phi ^ (k + 1 + 1) = phi ^ (k + 1) * phi := pow_succ _ _
       _ = ((Nat.fib (k + 1) : ℝ) * phi + (Nat.fib k : ℝ)) * phi := by rw [ih]
       _ = (Nat.fib (k + 2) : ℝ) * phi + (Nat.fib (k + 1) : ℝ) := by
@@ -78763,7 +78741,6 @@ theorem phi_irrational : Irrational phi := by
     | exact gold_irrational
     | exact Real.gold_irrational
     | (unfold phi; exact Real.goldenRatio_irrational)
-    | exact Real.goldenRatio_irrational
     | (have h5 := Nat.Prime.irrational_sqrt (p := 5) (by norm_num)
        have h := (h5.rat_add 1).div_rat (q := 2) (by norm_num)
        unfold phi
@@ -78790,7 +78767,7 @@ theorem lambda_irrational : LambdaIrrational := by
   obtain ⟨n, hn⟩ : ∃ n : ℕ, q.num = (n : ℤ) + 1 := ⟨(q.num - 1).toNat, by omega⟩
   have key2 : phi ^ (n + 1) = (2 : ℝ) ^ q.den := by
     have hcast : ((q.num : ℤ) : ℝ) = ((n + 1 : ℕ) : ℝ) := by
-      first | (rw [hn]; push_cast; ring) | (rw [hn]; push_cast) | (rw [hn]; norm_num)
+      first | (rw [hn]; push_cast; ring)
     rw [hcast, Real.rpow_natCast, Real.rpow_natCast] at key
     exact key
   rw [phi_pow_fib n] at key2
@@ -78799,7 +78776,7 @@ theorem lambda_irrational : LambdaIrrational := by
   exact phi_irrational ⟨((2 : ℚ) ^ q.den - (Nat.fib n : ℚ)) / (Nat.fib (n + 1) : ℚ), by
     push_cast
     rw [div_eq_iff hF]
-    first | linarith [key2] | linear_combination -key2 | linear_combination key2⟩
+    first | linarith [key2]⟩
 
 /-- El crecimiento sin desfase (§23), sin hipótesis. -/
 theorem growth_without_drift' :
@@ -78939,7 +78916,6 @@ theorem logphi_rat_irrational (r : ℚ) (hr : 0 < r) (h1 : r ≠ 1) :
   have hcancel : Real.log phi * (Real.log r / Real.log phi) = Real.log r := by
     first
       | (rw [mul_comm]; exact div_mul_cancel₀ _ log_phi_ne_zero)
-      | (field_simp [log_phi_ne_zero])
   have hpow : phi ^ (q : ℝ) = r := by
     rw [hq, Real.rpow_def_of_pos phi_pos, hcancel]
     exact Real.exp_log hrR
@@ -78951,26 +78927,25 @@ theorem logphi_rat_irrational (r : ℚ) (hr : 0 < r) (h1 : r ≠ 1) :
          exact h)
   have key : phi ^ ((q.num : ℤ) : ℝ) = ((r ^ q.den : ℚ) : ℝ) := by
     rw [← hqa, Real.rpow_mul phi_pos.le, hpow, Real.rpow_natCast]
-    first | (push_cast; ring) | push_cast | simp
+    first | (push_cast; ring)
   rcases lt_trichotomy q.num 0 with hneg | hzero | hpos
   · obtain ⟨n, hn⟩ : ∃ n : ℕ, q.num = -((n : ℤ) + 1) :=
       ⟨(-q.num - 1).toNat, by omega⟩
     have e : ((q.num : ℤ) : ℝ) = -((n + 1 : ℕ) : ℝ) := by
-      rw [hn]; first | (push_cast; ring) | push_cast
+      rw [hn]; first | (push_cast; ring)
     rw [e, Real.rpow_neg phi_pos.le, Real.rpow_natCast] at key
     apply phi_pow_ne_rat n ((r ^ q.den)⁻¹)
     rw [Rat.cast_inv, ← key, inv_inv]
   · have hq0 : q = 0 := by
       first
         | exact Rat.zero_iff_num_zero.mpr hzero
-        | exact Rat.num_eq_zero.mp hzero
     apply h1
     have : (r : ℝ) = 1 := by rw [← hpow, hq0]; simp
     exact_mod_cast this
   · obtain ⟨n, hn⟩ : ∃ n : ℕ, q.num = (n : ℤ) + 1 :=
       ⟨(q.num - 1).toNat, by omega⟩
     have e : ((q.num : ℤ) : ℝ) = ((n + 1 : ℕ) : ℝ) := by
-      rw [hn]; first | (push_cast; ring) | push_cast
+      rw [hn]; first | (push_cast; ring)
     rw [e, Real.rpow_natCast] at key
     exact phi_pow_ne_rat n _ key
 
@@ -78981,7 +78956,6 @@ theorem mul_is_shift (x : ℝ) (hx : 0 < x) (σ : ℝ) :
   have hcancel : Real.log phi * (Real.log x / Real.log phi) = Real.log x := by
     first
       | (rw [mul_comm]; exact div_mul_cancel₀ _ log_phi_ne_zero)
-      | (field_simp [log_phi_ne_zero])
   rw [Real.rpow_add phi_pos, mul_comm]
   congr 1
   rw [Real.rpow_def_of_pos phi_pos, hcancel]
@@ -79146,9 +79120,7 @@ theorem phi_rpow_lam : phi ^ lam = 2 := by
   rw [Real.rpow_def_of_pos phi_pos]
   have hmul : Real.log phi * (Real.log 2 / Real.log phi) = Real.log 2 := by
     first
-      | (field_simp [log_phi_ne_zero]; try exact div_self log_phi_ne_zero)
-      | ((field_simp [log_phi_ne_zero]; try exact div_self log_phi_ne_zero); ring)
-      | exact mul_div_cancel₀ _ log_phi_ne_zero
+      | (field_simp [log_phi_ne_zero]; exact div_self log_phi_ne_zero)
   rw [hmul, Real.exp_log (by norm_num)]
 
 /-- **φ^{−λ} = ½**: el módulo del operador Ω̂. -/
@@ -79227,7 +79199,7 @@ theorem triad_values (ω : ℂ) :
 theorem omega_hat_is_modulus_times_phase (ω : ℂ) (k : ℕ) :
     ((phi ^ (-lam) : ℝ) : ℂ) * ω ^ k = (1 / 2 : ℂ) * ω ^ k := by
   rw [phi_rpow_neg_lam]
-  first | (push_cast; ring) | push_cast | norm_num
+  first | (push_cast; ring)
 
 /- ═══════════════════════════════════════════════════════════════════════════
    §3  E³ Y LA TORRE DE CELDAS
@@ -79670,7 +79642,7 @@ theorem cell_klein (v : ℝ × ℝ × ℝ) :
     ∧ cellMirror (cellComp v) = cellComp (cellMirror v) := by
   obtain ⟨a, b, c⟩ := v
   refine ⟨rfl, ?_, rfl⟩
-  first | simp only [cellComp, sub_sub_cancel] | simp [cellComp]
+  first | simp only [cellComp, sub_sub_cancel]
 
 /-- La coordenada de la celda en el plano de s: la parte real es el eje, la
     imaginaria es la parte imaginaria de z. -/
@@ -79685,8 +79657,7 @@ theorem rhoCell_mirror (ω : ℂ) (h3 : ω ^ 3 = 1) (hc : (starRingEnd ℂ) ω =
   unfold rhoCell kSigma
   rw [hz, hax]
   first
-    | (apply Complex.ext <;> simp <;> ring)
-    | (apply Complex.ext <;> simp [Complex.conj_re, Complex.conj_im])
+    | (apply Complex.ext <;> simp)
 
 /-- **La complementariedad es ρ ↦ 1 − ρ.** -/
 theorem rhoCell_comp (ω : ℂ) (h1 : 1 + ω + ω ^ 2 = 0) (a b c : ℝ) :
@@ -79695,8 +79666,7 @@ theorem rhoCell_comp (ω : ℂ) (h1 : 1 + ω + ω ^ 2 = 0) (a b c : ℝ) :
   unfold rhoCell kTau
   rw [hz, hax]
   first
-    | (apply Complex.ext <;> simp <;> ring)
-    | (apply Complex.ext <;> simp [Complex.conj_re, Complex.conj_im])
+    | (apply Complex.ext <;> simp)
 
 /-- **Su composición es ρ ↦ 1 − ρ̄, la que fija la recta crítica.** -/
 theorem rhoCell_mirror_comp (ω : ℂ) (h3 : ω ^ 3 = 1) (h1 : 1 + ω + ω ^ 2 = 0)
@@ -79723,7 +79693,6 @@ theorem first_direction_on_real_axis (ω : ℂ) :
   constructor
   · first
       | norm_num [rhoCell, zc, axisCoord]
-      | (apply Complex.ext <;> simp [rhoCell, zc, axisCoord] <;> norm_num)
   · norm_num [axisCoord]
 
 /-- La lectura alternativa: z como la t de s = ½ + it. -/
@@ -79737,7 +79706,6 @@ theorem rhoAlt_mirror (ω : ℂ) (h3 : ω ^ 3 = 1) (hc : (starRingEnd ℂ) ω = 
   rw [zc_mirror ω h3 hc a b c]
   first
     | (simp only [map_add, map_mul, map_div₀, map_one, map_ofNat, Complex.conj_I]; ring)
-    | (simp [Complex.conj_I, map_div₀]; ring)
 
 theorem rhoAlt_comp (ω : ℂ) (h1 : 1 + ω + ω ^ 2 = 0) (a b c : ℝ) :
     rhoAlt ω (1 - a) (1 - b) (1 - c) = kTau (rhoAlt ω a b c) := by
@@ -79972,7 +79940,6 @@ theorem W4_of_unitary {n : ℕ} (w : Fin n → ℝ) (lam : Fin n → ℂ)
         rw [norm_mul, norm_pow, hl j, one_pow, mul_one]
         first
           | (rw [Complex.norm_real, Real.norm_eq_abs, abs_of_nonneg (hw j)])
-          | simp [abs_of_nonneg (hw j)]
 
 /-- **Fuera del círculo un solo término rompe W4:** si ‖λ‖ > 1 y w > 0, hay
     k con |w λ^k| > w = t₀. -/
@@ -79984,7 +79951,6 @@ theorem off_circle_breaks_W4 (w : ℝ) (hw : 0 < w) (lam : ℂ) (h : 1 < ‖lam�
   have hw' : ‖(w : ℂ)‖ = w := by
     first
       | (rw [Complex.norm_real, Real.norm_eq_abs, abs_of_pos hw])
-      | simp [abs_of_pos hw]
   rw [hw']
   nlinarith
 
@@ -80039,8 +80005,6 @@ theorem phi_rpow_neg_lam : phi ^ (-lamPhi) = 1 / 2 := by
     have hmul : Real.log phi * (Real.log 2 / Real.log phi) = Real.log 2 := by
       first
         | field_simp
-        | (field_simp; ring)
-        | exact mul_div_cancel₀ _ hl
     rw [hmul, Real.exp_log (by norm_num)]
   rw [Real.rpow_neg phi_pos.le, h2]; norm_num
 
@@ -80128,7 +80092,7 @@ theorem omega_hat_orbit (ω : ℂ) (hω : ‖ω‖ = 1) (k : ℕ) :
     ‖((1 : ℂ) / 2) ^ k * (1 + ω ^ k + ω ^ (2 * k))‖ ≤ 3 * ((1 : ℝ) / 2) ^ k := by
   rw [norm_mul, norm_pow]
   have h2 : ‖(1 : ℂ) / 2‖ = 1 / 2 := by
-    first | norm_num | simp
+    first | norm_num
   rw [h2]
   have hN := cell_orbit_W4 ω hω k
   have hp : (0 : ℝ) < (1 / 2) ^ k := by positivity
@@ -80229,7 +80193,7 @@ theorem structural_W3 {n m : ℕ} (d : Fin n → ℝ) (μ : Fin n → ℂ) (x : 
       = ((d i * Complex.normSq (fourierSum x (μ i)) : ℝ) : ℂ) := by
     intro i
     rw [Complex.mul_conj]
-    first | (push_cast; ring) | push_cast | simp
+    first | (push_cast; ring)
   simp only [key]
   rw [← Complex.ofReal_sum]
   refine ⟨Complex.ofReal_im _, ?_⟩
@@ -80288,14 +80252,12 @@ theorem W4_of_orbits_match (t : ℕ → ℂ) (h : OrbitsMatch t) :
     rw [norm_mul, norm_pow, hμ i, one_pow, mul_one]
     first
       | (rw [Complex.norm_real, Real.norm_eq_abs, abs_of_nonneg (hd i)])
-      | simp [abs_of_nonneg (hd i)]
   have h0 : ‖t 0‖ = ∑' i, d i := by
     rw [ht 0]
     simp only [pow_zero, mul_one]
     rw [← Complex.ofReal_tsum]
     first
       | (rw [Complex.norm_real, Real.norm_eq_abs, abs_of_nonneg (tsum_nonneg hd)])
-      | simp [abs_of_nonneg (tsum_nonneg hd)]
   intro k
   rw [h0, ht k]
   have hsn : Summable (fun i => ‖(d i : ℂ) * μ i ^ k‖) := by
@@ -80394,7 +80356,6 @@ theorem weight_of_two : Real.log 2 = lamPhi * Real.log phi := by
   unfold lamPhi
   first
     | (rw [div_mul_cancel₀ _ hl])
-    | field_simp
 
 /-- **El peso de un Mersenne:** log(2^e − 1) = e·log 2 + log(1 − 1/2^e), es
     decir, (e·λ + log_φ(1 − 2^{−e}))·log φ: el exponente y el anclaje binario
@@ -80405,13 +80366,12 @@ theorem weight_of_mersenne (e : ℕ) (he : 1 ≤ e) :
   have h1 : (1 : ℝ) < 2 ^ e := by
     first
       | exact one_lt_pow₀ (by norm_num) (by omega)
-      | exact one_lt_pow (by norm_num) (by omega)
       | (have : (2:ℝ) ^ 1 ≤ 2 ^ e := pow_le_pow_right₀ (by norm_num) he
          linarith [show (2:ℝ) ^ 1 = 2 by norm_num])
   have hq : (0 : ℝ) < 1 - 1 / 2 ^ e := by
     rw [sub_pos, div_lt_one hpos]; exact h1
   have hsplit : (2 : ℝ) ^ e - 1 = 2 ^ e * (1 - 1 / 2 ^ e) := by
-    first | (field_simp) | (field_simp; ring) | (rw [mul_sub, mul_one, mul_one_div_cancel hpos.ne'])
+    first | (field_simp)
   rw [hsplit, Real.log_mul hpos.ne' hq.ne', Real.log_pow]
 
 /-- **Síntesis de §12.**  La recta sale si se demuestran las dos cláusulas
@@ -80517,7 +80477,7 @@ theorem golden_fails_weil :
 
 /-- **Los puntos fijos de z ↦ z^{2^n} en ℂ^× son las raíces M_n-ésimas de la
     unidad**, con M_n = 2^n − 1: z^{2^n} = z ⇔ z^{M_n} = 1 (z ≠ 0). -/
-theorem binary_frobenius_fixed_points (n : ℕ) (hn : 1 ≤ n) (z : ℂ) (hz : z ≠ 0) :
+theorem binary_frobenius_fixed_points (n : ℕ) (_hn : 1 ≤ n) (z : ℂ) (hz : z ≠ 0) :
     z ^ (2 ^ n) = z ↔ z ^ (2 ^ n - 1) = 1 := by
   have h2 : 2 ^ n = (2 ^ n - 1) + 1 := by
     have : 1 ≤ 2 ^ n := Nat.one_le_two_pow
@@ -80833,7 +80793,7 @@ theorem toeplitz_splits_by_class {n m K : ℕ} (cls : Fin n → Fin K) (d : Fin 
   refine Finset.sum_congr rfl (fun a _ => ?_)
   conv_rhs => rw [Finset.sum_comm]
   refine Finset.sum_congr rfl (fun b _ => ?_)
-  try (conv_rhs => rw [Finset.sum_comm])
+  (conv_rhs => rw [Finset.sum_comm])
   all_goals (refine Finset.sum_congr rfl (fun i _ => ?_)
              refine Finset.sum_congr rfl (fun c _ => ?_)
              ring)
@@ -81096,7 +81056,6 @@ theorem two_power_density (k : ℕ) (hk : 1 ≤ k) :
   rw [h, pow_add]
   first
     | (norm_num)
-    | (field_simp; ring)
 
 /-- **El grado de L_k:** 2^k·2·2^k = 2^{2k+1}, y en k = 1 es 8 = φ(20). -/
 theorem kummer_two_degree (k : ℕ) : 2 ^ k * 2 * 2 ^ k = 2 ^ (2 * k + 1) ∧ 2 ^ 1 * 2 * 2 ^ 1 = 8 := by
@@ -81166,8 +81125,8 @@ theorem lucas_is_trace (k : ℕ) :
   induction k with
   | zero =>
     constructor
-    · first | norm_num [lucasZ] | simp [lucasZ]
-    · first | norm_num [lucasZ] | (simp [lucasZ]; ring) | simp [lucasZ]
+    · first | norm_num [lucasZ]
+    · first | norm_num [lucasZ]
   | succ j ih =>
     refine ⟨ih.2, ?_⟩
     have : lucasZ (j + 2) = lucasZ (j + 1) + lucasZ j := rfl
@@ -81212,7 +81171,6 @@ theorem double_cover_satisfies_W4 :
   have hn : ‖Complex.exp (↑(Real.pi / 5) * I)‖ = 1 := by
     first
       | exact Complex.norm_exp_ofReal_mul_I _
-      | (rw [Complex.norm_exp]; simp)
   refine ⟨hn, fun k => ?_⟩
   calc ‖Complex.exp (↑(Real.pi / 5) * I) ^ k
           + (starRingEnd ℂ) (Complex.exp (↑(Real.pi / 5) * I)) ^ k‖
@@ -81238,8 +81196,6 @@ theorem W3_W4_of_hodge_source (t : ℕ → ℂ) (h : HodgeSource t) (k : ℕ) :
   have hre' : |(t k).re| ≤ ‖t k‖ := by
     first
       | exact Complex.abs_re_le_norm (t k)
-      | exact Complex.abs_re_le_abs (t k)
-      | simpa using Complex.abs_re_le_abs (t k)
   refine ⟨hW, ?_, ?_⟩
   · linarith [le_abs_self (t k).re, hre']
   · linarith [neg_abs_le (t k).re, hre']
@@ -81289,7 +81245,7 @@ theorem pairings_coincide_iff (ρ : ℂ) :
     simp at h'
     linarith
   · intro h
-    apply Complex.ext <;> simp <;> linarith
+    apply Complex.ext <;> simp ; linarith
 
 /-- **Por las abscisas:** el par por origen (β, 1 + β) tiene diferencia 1
     siempre, y suma 2 ⇔ β = ½; con producto 3/4 y β > 0, también β = ½. -/
@@ -81628,7 +81584,7 @@ theorem W4_psi5_by_classes (A R I t0 : ℝ) (ht0 : 0 ≤ t0) :
     nlinarith
   · intro h
     by_contra hc
-    push_neg at hc
+    push Not at hc
     nlinarith [mul_pos (sub_pos.mpr hc) (by linarith : (0 : ℝ) < ‖z‖ + t0)]
 
 /-- **[O] La ley por clases para ψ₅, en su forma final:** para cada ancho y
@@ -81673,7 +81629,7 @@ theorem psi5_kills_the_mean (m f1 f2 f4 f3 : ℝ) :
 
 /-- **Cota de ψ₅ por la energía de las fluctuaciones:**
     |transformada de ψ₅|² ≤ 2·Σ f_a² cuando Σ f_a = 0. -/
-theorem psi5_bounded_by_fluctuation (f1 f2 f4 f3 : ℝ) (h0 : f1 + f2 + f4 + f3 = 0) :
+theorem psi5_bounded_by_fluctuation (f1 f2 f4 f3 : ℝ) (_h0 : f1 + f2 + f4 + f3 = 0) :
     (f1 - f4) ^ 2 + (f2 - f3) ^ 2 ≤ 2 * (f1 ^ 2 + f2 ^ 2 + f4 ^ 2 + f3 ^ 2) := by
   nlinarith [sq_nonneg (f1 + f4), sq_nonneg (f2 + f3), sq_nonneg (f1 - f2 + f4 - f3)]
 
@@ -82181,7 +82137,7 @@ theorem normPhiPow_neg (m : ℕ) (hm : 1 ≤ m) : normPhiPow m < 0 := by
     have : 1 ≤ Nat.fib (m+1) := Nat.fib_pos.mpr (by omega)
     omega
   have hp : ((-1:ℤ))^(m+1) ≤ 1 := by
-    rcases neg_one_pow_eq_or ℤ (m+1) with h | h <;> rw [h] <;> norm_num
+    rcases neg_one_pow_eq_or ℤ (m+1) with h | h <;> rw [h] ; norm_num
   have a' : (1:ℤ) ≤ Nat.fib m := by exact_mod_cast a
   have b' : (2:ℤ) ≤ Nat.fib (m+2) := by exact_mod_cast b
   linarith
@@ -82194,7 +82150,7 @@ theorem natAbs_normPhiPow_le (m : ℕ) (hm : 1 ≤ m) :
   have hneg := normPhiPow_neg m hm
   have e := normPhiPow_eq m
   have hp : (-1:ℤ) ≤ (-1)^(m+1) := by
-    rcases neg_one_pow_eq_or ℤ (m+1) with h | h <;> rw [h] <;> norm_num
+    rcases neg_one_pow_eq_or ℤ (m+1) with h | h <;> rw [h] ; norm_num
   have f1 : (Nat.fib m : ℤ) ≤ 2^(m+1) := by
     have := fib_le_two_pow m
     have : 2^m ≤ 2^(m+1) := Nat.pow_le_pow_right (by norm_num) (by omega)
@@ -82681,13 +82637,13 @@ theorem both_squares_indicator {F : Type*} [Field F] [Fintype F] [DecidableEq F]
   rcases quadraticChar_dichotomy hs0 with h2 | h2
   · have a := (quadraticChar_one_iff_isSquare hr0).mp h1
     have b := (quadraticChar_one_iff_isSquare hs0).mp h2
-    rw [if_pos ⟨a, b⟩, h1, h2]; norm_num
+    rw [ite_eq_left ⟨a, b⟩, h1, h2]; norm_num
   · have b := quadraticChar_neg_one_iff_not_isSquare.mp h2
-    rw [if_neg (fun h => b h.2), h1, h2]; norm_num
+    rw [ite_eq_right (fun h => b h.2), h1, h2]; norm_num
   · have a := quadraticChar_neg_one_iff_not_isSquare.mp h1
-    rw [if_neg (fun h => a h.1), h1, h2]; norm_num
+    rw [ite_eq_right (fun h => a h.1), h1, h2]; norm_num
   · have a := quadraticChar_neg_one_iff_not_isSquare.mp h1
-    rw [if_neg (fun h => a h.1), h1, h2]; norm_num
+    rw [ite_eq_right (fun h => a h.1), h1, h2]; norm_num
 
 
 /-! ## §47  Todas las capas: promedios de los símbolos de potencia de φ
@@ -82733,7 +82689,7 @@ theorem geom_sum_root_of_unity {R : Type*} [CommRing R] [IsDomain R] [DecidableE
     (∑ k ∈ Finset.range n, u^k) = if u = 1 then (n:R) else 0 := by
   by_cases h : u = 1
   · simp [h]
-  · rw [if_neg h]
+  · rw [ite_eq_right h]
     have hg := geom_sum_mul u n
     rw [hu, sub_self] at hg
     exact (mul_eq_zero.mp hg).resolve_right (sub_ne_zero.mpr h)
@@ -83839,9 +83795,9 @@ theorem class_parseval (n : ℕ) (hn : 0 < n) (χ : Fin n → Fin n → ℂ)
       = T a * conj (T a) * n := by
     intro a
     rw [Finset.sum_eq_single a]
-    · rw [← Finset.mul_sum, horth a a, if_pos rfl]
+    · rw [← Finset.mul_sum, horth a a, ite_eq_left rfl]
     · intro b _ hb
-      rw [← Finset.mul_sum, horth a b, if_neg (Ne.symm hb), mul_zero]
+      rw [← Finset.mul_sum, horth a b, ite_eq_right (Ne.symm hb), mul_zero]
     · intro h; exact absurd (Finset.mem_univ a) h
   have swap : ∑ c, ∑ a, ∑ b, T a * conj (T b) * (χ a c * conj (χ b c))
       = ∑ a, ∑ b, ∑ c, T a * conj (T b) * (χ a c * conj (χ b c)) := by
@@ -84159,7 +84115,7 @@ theorem plancherel_finite (c : ι → ℂ) (γ : ι → ℝ) (hγ : Function.Inj
       Complex.mul_conj, Complex.normSq_eq_norm_sq, mul_one]
     push_cast
     ring_nf; simp
-  · rw [if_neg hjk, if_neg hjk, sub_zero, norm_mul, norm_mul, Complex.norm_conj]
+  · rw [ite_eq_right hjk, ite_eq_right hjk, sub_zero, norm_mul, norm_mul, Complex.norm_conj]
     have := integral_osc_bound (γ j - γ k) (sub_ne_zero.mpr (hγ.ne hjk)) a b
     gcongr
 
@@ -84292,7 +84248,7 @@ theorem plancherel_core (c : ι → ℂ) (γ : ι → ℝ) (a b : ℝ) :
       Complex.mul_conj, Complex.normSq_eq_norm_sq, mul_one]
     push_cast
     ring_nf; simp
-  · rw [if_neg hjk, if_neg hjk, sub_zero, norm_mul, norm_mul, Complex.norm_conj]
+  · rw [ite_eq_right hjk, ite_eq_right hjk, sub_zero, norm_mul, norm_mul, Complex.norm_conj]
 
 /-- La integral de una oscilación nunca supera la longitud de la ventana. -/
 theorem integral_osc_le_len (γ a b : ℝ) (hab : a ≤ b) :
@@ -84343,7 +84299,7 @@ theorem plancherel_mean (c : ι → ℂ) (γ : ι → ℝ) (hγ : Function.Injec
   refine Finset.sum_le_sum fun k _ => ?_
   by_cases hjk : j = k
   · simp [hjk]
-  · rw [if_neg hjk, if_neg hjk]
+  · rw [ite_eq_right hjk, ite_eq_right hjk]
     have hb := integral_osc_le_min (γ j - γ k) a b (sub_ne_zero.mpr (hγ.ne hjk)) hab
     have hc : 0 ≤ ‖c j‖ * ‖c k‖ := by positivity
     calc ‖c j‖ * ‖c k‖ * ‖∫ u in a..b, osc (γ j - γ k) u‖
@@ -84366,7 +84322,7 @@ theorem cramer_uniform (c : ι → ℂ) (γ : ι → ℝ) (hγ : Function.Inject
   refine Finset.sum_le_sum fun k _ => ?_
   by_cases hjk : j = k
   · simp [hjk]
-  · rw [if_neg hjk, if_neg hjk]
+  · rw [ite_eq_right hjk, ite_eq_right hjk]
     have hw := min_le_cramer (b - a) (γ j - γ k) hab (sub_ne_zero.mpr (hγ.ne hjk))
     have hc : 0 ≤ ‖c j‖ * ‖c k‖ := by positivity
     calc ‖c j‖ * ‖c k‖ * min 1 (2 / ((b - a) * |γ j - γ k|))
@@ -84578,8 +84534,8 @@ theorem cramer_K_bounded {ι : Type*} [Fintype ι] [DecidableEq ι]
       ≤ 3 * C₀ ^ 2 * F (b j) (b k) := by
     intro j k
     by_cases hjk : j = k
-    · rw [if_pos hjk]; have := Fnn (b j) (b k); positivity
-    · rw [if_neg hjk]
+    · rw [ite_eq_left hjk]; have := Fnn (b j) (b k); positivity
+    · rw [ite_eq_right hjk]
       have hg := bin_gap (γ j) (γ k) (b j) (b k) (hbin j) (hbin k)
       have hpos : 0 < 1 + |γ j - γ k| := one_add_abs_pos _
       have hpos2 : 0 < 1 + |((b j - b k : ℤ) : ℝ)| := one_add_abs_pos _
@@ -85036,7 +84992,7 @@ theorem err_moebius {n : ℕ} (hn : 0 < n) :
     congr 2
     rw [← Nat.cast_sum, Nat.sum_totient]
   have M := (ArithmeticFunction.sum_eq_iff_sum_smul_moebius_eq.mp H) n hn
-  show f n = _
+  change f n = _
   rw [← M]
   refine Finset.sum_congr rfl fun x _ => ?_
   rw [zsmul_eq_mul]
@@ -85052,9 +85008,9 @@ noncomputable def mertens (x : ℕ) : ℝ := ∑ k ∈ Finset.Ioc 0 x, (Arithmet
 theorem clock_sum_mertens (N : ℕ) :
     ∑ n ∈ Finset.Ioc 0 N, (Real.log |Ncyc n| - (n.totient : ℝ) * Real.log goldenRatio)
       = ∑ d ∈ Finset.Ioc 0 N, epsT d * mertens (N / d) := by
-  let E : ArithmeticFunction ℝ := ⟨fun n => if n = 0 then 0 else epsT n, if_pos rfl⟩
+  let E : ArithmeticFunction ℝ := ⟨fun n => if n = 0 then 0 else epsT n, ite_eq_left rfl⟩
   let Mu : ArithmeticFunction ℝ := (ArithmeticFunction.moebius : ArithmeticFunction ℤ)
-  have hE : ∀ n, n ≠ 0 → E n = epsT n := fun n hn => if_neg hn
+  have hE : ∀ n, n ≠ 0 → E n = epsT n := fun n hn => ite_eq_right hn
   have hMu : ∀ n, Mu n = (ArithmeticFunction.moebius n : ℝ) := fun n => by
     simp [Mu, ArithmeticFunction.intCoe_apply]
   have key := ArithmeticFunction.sum_Ioc_mul_eq_sum_sum E Mu N
@@ -85712,11 +85668,10 @@ theorem clock_cyclotomic_split (n : ℕ) (hn : 0 < n) :
 theorem clock_iff_cyclotomic_root {p : ℕ} [Fact p.Prime] (n : ℕ) (hn : (n : ZMod p) ≠ 0)
     (r : ZMod p) :
     (cyclotomic n (ZMod p)).IsRoot r ↔ orderOf r = n := by
-  haveI : NeZero (n : ZMod p) := ⟨hn⟩
+  have : NeZero (n : ZMod p) := ⟨hn⟩
   rw [Polynomial.isRoot_cyclotomic_iff]
   first
     | exact IsPrimitiveRoot.iff_orderOf
-    | exact ⟨fun h => h.eq_orderOf.symm, fun h => h ▸ IsPrimitiveRoot.orderOf r⟩
 
 /-- **Los primos del conductor como normas ciclotómicas:** con x² = x + 1 y su
     conjugado 1 − x, Φ₃, Φ₄, Φ₈, Φ₁₂ y Φ₅ tienen normas 4, 5, 9, 4 y 11. -/
@@ -86017,7 +85972,7 @@ theorem other_parity_value (t0 c ε : ℝ) (hε : ε ^ 2 = 1) :
   rw [hε]; ring
 
 /-- **[P*] El paso que cierra.**  Si t(0) < 0 y t(u) > t(0), la otra parte es negativa. -/
-theorem other_parity_negative (t0 tu : ℝ) (h0 : t0 < 0) (hu : t0 < tu) : (t0 - tu) / 2 < 0 := by
+theorem other_parity_negative (t0 tu : ℝ) (_h0 : t0 < 0) (hu : t0 < tu) : (t0 - tu) / 2 < 0 := by
   linarith
 
 /-- **[P*] La entrada analítica, en su forma combinatoria.**  Si t = B + E con B acotada por
@@ -86279,7 +86234,7 @@ si el de orden 2 (a = q/2) sale dos veces o ninguna, su fase (q/2) mod e sale m+
 namespace IndiceComoDegeneracion
 
 /-- Cuantos `a < q` tienen `a % e = j`: exactamente `m` si `q = e*m` y `j < e`. -/
-theorem count_residue (e m j : ℕ) (he : 0 < e) (hj : j < e) :
+theorem count_residue (e m j : ℕ) (_he : 0 < e) (hj : j < e) :
     ((Finset.range (e * m)).filter (fun a => a % e = j)).card = m := by
   induction m with
   | zero => simp
@@ -86651,7 +86606,6 @@ theorem level_even_of_half_turn {M : Type*} [Monoid M] (x y : M) (q n : ℕ)
     apply hndq
     first
     | exact hc.dvd_of_dvd_mul_left hd2q
-    | exact hc.dvd_of_dvd_mul_right (by rwa [mul_comm] at hd2q)
   have hev : Even (orderOf x) := by
     rcases Nat.even_or_odd (orderOf x) with h | h
     · exact h
@@ -86845,7 +86799,7 @@ theorem eigenline {R : Type*} [CommRing R] (a : R) :
     linear_combination -h2
   · intro h
     refine Prod.ext (by simp) ?_
-    show 1 + a = a * a
+    change 1 + a = a * a
     linear_combination -h
 
 /-- Puntos de (ℤ/m)² fijos por Mᵏ. -/
@@ -86935,7 +86889,7 @@ theorem M_pow (R : Type*) [CommRing R] (n : ℕ) :
     have h2 : (Nat.fib (k + 2) : R) = Nat.fib k + Nat.fib (k + 1) := by
       rw [Nat.fib_add_two]; push_cast; ring
     ext i j
-    fin_cases i <;> fin_cases j <;> simp [M, Matrix.mul_apply, Fin.sum_univ_two, h, h2] <;> ring
+    fin_cases i <;> fin_cases j <;> simp [M, Matrix.mul_apply, Fin.sum_univ_two, h, h2]
 
 /-- En cada primo (en cualquier anillo): `M^(n+1) = 1` exactamente cuando `F_{n+1} = 0` y `F_n = 1`,
 es decir, cuando `φ^(n+1) = F_n + F_{n+1} φ = 1`: el periodo de `M` es el orden de `φ`. -/
@@ -87139,7 +87093,7 @@ theorem yDiag_injective (ζ : ℂ) (hζ : ζ ^ 3 = 1) (h1 : ζ ≠ 1) : Function
       first
         | exact h1 | exact (Ne.symm h1) | exact a2 | exact (Ne.symm a2)
         | exact a3 | exact (Ne.symm a3)
-        | (constructor <;> first | exact h1 | exact a1 | exact a0)
+        | (constructor <;> first | exact h1 | exact a1)
   have he : e = e' := by
     revert e3
     fin_cases e <;> fin_cases e' <;> simp [sign] <;> norm_num
@@ -87386,14 +87340,14 @@ theorem Mz_pow (n : ℕ) :
     have h : (Nat.fib (k + 2) : ℤ) = Nat.fib k + Nat.fib (k + 1) := by
       rw [Nat.fib_add_two]; push_cast; ring
     ext i j
-    fin_cases i <;> fin_cases j <;> simp [Mz, Matrix.mul_apply, Fin.sum_univ_two, h] <;> ring
+    fin_cases i <;> fin_cases j <;> simp [Mz, Matrix.mul_apply, Fin.sum_univ_two, h]
 
 open Matrix in
 /-- La traza de `M^{2n}` en términos de `a = F_n`, `b = F_{n+1}`. -/
 theorem trace_Mz_two_mul (n : ℕ) :
     (Mz ^ (2 * n)).trace = 3 * (Nat.fib n : ℤ) ^ 2 - 2 * Nat.fib n * Nat.fib (n + 1) + 2 * (Nat.fib (n + 1) : ℤ) ^ 2 := by
   rw [pow_mul', Mz_pow]
-  simp [Matrix.trace, Fin.sum_univ_two, sq, Matrix.mul_apply]
+  simp [Matrix.trace, Fin.sum_univ_two, sq, ]
   ring
 
 /-- Con `t = tr M^{2n}` y `L_n = F_{n-1} + F_{n+1} = 2F_{n+1} - F_n`: `t - 2 = L_n²` si `n` es impar. -/
@@ -87535,7 +87489,7 @@ instance : CommRing (Q R) where
   natCast_zero := by ext <;> simp
   natCast_succ n := by ext <;> simp
   intCast_ofNat n := by ext <;> simp
-  intCast_negSucc n := by ext <;> simp [Int.negSucc_eq] <;> ring
+  intCast_negSucc n := by ext <;> simp [Int.negSucc_eq]
 
 /-- La raíz ω. -/
 def ω : Q R := ⟨0, 1⟩
@@ -87775,8 +87729,8 @@ theorem fib_inert_case {p : ℕ} (hp : p.Prime) (_hp2 : p ≠ 2) (_hp5 : p ≠ 5
         have hcs := coeff_sub (X ^ p : (ZMod p)[X]) (X : (ZMod p)[X]) p
         have hcp := coeff_X_pow (R := ZMod p) p p
         have hcx := coeff_X (R := ZMod p) (n := p)
-        rw [hcs, hcp, hcx, if_pos (rfl : p = p),
-            if_neg (Nat.ne_of_lt hp.one_lt), sub_zero]
+        rw [hcs, hcp, hcx, ite_eq_left (rfl : p = p),
+            ite_eq_right (Nat.ne_of_lt hp.one_lt), sub_zero]
       have hroots : roots (X ^ p - X : (ZMod p)[X]) = (Finset.univ : Finset (ZMod p)).val := by
         have h := FiniteField.roots_X_pow_card_sub_X (ZMod p)
         simpa [ZMod.card] using h
@@ -87876,7 +87830,7 @@ theorem omega_pow_mod {p : ℕ} (hp : p.Prime) (hp5 : p ≠ 5) :
   · subst hp2
     refine ⟨fun ⟨α, hα⟩ => ?_, fun _ => ?_⟩
     · exfalso; revert α; decide
-    · ext <;> simp [pow_two] <;> decide
+    · ext <;> simp [pow_two]
   have hbin : (ω : Q (ZMod p)) ^ p = (Nat.fib p : Q (ZMod p)) * ω + (Nat.fib (p - 1) : Q (ZMod p)) :=
     fib_pow_prime hp ω ω_sq
   have hroot : ((ω : Q (ZMod p)) ^ p) ^ 2 = (ω : Q (ZMod p)) ^ p + 1 := by
@@ -88084,7 +88038,7 @@ theorem lambda_structure_away_from_five :
     (∀ (ψ : ℕ → Zφ →+* Zφ), (∀ p, p.Prime → p ≠ 5 → ∀ a, red p (ψ p a) = red p (a ^ p)) →
         ∀ p, p.Prime → p ≠ 5 → ψ p = frob p) :=
   ⟨fun _ hp hp5 a => frob_congruence hp hp5 a, frob_commute,
-   fun ψ hψ p hp hp5 => frob_unique hp _ (hψ p hp hp5) _ (frob_congruence hp hp5)⟩
+   fun _ψ hψ p hp hp5 => frob_unique hp _ (hψ p hp hp5) _ (frob_congruence hp hp5)⟩
 
 end FrobeniusUnico
 
@@ -88121,7 +88075,7 @@ theorem norm_of_cube (ζ : ℂ) (hζ : ζ ^ 3 = 1) : ‖ζ‖ = 1 := by
 theorem norm_yDiag (ζ : ℂ) (hζ : ζ ^ 3 = 1) (x : Fin 3 × Fin 2) : ‖yDiag ζ x‖ = 1 := by
   have hn := norm_of_cube ζ hζ
   obtain ⟨k, e⟩ := x
-  fin_cases k <;> fin_cases e <;> simp [yDiag, colour, sign, Complex.norm_pow, hn, norm_one_C]
+  fin_cases k <;> fin_cases e <;> simp [yDiag, colour, sign,  hn, ]
 
 /-- El espectro del operador `𝒪 = H·Y` en `ℓ²(𝒥)`, `𝒥 = ℕ × ℤ/3 × ℤ/2`:
     en el punto (σ, k, ε), el valor `m₀ φ^σ · ζ^k · (−1)^ε`. -/
@@ -88420,7 +88374,7 @@ theorem commute_diag_is_function (d : ι → ℂ) (hd : Function.Injective d) (B
     ∃ f : ℂ → ℂ, B = diagonal (fun i => f (d i)) := by
   classical
   by_cases hι : Nonempty ι
-  · haveI := hι
+  · have := hι
     let g : ℂ → ι := Function.invFun d
     refine ⟨fun z => B (g z) (g z), ?_⟩
     ext i j
@@ -88535,13 +88489,13 @@ theorem gam_Dstep (p : (Fin 2 → ℤ) × ℤ) : gam (Dstep p) = p := by
 theorem gam6_Dstep6 (p : (Fin 2 → ℤ) × ℤ) : gam6 (Dstep^[6] p) = p := by
   obtain ⟨x, t⟩ := p
   have hcomm : Commute Mz Mzinv := by
-    show Mz * Mzinv = Mzinv * Mz; rw [Mz_inv.1, Mz_inv.2]
+    change Mz * Mzinv = Mzinv * Mz; rw [Mz_inv.1, Mz_inv.2]
   have hM : Mz ^ 6 * Mzinv ^ 6 = 1 := by
     rw [← hcomm.mul_pow, Mz_inv.2, one_pow]
   simp only [Function.iterate_succ, Function.iterate_zero, Function.comp_apply, id, Dstep, gam6,
     Matrix.mulVec_mulVec]
   refine Prod.ext ?_ ?_
-  · show ((Mz ^ 6) * (Mzinv * (Mzinv * (Mzinv * (Mzinv * (Mzinv * Mzinv)))))).mulVec x = x
+  · change ((Mz ^ 6) * (Mzinv * (Mzinv * (Mzinv * (Mzinv * (Mzinv * Mzinv)))))).mulVec x = x
     have : Mzinv * (Mzinv * (Mzinv * (Mzinv * (Mzinv * Mzinv)))) = Mzinv ^ 6 := by
       simp only [pow_succ, pow_zero, one_mul, mul_assoc]
     rw [this, hM, Matrix.one_mulVec]
@@ -88552,7 +88506,7 @@ theorem Dstep_gam6 (p : (Fin 2 → ℤ) × ℤ) : Dstep (gam6 p) = gam6 (Dstep p
   obtain ⟨x, t⟩ := p
   have hc : Mzinv * Mz ^ 6 = Mz ^ 6 * Mzinv := by
     have h1 : Commute Mzinv Mz := by
-      show Mzinv * Mz = Mz * Mzinv; rw [Mz_inv.1, Mz_inv.2]
+      change Mzinv * Mz = Mz * Mzinv; rw [Mz_inv.1, Mz_inv.2]
     exact (h1.pow_right 6).eq
   simp only [Dstep, gam6, Matrix.mulVec_mulVec, hc]
   refine Prod.ext rfl ?_
