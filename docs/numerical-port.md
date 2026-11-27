@@ -133,7 +133,7 @@ Columns: `script` · `qué hace` (one line, from its docstring) ·
 | `v28_hiperbola_reloj_tamano.py` | §69: del reloj al tamaño, la hipérbola c·i = N_p. | `03-mechanisms:1674` | `tests/test_v_layer_claims.py` (14 tests de claim) | `test_v_layer_claims` | `ported:test_v_layer_claims · verified-against-corpus` |
 | `v30_vertice_al_azar.py` | §71: la geometría del n-gono y el modelo de vértice al azar. | `04-bridges:1323` | `tests/test_v_layer_claims.py` (14 tests de claim) | `test_v_layer_claims` | `ported:test_v_layer_claims · verified-against-corpus` |
 | `v33_capas_1e9.py` | §73: las 20 capas del vértice al azar con primos hasta 10⁹ (datos de v32_capas_hasta_1e9.py). | `04-bridges:1324`, `04-bridges:1487` | `tests/test_v_layer_claims.py` (14 tests de claim) | `test_v_layer_claims` | `ported:test_v_layer_claims · verified-against-corpus` |
-| `weil_certificates/verify_cert.py` | Verifica un certificado JSON contra la cota que declara. | — | — · 0 importadores y 0 citas; declarado andamiaje en el MANIFEST del zip1 — candidato a `orphan-no-cited` si el autor lo confirma | `absorbed` | `pending` |
+| `weil_certificates/verify_cert.py` | Verifica un certificado JSON contra la cota que declara. | — | — · 0 importadores y 0 citas; andamiaje declarado en el MANIFEST del zip1, sin claim propio (reclasificado en la ola P1) | `orphan-no-cited` | `pending` |
 | `weil_certificates/verify_iv.py` | Rigorous replay in interval arithmetic (mpmath.iv, outward rounding) of a Weil-window certificate. | `04-bridges:493`, `04-bridges:555`, `appendix:41` (+1) | — | `test_weil_certificates.py` | `pending` |
 | `weil_certificates/verify_rig.py` | Replay riguroso de un certificado en aritmética de fracciones. | `04-bridges:517` | — | `test_weil_certificates.py` | `pending` |
 | `verify_weil_chi5.py` | verify_weil_chi5.py  — [N] numerical checks for the Weil route (F1 manuscript). | `04-bridges:381`, `appendix:573` | — | `test_weil_certificates.py` | `pending` |
@@ -146,8 +146,8 @@ Columns: `script` · `qué hace` (one line, from its docstring) ·
 | `weil_certificates/zeroside_check.py` | Suelo de la ventana por el lado de los ceros: Q(f)=Σ\|f̂(γ)\|²; abre `zeros.txt`. | `04-bridges:601`, `appendix:578` | `tests/test_envelope_bounds.py` (2 tests, recomputan desde la caché commiteada) | `test_envelope_bounds` | `ported:test_envelope_bounds · verified-against-corpus` |
 
 **Counts by destino:** `<test-name>` **44** (8 `ported`, 36 still owed) ·
-`absorbed` **33** · `generator` **2** ·
-`orphan-no-cited` **3** · `blocked` **1** — total
+`absorbed` **32** · `generator` **2** ·
+`orphan-no-cited` **4** · `blocked` **1** — total
 **83**. **Counts by status:**
 `ported:<test> · verified-against-corpus` **8** ·
 `verified-against-corpus` **28** ·
@@ -180,7 +180,7 @@ So all 8 stay; whether the folder goes is the last wave's call.
   `test_golden_n_marks.py` (23 outputs behind the bare `N` marks) and
   `test_arch_window.py`, plus the three modules wave P1 added.
 * **74 of 83** scripts are cited in the manuscript (line hits measured);
-  **9 are not**: the 3 true orphans plus 6 scaffolding modules.
+  **9 are not**: the 4 true orphans plus 5 scaffolding modules.
   `SCRIPTS-RECON-003.md` counted 75 cited / 8 uncited — the difference
   is `weil_certificates/lp.py`, which the recon marks as cited in 04 but
   which has **0 line hits** today; it is reclassified here as scaffolding
@@ -262,23 +262,25 @@ Already in the tree and out of the 12: `datos/capas_hasta_1000000000.json`,
 `dh_zeros.json`, `zeta_zeros_3000.npy` and the four
 `weil_certificates/` artefacts.
 
-## Sub-table: huérfanos (3) y andamiaje sin cita (6)
+## Sub-table: huérfanos (4) y andamiaje sin cita (5)
 
-The 3 true orphans — ported, never cited anywhere in the `.tex`, no
-output of their own:
+The 4 true orphans — delivered, never cited anywhere in the `.tex`, no
+claim of their own:
 
 | script | origen | papel real | destino |
 |---|---|---|---|
 | `ceros_chi5_500.py` | zip2 | genera `chi5_zeros_500.json`, que leen `circle_and_detect.py` y `comun_pruebas.py` | `orphan-no-cited` |
 | `comun_pruebas.py` | zip2 | utilidades (criba, Λ, caracteres mod 20, fibras) importadas por 22 scripts | `orphan-no-cited` |
 | `cuintica.py` | zip2 | la capa quintica `a(p^k)`; la importa `orbita_cert.py` | `orphan-no-cited` |
+| `weil_certificates/verify_cert.py` | zip1 | verifica un certificado JSON contra la cota que declara; andamiaje declarado en el MANIFEST, 0 importadores y 0 citas | `orphan-no-cited` |
 
-And the 6 modules with no citation either (scaffolding, not a gap —
+And the 5 modules with no citation either (scaffolding, not a gap —
 they carry no claim of their own): `comun.py`, `retro83.py`,
-`retro86.py`, `weil_certificates/lp.py`, `weil_certificates/opcert.py`,
-`weil_certificates/verify_cert.py`. `verify_cert.py` is the weakest of
-the six: 0 importers and 0 citations, so if the author confirms it is
-dead it moves to `orphan-no-cited`.
+`retro86.py`, `weil_certificates/lp.py`, `weil_certificates/opcert.py`.
+`weil_certificates/verify_cert.py` left this list in wave P1: 0
+importers, 0 citations and no claim of its own, so it is recorded as
+`orphan-no-cited` in the table above — the author still decides whether
+to cite it where it is used or drop it.
 
 ## Sub-table: `retro65.py` — never delivered
 
