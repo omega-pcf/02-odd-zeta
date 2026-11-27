@@ -43,7 +43,7 @@ inventories, decision logs, verdict tables — goes to `docs/reports/`.
 - **numerical-port.md**: `NUMPORT-001`, the living tracker of the port campaign that moves the
   numerical evidence of `hipotesis/pruebas/` into `tests/` — the destination convention (F10 pattern,
   one entrypoint `uv run pytest tests/`), the master table of the 83 scripts reconciled against the
-  suite's 132 tests, and the sub-tables of `salidas/`, `datos/`, the orphans and the blockers.
+  suite's 191 tests, and the sub-tables of `salidas/`, `datos/`, the orphans and the blockers.
   It records state only: neither `hipotesis/pruebas/` nor `tests/` is edited from it.
 - **usage.md**: Daily workflow, conventional commits, build and release commands.
 - **witness-contract.md**: The single living norm of the witness marks — the rationale (§1–§5,

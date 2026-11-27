@@ -20,8 +20,8 @@ exist, and no module of `tests/` or `scripts/` may import it (AST sweep).
 
 ```bash
 # counts:begin id="commands"
-uv run pytest tests/ -q                 # whole suite   (132 tests)
-uv run pytest tests/ -q -m 'not slow'   # without >10 s (132 tests)
+uv run pytest tests/ -q                 # whole suite   (191 tests)
+uv run pytest tests/ -q -m 'not slow'   # without >10 s (183 tests)
 # counts:end id="commands"
 pnpm run verify:py                      # the same gate through package.json
 ```
@@ -29,9 +29,9 @@ pnpm run verify:py                      # the same gate through package.json
 The pytest configuration lives in `pyproject.toml` under
 `[tool.pytest.ini_options]` (`testpaths`, `pythonpath`, `markers`,
 `addopts`), so a bare `uv run pytest` collects the same
-<!-- counts:begin id="suite-total" -->132<!-- counts:end id="suite-total" -->
+<!-- counts:begin id="suite-total" -->191<!-- counts:end id="suite-total" -->
 tests as `uv run pytest tests/ -q`, and
-<!-- counts:begin id="suite-not-slow" -->132<!-- counts:end id="suite-not-slow" -->
+<!-- counts:begin id="suite-not-slow" -->183<!-- counts:end id="suite-not-slow" -->
 of them carry no `slow` mark. The numbers in those two spans are generated
 from a real run by `pnpm run counts`; `pnpm run counts:check` (inside
 `validate`) fails when they drift.
@@ -64,6 +64,7 @@ tests/
 ├── test_envelope_bounds.py         # envelope.py, zeroside_check.py: the envelope claims
 ├── test_bridge_boosts.py           # bridge.py: the boost figures + its committed output
 ├── test_v_layer_claims.py          # the five v-layer scripts: their claim tests
+├── test_retro_sprints.py           # the sixteen retro sprint scripts: their claim tests
 └── test_witness_census.py          # \testref <-> suite contract, port guard
 ```
 

@@ -10,7 +10,7 @@
 
 **Scope.** This is the working base of the port campaign: one row per
 numerical script of `hipotesis/pruebas/` (83 `.py`, measured today),
-reconciled against the suite that already exists in `tests/` (132 tests,
+reconciled against the suite that already exists in `tests/` (191 tests,
 `uv run pytest tests/`). Sources: `docs/reports/20261126_SCRIPTS-RECON-003_scripts_reconciliation.md`
 (promoted from the scratch inventory), the manuscript
 (`main.tex` + `src/chapters/*.tex`, line hits measured with `git grep`
@@ -48,6 +48,7 @@ test. Line numbers are snapshots and move with the manuscript.
 |---|---|
 | `pending` | destino assigned, work not started |
 | `in-progress` | port under way (no row is in this state today) |
+| `absorbed` | scaffolding with no claim of its own: it is executed by scripts whose own rows are now `ported`, so its corpus is covered by them |
 | `ported:<test-name>` | the test exists and covers the claim by recomputation |
 | `verified-against-corpus` | the test reads and pins the script's committed output |
 | `ported:<test-name> · verified-against-corpus` | the test exists, covers the claim by recomputation, and its assert reproduces the figure the `.tex` statement prints for it (for `bridge.py` it also pins the committed `salidas/bridge.txt`) |
@@ -99,25 +100,25 @@ Columns: `script` · `qué hace` (one line, from its docstring) ·
 | `weil_certificates/opcert_rig.py` | Óptimo primal riguroso con W_lower (versión con intervalos). | `appendix:578` | — | `test_weil_certificates.py` | `pending` |
 | `orbita_cert.py` | orbita_cert.py — W4–W5, ssec:weil-closure: la orbita certificada, y la familia de la capa quintica. | `04-bridges:1868`, `appendix:728` | — | `test_closures_and_sweeps.py` | `pending` |
 | `oz_carried.py` | oz_carried.py -- numerical checks for the results carried from the predecessor version (F1 v157). | `03-mechanisms:2208`, `03-mechanisms:2232`, `03-mechanisms:2265` (+6) | — | `test_closures_and_sweeps.py` | `pending` |
-| `retro101.py` | retro101.py — Sprint 101. La linea del indice (sprints 93n-96n) sobre una orbita libre REAL: | `04-bridges:1079`, `appendix:586` | — | `test_retro_sprints.py` | `pending` |
-| `retro102.py` | retro102.py — Sprint 102. La flecha W3 => W4 del diccionario, y las dos mitades de W4 como las dos paridades. | `04-bridges:1925`, `appendix:586` | — | `test_retro_sprints.py` | `pending` |
-| `retro104.py` | retro104.py — Sprint 104. Lo que un operador del nivel no separa, y el par que si separa. | `03-mechanisms:3546`, `appendix:586` | — | `test_retro_sprints.py` | `pending` |
-| `retro105.py` | retro105.py — Sprint 105. Lo que una estructura haria ver en GUE, y lo que vemos. | `03-mechanisms:3595`, `04-bridges:176`, `appendix:126` (+1) | — | `test_retro_sprints.py` | `pending` |
-| `retro109.py` | retro109.py — Sprint 109: las dos caras de la dinamica de Fibonacci (toro real / puntos de torsion). | `03-mechanisms:3491` | — | `test_retro_sprints.py` | `pending` |
-| `retro119.py` | Sprint 119: el 3-del-reloj de e_p y la clase 9 sobre μ₅. | `03-mechanisms:1490`, `appendix:586` | — | `test_retro_sprints.py` | `pending` |
-| `retro66.py` | retro66.py — Sprint 66: quitar la hipotesis H del sprint 65. | `04-bridges:1502`, `appendix:263` | — | `blocked:retro65.py ausente en toda entrega` | `pending` |
-| `retro67.py` | retro67.py — Sprint 67: la positividad de Weil nivel por nivel. | `04-bridges:1509`, `appendix:263` | — | `test_retro_sprints.py` | `pending` |
-| `retro69.py` | retro69.py — Sprint 69: el puente entre el polo del reloj y el polo de zeta_K. | `03-mechanisms:1402` | — | `test_retro_sprints.py` | `pending` |
-| `retro78.py` | retro78.py — Sprint 78: la rotacion (B) en las dos caras. | `03-mechanisms:1627`, `appendix:175` | — | `test_retro_sprints.py` | `pending` |
-| `retro81.py` | retro81.py — Sprint 81: el gato cuantizado de M^2 = [[1,1],[1,2]] (M = [[0,1],[1,1]], det M = -1) en N = 5^k y otros N, | `04-bridges:1725` | — | `test_retro_sprints.py` | `pending` |
-| `retro83.py` | retro83.py — Sprint 83: (A) la demostracion por la formula del caracter; (B) el caso 5^k con fase exacta. | — | — · andamiaje: lo `exec` retro87/88/89 | `absorbed` | `pending` |
-| `retro86.py` | retro86.py — Sprint 86: las trazas en 5^k por suma de Gauss binaria, exacta (enteros y simbolos de Legendre). | — | — · andamiaje: lo `exec` retro87/88/89 | `absorbed` | `pending` |
-| `retro87.py` | retro87.py — Sprint 87: la prueba uniforme en k de las trazas con 5 \| m. | `04-bridges:1725` | — | `test_retro_sprints.py` | `pending` |
-| `retro88.py` | retro88.py — Sprint 88: la pieza (B) sobre el complemento del estado excepcional. | `04-bridges:1746` | — | `test_retro_sprints.py` | `pending` |
-| `retro89.py` | retro89.py — Sprint 89: pegar los modelos locales. El gato cuantizado en N compuesto (N impar, libre de cuadrados o con 5^k): | `04-bridges:1751` | — | `test_retro_sprints.py` | `pending` |
-| `retro93.py` | retro93.py — Sprint 93: una orbita libre de Klein y el indice de inercia de la forma de Weil. | `04-bridges:1079`, `appendix:586` | — | `test_retro_sprints.py` | `pending` |
-| `retro94.py` | retro94.py — sprint 94: la masa del reloj separada por las fibras de G. | `03-mechanisms:1528`, `appendix:586` | — | `test_retro_sprints.py` | `pending` |
-| `retro99.py` | retro99.py — sprint 99: que selecciona el estabilizador {id, mate}. La funcion de Davenport-Heilbronn | `04-bridges:907`, `appendix:123`, `appendix:586` | — | `test_retro_sprints.py` | `pending` |
+| `retro101.py` | retro101.py — Sprint 101. La linea del indice (sprints 93n-96n) sobre una orbita libre REAL: | `04-bridges:1079`, `appendix:586` | — | `test_retro_sprints.py` | `ported:test_retro_sprints · verified-against-corpus` |
+| `retro102.py` | retro102.py — Sprint 102. La flecha W3 => W4 del diccionario, y las dos mitades de W4 como las dos paridades. | `04-bridges:1925`, `appendix:586` | — | `test_retro_sprints.py` | `ported:test_retro_sprints · verified-against-corpus` |
+| `retro104.py` | retro104.py — Sprint 104. Lo que un operador del nivel no separa, y el par que si separa. | `03-mechanisms:3546`, `appendix:586` | — | `test_retro_sprints.py` | `ported:test_retro_sprints · verified-against-corpus` |
+| `retro105.py` | retro105.py — Sprint 105. Lo que una estructura haria ver en GUE, y lo que vemos. | `03-mechanisms:3595`, `04-bridges:176`, `appendix:126` (+1) | — | `test_retro_sprints.py` | `ported:test_retro_sprints · verified-against-corpus` |
+| `retro109.py` | retro109.py — Sprint 109: las dos caras de la dinamica de Fibonacci (toro real / puntos de torsion). | `03-mechanisms:3491` | — | `test_retro_sprints.py` | `ported:test_retro_sprints · verified-against-corpus` |
+| `retro119.py` | Sprint 119: el 3-del-reloj de e_p y la clase 9 sobre μ₅. | `03-mechanisms:1490`, `appendix:586` | — | `test_retro_sprints.py` | `ported:test_retro_sprints · verified-against-corpus` |
+| `retro66.py` | retro66.py — Sprint 66: quitar la hipotesis H del sprint 65. | `04-bridges:1502`, `appendix:263` | — | `blocked:retro65-never-delivered` | `pending` |
+| `retro67.py` | retro67.py — Sprint 67: la positividad de Weil nivel por nivel. | `04-bridges:1509`, `appendix:263` | — | `test_retro_sprints.py` | `ported:test_retro_sprints · verified-against-corpus` |
+| `retro69.py` | retro69.py — Sprint 69: el puente entre el polo del reloj y el polo de zeta_K. | `03-mechanisms:1402` | — | `test_retro_sprints.py` | `ported:test_retro_sprints · verified-against-corpus` |
+| `retro78.py` | retro78.py — Sprint 78: la rotacion (B) en las dos caras. | `03-mechanisms:1627`, `appendix:175` | — | `test_retro_sprints.py` | `ported:test_retro_sprints · verified-against-corpus` |
+| `retro81.py` | retro81.py — Sprint 81: el gato cuantizado de M^2 = [[1,1],[1,2]] (M = [[0,1],[1,1]], det M = -1) en N = 5^k y otros N, | `04-bridges:1725` | — | `test_retro_sprints.py` | `ported:test_retro_sprints · verified-against-corpus` |
+| `retro83.py` | retro83.py — Sprint 83: (A) la demostracion por la formula del caracter; (B) el caso 5^k con fase exacta. | — | — · andamiaje: lo `exec` retro87/88/89 | `absorbed` | `absorbed` |
+| `retro86.py` | retro86.py — Sprint 86: las trazas en 5^k por suma de Gauss binaria, exacta (enteros y simbolos de Legendre). | — | — · andamiaje: lo `exec` retro87/88/89 | `absorbed` | `absorbed` |
+| `retro87.py` | retro87.py — Sprint 87: la prueba uniforme en k de las trazas con 5 \| m. | `04-bridges:1725` | — | `test_retro_sprints.py` | `ported:test_retro_sprints · verified-against-corpus` |
+| `retro88.py` | retro88.py — Sprint 88: la pieza (B) sobre el complemento del estado excepcional. | `04-bridges:1746` | — | `test_retro_sprints.py` | `ported:test_retro_sprints · verified-against-corpus` |
+| `retro89.py` | retro89.py — Sprint 89: pegar los modelos locales. El gato cuantizado en N compuesto (N impar, libre de cuadrados o con 5^k): | `04-bridges:1751` | — | `test_retro_sprints.py` | `ported:test_retro_sprints · verified-against-corpus` |
+| `retro93.py` | retro93.py — Sprint 93: una orbita libre de Klein y el indice de inercia de la forma de Weil. | `04-bridges:1079`, `appendix:586` | — | `test_retro_sprints.py` | `ported:test_retro_sprints · verified-against-corpus` |
+| `retro94.py` | retro94.py — sprint 94: la masa del reloj separada por las fibras de G. | `03-mechanisms:1528`, `appendix:586` | — | `test_retro_sprints.py` | `ported:test_retro_sprints · verified-against-corpus` |
+| `retro99.py` | retro99.py — sprint 99: que selecciona el estabilizador {id, mate}. La funcion de Davenport-Heilbronn | `04-bridges:907`, `appendix:123`, `appendix:586` | — | `test_retro_sprints.py` | `ported:test_retro_sprints · verified-against-corpus` |
 | `rho_interval.py` | rho_interval.py — W3, ssec:golden-field: la cota inferior rho <= lambda_{N+1} de la forma de Weil de Q(sqrt5). | `04-bridges:1191`, `appendix:584` | — | `test_closures_and_sweeps.py` | `pending` |
 | `rigorous_chain.py` | rigorous_chain.py — W3, ssec:golden-field: las primeras ventanas del campo dorado sobre todo el espacio. | `04-bridges:1191`, `appendix:583` | — | `test_closures_and_sweeps.py` | `pending` |
 | `weil_certificates/rigW.py` | Rigorous lower bound for W(r)=log(5/pi)+Re psi(1/4+ir/2). | `04-bridges:552`, `appendix:577` | — | `test_weil_certificates.py` | `pending` |
@@ -145,13 +146,14 @@ Columns: `script` · `qué hace` (one line, from its docstring) ·
 | `zeroside.py` | zeroside.py — W4–W5, ssec:weil-closure: la formula explicita sobre la orbita de Frobenius, comprobada. | `04-bridges:1854`, `appendix:585` | `test_zeroside_orbit_agrees_with_the_zeros` | `absorbed` | `verified-against-corpus` |
 | `weil_certificates/zeroside_check.py` | Suelo de la ventana por el lado de los ceros: Q(f)=Σ\|f̂(γ)\|²; abre `zeros.txt`. | `04-bridges:601`, `appendix:578` | `tests/test_envelope_bounds.py` (2 tests, recomputan desde la caché commiteada) | `test_envelope_bounds` | `ported:test_envelope_bounds · verified-against-corpus` |
 
-**Counts by destino:** `<test-name>` **44** (8 `ported`, 36 still owed) ·
+**Counts by destino:** `<test-name>` **44** (24 `ported`, 20 still owed) ·
 `absorbed` **32** · `generator` **2** ·
 `orphan-no-cited` **4** · `blocked` **1** — total
 **83**. **Counts by status:**
-`ported:<test> · verified-against-corpus` **8** ·
+`ported:<test> · verified-against-corpus` **24** ·
 `verified-against-corpus` **28** ·
-`pending` **47** · `in-progress` **0**.
+`absorbed` **2** ·
+`pending` **29** · `in-progress` **0**.
 
 **Deletion pass (wave P1):** none of the 8 scripts this wave ports was
 removed from `hipotesis/pruebas/`. Measured first: no `.py` of the
@@ -166,19 +168,40 @@ falsify — and the manuscript is out of scope for this campaign.
 regenerates its committed `salidas/bridge.txt`: `dependency:correr_todo.sh`.
 So all 8 stay; whether the folder goes is the last wave's call.
 
+**Deletion pass (wave P2):** none of the 16 scripts this wave ports was
+removed from `hipotesis/pruebas/`, and none of the two scaffolding rows
+either. Measured first: `git grep -E 'import retro|from retro'` over the
+repository is empty — four of the family `exec` another's source *by path*,
+which is a dependency, not an import — so nothing outside them would break,
+but the test does not replace them as evidence either. Every one of the 16 is
+named by the manuscript (`\code{retro101.py}` … `\code{retro99.py}`, one or
+two `git grep` hits each, `retro81`/`retro87` inside the range at
+`04-bridges:1725`), so all 16 rows are `census-cited` and stay: deleting them
+would falsify the census of `appendix:571` ("the full census lives in
+`hipotesis/pruebas/` ($83$ scripts)"), and the manuscript is out of scope for
+this campaign. `retro66.py` is `census-cited` as well (`04-bridges:1502`,
+`appendix:263`) and additionally cannot run: `retro65.py` was never
+delivered, which its row now records as `blocked:retro65-never-delivered`.
+`retro83.py` and `retro86.py` are named by no statement, but
+`retro87/88/89.py` `exec` them by path — deleting either would break three
+delivered scripts — so both stay as the scaffolding the reconciliation
+already records (status `absorbed`). No `retro` has a committed
+`salidas/*.txt`, so no row of this family could be `absorbed-into:<test>`.
+
 **Reconciliation against the suite (measured today, not assumed):**
 
-* **41 of 83** scripts are covered — **33 rows `absorbed`**, of which
+* **57 of 83** scripts are covered — **33 rows `absorbed`**, of which
   **27** are golden: an existing test reads the script's committed
   `salidas/<name>.txt` (the other 6 are scaffolding absorbed into the
-  corpus they feed) — plus the **8 rows ported by wave P1**
-  (`test_envelope_bounds`, `test_bridge_boosts`, `test_v_layer_claims`),
-  whose tests recompute the number from the committed inputs and assert
-  the figure the `.tex` statement prints.
-* The 132 tests live in 18 modules; the covering ones are
+  corpus they feed) — plus the **24 rows ported by waves P1 and P2**:
+  the 8 of `test_envelope_bounds`, `test_bridge_boosts` and
+  `test_v_layer_claims`, and the 16 of `test_retro_sprints`, whose tests
+  recompute the number from the committed inputs and assert the figure the
+  `.tex` statement prints.
+* The 191 tests live in 19 modules; the covering ones are
   `test_golden_observations.py` (4 observation outputs),
   `test_golden_n_marks.py` (23 outputs behind the bare `N` marks) and
-  `test_arch_window.py`, plus the three modules wave P1 added.
+  `test_arch_window.py`, plus the four modules waves P1 and P2 added.
 * **74 of 83** scripts are cited in the manuscript (line hits measured);
   **9 are not**: the 4 true orphans plus 5 scaffolding modules.
   `SCRIPTS-RECON-003.md` counted 75 cited / 8 uncited — the difference
@@ -289,8 +312,7 @@ to cite it where it is used or drop it.
 and `retro65.py` is in no delivery: not zip1, not zip2, not the repo,
 not the MANIFEST's "not available" list. **`retro66.py` does not run as
 it stands**, and `retro66.py` is cited (`04-bridges:1502`,
-`appendix:263`). Row status: `blocked:retro65.py ausente en toda
-entrega` — ask the author for the file or declare it unavailable in the
+`appendix:263`). Row status: `blocked:retro65-never-delivered` — ask the author for the file or declare it unavailable in the
 text.
 
 ## Sub-table: `unfold_by_conductor.txt` — cited, never delivered
