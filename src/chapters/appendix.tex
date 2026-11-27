@@ -434,7 +434,7 @@ three kinds.
     \LeanInline{level\_two\_character\_from\_fibonacci} and
     \LeanInline{pisano\_five\_is\_twenty}, closed by \texttt{S1\_chi5\_fib} and by a
     modular-arithmetic step).
-  \item[Written for this version] \texttt{S1\_chi5\_fib},
+  \item[Written] \texttt{S1\_chi5\_fib},
     \texttt{F1\_pendientes}, \texttt{F1\_pendientes\_2}, \texttt{F1\_frobenius\_eigenvalue},
     \texttt{F1\_weil\_functional}, \texttt{F1\_primon\_space}, \texttt{D16\_hconj},
     \texttt{F1\_cw\_equivalents} (the facts of \cite{gonzalez26cw} that \cref{sec:background,sec:methods,sec:results} use;
@@ -443,7 +443,7 @@ three kinds.
     \texttt{F1\_v2\_formalizations}, and the modules of the paper \texttt{F1PaperNew},
     \texttt{F1PaperHyp}, \texttt{F1PaperTorus}, \texttt{F1PaperPending}, \texttt{F1PaperClosure} and \texttt{F1PaperPadic}; and, for the clock, the index, the energy and the prism at $5$, \texttt{F1PaperSixty}, \texttt{F1PaperSixtyWeil}, \texttt{M12F1Circle}, \texttt{PhiCelda}, \texttt{W4Isometria} and \texttt{F1PaperClosureClock}.  Their declarations are compiled in the development; cited inside a
     group of \witness{P}\ names they carry the mark $^{*}$.
-  \item[Compiled for this version] with Lean~4.36.0-rc2 and Mathlib at commit \texttt{a8754b18}, each with the
+  \item[Compiled] with the
     imports it needs and with no \texttt{sorry}, \texttt{axiom} or \texttt{native\_decide}: for the window of the closure and
     the index as a degeneracy, \texttt{CierrePorAltura}, \texttt{IndiceComoDegeneracion}, \texttt{MasaDelReloj} and
     \texttt{NivelesYOrientacion}; for the inertia index and the mate, \texttt{FibrasPorNivel},
@@ -538,33 +538,6 @@ The report is produced by \texttt{\#print axioms} on the compiled file.  For the
 compiled blocks the expected output is \texttt{[propext, Classical.choice, Quot.sound]};
 for Theorem~\ref{thm:odd-zeta} it is stated with the theorem.  The report for the
 declarations written for this version is produced after their compilation.
-
-\subsection{Mathlib names at risk}
-The following are used in the files written for this paper and should be checked
-against the Mathlib version of the build: \texttt{add\_pow\_prime\_eq},
-\texttt{AdjoinRoot.algHom\_ext}, \texttt{AdjoinRoot.isDomain\_of\_prime},
-\texttt{DualNumber.eps\_mul\_eps}, \texttt{DifferentiableAt.conj\_conj},
-\texttt{tsum\_star}, \texttt{Complex.cpow\_conj},
-\texttt{AnalyticOnNhd.eq\_of\_eventuallyEq}, \texttt{LSeries.term\_of\_ne\_zero},
-\texttt{vonMangoldt\_apply\_pow}, \texttt{vonMangoldt\_apply\_prime},
-\texttt{Finsupp.lmapDomain\_apply}, \texttt{Finsupp.mapDomain\_comp},
-\texttt{Real.log\_zpow}; and in \texttt{F1\_v2\_formalizations}: the tactic
-\texttt{monicity!}, \texttt{isInteger\_of\_is\_root\_of\_monic},
-\texttt{Polynomial.eq\_zero\_of\_infinite\_isRoot}, \texttt{Nat.infinite\_setOf\_prime},
-\texttt{Real.hasStrictDerivAt\_const\_rpow}, and in its \S O \texttt{div\_lt\_div\_iff$_0$}, \texttt{Real.cos\_lt\_cos\_of\_nonneg\_of\_le\_pi}, \texttt{Real.cos\_pi\_div\_four}, \texttt{Real.cos\_pi\_div\_six}, \texttt{hasSum\_geometric\_of\_lt\_one},
-\texttt{Measure.prod\_restrict}, \texttt{lintegral\_prod}, \texttt{lintegral\_indicator},
-\texttt{setIntegral\_mono\_on}, \texttt{integral\_indicator},
-\texttt{Measure.restrict\_restrict}; and in the closure modules: \texttt{div\_lt\_iff},
-\texttt{pow\_le\_pow\_right}, \texttt{one\_lt\_inv}, \texttt{Real.one\_lt\_rpow}, \texttt{geom\_sum\_eq},
-\texttt{div\_le\_div\_of\_nonneg\_right}, \texttt{div\_le\_div\_iff}, \texttt{pow\_unbounded\_of\_one\_lt},
-\texttt{Finset.single\_le\_sum}, \texttt{Real.eulerMascheroniConstant},
-\texttt{ArithmeticFunction.vonMangoldt}, \texttt{MeasureTheory.integral\_add\_right\_eq\_self},
-\texttt{abs\_real\_inner\_le\_norm}, \texttt{LinearIsometry.norm\_map}, \texttt{norm\_smul},
-\texttt{padicNorm.padicNorm\_p\_of\_prime}, \texttt{Nat.fib\_add\_two}, \texttt{ZMod.natCast\_mod},
-\texttt{ZMod.natCast\_zmod\_eq\_zero\_iff\_dvd}, \texttt{Nat.prime\_dvd\_prime\_iff\_eq},
-\texttt{riemannZeta\_eulerProduct\_tprod}, \texttt{riemannZeta\_two}, \texttt{Nat.Primes.not\_summable\_one\_div},
-\texttt{Real.hasSum\_pow\_div\_log\_of\_abs\_lt\_one}, \texttt{Real.rpow\_def\_of\_pos},
-\texttt{mul\_right\_cancel}$_0$, \texttt{norm\_ne\_zero\_iff}, \texttt{DirichletCharacter.LFunction\_eq\_LSeries}, \texttt{DirichletCharacter.LFunction\_ne\_zero\_of\_one\_le\_re}, \texttt{Complex.natCast\_re}, \texttt{AdjoinRoot.mk\_surjective}, \texttt{AdjoinRoot.mk\_eq\_zero}, \texttt{AdjoinRoot.ringHom\_ext}, \texttt{Polynomial.map\_ofNat}, \texttt{Polynomial.Monic.natDegree\_map}, \texttt{Polynomial.natDegree\_eq\_zero\_of\_isUnit}, \texttt{CharTwo.two\_eq\_zero}, the tactics \texttt{monicity!} and \texttt{compute\_degree!}, and the elaborator \texttt{type\_of\%}.
 
 \subsection{Numerical scripts}
 This subsection is selective: it lists the scripts that back a statement of the

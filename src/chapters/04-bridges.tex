@@ -1634,7 +1634,7 @@ $0.041$ at $3\cdot10^{-4}$ and $0.025$ at $10^{-4}$, against $0.20$ with no corr
 $0.021$ prime by prime (\code{law\_resolution.py} \witness[\testref{test\_law\_resolution\_golden\_values, test\_law\_resolution\_matches\_manuscript\_claim}]{N}).  Taken as a sum over the primes up to a fixed $X$, the
 correction does not converge: for $n=100$ to $3000$ the mean error has a minimum at a finite $X$ and grows past it ---
 $0.069$ at $X=20$ and $0.23$ at $X=10^6$ for the plain sum, $0.037$ at $X\approx500$ and $0.12$ at $X=10^6$ with the
-weight $1-\log n/\log X$ on each prime power $n$ (\code{x\_sweep.py} \witness[\testref{test\_law\_resolution\_golden\_values, test\_law\_resolution\_matches\_manuscript\_claim}]{N}).  The error falls between
+weight $1-\log n/\log X$ on each prime power $n$ (\code{x\_sweep.py} \witness[\testref{test\_x\_sweep\_plain\_sum\_error\_grows\_past\_the\_smallest\_cutoff, test\_x\_sweep\_fejer\_weight\_is\_minimal\_at\_the\_printed\_cutoff}]{N}).  The error falls between
 $\delta=10^{-3}$ and $3\cdot10^{-4}$, the scale $1/T$ of the heights measured ($T\approx240$ to
 $3700$): at
 height $T$ the law has to resolve a scale of order $1/T$.  Taking the primes one by one is not
@@ -1720,7 +1720,7 @@ $G(A_1)\,G(5w')$ with $\bigl(\tfrac{A_1w'}5\bigr)=1$; hence $\operatorname{tr}=5
 $\bigl(\tfrac{A_1}5\bigr)=\bigl(\tfrac{2F_{4m}/5^v}5\bigr)=\chiv(m')$ because $F_{5n}/5F_n\equiv1$ and $F_{4m'}\equiv3m'\pmod5$.
 The Fibonacci steps, $t-2=L_n^2$ or $5F_n^2$, $F_{5n}/5F_n\equiv1$ and $F_{4m'}\equiv3m'$, are \witness[PasosDelTexto.trace\_sub\_two\_odd, PasosDelTexto.trace\_sub\_two\_even, PasosDelTexto.fib\_five\_mul, PasosDelTexto.fib\_four\_mul\_mod\_five]{P}; the completion of the square\ given the decomposition, which is checked on $115$ elements, units and congruent to $1$ modulo $5$ and $25$; every
 step of the chain for $k\le7$, and the traces themselves exactly for $k\le9$.  Their modulus is
-$|\ker(M^{2n}-1)|^{1/2}$, as \cite{thomas08} predicts.  The restriction count for the $301$ primes $7\le p<2000$;
+$|\ker(M^{2n}-1)|^{1/2}$, as \cite{thomas08} predicts.  The restriction count for the $300$ primes $7\le p<2000$;
 the Fourier step for $k\le7$; the whole statement against the diagonalisation
 (\code{retro81.py}--\code{retro87.py}).  The systematic degeneracies of the quantised map are those of
 \cite{kurlbergrudnick00}.\par}
