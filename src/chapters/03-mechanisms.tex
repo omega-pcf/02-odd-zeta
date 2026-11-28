@@ -1384,17 +1384,17 @@ Let $n\geq1$, and let $\Phi_n$ be the $n$-th cyclotomic polynomial.
 \end{proposition}
 
 {\raggedright
-The Lean declarations \code{W4Isometria.clock\_cyclotomic\_split} (i),
-\code{W4Isometria.RelojCiclotomico.clock\_iff\_cyclotomic\_root} (ii) in every
-residue field, \code{W4Isometria.RelojCiclotomico.mate\_pow} (the two clocks $n$ and
-$2n$ of a split prime), \code{W4Isometria.totient\_is\_primitive\_roots},
-\code{W4Isometria.tower\_weight\_splits\_by\_clock},
-\code{W4Isometria.RelojCiclotomico.prod\_Ncyc},
-\code{W4Isometria.RelojCiclotomico.err\_moebius},
-\code{W4Isometria.RelojCiclotomico.log\_Npow\_bound},
-\code{W4Isometria.RelojCiclotomico.log\_Ncyc\_bound} (iii),
-\code{W4Isometria.RelojCiclotomico.clock\_sum\_mertens},
-\code{W4Isometria.RelojCiclotomico.clock\_sum\_le\_of\_mertens} (vi);
+The eleven Lean declarations that witness this proposition are
+the ones carried by the tag on the line below; they are listed
+there in the order of the statements they serve, so the list
+itself is the correspondence: one declaration for \textup{(i)},
+the factorisation of $X^n-1$ into the $\Phi_d$; two for
+\textup{(ii)}, the first holding in every residue field and the
+second carrying the two clocks $n$ and $2n$ of a split prime;
+six for \textup{(iii)}, the bound on the norm of $\Phi_n$ at
+each level; and two for \textup{(vi)}, which sums those errors
+over the levels through the values of the Mertens function
+$M(x)$;
 (iv) and (v); (vii) from (vi) and $\sum_{n\leq N}\phi(n)=3N^2/\pi^2+O(N\log N)$;
 (ii) for $n\leq600$ and $p\leq20000$, $p\nmid n$ ($1\,355\,192$ pairs,
 $752$ of the $2260$ primes with two clocks), (vi) up to $N=10^6$ to $3.6\cdot10^{-12}$
@@ -1451,7 +1451,7 @@ At $5$ the levels $4\cdot5^k$ carry the ramified prime: by
 \cref{prop:clock-cyclotomic}(i), $\golden^{4\cdot5^k}-1$ is the product of the $\Phi_d(\golden)$
 with $d\mid4\cdot5^k$, and $\sqrt5$ divides it exactly $2k+1$ times
 (\witness[F1PaperSixty.phi\_clock\_identity, F1PaperSixty.phi\_clock\_exact]{P}), so $v_5(\golden^{4\cdot5^k}-1)=k+\tfrac12$; level by level, $v_5$ of
-$N(\Phi_{4\cdot5^k}(\golden))$ is $1,2,2,2$ for $k=0,1,2,3$ (\code{v27\_reloj\_ciclotomico.py} \witness[\testref{test\_five\_valuation\_of\_the\_cyclotomic\_norms}]{N}).  A root of unity has
+$N(\Phi_{4\cdot5^k}(\golden))$ is $1,2,2,2$ for $k=0,1,2,3$ (\witness[\testref{test\_five\_valuation\_of\_the\_cyclotomic\_norms}]{N}).  A root of unity has
 absolute value $1$ in every normed field
 (\witness[M12F1Circle.root\_of\_unity\_norm\_one]{P}), so at each prime the angular part
 carries the clock and the principal unit $\langle\golden\rangle$ carries the size.

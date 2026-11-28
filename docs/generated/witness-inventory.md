@@ -14,10 +14,10 @@ Measured over the tracked manuscript sources (`main.tex` and `src/**/*.tex`) —
 | own-line `\witness[ids]{N}` | 0 |
 | own-line `\witness{P}` (bare) | 0 |
 | own-line `\witness{N}` (bare) | 0 |
-| inline `\witness[ids]{P}` | 249 |
+| inline `\witness[ids]{P}` | 253 |
 | inline `\witness[ids]{N}` | 45 |
-| inline `\witness{P}` (bare) | 39 |
-| inline `\witness{N}` (bare) | 22 |
+| inline `\witness{P}` (bare) | 35 |
+| inline `\witness{N}` (bare) | 21 |
 | `\witness[\testref{…}]{N}` marks | 45 |
 
 Ids carried by `N` marks: **45 ids over 33 distinct**.
@@ -31,9 +31,9 @@ Ids carried by `N` marks: **45 ids over 33 distinct**.
 | `\LeanTally` | 17 |
 | `\LeanCW` | 44 |
 | `\leanline` | 0 |
-| `\code` | 303 |
+| `\code` | 290 |
 | `\testref` | 45 |
-| `\witness` | 480 |
+| `\witness` | 479 |
 
 ## Gates measured here
 
@@ -43,10 +43,10 @@ Ids carried by `N` marks: **45 ids over 33 distinct**.
 | stars (`\LeanStar` body uses) | **0** |
 | `Tier` column in a table | **0** |
 | `pending(D7)` markers | **1** |
-| `\witness[…]` id parts that are neither a `\testref`, a snake_case id nor a qualified declaration | **155** |
+| `\witness[…]` id parts that are neither a `\testref`, a snake_case id nor a qualified declaration | **156** |
 | open sites (`(open;`) | **2** |
 
-`\witness[…]` ids that are neither a `\testref`, a snake_case id nor a namespace-qualified declaration (155 occurrences, 122 distinct):
+`\witness[…]` ids that are neither a `\testref`, a snake_case id nor a namespace-qualified declaration (156 occurrences, 123 distinct):
 
 - `G\_hom` ×5
 - `G\_kernel` ×5
@@ -106,9 +106,9 @@ Ids carried by `N` marks: **45 ids over 33 distinct**.
 - `disc\_K\_is\_conductor\_squared` ×1
 - `endo\_on\_ω` ×1
 - `eps\_ne\_zero'` ×1
+- `exactClosure\_of\_assembledLim` ×1
 - `fiftynine\_is\_M2\_times\_conductor\_minus\_one` ×1
-- `fφ\_map\_two\_irreducible` ×1
-- … 62 further distinct ids
+- … 63 further distinct ids
 
 `pending(D7)` markers:
 
@@ -128,6 +128,6 @@ Open sites:
 | `src/chapters/03-mechanisms.tex` | 262 |
 | `src/chapters/04-bridges.tex` | 121 |
 | `src/chapters/05-categorical.tex` | 58 |
-| `src/chapters/appendix.tex` | 10 |
+| `src/chapters/appendix.tex` | 9 |
 
 Re-generate with `pnpm run witness:inventory`; a hand-edited figure is a defect.

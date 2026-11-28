@@ -27,7 +27,7 @@ statement in the text), not its status; the four tables below carry no status co
 $\chi_5(p)\equiv F_p\pmod p$, all $p\ne5$ & Lean & \texttt{S1Closure.chi5\_fib\_all\_primes}; \texttt{lambda\_structure\_gives\_chi5}; \texttt{FrobeniusUnico.fib\_eq\_sign} & Supersedes the tabulation over six primes (\texttt{fib\_split\_criterion}).\\
 $F_{p-1}\bmod p$ & Lean & \texttt{F1Pendientes.fib\_pred\_from\_mod5} & New.\\
 Pisano period $\pi(5)=20$ & Lean & \texttt{pisano\_five\_is\_twenty} & Closes a gap of the compiled file (modular step).\\
-$\zeta(2k+1)=\zeta_K(2k+1)/L(2k+1,\chi_5)$, every $k\ge1$ & Lean & \texttt{F1PaperNew.zeta\_odd\_pentagonal\_determination\_unconditional} & Discharges the hypothesis $L(2k+1,\chi_5)\ne0$ of \texttt{zeta\_odd\_pentagonal\_determination} \witness{P}\ from Mathlib's non-vanishing on $\Re s\ge1$.\\
+$\zeta(2k+1)=\zeta_K(2k+1)/L(2k+1,\chi_5)$, every $k\ge1$ & Lean & \texttt{F1PaperNew.zeta\_odd\_pentagonal\_determination\_unconditional} & Discharges the hypothesis $L(2k+1,\chi_5)\ne0$ of \witness[zeta\_odd\_pentagonal\_determination]{P}\ from Mathlib's non-vanishing on $\Re s\ge1$.\\
 $L_{2m}<3\iff m=0$, every $m$ & Lean & \texttt{F1PaperNew.even\_lucas\_below\_three\_iff} & Extends \texttt{bound\_selects\_one}, which checks the first five values.\\
 The clock as cyclotomic polynomials & Lean & \texttt{W4Isometria.RelojCiclotomico.clock\_iff\_cyclotomic\_root}, \texttt{prod\_Ncyc}, \texttt{log\_Ncyc\_bound}, \texttt{clock\_sum\_mertens} & New (\cref{prop:clock-cyclotomic}); product formula.\\
 The index by layers & Lean & \texttt{W4Isometria.split\_layer\_law}, \texttt{even\_index\_indicator} & New (\cref{prop:phi-layers}); \texttt{KernelLaw} (open).\\
@@ -36,7 +36,7 @@ The prism at $5$ & Lean & \texttt{F1PaperSixty.bk\_delta\_E}, \texttt{bk\_specia
 $\sqrt X$ as the root of the energy & Lean; Stmt & \texttt{W4Isometria.symEnergy\_le}, \texttt{sqrt\_law\_of\_pythagoras}; \texttt{PythagorasLaw} (open) & New (\cref{prop:sqrt-x}).\\
 Energy at every scale & Lean & \texttt{W4Isometria.LandauPlancherel.cramer\_uniform}, \texttt{CramerConteo.cramer\_K\_bounded}, \texttt{FormulaExplicita.energy\_bounded\_of\_explicit\_formula} & New (\cref{prop:energy-scale}); counting law and truncated explicit formula.\\
 Amplitude of clause (ii) & Lean & \texttt{W4Isometria.pair\_defect}, \texttt{amplitude\_eq\_iff\_line} & New (\cref{prop:closure-amplitude}).\\
-Second step of the closure, in the form of the clock & Lean; Stmt & \texttt{F1PaperClosureClock.ClockLayerEnergyBounded}; \texttt{family\_energy\_of\_clock\_layers} \witness{P}& New (\cref{conj:closure,rmk:closure-status}).\\
+Second step of the closure, in the form of the clock & Lean; Stmt & \texttt{F1PaperClosureClock.ClockLayerEnergyBounded}; \witness[family\_energy\_of\_clock\_layers]{P}& New (\cref{conj:closure,rmk:closure-status}).\\
 W3 on the angles of $\golden$ & Lean & \texttt{F1PaperClosureClock.clock\_angles\_W3\_W4} & New (\cref{ssec:bridge-boosts}).\\
 Window $L\le1$, $Q\ge0.0445\|f\|^2$ & Num & \code{weil\_certificates/verify\_iv.py} & Interval arithmetic; supersedes the double-precision $0.0431$.\\
 Windows $L\le1.1,1.2,1.3$ & Num & \code{weil\_certificates/op\_rig\_validated.py} & Validated numerics, eigenvalue verified by Cholesky; margins $0.0261$, $0.0077$, $0.0027$.\\
@@ -63,7 +63,7 @@ Traces of the Fibonacci powers & Lean & \texttt{the\_three\_pieces}; \texttt{the
 Orbit centre & Lean & \texttt{the\_orbit\_embedding\_is\_unconditional} & \\
 Integrality of $t(\rho)$ $\Leftrightarrow$ \Ecore & Lean & \texttt{the\_two\_labels\_are\_one\_gap} & For $|\gamma|\ge2$.\\
 Membership, given the bridge & Lean; Stmt & \texttt{the\_membership\_derived}; \texttt{five\_proved\_three\_classical}$^\circ$; \texttt{BridgeAxiom} & Supersedes \texttt{MembershipStillOpen}.\\
-Identification of the two branches of the span & Stmt & \texttt{TheSpanIdentifiesThem} (marker) & The branches meet at $\log2$ (\texttt{branches\_meet\_at\_log\_two}, \witness{P}).\\
+Identification of the two branches of the span & Stmt & \texttt{TheSpanIdentifiesThem} (marker) & The branches meet at $\log2$ (\witness[branches\_meet\_at\_log\_two]{P}).\\
 Pieces of the bridge & Lean & \texttt{branches\_meet\_at\_log\_two}, \texttt{G\_hom}, \texttt{G\_pi2\_is\_chi5}; \texttt{the\_bridge\_pieces\_formalized}$^\circ$ & None speaks of a zero; \texttt{BridgeIsCToP} is a marker.\\
 Premise A $\Leftrightarrow$ \Ecore & Lean & \texttt{premise\_A\_iff\_GRH\_chi5} & \\
 \texttt{GDS}/\texttt{bridge\_axiom} $\Leftrightarrow$ \Ecore & Lean & \texttt{GDS\_iff\_E} & The only substantive input.\\
@@ -88,7 +88,7 @@ Logarithmic signature of the pentagon & Lean & \texttt{F1v2.pentagon\_log\_signa
 Crystallographic restriction, pentagonal nodes & Lean & \texttt{trZeta\_*}, \texttt{pentagon\_nodes\_are\_golden}; \texttt{F1v2.cosineWindow\_holds}, \texttt{F1v2.pentagon\_nodes\_unconditional} & The hypotheses are proved in \texttt{F1\_v2}, \S O.\\
 Units of $\mathbb Z[\varphi]$ are $\pm\varphi^k$ & Lean & \texttt{unit\_is\_a\_power\_of\_phi}; \texttt{F1v2.arrowB} & Without Dirichlet.\\
 Frobenius eigenvalue on $\sqrt5$ & Lean & \texttt{F1FrobeniusEigen.frobenius\_eigenvalue\_on\_sqrt5}, \texttt{euler\_factor\_is\_char\_poly} & The Euler factor is $\det(1-tM_p)$.\\
-Explicit formula for $L(s,\chi_5)$ & Lean; Stmt & \texttt{F1WeilFunctional.ExplicitFormulaChi5}, \texttt{prime\_side\_is\_frobenius\_trace} & Checked numerically to $10^{-18}$ with 40 zeros \witness{N}.\\
+Explicit formula for $L(s,\chi_5)$ & Lean; Stmt & \texttt{F1WeilFunctional.ExplicitFormulaChi5}, \texttt{prime\_side\_is\_frobenius\_trace} & Checked numerically to $10^{-18}$ with 40 zeros.\\
 Weil positivity (full) & Lean & \texttt{positivity\_is\_a\_prime\_side\_bound} & A bound on the Frobenius-trace side by the archimedean one.\\
 Semilocal positivity & Num & \code{weil\_window\_chi5.py} & Archimedean alone up to $L=0.9251$; with $\chi_5(2)=+1$ it fails from $L\approx0.9$.\\
 First window, $L\le0.7447$ & Lean & \texttt{F1v2.first\_window\_integral} and its steps & $m(\log2)=0.0841$.\\
@@ -297,7 +297,7 @@ Closure conjecture with clause (iii) formalised
 & Stmt & \texttt{F1PaperClosure.ExactClosureAssembledLim},
   \texttt{CorrectionIsLimit}
 & Implies \texttt{ExactClosure}
-  (\texttt{exactClosure\_of\_assembledLim} \witness{P});
+  (\witness[exactClosure\_of\_assembledLim]{P});
   the first form, with \texttt{assembledCorrection},
   is vacuous in (iii); the derivation from the
   structure is not formalised
