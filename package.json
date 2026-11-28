@@ -1,6 +1,6 @@
 {
   "name": "@omega-pcf/02-odd-zeta",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Odd Zeta Values from Pentagonal 𝔽₁-Descent: a Λ-structure on ℤ[φ], the character χ₅, and the zeta function",
   "metadata": {
     "citationKey": "Gonzalez2026OddZeta",

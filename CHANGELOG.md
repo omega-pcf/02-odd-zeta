@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/omega-pcf/02-odd-zeta/compare/v2.0.0...v2.0.1) (2026-11-28)
+
+### Bug Fixes
+
+* **build:** sync the abstract with the metadata source ([86d3b69](https://github.com/omega-pcf/02-odd-zeta/commit/86d3b693ba3b0c9c35249bc2f238feddbe594013))
+* **witness:** reform the dagger passages and bare ids ([1226392](https://github.com/omega-pcf/02-odd-zeta/commit/12263924a4125bf5c8eb815a67bdddb6368a5465))
+
 ## [2.0.0](https://github.com/omega-pcf/02-odd-zeta/compare/v1.7.2...v2.0.0) (2026-11-28)
 
 ### ⚠ BREAKING CHANGES
