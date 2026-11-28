@@ -233,7 +233,7 @@ def test_tstar_agrees_with_the_zeta_zero_ordinates() -> None:
     """
     _claim(
         "03-mechanisms.tex",
-        r"the agreement of \$T\^\*\(n\)\$ with \$\\gamma_n\$ \(\\code\{tstar\.py\}\)",
+        r"the agreement of \$T\^\*\(n\)\$ with \$\\gamma_n\$ \(\\code\{tstar\.py\}",
         "the tstar claim site (03-mechanisms:3385)",
     )
     figure = _claim(

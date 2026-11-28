@@ -1450,7 +1450,7 @@ At $5$ the levels $4\cdot5^k$ carry the ramified prime: by
 \cref{prop:clock-cyclotomic}(i), $\golden^{4\cdot5^k}-1$ is the product of the $\Phi_d(\golden)$
 with $d\mid4\cdot5^k$, and $\sqrt5$ divides it exactly $2k+1$ times
 (\witness[F1PaperSixty.phi\_clock\_identity, F1PaperSixty.phi\_clock\_exact]{P}), so $v_5(\golden^{4\cdot5^k}-1)=k+\tfrac12$; level by level, $v_5$ of
-$N(\Phi_{4\cdot5^k}(\golden))$ is $1,2,2,2$ for $k=0,1,2,3$ (\code{v27\_reloj\_ciclotomico.py} \witness{N}).  A root of unity has
+$N(\Phi_{4\cdot5^k}(\golden))$ is $1,2,2,2$ for $k=0,1,2,3$ (\code{v27\_reloj\_ciclotomico.py} \witness[\testref{test\_five\_valuation\_of\_the\_cyclotomic\_norms}]{N}).  A root of unity has
 absolute value $1$ in every normed field
 (\witness[M12F1Circle.root\_of\_unity\_norm\_one]{P}), so at each prime the angular part
 carries the clock and the principal unit $\langle\golden\rangle$ carries the size.
@@ -2135,7 +2135,7 @@ the Eisenstein polynomial $E(u)=u^2-5$, generating the ideal $I=(E)$.
 the prism, the
 breaks, the Kisin classes and Leopoldt's formula; the cokernel of (v) computed up to degree
 $33$, and $L_5(1,\chiv)$ and $2\log_5\golden/\sqrt5$ both $\equiv557\pmod{5^4}$ against the
-Kubota--Leopoldt interpolation (\code{kisin.py}) \witness[\testref{test\_kisin\_interpolation\_is\_pinned}]{N}.
+Kubota--Leopoldt interpolation \witness[\testref{test\_kisin\_interpolation\_is\_pinned}]{N}.
 
 % ---------------------------------------------------------------------
 \subsection{The factorisation and the odd zeta values}\label{sec:factorisation}
@@ -3073,9 +3073,8 @@ $(\Zphi/2)^\times=\F_4^\times$ and the second is the norm $N(\golden^n)=(-1)^n$.
 \witness[PCFGranularity.phiSig\_period\_six, PCFGranularity.phiSig\_six\_are\_distinct, PCFGranularity.cover\_degree\_six, PCFGranularity.M\_six\_sub\_one, PCFGranularity.colour\_factor\_has\_order\_three, PCFGranularity.orientation\_factor\_has\_order\_two, f4phi\_order\_three, toMu6\_bijective, generator\_to\_generator]{P}
 
 for (iii), the deck step and the two
-identifications on $\Z^2\times\Z$: \LeanInline{TodoEnLean.gam\_Dstep} ($\gamma\circ D=\mathrm{id}$),
-\LeanInline{TodoEnLean.gam6\_Dstep6} ($\gamma_6\circ D^6=\mathrm{id}$), \LeanInline{TodoEnLean.Dstep\_gam6}
-($D\gamma_6=\gamma_6D$), \LeanInline{TodoEnLean.Dstep\_iter\_shift} (the base shift of $D^k$ is $k$) \witness{P}; that the
+identifications on $\Z^2\times\Z$ --- $\gamma\circ D=\mathrm{id}$,
+$\gamma_6\circ D^6=\mathrm{id}$, $D\gamma_6=\gamma_6D$, the base shift of $D^k$ being $k$ --- \witness[TodoEnLean.gam\_Dstep, TodoEnLean.gam6\_Dstep6, TodoEnLean.Dstep\_gam6, TodoEnLean.Dstep\_iter\_shift]{P}; that the
 quotients by these properly discontinuous free actions are covering spaces
 \end{theorem}
 
@@ -3382,7 +3381,7 @@ of \code{F1PCFUnified.operator\_is\_made\_of\_the\_group}, is proved in
 \witness[ComponentesInvoluciones.components\_are\_the\_involutions]{P}, and the
 descent of the involutions from $\chiv$ is \witness[inversion\_gives\_sigma, negation\_gives\_tau]{P}; the third writing of (vii) is proved
 given the Mersenne clause as hypothesis (\code{Tstar\_in\_connector\_clauses});
-the agreement of $T^*(n)$ with $\gamma_n$ (\code{tstar.py}) \witness{N}%
+the agreement of $T^*(n)$ with $\gamma_n$ (\code{tstar.py} \witness[\testref{test\_tstar\_agrees\_with\_the\_zeta\_zero\_ordinates}]{N})%
 \end{theorem}
 
 \begin{remark}[Why the ordinate form is the bridge]\label{rmk:tstar-bridge}

@@ -14,26 +14,26 @@ Measured over the tracked manuscript sources (`main.tex` and `src/**/*.tex`) —
 | own-line `\witness[ids]{N}` | 0 |
 | own-line `\witness{P}` (bare) | 0 |
 | own-line `\witness{N}` (bare) | 0 |
-| inline `\witness[ids]{P}` | 236 |
-| inline `\witness[ids]{N}` | 40 |
-| inline `\witness{P}` (bare) | 56 |
-| inline `\witness{N}` (bare) | 26 |
-| `\witness[\testref{…}]{N}` marks | 40 |
+| inline `\witness[ids]{P}` | 247 |
+| inline `\witness[ids]{N}` | 45 |
+| inline `\witness{P}` (bare) | 45 |
+| inline `\witness{N}` (bare) | 22 |
+| `\witness[\testref{…}]{N}` marks | 45 |
 
-Ids carried by `N` marks: **40 ids over 28 distinct**.
+Ids carried by `N` marks: **45 ids over 33 distinct**.
 
 ## Decoration and accounting macros
 
 | macro | occurrences in the manuscript |
 |---|--:|
-| `\LeanInline` | 159 |
+| `\LeanInline` | 124 |
 | `\LeanStar` | 0 |
 | `\LeanTally` | 17 |
 | `\LeanCW` | 44 |
 | `\leanline` | 0 |
-| `\code` | 214 |
-| `\testref` | 40 |
-| `\witness` | 483 |
+| `\code` | 185 |
+| `\testref` | 45 |
+| `\witness` | 484 |
 
 ## Gates measured here
 
@@ -43,10 +43,10 @@ Ids carried by `N` marks: **40 ids over 28 distinct**.
 | stars (`\LeanStar` body uses) | **0** |
 | `Tier` column in a table | **0** |
 | `pending(D7)` markers | **1** |
-| `\witness[…]` id parts that are neither a `\testref`, a snake_case id nor a qualified declaration | **151** |
+| `\witness[…]` id parts that are neither a `\testref`, a snake_case id nor a qualified declaration | **152** |
 | open sites (`(open;`) | **2** |
 
-`\witness[…]` ids that are neither a `\testref`, a snake_case id nor a namespace-qualified declaration (151 occurrences, 119 distinct):
+`\witness[…]` ids that are neither a `\testref`, a snake_case id nor a namespace-qualified declaration (152 occurrences, 119 distinct):
 
 - `G\_hom` ×5
 - `G\_kernel` ×5
@@ -56,6 +56,7 @@ Ids carried by `N` marks: **40 ids over 28 distinct**.
 - `functionalEquation\_chi5\_discharged` ×3
 - `hurwitz\_representation\_L\_chi5` ×3
 - `norm\_Omega\_is\_half` ×3
+- `E\_iff\_no\_shared\_ordinate` ×2
 - `E\_iff\_no\_shared\_ordinate\_chi5` ×2
 - `F1\_monoidal\_descent\_data` ×2
 - `Tstar\_carries\_both\_faces` ×2
@@ -69,7 +70,6 @@ Ids carried by `N` marks: **40 ids over 28 distinct**.
 - `B\_iff\_E\_one\_hypothesis` ×1
 - `Chi5Zero` ×1
 - `E\_iff\_no\_free\_orbit` ×1
-- `E\_iff\_no\_shared\_ordinate` ×1
 - `E\_is\_one\_sided` ×1
 - `F1Lawvere.reflection\_fixedPointFree\_Zω` ×1
 - `F1Lawvere.ψ\_fixes\_int` ×1
@@ -116,8 +116,8 @@ Ids carried by `N` marks: **40 ids over 28 distinct**.
 
 Open sites:
 
-- `src/chapters/04-bridges.tex:1018`
-- `src/chapters/04-bridges.tex:1150`
+- `src/chapters/04-bridges.tex:1017`
+- `src/chapters/04-bridges.tex:1149`
 
 ## Per-file marks
 
@@ -126,7 +126,7 @@ Open sites:
 | `src/chapters/01-introduction.tex` | 6 |
 | `src/chapters/02-foundations.tex` | 20 |
 | `src/chapters/03-mechanisms.tex` | 264 |
-| `src/chapters/04-bridges.tex` | 122 |
+| `src/chapters/04-bridges.tex` | 123 |
 | `src/chapters/05-categorical.tex` | 58 |
 | `src/chapters/appendix.tex` | 10 |
 

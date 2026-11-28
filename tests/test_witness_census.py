@@ -43,12 +43,15 @@ from oddzeta.harness import REPO_ROOT, TEX_SOURCES
 _TESTREF = re.compile(r"\\testref\{([^}]*)\}")
 _SNAKE_CASE = re.compile(r"^[a-z][a-z0-9_]*$")
 
-# The witness ids the manuscript cites today: forty marks, fifty-two
-# citations, thirty-six distinct ids -- test_mersenne_bridge_phi_lambda_log_two
-# is cited by two of them.  W5a added the eleven ids of the nine N claims
-# whose script has a test in this suite (INV-WIT-001 B2); W6 Fase A converted
-# the twenty-five tested bare N marks of INV-WIT-001 B8 and added their
-# sixteen ids here, in the same commit that cites them.
+# The witness ids the manuscript cites today: forty-five marks, fifty-seven
+# citations, forty-one distinct ids -- eleven ids are cited by two of the marks
+# (test_mersenne_bridge_phi_lambda_log_two among them).  W5a added the eleven
+# ids of the nine N claims whose script has a test in this suite (INV-WIT-001
+# B2); W6 Fase A converted the twenty-five tested bare N marks of INV-WIT-001
+# B8 and added their sixteen ids here, in the same commit that cites them.  The
+# final editorial layer closed five bare marks (four with the id whose
+# docstring cites that line, one on the certified-orbit figures), again in the
+# same commit that cites them.
 PINNED_CITED_IDS = (
     "test_additive_side_statistics_are_pinned",
     "test_angular_index_statistics_are_pinned",
@@ -65,6 +68,7 @@ PINNED_CITED_IDS = (
     "test_fejer_window_is_pinned",
     "test_fermat_quintic_point_counts_are_pinned",
     "test_field_signature_is_pinned",
+    "test_five_valuation_of_the_cyclotomic_norms",
     "test_fluctuation_law_is_the_same_everywhere",
     "test_intersection_form_signature_is_pinned",
     "test_kisin_interpolation_is_pinned",
@@ -75,12 +79,16 @@ PINNED_CITED_IDS = (
     "test_mersenne_bridge_s_bh_is_log_two",
     "test_offline_minimum_stays_positive",
     "test_orbit_balance_is_pinned",
+    "test_orbita_cert_bounds_hold_for_chi5_and_the_quintic_layer",
     "test_phi_unit_norm_negative_one",
+    "test_pythagoras_inequality_holds_at_every_measured_scale",
     "test_regulator_form_of_bridge_equals_l_one_form",
     "test_residual_scales_are_pinned",
     "test_sigma_mu_polynomial_root_one_half",
     "test_sigma_mu_polynomial_root_three_halves",
+    "test_tstar_agrees_with_the_zeta_zero_ordinates",
     "test_two_cos_pi_over_five_equals_phi",
+    "test_w3_orbita_fits_the_first_zero_height",
     "test_x_sweep_fejer_weight_is_minimal_at_the_printed_cutoff",
     "test_x_sweep_plain_sum_error_grows_past_the_smallest_cutoff",
     "test_zero_side_correction_matches_the_manuscript",

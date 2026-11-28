@@ -265,7 +265,7 @@ def test_classes_test_removing_any_class_worsens_the_error() -> None:
     """
     _claim(
         "04-bridges.tex",
-        r"removing any one of the eight worsens the error \(\\code\{classes\\_test\.py\}",
+        r"removing any one of the eight worsens the error \\witness\[\\testref\{test\\_law\\_resolution\\_golden\\_values",
         "the classes claim of 04-bridges:1641",
     )
     baseline, errors = _classes_test_errors()
