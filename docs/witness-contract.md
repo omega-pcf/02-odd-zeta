@@ -348,6 +348,17 @@ before anything else, so a mark bracket never prints a reference number.
 A bracket that said "it is cited" would be redundant with the citation
 that is already there.
 
+**The witness serves the manuscript's own claim.** The statement a mark
+attaches to is a mathematical statement whose origin is the manuscript
+itself: the manuscript as a whole makes claims, and each claim is one
+claim. The machine-verified proof behind a mark stands as a *witness* —
+it tries to replicate exactly what is in the paper and, in replicating
+it, sustains that claim. The direction does not reverse: the proof is in
+the manuscript, not the manuscript in the proof. A mark therefore never
+originates a statement and never upgrades one; it points at the evidence
+that sustains a claim the text already made, and where the two disagree
+§6.0 reads the text first.
+
 **One claim, one mark.** There are no two adjacent marks, nor a mark and a
 `\cite` saying the same thing, nor marks in figure captions (rule 8 of
 §6.5). The gloss is exempt from the mandatory-witness
@@ -437,6 +448,14 @@ tool, not a class of the printed alphabet.
   condition. The test is evidence; it is not a proof.
 - **A mark** is never an alias for *proved*, and no mark carries a degree
   of confidence, a provenance grade or a citation.
+- **A mark is never a verb, and never a synonym of *proven*.** The tags
+  are not conjugated — a sentence never turns `N` or `P` into a verb —
+  and they are not read as interchangeable with *proved*. The phrase
+  "proven in Lean" is banned: it makes the verification the source of a
+  statement whose origin is the manuscript (§5), mixing cause and
+  effect. Where such a use appears, it is replaced by literal prose
+  that states the position: a witness of a claim the paper already
+  makes.
 
 ### 6.3 Placement is prose, never semantics
 
@@ -569,6 +588,11 @@ repository) is never printed at all: the claim keeps its citation,
    generates the figure (`\testref{…}` of that test, and the test of the
    claim itself), which carries the status; a `\witness` inside
    `\caption{…}` is removed, not kept. Tags belong to the body.
+9. **A script filename is provenance, not witness.** A tag with an id
+   never carries a filename: the id routes the reader to the test, and
+   the deposit is the repository's own snapshot, where a search finds
+   that id. An appendix route stays only where the table lists the
+   deposit.
 
 ### 6.6 The star
 
