@@ -848,9 +848,9 @@ and the third direction enters through the geometry of $E^3$ (\cref{thm:one-two-
 
 The descent takes neither the distribution of the primes, nor the Euler product, nor the zeros as input, and the information is kept by an isometry: each eigenvalue $\tfrac12\zeta_3^{\,k}$ has modulus $\tfrac12$, so the triad has squared norm $\tfrac34$, and normalised it is a column $\mathcal V\colon\mathbb{C}\to\mathbb{C}^3$ whose three squared moduli are $\tfrac13$, so $\mathcal V^\dagger\mathcal V=1$ (\witness[F1PaperNew.triad\_isometry]{P}); it reaches dimension $3$ without a product in dimension $3$
 \cite[the lemma \emph{Isometric embedding of the triad} and the proposition \emph{Two towers, one microstate}]{gonzalez26cw}
-(\LeanCW{bulkBoundary\_isometry} \witness{P}).  A name marked $^{\dagger}$ belongs to the Lean
+\witness{P} (\LeanCW{bulkBoundary\_isometry}).  A name marked $^{\dagger}$ belongs to the Lean
 development of that paper.  The modulus $\tfrac12$ is the same at every level of the tower, whose levels are related by the composition law of the descent, $\Frob_p(\golden^n)=(\golden^n)^p$
-(\LeanCW{tower\_frobenius\_common} \witness{P}).
+\witness{P} (\LeanCW{tower\_frobenius\_common}).
 
 Read as a code, $\mathcal V$ is an encoding whose code subspace, the image
 of $\mathcal V\mathcal V^\dagger$, has dimension one: a state and not a space of logical states~\cite{almheiri15,pastawski15}.  What is
@@ -889,7 +889,7 @@ This paper extends the framework of both.  Relative to~\cite{gonzalez25hp} it
     the companion zero are theorems (\witness[functionalEquation\_chi5\_discharged, hecke\_chi5\_derived]{P}), together with the conjugation symmetry
     $\overline{L(\bar s)}=L(s)$ (\witness[hconj\_discharged]{P});
   \item \emph{constructs the arithmetic--spectral span} with common source $G$ ---
-    its two branches meeting at $\log2$ (\LeanInline{branches\_meet\_at\_log\_two},
+    its two branches meeting at $\log2$ (\code{branches\_meet\_at\_log\_two},
     \LeanTally{the\_span\_is\_the\_identification}) --- and proves the pieces of the
     bridge that concern $G$ and $L(1,\chiv)$ (\LeanTally{the\_bridge\_pieces\_formalized});
   \item \emph{derives membership from the bridge}
@@ -899,8 +899,8 @@ This paper extends the framework of both.  Relative to~\cite{gonzalez25hp} it
     $\Zphi$ away from $5$ and the obstruction at $5$ (\cref{sec:lambda-ring}).
 \end{itemize}
 What remains of \texttt{bridge\_axiom} is the identification of the two branches of
-the span (\LeanInline{TheSpanIdentifiesThem}); every form of it is proved
-equivalent to \Ecore\ (\cref{ssec:core-forms})\witness{P}, and along Weil's route it would follow from the closure conjecture (\cref{cor:closure}).
+the span; every form of it is proved
+equivalent to \Ecore\ (\cref{ssec:core-forms})\witness[TheSpanIdentifiesThem]{P}, and along Weil's route it would follow from the closure conjecture (\cref{cor:closure}).
 
 
 

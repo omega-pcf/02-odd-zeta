@@ -389,7 +389,7 @@ was written to settle them.  The account, input by input:
 \toprule
 Input of \cite{gonzalez25hp} & Where \\
 \midrule
-\texttt{hecke\_1920} (Hecke 1920) & discharged: \LeanInline{hecke\_chi5\_derived}; functional equation, companion zero, conjugation: \cref{sec:analytic-inputs}\\
+\texttt{hecke\_1920} (Hecke 1920) & discharged: \code{hecke\_chi5\_derived}; functional equation, companion zero, conjugation: \cref{sec:analytic-inputs}\\
 Seven geometric axioms ($\golden^2=\golden+1$, $i^2=-1$, $z=\golden y$, basis of $E^3$, continued fraction, nested radical, $\|\Omega\|=\tfrac12$) & theorems: Block~1 of the unified Lean file, \texttt{F1\_compilado\_sin\_axiomas}, with $0$ axioms (\cref{app:lean})\\
 Arithmetic--spectral span & constructed: \cref{prop:span}, with $G$ as common source (\cref{prop:G})\\
 Membership of the zeros & derived from the bridge: \cref{thm:membership}\\
@@ -755,11 +755,11 @@ $\Q(\sqrt5)$, which is the invariant that reappears in \eqref{eq:log-two}.
 
 \emph{The fibre.}  The module direction closes, once around the fundamental
 domain, with the half-turn $e^{i\pi}=-1$: an orientation-reversing involution, so
-the worldsheet is one-sided (\LeanCW{PaperMobius.fibre\_monodromy},
-\LeanCW{fibre\_reflection\_order\_two} \witness{P}; in this paper's corpus the orientation flip
-of the fibre has order exactly two, \witness[orient\_flip\_order]{P}).  The fibre datum is
+the worldsheet is one-sided \witness{P} (\LeanCW{PaperMobius.fibre\_monodromy},
+\LeanCW{fibre\_reflection\_order\_two}); in this paper's corpus the orientation flip
+of the fibre has order exactly two \witness[orient\_flip\_order]{P}.  The fibre datum is
 independent of whether the base torus is commutative or a noncommutative
-$T^2_\theta$ (\LeanCW{fibre\_independent\_of\_base} \witness{P}).
+$T^2_\theta$ \witness{P} (\LeanCW{fibre\_independent\_of\_base}).
 
 \emph{Where the bridge meets strings and the operator.}  On the side of strings, since
 the fibre does not depend on the base, the construction sits on the noncommutative tori
@@ -821,13 +821,12 @@ ensemble average, the observer with a single pure state --- is developed in
 
 The state carried by that ring is a single one, not an ensemble:
 $\Omega(\tau)=\tfrac12e^{i\tau\log\golden}$, of constant modulus
-$|\Omega|=\tfrac12$ (\LeanInline{modulus\_Omega},
-\LeanCW{omega\_flow\_invariant} \witness{P}).  Three things about the number
+$|\Omega|=\tfrac12$ \witness[modulus\_Omega]{P} (\LeanCW{omega\_flow\_invariant}).  Three things about the number
 $\tfrac12$ are proved rather than posited.
 
 It is the value where the binary entropy is largest, $H(p)\le1$ with equality
-only at $p=\tfrac12$ (\LeanCW{binary\_entropy\_le\_one},
-\LeanCW{binary\_entropy\_half} \witness{P}), so one bit per cell is a maximum and
+only at $p=\tfrac12$ \witness{P} (\LeanCW{binary\_entropy\_le\_one},
+\LeanCW{binary\_entropy\_half}), so one bit per cell is a maximum and
 not a coincidence.  It is reached by eight independent routes that meet at the
 same apex --- among them the half-factorial $\Gamma(3/2)/\sqrt\pi$, the product of
 the three component norms of the eigenvalue triangle, $\cos(\pi/3)$, the inverse
@@ -1010,8 +1009,8 @@ and their dictionary --- belongs to \cite{gonzalez26cw}.
 In \cite[\S3.4]{gonzalez26cw} the AdS/CFT correspondence is obtained from that
 single state, level by level rather than on average.  The throat is the $AdS_5$
 geometry whose curvature invariants are fixed by the modulus, the scalar curvature $R=-20$,
-$\Lambda_5=-6$, $G_{AB}=6g_{AB}$ (\LeanCW{R\_scalar\_pcf},
-\LeanCW{lambda5\_pcf}, \LeanCW{G\_AB\_pcf} \witness{P}); with $\ell=1$ and
+$\Lambda_5=-6$, $G_{AB}=6g_{AB}$ \witness{P} (\LeanCW{R\_scalar\_pcf},
+\LeanCW{lambda5\_pcf}, \LeanCW{G\_AB\_pcf}); with $\ell=1$ and
 $\GN=\tfrac12$ the Brown--Henneaux charge is $c=3$
 (\witness[F1CW.hinge\_central\_charge]{P}), the arity of
 \cref{sec:ring}.
@@ -1019,20 +1018,20 @@ $\GN=\tfrac12$ the Brown--Henneaux charge is $c=3$
 The per-level statement is the one that matters structurally.  The bulk
 Hamiltonian and the boundary modular generator are exponentials of the same
 dilation generator with the same rate $\log\golden$, so their ratio does not
-depend on the level (\LeanCW{tower\_e\_eq\_exp\_regulator},
-\LeanCW{modular\_bulk\_ratio\_level\_independent} \witness{P}); an isometry acting
+depend on the level \witness{P} (\LeanCW{tower\_e\_eq\_exp\_regulator},
+\LeanCW{modular\_bulk\_ratio\_level\_independent}); an isometry acting
 level by level therefore intertwines them exactly
 (\LeanCW{bulk\_boundary\_intertwine},
 \witness[isometry\_with\_common\_modulus₅]{P}).  Because no level is privileged,
 the tower is an index over one flow and not a stack of different structures
-(\LeanCW{no\_privileged\_level} \witness{P}).
+\witness{P} (\LeanCW{no\_privileged\_level}).
 
 On the de Sitter side the same modulus fixes the Gibbons--Hawking temperature and
-the first law (\LeanCW{ds\_temperature\_pos},
-\LeanCW{GravitySectorPCF.ds\_first\_law}, \LeanCW{komar\_first\_law}
-\witness{P}), and the modular generator of the static patch is the horizon entropy and
-the tower entropy at once (\LeanCW{modular\_generator\_is\_entropy},
-\LeanCW{modular\_generator\_is\_tower} \witness{P}).  The duality web --- S-duality
+the first law \witness{P} (\LeanCW{ds\_temperature\_pos},
+\LeanCW{GravitySectorPCF.ds\_first\_law}, \LeanCW{komar\_first\_law}),
+and the modular generator of the static patch is the horizon entropy and
+the tower entropy at once \witness{P} (\LeanCW{modular\_generator\_is\_entropy},
+\LeanCW{modular\_generator\_is\_tower}).  The duality web --- S-duality
 as the Galois conjugation $\golden\mapsto-1/\golden$, T-duality as the conjugate
 pair of lengths, the Kaluza--Klein bridge --- is a projection of the same tower,
 and the shared signature of its two corners is the list
@@ -1058,18 +1057,18 @@ direction without one.  None of these points is used in the proofs of this paper
 The tower has an information reading that connects it to \crefrange{sec:choice}{sec:clock}.  Saturation
 entropy at level $\sigma$ is $S(\sigma)=\pi\golden^{\sigma}$, the mode count is
 $N(\sigma)=\lfloor\pi\golden^\sigma\rfloor$ --- $3,5,8,13,21,34,56$ for
-$\sigma=0,\dots,6$ (\LeanCW{tower\_start} \witness{P}) --- and the recurrence is
-one multiplication by $\golden$ per level
-(\LeanCW{S\_tower\_recurrence} \witness{P}).  The energy per bit is constant along
-the tower, $\varepsilon(\sigma)/S(\sigma)=\epsz/\pi=1/\Mpcf$
-(\LeanCW{tower\_first\_law} \witness{P}), which is the first law in this setting
+$\sigma=0,\dots,6$ \witness{P} (\LeanCW{tower\_start}) --- and the recurrence is
+one multiplication by $\golden$ per level \witness{P}
+(\LeanCW{S\_tower\_recurrence}).  The energy per bit is constant along
+the tower, $\varepsilon(\sigma)/S(\sigma)=\epsz/\pi=1/\Mpcf$ \witness{P}
+(\LeanCW{tower\_first\_law}), which is the first law in this setting
 and the reason the scale relation $\epsz\Mpcf=\pi$ is called a certainty
-principle (\LeanCW{certainty\_principle} \witness{P}).
+principle \witness{P} (\LeanCW{certainty\_principle}).
 
 Two lengths run in opposite directions: the throat coordinate
 $z(\sigma)=\golden^{\sigma}$ grows and the weld time
 $\tau(\sigma)=\Mpcf\golden^{-\sigma}$ shrinks, and their product is constant,
-$z(\sigma)\tau(\sigma)=\Mpcf$ (\LeanCW{lattice\_radius\_conjugate} \witness{P}).
+$z(\sigma)\tau(\sigma)=\Mpcf$ \witness{P} (\LeanCW{lattice\_radius\_conjugate}).
 That is $R\cdot(\alpha'/R)=\alpha'$ with $\alpha'=\Mpcf$: short and long distance
 are one family exchanged by duality, which is the construction's reason for
 having no ultraviolet regime to remove.
@@ -1091,15 +1090,15 @@ enters as a classical input.
 
 \emph{The Regge tower is the Euler product.}  The poles of the Veneziano
 amplitude sit at the integers, every level is populated and carries spin
-$\le n-1$ (\LeanCW{regge\_residue\_ne\_zero},
-\LeanCW{regge\_residue\_degree} \witness{P}), and unique factorisation turns the
+$\le n-1$ \witness{P} (\LeanCW{regge\_residue\_ne\_zero},
+\LeanCW{regge\_residue\_degree}), and unique factorisation turns the
 spectral Dirichlet series into the Euler product
 (\witness[F1CW.dirichlet\_is\_euler]{P}).  The product over all
-places is the completed zeta (\LeanCW{framework\_partition\_eq\_completed\_zeta},
-\LeanCW{places\_assembly} \witness{P}), the archimedean place being fixed by the
+places is the completed zeta \witness{P} (\LeanCW{framework\_partition\_eq\_completed\_zeta},
+\LeanCW{places\_assembly}), the archimedean place being fixed by the
 self-dual Gaussian, which is normalised, equal to its own Fourier transform, and
-of the same width in both --- three independent conditions all giving $a=\pi$
-(\LeanCW{selfdual\_gaussian\_unique} \witness{P}).  That completed object is the
+of the same width in both --- three independent conditions all giving $a=\pi$ \witness{P}
+(\LeanCW{selfdual\_gaussian\_unique}).  That completed object is the
 one whose archimedean factor supplies the weight $W$ of \cref{thm:explicit}, and its two factors
 are the two sides of \cref{prop:positions,conj:closure}: the archimedean factor, fixed by the
 self-dual Gaussian, carries the envelope, and the Euler product, which is the Regge tower
@@ -1133,19 +1132,19 @@ not carried over (\cref{app:superseded}).
 particle, fluid --- through the positive Grassmannian: a point of
 $\mathrm{Gr}(k,n)$ is a projector, its trace is the rank, its normalisation
 $\rho=P/k$ is a density matrix, and total positivity is a separate condition, not
-implied by $\rho\ge0$ (\LeanCW{four\_faces\_one\_datum},
-\LeanCW{rho\_is\_state}, \LeanCW{two\_positivities\_distinct} \witness{P});
+implied by $\rho\ge0$ \witness{P} (\LeanCW{four\_faces\_one\_datum},
+\LeanCW{rho\_is\_state}, \LeanCW{two\_positivities\_distinct});
 none of the four readings depends on the frame chosen to represent the point
-(\LeanCW{projector\_frame\_invariant} \witness{P}).  The seed of the ladder is the
-$A_2$ lattice, with exactly six minimal vectors and Gram determinant $3$
-(\LeanCW{a2\_minimal\_vectors\_exactly\_six}, \LeanCW{a2\_gram\_det}
-\witness{P}), and the Frenkel--Kac--Segal count
+\witness{P} (\LeanCW{projector\_frame\_invariant}).  The seed of the ladder is the
+$A_2$ lattice, with exactly six minimal vectors and Gram determinant $3$ \witness{P}
+(\LeanCW{a2\_minimal\_vectors\_exactly\_six}, \LeanCW{a2\_gram\_det}),
+and the Frenkel--Kac--Segal count
 $\dim\mathfrak g=\text{kissing}+\text{rank}$ holds at every rung
-$A_2\to D_4\to E_6\to E_8$ (\LeanCW{ladder\_dim\_eq\_kissing\_plus\_rank}
-\witness{P}).  On the particle face the Weinberg angle at unification is a ratio of
-mode counts, $N(0)/N(2)=3/8$ (\LeanCW{weinberg\_angle\_gut} \witness{P}), and the
-one-loop coefficients of the assumed content are the MSSM ones
-(\LeanCW{beta\_is\_mssm} \witness{P}).
+$A_2\to D_4\to E_6\to E_8$ \witness{P}
+(\LeanCW{ladder\_dim\_eq\_kissing\_plus\_rank}).  On the particle face the Weinberg angle at unification is a ratio of
+mode counts, $N(0)/N(2)=3/8$ \witness{P} (\LeanCW{weinberg\_angle\_gut}), and the
+one-loop coefficients of the assumed content are the MSSM ones \witness{P}
+(\LeanCW{beta\_is\_mssm}).
 
 \subsubsection{What the Crystalline Worldsheet defers to this paper, and scope}\label{sec:companions}
 

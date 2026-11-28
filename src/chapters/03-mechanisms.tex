@@ -276,7 +276,7 @@ $a=2c+b\equiv b\pmod2$.
 for the
 rewriting; the description of $\OK$ as $\{(a+b\sqrt5)/2 : a\equiv b\ (2)\}$ is classical
 .  For the elements the paper uses --- roots of $x^2-tx+1$ with $t\in\Z$ --- the
-inclusion in $\Zphi$ is proved directly (\LeanInline{F1v2.arrowB\_Q}).
+inclusion in $\Zphi$ is proved directly (\code{F1v2.arrowB\_Q}).
 
 \begin{theorem}[The tower is the unit group, without Dirichlet]\label{thm:units}
 There is no unit in the interval $(1,\golden)$; consequently every unit $u>0$ is
@@ -285,8 +285,8 @@ $u=\golden^{k}$ for some $k\in\Z$.
 \witness[no\_unit\_below\_phi\_universal, unit\_is\_a\_power\_of\_phi, unit\_structure\_no\_dirichlet]{P}
 the last two for an abstract unit
 predicate with three structural inputs; for the units of $\Zphi$ the inputs are
-proved and the descent instantiated in \LeanInline{F1v2.floorLogφ0},
-\LeanInline{F1v2.noUnitBelowφ0}, \LeanInline{F1v2.unitsZφ\_group}, \LeanInline{F1v2.arrowB}.
+proved and the descent instantiated in \code{F1v2.floorLogφ0},
+\code{F1v2.noUnitBelowφ0}, \code{F1v2.unitsZφ\_group}, \code{F1v2.arrowB}.
 \begin{proof}
 Let $u\in(1,\golden)$ be a unit with conjugate $\bar u$ and trace
 $a=u+\bar u\in\Z$.  If $N(u)=+1$ then $\bar u=1/u$ and
@@ -301,7 +301,7 @@ multiplicative group $\langle\golden\rangle$ of \cref{thm:lambda-monoid} is the
 full group of positive units of $\OK$, and $\golden$ is its fundamental unit.  It
 is proved from the minimality argument above and the group law, with no appeal to
 Dirichlet's unit theorem (\witness[unit\_structure\_is\_derivable]{P}, instantiated
-for $\Zphi$ in \LeanInline{F1v2.arrowB}), so the whole of \crefrange{sec:choice}{sec:clock}
+for $\Zphi$ in \code{F1v2.arrowB}), so the whole of \crefrange{sec:choice}{sec:clock}
 rests on nothing classical at this point, other than
 the exceptions named in \cref{ssec:finite-route}.
 
@@ -421,9 +421,10 @@ half-side; and $\norm{\Omega}=\norm{P}\cdot\norm{C}\cdot\norm{F}$.
 \end{equation}
 which is also the common modulus $|\lambda_k|=|2|_2$ of the triad.
 \end{proposition}
-\witness[norm\_Omega\_is\_half]{P}
+\witness[norm\_Omega\_is\_half, F1PCFUnified.Omega\_eigenvalues]{P}
+The remaining three names are those of the companion work:
 \LeanCW{normP\_eq\_tan}, \LeanCW{normF\_eq\_cos},
-\LeanCW{Omega\_eigenvalues} \witness[F1PCFUnified.Omega\_eigenvalues]{P} in~\cite{gonzalez26cw}.
+\LeanCW{Omega\_eigenvalues}~\cite{gonzalez26cw}.
 
 \begin{proof}
 $\norm{C}=|\lambda_0|/R=1$.  $\norm{F}=\tfrac12|\zeta_3-1|=\sin(\pi/3)=\tfrac{\sqrt3}2$.  The apothem is
@@ -596,7 +597,7 @@ The prime $p$ enters the tower in two ways, which the paper keeps apart: as the 
 $\golden^p=\Frob_p(\golden)$, and as a point of $T_\golden$, $p=\golden^{\log_\golden p}$, at the coordinate
 $\log_\golden p$.
 The two coordinates meet at the binary anchor
-\textup{(\LeanInline{mersenne\_bridge})}:
+\textup{(\code{mersenne\_bridge})}:
 \begin{equation}\label{eq:mersenne-loc}
   \golden^{\lambda_{\log}} = 2,\qquad
   \lambda_{\log} = \frac{\ln 2}{\ln\golden} \approx 1.4404.
@@ -781,10 +782,10 @@ Borger axioms of \cref{def:lambda-ring}:
 \item \emph{Commuting family:}
   $\Frob_p\circ\Frob_q = \Frob_{pq}$
   \textup{(\cref{prop:Psi-functorial};
-  \LeanInline{psi\_comp})}.
+  \code{psi\_comp})}.
 \item \emph{Frobenius lift property on the monoid:}
   $\Frob_p(\golden^n) = (\golden^n)^p$ holds exactly by definition
-  \textup{(\cref{thm:lambda-monoid}; \LeanInline{psi\_realise\_pow})}.
+  \textup{(\cref{thm:lambda-monoid}; \code{psi\_realise\_pow})}.
 \end{enumerate}
 On the generator, $\Frob_p(\golden)=\golden^p=F_p\golden+F_{p-1}$ by \cref{prop:binet}:
 the monoid gives the coordinates of $\golden^p$.  That $F_p\equiv\chi_5(p)\pmod p$ is a
@@ -1148,7 +1149,7 @@ $p\mid F_{p+1}$ holds exactly when $p$ is inert (\witness[F1PaperPadic.fib\_succ
 \centering
 \caption{The Fibonacci criterion for $3\le p\le31$, $p\ne5$: $F_p\equiv\chiv(p)\pmod p$, and $p$
 divides $F_{p-\chiv(p)}$.  The values of $F_p$ and $F_{p-1}$ modulo $p$ are those of the $p$-derivation of
-\cref{prop:delta-ring} (\LeanInline{F1PaperPadic.delta\_table\_inert}, \LeanInline{F1PaperPadic.delta\_table\_split}
+\cref{prop:delta-ring} (\code{F1PaperPadic.delta\_table\_inert}, \code{F1PaperPadic.delta\_table\_split}
 ; up to $p=19$ also \witness[fib\_split\_criterion]{P}).}
 \label{tab:fib-split}
 \begin{tabular}{rccccc}
@@ -1289,7 +1290,7 @@ $-\golden$, are roots of $x^2+x-1$.
 \begin{remark}[What is not verified]\label{rmk:grisales-not-verified}
 The closed formula of \cite{grisales25} for the classification, in its sine form,
 is cited and not formalised; in the Lean file it is a marker
-(\LeanInline{GLandsInTheTower}, open).  What is proved is
+(\code{GLandsInTheTower}, open).  What is proved is
 \cref{thm:pentagonal-values}, the homomorphism of \cref{prop:G}, and the
 logarithmic signature $\sum_{a=1}^4\chiv(a)\log(2\sin(\pi a/5))=-2\log\golden$.  In
 Lean the proved statement is $\sin(2\pi/5)/\sin(\pi/5)=\golden$
@@ -1297,7 +1298,7 @@ Lean the proved statement is $\sin(2\pi/5)/\sin(\pi/5)=\golden$
 $\sin2x=2\sin x\cos x$ together with \eqref{eq:pentagon-id}; the signature itself follows
 because $\sin(3\pi/5)=\sin(2\pi/5)$ and $\sin(4\pi/5)=\sin(\pi/5)$, so the sum is
 $2\log\bigl(\sin(\pi/5)/\sin(2\pi/5)\bigr)$, and it is proved in full in
-\LeanInline{F1v2.pentagon\_log\_signature\_full}.
+\code{F1v2.pentagon\_log\_signature\_full}.
 \end{remark}
 
 The Klein group $V$ generated by the two commuting involutions $a\mapsto-a$ and $a\mapsto a^{-1}$ acts on $\Zst$.
@@ -1595,7 +1596,7 @@ power-residue symbol of $\golden$: the quadratic for
 $d=2$, the cubic for $d=3$, the quintic for $d=5$.
 \end{proposition}
 \witness[W4Isometria.split\_layer\_law, W4Isometria.inert\_layer\_law, W4Isometria.even\_index\_iff\_squares, W4Isometria.even\_index\_indicator]{P}
-(iii), stated as \LeanInline{W4Isometria.KernelLaw}, open, follows from (ii) since $p\equiv1\pmod4$ there: $x^4-x^2-1$ generates the ring class field of
+(iii), stated as \code{W4Isometria.KernelLaw}, open, follows from (ii) since $p\equiv1\pmod4$ there: $x^4-x^2-1$ generates the ring class field of
 $\Z[\sqrt{-20}]$, and $p=a^2+20b^2$ exactly when
 $p$ splits completely in it
 \cite[Thm.~9.2, Thm.~9.4]{cox13}; checked on
@@ -2081,7 +2082,7 @@ character of conductor $5$ the Gauss--Lerch formula reads
 $L(1,\chiv)=-\frac{\tau(\chiv)}{5}\sum_{a=1}^{4}\chiv(a)\log\bigl(2\sin\tfrac{\pi a}5\bigr)$\
 \cite[Ch.~4]{washington97}; with $\tau(\chiv)=\sqrt5$ and the logarithmic signature
 $\sum_{a=1}^{4}\chiv(a)\log(2\sin(\pi a/5))=-2\log\golden$ of the pentagon
-(\LeanInline{F1v2.pentagon\_log\_signature\_full}), it is $-\frac{\sqrt5}{5}(-2\log\golden)=2\log\golden/\sqrt5$
+(\code{F1v2.pentagon\_log\_signature\_full}), it is $-\frac{\sqrt5}{5}(-2\log\golden)=2\log\golden/\sqrt5$
 (\witness[F1OZ.lerch\_arith]{P}).
 
 \begin{remark}[The unifying invariant
@@ -2713,7 +2714,7 @@ admits the distributional counting function
 \end{equation}
 where $\kappa_K(u)=2u^2/(u^2-1)$, the density $u^2/(u^2-1)$ of a real place counted at the two real places
 of~$K$ \cite[Appendix, `Arithmetic machinery']{gonzalez26cw}, is their contribution, regularised as a principal value at~$u=1$
-(\LeanInline{F1CW.kappa\_k\_two\_real\_places}, \LeanInline{F1CW.kappa\_per\_real\_place}): $u\,d\psi_K/du$ counts $\zeta_K$, and $N_K$ counts the complete
+(\code{F1CW.kappa\_k\_two\_real\_places}, \code{F1CW.kappa\_per\_real\_place}): $u\,d\psi_K/du$ counts $\zeta_K$, and $N_K$ counts the complete
 function $\zeta_K^*(s)=\bigl(\pi^{-s/2}\Gamma(s/2)\bigr)^2\zeta_K(s)$, as $N_\Q$ counts $\zeta_\Q^*$ in
 \cref{thm:cc-zeta-Q}.  Explicitly,
 $N_K(u)$ is supported on the prime-power norms
@@ -2742,7 +2743,7 @@ for the weights at the prime-power norms,
 for the local assembly, the global identity being the Connes--Consani integral formula; its components are
 
 \witness[F1CW.von\_mangoldt\_k\_values]{P}
-(the weights $\log N\mathfrak p$), \LeanInline{F1CW.kappa\_k\_two\_real\_places}, \LeanInline{F1CW.kappa\_k\_simple\_pole}, \LeanInline{F1CW.kappa\_per\_real\_place} (the archimedean density and its principal value).
+(the weights $\log N\mathfrak p$), \code{F1CW.kappa\_k\_two\_real\_places}, \code{F1CW.kappa\_k\_simple\_pole}, \code{F1CW.kappa\_per\_real\_place} (the archimedean density and its principal value).
 
 \begin{proof}
 Substituting~\eqref{eq:dlog-zetaK} into
@@ -2996,8 +2997,8 @@ Let $\Lambda(s,\chiv)=(5/\pi)^{s/2}\,\Gamma(s/2)\,L(s,\chiv)$ be the completed $
 \end{proposition}
 \witness[F1v2.zeta\_values\_in\_base\_phi, F1v2.anchor\_in\_phi, F1v2.sqrt5\_in\_phi, F1v2.pi\_and\_two\_in\_phi, F1v2.zeta\_zero\_in\_phi, F1v2.even\_zeta\_in\_phi, F1v2.even\_L\_in\_phi, F1v2.L2\_L4\_in\_phi]{P}
 the
-anchor \LeanInline{anchor\_is\_a\_crossed\_identity} (given the values of the anchor,
-stated as \LeanInline{LOneIsTheAnchor}),
+anchor \code{anchor\_is\_a\_crossed\_identity} (given the values of the anchor,
+stated as \code{LOneIsTheAnchor}),
 
 \witness[sqrt\_five\_from\_phi, F1CW.pi\_eq\_five\_arccos, mersenne\_bridge, F1CW.even\_zeta\_bernoulli, F1CW.norm\_cosine\_phi]{P}
 the class-number formula and the closed forms of
@@ -3404,7 +3405,7 @@ In the Eisenstein integers the cube root of unity $\zeta_3$ has order exactly th
 and the primitive sixth root is $-\zeta_3^2$.  The deck step of the fibre has order
 exactly six, the orientation flip order exactly two, and the Fibonacci matrix $M$,
 of determinant $-1$, has $\det M^2=1$ and $M^2=M+1$.
-\LeanInline{w\_cubed}, \LeanInline{w\_order\_three}, \LeanInline{z6\_is\_minus\_w\_squared},
+\code{w\_cubed}, \code{w\_order\_three}, \code{z6\_is\_minus\_w\_squared},
 
 \witness[deck\_order\_six, orientation\_order\_two, det\_M\_sq, one\_identity\_three\_readings]{P}
 \end{proposition}
@@ -3658,12 +3659,12 @@ last is a theorem; the last, the height of the first zero, is classical.
 
 \begin{longtable}{p{4.6cm}p{6.6cm}}
 \toprule Input & Lean\\\midrule
-Functional equation of $\Lambda(s,\chiv)$ & \LeanInline{functionalEquation\_chi5\_discharged}\\
-Companion zero (Hecke 1920) & \LeanInline{hecke\_chi5\_derived}, \LeanInline{zeros\_route\_is\_discharged}\\
-$\overline{L(\bar s)}=L(s)$ & \LeanInline{hconj\_discharged}\\
-Closure under the mate; real coefficients & \LeanInline{closedUnderMate\_chi5}, \LeanInline{realCoefficients\_chi5}\\
-$|\gamma|\ge2$ for the zeros used & \LeanInline{discBound\_discharged\_high}\\
-\texttt{hmate}: each zero has a zero $\rho'$ with $|1-1/\rho'|=|1-1/\rho|^{-1}$; \texttt{hcoord}: for $\Re\rho>0$, $|1-1/\rho|=1\iff\Re\rho=\tfrac12$ & \LeanInline{mate\_hypothesis\_discharged}, \LeanInline{hcoord\_discharged}\\
+Functional equation of $\Lambda(s,\chiv)$ & \code{functionalEquation\_chi5\_discharged}\\
+Companion zero (Hecke 1920) & \code{hecke\_chi5\_derived}, \code{zeros\_route\_is\_discharged}\\
+$\overline{L(\bar s)}=L(s)$ & \code{hconj\_discharged}\\
+Closure under the mate; real coefficients & \code{closedUnderMate\_chi5}, \code{realCoefficients\_chi5}\\
+$|\gamma|\ge2$ for the zeros used & \code{discBound\_discharged\_high}\\
+\texttt{hmate}: each zero has a zero $\rho'$ with $|1-1/\rho'|=|1-1/\rho|^{-1}$; \texttt{hcoord}: for $\Re\rho>0$, $|1-1/\rho|=1\iff\Re\rho=\tfrac12$ & \code{mate\_hypothesis\_discharged}, \code{hcoord\_discharged}\\
 First zero at $\gamma\approx6.6485$ (\code{NoLowZeros}) & not proved in Lean\\
 \bottomrule\end{longtable}
 The root number of the functional equation is $+1$: the Gauss sum of $\chiv$ is $\tau(\chiv)=+\sqrt5$,
@@ -3716,7 +3717,7 @@ only the mate $\rho\mapsto1-\bar\rho$.
 For a set $Z\subset\C$ closed under the mate, every point of $Z$ lies on the line
 if and only if no two distinct points of $Z$ share an ordinate.  For the zeros of
 $L(s,\chiv)$ the hypothesis is discharged
-(\LeanInline{closedUnderMate\_chi5}), so the equivalence is unconditional.
+(\code{closedUnderMate\_chi5}), so the equivalence is unconditional.
 \witness[E\_iff\_no\_shared\_ordinate, E\_iff\_no\_shared\_ordinate\_chi5]{P}%
 \end{theorem}
 \begin{proof}
@@ -3728,7 +3729,7 @@ would be equal, since their real parts agree.
 
 \begin{remark}[What was discarded here]
 An earlier version of the programme used a measured lower bound on the spacing of
-ordinates (\LeanInline{MinSpacing}) as an input.  It is a theorem on finite
+ordinates (\code{MinSpacing}) as an input.  It is a theorem on finite
 windows and its global form is refuted by the very configuration it was meant to
 exclude (\witness[no\_uniform\_m\_of\_vanishing\_spacing]{P}), so it is
 used nowhere.  \Cref{thm:shared-ordinate} needs no metric bound: only that no two
@@ -4052,7 +4053,7 @@ zeroth node being the focus $2$, and the pentagonal nodes are
 $\golden,1/\golden,-1/\golden,-\golden$
 (\witness[nodes\_lie\_between\_the\_foci, zeroth\_node\_is\_the\_focus]{P};
 \witness[pentagon\_nodes\_are\_golden]{P}\ given the cosine values, which are
-proved in \LeanInline{F1v2.pentagonNodes\_holds}, \LeanInline{F1v2.pentagon\_nodes\_unconditional}).  Moreover $t\ge2$ holds with no
+proved in \code{F1v2.pentagonNodes\_holds}, \code{F1v2.pentagon\_nodes\_unconditional}).  Moreover $t\ge2$ holds with no
 hypothesis --- it is the triangle inequality in the recentred coordinate
 (\witness[trace\_ge\_two\_by\_triangle]{P}) --- so \Ecore\ is one-sided:
 $t=2$ if and only if $t\le2$ (\witness[E\_is\_one\_sided]{P}).  The floor is
@@ -4088,7 +4089,7 @@ $r(\rho)^2\le1+1/\gamma^2$ of \cref{prop:rbound}.
 
 \begin{longtable}{clp{6.0cm}}
 \toprule \# & Link & Content\\\midrule
-1 & \LeanInline{F1CW.tower\_ham\_is\_hermitian} Hermitian & real diagonal $\lambda_i=m_0\golden^i$ (\LeanInline{towerH})\\
+1 & \code{F1CW.tower\_ham\_is\_hermitian} Hermitian & real diagonal $\lambda_i=m_0\golden^i$ (\code{towerH})\\
 2 & ratios & $\lambda_i/\lambda_j=\golden^{\,i-j}$; $m_0$ cancels\\
 3 & $k$ even & $t=L_k$, a Lucas number, hence an integer\\
 4 & trace & the matrices $F^{k}$, $k$ even, lie in $SL_2(\Z)$ and are constructed, not posited\\
@@ -4130,7 +4131,7 @@ Let $r>0$ and $t=r+1/r$.
     Fibonacci matrix $F^k$.
     \witness[F1v2.arrowB\_full, F1v2.arrowB\_Q, F1v2.arrowB]{P}\
     (the step into $\Zphi$ by the rational root theorem and the primality of $5$; the
-    descent by \LeanInline{unit\_is\_a\_power\_of\_phi} with its three inputs proved)
+    descent by \code{unit\_is\_a\_power\_of\_phi} with its three inputs proved)
   \item The hypothesis $r\in\Q(\sqrt5)$ in \textup{(b)} cannot be removed:
     $r=2+\sqrt3$ has $t=4\in\Z$ and is not a power of $\golden$
     (\witness[F1v2.arrow\_needs\_the\_field]{P}).
@@ -4163,7 +4164,7 @@ to be a spectral ratio (\witness[the\_witness\_is\_constructed, is\_a\_spectral\
 The corpus states (b) as \code{algebraic\_integer\_gives\_MonomialHalf} with an
 input \code{UnitStructure} that omits the hypothesis $r\in\Q(\sqrt5)$; as
 written that input is false, by (c).  With the hypothesis added it is exactly (b),
-and it is then no longer a classical input: \LeanInline{F1v2.arrowB} proves it,
+and it is then no longer a classical input: \code{F1v2.arrowB} proves it,
 instantiating the corpus's descent \code{unit\_is\_a\_power\_of\_phi} with the units
 of $\Zphi$ and proving its three structural inputs --- the floor of the logarithm, the
 group law, and the absence of units in $(1,\golden)$ --- rather than assuming them.
@@ -4251,7 +4252,7 @@ spectrum of $\OmH$.  Granted that, membership in the tower is a derived statemen
 not a separate assumption.
 
 \begin{theorem}[Membership]\label{thm:membership}
-Assume \LeanInline{BridgeAxiom} for $\beta$, the strip, and the companion.  Then
+Assume \code{BridgeAxiom} for $\beta$, the strip, and the companion.  Then
 $\beta=\tfrac12$; equivalently $|\rho-1|=|\rho|$; equivalently
 $r=1=\golden^0$ lies in the golden tower.
 \witness[the\_membership\_derived]{P}%
@@ -4280,7 +4281,7 @@ the span as a whole is recorded as \LeanTally{the\_span\_is\_the\_identification
 
 \begin{proposition}[The pieces of the bridge]\label{prop:bridge-pieces}
 The corpus assembles three pieces that the earlier manuscript called on to discharge
-\LeanInline{BridgeAxiom}.  What is proved of them is: the identity
+\code{BridgeAxiom}.  What is proved of them is: the identity
 $\lng\cdot\tfrac{\sqrt5}2\cdot L(1,\chiv)=\log2$ given the value of $L(1,\chiv)$
 (\witness[branches\_meet\_at\_log\_two]{P}); that $G$ is a homomorphism whose second
 component is $\chiv$, so $\chiv=(-1)^{\pi_2\circ G}$ (\witness[G\_hom, G\_pi2\_is\_chi5]{P}); that $\ker G=\{1,9\}$ and $\mu_3=1/|\ker G|$; and
@@ -4433,7 +4434,7 @@ component norms multiply to $\tfrac12$ (\witness[positive\_spectral\_half, norm\
 $\golden^{i-j}$, and for even index the traces of the Fibonacci matrix powers are
 Lucas numbers, integral, with discrete values $2,3,7,18,47,\dots$, the value $2$
 being the one at which $\Re\rho=\tfrac12=1/|\ker G|$ (\cref{thm:one-operator} for the operator and \cref{thm:operator-forms} for its forms, and \cref{cor:no-diagonal-spectral} for the bound $\|\OmH\|=\tfrac12<1$;
-\LeanInline{F1CW.tower\_ham\_is\_hermitian},
+\code{F1CW.tower\_ham\_is\_hermitian},
 \cref{prop:lucas-spectrum,cor:value-is-kernel}).  On $\ell^2(\N)$ all the lifts act at
 once, by the shifts $e_n\mapsto e_{pn}$ with the Frobenius of Stage~2 as twist
 (\cref{prop:primon-space}).  The operator meets the requirements of
@@ -4453,8 +4454,8 @@ contacts are unconditional.
 
 \emph{The centre.}  For every zero, the centre of the orbit $\{\rho,1-\rho\}$ is
 $\tfrac12$, the positive eigenvalue of $\OmH$
-(\LeanInline{zeros\_enter\_the\_cocone\_by\_the\_involution},
-\LeanInline{centre\_descends}, \cref{prop:orbit-embedding}); the apex that receives
+(\code{zeros\_enter\_the\_cocone\_by\_the\_involution},
+\code{centre\_descends}, \cref{prop:orbit-embedding}); the apex that receives
 the primes, the operator, the monoid and the archimedean place also receives the
 zeros (\witness[the\_apex\_receives\_from\_five\_legs\_including\_the\_zeros]{P}).
 
@@ -4507,7 +4508,7 @@ forms of \cref{ssec:core-forms}):
   \item the trace $t(\rho)$ integral, as the operator's traces are (Stages~5 and 7);
   \item no two zeros sharing an ordinate (the Klein orbits of Stage~6).
 \end{enumerate}
-\leavevmode\witness[rh\_squeeze\_derived, position\_is\_interval\_meets\_discreteness, radius\_one\_is\_E, the\_two\_labels\_are\_one\_gap, E\_iff\_no\_shared\_ordinate\_chi5]{P}/\witness{P}%
+\leavevmode\witness[rh\_squeeze\_derived, position\_is\_interval\_meets\_discreteness, radius\_one\_is\_E, the\_two\_labels\_are\_one\_gap, E\_iff\_no\_shared\_ordinate\_chi5]{P}%
 (for (i) the bound over all zeros; for (ii) given $r(\rho)=\golden^k$; for (iii)
 given $t(\rho)\in\Z$ and $|\Im\rho|\ge2$).
 \end{theorem}
