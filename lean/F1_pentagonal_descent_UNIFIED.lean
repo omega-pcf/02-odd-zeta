@@ -4196,7 +4196,6 @@ theorem fib_pred_inert {p : ℕ} (hp : p.Prime) (_hp2 : p ≠ 2) (_hp5 : p ≠ 5
       rw [map_pow, map_add, map_one, ← hα_c]
       exact hα_sq
     exact hirr_no_root c hc_sq
-
   -- Nuevo: con F_p = −1, la identidad F_p·α + F_{p−1} = 1 − α da F_{p−1} = 1.
   have hFp_K : (Nat.fib p : K) = -1 := by
     have h := congrArg (algebraMap (ZMod p) K) hFp
@@ -46382,7 +46381,7 @@ theorem smul_six_injective (x y : Eis) (h : Eis.smul 6 x = Eis.smul 6 y) : x = y
   obtain ⟨xa, xb⟩ := x
   obtain ⟨ya, yb⟩ := y
   simp [Eis.smul, Eis.mk.injEq] at h
-  simp [Eis.mk.injEq]
+  simp only [Eis.mk.injEq]
   refine ⟨?_, ?_⟩ <;> omega
 
 /-! ## 5.  Lo que esto da, junto -/
@@ -47229,7 +47228,7 @@ theorem dual_route_separates (i j : JointIdx)
   obtain ⟨hc, ho⟩ := (same_fibre_iff_same_colour_and_orientation i j).mp hfib
   obtain ⟨s1, x1, y1⟩ := i
   obtain ⟨s2, x2, y2⟩ := j
-  simp at hlev hc ho
+  simp only at hlev hc ho
   subst hlev; subst hc; subst ho
   rfl
 
@@ -69583,7 +69582,6 @@ theorem lucasS_ge_three_from_two : ∀ n : ℕ, 3 ≤ _root_.lucasS (n + 2) ∧ 
       obtain ⟨h1, h2⟩ := lucasS_ge_three_from_two n
       refine ⟨h2, ?_⟩
       have e : _root_.lucasS (n + 1 + 3) = _root_.lucasS (n + 3) + _root_.lucasS (n + 2) := by
-        change _root_.lucasS ((n + 2) + 2) = _root_.lucasS ((n + 2) + 1) + _root_.lucasS (n + 2)
         rfl
       rw [e]; omega
 
@@ -78737,14 +78735,8 @@ theorem phi_pow_fib (n : ℕ) :
 
 /-- φ es irracional. -/
 theorem phi_irrational : Irrational phi := by
-  first
-    | exact gold_irrational
-    | exact Real.gold_irrational
-    | (unfold phi; exact Real.goldenRatio_irrational)
-    | (have h5 := Nat.Prime.irrational_sqrt (p := 5) (by norm_num)
-       have h := (h5.rat_add 1).div_rat (q := 2) (by norm_num)
-       unfold phi
-       simpa using h)
+  unfold phi
+  exact Real.goldenRatio_irrational
 
 /-- **λ = log_φ 2 es irracional, sin Gelfond–Schneider:** si λ = a/b, entonces
     φ^a = 2^b; pero φ^a = F_a·φ + F_{a−1} con F_a ≠ 0, que es irracional.
@@ -78756,11 +78748,7 @@ theorem lambda_irrational : LambdaIrrational := by
   have hq0' : (0 : ℝ) < q := by rw [hq]; exact hpos
   have hq0 : 0 < q := by exact_mod_cast hq0'
   have hqa : (q : ℝ) * (q.den : ℝ) = (q.num : ℝ) := by
-    first
-      | exact_mod_cast Rat.mul_den_eq_num q
-      | (have h := congrArg (fun r : ℚ => (r : ℝ)) (Rat.mul_den_eq_num q)
-         push_cast at h
-         exact h)
+    exact_mod_cast Rat.mul_den_eq_num q
   have key : phi ^ ((q.num : ℤ) : ℝ) = (2 : ℝ) ^ ((q.den : ℕ) : ℝ) := by
     rw [← hqa, Real.rpow_mul phi_pos.le, hq, phi_rpow_lam]
   have ha : 0 < q.num := Rat.num_pos.mpr hq0
@@ -78920,11 +78908,7 @@ theorem logphi_rat_irrational (r : ℚ) (hr : 0 < r) (h1 : r ≠ 1) :
     rw [hq, Real.rpow_def_of_pos phi_pos, hcancel]
     exact Real.exp_log hrR
   have hqa : (q : ℝ) * (q.den : ℝ) = (q.num : ℝ) := by
-    first
-      | exact_mod_cast Rat.mul_den_eq_num q
-      | (have h := congrArg (fun x : ℚ => (x : ℝ)) (Rat.mul_den_eq_num q)
-         push_cast at h
-         exact h)
+    exact_mod_cast Rat.mul_den_eq_num q
   have key : phi ^ ((q.num : ℤ) : ℝ) = ((r ^ q.den : ℚ) : ℝ) := by
     rw [← hqa, Real.rpow_mul phi_pos.le, hpow, Real.rpow_natCast]
     first | (push_cast; ring)
@@ -80364,10 +80348,7 @@ theorem weight_of_mersenne (e : ℕ) (he : 1 ≤ e) :
     Real.log ((2 : ℝ) ^ e - 1) = (e : ℝ) * Real.log 2 + Real.log (1 - 1 / (2 : ℝ) ^ e) := by
   have hpos : (0 : ℝ) < 2 ^ e := by positivity
   have h1 : (1 : ℝ) < 2 ^ e := by
-    first
-      | exact one_lt_pow₀ (by norm_num) (by omega)
-      | (have : (2:ℝ) ^ 1 ≤ 2 ^ e := pow_le_pow_right₀ (by norm_num) he
-         linarith [show (2:ℝ) ^ 1 = 2 by norm_num])
+    exact one_lt_pow₀ (by norm_num) (by omega)
   have hq : (0 : ℝ) < 1 - 1 / 2 ^ e := by
     rw [sub_pos, div_lt_one hpos]; exact h1
   have hsplit : (2 : ℝ) ^ e - 1 = 2 ^ e * (1 - 1 / 2 ^ e) := by
@@ -80794,9 +80775,6 @@ theorem toeplitz_splits_by_class {n m K : ℕ} (cls : Fin n → Fin K) (d : Fin 
   conv_rhs => rw [Finset.sum_comm]
   refine Finset.sum_congr rfl (fun b _ => ?_)
   (conv_rhs => rw [Finset.sum_comm])
-  all_goals (refine Finset.sum_congr rfl (fun i _ => ?_)
-             refine Finset.sum_congr rfl (fun c _ => ?_)
-             ring)
 
 /-- **[O] Positividad radial por clase:** la forma de cada clase es real y
     ≥ 0.  Con pesos ≥ 0 (la medida de la estructura) es un teorema
@@ -87091,7 +87069,7 @@ theorem yDiag_injective (ζ : ℂ) (hζ : ζ ^ 3 = 1) (h1 : ζ ≠ 1) : Function
     revert e4
     fin_cases k <;> fin_cases k' <;> simp [colour] <;>
       first
-        | exact h1 | exact (Ne.symm h1) | exact a2 | exact (Ne.symm a2)
+        | exact h1 | exact (Ne.symm h1) | exact (Ne.symm a2)
         | exact a3 | exact (Ne.symm a3)
         | (constructor <;> first | exact h1 | exact a1)
   have he : e = e' := by
@@ -88672,7 +88650,7 @@ def comp : Fin 3 → (ℂ → ℂ) := ![sig, tau, sig ∘ tau]
 
 theorem comp_injective : Function.Injective comp := by
   intro i j h
-  fin_cases i <;> fin_cases j <;> simp [comp] at h ⊢
+  fin_cases i <;> fin_cases j <;> simp only [Fin.zero_eta, Fin.isValue, Fin.mk_one, zero_ne_one] at h ⊢
   all_goals first
     | exact absurd h sig_ne_tau | exact absurd h sig_ne_sigtau
     | exact absurd h.symm sig_ne_tau | exact absurd h.symm sig_ne_sigtau
