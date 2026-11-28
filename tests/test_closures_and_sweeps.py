@@ -441,7 +441,7 @@ def _orbit_cert_bounds(t: np.ndarray, e: np.ndarray) -> tuple[float, float]:
 
 
 @pytest.mark.golden
-def test_orbita_cert_golden_values() -> None:
+def test_orbit_cert_golden_values() -> None:
     """The committed ``orbita_cert.txt`` pins the four certified bounds."""
     text = read_salidas("orbita_cert.txt")
     chi5_match = re.search(
@@ -465,7 +465,7 @@ def test_orbita_cert_golden_values() -> None:
 
 
 @pytest.mark.slow
-def test_orbita_cert_bounds_hold_for_chi5_and_the_quintic_layer() -> None:
+def test_orbit_cert_bounds_hold_for_chi5_and_the_quintic_layer() -> None:
     """``04-bridges:1864-1867`` — $|t_k|\\le0.1122\\,t_0$ / $\\ge0.248\\,t_0$ (chi_5), $0.158$ / $0.506$ (quintic).
 
     Condition: ``orbita_cert.py``'s own — outward rounding at ``mp.dps=30``,
@@ -1145,7 +1145,7 @@ def _w3_rows() -> dict[tuple[int, float], list[float]]:
     return rows
 
 
-def test_w3_orbita_stays_inside_the_bound() -> None:
+def test_w3_orbit_stays_inside_the_bound() -> None:
     r"""``04-bridges:1870`` — the prime-side orbit stays inside $|t_k|\le t_0$ (the script's own W3 check).
 
     Condition: ``W3_orbita_lado_primos.py``'s own — the sieve to $e^{14.5}$
@@ -1165,7 +1165,7 @@ def test_w3_orbita_stays_inside_the_bound() -> None:
     assert not outside, f"the W3 bound fails on: {outside}"
 
 
-def test_w3_orbita_fits_the_first_zero_height() -> None:
+def test_w3_orbit_fits_the_first_zero_height() -> None:
     r"""``04-bridges:1868-1870`` — the fit frequency $6.649$ is the height $6.6485$ of the first zero.
 
     Condition: ``W3_orbita_lado_primos.py``'s own fit — the least-squares

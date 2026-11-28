@@ -79,7 +79,7 @@ tests that need them. `uv run pytest` is green with the folder gone.
 | `retro65.py` | `blocked:never-delivered; ask-the-author-or-declare-unavailable` |
 | `retro66.py` | `blocked:retro65-never-delivered` — `retro66.py:99-101` `exec`s `retro65.py`, which no delivery contains (not zip1, not zip2, not the repo, not the MANIFEST's unavailable list), so the script does not run as it stands |
 | `comun_pruebas.py` | `orphan-no-cited` — 0 citations in the manuscript, no artefact of its own, no reader; the author's cite-or-drop call stays open |
-| `unfold_by_conductor.txt` | `blocked:no entregado por el autor` — cited at `04-bridges:107`, in neither zip; the one `pending(D7)` marker still open |
+| `unfold_by_conductor.txt` | `blocked:not delivered by the author` — cited at `04-bridges:107`, in neither zip; the one `pending(D7)` marker still open |
 | the ten `datos/` files of the zip1 MANIFEST | `orphan-no-cited:no-readers` — never delivered, 0 readers in the repository (measured); the zip's description of the tree stays with the operator |
 
 ---
