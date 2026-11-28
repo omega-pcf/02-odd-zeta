@@ -1,5 +1,76 @@
 # Changelog
 
+## [2.0.0](https://github.com/omega-pcf/02-odd-zeta/compare/v1.7.2...v2.0.0) (2026-11-28)
+
+### ⚠ BREAKING CHANGES
+
+* **paper:** new title, substantially expanded manuscript, complete new sections (major 1.7.2 -> 2.0.0)
+
+### Features
+
+* **build:** add the shared-file manifest gate ([0a3fe54](https://github.com/omega-pcf/02-odd-zeta/commit/0a3fe54fcea1a4f65e845450b05a92627221df42))
+* **build:** generate the counts the living documents state ([f7453b1](https://github.com/omega-pcf/02-odd-zeta/commit/f7453b13ef31ecb4a7c9da870bfcb03cd7903ac4))
+* **build:** sync the count regions before the render and pin build.ts ([d279c78](https://github.com/omega-pcf/02-odd-zeta/commit/d279c78f963470ca62da913f4e2dda3a83551919))
+* **citation:** import the v168 reference set ([f09f532](https://github.com/omega-pcf/02-odd-zeta/commit/f09f532b5892e92d8c942c9a8859bbb2ef68b223))
+* **citation:** port the selfcitations pipeline with the two-tier version token ([a72df89](https://github.com/omega-pcf/02-odd-zeta/commit/a72df897d5ca35e5c4fae1b587384dea35682623))
+* **lean:** import the v168 unified development ([db849c6](https://github.com/omega-pcf/02-odd-zeta/commit/db849c6c3a0d56a1cceab43fa1632d5bb11a9de9))
+* **paper:** add the Kind column to the status ledger ([e345009](https://github.com/omega-pcf/02-odd-zeta/commit/e3450095496364541f08f232bd2ceab68fd20d45))
+* **paper:** port the F1_v168 manuscript into the shell chapters ([1fff369](https://github.com/omega-pcf/02-odd-zeta/commit/1fff36928f7b1c467dd29a34e178e9cb63b554fc))
+* **paper:** port the N[ids] witness tag and supplement six numerical claims ([c87fed1](https://github.com/omega-pcf/02-odd-zeta/commit/c87fed1e0b055dbf4a47c18f1e8ae4a6f59a89aa))
+* **paper:** state the archimedean window crossings with their basis ([19e98b5](https://github.com/omega-pcf/02-odd-zeta/commit/19e98b57250b688558a5851da6bb80960fc22f0b))
+* **preamble:** port the own-line witness macro from 05-kkgt ([1f67ab0](https://github.com/omega-pcf/02-odd-zeta/commit/1f67ab04e679976fb863e7cf7c645be33f8d55a7))
+* **scripts:** generate the witness census and gate it in validate ([949128c](https://github.com/omega-pcf/02-odd-zeta/commit/949128c10cc66244d6bedbb6d0dd4976e89bfa60))
+* **scripts:** import the hipotesis/pruebas corpus from the v168 author pass ([9a16c41](https://github.com/omega-pcf/02-odd-zeta/commit/9a16c41cd34341300cc8e6d9a0e416ff15fba9db))
+* **scripts:** port the deferred D7 script corpus from the v168 complete package ([a475748](https://github.com/omega-pcf/02-odd-zeta/commit/a475748ccca15c903169bd300ac3b9459720843b))
+
+### Bug Fixes
+
+* **build:** commit the clean version token and inject the dev suffix at build time ([952a969](https://github.com/omega-pcf/02-odd-zeta/commit/952a9691db33d4100f8837c43c998c5b030fc428))
+* **build:** emit ReleaseConfig from the types generator ([181dd88](https://github.com/omega-pcf/02-odd-zeta/commit/181dd88bbcd418877d8b6b32d3a38d6f104c1588))
+* **build:** refresh the counts ledger after the orphan removal ([623c20a](https://github.com/omega-pcf/02-odd-zeta/commit/623c20a203e3aec6582cb1de5e6865f354e9b563))
+* **citation:** cite the signed Universidad del Tolima degree work in its repository original ([e3f0c69](https://github.com/omega-pcf/02-odd-zeta/commit/e3f0c691a8627de438f12eaf0dbb03a1d3f43747))
+* **citation:** drop the duplicated doi from the note fields ([03fdc56](https://github.com/omega-pcf/02-odd-zeta/commit/03fdc566a6d6234993f84c28a60388cc845e1a10))
+* **citation:** stamp dates in the project timezone ([d25ee93](https://github.com/omega-pcf/02-odd-zeta/commit/d25ee936445589d83aafa42583e71d0717481370))
+* **citation:** typeset the version token in monospace ([a64ad10](https://github.com/omega-pcf/02-odd-zeta/commit/a64ad101fd0e59a34c942786532b769f767c95c8))
+* **citation:** use the canonical en-dash title in cross-references ([ee54a80](https://github.com/omega-pcf/02-odd-zeta/commit/ee54a8052e5aed06b37530c18f07311768533b10))
+* **frontmatter:** adopt the printed v168 title in the description chain ([a2395a8](https://github.com/omega-pcf/02-odd-zeta/commit/a2395a86ad8755682fe342ba3785474ee84f3454))
+* **frontmatter:** group amsart address and email blocks by institution ([1c839f3](https://github.com/omega-pcf/02-odd-zeta/commit/1c839f3059cf9a061a7a51b5a3de4f660211c280))
+* **frontmatter:** print the family date line with datename in bold and the version ([9cdcdd4](https://github.com/omega-pcf/02-odd-zeta/commit/9cdcdd4aceea32652efd3f17fcc300788470bcdc))
+* **frontmatter:** sync the abstract chain to the printed v168 text ([aaed1c5](https://github.com/omega-pcf/02-odd-zeta/commit/aaed1c593ca4aa739e3f34ef9454d0aff2393042))
+* **lean:** drop the orphan same_def_24 ([c85e7b7](https://github.com/omega-pcf/02-odd-zeta/commit/c85e7b7db4b475072e38d3b3fae321bda5da58a5))
+* **lean:** repair the imported development to build clean ([e2404fe](https://github.com/omega-pcf/02-odd-zeta/commit/e2404fe278185dda68363167de0c4f4d1a8f22ec))
+* **metadata:** sync CITATION.cff title from package.json on build ([77b4e43](https://github.com/omega-pcf/02-odd-zeta/commit/77b4e43f86a01252ec754de33a2ae52032d768a7))
+* **paper:** accept arbitrary tag strings in the witness macros ([5c8cc04](https://github.com/omega-pcf/02-odd-zeta/commit/5c8cc0427ff157ce181e309508e4d9514517c7d5))
+* **paper:** add the verified maxima clause of the author pass ([cff6007](https://github.com/omega-pcf/02-odd-zeta/commit/cff60076d683d55d6eabd6829cf9251235c7be1b))
+* **paper:** adopt the segmented law-resolution figures from the author pass ([0b0f750](https://github.com/omega-pcf/02-odd-zeta/commit/0b0f75073a495489669314353dff36f5c1c9f5d2))
+* **paper:** adopt the v168 author figures for three of the four numerical observations ([fd45327](https://github.com/omega-pcf/02-odd-zeta/commit/fd45327f4c08b5c5cb3c262f35cde03cbf88a1ad))
+* **paper:** apply the tier migration decisions of section 6.2 ([209c09e](https://github.com/omega-pcf/02-odd-zeta/commit/209c09e037862679649815acb3ce29b570b80e31))
+* **paper:** correct the prime count, retarget the x_sweep witness and drop the obsolete audit annotations ([7fafb05](https://github.com/omega-pcf/02-odd-zeta/commit/7fafb05d4d0582b0bc533e68714925294f3e8903))
+* **paper:** drop the tier column from the status tables ([cff8f95](https://github.com/omega-pcf/02-odd-zeta/commit/cff8f953e94b978b47638689c01f7e9ce987fd3f))
+* **paper:** mark the last deferred data citations as pending (D7) ([8a68e76](https://github.com/omega-pcf/02-odd-zeta/commit/8a68e7609b5401bcb679da025d6b6670d81e97f2))
+* **paper:** migrate the mechanical tier marks to the family convention ([45db7ef](https://github.com/omega-pcf/02-odd-zeta/commit/45db7efd0ab8cb24b85bb427fab40c5c92a9571e))
+* **paper:** move the evidence gloss to the first body use ([1dcaa33](https://github.com/omega-pcf/02-odd-zeta/commit/1dcaa3375d2b7bb4890892f2b6edb62eaac635cf))
+* **paper:** name the thesis by its title at the attribution site ([3e0f9a3](https://github.com/omega-pcf/02-odd-zeta/commit/3e0f9a3dae5d20d42d15d43fd8f146824bb90625))
+* **paper:** point the zeta-values caption at the verification suite ([5d09fd9](https://github.com/omega-pcf/02-odd-zeta/commit/5d09fd9448051cf80eee96afab3e8e36e19055b3))
+* **paper:** restore the zip provenance order in the byline ([7c8cf4e](https://github.com/omega-pcf/02-odd-zeta/commit/7c8cf4e93097a7055a57fececc834269bfbb099c))
+* **paper:** retarget the six N witness tags to the suite's snake_case ids ([47824b8](https://github.com/omega-pcf/02-odd-zeta/commit/47824b885713d2056f6f89c7747b3eae734df8a8))
+* **paper:** retarget the source-map corpus cell to tests ([76d5fee](https://github.com/omega-pcf/02-odd-zeta/commit/76d5fee0f143992dc8b5d3a77e3dcc3b7d4201da))
+* **paper:** reword the abstract's evidence sentence ([98b1528](https://github.com/omega-pcf/02-odd-zeta/commit/98b15289d7f710b413d11ce79f6a602962f5d015))
+* **paper:** state the scope of the numerical scripts list ([d98e8f1](https://github.com/omega-pcf/02-odd-zeta/commit/d98e8f167129619c22dc3d0d8116faf6fef3f9bf))
+* **paper:** typeset the etale subscript with \acute{e} ([447528b](https://github.com/omega-pcf/02-odd-zeta/commit/447528b0cabb751fec0fb9037587fc1eb5bca48f))
+* **paper:** typeset the tier tags inside displays as text ([78e4eb8](https://github.com/omega-pcf/02-odd-zeta/commit/78e4eb80ee705bc3a3f9eba23fd1ff827f0db76d))
+* **pipeline:** fail build on latexmk non-zero exit or empty biber .bbl (prevents silent success with stale PDF) ([2832583](https://github.com/omega-pcf/02-odd-zeta/commit/2832583e49e0d8d973e9e9ce8a8d19b052585480))
+* **pipeline:** fail the build when the commit timestamp is unavailable instead of stamping the wall clock ([e553844](https://github.com/omega-pcf/02-odd-zeta/commit/e5538440463cb8e8c60b99adccc889f92b68b9b2))
+* **pipeline:** rename generated bibliography keys by position ([cb9e6fe](https://github.com/omega-pcf/02-odd-zeta/commit/cb9e6fe42535e4e2516b2f83a7c222d666864913))
+* **preamble:** accept raw name lists under the strict tag grammar ([d5d78ac](https://github.com/omega-pcf/02-odd-zeta/commit/d5d78acad9423b78a7ad55264947ebdc2dc8f854))
+* **preamble:** add the tag colours and the tiercol guard ([2678624](https://github.com/omega-pcf/02-odd-zeta/commit/2678624a0eca1f448fa4685b246407b57c865c6d))
+* **preamble:** adopt the family citation style (nyt, giveninits) ([ad0899d](https://github.com/omega-pcf/02-odd-zeta/commit/ad0899de81baf612d79851cacbca84c73a48d545))
+* **preamble:** define the canonical code macro ([6072aba](https://github.com/omega-pcf/02-odd-zeta/commit/6072aba01267bb1d45e79fc94ed861209b939d4e))
+* **tests:** reword the two docstrings carrying the retired witness labels ([4645911](https://github.com/omega-pcf/02-odd-zeta/commit/46459119f34a672fe8ce1b2f59aa7e6d969a15b0))
+* **witness:** apply the contextual editorial verdicts ([5883fcf](https://github.com/omega-pcf/02-odd-zeta/commit/5883fcf37154555d63aec3e04ee82de8ca47095c))
+* **witness:** clear the outstanding offenders ([ab076da](https://github.com/omega-pcf/02-odd-zeta/commit/ab076dae7901e8dbc0deaf69de4e1d969845ff91))
+* **witness:** reform the cited sites with their context ([c928b95](https://github.com/omega-pcf/02-odd-zeta/commit/c928b9517a554e43f2d62526f6ead1dcb4d45712))
+
 ## [1.7.2](https://github.com/omega-pcf/02-odd-zeta/compare/v1.7.1...v1.7.2) (2026-07-31)
 
 ### Bug Fixes
